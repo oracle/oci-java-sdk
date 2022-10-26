@@ -11,9 +11,7 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.encryption.internal.EncryptionHeader;
 
-/**
- * OciCryptoInputStream holds the encrypted/decrypted stream.
- */
+/** OciCryptoInputStream holds the encrypted/decrypted stream. */
 public abstract class OciCryptoInputStream extends InputStream {
     protected final EncryptionHeader header;
 
@@ -22,8 +20,8 @@ public abstract class OciCryptoInputStream extends InputStream {
     }
 
     /**
-     * Get the encryption Context.
-     * It can be used to verify the Additional Authenticated Data.
+     * Get the encryption Context. It can be used to verify the Additional Authenticated Data.
+     *
      * @return Map of strings
      */
     public Map<String, String> getContext() {
@@ -36,6 +34,7 @@ public abstract class OciCryptoInputStream extends InputStream {
 
     /**
      * Reads a byte from the stream
+     *
      * @return The byte read
      */
     @Override

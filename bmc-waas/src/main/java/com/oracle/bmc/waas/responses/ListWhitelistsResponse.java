@@ -8,13 +8,12 @@ import com.oracle.bmc.waas.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,12 +21,15 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -35,25 +37,29 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results may remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * may remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results may remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * may remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.waas.model.Whitelist instances.
-     */
+    /** A list of com.oracle.bmc.waas.model.Whitelist instances. */
     private java.util.List<com.oracle.bmc.waas.model.Whitelist> items;
 
     /**
      * A list of com.oracle.bmc.waas.model.Whitelist instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.waas.model.Whitelist> getItems() {
@@ -70,7 +76,7 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private ListWhitelistsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             String opcNextPage,
@@ -82,28 +88,30 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWhitelistsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -113,12 +121,15 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -128,12 +139,17 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results may remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results may remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of results may remain. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results may remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -142,13 +158,12 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.waas.model.Whitelist instances.
-         */
+        /** A list of com.oracle.bmc.waas.model.Whitelist instances. */
         private java.util.List<com.oracle.bmc.waas.model.Whitelist> items;
 
         /**
          * A list of com.oracle.bmc.waas.model.Whitelist instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -159,8 +174,10 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListWhitelistsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -174,8 +191,10 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListWhitelistsResponse build() {
             return new ListWhitelistsResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, opcNextPage, items);
@@ -184,6 +203,7 @@ public class ListWhitelistsResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,19 +5,20 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Network node
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Network node <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Node.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -57,161 +58,151 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * id of node
-         **/
+        /** id of node */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * id of node
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * ip address of node
-         **/
+        /** ip address of node */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * ip address of node
+         *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /**
-         * display name of node
-         **/
+        /** display name of node */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * display name of node
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * geo info
-         **/
+        /** geo info */
         @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
         private String geoInfo;
 
         /**
          * geo info
+         *
          * @param geoInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder geoInfo(String geoInfo) {
             this.geoInfo = geoInfo;
             this.__explicitlySet__.add("geoInfo");
             return this;
         }
-        /**
-         * links outgoing from this node
-         **/
+        /** links outgoing from this node */
         @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
         private java.util.List<String> outgoingLinks;
 
         /**
          * links outgoing from this node
+         *
          * @param outgoingLinks the value to set
          * @return this builder
-         **/
+         */
         public Builder outgoingLinks(java.util.List<String> outgoingLinks) {
             this.outgoingLinks = outgoingLinks;
             this.__explicitlySet__.add("outgoingLinks");
             return this;
         }
-        /**
-         * consecutive anonymous node count
-         **/
+        /** consecutive anonymous node count */
         @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
         private Integer consecutiveAnonymousCount;
 
         /**
          * consecutive anonymous node count
+         *
          * @param consecutiveAnonymousCount the value to set
          * @return this builder
-         **/
+         */
         public Builder consecutiveAnonymousCount(Integer consecutiveAnonymousCount) {
             this.consecutiveAnonymousCount = consecutiveAnonymousCount;
             this.__explicitlySet__.add("consecutiveAnonymousCount");
             return this;
         }
-        /**
-         * level of this node
-         **/
+        /** level of this node */
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Integer level;
 
         /**
          * level of this node
+         *
          * @param level the value to set
          * @return this builder
-         **/
+         */
         public Builder level(Integer level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
-        /**
-         * average packet response time in milli seconds
-         **/
+        /** average packet response time in milli seconds */
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
         private Double avgPacketResponseTimeInMs;
 
         /**
          * average packet response time in milli seconds
+         *
          * @param avgPacketResponseTimeInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder avgPacketResponseTimeInMs(Double avgPacketResponseTimeInMs) {
             this.avgPacketResponseTimeInMs = avgPacketResponseTimeInMs;
             this.__explicitlySet__.add("avgPacketResponseTimeInMs");
             return this;
         }
-        /**
-         * average packet loss percentage
-         **/
+        /** average packet loss percentage */
         @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
         private Double avgPacketLossPercent;
 
         /**
          * average packet loss percentage
+         *
          * @param avgPacketLossPercent the value to set
          * @return this builder
-         **/
+         */
         public Builder avgPacketLossPercent(Double avgPacketLossPercent) {
             this.avgPacketLossPercent = avgPacketLossPercent;
             this.__explicitlySet__.add("avgPacketLossPercent");
             return this;
         }
-        /**
-         * type of node
-         **/
+        /** type of node */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * type of node
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -276,9 +267,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,136 +276,125 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * id of node
-     **/
+    /** id of node */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * id of node
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * ip address of node
-     **/
+    /** ip address of node */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * ip address of node
+     *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /**
-     * display name of node
-     **/
+    /** display name of node */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * display name of node
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * geo info
-     **/
+    /** geo info */
     @com.fasterxml.jackson.annotation.JsonProperty("geoInfo")
     private final String geoInfo;
 
     /**
      * geo info
+     *
      * @return the value
-     **/
+     */
     public String getGeoInfo() {
         return geoInfo;
     }
 
-    /**
-     * links outgoing from this node
-     **/
+    /** links outgoing from this node */
     @com.fasterxml.jackson.annotation.JsonProperty("outgoingLinks")
     private final java.util.List<String> outgoingLinks;
 
     /**
      * links outgoing from this node
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getOutgoingLinks() {
         return outgoingLinks;
     }
 
-    /**
-     * consecutive anonymous node count
-     **/
+    /** consecutive anonymous node count */
     @com.fasterxml.jackson.annotation.JsonProperty("consecutiveAnonymousCount")
     private final Integer consecutiveAnonymousCount;
 
     /**
      * consecutive anonymous node count
+     *
      * @return the value
-     **/
+     */
     public Integer getConsecutiveAnonymousCount() {
         return consecutiveAnonymousCount;
     }
 
-    /**
-     * level of this node
-     **/
+    /** level of this node */
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Integer level;
 
     /**
      * level of this node
+     *
      * @return the value
-     **/
+     */
     public Integer getLevel() {
         return level;
     }
 
-    /**
-     * average packet response time in milli seconds
-     **/
+    /** average packet response time in milli seconds */
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketResponseTimeInMs")
     private final Double avgPacketResponseTimeInMs;
 
     /**
      * average packet response time in milli seconds
+     *
      * @return the value
-     **/
+     */
     public Double getAvgPacketResponseTimeInMs() {
         return avgPacketResponseTimeInMs;
     }
 
-    /**
-     * average packet loss percentage
-     **/
+    /** average packet loss percentage */
     @com.fasterxml.jackson.annotation.JsonProperty("avgPacketLossPercent")
     private final Double avgPacketLossPercent;
 
     /**
      * average packet loss percentage
+     *
      * @return the value
-     **/
+     */
     public Double getAvgPacketLossPercent() {
         return avgPacketLossPercent;
     }
 
-    /**
-     * type of node
-     **/
-    public enum Type {
+    /** type of node */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Source("SOURCE"),
         Destination("DESTINATION"),
         Anonymous("ANONYMOUS"),
@@ -424,8 +402,8 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         Dangling("DANGLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -462,16 +440,15 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return UnknownEnumValue;
         }
     };
-    /**
-     * type of node
-     **/
+    /** type of node */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * type of node
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -483,6 +460,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

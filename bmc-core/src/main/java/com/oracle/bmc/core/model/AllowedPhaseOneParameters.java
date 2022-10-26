@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Allowed phase one parameters.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Allowed phase one parameters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AllowedPhaseOneParameters.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AllowedPhaseOneParameters.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AllowedPhaseOneParameters
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "encryptionAlgorithms",
@@ -39,49 +39,46 @@ public final class AllowedPhaseOneParameters
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Allowed phase one encryption algorithms.
-         **/
+        /** Allowed phase one encryption algorithms. */
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
         private java.util.List<String> encryptionAlgorithms;
 
         /**
          * Allowed phase one encryption algorithms.
+         *
          * @param encryptionAlgorithms the value to set
          * @return this builder
-         **/
+         */
         public Builder encryptionAlgorithms(java.util.List<String> encryptionAlgorithms) {
             this.encryptionAlgorithms = encryptionAlgorithms;
             this.__explicitlySet__.add("encryptionAlgorithms");
             return this;
         }
-        /**
-         * Allowed phase one authentication algorithms.
-         **/
+        /** Allowed phase one authentication algorithms. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
         private java.util.List<String> authenticationAlgorithms;
 
         /**
          * Allowed phase one authentication algorithms.
+         *
          * @param authenticationAlgorithms the value to set
          * @return this builder
-         **/
+         */
         public Builder authenticationAlgorithms(java.util.List<String> authenticationAlgorithms) {
             this.authenticationAlgorithms = authenticationAlgorithms;
             this.__explicitlySet__.add("authenticationAlgorithms");
             return this;
         }
-        /**
-         * Allowed phase one Diffie-Hellman groups.
-         **/
+        /** Allowed phase one Diffie-Hellman groups. */
         @com.fasterxml.jackson.annotation.JsonProperty("dhGroups")
         private java.util.List<String> dhGroups;
 
         /**
          * Allowed phase one Diffie-Hellman groups.
+         *
          * @param dhGroups the value to set
          * @return this builder
-         **/
+         */
         public Builder dhGroups(java.util.List<String> dhGroups) {
             this.dhGroups = dhGroups;
             this.__explicitlySet__.add("dhGroups");
@@ -118,9 +115,7 @@ public final class AllowedPhaseOneParameters
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,44 +124,41 @@ public final class AllowedPhaseOneParameters
         return new Builder().copy(this);
     }
 
-    /**
-     * Allowed phase one encryption algorithms.
-     **/
+    /** Allowed phase one encryption algorithms. */
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithms")
     private final java.util.List<String> encryptionAlgorithms;
 
     /**
      * Allowed phase one encryption algorithms.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getEncryptionAlgorithms() {
         return encryptionAlgorithms;
     }
 
-    /**
-     * Allowed phase one authentication algorithms.
-     **/
+    /** Allowed phase one authentication algorithms. */
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithms")
     private final java.util.List<String> authenticationAlgorithms;
 
     /**
      * Allowed phase one authentication algorithms.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAuthenticationAlgorithms() {
         return authenticationAlgorithms;
     }
 
-    /**
-     * Allowed phase one Diffie-Hellman groups.
-     **/
+    /** Allowed phase one Diffie-Hellman groups. */
     @com.fasterxml.jackson.annotation.JsonProperty("dhGroups")
     private final java.util.List<String> dhGroups;
 
     /**
      * Allowed phase one Diffie-Hellman groups.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDhGroups() {
         return dhGroups;
     }
@@ -178,6 +170,7 @@ public final class AllowedPhaseOneParameters
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

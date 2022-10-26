@@ -24,8 +24,10 @@ public class ListDBVersionExample {
                     "This example expects 2 arguments:  a compartment OCID, a DB System Shape");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -47,8 +49,7 @@ public class ListDBVersionExample {
 
         System.out.printf(
                 "DB Versions Fetched for Shape %s and compartment ocid: %s\n",
-                compartmentId,
-                dbSystemShape);
+                compartmentId, dbSystemShape);
 
         System.out.println(listDbVersionsResponse.getItems());
     }

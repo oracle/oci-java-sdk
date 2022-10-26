@@ -9,15 +9,14 @@ import com.oracle.bmc.keymanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -28,7 +27,6 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
     /**
      * Unique Oracle-assigned identifier for the work request, used to track the progress of the
      * create replica operation.
-     *
      */
     private String opcWorkRequestId;
 
@@ -50,7 +48,7 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
     })
     private CreateVaultReplicaResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
@@ -58,31 +56,33 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
         this.opcWorkRequestId = opcWorkRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateVaultReplicaResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -95,7 +95,6 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * Unique Oracle-assigned identifier for the work request, used to track the progress of the
          * create replica operation.
-         *
          */
         private String opcWorkRequestId;
 
@@ -113,8 +112,10 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateVaultReplicaResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,8 +127,10 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateVaultReplicaResponse build() {
             return new CreateVaultReplicaResponse(
                     __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
@@ -136,6 +139,7 @@ public class CreateVaultReplicaResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

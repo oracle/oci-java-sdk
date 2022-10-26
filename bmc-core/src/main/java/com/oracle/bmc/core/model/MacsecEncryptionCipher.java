@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.core.model;
 
-/**
- * Type of encryption cipher suite to use for the MACsec connection.
- **/
+/** Type of encryption cipher suite to use for the MACsec connection. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum MacsecEncryptionCipher {
+public enum MacsecEncryptionCipher implements com.oracle.bmc.http.internal.BmcEnum {
     Aes128Gcm("AES128_GCM"),
     Aes128GcmXpn("AES128_GCM_XPN"),
     Aes256Gcm("AES256_GCM"),

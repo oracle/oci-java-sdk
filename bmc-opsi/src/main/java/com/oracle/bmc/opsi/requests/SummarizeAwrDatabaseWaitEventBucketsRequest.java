@@ -6,194 +6,149 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseWaitEventBucketsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeAwrDatabaseWaitEventBucketsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAwrDatabaseWaitEventBucketsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeAwrDatabaseWaitEventBucketsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeAwrDatabaseWaitEventBucketsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     private String awrHubId;
 
-    /**
-     * Unique Awr Hub identifier
-     */
+    /** Unique Awr Hub identifier */
     public String getAwrHubId() {
         return awrHubId;
     }
     /**
-     * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     * It can be retrieved from the following endpoint:
-     * /awrHubs/{awrHubId}/awrDatabases
-     *
+     * The internal ID of the database. The internal ID of the database is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     private String awrSourceDatabaseIdentifier;
 
     /**
-     * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     * It can be retrieved from the following endpoint:
-     * /awrHubs/{awrHubId}/awrDatabases
-     *
+     * The internal ID of the database. The internal ID of the database is not the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+     * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
      */
     public String getAwrSourceDatabaseIdentifier() {
         return awrSourceDatabaseIdentifier;
     }
-    /**
-     * The required single value query parameter to filter the entity name.
-     */
+    /** The required single value query parameter to filter the entity name. */
     private String name;
 
-    /**
-     * The required single value query parameter to filter the entity name.
-     */
+    /** The required single value query parameter to filter the entity name. */
     public String getName() {
         return name;
     }
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     private String instanceNumber;
 
-    /**
-     * The optional single value query parameter to filter by database instance number.
-     */
+    /** The optional single value query parameter to filter by database instance number. */
     public String getInstanceNumber() {
         return instanceNumber;
     }
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     private Integer beginSnapshotIdentifierGreaterThanOrEqualTo;
 
-    /**
-     * The optional greater than or equal to filter on the snapshot ID.
-     *
-     */
+    /** The optional greater than or equal to filter on the snapshot ID. */
     public Integer getBeginSnapshotIdentifierGreaterThanOrEqualTo() {
         return beginSnapshotIdentifierGreaterThanOrEqualTo;
     }
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     private Integer endSnapshotIdentifierLessThanOrEqualTo;
 
-    /**
-     * The optional less than or equal to query parameter to filter the snapshot Identifier.
-     *
-     */
+    /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
     public Integer getEndSnapshotIdentifierLessThanOrEqualTo() {
         return endSnapshotIdentifierLessThanOrEqualTo;
     }
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeGreaterThanOrEqualTo;
 
     /**
-     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional greater than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeGreaterThanOrEqualTo() {
         return timeGreaterThanOrEqualTo;
     }
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     private java.util.Date timeLessThanOrEqualTo;
 
     /**
-     * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-     *
+     * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+     * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
     public java.util.Date getTimeLessThanOrEqualTo() {
         return timeLessThanOrEqualTo;
     }
-    /**
-     * The number of buckets within the histogram.
-     */
+    /** The number of buckets within the histogram. */
     private Integer numBucket;
 
-    /**
-     * The number of buckets within the histogram.
-     */
+    /** The number of buckets within the histogram. */
     public Integer getNumBucket() {
         return numBucket;
     }
-    /**
-     * The minimum value of the histogram.
-     */
+    /** The minimum value of the histogram. */
     private Double minValue;
 
-    /**
-     * The minimum value of the histogram.
-     */
+    /** The minimum value of the histogram. */
     public Double getMinValue() {
         return minValue;
     }
-    /**
-     * The maximum value of the histogram.
-     */
+    /** The maximum value of the histogram. */
     private Double maxValue;
 
-    /**
-     * The maximum value of the histogram.
-     */
+    /** The maximum value of the histogram. */
     public Double getMaxValue() {
         return maxValue;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The option to sort distribution data.
-     */
+    /** The option to sort distribution data. */
     private SortBy sortBy;
 
-    /**
-     * The option to sort distribution data.
-     **/
-    public enum SortBy {
+    /** The option to sort distribution data. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Category("CATEGORY"),
         Percentage("PERCENTAGE"),
         ;
@@ -226,36 +181,26 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
     };
 
-    /**
-     * The option to sort distribution data.
-     */
+    /** The option to sort distribution data. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -264,17 +209,15 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeAwrDatabaseWaitEventBucketsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Awr Hub identifier
-         */
+        /** Unique Awr Hub identifier */
         private String awrHubId = null;
 
         /**
          * Unique Awr Hub identifier
+         *
          * @param awrHubId the value to set
          * @return this builder instance
          */
@@ -284,17 +227,16 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-         * It can be retrieved from the following endpoint:
-         * /awrHubs/{awrHubId}/awrDatabases
-         *
+         * The internal ID of the database. The internal ID of the database is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          */
         private String awrSourceDatabaseIdentifier = null;
 
         /**
-         * The internal ID of the database. The internal ID of the database is not the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-         * It can be retrieved from the following endpoint:
-         * /awrHubs/{awrHubId}/awrDatabases
+         * The internal ID of the database. The internal ID of the database is not the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). It can be
+         * retrieved from the following endpoint: /awrHubs/{awrHubId}/awrDatabases
          *
          * @param awrSourceDatabaseIdentifier the value to set
          * @return this builder instance
@@ -304,13 +246,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The required single value query parameter to filter the entity name.
-         */
+        /** The required single value query parameter to filter the entity name. */
         private String name = null;
 
         /**
          * The required single value query parameter to filter the entity name.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -319,13 +260,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The optional single value query parameter to filter by database instance number.
-         */
+        /** The optional single value query parameter to filter by database instance number. */
         private String instanceNumber = null;
 
         /**
          * The optional single value query parameter to filter by database instance number.
+         *
          * @param instanceNumber the value to set
          * @return this builder instance
          */
@@ -334,10 +274,7 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The optional greater than or equal to filter on the snapshot ID.
-         *
-         */
+        /** The optional greater than or equal to filter on the snapshot ID. */
         private Integer beginSnapshotIdentifierGreaterThanOrEqualTo = null;
 
         /**
@@ -353,10 +290,7 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The optional less than or equal to query parameter to filter the snapshot Identifier.
-         *
-         */
+        /** The optional less than or equal to query parameter to filter the snapshot Identifier. */
         private Integer endSnapshotIdentifierLessThanOrEqualTo = null;
 
         /**
@@ -372,13 +306,14 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeGreaterThanOrEqualTo = null;
 
         /**
-         * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional greater than or equal to query parameter to filter the timestamp. The
+         * timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -389,13 +324,14 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
-         *
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          */
         private java.util.Date timeLessThanOrEqualTo = null;
 
         /**
-         * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
+         * The optional less than or equal to query parameter to filter the timestamp. The timestamp
+         * format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
          *
          * @param timeLessThanOrEqualTo the value to set
          * @return this builder instance
@@ -405,13 +341,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The number of buckets within the histogram.
-         */
+        /** The number of buckets within the histogram. */
         private Integer numBucket = null;
 
         /**
          * The number of buckets within the histogram.
+         *
          * @param numBucket the value to set
          * @return this builder instance
          */
@@ -420,13 +355,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The minimum value of the histogram.
-         */
+        /** The minimum value of the histogram. */
         private Double minValue = null;
 
         /**
          * The minimum value of the histogram.
+         *
          * @param minValue the value to set
          * @return this builder instance
          */
@@ -435,13 +369,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The maximum value of the histogram.
-         */
+        /** The maximum value of the histogram. */
         private Double maxValue = null;
 
         /**
          * The maximum value of the histogram.
+         *
          * @param maxValue the value to set
          * @return this builder instance
          */
@@ -451,17 +384,16 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -472,20 +404,17 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
-         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -496,13 +425,12 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The option to sort distribution data.
-         */
+        /** The option to sort distribution data. */
         private SortBy sortBy = null;
 
         /**
          * The option to sort distribution data.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -511,10 +439,7 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -529,15 +454,14 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -549,18 +473,19 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -572,6 +497,7 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeAwrDatabaseWaitEventBucketsRequest o) {
@@ -598,12 +524,14 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * Build the instance of SummarizeAwrDatabaseWaitEventBucketsRequest as configured by this builder
+         * Build the instance of SummarizeAwrDatabaseWaitEventBucketsRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeAwrDatabaseWaitEventBucketsRequest
          */
@@ -615,9 +543,11 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
         }
 
         /**
-         * Build the instance of SummarizeAwrDatabaseWaitEventBucketsRequest as configured by this builder
+         * Build the instance of SummarizeAwrDatabaseWaitEventBucketsRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeAwrDatabaseWaitEventBucketsRequest
@@ -643,12 +573,17 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeAwrDatabaseWaitEventBucketsRequest(awrHubId, awrSourceDatabaseIdentifier, name, instanceNumber, beginSnapshotIdentifierGreaterThanOrEqualTo, endSnapshotIdentifierLessThanOrEqualTo, timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, numBucket, minValue, maxValue, page, limit, sortBy, sortOrder, opcRequestId);
+            // new SummarizeAwrDatabaseWaitEventBucketsRequest(awrHubId,
+            // awrSourceDatabaseIdentifier, name, instanceNumber,
+            // beginSnapshotIdentifierGreaterThanOrEqualTo, endSnapshotIdentifierLessThanOrEqualTo,
+            // timeGreaterThanOrEqualTo, timeLessThanOrEqualTo, numBucket, minValue, maxValue, page,
+            // limit, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -674,6 +609,7 @@ public class SummarizeAwrDatabaseWaitEventBucketsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

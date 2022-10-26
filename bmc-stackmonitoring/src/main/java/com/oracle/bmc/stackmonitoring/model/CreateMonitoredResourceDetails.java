@@ -5,22 +5,23 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about new monitored resource. The combination of monitored resource name and type should be unique across tenancy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about new monitored resource. The combination of monitored resource name and type
+ * should be unique across tenancy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateMonitoredResourceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateMonitoredResourceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateMonitoredResourceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -66,151 +67,150 @@ public final class CreateMonitoredResourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Monitored resource name
-         **/
+        /** Monitored resource name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Monitored resource name
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Monitored resource display name.
-         **/
+        /** Monitored resource display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Monitored resource display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Monitored resource type
-         **/
+        /** Monitored resource type */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Monitored resource type
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         **/
+         * Compartment Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * Compartment Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Host name of the monitored resource
-         **/
+        /** Host name of the monitored resource */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Host name of the monitored resource
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * which is not a Stack Monitoring service resource.
-         * Currently supports only OCI compute instance.
-         *
-         **/
+         * External resource is any OCI resource identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * not a Stack Monitoring service resource. Currently supports only OCI compute instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-         * which is not a Stack Monitoring service resource.
-         * Currently supports only OCI compute instance.
+         * External resource is any OCI resource identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is
+         * not a Stack Monitoring service resource. Currently supports only OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
-         **/
+         */
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
             return this;
         }
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-         **/
+         * Management Agent Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Management Agent Identifier
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param managementAgentId the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-        /**
-         * Time zone in the form of tz database canonical zone ID.
-         **/
+        /** Time zone in the form of tz database canonical zone ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
         /**
          * Time zone in the form of tz database canonical zone ID.
+         *
          * @param resourceTimeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
-        /**
-         * List of monitored resource properties
-         **/
+        /** List of monitored resource properties */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
         /**
          * List of monitored resource properties
+         *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -310,9 +310,7 @@ public final class CreateMonitoredResourceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,134 +319,133 @@ public final class CreateMonitoredResourceDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Monitored resource name
-     **/
+    /** Monitored resource name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Monitored resource name
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Monitored resource display name.
-     **/
+    /** Monitored resource display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Monitored resource display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Monitored resource type
-     **/
+    /** Monitored resource type */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Monitored resource type
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     **/
+     * Compartment Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * Compartment Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Host name of the monitored resource
-     **/
+    /** Host name of the monitored resource */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Host name of the monitored resource
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * which is not a Stack Monitoring service resource.
-     * Currently supports only OCI compute instance.
-     *
-     **/
+     * External resource is any OCI resource identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * Stack Monitoring service resource. Currently supports only OCI compute instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
-     * which is not a Stack Monitoring service resource.
-     * Currently supports only OCI compute instance.
+     * External resource is any OCI resource identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) which is not a
+     * Stack Monitoring service resource. Currently supports only OCI compute instance.
      *
      * @return the value
-     **/
+     */
     public String getExternalId() {
         return externalId;
     }
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     **/
+     * Management Agent Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * Management Agent Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Management Agent Identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
      * @return the value
-     **/
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
-    /**
-     * Time zone in the form of tz database canonical zone ID.
-     **/
+    /** Time zone in the form of tz database canonical zone ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
     /**
      * Time zone in the form of tz database canonical zone ID.
+     *
      * @return the value
-     **/
+     */
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
 
-    /**
-     * List of monitored resource properties
-     **/
+    /** List of monitored resource properties */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
     /**
      * List of monitored resource properties
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MonitoredResourceProperty> getProperties() {
         return properties;
     }
@@ -481,6 +478,7 @@ public final class CreateMonitoredResourceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

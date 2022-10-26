@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Possible ODMS Job Phase actions.
- *
- **/
+/** Possible ODMS Job Phase actions. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum OdmsPhaseActions {
+public enum OdmsPhaseActions implements com.oracle.bmc.http.internal.BmcEnum {
     Wait("WAIT"),
 
     /**

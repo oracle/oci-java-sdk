@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The token that allows the OCI Console to access the Autonomous Database Service Console.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The token that allows the OCI Console to access the Autonomous Database Service Console. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousDatabaseConsoleTokenDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AutonomousDatabaseConsoleTokenDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseConsoleTokenDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"token", "loginUrl"})
     public AutonomousDatabaseConsoleTokenDetails(String token, String loginUrl) {
@@ -32,32 +32,38 @@ public final class AutonomousDatabaseConsoleTokenDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
-         **/
+         * The token that allows the OCI Console to access the Autonomous Transaction Processing
+         * Service Console.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
         /**
-         * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The token that allows the OCI Console to access the Autonomous Transaction Processing
+         * Service Console.
+         *
          * @param token the value to set
          * @return this builder
-         **/
+         */
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
             return this;
         }
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
-         **/
+         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+         * Service Console.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
         private String loginUrl;
 
         /**
-         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+         * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+         * Service Console.
+         *
          * @param loginUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder loginUrl(String loginUrl) {
             this.loginUrl = loginUrl;
             this.__explicitlySet__.add("loginUrl");
@@ -88,9 +94,7 @@ public final class AutonomousDatabaseConsoleTokenDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,29 +104,35 @@ public final class AutonomousDatabaseConsoleTokenDetails
     }
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
-     **/
+     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service
+     * Console.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service
+     * Console.
+     *
      * @return the value
-     **/
+     */
     public String getToken() {
         return token;
     }
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
-     **/
+     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+     * Service Console.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
     private final String loginUrl;
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing
+     * Service Console.
+     *
      * @return the value
-     **/
+     */
     public String getLoginUrl() {
         return loginUrl;
     }
@@ -134,6 +144,7 @@ public final class AutonomousDatabaseConsoleTokenDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

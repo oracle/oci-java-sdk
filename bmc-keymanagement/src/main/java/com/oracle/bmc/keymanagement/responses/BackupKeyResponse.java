@@ -8,13 +8,12 @@ import com.oracle.bmc.keymanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,15 +21,14 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,7 +39,6 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the work request, used to track the progress of the
      * backup operation.
-     *
      */
     private String opcWorkRequestId;
 
@@ -55,13 +52,12 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcWorkRequestId;
     }
 
-    /**
-     * The returned Key instance.
-     */
+    /** The returned Key instance. */
     private com.oracle.bmc.keymanagement.model.Key key;
 
     /**
      * The returned Key instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.keymanagement.model.Key getKey() {
@@ -78,7 +74,7 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private BackupKeyResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -90,28 +86,30 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         this.key = key;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<BackupKeyResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -121,15 +119,14 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -142,7 +139,6 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
         /**
          * Unique Oracle-assigned identifier for the work request, used to track the progress of the
          * backup operation.
-         *
          */
         private String opcWorkRequestId;
 
@@ -158,13 +154,12 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Key instance.
-         */
+        /** The returned Key instance. */
         private com.oracle.bmc.keymanagement.model.Key key;
 
         /**
          * The returned Key instance.
+         *
          * @param key the value to set
          * @return this builder
          */
@@ -175,8 +170,10 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(BackupKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -190,8 +187,10 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public BackupKeyResponse build() {
             return new BackupKeyResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, opcWorkRequestId, key);
@@ -200,6 +199,7 @@ public class BackupKeyResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

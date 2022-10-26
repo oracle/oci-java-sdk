@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Descriptor of a connection to an asset source.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Descriptor of a connection to an asset source. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AssetSourceConnection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AssetSourceConnection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AssetSourceConnection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "connectionType",
@@ -45,81 +45,80 @@ public final class AssetSourceConnection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of connection for an asset source.
-         **/
+        /** The type of connection for an asset source. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
         private AssetSourceConnectionType connectionType;
 
         /**
          * The type of connection for an asset source.
+         *
          * @param connectionType the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionType(AssetSourceConnectionType connectionType) {
             this.connectionType = connectionType;
             this.__explicitlySet__.add("connectionType");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud bridge connector used for migration operations.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud bridge connector used for migration operations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud bridge connector used for migration operations.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cloud bridge connector used for migration operations.
+         *
          * @param connectorId the value to set
          * @return this builder
-         **/
+         */
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /**
-         * Type-specific identifier for an asset source.
-         **/
+        /** Type-specific identifier for an asset source. */
         @com.fasterxml.jackson.annotation.JsonProperty("assetSourceKey")
         private String assetSourceKey;
 
         /**
          * Type-specific identifier for an asset source.
+         *
          * @param assetSourceKey the value to set
          * @return this builder
-         **/
+         */
         public Builder assetSourceKey(String assetSourceKey) {
             this.assetSourceKey = assetSourceKey;
             this.__explicitlySet__.add("assetSourceKey");
             return this;
         }
-        /**
-         * The current state of the connection.
-         **/
+        /** The current state of the connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AssetSourceConnectionLifecycleState lifecycleState;
 
         /**
          * The current state of the connection.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(AssetSourceConnectionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The detailed sub-state of the connection.
-         **/
+        /** The detailed sub-state of the connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * The detailed sub-state of the connection.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -164,9 +163,7 @@ public final class AssetSourceConnection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +172,71 @@ public final class AssetSourceConnection
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of connection for an asset source.
-     **/
+    /** The type of connection for an asset source. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionType")
     private final AssetSourceConnectionType connectionType;
 
     /**
      * The type of connection for an asset source.
+     *
      * @return the value
-     **/
+     */
     public AssetSourceConnectionType getConnectionType() {
         return connectionType;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud bridge connector used for migration operations.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud bridge connector used for migration operations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cloud bridge connector used for migration operations.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cloud bridge connector used for migration operations.
+     *
      * @return the value
-     **/
+     */
     public String getConnectorId() {
         return connectorId;
     }
 
-    /**
-     * Type-specific identifier for an asset source.
-     **/
+    /** Type-specific identifier for an asset source. */
     @com.fasterxml.jackson.annotation.JsonProperty("assetSourceKey")
     private final String assetSourceKey;
 
     /**
      * Type-specific identifier for an asset source.
+     *
      * @return the value
-     **/
+     */
     public String getAssetSourceKey() {
         return assetSourceKey;
     }
 
-    /**
-     * The current state of the connection.
-     **/
+    /** The current state of the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AssetSourceConnectionLifecycleState lifecycleState;
 
     /**
      * The current state of the connection.
+     *
      * @return the value
-     **/
+     */
     public AssetSourceConnectionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The detailed sub-state of the connection.
-     **/
+    /** The detailed sub-state of the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * The detailed sub-state of the connection.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -252,6 +248,7 @@ public final class AssetSourceConnection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

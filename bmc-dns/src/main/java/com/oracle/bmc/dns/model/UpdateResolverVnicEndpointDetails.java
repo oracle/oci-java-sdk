@@ -6,45 +6,43 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for updating an existing resolver VNIC endpoint.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateResolverVnicEndpointDetails.Builder.class
-)
+        builder = UpdateResolverVnicEndpointDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "endpointType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "endpointType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
-         * resolver endpoint is a part of.
-         *
-         **/
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of
+         * the VCN that the resolver endpoint is a part of.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
-         * resolver endpoint is a part of.
+         * An array of network security group OCIDs for the resolver endpoint. These must be part of
+         * the VCN that the resolver endpoint is a part of.
          *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -72,9 +70,7 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,19 +86,18 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
     }
 
     /**
-     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
-     * resolver endpoint is a part of.
-     *
-     **/
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the
+     * VCN that the resolver endpoint is a part of.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the
-     * resolver endpoint is a part of.
+     * An array of network security group OCIDs for the resolver endpoint. These must be part of the
+     * VCN that the resolver endpoint is a part of.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
@@ -114,6 +109,7 @@ public final class UpdateResolverVnicEndpointDetails extends UpdateResolverEndpo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

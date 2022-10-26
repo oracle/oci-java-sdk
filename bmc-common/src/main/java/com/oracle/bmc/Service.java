@@ -6,15 +6,13 @@ package com.oracle.bmc;
 
 /**
  * Interface representing a service definition.
- * <p>
- * See {@link Services} to create new instances.
+ *
+ * <p>See {@link Services} to create new instances.
  */
 @InternalSdk
 public interface Service {
 
-    /**
-     * The unique service name, ex "BLOCKSTORAGE". Must not be null.
-     */
+    /** The unique service name, ex "BLOCKSTORAGE". Must not be null. */
     String getServiceName();
 
     /**
@@ -26,16 +24,16 @@ public interface Service {
     /**
      * The service endpoint template that will be used, ex
      * "{serviceEndpointPrefix}.{region}.service.oci.oraclecloud.com".
-     * <p>
-     * This overrides the template used in {@link DefaultEndpointConfiguration}, but
-     * can still use the same variables.
+     *
+     * <p>This overrides the template used in {@link DefaultEndpointConfiguration}, but can still
+     * use the same variables.
      */
     String getServiceEndpointTemplate();
 
     /**
      * The service endpoint name that will be used only for dotted regions if set by the service.
-     * {service} in "https://{service}.{region}".
-     * The service endpoint template (if specified) will be ignored in this case.
+     * {service} in "https://{service}.{region}". The service endpoint template (if specified) will
+     * be ignored in this case.
      */
     String getEndpointServiceName();
 }

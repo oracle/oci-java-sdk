@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.datascience;
 
-import com.oracle.bmc.datascience.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.datascience.requests.*;
 import com.oracle.bmc.datascience.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for DataScience service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for DataScience service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public class DataScienceAsyncClient implements DataScienceAsync {
-    /**
-     * Service instance for DataScience.
-     */
+public class DataScienceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements DataScienceAsync {
+    /** Service instance for DataScience. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DATASCIENCE")
@@ -36,268 +39,16 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DataScienceAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public DataScienceAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private DataScienceAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DataScienceAsyncClient> {
@@ -319,121 +70,26 @@ public class DataScienceAsyncClient implements DataScienceAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DataScienceAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new DataScienceAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new DataScienceAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -441,43 +97,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ActivateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ActivateModelRequest, ActivateModelResponse>
                     handler) {
-        LOG.trace("Called async activateModel");
-        final ActivateModelRequest interceptedRequest =
-                ActivateModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ActivateModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, ActivateModelResponse::builder)
+                .logger(LOG, "activateModel")
+                .serviceDetails(
                         "DataScience",
                         "ActivateModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ActivateModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, ActivateModelResponse>
-                transformer =
-                        ActivateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ActivateModelRequest, ActivateModelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ActivateModelRequest, ActivateModelResponse>,
-                        java.util.concurrent.Future<ActivateModelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ActivateModelRequest, ActivateModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ActivateModel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Model.class,
+                        ActivateModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", ActivateModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -486,46 +131,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async activateModelDeployment");
-        final ActivateModelDeploymentRequest interceptedRequest =
-                ActivateModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ActivateModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+
+        return clientCall(request, ActivateModelDeploymentResponse::builder)
+                .logger(LOG, "activateModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "ActivateModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ActivateModelDeployment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ActivateModelDeploymentResponse>
-                transformer =
-                        ActivateModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>,
-                        java.util.concurrent.Future<ActivateModelDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ActivateModelDeploymentRequest, ActivateModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ActivateModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateModelDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateModelDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -534,46 +164,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ActivateNotebookSessionRequest, ActivateNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async activateNotebookSession");
-        final ActivateNotebookSessionRequest interceptedRequest =
-                ActivateNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ActivateNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+
+        return clientCall(request, ActivateNotebookSessionResponse::builder)
+                .logger(LOG, "activateNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "ActivateNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ActivateNotebookSession");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ActivateNotebookSessionResponse>
-                transformer =
-                        ActivateNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ActivateNotebookSessionRequest, ActivateNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ActivateNotebookSessionRequest, ActivateNotebookSessionResponse>,
-                        java.util.concurrent.Future<ActivateNotebookSessionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ActivateNotebookSessionRequest, ActivateNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ActivateNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateNotebookSessionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -581,43 +196,28 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             CancelJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CancelJobRunRequest, CancelJobRunResponse>
                     handler) {
-        LOG.trace("Called async cancelJobRun");
-        final CancelJobRunRequest interceptedRequest =
-                CancelJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+
+        return clientCall(request, CancelJobRunResponse::builder)
+                .logger(LOG, "cancelJobRun")
+                .serviceDetails(
                         "DataScience",
                         "CancelJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CancelJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, CancelJobRunResponse>
-                transformer =
-                        CancelJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CancelJobRunRequest, CancelJobRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CancelJobRunRequest, CancelJobRunResponse>,
-                        java.util.concurrent.Future<CancelJobRunResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CancelJobRunRequest, CancelJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CancelJobRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelJobRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelJobRun")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -626,44 +226,26 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CancelWorkRequestRequest, CancelWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async cancelWorkRequest");
-        final CancelWorkRequestRequest interceptedRequest =
-                CancelWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, CancelWorkRequestResponse::builder)
+                .logger(LOG, "cancelWorkRequest")
+                .serviceDetails(
                         "DataScience",
                         "CancelWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/CancelWorkRequest");
-        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer =
-                        CancelWorkRequestConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CancelWorkRequestRequest, CancelWorkRequestResponse>,
-                        java.util.concurrent.Future<CancelWorkRequestResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CancelWorkRequestRequest, CancelWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/CancelWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(CancelWorkRequestRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -672,50 +254,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeJobCompartment");
-        final ChangeJobCompartmentRequest interceptedRequest =
-                ChangeJobCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeJobCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeJobCompartmentDetails(),
+                "changeJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeJobCompartmentResponse::builder)
+                .logger(LOG, "changeJobCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeJobCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/ChangeJobCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
-                transformer =
-                        ChangeJobCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeJobCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeJobCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/ChangeJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeJobCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeJobCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -724,51 +288,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeJobRunCompartmentRequest, ChangeJobRunCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeJobRunCompartment");
-        final ChangeJobRunCompartmentRequest interceptedRequest =
-                ChangeJobRunCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeJobRunCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeJobRunCompartmentDetails(),
+                "changeJobRunCompartmentDetails is required");
+
+        return clientCall(request, ChangeJobRunCompartmentResponse::builder)
+                .logger(LOG, "changeJobRunCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeJobRunCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/ChangeJobRunCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeJobRunCompartmentResponse>
-                transformer =
-                        ChangeJobRunCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeJobRunCompartmentRequest, ChangeJobRunCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeJobRunCompartmentRequest, ChangeJobRunCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeJobRunCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeJobRunCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeJobRunCompartmentRequest, ChangeJobRunCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/ChangeJobRunCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeJobRunCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeJobRunCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -777,51 +322,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeModelCompartment");
-        final ChangeModelCompartmentRequest interceptedRequest =
-                ChangeModelCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeModelCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelCompartmentDetails(),
+                "changeModelCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelCompartmentResponse::builder)
+                .logger(LOG, "changeModelCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeModelCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ChangeModelCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeModelCompartmentResponse>
-                transformer =
-                        ChangeModelCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeModelCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeModelCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ChangeModelCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeModelCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -832,55 +359,34 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                                     ChangeModelDeploymentCompartmentRequest,
                                     ChangeModelDeploymentCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeModelDeploymentCompartment");
-        final ChangeModelDeploymentCompartmentRequest interceptedRequest =
-                ChangeModelDeploymentCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeModelDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelDeploymentCompartmentDetails(),
+                "changeModelDeploymentCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelDeploymentCompartmentResponse::builder)
+                .logger(LOG, "changeModelDeploymentCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeModelDeploymentCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ChangeModelDeploymentCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeModelDeploymentCompartmentResponse>
-                transformer =
-                        ChangeModelDeploymentCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeModelDeploymentCompartmentRequest,
-                        ChangeModelDeploymentCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeModelDeploymentCompartmentRequest,
-                                ChangeModelDeploymentCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeModelDeploymentCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeModelDeploymentCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeModelDeploymentCompartmentRequest,
-                    ChangeModelDeploymentCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/ChangeModelDeploymentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelDeploymentCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeModelDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -891,55 +397,34 @@ public class DataScienceAsyncClient implements DataScienceAsync {
                                     ChangeNotebookSessionCompartmentRequest,
                                     ChangeNotebookSessionCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeNotebookSessionCompartment");
-        final ChangeNotebookSessionCompartmentRequest interceptedRequest =
-                ChangeNotebookSessionCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeNotebookSessionCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNotebookSessionCompartmentDetails(),
+                "changeNotebookSessionCompartmentDetails is required");
+
+        return clientCall(request, ChangeNotebookSessionCompartmentResponse::builder)
+                .logger(LOG, "changeNotebookSessionCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeNotebookSessionCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ChangeNotebookSessionCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeNotebookSessionCompartmentResponse>
-                transformer =
-                        ChangeNotebookSessionCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeNotebookSessionCompartmentRequest,
-                        ChangeNotebookSessionCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeNotebookSessionCompartmentRequest,
-                                ChangeNotebookSessionCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeNotebookSessionCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeNotebookSessionCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeNotebookSessionCompartmentRequest,
-                    ChangeNotebookSessionCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/ChangeNotebookSessionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNotebookSessionCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNotebookSessionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -948,52 +433,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeProjectCompartment");
-        final ChangeProjectCompartmentRequest interceptedRequest =
-                ChangeProjectCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeProjectCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProjectCompartmentDetails(),
+                "changeProjectCompartmentDetails is required");
+
+        return clientCall(request, ChangeProjectCompartmentResponse::builder)
+                .logger(LOG, "changeProjectCompartment")
+                .serviceDetails(
                         "DataScience",
                         "ChangeProjectCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/ChangeProjectCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeProjectCompartmentResponse>
-                transformer =
-                        ChangeProjectCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeProjectCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeProjectCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/ChangeProjectCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProjectCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1001,47 +467,28 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             CreateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>
                     handler) {
-        LOG.trace("Called async createJob");
-        final CreateJobRequest interceptedRequest = CreateJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateJobDetails(), "createJobDetails is required");
+
+        return clientCall(request, CreateJobResponse::builder)
+                .logger(LOG, "createJob")
+                .serviceDetails(
                         "DataScience",
                         "CreateJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse>
-                transformer =
-                        CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
-                        java.util.concurrent.Future<CreateJobResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateJobDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateJobRequest, CreateJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Job.class, CreateJobResponse.Builder::job)
+                .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1050,66 +497,34 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateJobArtifactRequest, CreateJobArtifactResponse>
                     handler) {
-        LOG.trace("Called async createJobArtifact");
-        if (request.getRetryConfiguration() != null
-                || authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            request =
-                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
-                            request, CreateJobArtifactRequest.builder());
-        }
-        final CreateJobArtifactRequest interceptedRequest =
-                CreateJobArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateJobArtifactConverter.fromRequest(client, interceptedRequest);
 
-        ib.property(
-                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
-                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(request.getJobArtifact(), "jobArtifact is required");
+
+        return clientCall(request, CreateJobArtifactResponse::builder)
+                .logger(LOG, "createJobArtifact")
+                .serviceDetails(
                         "DataScience",
                         "CreateJobArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJobArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobArtifactResponse>
-                transformer =
-                        CreateJobArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateJobArtifactRequest, CreateJobArtifactResponse>
-                handlerToUse =
-                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateJobArtifactRequest, CreateJobArtifactResponse>,
-                        java.util.concurrent.Future<CreateJobArtifactResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getJobArtifact(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateJobArtifactRequest, CreateJobArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {
-                    LOG.debug("Resetting stream");
-                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                            interceptedRequest.getJobArtifact(), true);
-                }
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/CreateJobArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString("etag", CreateJobArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1117,49 +532,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             CreateJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateJobRunRequest, CreateJobRunResponse>
                     handler) {
-        LOG.trace("Called async createJobRun");
-        final CreateJobRunRequest interceptedRequest =
-                CreateJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateJobRunDetails(), "createJobRunDetails is required");
+
+        return clientCall(request, CreateJobRunResponse::builder)
+                .logger(LOG, "createJobRun")
+                .serviceDetails(
                         "DataScience",
                         "CreateJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CreateJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobRunResponse>
-                transformer =
-                        CreateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateJobRunRequest, CreateJobRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateJobRunRequest, CreateJobRunResponse>,
-                        java.util.concurrent.Future<CreateJobRunResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateJobRunDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateJobRunRequest, CreateJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/CreateJobRun")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.JobRun.class,
+                        CreateJobRunResponse.Builder::jobRun)
+                .handleResponseHeaderString("etag", CreateJobRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1167,49 +562,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             CreateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
                     handler) {
-        LOG.trace("Called async createModel");
-        final CreateModelRequest interceptedRequest =
-                CreateModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateModelDetails(), "createModelDetails is required");
+
+        return clientCall(request, CreateModelResponse::builder)
+                .logger(LOG, "createModel")
+                .serviceDetails(
                         "DataScience",
                         "CreateModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelResponse>
-                transformer =
-                        CreateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateModelRequest, CreateModelResponse>,
-                        java.util.concurrent.Future<CreateModelResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateModelDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateModelRequest, CreateModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Model.class,
+                        CreateModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", CreateModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1218,67 +593,35 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateModelArtifactRequest, CreateModelArtifactResponse>
                     handler) {
-        LOG.trace("Called async createModelArtifact");
-        if (request.getRetryConfiguration() != null
-                || authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            request =
-                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
-                            request, CreateModelArtifactRequest.builder());
-        }
-        final CreateModelArtifactRequest interceptedRequest =
-                CreateModelArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateModelArtifactConverter.fromRequest(client, interceptedRequest);
 
-        ib.property(
-                com.oracle.bmc.http.internal.AuthnClientFilter.SIGNING_STRATEGY_PROPERTY_NAME,
-                com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getModelArtifact(), "modelArtifact is required");
+
+        return clientCall(request, CreateModelArtifactResponse::builder)
+                .logger(LOG, "createModelArtifact")
+                .serviceDetails(
                         "DataScience",
                         "CreateModelArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelArtifactResponse>
-                transformer =
-                        CreateModelArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateModelArtifactRequest, CreateModelArtifactResponse>
-                handlerToUse =
-                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateModelArtifactRequest, CreateModelArtifactResponse>,
-                        java.util.concurrent.Future<CreateModelArtifactResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getModelArtifact(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateModelArtifactRequest, CreateModelArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {
-                    LOG.debug("Resetting stream");
-                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
-                            interceptedRequest.getModelArtifact(), true);
-                }
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelArtifactRequest::builder)
+                .obmcsSigningStrategy(com.oracle.bmc.http.signing.SigningStrategy.EXCLUDE_BODY)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("content-length", request.getContentLength())
+                .appendHeader("content-disposition", request.getContentDisposition())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString("etag", CreateModelArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1287,51 +630,36 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateModelDeploymentRequest, CreateModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async createModelDeployment");
-        final CreateModelDeploymentRequest interceptedRequest =
-                CreateModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateModelDeploymentDetails(),
+                "createModelDeploymentDetails is required");
+
+        return clientCall(request, CreateModelDeploymentResponse::builder)
+                .logger(LOG, "createModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "CreateModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/CreateModelDeployment");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelDeploymentResponse>
-                transformer =
-                        CreateModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateModelDeploymentRequest, CreateModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateModelDeploymentRequest, CreateModelDeploymentResponse>,
-                        java.util.concurrent.Future<CreateModelDeploymentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateModelDeploymentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateModelDeploymentRequest, CreateModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/CreateModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelDeployment.class,
+                        CreateModelDeploymentResponse.Builder::modelDeployment)
+                .handleResponseHeaderString("etag", CreateModelDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateModelDeploymentResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelDeploymentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateModelDeploymentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1340,51 +668,35 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateModelProvenanceRequest, CreateModelProvenanceResponse>
                     handler) {
-        LOG.trace("Called async createModelProvenance");
-        final CreateModelProvenanceRequest interceptedRequest =
-                CreateModelProvenanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateModelProvenanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateModelProvenanceDetails(),
+                "createModelProvenanceDetails is required");
+
+        return clientCall(request, CreateModelProvenanceResponse::builder)
+                .logger(LOG, "createModelProvenance")
+                .serviceDetails(
                         "DataScience",
                         "CreateModelProvenance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelProvenance");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateModelProvenanceResponse>
-                transformer =
-                        CreateModelProvenanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateModelProvenanceRequest, CreateModelProvenanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateModelProvenanceRequest, CreateModelProvenanceResponse>,
-                        java.util.concurrent.Future<CreateModelProvenanceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateModelProvenanceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateModelProvenanceRequest, CreateModelProvenanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/CreateModelProvenance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelProvenanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("provenance")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelProvenance.class,
+                        CreateModelProvenanceResponse.Builder::modelProvenance)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelProvenanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateModelProvenanceResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1393,51 +705,36 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateNotebookSessionRequest, CreateNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async createNotebookSession");
-        final CreateNotebookSessionRequest interceptedRequest =
-                CreateNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateNotebookSessionDetails(),
+                "createNotebookSessionDetails is required");
+
+        return clientCall(request, CreateNotebookSessionResponse::builder)
+                .logger(LOG, "createNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "CreateNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/CreateNotebookSession");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateNotebookSessionResponse>
-                transformer =
-                        CreateNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateNotebookSessionRequest, CreateNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateNotebookSessionRequest, CreateNotebookSessionResponse>,
-                        java.util.concurrent.Future<CreateNotebookSessionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateNotebookSessionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateNotebookSessionRequest, CreateNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/CreateNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.NotebookSession.class,
+                        CreateNotebookSessionResponse.Builder::notebookSession)
+                .handleResponseHeaderString("etag", CreateNotebookSessionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "location", CreateNotebookSessionResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNotebookSessionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateNotebookSessionResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1445,49 +742,30 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             CreateProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
                     handler) {
-        LOG.trace("Called async createProject");
-        final CreateProjectRequest interceptedRequest =
-                CreateProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateProjectDetails(), "createProjectDetails is required");
+
+        return clientCall(request, CreateProjectResponse::builder)
+                .logger(LOG, "createProject")
+                .serviceDetails(
                         "DataScience",
                         "CreateProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/CreateProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateProjectResponse>
-                transformer =
-                        CreateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateProjectRequest, CreateProjectResponse>,
-                        java.util.concurrent.Future<CreateProjectResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateProjectDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateProjectRequest, CreateProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/CreateProject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProjectRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Project.class,
+                        CreateProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1496,44 +774,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeactivateModelRequest, DeactivateModelResponse>
                     handler) {
-        LOG.trace("Called async deactivateModel");
-        final DeactivateModelRequest interceptedRequest =
-                DeactivateModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeactivateModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, DeactivateModelResponse::builder)
+                .logger(LOG, "deactivateModel")
+                .serviceDetails(
                         "DataScience",
                         "DeactivateModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeactivateModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeactivateModelResponse>
-                transformer =
-                        DeactivateModelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeactivateModelRequest, DeactivateModelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeactivateModelRequest, DeactivateModelResponse>,
-                        java.util.concurrent.Future<DeactivateModelResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeactivateModelRequest, DeactivateModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeactivateModel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Model.class,
+                        DeactivateModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", DeactivateModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1542,47 +808,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async deactivateModelDeployment");
-        final DeactivateModelDeploymentRequest interceptedRequest =
-                DeactivateModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeactivateModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+
+        return clientCall(request, DeactivateModelDeploymentResponse::builder)
+                .logger(LOG, "deactivateModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "DeactivateModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeactivateModelDeployment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeactivateModelDeploymentResponse>
-                transformer =
-                        DeactivateModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeactivateModelDeploymentRequest,
-                                DeactivateModelDeploymentResponse>,
-                        java.util.concurrent.Future<DeactivateModelDeploymentResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeactivateModelDeploymentRequest, DeactivateModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeactivateModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateModelDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateModelDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1591,47 +841,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeactivateNotebookSessionRequest, DeactivateNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async deactivateNotebookSession");
-        final DeactivateNotebookSessionRequest interceptedRequest =
-                DeactivateNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeactivateNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+
+        return clientCall(request, DeactivateNotebookSessionResponse::builder)
+                .logger(LOG, "deactivateNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "DeactivateNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeactivateNotebookSession");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeactivateNotebookSessionResponse>
-                transformer =
-                        DeactivateNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeactivateNotebookSessionRequest, DeactivateNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeactivateNotebookSessionRequest,
-                                DeactivateNotebookSessionResponse>,
-                        java.util.concurrent.Future<DeactivateNotebookSessionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeactivateNotebookSessionRequest, DeactivateNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeactivateNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateNotebookSessionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1639,41 +873,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             DeleteJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
                     handler) {
-        LOG.trace("Called async deleteJob");
-        final DeleteJobRequest interceptedRequest = DeleteJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, DeleteJobResponse::builder)
+                .logger(LOG, "deleteJob")
+                .serviceDetails(
                         "DataScience",
                         "DeleteJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/DeleteJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse>
-                transformer =
-                        DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>,
-                        java.util.concurrent.Future<DeleteJobResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteJobRequest, DeleteJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/DeleteJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJobRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendQueryParam("deleteRelatedJobRuns", request.getDeleteRelatedJobRuns())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1681,43 +903,26 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             DeleteJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRunRequest, DeleteJobRunResponse>
                     handler) {
-        LOG.trace("Called async deleteJobRun");
-        final DeleteJobRunRequest interceptedRequest =
-                DeleteJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+
+        return clientCall(request, DeleteJobRunResponse::builder)
+                .logger(LOG, "deleteJobRun")
+                .serviceDetails(
                         "DataScience",
                         "DeleteJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/DeleteJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobRunResponse>
-                transformer =
-                        DeleteJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteJobRunRequest, DeleteJobRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteJobRunRequest, DeleteJobRunResponse>,
-                        java.util.concurrent.Future<DeleteJobRunResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteJobRunRequest, DeleteJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/DeleteJobRun")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJobRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1725,43 +930,26 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             DeleteModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
                     handler) {
-        LOG.trace("Called async deleteModel");
-        final DeleteModelRequest interceptedRequest =
-                DeleteModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, DeleteModelResponse::builder)
+                .logger(LOG, "deleteModel")
+                .serviceDetails(
                         "DataScience",
                         "DeleteModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteModelResponse>
-                transformer =
-                        DeleteModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteModelRequest, DeleteModelResponse>,
-                        java.util.concurrent.Future<DeleteModelResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteModelRequest, DeleteModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/DeleteModel")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1770,45 +958,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async deleteModelDeployment");
-        final DeleteModelDeploymentRequest interceptedRequest =
-                DeleteModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+
+        return clientCall(request, DeleteModelDeploymentResponse::builder)
+                .logger(LOG, "deleteModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "DeleteModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeleteModelDeployment");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteModelDeploymentResponse>
-                transformer =
-                        DeleteModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>,
-                        java.util.concurrent.Future<DeleteModelDeploymentResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteModelDeploymentRequest, DeleteModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/DeleteModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteModelDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteModelDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1817,45 +989,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async deleteNotebookSession");
-        final DeleteNotebookSessionRequest interceptedRequest =
-                DeleteNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+
+        return clientCall(request, DeleteNotebookSessionResponse::builder)
+                .logger(LOG, "deleteNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "DeleteNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeleteNotebookSession");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNotebookSessionResponse>
-                transformer =
-                        DeleteNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>,
-                        java.util.concurrent.Future<DeleteNotebookSessionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteNotebookSessionRequest, DeleteNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/DeleteNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteNotebookSessionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1863,43 +1019,28 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             DeleteProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
                     handler) {
-        LOG.trace("Called async deleteProject");
-        final DeleteProjectRequest interceptedRequest =
-                DeleteProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, DeleteProjectResponse::builder)
+                .logger(LOG, "deleteProject")
+                .serviceDetails(
                         "DataScience",
                         "DeleteProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/DeleteProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteProjectResponse>
-                transformer =
-                        DeleteProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteProjectRequest, DeleteProjectResponse>,
-                        java.util.concurrent.Future<DeleteProjectResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteProjectRequest, DeleteProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/DeleteProject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProjectRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1908,90 +1049,61 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ExportModelArtifactRequest, ExportModelArtifactResponse>
                     handler) {
-        LOG.trace("Called async exportModelArtifact");
-        final ExportModelArtifactRequest interceptedRequest =
-                ExportModelArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ExportModelArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getExportModelArtifactDetails(), "exportModelArtifactDetails is required");
+
+        return clientCall(request, ExportModelArtifactResponse::builder)
+                .logger(LOG, "exportModelArtifact")
+                .serviceDetails(
                         "DataScience",
                         "ExportModelArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ExportModelArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, ExportModelArtifactResponse>
-                transformer =
-                        ExportModelArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ExportModelArtifactRequest, ExportModelArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ExportModelArtifactRequest, ExportModelArtifactResponse>,
-                        java.util.concurrent.Future<ExportModelArtifactResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getExportModelArtifactDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ExportModelArtifactRequest, ExportModelArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ExportModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExportModelArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("exportArtifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ExportModelArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExportModelArtifactResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetJobResponse> getJob(
             GetJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
-        LOG.trace("Called async getJob");
-        final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetJobResponse::builder)
+                .logger(LOG, "getJob")
+                .serviceDetails(
                         "DataScience",
                         "GetJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
-                GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse>,
-                        java.util.concurrent.Future<GetJobResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobRequest, GetJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.datascience.model.Job.class, GetJobResponse.Builder::job)
+                .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2000,55 +1112,41 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetJobArtifactContentRequest, GetJobArtifactContentResponse>
                     handler) {
-        LOG.trace("Called async getJobArtifactContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getJobArtifactContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetJobArtifactContentRequest interceptedRequest =
-                GetJobArtifactContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobArtifactContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetJobArtifactContentResponse::builder)
+                .logger(LOG, "getJobArtifactContent")
+                .serviceDetails(
                         "DataScience",
                         "GetJobArtifactContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJobArtifactContent");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobArtifactContentResponse>
-                transformer =
-                        GetJobArtifactContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetJobArtifactContentRequest, GetJobArtifactContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetJobArtifactContentRequest, GetJobArtifactContentResponse>,
-                        java.util.concurrent.Future<GetJobArtifactContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobArtifactContentRequest, GetJobArtifactContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/GetJobArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetJobArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", GetJobArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJobArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", GetJobArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", GetJobArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", GetJobArtifactContentResponse.Builder::lastModified)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetJobArtifactContentResponse.Builder::contentDisposition)
+                .callAsync(handler);
     }
 
     @Override
@@ -2056,41 +1154,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             GetJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse>
                     handler) {
-        LOG.trace("Called async getJobRun");
-        final GetJobRunRequest interceptedRequest = GetJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+
+        return clientCall(request, GetJobRunResponse::builder)
+                .logger(LOG, "getJobRun")
+                .serviceDetails(
                         "DataScience",
                         "GetJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/GetJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobRunResponse>
-                transformer =
-                        GetJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse>,
-                        java.util.concurrent.Future<GetJobRunResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobRunRequest, GetJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/GetJobRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.JobRun.class,
+                        GetJobRunResponse.Builder::jobRun)
+                .handleResponseHeaderString("etag", GetJobRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2098,40 +1184,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             GetModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>
                     handler) {
-        LOG.trace("Called async getModel");
-        final GetModelRequest interceptedRequest = GetModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, GetModelResponse::builder)
+                .logger(LOG, "getModel")
+                .serviceDetails(
                         "DataScience",
                         "GetModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetModelResponse> transformer =
-                GetModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>,
-                        java.util.concurrent.Future<GetModelResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetModelRequest, GetModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Model.class,
+                        GetModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2140,56 +1215,41 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetModelArtifactContentRequest, GetModelArtifactContentResponse>
                     handler) {
-        LOG.trace("Called async getModelArtifactContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getModelArtifactContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetModelArtifactContentRequest interceptedRequest =
-                GetModelArtifactContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetModelArtifactContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, GetModelArtifactContentResponse::builder)
+                .logger(LOG, "getModelArtifactContent")
+                .serviceDetails(
                         "DataScience",
                         "GetModelArtifactContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelArtifactContent");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetModelArtifactContentResponse>
-                transformer =
-                        GetModelArtifactContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetModelArtifactContentRequest, GetModelArtifactContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetModelArtifactContentRequest, GetModelArtifactContentResponse>,
-                        java.util.concurrent.Future<GetModelArtifactContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetModelArtifactContentRequest, GetModelArtifactContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelArtifactContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelArtifactContentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("range", request.getRange())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetModelArtifactContentResponse.Builder::inputStream)
+                .handleResponseHeaderString("etag", GetModelArtifactContentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelArtifactContentResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", GetModelArtifactContentResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        GetModelArtifactContentResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", GetModelArtifactContentResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", GetModelArtifactContentResponse.Builder::lastModified)
+                .callAsync(handler);
     }
 
     @Override
@@ -2198,44 +1258,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetModelDeploymentRequest, GetModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async getModelDeployment");
-        final GetModelDeploymentRequest interceptedRequest =
-                GetModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+
+        return clientCall(request, GetModelDeploymentResponse::builder)
+                .logger(LOG, "getModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "GetModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/GetModelDeployment");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetModelDeploymentResponse>
-                transformer =
-                        GetModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetModelDeploymentRequest, GetModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetModelDeploymentRequest, GetModelDeploymentResponse>,
-                        java.util.concurrent.Future<GetModelDeploymentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetModelDeploymentRequest, GetModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/GetModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelDeployment.class,
+                        GetModelDeploymentResponse.Builder::modelDeployment)
+                .handleResponseHeaderString("etag", GetModelDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2244,44 +1289,30 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetModelProvenanceRequest, GetModelProvenanceResponse>
                     handler) {
-        LOG.trace("Called async getModelProvenance");
-        final GetModelProvenanceRequest interceptedRequest =
-                GetModelProvenanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetModelProvenanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, GetModelProvenanceResponse::builder)
+                .logger(LOG, "getModelProvenance")
+                .serviceDetails(
                         "DataScience",
                         "GetModelProvenance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelProvenance");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetModelProvenanceResponse>
-                transformer =
-                        GetModelProvenanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetModelProvenanceRequest, GetModelProvenanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetModelProvenanceRequest, GetModelProvenanceResponse>,
-                        java.util.concurrent.Future<GetModelProvenanceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetModelProvenanceRequest, GetModelProvenanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/GetModelProvenance")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelProvenanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("provenance")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelProvenance.class,
+                        GetModelProvenanceResponse.Builder::modelProvenance)
+                .handleResponseHeaderString("etag", GetModelProvenanceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelProvenanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2290,44 +1321,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetNotebookSessionRequest, GetNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async getNotebookSession");
-        final GetNotebookSessionRequest interceptedRequest =
-                GetNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+
+        return clientCall(request, GetNotebookSessionResponse::builder)
+                .logger(LOG, "getNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "GetNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/GetNotebookSession");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetNotebookSessionResponse>
-                transformer =
-                        GetNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetNotebookSessionRequest, GetNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetNotebookSessionRequest, GetNotebookSessionResponse>,
-                        java.util.concurrent.Future<GetNotebookSessionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetNotebookSessionRequest, GetNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/GetNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.NotebookSession.class,
+                        GetNotebookSessionResponse.Builder::notebookSession)
+                .handleResponseHeaderString("etag", GetNotebookSessionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2335,42 +1351,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             GetProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse>
                     handler) {
-        LOG.trace("Called async getProject");
-        final GetProjectRequest interceptedRequest = GetProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, GetProjectResponse::builder)
+                .logger(LOG, "getProject")
+                .serviceDetails(
                         "DataScience",
                         "GetProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/GetProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetProjectResponse>
-                transformer =
-                        GetProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetProjectRequest, GetProjectResponse>,
-                        java.util.concurrent.Future<GetProjectResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetProjectRequest, GetProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/GetProject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProjectRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Project.class,
+                        GetProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2379,43 +1382,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetWorkRequestRequest, GetWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "DataScience",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/GetWorkRequest");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkRequestRequest, GetWorkRequestResponse>,
-                        java.util.concurrent.Future<GetWorkRequestResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datascience.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
     }
 
     @Override
@@ -2424,44 +1415,36 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             HeadJobArtifactRequest, HeadJobArtifactResponse>
                     handler) {
-        LOG.trace("Called async headJobArtifact");
-        final HeadJobArtifactRequest interceptedRequest =
-                HeadJobArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                HeadJobArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, HeadJobArtifactResponse::builder)
+                .logger(LOG, "headJobArtifact")
+                .serviceDetails(
                         "DataScience",
                         "HeadJobArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/HeadJobArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, HeadJobArtifactResponse>
-                transformer =
-                        HeadJobArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<HeadJobArtifactRequest, HeadJobArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                HeadJobArtifactRequest, HeadJobArtifactResponse>,
-                        java.util.concurrent.Future<HeadJobArtifactResponse>>
-                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    HeadJobArtifactRequest, HeadJobArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/HeadJobArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadJobArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString("etag", HeadJobArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadJobArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", HeadJobArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-md5", HeadJobArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderString(
+                        "content-disposition", HeadJobArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadJobArtifactResponse.Builder::lastModified)
+                .callAsync(handler);
     }
 
     @Override
@@ -2470,44 +1453,37 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             HeadModelArtifactRequest, HeadModelArtifactResponse>
                     handler) {
-        LOG.trace("Called async headModelArtifact");
-        final HeadModelArtifactRequest interceptedRequest =
-                HeadModelArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                HeadModelArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, HeadModelArtifactResponse::builder)
+                .logger(LOG, "headModelArtifact")
+                .serviceDetails(
                         "DataScience",
                         "HeadModelArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, HeadModelArtifactResponse>
-                transformer =
-                        HeadModelArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<HeadModelArtifactRequest, HeadModelArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                HeadModelArtifactRequest, HeadModelArtifactResponse>,
-                        java.util.concurrent.Future<HeadModelArtifactResponse>>
-                futureSupplier = client.headFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    HeadModelArtifactRequest, HeadModelArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/HeadModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.HEAD)
+                .requestBuilder(HeadModelArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("artifact")
+                .appendPathParam("content")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString("etag", HeadModelArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", HeadModelArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderLong(
+                        "content-length", HeadModelArtifactResponse.Builder::contentLength)
+                .handleResponseHeaderString(
+                        "content-disposition",
+                        HeadModelArtifactResponse.Builder::contentDisposition)
+                .handleResponseHeaderString(
+                        "content-md5", HeadModelArtifactResponse.Builder::contentMd5)
+                .handleResponseHeaderDate(
+                        "last-modified", HeadModelArtifactResponse.Builder::lastModified)
+                .callAsync(handler);
     }
 
     @Override
@@ -2516,50 +1492,34 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ImportModelArtifactRequest, ImportModelArtifactResponse>
                     handler) {
-        LOG.trace("Called async importModelArtifact");
-        final ImportModelArtifactRequest interceptedRequest =
-                ImportModelArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImportModelArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getImportModelArtifactDetails(), "importModelArtifactDetails is required");
+
+        return clientCall(request, ImportModelArtifactResponse::builder)
+                .logger(LOG, "importModelArtifact")
+                .serviceDetails(
                         "DataScience",
                         "ImportModelArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ImportModelArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, ImportModelArtifactResponse>
-                transformer =
-                        ImportModelArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ImportModelArtifactRequest, ImportModelArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ImportModelArtifactRequest, ImportModelArtifactResponse>,
-                        java.util.concurrent.Future<ImportModelArtifactResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getImportModelArtifactDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ImportModelArtifactRequest, ImportModelArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/ImportModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImportModelArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("importArtifact")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ImportModelArtifactResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ImportModelArtifactResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2568,46 +1528,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
                     handler) {
-        LOG.trace("Called async listFastLaunchJobConfigs");
-        final ListFastLaunchJobConfigsRequest interceptedRequest =
-                ListFastLaunchJobConfigsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFastLaunchJobConfigsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListFastLaunchJobConfigsResponse::builder)
+                .logger(LOG, "listFastLaunchJobConfigs")
+                .serviceDetails(
                         "DataScience",
                         "ListFastLaunchJobConfigs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/FastLaunchJobConfigSummary/ListFastLaunchJobConfigs");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListFastLaunchJobConfigsResponse>
-                transformer =
-                        ListFastLaunchJobConfigsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>,
-                        java.util.concurrent.Future<ListFastLaunchJobConfigsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListFastLaunchJobConfigsRequest, ListFastLaunchJobConfigsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/FastLaunchJobConfigSummary/ListFastLaunchJobConfigs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFastLaunchJobConfigsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("fastLaunchJobConfigs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary.class,
+                        ListFastLaunchJobConfigsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFastLaunchJobConfigsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListFastLaunchJobConfigsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFastLaunchJobConfigsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2615,43 +1562,40 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ListJobRunsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
                     handler) {
-        LOG.trace("Called async listJobRuns");
-        final ListJobRunsRequest interceptedRequest =
-                ListJobRunsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobRunsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobRunsResponse::builder)
+                .logger(LOG, "listJobRuns")
+                .serviceDetails(
                         "DataScience",
                         "ListJobRuns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRunSummary/ListJobRuns");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
-                transformer =
-                        ListJobRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListJobRunsRequest, ListJobRunsResponse>,
-                        java.util.concurrent.Future<ListJobRunsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobRunsRequest, ListJobRunsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRunSummary/ListJobRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobRunsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("jobId", request.getJobId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.JobRunSummary.class,
+                        ListJobRunsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobRunsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListJobRunsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobRunsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2659,43 +1603,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ListJobShapesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobShapesRequest, ListJobShapesResponse>
                     handler) {
-        LOG.trace("Called async listJobShapes");
-        final ListJobShapesRequest interceptedRequest =
-                ListJobShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobShapesResponse::builder)
+                .logger(LOG, "listJobShapes")
+                .serviceDetails(
                         "DataScience",
                         "ListJobShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobShapeSummary/ListJobShapes");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobShapesResponse>
-                transformer =
-                        ListJobShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobShapesRequest, ListJobShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListJobShapesRequest, ListJobShapesResponse>,
-                        java.util.concurrent.Future<ListJobShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobShapesRequest, ListJobShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobShapeSummary/ListJobShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobShapesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.JobShapeSummary.class,
+                        ListJobShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListJobShapesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2703,40 +1637,38 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ListJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
                     handler) {
-        LOG.trace("Called async listJobs");
-        final ListJobsRequest interceptedRequest = ListJobsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobsResponse::builder)
+                .logger(LOG, "listJobs")
+                .serviceDetails(
                         "DataScience",
                         "ListJobs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobSummary/ListJobs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
-                ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>,
-                        java.util.concurrent.Future<ListJobsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobsRequest, ListJobsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobSummary/ListJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.JobSummary.class,
+                        ListJobsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString("opc-prev-page", ListJobsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2745,47 +1677,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
                     handler) {
-        LOG.trace("Called async listModelDeploymentShapes");
-        final ListModelDeploymentShapesRequest interceptedRequest =
-                ListModelDeploymentShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListModelDeploymentShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelDeploymentShapesResponse::builder)
+                .logger(LOG, "listModelDeploymentShapes")
+                .serviceDetails(
                         "DataScience",
                         "ListModelDeploymentShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentShapeSummary/ListModelDeploymentShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListModelDeploymentShapesResponse>
-                transformer =
-                        ListModelDeploymentShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListModelDeploymentShapesRequest,
-                                ListModelDeploymentShapesResponse>,
-                        java.util.concurrent.Future<ListModelDeploymentShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListModelDeploymentShapesRequest, ListModelDeploymentShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentShapeSummary/ListModelDeploymentShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelDeploymentShapesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeploymentShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary.class,
+                        ListModelDeploymentShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelDeploymentShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelDeploymentShapesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelDeploymentShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2794,45 +1712,40 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListModelDeploymentsRequest, ListModelDeploymentsResponse>
                     handler) {
-        LOG.trace("Called async listModelDeployments");
-        final ListModelDeploymentsRequest interceptedRequest =
-                ListModelDeploymentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListModelDeploymentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelDeploymentsResponse::builder)
+                .logger(LOG, "listModelDeployments")
+                .serviceDetails(
                         "DataScience",
                         "ListModelDeployments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentSummary/ListModelDeployments");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListModelDeploymentsResponse>
-                transformer =
-                        ListModelDeploymentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListModelDeploymentsRequest, ListModelDeploymentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListModelDeploymentsRequest, ListModelDeploymentsResponse>,
-                        java.util.concurrent.Future<ListModelDeploymentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListModelDeploymentsRequest, ListModelDeploymentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeploymentSummary/ListModelDeployments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelDeploymentsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelDeploymentSummary.class,
+                        ListModelDeploymentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelDeploymentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelDeploymentsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelDeploymentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2840,42 +1753,40 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ListModelsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
                     handler) {
-        LOG.trace("Called async listModels");
-        final ListModelsRequest interceptedRequest = ListModelsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListModelsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelsResponse::builder)
+                .logger(LOG, "listModels")
+                .serviceDetails(
                         "DataScience",
                         "ListModels",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelSummary/ListModels");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListModelsResponse>
-                transformer =
-                        ListModelsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListModelsRequest, ListModelsResponse>,
-                        java.util.concurrent.Future<ListModelsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListModelsRequest, ListModelsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelSummary/ListModels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ModelSummary.class,
+                        ListModelsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListModelsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2884,47 +1795,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>
                     handler) {
-        LOG.trace("Called async listNotebookSessionShapes");
-        final ListNotebookSessionShapesRequest interceptedRequest =
-                ListNotebookSessionShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNotebookSessionShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNotebookSessionShapesResponse::builder)
+                .logger(LOG, "listNotebookSessionShapes")
+                .serviceDetails(
                         "DataScience",
                         "ListNotebookSessionShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionShapeSummary/ListNotebookSessionShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNotebookSessionShapesResponse>
-                transformer =
-                        ListNotebookSessionShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNotebookSessionShapesRequest,
-                                ListNotebookSessionShapesResponse>,
-                        java.util.concurrent.Future<ListNotebookSessionShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNotebookSessionShapesRequest, ListNotebookSessionShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionShapeSummary/ListNotebookSessionShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNotebookSessionShapesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessionShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.NotebookSessionShapeSummary.class,
+                        ListNotebookSessionShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNotebookSessionShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListNotebookSessionShapesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNotebookSessionShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2933,45 +1830,40 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListNotebookSessionsRequest, ListNotebookSessionsResponse>
                     handler) {
-        LOG.trace("Called async listNotebookSessions");
-        final ListNotebookSessionsRequest interceptedRequest =
-                ListNotebookSessionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNotebookSessionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNotebookSessionsResponse::builder)
+                .logger(LOG, "listNotebookSessions")
+                .serviceDetails(
                         "DataScience",
                         "ListNotebookSessions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionSummary/ListNotebookSessions");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListNotebookSessionsResponse>
-                transformer =
-                        ListNotebookSessionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListNotebookSessionsRequest, ListNotebookSessionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNotebookSessionsRequest, ListNotebookSessionsResponse>,
-                        java.util.concurrent.Future<ListNotebookSessionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNotebookSessionsRequest, ListNotebookSessionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSessionSummary/ListNotebookSessions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNotebookSessionsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.NotebookSessionSummary.class,
+                        ListNotebookSessionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNotebookSessionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListNotebookSessionsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNotebookSessionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2979,43 +1871,39 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             ListProjectsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
                     handler) {
-        LOG.trace("Called async listProjects");
-        final ListProjectsRequest interceptedRequest =
-                ListProjectsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProjectsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProjectsResponse::builder)
+                .logger(LOG, "listProjects")
+                .serviceDetails(
                         "DataScience",
                         "ListProjects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ProjectSummary/ListProjects");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListProjectsResponse>
-                transformer =
-                        ListProjectsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListProjectsRequest, ListProjectsResponse>,
-                        java.util.concurrent.Future<ListProjectsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListProjectsRequest, ListProjectsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ProjectSummary/ListProjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProjectsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("createdBy", request.getCreatedBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ProjectSummary.class,
+                        ListProjectsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListProjectsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3024,45 +1912,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "DataScience",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestErrors");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.WorkRequestError.class,
+                        ListWorkRequestErrorsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3071,45 +1943,29 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "DataScience",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestLogs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequest/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.WorkRequestLogEntry.class,
+                        ListWorkRequestLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3118,44 +1974,38 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "DataScience",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequestSummary/ListWorkRequests");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/WorkRequestSummary/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("operationType", request.getOperationType())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.WorkRequestSummary.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListWorkRequestsResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3163,46 +2013,31 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             UpdateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>
                     handler) {
-        LOG.trace("Called async updateJob");
-        final UpdateJobRequest interceptedRequest = UpdateJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(request.getUpdateJobDetails(), "updateJobDetails is required");
+
+        return clientCall(request, UpdateJobResponse::builder)
+                .logger(LOG, "updateJob")
+                .serviceDetails(
                         "DataScience",
                         "UpdateJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/UpdateJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse>
-                transformer =
-                        UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>,
-                        java.util.concurrent.Future<UpdateJobResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateJobDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateJobRequest, UpdateJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Job/UpdateJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJobRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Job.class, UpdateJobResponse.Builder::job)
+                .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3210,48 +2045,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             UpdateJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateJobRunRequest, UpdateJobRunResponse>
                     handler) {
-        LOG.trace("Called async updateJobRun");
-        final UpdateJobRunRequest interceptedRequest =
-                UpdateJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+        Objects.requireNonNull(request.getUpdateJobRunDetails(), "updateJobRunDetails is required");
+
+        return clientCall(request, UpdateJobRunResponse::builder)
+                .logger(LOG, "updateJobRun")
+                .serviceDetails(
                         "DataScience",
                         "UpdateJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/UpdateJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobRunResponse>
-                transformer =
-                        UpdateJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateJobRunRequest, UpdateJobRunResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateJobRunRequest, UpdateJobRunResponse>,
-                        java.util.concurrent.Future<UpdateJobRunResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateJobRunDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateJobRunRequest, UpdateJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/JobRun/UpdateJobRun")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJobRunRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.JobRun.class,
+                        UpdateJobRunResponse.Builder::jobRun)
+                .handleResponseHeaderString("etag", UpdateJobRunResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3259,48 +2078,32 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             UpdateModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
                     handler) {
-        LOG.trace("Called async updateModel");
-        final UpdateModelRequest interceptedRequest =
-                UpdateModelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateModelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getUpdateModelDetails(), "updateModelDetails is required");
+
+        return clientCall(request, UpdateModelResponse::builder)
+                .logger(LOG, "updateModel")
+                .serviceDetails(
                         "DataScience",
                         "UpdateModel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModel");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelResponse>
-                transformer =
-                        UpdateModelConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateModelRequest, UpdateModelResponse>,
-                        java.util.concurrent.Future<UpdateModelResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateModelDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateModelRequest, UpdateModelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Model.class,
+                        UpdateModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", UpdateModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3309,50 +2112,33 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
                     handler) {
-        LOG.trace("Called async updateModelDeployment");
-        final UpdateModelDeploymentRequest interceptedRequest =
-                UpdateModelDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateModelDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelDeploymentId(), "modelDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateModelDeploymentDetails(),
+                "updateModelDeploymentDetails is required");
+
+        return clientCall(request, UpdateModelDeploymentResponse::builder)
+                .logger(LOG, "updateModelDeployment")
+                .serviceDetails(
                         "DataScience",
                         "UpdateModelDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/UpdateModelDeployment");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelDeploymentResponse>
-                transformer =
-                        UpdateModelDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>,
-                        java.util.concurrent.Future<UpdateModelDeploymentResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateModelDeploymentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateModelDeploymentRequest, UpdateModelDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ModelDeployment/UpdateModelDeployment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelDeploymentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("modelDeployments")
+                .appendPathParam(request.getModelDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelDeploymentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateModelDeploymentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3361,50 +2147,35 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>
                     handler) {
-        LOG.trace("Called async updateModelProvenance");
-        final UpdateModelProvenanceRequest interceptedRequest =
-                UpdateModelProvenanceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateModelProvenanceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateModelProvenanceDetails(),
+                "updateModelProvenanceDetails is required");
+
+        return clientCall(request, UpdateModelProvenanceResponse::builder)
+                .logger(LOG, "updateModelProvenance")
+                .serviceDetails(
                         "DataScience",
                         "UpdateModelProvenance",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelProvenance");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateModelProvenanceResponse>
-                transformer =
-                        UpdateModelProvenanceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>,
-                        java.util.concurrent.Future<UpdateModelProvenanceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateModelProvenanceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateModelProvenanceRequest, UpdateModelProvenanceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/UpdateModelProvenance")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelProvenanceRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("provenance")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.ModelProvenance.class,
+                        UpdateModelProvenanceResponse.Builder::modelProvenance)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelProvenanceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateModelProvenanceResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -3413,50 +2184,34 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>
                     handler) {
-        LOG.trace("Called async updateNotebookSession");
-        final UpdateNotebookSessionRequest interceptedRequest =
-                UpdateNotebookSessionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNotebookSessionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNotebookSessionId(), "notebookSessionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNotebookSessionDetails(),
+                "updateNotebookSessionDetails is required");
+
+        return clientCall(request, UpdateNotebookSessionResponse::builder)
+                .logger(LOG, "updateNotebookSession")
+                .serviceDetails(
                         "DataScience",
                         "UpdateNotebookSession",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/UpdateNotebookSession");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNotebookSessionResponse>
-                transformer =
-                        UpdateNotebookSessionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>,
-                        java.util.concurrent.Future<UpdateNotebookSessionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateNotebookSessionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateNotebookSessionRequest, UpdateNotebookSessionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/NotebookSession/UpdateNotebookSession")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNotebookSessionRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("notebookSessions")
+                .appendPathParam(request.getNotebookSessionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.NotebookSession.class,
+                        UpdateNotebookSessionResponse.Builder::notebookSession)
+                .handleResponseHeaderString("etag", UpdateNotebookSessionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNotebookSessionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3464,47 +2219,191 @@ public class DataScienceAsyncClient implements DataScienceAsync {
             UpdateProjectRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
                     handler) {
-        LOG.trace("Called async updateProject");
-        final UpdateProjectRequest interceptedRequest =
-                UpdateProjectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateProjectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProjectDetails(), "updateProjectDetails is required");
+
+        return clientCall(request, UpdateProjectResponse::builder)
+                .logger(LOG, "updateProject")
+                .serviceDetails(
                         "DataScience",
                         "UpdateProject",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/UpdateProject");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateProjectResponse>
-                transformer =
-                        UpdateProjectConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Project/UpdateProject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProjectRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Project.class,
+                        UpdateProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateProjectRequest, UpdateProjectResponse>,
-                        java.util.concurrent.Future<UpdateProjectResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateProjectDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateProjectRequest, UpdateProjectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DataScienceAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

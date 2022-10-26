@@ -36,7 +36,8 @@ public class InstancePrincipalsAuthenticationDetailsProviderExample {
         final IdentityClient identityClient = new IdentityClient(provider);
         final IdentityAsyncClient identityAsyncClient = new IdentityAsyncClient(provider);
 
-        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
+        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
+        // known)
         final String compartmentId = args[0];
         System.out.println(compartmentId);
 

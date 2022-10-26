@@ -5,34 +5,32 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the security action details taken on the traffic.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the security action details taken on the traffic. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "action",
-    defaultImpl = SecurityAction.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "action",
+        defaultImpl = SecurityAction.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AllowedSecurityAction.class,
-        name = "ALLOWED"
-    ),
+            value = AllowedSecurityAction.class,
+            name = "ALLOWED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DeniedSecurityAction.class,
-        name = "DENIED"
-    )
+            value = DeniedSecurityAction.class,
+            name = "DENIED")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class SecurityAction extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"actionType"})
     protected SecurityAction(ActionType actionType) {
@@ -40,16 +38,14 @@ public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.actionType = actionType;
     }
 
-    /**
-     * Type of the {@code SecurityAction}.
-     **/
-    public enum ActionType {
+    /** Type of the {@code SecurityAction}. */
+    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
         Explicit("EXPLICIT"),
         Implicit("IMPLICIT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -88,16 +84,15 @@ public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of the {@code SecurityAction}.
-     **/
+    /** Type of the {@code SecurityAction}. */
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
      * Type of the {@code SecurityAction}.
+     *
      * @return the value
-     **/
+     */
     public ActionType getActionType() {
         return actionType;
     }
@@ -109,6 +104,7 @@ public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -143,16 +139,14 @@ public class SecurityAction extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return result;
     }
 
-    /**
-     * Action taken on the traffic.
-     **/
-    public enum Action {
+    /** Action taken on the traffic. */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Allowed("ALLOWED"),
         Denied("DENIED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

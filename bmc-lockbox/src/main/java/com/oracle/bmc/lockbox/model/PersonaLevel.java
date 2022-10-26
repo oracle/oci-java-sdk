@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.lockbox.model;
 
-/**
- * The level for each persona (approver, customer admin, operator)
- **/
+/** The level for each persona (approver, customer admin, operator) */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
-public enum PersonaLevel {
+public enum PersonaLevel implements com.oracle.bmc.http.internal.BmcEnum {
     Level1("LEVEL1"),
     Level2("LEVEL2"),
     Level3("LEVEL3"),

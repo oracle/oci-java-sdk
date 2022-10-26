@@ -6,99 +6,87 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryResultExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetQueryResultRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/GetQueryResultExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetQueryResultRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * Work Request Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * asynchronous request.
      */
     private String workRequestId;
 
     /**
-     * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+     * Work Request Identifier [OCID]
+     * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * asynchronous request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+     * Maximum number of results to return in this request. Note a limit=-1 returns all results from
+     * pageId onwards up to maxtotalCount.
      */
     private Integer limit;
 
     /**
-     * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+     * Maximum number of results to return in this request. Note a limit=-1 returns all results from
+     * pageId onwards up to maxtotalCount.
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Include columns in response
-     */
+    /** Include columns in response */
     private Boolean shouldIncludeColumns;
 
-    /**
-     * Include columns in response
-     */
+    /** Include columns in response */
     public Boolean getShouldIncludeColumns() {
         return shouldIncludeColumns;
     }
-    /**
-     * Include fields in response
-     */
+    /** Include fields in response */
     private Boolean shouldIncludeFields;
 
-    /**
-     * Include fields in response
-     */
+    /** Include fields in response */
     public Boolean getShouldIncludeFields() {
         return shouldIncludeFields;
     }
-    /**
-     * Specifies the format for the returned results.
-     */
+    /** Specifies the format for the returned results. */
     private OutputMode outputMode;
 
-    /**
-     * Specifies the format for the returned results.
-     **/
-    public enum OutputMode {
+    /** Specifies the format for the returned results. */
+    public enum OutputMode implements com.oracle.bmc.http.internal.BmcEnum {
         JsonRows("JSON_ROWS"),
         ;
 
@@ -130,9 +118,7 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /**
-     * Specifies the format for the returned results.
-     */
+    /** Specifies the format for the returned results. */
     public OutputMode getOutputMode() {
         return outputMode;
     }
@@ -140,14 +126,10 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetQueryResultRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Logging Analytics namespace used for the request.
-         *
-         */
+        /** The Logging Analytics namespace used for the request. */
         private String namespaceName = null;
 
         /**
@@ -162,12 +144,17 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * Work Request Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * asynchronous request.
          */
         private String workRequestId = null;
 
         /**
-         * Work Request Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
+         * Work Request Identifier [OCID]
+         * (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * asynchronous request.
+         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -177,12 +164,15 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -192,12 +182,15 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+         * Maximum number of results to return in this request. Note a limit=-1 returns all results
+         * from pageId onwards up to maxtotalCount.
          */
         private Integer limit = null;
 
         /**
-         * Maximum number of results to return in this request.  Note a limit=-1 returns all results from pageId onwards up to maxtotalCount.
+         * Maximum number of results to return in this request. Note a limit=-1 returns all results
+         * from pageId onwards up to maxtotalCount.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,13 +199,12 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -221,13 +213,12 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Include columns in response
-         */
+        /** Include columns in response */
         private Boolean shouldIncludeColumns = null;
 
         /**
          * Include columns in response
+         *
          * @param shouldIncludeColumns the value to set
          * @return this builder instance
          */
@@ -236,13 +227,12 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Include fields in response
-         */
+        /** Include fields in response */
         private Boolean shouldIncludeFields = null;
 
         /**
          * Include fields in response
+         *
          * @param shouldIncludeFields the value to set
          * @return this builder instance
          */
@@ -251,13 +241,12 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * Specifies the format for the returned results.
-         */
+        /** Specifies the format for the returned results. */
         private OutputMode outputMode = null;
 
         /**
          * Specifies the format for the returned results.
+         *
          * @param outputMode the value to set
          * @return this builder instance
          */
@@ -268,18 +257,19 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -291,6 +281,7 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetQueryResultRequest o) {
@@ -310,10 +301,11 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetQueryResultRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetQueryResultRequest
          */
@@ -327,7 +319,8 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetQueryResultRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetQueryResultRequest
@@ -343,12 +336,14 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.shouldIncludeFields = shouldIncludeFields;
             request.outputMode = outputMode;
             return request;
-            // new GetQueryResultRequest(namespaceName, workRequestId, page, limit, opcRequestId, shouldIncludeColumns, shouldIncludeFields, outputMode);
+            // new GetQueryResultRequest(namespaceName, workRequestId, page, limit, opcRequestId,
+            // shouldIncludeColumns, shouldIncludeFields, outputMode);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -365,6 +360,7 @@ public class GetQueryResultRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

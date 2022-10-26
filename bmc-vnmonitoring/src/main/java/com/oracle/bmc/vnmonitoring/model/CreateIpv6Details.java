@@ -5,21 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateIpv6Details.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIpv6Details extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateIpv6Details.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateIpv6Details
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -50,8 +51,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -61,7 +61,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -69,120 +69,113 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * An IPv6 address of your choice. Must be an available IP address within
-         * the subnet's CIDR. If you don't specify a value, Oracle automatically
-         * assigns an IPv6 address from the subnet. The subnet is the one that
-         * contains the VNIC you specify in {@code vnicId}.
-         * <p>
-         * Example: {@code 2001:DB8::}
+         * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR.
+         * If you don't specify a value, Oracle automatically assigns an IPv6 address from the
+         * subnet. The subnet is the one that contains the VNIC you specify in {@code vnicId}.
          *
-         **/
+         * <p>Example: {@code 2001:DB8::}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * An IPv6 address of your choice. Must be an available IP address within
-         * the subnet's CIDR. If you don't specify a value, Oracle automatically
-         * assigns an IPv6 address from the subnet. The subnet is the one that
-         * contains the VNIC you specify in {@code vnicId}.
-         * <p>
-         * Example: {@code 2001:DB8::}
+         * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR.
+         * If you don't specify a value, Oracle automatically assigns an IPv6 address from the
+         * subnet. The subnet is the one that contains the VNIC you specify in {@code vnicId}.
+         *
+         * <p>Example: {@code 2001:DB8::}
          *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-         * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
-         * IPv6 uses its public IP address for internet communication.
-         * <p>
-         * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
-         * for the {@code Ipv6} is null.
-         * <p>
-         * Example: {@code true}
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6
+         * in a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code
+         * true}, the IPv6 uses its public IP address for internet communication.
          *
-         **/
+         * <p>If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code
+         * publicIpAddress} attribute for the {@code Ipv6} is null.
+         *
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
         private Boolean isInternetAccessAllowed;
 
         /**
-         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-         * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
-         * IPv6 uses its public IP address for internet communication.
-         * <p>
-         * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
-         * for the {@code Ipv6} is null.
-         * <p>
-         * Example: {@code true}
+         * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6
+         * in a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code
+         * true}, the IPv6 uses its public IP address for internet communication.
+         *
+         * <p>If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code
+         * publicIpAddress} attribute for the {@code Ipv6} is null.
+         *
+         * <p>Example: {@code true}
          *
          * @param isInternetAccessAllowed the value to set
          * @return this builder
-         **/
+         */
         public Builder isInternetAccessAllowed(Boolean isInternetAccessAllowed) {
             this.isInternetAccessAllowed = isInternetAccessAllowed;
             this.__explicitlySet__.add("isInternetAccessAllowed");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
-         * IPv6 will be in the VNIC's subnet.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
-         * IPv6 will be in the VNIC's subnet.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
          *
          * @param vnicId the value to set
          * @return this builder
-         **/
+         */
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -231,9 +224,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -243,129 +234,121 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * An IPv6 address of your choice. Must be an available IP address within
-     * the subnet's CIDR. If you don't specify a value, Oracle automatically
-     * assigns an IPv6 address from the subnet. The subnet is the one that
-     * contains the VNIC you specify in {@code vnicId}.
-     * <p>
-     * Example: {@code 2001:DB8::}
+     * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If
+     * you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The
+     * subnet is the one that contains the VNIC you specify in {@code vnicId}.
      *
-     **/
+     * <p>Example: {@code 2001:DB8::}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * An IPv6 address of your choice. Must be an available IP address within
-     * the subnet's CIDR. If you don't specify a value, Oracle automatically
-     * assigns an IPv6 address from the subnet. The subnet is the one that
-     * contains the VNIC you specify in {@code vnicId}.
-     * <p>
-     * Example: {@code 2001:DB8::}
+     * An IPv6 address of your choice. Must be an available IP address within the subnet's CIDR. If
+     * you don't specify a value, Oracle automatically assigns an IPv6 address from the subnet. The
+     * subnet is the one that contains the VNIC you specify in {@code vnicId}.
+     *
+     * <p>Example: {@code 2001:DB8::}
      *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
-     * IPv6 uses its public IP address for internet communication.
-     * <p>
-     * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
-     * for the {@code Ipv6} is null.
-     * <p>
-     * Example: {@code true}
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in a
+     * public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true},
+     * the IPv6 uses its public IP address for internet communication.
      *
-     **/
+     * <p>If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code
+     * publicIpAddress} attribute for the {@code Ipv6} is null.
+     *
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isInternetAccessAllowed")
     private final Boolean isInternetAccessAllowed;
 
     /**
-     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in
-     * a public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true}, the
-     * IPv6 uses its public IP address for internet communication.
-     * <p>
-     * If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code publicIpAddress} attribute
-     * for the {@code Ipv6} is null.
-     * <p>
-     * Example: {@code true}
+     * Whether the IPv6 can be used for internet communication. Allowed by default for an IPv6 in a
+     * public subnet. Never allowed for an IPv6 in a private subnet. If the value is {@code true},
+     * the IPv6 uses its public IP address for internet communication.
+     *
+     * <p>If {@code isInternetAccessAllowed} is set to {@code false}, the resulting {@code
+     * publicIpAddress} attribute for the {@code Ipv6} is null.
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsInternetAccessAllowed() {
         return isInternetAccessAllowed;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
-     * IPv6 will be in the VNIC's subnet.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the IPv6 to. The
-     * IPv6 will be in the VNIC's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VNIC to assign the IPv6 to. The IPv6 will be in the VNIC's subnet.
      *
      * @return the value
-     **/
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -377,6 +360,7 @@ public final class CreateIpv6Details extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,22 +6,22 @@ package com.oracle.bmc.database.model;
 
 /**
  * Data to update one or more attributes of the Database Management configuration for the database.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModifyDatabaseManagementDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ModifyDatabaseManagementDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ModifyDatabaseManagementDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -65,114 +65,115 @@ public final class ModifyDatabaseManagementDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
         private String privateEndPointId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * private endpoint.
          *
          * @param privateEndPointId the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndPointId(String privateEndPointId) {
             this.privateEndPointId = privateEndPointId;
             this.__explicitlySet__.add("privateEndPointId");
             return this;
         }
-        /**
-         * The Database Management type.
-         **/
+        /** The Database Management type. */
         @com.fasterxml.jackson.annotation.JsonProperty("managementType")
         private ManagementType managementType;
 
         /**
          * The Database Management type.
+         *
          * @param managementType the value to set
          * @return this builder
-         **/
+         */
         public Builder managementType(ManagementType managementType) {
             this.managementType = managementType;
             this.__explicitlySet__.add("managementType");
             return this;
         }
-        /**
-         * The name of the Oracle Database service that will be used to connect to the database.
-         **/
+        /** The name of the Oracle Database service that will be used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The name of the Oracle Database service that will be used to connect to the database.
+         *
          * @param serviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /**
-         * Protocol used by the database connection.
-         **/
+        /** Protocol used by the database connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Protocol used by the database connection.
+         *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /**
-         * The port used to connect to the database.
-         **/
+        /** The port used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port used to connect to the database.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure
+         * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure
+         * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         *
          * @param sslSecretId the value to set
          * @return this builder
-         **/
+         */
         public Builder sslSecretId(String sslSecretId) {
             this.sslSecretId = sslSecretId;
             this.__explicitlySet__.add("sslSecretId");
             return this;
         }
-        /**
-         * The role of the user that will be connecting to the database.
-         **/
+        /** The role of the user that will be connecting to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
          * The role of the user that will be connecting to the database.
+         *
          * @param role the value to set
          * @return this builder
-         **/
+         */
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -229,9 +230,7 @@ public final class ModifyDatabaseManagementDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,25 +247,24 @@ public final class ModifyDatabaseManagementDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndPointId")
     private final String privateEndPointId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * private endpoint.
      *
      * @return the value
-     **/
+     */
     public String getPrivateEndPointId() {
         return privateEndPointId;
     }
 
-    /**
-     * The Database Management type.
-     **/
-    public enum ManagementType {
+    /** The Database Management type. */
+    public enum ManagementType implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
         Advanced("ADVANCED"),
         ;
@@ -298,38 +296,34 @@ public final class ModifyDatabaseManagementDetails
             throw new IllegalArgumentException("Invalid ManagementType: " + key);
         }
     };
-    /**
-     * The Database Management type.
-     **/
+    /** The Database Management type. */
     @com.fasterxml.jackson.annotation.JsonProperty("managementType")
     private final ManagementType managementType;
 
     /**
      * The Database Management type.
+     *
      * @return the value
-     **/
+     */
     public ManagementType getManagementType() {
         return managementType;
     }
 
-    /**
-     * The name of the Oracle Database service that will be used to connect to the database.
-     **/
+    /** The name of the Oracle Database service that will be used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
+     *
      * @return the value
-     **/
+     */
     public String getServiceName() {
         return serviceName;
     }
 
-    /**
-     * Protocol used by the database connection.
-     **/
-    public enum Protocol {
+    /** Protocol used by the database connection. */
+    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
         Tcp("TCP"),
         Tcps("TCPS"),
         ;
@@ -361,52 +355,53 @@ public final class ModifyDatabaseManagementDetails
             throw new IllegalArgumentException("Invalid Protocol: " + key);
         }
     };
-    /**
-     * Protocol used by the database connection.
-     **/
+    /** Protocol used by the database connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Protocol used by the database connection.
+     *
      * @return the value
-     **/
+     */
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /**
-     * The port used to connect to the database.
-     **/
+    /** The port used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port used to connect to the database.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure
+     * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure
+     * [secret](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     *
      * @return the value
-     **/
+     */
     public String getSslSecretId() {
         return sslSecretId;
     }
 
-    /**
-     * The role of the user that will be connecting to the database.
-     **/
-    public enum Role {
+    /** The role of the user that will be connecting to the database. */
+    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
         ;
@@ -438,16 +433,15 @@ public final class ModifyDatabaseManagementDetails
             throw new IllegalArgumentException("Invalid Role: " + key);
         }
     };
-    /**
-     * The role of the user that will be connecting to the database.
-     **/
+    /** The role of the user that will be connecting to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
      * The role of the user that will be connecting to the database.
+     *
      * @return the value
-     **/
+     */
     public Role getRole() {
         return role;
     }
@@ -459,6 +453,7 @@ public final class ModifyDatabaseManagementDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

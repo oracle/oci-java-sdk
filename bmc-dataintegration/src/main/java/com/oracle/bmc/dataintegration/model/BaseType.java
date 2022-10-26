@@ -5,53 +5,47 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Base type for the type system.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Base type for the type system. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = BaseType.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = BaseType.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ArrayType.class,
-        name = "ARRAY_TYPE"
-    ),
+            value = ArrayType.class,
+            name = "ARRAY_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ConfiguredType.class,
-        name = "CONFIGURED_TYPE"
-    ),
+            value = ConfiguredType.class,
+            name = "CONFIGURED_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = JavaType.class, name = "JAVA_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DynamicType.class,
-        name = "DYNAMIC_TYPE"
-    ),
+            value = DynamicType.class,
+            name = "DYNAMIC_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DerivedType.class,
-        name = "DERIVED_TYPE"
-    ),
+            value = DerivedType.class,
+            name = "DERIVED_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = DataType.class, name = "DATA_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MaterializedCompositeType.class,
-        name = "MATERIALIZED_COMPOSITE_TYPE"
-    ),
+            value = MaterializedCompositeType.class,
+            name = "MATERIALIZED_COMPOSITE_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = MapType.class, name = "MAP_TYPE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CompositeType.class,
-        name = "COMPOSITE_TYPE"
-    )
+            value = CompositeType.class,
+            name = "COMPOSITE_TYPE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class BaseType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -77,30 +71,28 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.description = description;
     }
 
-    /**
-     * The key of the object.
-     **/
+    /** The key of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -113,43 +105,48 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /**
-     * A user defined description for the object.
-     **/
+    /** A user defined description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user defined description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -161,6 +158,7 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -211,10 +209,8 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return result;
     }
 
-    /**
-     * The property which disciminates the subtypes.
-     **/
-    public enum ModelType {
+    /** The property which disciminates the subtypes. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         DynamicType("DYNAMIC_TYPE"),
         StructuredType("STRUCTURED_TYPE"),
         DataType("DATA_TYPE"),
@@ -227,8 +223,8 @@ public class BaseType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         MaterializedCompositeType("MATERIALIZED_COMPOSITE_TYPE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

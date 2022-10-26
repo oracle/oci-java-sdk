@@ -4,14 +4,12 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/**
- * The processing types of an application.
- *
- **/
+/** The processing types of an application. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum ApplicationType {
+public enum ApplicationType implements com.oracle.bmc.http.internal.BmcEnum {
     Batch("BATCH"),
     Streaming("STREAMING"),
+    Session("SESSION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

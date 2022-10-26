@@ -5,23 +5,23 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /**
- * Brief data about an application or a solution, which lives inside the tenancy and may be included into service catalogs.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Brief data about an application or a solution, which lives inside the tenancy and may be included
+ * into service catalogs. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PrivateApplicationSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = PrivateApplicationSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PrivateApplicationSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lifecycleState",
@@ -55,83 +55,84 @@ public final class PrivateApplicationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The lifecycle state of the private application.
-         **/
+        /** The lifecycle state of the private application. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private PrivateApplication.LifecycleState lifecycleState;
 
         /**
          * The lifecycle state of the private application.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(PrivateApplication.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment where the private application resides.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment where the private application resides.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * private application.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * private application.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the private application.
-         **/
+        /** The name of the private application. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the private application.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * A short description of the private application.
-         **/
+        /** A short description of the private application. */
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
         /**
          * A short description of the private application.
+         *
          * @param shortDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
@@ -146,41 +147,39 @@ public final class PrivateApplicationSummary
             this.__explicitlySet__.add("logo");
             return this;
         }
-        /**
-         * Type of the packages, which are hosted by the private application.
-         **/
+        /** Type of the packages, which are hosted by the private application. */
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypeEnum packageType;
 
         /**
          * Type of the packages, which are hosted by the private application.
+         *
          * @param packageType the value to set
          * @return this builder
-         **/
+         */
         public Builder packageType(PackageTypeEnum packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
         /**
-         * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * timestamp format.
-         * <p>
-         * Example: {@code 2021-05-27T21:10:29.600Z}
+         * The date and time the private application was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
-         **/
+         * <p>Example: {@code 2021-05-27T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * timestamp format.
-         * <p>
-         * Example: {@code 2021-05-27T21:10:29.600Z}
+         * The date and time the private application was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         * <p>Example: {@code 2021-05-27T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -237,9 +236,7 @@ public final class PrivateApplicationSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,74 +245,75 @@ public final class PrivateApplicationSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The lifecycle state of the private application.
-     **/
+    /** The lifecycle state of the private application. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final PrivateApplication.LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the private application.
+     *
      * @return the value
-     **/
+     */
     public PrivateApplication.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment where the private application resides.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment where the private application resides.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * private application.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the private application.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * private application.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name of the private application.
-     **/
+    /** The name of the private application. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the private application.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * A short description of the private application.
-     **/
+    /** A short description of the private application. */
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
     /**
      * A short description of the private application.
+     *
      * @return the value
-     **/
+     */
     public String getShortDescription() {
         return shortDescription;
     }
@@ -327,38 +325,36 @@ public final class PrivateApplicationSummary
         return logo;
     }
 
-    /**
-     * Type of the packages, which are hosted by the private application.
-     **/
+    /** Type of the packages, which are hosted by the private application. */
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypeEnum packageType;
 
     /**
      * Type of the packages, which are hosted by the private application.
+     *
      * @return the value
-     **/
+     */
     public PackageTypeEnum getPackageType() {
         return packageType;
     }
 
     /**
-     * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format.
-     * <p>
-     * Example: {@code 2021-05-27T21:10:29.600Z}
+     * The date and time the private application was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
-     **/
+     * <p>Example: {@code 2021-05-27T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format.
-     * <p>
-     * Example: {@code 2021-05-27T21:10:29.600Z}
+     * The date and time the private application was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     * <p>Example: {@code 2021-05-27T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -370,6 +366,7 @@ public final class PrivateApplicationSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,107 +6,73 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListTsigKeysExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTsigKeysRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListTsigKeysExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTsigKeysRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     private Long limit;
 
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     public Long getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     private String id;
 
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     public String getId() {
         return id;
     }
-    /**
-     * The name of a resource.
-     */
+    /** The name of a resource. */
     private String name;
 
-    /**
-     * The name of a resource.
-     */
+    /** The name of a resource. */
     public String getName() {
         return name;
     }
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     private com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState lifecycleState;
 
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     public com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
-     */
+    /** The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}. */
     private SortBy sortBy;
 
-    /**
-     * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
-     **/
-    public enum SortBy {
+    /** The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Name("name"),
         TimeCreated("timeCreated"),
         ;
@@ -139,35 +105,21 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /**
-     * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
-     */
+    /** The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -175,17 +127,15 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTsigKeysRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment the resource belongs to.
-         */
+        /** The OCID of the compartment the resource belongs to. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,17 +145,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -215,10 +162,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a page of the collection.
-         *
-         */
+        /** The maximum number of items to return in a page of the collection. */
         private Long limit = null;
 
         /**
@@ -232,10 +176,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -249,13 +190,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The OCID of a resource.
-         */
+        /** The OCID of a resource. */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -264,13 +204,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The name of a resource.
-         */
+        /** The name of a resource. */
         private String name = null;
 
         /**
          * The name of a resource.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -279,13 +218,12 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The state of a resource.
-         */
+        /** The state of a resource. */
         private com.oracle.bmc.dns.model.TsigKeySummary.LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -302,6 +240,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The field by which to sort TSIG keys. If unspecified, defaults to {@code timeCreated}.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -310,10 +249,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The order to sort the resources.
-         *
-         */
+        /** The order to sort the resources. */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
@@ -327,10 +263,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Specifies to operate only on resources that have a matching DNS scope.
-         *
-         */
+        /** Specifies to operate only on resources that have a matching DNS scope. */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -346,18 +279,19 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -369,6 +303,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListTsigKeysRequest o) {
@@ -390,10 +325,11 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListTsigKeysRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListTsigKeysRequest
          */
@@ -407,7 +343,8 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListTsigKeysRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTsigKeysRequest
@@ -425,12 +362,14 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortOrder = sortOrder;
             request.scope = scope;
             return request;
-            // new ListTsigKeysRequest(compartmentId, opcRequestId, limit, page, id, name, lifecycleState, sortBy, sortOrder, scope);
+            // new ListTsigKeysRequest(compartmentId, opcRequestId, limit, page, id, name,
+            // lifecycleState, sortBy, sortOrder, scope);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -449,6 +388,7 @@ public class ListTsigKeysRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

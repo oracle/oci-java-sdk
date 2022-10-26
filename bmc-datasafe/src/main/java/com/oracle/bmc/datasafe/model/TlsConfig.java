@@ -5,19 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details required to establish a TLS enabled connection.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details required to establish a TLS enabled connection. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TlsConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TlsConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "status",
@@ -42,33 +43,31 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Status to represent whether the database connection is TLS enabled or not.
-         **/
+        /** Status to represent whether the database connection is TLS enabled or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Status to represent whether the database connection is TLS enabled or not.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The format of the certificate store.
-         **/
+        /** The format of the certificate store. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateStoreType")
         private CertificateStoreType certificateStoreType;
 
         /**
          * The format of the certificate store.
+         *
          * @param certificateStoreType the value to set
          * @return this builder
-         **/
+         */
         public Builder certificateStoreType(CertificateStoreType certificateStoreType) {
             this.certificateStoreType = certificateStoreType;
             this.__explicitlySet__.add("certificateStoreType");
@@ -76,47 +75,46 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
         /**
          * The password to read the trust store and key store files, if they are password protected.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
         private String storePassword;
 
         /**
          * The password to read the trust store and key store files, if they are password protected.
+         *
          * @param storePassword the value to set
          * @return this builder
-         **/
+         */
         public Builder storePassword(String storePassword) {
             this.storePassword = storePassword;
             this.__explicitlySet__.add("storePassword");
             return this;
         }
-        /**
-         * Base64 encoded string of trust store file content.
-         **/
+        /** Base64 encoded string of trust store file content. */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreContent")
         private String trustStoreContent;
 
         /**
          * Base64 encoded string of trust store file content.
+         *
          * @param trustStoreContent the value to set
          * @return this builder
-         **/
+         */
         public Builder trustStoreContent(String trustStoreContent) {
             this.trustStoreContent = trustStoreContent;
             this.__explicitlySet__.add("trustStoreContent");
             return this;
         }
-        /**
-         * Base64 encoded string of key store file content.
-         **/
+        /** Base64 encoded string of key store file content. */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreContent")
         private String keyStoreContent;
 
         /**
          * Base64 encoded string of key store file content.
+         *
          * @param keyStoreContent the value to set
          * @return this builder
-         **/
+         */
         public Builder keyStoreContent(String keyStoreContent) {
             this.keyStoreContent = keyStoreContent;
             this.__explicitlySet__.add("keyStoreContent");
@@ -161,9 +159,7 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,16 +168,14 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Status to represent whether the database connection is TLS enabled or not.
-     **/
-    public enum Status {
+    /** Status to represent whether the database connection is TLS enabled or not. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -219,29 +213,26 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status to represent whether the database connection is TLS enabled or not.
-     **/
+    /** Status to represent whether the database connection is TLS enabled or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Status to represent whether the database connection is TLS enabled or not.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The format of the certificate store.
-     **/
-    public enum CertificateStoreType {
+    /** The format of the certificate store. */
+    public enum CertificateStoreType implements com.oracle.bmc.http.internal.BmcEnum {
         Jks("JKS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -280,58 +271,54 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /**
-     * The format of the certificate store.
-     **/
+    /** The format of the certificate store. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateStoreType")
     private final CertificateStoreType certificateStoreType;
 
     /**
      * The format of the certificate store.
+     *
      * @return the value
-     **/
+     */
     public CertificateStoreType getCertificateStoreType() {
         return certificateStoreType;
     }
 
-    /**
-     * The password to read the trust store and key store files, if they are password protected.
-     **/
+    /** The password to read the trust store and key store files, if they are password protected. */
     @com.fasterxml.jackson.annotation.JsonProperty("storePassword")
     private final String storePassword;
 
     /**
      * The password to read the trust store and key store files, if they are password protected.
+     *
      * @return the value
-     **/
+     */
     public String getStorePassword() {
         return storePassword;
     }
 
-    /**
-     * Base64 encoded string of trust store file content.
-     **/
+    /** Base64 encoded string of trust store file content. */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreContent")
     private final String trustStoreContent;
 
     /**
      * Base64 encoded string of trust store file content.
+     *
      * @return the value
-     **/
+     */
     public String getTrustStoreContent() {
         return trustStoreContent;
     }
 
-    /**
-     * Base64 encoded string of key store file content.
-     **/
+    /** Base64 encoded string of key store file content. */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreContent")
     private final String keyStoreContent;
 
     /**
      * Base64 encoded string of key store file content.
+     *
      * @return the value
-     **/
+     */
     public String getKeyStoreContent() {
         return keyStoreContent;
     }
@@ -343,6 +330,7 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -352,7 +340,7 @@ public final class TlsConfig extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append("super=").append(super.toString());
         sb.append("status=").append(String.valueOf(this.status));
         sb.append(", certificateStoreType=").append(String.valueOf(this.certificateStoreType));
-        sb.append(", storePassword=").append(String.valueOf(this.storePassword));
+        sb.append(", storePassword=").append("<redacted>");
         sb.append(", trustStoreContent=").append(String.valueOf(this.trustStoreContent));
         sb.append(", keyStoreContent=").append(String.valueOf(this.keyStoreContent));
         sb.append(")");

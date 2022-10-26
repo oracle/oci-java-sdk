@@ -5,58 +5,57 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Existing named credential used to connect to the database.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Existing named credential used to connect to the database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseConnectionCredentailsByName.Builder.class
-)
+        builder = DatabaseConnectionCredentailsByName.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "credentialType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "credentialType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseConnectionCredentailsByName extends DatabaseConnectionCredentials {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
-         * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
-         * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
-         * the "." character that separates the "x" and "y" portions of the name.
-         * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
-         * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
-         * using the name.
-         * <p>
-         * For example: inventorydb.abc112233445566778899
+         * The name of the credential information that used to connect to the database. The name
+         * should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and
+         * length of "y" has a maximum of 199 characters. The name strings can contain letters,
+         * numbers and the underscore character only. Other characters are not valid, except for the
+         * "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name
+         * must be unique within the OCI region the credential is being created in. If you specify a
+         * name that duplicates the name of another credential within the same OCI region, you may
+         * overwrite or corrupt the credential that is already using the name.
          *
-         **/
+         * <p>For example: inventorydb.abc112233445566778899
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
         private String credentialName;
 
         /**
-         * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
-         * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
-         * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
-         * the "." character that separates the "x" and "y" portions of the name.
-         * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
-         * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
-         * using the name.
-         * <p>
-         * For example: inventorydb.abc112233445566778899
+         * The name of the credential information that used to connect to the database. The name
+         * should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and
+         * length of "y" has a maximum of 199 characters. The name strings can contain letters,
+         * numbers and the underscore character only. Other characters are not valid, except for the
+         * "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name
+         * must be unique within the OCI region the credential is being created in. If you specify a
+         * name that duplicates the name of another credential within the same OCI region, you may
+         * overwrite or corrupt the credential that is already using the name.
+         *
+         * <p>For example: inventorydb.abc112233445566778899
          *
          * @param credentialName the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialName(String credentialName) {
             this.credentialName = credentialName;
             this.__explicitlySet__.add("credentialName");
@@ -84,9 +83,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,33 +99,34 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
     }
 
     /**
-     * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
-     * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
-     * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
-     * the "." character that separates the "x" and "y" portions of the name.
-     * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
-     * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
-     * using the name.
-     * <p>
-     * For example: inventorydb.abc112233445566778899
+     * The name of the credential information that used to connect to the database. The name should
+     * be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y"
+     * has a maximum of 199 characters. The name strings can contain letters, numbers and the
+     * underscore character only. Other characters are not valid, except for the "." character that
+     * separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within
+     * the OCI region the credential is being created in. If you specify a name that duplicates the
+     * name of another credential within the same OCI region, you may overwrite or corrupt the
+     * credential that is already using the name.
      *
-     **/
+     * <p>For example: inventorydb.abc112233445566778899
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialName")
     private final String credentialName;
 
     /**
-     * The name of the credential information that used to connect to the database. The name should be in "x.y" format, where
-     * the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters.
-     * The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for
-     * the "." character that separates the "x" and "y" portions of the name.
-     * *IMPORTANT* - The name must be unique within the OCI region the credential is being created in. If you specify a name
-     * that duplicates the name of another credential within the same OCI region, you may overwrite or corrupt the credential that is already
-     * using the name.
-     * <p>
-     * For example: inventorydb.abc112233445566778899
+     * The name of the credential information that used to connect to the database. The name should
+     * be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y"
+     * has a maximum of 199 characters. The name strings can contain letters, numbers and the
+     * underscore character only. Other characters are not valid, except for the "." character that
+     * separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within
+     * the OCI region the credential is being created in. If you specify a name that duplicates the
+     * name of another credential within the same OCI region, you may overwrite or corrupt the
+     * credential that is already using the name.
+     *
+     * <p>For example: inventorydb.abc112233445566778899
      *
      * @return the value
-     **/
+     */
     public String getCredentialName() {
         return credentialName;
     }
@@ -140,6 +138,7 @@ public final class DatabaseConnectionCredentailsByName extends DatabaseConnectio
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

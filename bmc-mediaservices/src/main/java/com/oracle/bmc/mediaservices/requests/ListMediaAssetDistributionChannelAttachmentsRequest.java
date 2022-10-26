@@ -6,104 +6,81 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetDistributionChannelAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMediaAssetDistributionChannelAttachmentsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListMediaAssetDistributionChannelAttachmentsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListMediaAssetDistributionChannelAttachmentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ListMediaAssetDistributionChannelAttachmentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique MediaAsset identifier
-     */
+    /** Unique MediaAsset identifier */
     private String mediaAssetId;
 
-    /**
-     * Unique MediaAsset identifier
-     */
+    /** Unique MediaAsset identifier */
     public String getMediaAssetId() {
         return mediaAssetId;
     }
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     private String displayName;
 
-    /**
-     * A filter to return only the resources that match the entire display name given.
-     */
+    /** A filter to return only the resources that match the entire display name given. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the
-     * {@code opc-next-page} header field of a previous response.
-     *
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.mediaservices.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.mediaservices.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
+     * descending. Default order for displayName is ascending.
      */
     public com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSortBy
             getSortBy() {
         return sortBy;
     }
-    /**
-     * Unique DistributionChannel identifier.
-     */
+    /** Unique DistributionChannel identifier. */
     private String distributionChannelId;
 
-    /**
-     * Unique DistributionChannel identifier.
-     */
+    /** Unique DistributionChannel identifier. */
     public String getDistributionChannelId() {
         return distributionChannelId;
     }
@@ -111,17 +88,15 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMediaAssetDistributionChannelAttachmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique MediaAsset identifier
-         */
+        /** Unique MediaAsset identifier */
         private String mediaAssetId = null;
 
         /**
          * Unique MediaAsset identifier
+         *
          * @param mediaAssetId the value to set
          * @return this builder instance
          */
@@ -130,13 +105,12 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             return this;
         }
 
-        /**
-         * A filter to return only the resources that match the entire display name given.
-         */
+        /** A filter to return only the resources that match the entire display name given. */
         private String displayName = null;
 
         /**
          * A filter to return only the resources that match the entire display name given.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -145,13 +119,12 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -161,15 +134,14 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the
-         * {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          *
          * @param page the value to set
          * @return this builder instance
@@ -179,13 +151,12 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -194,13 +165,12 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.mediaservices.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -210,14 +180,15 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          */
         private com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSortBy
                 sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
+         * is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -229,13 +200,12 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             return this;
         }
 
-        /**
-         * Unique DistributionChannel identifier.
-         */
+        /** Unique DistributionChannel identifier. */
         private String distributionChannelId = null;
 
         /**
          * Unique DistributionChannel identifier.
+         *
          * @param distributionChannelId the value to set
          * @return this builder instance
          */
@@ -246,18 +216,19 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -269,6 +240,7 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListMediaAssetDistributionChannelAttachmentsRequest o) {
@@ -286,12 +258,14 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
         }
 
         /**
-         * Build the instance of ListMediaAssetDistributionChannelAttachmentsRequest as configured by this builder
+         * Build the instance of ListMediaAssetDistributionChannelAttachmentsRequest as configured
+         * by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListMediaAssetDistributionChannelAttachmentsRequest
          */
@@ -304,9 +278,11 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
         }
 
         /**
-         * Build the instance of ListMediaAssetDistributionChannelAttachmentsRequest as configured by this builder
+         * Build the instance of ListMediaAssetDistributionChannelAttachmentsRequest as configured
+         * by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMediaAssetDistributionChannelAttachmentsRequest
@@ -324,12 +300,14 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
             request.sortBy = sortBy;
             request.distributionChannelId = distributionChannelId;
             return request;
-            // new ListMediaAssetDistributionChannelAttachmentsRequest(mediaAssetId, displayName, limit, page, opcRequestId, sortOrder, sortBy, distributionChannelId);
+            // new ListMediaAssetDistributionChannelAttachmentsRequest(mediaAssetId, displayName,
+            // limit, page, opcRequestId, sortOrder, sortBy, distributionChannelId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -346,6 +324,7 @@ public class ListMediaAssetDistributionChannelAttachmentsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

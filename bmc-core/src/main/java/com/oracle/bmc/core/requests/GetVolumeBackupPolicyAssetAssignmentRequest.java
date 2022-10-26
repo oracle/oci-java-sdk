@@ -6,57 +6,52 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetVolumeBackupPolicyAssetAssignmentRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeBackupPolicyAssetAssignmentExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetVolumeBackupPolicyAssetAssignmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetVolumeBackupPolicyAssetAssignmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of an asset (e.g. a volume).
-     */
+    /** The OCID of an asset (e.g. a volume). */
     private String assetId;
 
-    /**
-     * The OCID of an asset (e.g. a volume).
-     */
+    /** The OCID of an asset (e.g. a volume). */
     public String getAssetId() {
         return assetId;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated
-     * "List" call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Example: {@code 50}
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-     * call. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -65,17 +60,15 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetVolumeBackupPolicyAssetAssignmentRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of an asset (e.g. a volume).
-         */
+        /** The OCID of an asset (e.g. a volume). */
         private String assetId = null;
 
         /**
          * The OCID of an asset (e.g. a volume).
+         *
          * @param assetId the value to set
          * @return this builder instance
          */
@@ -85,21 +78,20 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated
-         * "List" call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * <p>Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -110,17 +102,16 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
-         * call. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -132,18 +123,19 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -155,6 +147,7 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetVolumeBackupPolicyAssetAssignmentRequest o) {
@@ -167,12 +160,14 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
         }
 
         /**
-         * Build the instance of GetVolumeBackupPolicyAssetAssignmentRequest as configured by this builder
+         * Build the instance of GetVolumeBackupPolicyAssetAssignmentRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetVolumeBackupPolicyAssetAssignmentRequest
          */
@@ -184,9 +179,11 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
         }
 
         /**
-         * Build the instance of GetVolumeBackupPolicyAssetAssignmentRequest as configured by this builder
+         * Build the instance of GetVolumeBackupPolicyAssetAssignmentRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetVolumeBackupPolicyAssetAssignmentRequest
@@ -204,6 +201,7 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -212,6 +210,7 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

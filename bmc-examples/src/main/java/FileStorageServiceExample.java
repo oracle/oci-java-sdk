@@ -72,22 +72,20 @@ import java.security.SecureRandom;
 /**
  * This class provides an example of how to use the File Storage service in the Java SDK.
  *
- * In order to demonstrate functionality for mount targets and export sets, this script will also create a VCN
- * and subnet. These will be deleted at the end of the script. This script also makes some assumptions about
- * the resources it will create:
+ * <p>In order to demonstrate functionality for mount targets and export sets, this script will also
+ * create a VCN and subnet. These will be deleted at the end of the script. This script also makes
+ * some assumptions about the resources it will create:
  *
  * <ul>
- *   <li>The VCN created by this example will have a display name of java_sdk_fs_example_vcn</li>
- *   <li>The subnet created by this example will have a display name of: java_sdk_fs_example_subnet</li>
- *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16</li>
- *   <li>The file system export created by this example will have a path of /files</li>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Resources will be created in us-phoenix-1</li>
- *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
- * <ul>
+ *   <li>The VCN created by this example will have a display name of java_sdk_fs_example_vcn
+ *   <li>The subnet created by this example will have a display name of: java_sdk_fs_example_subnet
+ *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16
+ *   <li>The file system export created by this example will have a path of /files
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Resources will be created in us-phoenix-1
+ *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
+ *       <ul>
  */
 public class FileStorageServiceExample {
 
@@ -114,10 +112,11 @@ public class FileStorageServiceExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of the compartment where the file system and related resources will be created</li>
-     *   <li>The display name of the file system</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where the file system and related resources will be
+     *           created
+     *       <li>The display name of the file system
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -128,8 +127,10 @@ public class FileStorageServiceExample {
         final String compartmentId = args[0];
         final String fileSystemDisplayName = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -230,16 +231,14 @@ public class FileStorageServiceExample {
     }
 
     /**
-     * Creates a file system and waits for it to become available. We recommend using a retry token on these requests
-     * so that if you receive a timeout or server error and need to retry the request you won't run the risk of
-     * creating multiple resources.
+     * Creates a file system and waits for it to become available. We recommend using a retry token
+     * on these requests so that if you receive a timeout or server error and need to retry the
+     * request you won't run the risk of creating multiple resources.
      *
      * @param fsClient the service client to use to create the File System
      * @param compartmentId the OCID of the compartment where the file system will be created
      * @param availabilityDomain the availability domain where the file system will be created
-     *
      * @return the created file system
-     *
      * @throws Exception if there is an error waiting on the file system to become available to use
      */
     private static FileSystem createFileSystem(
@@ -312,23 +311,22 @@ public class FileStorageServiceExample {
     }
 
     /**
-     * Creates a mount target and waits for it to become available. We recommend using a retry token on these requests
-     * so that if you receive a timeout or server error and need to retry the request you won't run the risk of
-     * creating multiple resources.
+     * Creates a mount target and waits for it to become available. We recommend using a retry token
+     * on these requests so that if you receive a timeout or server error and need to retry the
+     * request you won't run the risk of creating multiple resources.
      *
-     * This creates a mount target WITHOUT specifying a hostname. This means that the mount target will only be accessible
-     * via its private IP address.
+     * <p>This creates a mount target WITHOUT specifying a hostname. This means that the mount
+     * target will only be accessible via its private IP address.
      *
      * @param fsClient the service client to use to create the mount target
      * @param vcnClient a client used to communiate with the Virtual Networking service
      * @param compartmentId the OCID of the compartment where the file system will be created
      * @param displayName the display name of the mount target
      * @param availabilityDomain the availability domain where the file system will be created
-     * @param subnet the subnet where the mount target will reside. If no private IP address is explicitly specified at
-     * creation time then the mount target will be assigned a free private IP address from the subnet
-     *
+     * @param subnet the subnet where the mount target will reside. If no private IP address is
+     *     explicitly specified at creation time then the mount target will be assigned a free
+     *     private IP address from the subnet
      * @return the created mount target
-     *
      * @throws Exception if there is an error waiting on the mount target to become available to use
      */
     private static MountTarget createMountTarget(
@@ -436,20 +434,18 @@ public class FileStorageServiceExample {
     }
 
     /**
-     * Creates an export and waits for it to become available. This export enables us to access the file system
-     * via the mount target. We recommend using a retry token on these requests
-     * so that if you receive a timeout or server error and need to retry the request you won't run the risk of
-     * creating multiple resources.
+     * Creates an export and waits for it to become available. This export enables us to access the
+     * file system via the mount target. We recommend using a retry token on these requests so that
+     * if you receive a timeout or server error and need to retry the request you won't run the risk
+     * of creating multiple resources.
      *
-     * There are rules around export paths and file system associations which you should review here:
-     * https://docs.cloud.oracle.com/api/#/en/filestorage/20171215/Export/
+     * <p>There are rules around export paths and file system associations which you should review
+     * here: https://docs.cloud.oracle.com/api/#/en/filestorage/20171215/Export/
      *
      * @param fsClient the service client to use to create the export
      * @param fileSystemId the OCID of the file system to associate with the export
      * @param exportSetId the OCID of the MountTarget's export set
-     *
      * @return the created export
-     *
      * @throws Exception if there is an error waiting on the export to become available to use
      */
     private static Export createExport(
@@ -518,15 +514,16 @@ public class FileStorageServiceExample {
     }
 
     /**
-     * Creates a point in time snapshot of a file system and waits for it to become available. Note that snapshot
-     * names are immutable and must be unique amongst all non-DELETED snapshots for a file system.
+     * Creates a point in time snapshot of a file system and waits for it to become available. Note
+     * that snapshot names are immutable and must be unique amongst all non-DELETED snapshots for a
+     * file system.
      *
-     * We recommend using a retry token on these requests so that if you receive a timeout or server error
-     * and need to retry the request you won't run the risk of creating multiple resources.
+     * <p>We recommend using a retry token on these requests so that if you receive a timeout or
+     * server error and need to retry the request you won't run the risk of creating multiple
+     * resources.
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param fileSystem the file system to create the snapshot of
-     *
      * @throws Exception if there is an error waiting on the snapshot to become available
      */
     private static Snapshot createSnapshot(
@@ -594,8 +591,8 @@ public class FileStorageServiceExample {
     }
 
     /**
-     * Demonstrates how to list exports and using various criteria. Note that listing exports is a paginated call, so we should
-     * get all pages until there is no more opcNextPage token
+     * Demonstrates how to list exports and using various criteria. Note that listing exports is a
+     * paginated call, so we should get all pages until there is no more opcNextPage token
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param compartmentId the OCID of the compartment which owns the resources
@@ -662,7 +659,6 @@ public class FileStorageServiceExample {
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param snapshot the snapshot to delete
-     *
      * @throws Exception if there is an error waiting on the export to be deleted
      */
     private static void deleteSnapshot(final FileStorageClient fsClient, final Snapshot snapshot)
@@ -683,7 +679,6 @@ public class FileStorageServiceExample {
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param export the export to delete
-     *
      * @throws Exception if there is an error waiting on the export to be deleted
      */
     private static void deleteExport(final FileStorageClient fsClient, final Export export)
@@ -703,7 +698,6 @@ public class FileStorageServiceExample {
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param mountTarget the mount target to delete
-     *
      * @throws Exception if there is an error waiting on the mount target to be deleted
      */
     private static void deleteMountTarget(
@@ -724,7 +718,6 @@ public class FileStorageServiceExample {
      *
      * @param fsClient the service client used to communicate with the File Storage service
      * @param fileSystem the file system to delete
-     *
      * @throws Exception if there is an error waiting on the file system to be deleted
      */
     private static void deleteFileSystem(
@@ -745,9 +738,7 @@ public class FileStorageServiceExample {
      *
      * @param vcnClient the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
-     *
      * @return the created VCN
-     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     private static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
@@ -781,7 +772,6 @@ public class FileStorageServiceExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
@@ -804,9 +794,7 @@ public class FileStorageServiceExample {
      * @param compartmentId the OCID of the compartment which owns the VCN
      * @param availabilityDomain the availability domain where the subnet will be created
      * @param vcnId the ID of the VCN which will own the subnet
-     *
      * @return the created subnet
-     *
      * @throws Exception if there is an error waiting on the subnet to become available to use
      */
     private static Subnet createSubnet(
@@ -847,7 +835,6 @@ public class FileStorageServiceExample {
      *
      * @param vcnClient the service client to use to delete the subnet
      * @param subnet the subnet to delete
-     *
      * @throws Exception if there is an error waiting on the subnet to be deleted
      */
     private static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet)
@@ -887,7 +874,6 @@ public class FileStorageServiceExample {
      *
      * @param identityClient the client to use to retrieve the availability domains
      * @param compartmentId the OCID of the compartment whose availability domains we're listing
-     *
      * @return a list of all availability domains in a compartment
      */
     private static List<AvailabilityDomain> getAvailabilityDomains(
@@ -906,7 +892,6 @@ public class FileStorageServiceExample {
      * Generates a retry token that we can use as the opc-retry-token in a request.
      *
      * @param tokenLength the length of the token
-     *
      * @return A retry token
      */
     private static String getRetryToken(final int tokenLength) {

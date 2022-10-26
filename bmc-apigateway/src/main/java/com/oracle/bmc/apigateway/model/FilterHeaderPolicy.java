@@ -5,23 +5,24 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Filter HTTP headers as they pass through the gateway.  The gateway applies filters after other transformations,
- * so any headers set or renamed must also be listed here when using an ALLOW type policy.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Filter HTTP headers as they pass through the gateway. The gateway applies filters after other
+ * transformations, so any headers set or renamed must also be listed here when using an ALLOW type
+ * policy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FilterHeaderPolicy.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = FilterHeaderPolicy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class FilterHeaderPolicy
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "items"})
     public FilterHeaderPolicy(Type type, java.util.List<FilterHeaderPolicyItem> items) {
@@ -33,29 +34,27 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
-         * permits only the headers in the list and removes all others, so it acts as an inclusion list.
-         *
-         **/
+         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.
+         * ALLOW permits only the headers in the list and removes all others, so it acts as an
+         * inclusion list.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
-         * permits only the headers in the list and removes all others, so it acts as an inclusion list.
+         * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.
+         * ALLOW permits only the headers in the list and removes all others, so it acts as an
+         * inclusion list.
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The list of headers.
-         *
-         **/
+        /** The list of headers. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<FilterHeaderPolicyItem> items;
 
@@ -64,7 +63,7 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
          *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<FilterHeaderPolicyItem> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -94,9 +93,7 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,17 +103,16 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list. ALLOW
      * permits only the headers in the list and removes all others, so it acts as an inclusion list.
-     *
-     **/
-    public enum Type {
+     */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         Block("BLOCK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -154,27 +150,23 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list. ALLOW
      * permits only the headers in the list and removes all others, so it acts as an inclusion list.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW
+     * BLOCK drops any headers that are in the list of items, so it acts as an exclusion list. ALLOW
      * permits only the headers in the list and removes all others, so it acts as an inclusion list.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * The list of headers.
-     *
-     **/
+    /** The list of headers. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<FilterHeaderPolicyItem> items;
 
@@ -182,7 +174,7 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
      * The list of headers.
      *
      * @return the value
-     **/
+     */
     public java.util.List<FilterHeaderPolicyItem> getItems() {
         return items;
     }
@@ -194,6 +186,7 @@ public final class FilterHeaderPolicy extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

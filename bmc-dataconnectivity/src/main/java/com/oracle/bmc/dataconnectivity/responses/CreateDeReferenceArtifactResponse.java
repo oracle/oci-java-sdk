@@ -9,13 +9,14 @@ import com.oracle.bmc.dataconnectivity.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +40,12 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /**
-     * The returned DeReferenceInfo instance.
-     */
+    /** The returned DeReferenceInfo instance. */
     private com.oracle.bmc.dataconnectivity.model.DeReferenceInfo deReferenceInfo;
 
     /**
      * The returned DeReferenceInfo instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataconnectivity.model.DeReferenceInfo getDeReferenceInfo() {
@@ -62,7 +61,7 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
     })
     private CreateDeReferenceArtifactResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.dataconnectivity.model.DeReferenceInfo deReferenceInfo) {
@@ -72,29 +71,34 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
         this.deReferenceInfo = deReferenceInfo;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateDeReferenceArtifactResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -105,15 +109,14 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +126,12 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /**
-         * The returned DeReferenceInfo instance.
-         */
+        /** The returned DeReferenceInfo instance. */
         private com.oracle.bmc.dataconnectivity.model.DeReferenceInfo deReferenceInfo;
 
         /**
          * The returned DeReferenceInfo instance.
+         *
          * @param deReferenceInfo the value to set
          * @return this builder
          */
@@ -141,8 +143,10 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDeReferenceArtifactResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +159,10 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDeReferenceArtifactResponse build() {
             return new CreateDeReferenceArtifactResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, deReferenceInfo);
@@ -165,6 +171,7 @@ public class CreateDeReferenceArtifactResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

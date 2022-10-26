@@ -5,20 +5,20 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A run object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A run object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Run.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Run extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "archiveUri",
@@ -61,7 +61,9 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         "timeUpdated",
         "totalOCpu",
         "type",
-        "warehouseBucketUri"
+        "warehouseBucketUri",
+        "maxDurationInMinutes",
+        "idleTimeoutInMinutes"
     })
     public Run(
             String archiveUri,
@@ -104,7 +106,9 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             java.util.Date timeUpdated,
             Integer totalOCpu,
             ApplicationType type,
-            String warehouseBucketUri) {
+            String warehouseBucketUri,
+            Long maxDurationInMinutes,
+            Long idleTimeoutInMinutes) {
         super();
         this.archiveUri = archiveUri;
         this.arguments = arguments;
@@ -147,66 +151,69 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         this.totalOCpu = totalOCpu;
         this.type = type;
         this.warehouseBucketUri = warehouseBucketUri;
+        this.maxDurationInMinutes = maxDurationInMinutes;
+        this.idleTimeoutInMinutes = idleTimeoutInMinutes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-         *
-         **/
+         * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs.
+         * For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud
+         * Infrastructure URI of an archive.zip file containing custom dependencies that may be used
+         * to support the execution of a Python, Java, or Scala application. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
         private String archiveUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs.
+         * For example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud
+         * Infrastructure URI of an archive.zip file containing custom dependencies that may be used
+         * to support the execution of a Python, Java, or Scala application. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param archiveUri the value to set
          * @return this builder
-         **/
+         */
         public Builder archiveUri(String archiveUri) {
             this.archiveUri = archiveUri;
             this.__explicitlySet__.add("archiveUri");
             return this;
         }
         /**
-         * The arguments passed to the running application as command line arguments.  An argument is
-         * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
-         * map.  Each placeholder specified must be represented in the parameters map else the request
-         * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
-         * {@code Service Api Spec}, where {@code name} is the name of the parameter.
-         * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
-         * If "input_file" has a value of "mydata.xml", then the value above will be translated to
-         * {@code --input mydata.xml --name "John Doe"}
-         *
-         **/
+         * The arguments passed to the running application as command line arguments. An argument is
+         * either a plain text or a placeholder. Placeholders are replaced using values from the
+         * parameters map. Each placeholder specified must be represented in the parameters map else
+         * the request (POST or PUT) will fail with a HTTP 400 status code. Placeholders are
+         * specified as {@code Service Api Spec}, where {@code name} is the name of the parameter.
+         * Example: {@code [ "--input", "${input_file}", "--name", "John Doe" ]} If "input_file" has
+         * a value of "mydata.xml", then the value above will be translated to {@code --input
+         * mydata.xml --name "John Doe"}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<String> arguments;
 
         /**
-         * The arguments passed to the running application as command line arguments.  An argument is
-         * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
-         * map.  Each placeholder specified must be represented in the parameters map else the request
-         * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
-         * {@code Service Api Spec}, where {@code name} is the name of the parameter.
-         * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
-         * If "input_file" has a value of "mydata.xml", then the value above will be translated to
-         * {@code --input mydata.xml --name "John Doe"}
+         * The arguments passed to the running application as command line arguments. An argument is
+         * either a plain text or a placeholder. Placeholders are replaced using values from the
+         * parameters map. Each placeholder specified must be represented in the parameters map else
+         * the request (POST or PUT) will fail with a HTTP 400 status code. Placeholders are
+         * specified as {@code Service Api Spec}, where {@code name} is the name of the parameter.
+         * Example: {@code [ "--input", "${input_file}", "--name", "John Doe" ]} If "input_file" has
+         * a value of "mydata.xml", then the value above will be translated to {@code --input
+         * mydata.xml --name "John Doe"}
          *
          * @param arguments the value to set
          * @return this builder
-         **/
+         */
         public Builder arguments(java.util.List<String> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
             return this;
         }
-        /**
-         * The application ID.
-         *
-         **/
+        /** The application ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
@@ -215,7 +222,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param applicationId the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
@@ -230,10 +237,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             this.__explicitlySet__.add("applicationLogConfig");
             return this;
         }
-        /**
-         * The class for the application.
-         *
-         **/
+        /** The class for the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("className")
         private String className;
 
@@ -242,16 +246,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param className the value to set
          * @return this builder
-         **/
+         */
         public Builder className(String className) {
             this.className = className;
             this.__explicitlySet__.add("className");
             return this;
         }
-        /**
-         * The OCID of a compartment.
-         *
-         **/
+        /** The OCID of a compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -260,42 +261,38 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The Spark configuration passed to the running process.
-         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
-         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
-         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
-         * not allowed to be overwritten will cause a 400 status to be returned.
-         *
-         **/
+         * The Spark configuration passed to the running process. See
+         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
+         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
+         * Spark properties are permitted to be set. Attempting to set a property that is not
+         * allowed to be overwritten will cause a 400 status to be returned.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private java.util.Map<String, String> configuration;
 
         /**
-         * The Spark configuration passed to the running process.
-         * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
-         * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
-         * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
-         * not allowed to be overwritten will cause a 400 status to be returned.
+         * The Spark configuration passed to the running process. See
+         * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
+         * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all
+         * Spark properties are permitted to be set. Attempting to set a property that is not
+         * allowed to be overwritten will cause a 400 status to be returned.
          *
          * @param configuration the value to set
          * @return this builder
-         **/
+         */
         public Builder configuration(java.util.Map<String, String> configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
             return this;
         }
-        /**
-         * The data read by the run in bytes.
-         *
-         **/
+        /** The data read by the run in bytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataReadInBytes")
         private Long dataReadInBytes;
 
@@ -304,16 +301,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param dataReadInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder dataReadInBytes(Long dataReadInBytes) {
             this.dataReadInBytes = dataReadInBytes;
             this.__explicitlySet__.add("dataReadInBytes");
             return this;
         }
-        /**
-         * The data written by the run in bytes.
-         *
-         **/
+        /** The data written by the run in bytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataWrittenInBytes")
         private Long dataWrittenInBytes;
 
@@ -322,37 +316,37 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param dataWrittenInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder dataWrittenInBytes(Long dataWrittenInBytes) {
             this.dataWrittenInBytes = dataWrittenInBytes;
             this.__explicitlySet__.add("dataWrittenInBytes");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * A user-friendly name. This name is not necessarily unique.
-         *
-         **/
+        /** A user-friendly name. This name is not necessarily unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -361,16 +355,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The VM shape for the driver. Sets the driver cores and memory.
-         *
-         **/
+        /** The VM shape for the driver. Sets the driver cores and memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
@@ -379,7 +370,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param driverShape the value to set
          * @return this builder
-         **/
+         */
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
@@ -395,35 +386,43 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
-         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
-         * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
-         * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
-         * Data Flow service will use derived information from execute input only.
-         *
-         **/
+         * The input used for spark-submit command. For more details see
+         * https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code
+         * --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application
+         * file with arguments. Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar
+         * --files oci://path/to/a.json,oci://path/to/b.csv --py-files
+         * oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class
+         * org.apache.spark.examples.SparkPi oci://path/to/main.jar 10} Note: If execute is
+         * specified together with applicationId, className, configuration, fileUri, language,
+         * arguments, parameters during application create/update, or run create/submit, Data Flow
+         * service will use derived information from execute input only.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("execute")
         private String execute;
 
         /**
-         * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
-         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
-         * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
-         * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
-         * Data Flow service will use derived information from execute input only.
+         * The input used for spark-submit command. For more details see
+         * https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+         * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code
+         * --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application
+         * file with arguments. Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar
+         * --files oci://path/to/a.json,oci://path/to/b.csv --py-files
+         * oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class
+         * org.apache.spark.examples.SparkPi oci://path/to/main.jar 10} Note: If execute is
+         * specified together with applicationId, className, configuration, fileUri, language,
+         * arguments, parameters during application create/update, or run create/submit, Data Flow
+         * service will use derived information from execute input only.
          *
          * @param execute the value to set
          * @return this builder
-         **/
+         */
         public Builder execute(String execute) {
             this.execute = execute;
             this.__explicitlySet__.add("execute");
             return this;
         }
-        /**
-         * The VM shape for the executors. Sets the executor cores and memory.
-         *
-         **/
+        /** The VM shape for the executors. Sets the executor cores and memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
@@ -432,7 +431,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param executorShape the value to set
          * @return this builder
-         **/
+         */
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
@@ -448,51 +447,48 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-         *
-         **/
+         * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
         private String fileUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param fileUri the value to set
          * @return this builder
-         **/
+         */
         public Builder fileUri(String fileUri) {
             this.fileUri = fileUri;
             this.__explicitlySet__.add("fileUri");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /**
-         * The ID of a run.
-         *
-         **/
+        /** The ID of a run. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -501,16 +497,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The Spark language.
-         *
-         **/
+        /** The Spark language. */
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private ApplicationLanguage language;
 
@@ -519,16 +512,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param language the value to set
          * @return this builder
-         **/
+         */
         public Builder language(ApplicationLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-        /**
-         * The detailed messages about the lifecycle state.
-         *
-         **/
+        /** The detailed messages about the lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -537,16 +527,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The current state of this run.
-         *
-         **/
+        /** The current state of this run. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private RunLifecycleState lifecycleState;
 
@@ -555,36 +542,34 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(RunLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-         *
-         **/
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be
+         * uploaded. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
         private String logsBucketUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be
+         * uploaded. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param logsBucketUri the value to set
          * @return this builder
-         **/
+         */
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = logsBucketUri;
             this.__explicitlySet__.add("logsBucketUri");
             return this;
         }
-        /**
-         * The OCID of OCI Hive Metastore.
-         *
-         **/
+        /** The OCID of OCI Hive Metastore. */
         @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
         private String metastoreId;
 
@@ -593,16 +578,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param metastoreId the value to set
          * @return this builder
-         **/
+         */
         public Builder metastoreId(String metastoreId) {
             this.metastoreId = metastoreId;
             this.__explicitlySet__.add("metastoreId");
             return this;
         }
-        /**
-         * The number of executor VMs requested.
-         *
-         **/
+        /** The number of executor VMs requested. */
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
@@ -611,36 +593,32 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param numExecutors the value to set
          * @return this builder
-         **/
+         */
         public Builder numExecutors(Integer numExecutors) {
             this.numExecutors = numExecutors;
             this.__explicitlySet__.add("numExecutors");
             return this;
         }
         /**
-         * Unique Oracle assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
-         **/
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
-         **/
+         */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
             this.__explicitlySet__.add("opcRequestId");
             return this;
         }
-        /**
-         * The OCID of the user who created the resource.
-         *
-         **/
+        /** The OCID of the user who created the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
         private String ownerPrincipalId;
 
@@ -649,104 +627,101 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param ownerPrincipalId the value to set
          * @return this builder
-         **/
+         */
         public Builder ownerPrincipalId(String ownerPrincipalId) {
             this.ownerPrincipalId = ownerPrincipalId;
             this.__explicitlySet__.add("ownerPrincipalId");
             return this;
         }
         /**
-         * The username of the user who created the resource.  If the username of the owner does not exist,
-         * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
-         *
-         **/
+         * The username of the user who created the resource. If the username of the owner does not
+         * exist, {@code null} will be returned and the caller should refer to the ownerPrincipalId
+         * value instead.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
         private String ownerUserName;
 
         /**
-         * The username of the user who created the resource.  If the username of the owner does not exist,
-         * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
+         * The username of the user who created the resource. If the username of the owner does not
+         * exist, {@code null} will be returned and the caller should refer to the ownerPrincipalId
+         * value instead.
          *
          * @param ownerUserName the value to set
          * @return this builder
-         **/
+         */
         public Builder ownerUserName(String ownerUserName) {
             this.ownerUserName = ownerUserName;
             this.__explicitlySet__.add("ownerUserName");
             return this;
         }
         /**
-         * An array of name/value pairs used to fill placeholders found in properties like
-         * {@code Application.arguments}.  The name must be a string of one or more word characters
-         * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
-         * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-         *
-         **/
+         * An array of name/value pairs used to fill placeholders found in properties like {@code
+         * Application.arguments}. The name must be a string of one or more word characters (a-z,
+         * A-Z, 0-9, _). The value can be a string of 0 or more characters of any kind. Example: [ {
+         * name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name:
+         * "variable_x", value: "${x}"} ]
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<ApplicationParameter> parameters;
 
         /**
-         * An array of name/value pairs used to fill placeholders found in properties like
-         * {@code Application.arguments}.  The name must be a string of one or more word characters
-         * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
-         * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+         * An array of name/value pairs used to fill placeholders found in properties like {@code
+         * Application.arguments}. The name must be a string of one or more word characters (a-z,
+         * A-Z, 0-9, _). The value can be a string of 0 or more characters of any kind. Example: [ {
+         * name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name:
+         * "variable_x", value: "${x}"} ]
          *
          * @param parameters the value to set
          * @return this builder
-         **/
+         */
         public Builder parameters(java.util.List<ApplicationParameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
         /**
-         * An array of DNS zone names.
-         * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
-         *
-         **/
+         * An array of DNS zone names. Example: {@code [ "app.examplecorp.com",
+         * "app.examplecorp2.com" ]}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsZones")
         private java.util.List<String> privateEndpointDnsZones;
 
         /**
-         * An array of DNS zone names.
-         * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
+         * An array of DNS zone names. Example: {@code [ "app.examplecorp.com",
+         * "app.examplecorp2.com" ]}
          *
          * @param privateEndpointDnsZones the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointDnsZones(java.util.List<String> privateEndpointDnsZones) {
             this.privateEndpointDnsZones = privateEndpointDnsZones;
             this.__explicitlySet__.add("privateEndpointDnsZones");
             return this;
         }
         /**
-         * The maximum number of hosts to be accessed through the private endpoint. This value is used
-         * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
-         * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
-         * to 512.
-         *
-         **/
+         * The maximum number of hosts to be accessed through the private endpoint. This value is
+         * used to calculate the relevant CIDR block and should be a multiple of 256. If the value
+         * is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300
+         * is rounded up to 512.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointMaxHostCount")
         private Integer privateEndpointMaxHostCount;
 
         /**
-         * The maximum number of hosts to be accessed through the private endpoint. This value is used
-         * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
-         * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
-         * to 512.
+         * The maximum number of hosts to be accessed through the private endpoint. This value is
+         * used to calculate the relevant CIDR block and should be a multiple of 256. If the value
+         * is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300
+         * is rounded up to 512.
          *
          * @param privateEndpointMaxHostCount the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointMaxHostCount(Integer privateEndpointMaxHostCount) {
             this.privateEndpointMaxHostCount = privateEndpointMaxHostCount;
             this.__explicitlySet__.add("privateEndpointMaxHostCount");
             return this;
         }
-        /**
-         * An array of network security group OCIDs.
-         *
-         **/
+        /** An array of network security group OCIDs. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointNsgIds")
         private java.util.List<String> privateEndpointNsgIds;
 
@@ -755,16 +730,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param privateEndpointNsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointNsgIds(java.util.List<String> privateEndpointNsgIds) {
             this.privateEndpointNsgIds = privateEndpointNsgIds;
             this.__explicitlySet__.add("privateEndpointNsgIds");
             return this;
         }
-        /**
-         * The OCID of a private endpoint.
-         *
-         **/
+        /** The OCID of a private endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
@@ -773,16 +745,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param privateEndpointId the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
-        /**
-         * The OCID of a subnet.
-         *
-         **/
+        /** The OCID of a subnet. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSubnetId")
         private String privateEndpointSubnetId;
 
@@ -791,16 +760,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param privateEndpointSubnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointSubnetId(String privateEndpointSubnetId) {
             this.privateEndpointSubnetId = privateEndpointSubnetId;
             this.__explicitlySet__.add("privateEndpointSubnetId");
             return this;
         }
-        /**
-         * The duration of the run in milliseconds.
-         *
-         **/
+        /** The duration of the run in milliseconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("runDurationInMilliseconds")
         private Long runDurationInMilliseconds;
 
@@ -809,16 +775,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param runDurationInMilliseconds the value to set
          * @return this builder
-         **/
+         */
         public Builder runDurationInMilliseconds(Long runDurationInMilliseconds) {
             this.runDurationInMilliseconds = runDurationInMilliseconds;
             this.__explicitlySet__.add("runDurationInMilliseconds");
             return this;
         }
-        /**
-         * The Spark version utilized to run the application.
-         *
-         **/
+        /** The Spark version utilized to run the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
         private String sparkVersion;
 
@@ -827,56 +790,55 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param sparkVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder sparkVersion(String sparkVersion) {
             this.sparkVersion = sparkVersion;
             this.__explicitlySet__.add("sparkVersion");
             return this;
         }
         /**
-         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2018-04-03T21:10:29.600Z}
-         *
-         **/
+         * The date and time a application was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2018-04-03T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2018-04-03T21:10:29.600Z}
+         * The date and time a application was created, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2018-04-03T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2018-04-03T21:10:29.600Z}
-         *
-         **/
+         * The date and time a application was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2018-04-03T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2018-04-03T21:10:29.600Z}
+         * The date and time a application was updated, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2018-04-03T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The total number of oCPU requested by the run.
-         *
-         **/
+        /** The total number of oCPU requested by the run. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalOCpu")
         private Integer totalOCpu;
 
@@ -885,16 +847,13 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param totalOCpu the value to set
          * @return this builder
-         **/
+         */
         public Builder totalOCpu(Integer totalOCpu) {
             this.totalOCpu = totalOCpu;
             this.__explicitlySet__.add("totalOCpu");
             return this;
         }
-        /**
-         * The Spark application processing type.
-         *
-         **/
+        /** The Spark application processing type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ApplicationType type;
 
@@ -903,32 +862,73 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(ApplicationType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-         * for BATCH SQL runs.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-         *
-         **/
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse
+         * directory for BATCH SQL runs. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-         * for BATCH SQL runs.
-         * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse
+         * directory for BATCH SQL runs. See
+         * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          *
          * @param warehouseBucketUri the value to set
          * @return this builder
-         **/
+         */
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = warehouseBucketUri;
             this.__explicitlySet__.add("warehouseBucketUri");
+            return this;
+        }
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would
+         * be terminated once it reaches this duration from the time it transitions to {@code
+         * IN_PROGRESS} state.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+        private Long maxDurationInMinutes;
+
+        /**
+         * The maximum duration in minutes for which an Application should run. Data Flow Run would
+         * be terminated once it reaches this duration from the time it transitions to {@code
+         * IN_PROGRESS} state.
+         *
+         * @param maxDurationInMinutes the value to set
+         * @return this builder
+         */
+        public Builder maxDurationInMinutes(Long maxDurationInMinutes) {
+            this.maxDurationInMinutes = maxDurationInMinutes;
+            this.__explicitlySet__.add("maxDurationInMinutes");
+            return this;
+        }
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity
+         * for this amount of time period. Note: This parameter is currently only applicable for
+         * Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+        private Long idleTimeoutInMinutes;
+
+        /**
+         * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity
+         * for this amount of time period. Note: This parameter is currently only applicable for
+         * Runs of type {@code SESSION}. Default value is 2880 minutes (2 days)
+         *
+         * @param idleTimeoutInMinutes the value to set
+         * @return this builder
+         */
+        public Builder idleTimeoutInMinutes(Long idleTimeoutInMinutes) {
+            this.idleTimeoutInMinutes = idleTimeoutInMinutes;
+            this.__explicitlySet__.add("idleTimeoutInMinutes");
             return this;
         }
 
@@ -978,7 +978,9 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                             this.timeUpdated,
                             this.totalOCpu,
                             this.type,
-                            this.warehouseBucketUri);
+                            this.warehouseBucketUri,
+                            this.maxDurationInMinutes,
+                            this.idleTimeoutInMinutes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1110,13 +1112,17 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             if (model.wasPropertyExplicitlySet("warehouseBucketUri")) {
                 this.warehouseBucketUri(model.getWarehouseBucketUri());
             }
+            if (model.wasPropertyExplicitlySet("maxDurationInMinutes")) {
+                this.maxDurationInMinutes(model.getMaxDurationInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("idleTimeoutInMinutes")) {
+                this.idleTimeoutInMinutes(model.getIdleTimeoutInMinutes());
+            }
             return this;
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -1126,57 +1132,58 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     *
-     **/
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For
+     * example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI
+     * of an archive.zip file containing custom dependencies that may be used to support the
+     * execution of a Python, Java, or Scala application. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("archiveUri")
     private final String archiveUri;
 
     /**
-     * An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For
+     * example, {@code oci://path/to/a.zip,oci://path/to/b.zip}. An Oracle Cloud Infrastructure URI
+     * of an archive.zip file containing custom dependencies that may be used to support the
+     * execution of a Python, Java, or Scala application. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
-     **/
+     */
     public String getArchiveUri() {
         return archiveUri;
     }
 
     /**
-     * The arguments passed to the running application as command line arguments.  An argument is
-     * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
-     * map.  Each placeholder specified must be represented in the parameters map else the request
-     * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
-     * {@code Service Api Spec}, where {@code name} is the name of the parameter.
-     * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
-     * If "input_file" has a value of "mydata.xml", then the value above will be translated to
-     * {@code --input mydata.xml --name "John Doe"}
-     *
-     **/
+     * The arguments passed to the running application as command line arguments. An argument is
+     * either a plain text or a placeholder. Placeholders are replaced using values from the
+     * parameters map. Each placeholder specified must be represented in the parameters map else the
+     * request (POST or PUT) will fail with a HTTP 400 status code. Placeholders are specified as
+     * {@code Service Api Spec}, where {@code name} is the name of the parameter. Example: {@code [
+     * "--input", "${input_file}", "--name", "John Doe" ]} If "input_file" has a value of
+     * "mydata.xml", then the value above will be translated to {@code --input mydata.xml --name
+     * "John Doe"}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<String> arguments;
 
     /**
-     * The arguments passed to the running application as command line arguments.  An argument is
-     * either a plain text or a placeholder. Placeholders are replaced using values from the parameters
-     * map.  Each placeholder specified must be represented in the parameters map else the request
-     * (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as
-     * {@code Service Api Spec}, where {@code name} is the name of the parameter.
-     * Example:  {@code [ "--input", "${input_file}", "--name", "John Doe" ]}
-     * If "input_file" has a value of "mydata.xml", then the value above will be translated to
-     * {@code --input mydata.xml --name "John Doe"}
+     * The arguments passed to the running application as command line arguments. An argument is
+     * either a plain text or a placeholder. Placeholders are replaced using values from the
+     * parameters map. Each placeholder specified must be represented in the parameters map else the
+     * request (POST or PUT) will fail with a HTTP 400 status code. Placeholders are specified as
+     * {@code Service Api Spec}, where {@code name} is the name of the parameter. Example: {@code [
+     * "--input", "${input_file}", "--name", "John Doe" ]} If "input_file" has a value of
+     * "mydata.xml", then the value above will be translated to {@code --input mydata.xml --name
+     * "John Doe"}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getArguments() {
         return arguments;
     }
 
-    /**
-     * The application ID.
-     *
-     **/
+    /** The application ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
@@ -1184,7 +1191,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The application ID.
      *
      * @return the value
-     **/
+     */
     public String getApplicationId() {
         return applicationId;
     }
@@ -1196,10 +1203,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return applicationLogConfig;
     }
 
-    /**
-     * The class for the application.
-     *
-     **/
+    /** The class for the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("className")
     private final String className;
 
@@ -1207,15 +1211,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The class for the application.
      *
      * @return the value
-     **/
+     */
     public String getClassName() {
         return className;
     }
 
-    /**
-     * The OCID of a compartment.
-     *
-     **/
+    /** The OCID of a compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -1223,39 +1224,35 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The OCID of a compartment.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The Spark configuration passed to the running process.
-     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
-     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
-     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
-     * not allowed to be overwritten will cause a 400 status to be returned.
-     *
-     **/
+     * The Spark configuration passed to the running process. See
+     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
+     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
+     * properties are permitted to be set. Attempting to set a property that is not allowed to be
+     * overwritten will cause a 400 status to be returned.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final java.util.Map<String, String> configuration;
 
     /**
-     * The Spark configuration passed to the running process.
-     * See https://spark.apache.org/docs/latest/configuration.html#available-properties.
-     * Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" }
-     * Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
-     * not allowed to be overwritten will cause a 400 status to be returned.
+     * The Spark configuration passed to the running process. See
+     * https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: {
+     * "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark
+     * properties are permitted to be set. Attempting to set a property that is not allowed to be
+     * overwritten will cause a 400 status to be returned.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getConfiguration() {
         return configuration;
     }
 
-    /**
-     * The data read by the run in bytes.
-     *
-     **/
+    /** The data read by the run in bytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataReadInBytes")
     private final Long dataReadInBytes;
 
@@ -1263,15 +1260,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The data read by the run in bytes.
      *
      * @return the value
-     **/
+     */
     public Long getDataReadInBytes() {
         return dataReadInBytes;
     }
 
-    /**
-     * The data written by the run in bytes.
-     *
-     **/
+    /** The data written by the run in bytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataWrittenInBytes")
     private final Long dataWrittenInBytes;
 
@@ -1279,33 +1273,33 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The data written by the run in bytes.
      *
      * @return the value
-     **/
+     */
     public Long getDataWrittenInBytes() {
         return dataWrittenInBytes;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * A user-friendly name. This name is not necessarily unique.
-     *
-     **/
+    /** A user-friendly name. This name is not necessarily unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -1313,15 +1307,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * A user-friendly name. This name is not necessarily unique.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The VM shape for the driver. Sets the driver cores and memory.
-     *
-     **/
+    /** The VM shape for the driver. Sets the driver cores and memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
@@ -1329,7 +1320,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The VM shape for the driver. Sets the driver cores and memory.
      *
      * @return the value
-     **/
+     */
     public String getDriverShape() {
         return driverShape;
     }
@@ -1342,33 +1333,41 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
-     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
-     * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
-     * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
-     * Data Flow service will use derived information from execute input only.
-     *
-     **/
+     * The input used for spark-submit command. For more details see
+     * https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code
+     * --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file
+     * with arguments. Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files
+     * oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py
+     * --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi
+     * oci://path/to/main.jar 10} Note: If execute is specified together with applicationId,
+     * className, configuration, fileUri, language, arguments, parameters during application
+     * create/update, or run create/submit, Data Flow service will use derived information from
+     * execute input only.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("execute")
     private final String execute;
 
     /**
-     * The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
-     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file with arguments.
-     * Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10}
-     * Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit,
-     * Data Flow service will use derived information from execute input only.
+     * The input used for spark-submit command. For more details see
+     * https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit.
+     * Supported options include {@code --class}{@code , }{@code --file}{@code , }{@code
+     * --jars}{@code , }{@code --conf}{@code , }{@code --py-files}{@code , and main application file
+     * with arguments. Example: }{@code --jars oci://path/to/a.jar,oci://path/to/b.jar --files
+     * oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py
+     * --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi
+     * oci://path/to/main.jar 10} Note: If execute is specified together with applicationId,
+     * className, configuration, fileUri, language, arguments, parameters during application
+     * create/update, or run create/submit, Data Flow service will use derived information from
+     * execute input only.
      *
      * @return the value
-     **/
+     */
     public String getExecute() {
         return execute;
     }
 
-    /**
-     * The VM shape for the executors. Sets the executor cores and memory.
-     *
-     **/
+    /** The VM shape for the executors. Sets the executor cores and memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
@@ -1376,7 +1375,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The VM shape for the executors. Sets the executor cores and memory.
      *
      * @return the value
-     **/
+     */
     public String getExecutorShape() {
         return executorShape;
     }
@@ -1389,47 +1388,44 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     *
-     **/
+     * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fileUri")
     private final String fileUri;
 
     /**
-     * An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * An Oracle Cloud Infrastructure URI of the file containing the application to execute. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
-     **/
+     */
     public String getFileUri() {
         return fileUri;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /**
-     * The ID of a run.
-     *
-     **/
+    /** The ID of a run. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -1437,15 +1433,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The ID of a run.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The Spark language.
-     *
-     **/
+    /** The Spark language. */
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final ApplicationLanguage language;
 
@@ -1453,15 +1446,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The Spark language.
      *
      * @return the value
-     **/
+     */
     public ApplicationLanguage getLanguage() {
         return language;
     }
 
-    /**
-     * The detailed messages about the lifecycle state.
-     *
-     **/
+    /** The detailed messages about the lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -1469,15 +1459,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The detailed messages about the lifecycle state.
      *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The current state of this run.
-     *
-     **/
+    /** The current state of this run. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final RunLifecycleState lifecycleState;
 
@@ -1485,7 +1472,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The current state of this run.
      *
      * @return the value
-     **/
+     */
     public RunLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -1493,8 +1480,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
      * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     private final String logsBucketUri;
 
@@ -1503,15 +1489,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
-     **/
+     */
     public String getLogsBucketUri() {
         return logsBucketUri;
     }
 
-    /**
-     * The OCID of OCI Hive Metastore.
-     *
-     **/
+    /** The OCID of OCI Hive Metastore. */
     @com.fasterxml.jackson.annotation.JsonProperty("metastoreId")
     private final String metastoreId;
 
@@ -1519,15 +1502,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The OCID of OCI Hive Metastore.
      *
      * @return the value
-     **/
+     */
     public String getMetastoreId() {
         return metastoreId;
     }
 
-    /**
-     * The number of executor VMs requested.
-     *
-     **/
+    /** The number of executor VMs requested. */
     @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
     private final Integer numExecutors;
 
@@ -1535,33 +1515,29 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The number of executor VMs requested.
      *
      * @return the value
-     **/
+     */
     public Integer getNumExecutors() {
         return numExecutors;
     }
 
     /**
-     * Unique Oracle assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
-     **/
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("opcRequestId")
     private final String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
-     **/
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The OCID of the user who created the resource.
-     *
-     **/
+    /** The OCID of the user who created the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("ownerPrincipalId")
     private final String ownerPrincipalId;
 
@@ -1569,95 +1545,92 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The OCID of the user who created the resource.
      *
      * @return the value
-     **/
+     */
     public String getOwnerPrincipalId() {
         return ownerPrincipalId;
     }
 
     /**
-     * The username of the user who created the resource.  If the username of the owner does not exist,
-     * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
-     *
-     **/
+     * The username of the user who created the resource. If the username of the owner does not
+     * exist, {@code null} will be returned and the caller should refer to the ownerPrincipalId
+     * value instead.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ownerUserName")
     private final String ownerUserName;
 
     /**
-     * The username of the user who created the resource.  If the username of the owner does not exist,
-     * {@code null} will be returned and the caller should refer to the ownerPrincipalId value instead.
+     * The username of the user who created the resource. If the username of the owner does not
+     * exist, {@code null} will be returned and the caller should refer to the ownerPrincipalId
+     * value instead.
      *
      * @return the value
-     **/
+     */
     public String getOwnerUserName() {
         return ownerUserName;
     }
 
     /**
-     * An array of name/value pairs used to fill placeholders found in properties like
-     * {@code Application.arguments}.  The name must be a string of one or more word characters
-     * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
-     * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
-     *
-     **/
+     * An array of name/value pairs used to fill placeholders found in properties like {@code
+     * Application.arguments}. The name must be a string of one or more word characters (a-z, A-Z,
+     * 0-9, _). The value can be a string of 0 or more characters of any kind. Example: [ { name:
+     * "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name:
+     * "variable_x", value: "${x}"} ]
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<ApplicationParameter> parameters;
 
     /**
-     * An array of name/value pairs used to fill placeholders found in properties like
-     * {@code Application.arguments}.  The name must be a string of one or more word characters
-     * (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind.
-     * Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+     * An array of name/value pairs used to fill placeholders found in properties like {@code
+     * Application.arguments}. The name must be a string of one or more word characters (a-z, A-Z,
+     * 0-9, _). The value can be a string of 0 or more characters of any kind. Example: [ { name:
+     * "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name:
+     * "variable_x", value: "${x}"} ]
      *
      * @return the value
-     **/
+     */
     public java.util.List<ApplicationParameter> getParameters() {
         return parameters;
     }
 
     /**
-     * An array of DNS zone names.
-     * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
-     *
-     **/
+     * An array of DNS zone names. Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com"
+     * ]}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointDnsZones")
     private final java.util.List<String> privateEndpointDnsZones;
 
     /**
-     * An array of DNS zone names.
-     * Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com" ]}
+     * An array of DNS zone names. Example: {@code [ "app.examplecorp.com", "app.examplecorp2.com"
+     * ]}
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPrivateEndpointDnsZones() {
         return privateEndpointDnsZones;
     }
 
     /**
      * The maximum number of hosts to be accessed through the private endpoint. This value is used
-     * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+     * to calculate the relevant CIDR block and should be a multiple of 256. If the value is not a
      * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
      * to 512.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointMaxHostCount")
     private final Integer privateEndpointMaxHostCount;
 
     /**
      * The maximum number of hosts to be accessed through the private endpoint. This value is used
-     * to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+     * to calculate the relevant CIDR block and should be a multiple of 256. If the value is not a
      * multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
      * to 512.
      *
      * @return the value
-     **/
+     */
     public Integer getPrivateEndpointMaxHostCount() {
         return privateEndpointMaxHostCount;
     }
 
-    /**
-     * An array of network security group OCIDs.
-     *
-     **/
+    /** An array of network security group OCIDs. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointNsgIds")
     private final java.util.List<String> privateEndpointNsgIds;
 
@@ -1665,15 +1638,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * An array of network security group OCIDs.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPrivateEndpointNsgIds() {
         return privateEndpointNsgIds;
     }
 
-    /**
-     * The OCID of a private endpoint.
-     *
-     **/
+    /** The OCID of a private endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
@@ -1681,15 +1651,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The OCID of a private endpoint.
      *
      * @return the value
-     **/
+     */
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
 
-    /**
-     * The OCID of a subnet.
-     *
-     **/
+    /** The OCID of a subnet. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointSubnetId")
     private final String privateEndpointSubnetId;
 
@@ -1697,15 +1664,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The OCID of a subnet.
      *
      * @return the value
-     **/
+     */
     public String getPrivateEndpointSubnetId() {
         return privateEndpointSubnetId;
     }
 
-    /**
-     * The duration of the run in milliseconds.
-     *
-     **/
+    /** The duration of the run in milliseconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("runDurationInMilliseconds")
     private final Long runDurationInMilliseconds;
 
@@ -1713,15 +1677,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The duration of the run in milliseconds.
      *
      * @return the value
-     **/
+     */
     public Long getRunDurationInMilliseconds() {
         return runDurationInMilliseconds;
     }
 
-    /**
-     * The Spark version utilized to run the application.
-     *
-     **/
+    /** The Spark version utilized to run the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("sparkVersion")
     private final String sparkVersion;
 
@@ -1729,51 +1690,50 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The Spark version utilized to run the application.
      *
      * @return the value
-     **/
+     */
     public String getSparkVersion() {
         return sparkVersion;
     }
 
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2018-04-03T21:10:29.600Z}
-     *
-     **/
+     * The date and time a application was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2018-04-03T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2018-04-03T21:10:29.600Z}
+     * The date and time a application was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2018-04-03T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2018-04-03T21:10:29.600Z}
-     *
-     **/
+     * The date and time a application was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2018-04-03T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time a application was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2018-04-03T21:10:29.600Z}
+     * The date and time a application was updated, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2018-04-03T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The total number of oCPU requested by the run.
-     *
-     **/
+    /** The total number of oCPU requested by the run. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalOCpu")
     private final Integer totalOCpu;
 
@@ -1781,15 +1741,12 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The total number of oCPU requested by the run.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalOCpu() {
         return totalOCpu;
     }
 
-    /**
-     * The Spark application processing type.
-     *
-     **/
+    /** The Spark application processing type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ApplicationType type;
 
@@ -1797,29 +1754,66 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
      * The Spark application processing type.
      *
      * @return the value
-     **/
+     */
     public ApplicationType getType() {
         return type;
     }
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-     * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-     *
-     **/
+     * for BATCH SQL runs. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
     private final String warehouseBucketUri;
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-     * for BATCH SQL runs.
-     * See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * for BATCH SQL runs. See
+     * https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      *
      * @return the value
-     **/
+     */
     public String getWarehouseBucketUri() {
         return warehouseBucketUri;
+    }
+
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be
+     * terminated once it reaches this duration from the time it transitions to {@code IN_PROGRESS}
+     * state.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxDurationInMinutes")
+    private final Long maxDurationInMinutes;
+
+    /**
+     * The maximum duration in minutes for which an Application should run. Data Flow Run would be
+     * terminated once it reaches this duration from the time it transitions to {@code IN_PROGRESS}
+     * state.
+     *
+     * @return the value
+     */
+    public Long getMaxDurationInMinutes() {
+        return maxDurationInMinutes;
+    }
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for
+     * this amount of time period. Note: This parameter is currently only applicable for Runs of
+     * type {@code SESSION}. Default value is 2880 minutes (2 days)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("idleTimeoutInMinutes")
+    private final Long idleTimeoutInMinutes;
+
+    /**
+     * The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for
+     * this amount of time period. Note: This parameter is currently only applicable for Runs of
+     * type {@code SESSION}. Default value is 2880 minutes (2 days)
+     *
+     * @return the value
+     */
+    public Long getIdleTimeoutInMinutes() {
+        return idleTimeoutInMinutes;
     }
 
     @Override
@@ -1829,6 +1823,7 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -1881,6 +1876,8 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         sb.append(", totalOCpu=").append(String.valueOf(this.totalOCpu));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", warehouseBucketUri=").append(String.valueOf(this.warehouseBucketUri));
+        sb.append(", maxDurationInMinutes=").append(String.valueOf(this.maxDurationInMinutes));
+        sb.append(", idleTimeoutInMinutes=").append(String.valueOf(this.idleTimeoutInMinutes));
         sb.append(")");
         return sb.toString();
     }
@@ -1940,6 +1937,8 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                 && java.util.Objects.equals(this.totalOCpu, other.totalOCpu)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.warehouseBucketUri, other.warehouseBucketUri)
+                && java.util.Objects.equals(this.maxDurationInMinutes, other.maxDurationInMinutes)
+                && java.util.Objects.equals(this.idleTimeoutInMinutes, other.idleTimeoutInMinutes)
                 && super.equals(other);
     }
 
@@ -2048,6 +2047,16 @@ public final class Run extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
                         + (this.warehouseBucketUri == null
                                 ? 43
                                 : this.warehouseBucketUri.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxDurationInMinutes == null
+                                ? 43
+                                : this.maxDurationInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.idleTimeoutInMinutes == null
+                                ? 43
+                                : this.idleTimeoutInMinutes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

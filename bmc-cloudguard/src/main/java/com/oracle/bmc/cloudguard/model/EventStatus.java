@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible event states.
- **/
+/** Possible event states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum EventStatus {
+public enum EventStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Reopen("REOPEN"),
     Open("OPEN"),
     Update("UPDATE"),

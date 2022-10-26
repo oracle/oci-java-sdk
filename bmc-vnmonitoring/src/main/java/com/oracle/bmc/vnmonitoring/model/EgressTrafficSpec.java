@@ -5,21 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the traffic configuration that leaves the traffic node.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the traffic configuration that leaves the traffic node. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EgressTrafficSpec.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = EgressTrafficSpec.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EgressTrafficSpec
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "protocol",
@@ -41,49 +42,46 @@ public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The IP protocol to use for the traffic path analysis.
-         **/
+        /** The IP protocol to use for the traffic path analysis. */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Integer protocol;
 
         /**
          * The IP protocol to use for the traffic path analysis.
+         *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(Integer protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /**
-         * The IPv4 address of the source node.
-         **/
+        /** The IPv4 address of the source node. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
         private String sourceAddress;
 
         /**
          * The IPv4 address of the source node.
+         *
          * @param sourceAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceAddress(String sourceAddress) {
             this.sourceAddress = sourceAddress;
             this.__explicitlySet__.add("sourceAddress");
             return this;
         }
-        /**
-         * The IPv4 address of the destination node.
-         **/
+        /** The IPv4 address of the destination node. */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
         private String destinationAddress;
 
         /**
          * The IPv4 address of the destination node.
+         *
          * @param destinationAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationAddress(String destinationAddress) {
             this.destinationAddress = destinationAddress;
             this.__explicitlySet__.add("destinationAddress");
@@ -134,9 +132,7 @@ public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,44 +141,41 @@ public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The IP protocol to use for the traffic path analysis.
-     **/
+    /** The IP protocol to use for the traffic path analysis. */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Integer protocol;
 
     /**
      * The IP protocol to use for the traffic path analysis.
+     *
      * @return the value
-     **/
+     */
     public Integer getProtocol() {
         return protocol;
     }
 
-    /**
-     * The IPv4 address of the source node.
-     **/
+    /** The IPv4 address of the source node. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
     private final String sourceAddress;
 
     /**
      * The IPv4 address of the source node.
+     *
      * @return the value
-     **/
+     */
     public String getSourceAddress() {
         return sourceAddress;
     }
 
-    /**
-     * The IPv4 address of the destination node.
-     **/
+    /** The IPv4 address of the destination node. */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
     private final String destinationAddress;
 
     /**
      * The IPv4 address of the destination node.
+     *
      * @return the value
-     **/
+     */
     public String getDestinationAddress() {
         return destinationAddress;
     }
@@ -201,6 +194,7 @@ public final class EgressTrafficSpec extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,13 +9,14 @@ import com.oracle.bmc.opsi.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,36 +40,31 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * URI of the resource
-     */
+    /** URI of the resource */
     private String location;
 
     /**
      * URI of the resource
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * URI of the resource
-     */
+    /** URI of the resource */
     private String contentLocation;
 
     /**
      * URI of the resource
+     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -81,13 +76,12 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /**
-     * The returned DatabaseInsight instance.
-     */
+    /** The returned DatabaseInsight instance. */
     private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
     /**
      * The returned DatabaseInsight instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.opsi.model.DatabaseInsight getDatabaseInsight() {
@@ -106,7 +100,7 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
     })
     private CreateDatabaseInsightResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
@@ -122,29 +116,33 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
         this.databaseInsight = databaseInsight;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateDatabaseInsightResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -155,15 +153,14 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -173,13 +170,12 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * URI of the resource
-         */
+        /** URI of the resource */
         private String location;
 
         /**
          * URI of the resource
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -188,13 +184,12 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * URI of the resource
-         */
+        /** URI of the resource */
         private String contentLocation;
 
         /**
          * URI of the resource
+         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -203,10 +198,7 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -220,13 +212,12 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned DatabaseInsight instance.
-         */
+        /** The returned DatabaseInsight instance. */
         private com.oracle.bmc.opsi.model.DatabaseInsight databaseInsight;
 
         /**
          * The returned DatabaseInsight instance.
+         *
          * @param databaseInsight the value to set
          * @return this builder
          */
@@ -237,8 +228,10 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDatabaseInsightResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -254,8 +247,10 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDatabaseInsightResponse build() {
             return new CreateDatabaseInsightResponse(
                     __httpStatusCode__,
@@ -271,6 +266,7 @@ public class CreateDatabaseInsightResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

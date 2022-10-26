@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudmigrations.model;
 
-/**
- * The type of connection for an asset source.
- **/
+/** The type of connection for an asset source. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum AssetSourceConnectionType {
+public enum AssetSourceConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Discovery("DISCOVERY"),
     Replication("REPLICATION"),
     ;

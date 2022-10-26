@@ -6,19 +6,17 @@ package com.oracle.bmc.audit.requests;
 
 import com.oracle.bmc.audit.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/GetConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConfigurationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/audit/GetConfigurationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * ID of the root compartment (tenancy)
-     */
+    /** ID of the root compartment (tenancy) */
     private String compartmentId;
 
-    /**
-     * ID of the root compartment (tenancy)
-     */
+    /** ID of the root compartment (tenancy) */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -26,17 +24,15 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetConfigurationRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * ID of the root compartment (tenancy)
-         */
+        /** ID of the root compartment (tenancy) */
         private String compartmentId = null;
 
         /**
          * ID of the root compartment (tenancy)
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -47,18 +43,19 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -70,6 +67,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetConfigurationRequest o) {
@@ -82,10 +80,11 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetConfigurationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetConfigurationRequest
          */
@@ -99,7 +98,8 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetConfigurationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetConfigurationRequest
@@ -114,6 +114,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -122,6 +123,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

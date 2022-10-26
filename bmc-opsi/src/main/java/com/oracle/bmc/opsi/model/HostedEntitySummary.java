@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Information about a hosted entity which includes identifier, name, and type.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about a hosted entity which includes identifier, name, and type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HostedEntitySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostedEntitySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = HostedEntitySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HostedEntitySummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityIdentifier", "entityName", "entityType"})
     public HostedEntitySummary(String entityIdentifier, String entityName, String entityType) {
@@ -32,49 +32,46 @@ public final class HostedEntitySummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The identifier of the entity.
-         **/
+        /** The identifier of the entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityIdentifier")
         private String entityIdentifier;
 
         /**
          * The identifier of the entity.
+         *
          * @param entityIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder entityIdentifier(String entityIdentifier) {
             this.entityIdentifier = entityIdentifier;
             this.__explicitlySet__.add("entityIdentifier");
             return this;
         }
-        /**
-         * The entity name.
-         **/
+        /** The entity name. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * The entity name.
+         *
          * @param entityName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-        /**
-         * The entity type.
-         **/
+        /** The entity type. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The entity type.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -109,9 +106,7 @@ public final class HostedEntitySummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +115,41 @@ public final class HostedEntitySummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The identifier of the entity.
-     **/
+    /** The identifier of the entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityIdentifier")
     private final String entityIdentifier;
 
     /**
      * The identifier of the entity.
+     *
      * @return the value
-     **/
+     */
     public String getEntityIdentifier() {
         return entityIdentifier;
     }
 
-    /**
-     * The entity name.
-     **/
+    /** The entity name. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * The entity name.
+     *
      * @return the value
-     **/
+     */
     public String getEntityName() {
         return entityName;
     }
 
-    /**
-     * The entity type.
-     **/
+    /** The entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The entity type.
+     *
      * @return the value
-     **/
+     */
     public String getEntityType() {
         return entityType;
     }
@@ -169,6 +161,7 @@ public final class HostedEntitySummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

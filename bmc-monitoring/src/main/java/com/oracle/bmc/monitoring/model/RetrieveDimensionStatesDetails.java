@@ -5,24 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for retrieving the alarm state entries.
- * Filter retrieved alarm state entries by status value and dimension key-value pairs.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration details for retrieving the alarm state entries. Filter retrieved alarm state
+ * entries by status value and dimension key-value pairs. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RetrieveDimensionStatesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RetrieveDimensionStatesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RetrieveDimensionStatesDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dimensionFilters", "status"})
     public RetrieveDimensionStatesDetails(
@@ -36,42 +35,44 @@ public final class RetrieveDimensionStatesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A filter to return only alarm state entries that match the exact set of specified dimension key-value pairs.
-         * If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"}
-         * and {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
-         *
-         **/
+         * A filter to return only alarm state entries that match the exact set of specified
+         * dimension key-value pairs. If you specify {@code "availabilityDomain": "phx-ad-1"} but
+         * the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"} and
+         * {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are
+         * returned.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
         private java.util.Map<String, String> dimensionFilters;
 
         /**
-         * A filter to return only alarm state entries that match the exact set of specified dimension key-value pairs.
-         * If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"}
-         * and {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
+         * A filter to return only alarm state entries that match the exact set of specified
+         * dimension key-value pairs. If you specify {@code "availabilityDomain": "phx-ad-1"} but
+         * the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"} and
+         * {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are
+         * returned.
          *
          * @param dimensionFilters the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensionFilters(java.util.Map<String, String> dimensionFilters) {
             this.dimensionFilters = dimensionFilters;
             this.__explicitlySet__.add("dimensionFilters");
             return this;
         }
         /**
-         * A filter to return only alarm state entries that match the status value.
-         * Example: {@code FIRING}
-         *
-         **/
+         * A filter to return only alarm state entries that match the status value. Example: {@code
+         * FIRING}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private AlarmDimensionStatesEntry.Status status;
 
         /**
-         * A filter to return only alarm state entries that match the status value.
-         * Example: {@code FIRING}
+         * A filter to return only alarm state entries that match the status value. Example: {@code
+         * FIRING}
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(AlarmDimensionStatesEntry.Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -102,9 +103,7 @@ public final class RetrieveDimensionStatesDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,39 +113,39 @@ public final class RetrieveDimensionStatesDetails
     }
 
     /**
-     * A filter to return only alarm state entries that match the exact set of specified dimension key-value pairs.
-     * If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"}
-     * and {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
-     *
-     **/
+     * A filter to return only alarm state entries that match the exact set of specified dimension
+     * key-value pairs. If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state
+     * entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"} and {@code
+     * "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
     private final java.util.Map<String, String> dimensionFilters;
 
     /**
-     * A filter to return only alarm state entries that match the exact set of specified dimension key-value pairs.
-     * If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"}
-     * and {@code "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
+     * A filter to return only alarm state entries that match the exact set of specified dimension
+     * key-value pairs. If you specify {@code "availabilityDomain": "phx-ad-1"} but the alarm state
+     * entry corresponds to the set {@code "availabilityDomain": "phx-ad-1"} and {@code
+     * "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}, then no results are returned.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getDimensionFilters() {
         return dimensionFilters;
     }
 
     /**
-     * A filter to return only alarm state entries that match the status value.
-     * Example: {@code FIRING}
-     *
-     **/
+     * A filter to return only alarm state entries that match the status value. Example: {@code
+     * FIRING}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final AlarmDimensionStatesEntry.Status status;
 
     /**
-     * A filter to return only alarm state entries that match the status value.
-     * Example: {@code FIRING}
+     * A filter to return only alarm state entries that match the status value. Example: {@code
+     * FIRING}
      *
      * @return the value
-     **/
+     */
     public AlarmDimensionStatesEntry.Status getStatus() {
         return status;
     }
@@ -158,6 +157,7 @@ public final class RetrieveDimensionStatesDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

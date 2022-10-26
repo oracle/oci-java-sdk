@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * To capture all the statistical data related to profiling.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To capture all the statistical data related to profiling. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileStat.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProfileStat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ProfileStat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"confidence", "value"})
     public ProfileStat(Integer confidence, String value) {
@@ -29,32 +30,34 @@ public final class ProfileStat extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
-         **/
+         * Placeholder for now, in future we will return the confidence of the profile result
+         * (because we are using sampled data and not whole data)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
         /**
-         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+         * Placeholder for now, in future we will return the confidence of the profile result
+         * (because we are using sampled data and not whole data)
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /**
-         * Value of the confidence of the profile result.
-         **/
+        /** Value of the confidence of the profile result. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of the confidence of the profile result.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -84,9 +87,7 @@ public final class ProfileStat extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,29 +97,31 @@ public final class ProfileStat extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
-     **/
+     * Placeholder for now, in future we will return the confidence of the profile result (because
+     * we are using sampled data and not whole data)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
     /**
-     * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+     * Placeholder for now, in future we will return the confidence of the profile result (because
+     * we are using sampled data and not whole data)
+     *
      * @return the value
-     **/
+     */
     public Integer getConfidence() {
         return confidence;
     }
 
-    /**
-     * Value of the confidence of the profile result.
-     **/
+    /** Value of the confidence of the profile result. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of the confidence of the profile result.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
@@ -130,6 +133,7 @@ public final class ProfileStat extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,50 +5,45 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The task summary object type contains the audit summary information and the definition of the task summary object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The task summary object type contains the audit summary information and the definition of the
+ * task summary object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = TaskSummary.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = TaskSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromIntegrationTask.class,
-        name = "INTEGRATION_TASK"
-    ),
+            value = TaskSummaryFromIntegrationTask.class,
+            name = "INTEGRATION_TASK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromSQLTask.class,
-        name = "SQL_TASK"
-    ),
+            value = TaskSummaryFromSQLTask.class,
+            name = "SQL_TASK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromOCIDataflowTask.class,
-        name = "OCI_DATAFLOW_TASK"
-    ),
+            value = TaskSummaryFromOCIDataflowTask.class,
+            name = "OCI_DATAFLOW_TASK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromRestTask.class,
-        name = "REST_TASK"
-    ),
+            value = TaskSummaryFromRestTask.class,
+            name = "REST_TASK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromPipelineTask.class,
-        name = "PIPELINE_TASK"
-    ),
+            value = TaskSummaryFromPipelineTask.class,
+            name = "PIPELINE_TASK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TaskSummaryFromDataLoaderTask.class,
-        name = "DATA_LOADER_TASK"
-    )
+            value = TaskSummaryFromDataLoaderTask.class,
+            name = "DATA_LOADER_TASK")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class TaskSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -102,29 +97,31 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify task. On scenarios where reference to
+     * the task is needed, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify task. On scenarios where reference to
+     * the task is needed, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The object's model version.
-     **/
+    /** The object's model version. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -137,113 +134,117 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Detailed description for the object.
-     **/
+    /** Detailed description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * An array of input ports.
-     **/
+    /** An array of input ports. */
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
     /**
      * An array of input ports.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
 
-    /**
-     * An array of output ports.
-     **/
+    /** An array of output ports. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<OutputPort> outputPorts;
 
     /**
      * An array of output ports.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<OutputPort> getOutputPorts() {
         return outputPorts;
     }
 
-    /**
-     * An array of parameters.
-     **/
+    /** An array of parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
     /**
      * An array of parameters.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -270,15 +271,18 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-     **/
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     private final java.util.Map<String, String> keyMap;
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getKeyMap() {
         return keyMap;
     }
@@ -290,6 +294,7 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -376,10 +381,8 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return result;
     }
 
-    /**
-     * The type of task.
-     **/
-    public enum ModelType {
+    /** The type of task. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         IntegrationTask("INTEGRATION_TASK"),
         DataLoaderTask("DATA_LOADER_TASK"),
         PipelineTask("PIPELINE_TASK"),
@@ -388,8 +391,8 @@ public class TaskSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         RestTask("REST_TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

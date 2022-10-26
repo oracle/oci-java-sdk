@@ -9,15 +9,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class RecommendationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * The returned RecommendationCollection instance.
-     */
+    /** The returned RecommendationCollection instance. */
     private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
     /**
      * The returned RecommendationCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.RecommendationCollection getRecommendationCollection() {
@@ -46,7 +44,7 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private RecommendationsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,33 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
         this.recommendationCollection = recommendationCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<RecommendationsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +88,12 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned RecommendationCollection instance.
-         */
+        /** The returned RecommendationCollection instance. */
         private com.oracle.bmc.datacatalog.model.RecommendationCollection recommendationCollection;
 
         /**
          * The returned RecommendationCollection instance.
+         *
          * @param recommendationCollection the value to set
          * @return this builder
          */
@@ -107,8 +106,10 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(RecommendationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,8 +121,10 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public RecommendationsResponse build() {
             return new RecommendationsResponse(
                     __httpStatusCode__, headers, opcRequestId, recommendationCollection);
@@ -130,6 +133,7 @@ public class RecommendationsResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -8,8 +8,6 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.circuitbreaker.CircuitBreakerFactory;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.requests.ListRegionsRequest;
 import com.oracle.bmc.identity.responses.ListRegionsResponse;
@@ -22,14 +20,12 @@ import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
 import com.oracle.bmc.retrier.RetryConfiguration;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
-import java.time.Duration;
 
-/**
- * A sample to demonstrate how to configure a client using circuit breaker configuration.
- */
+/** A sample to demonstrate how to configure a client using circuit breaker configuration. */
 public class CircuitBreakerExample {
 
     public static void main(String[] args) throws Exception {
@@ -37,8 +33,10 @@ public class CircuitBreakerExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -46,10 +44,10 @@ public class CircuitBreakerExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        //Circuit breaker setup with custom values
+        // Circuit breaker setup with custom values
         setupCircuitBreakerWithCustomValues(provider);
 
-        //Share same circuit breaker with multiple clients
+        // Share same circuit breaker with multiple clients
         shareCircuitBreakerAmongMultipleClients(provider);
     }
 
@@ -77,11 +75,6 @@ public class CircuitBreakerExample {
                                                                                 .TOO_MANY_REQUESTS,
                                                                         CircuitBreakerConfiguration
                                                                                 .SERVICE_UNAVAILABLE))))
-                                        .recordExceptions(
-                                                Collections.unmodifiableList(
-                                                        Arrays.asList(
-                                                                CircuitBreakerConfiguration
-                                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                                         .build())
                         .build();
 
@@ -114,18 +107,12 @@ public class CircuitBreakerExample {
                                                                 .TOO_MANY_REQUESTS,
                                                         CircuitBreakerConfiguration
                                                                 .SERVICE_UNAVAILABLE))))
-                        .recordExceptions(
-                                Collections.unmodifiableList(
-                                        Arrays.asList(
-                                                CircuitBreakerConfiguration
-                                                        .SERVICE_UNAVAILABLE_EXCEPTION_CLASS)))
                         .build();
 
-        JaxRsCircuitBreaker cb = CircuitBreakerFactory.build(circuitBreakerConfiguration);
         ClientConfiguration clientConfiguration =
                 ClientConfiguration.builder()
                         .retryConfiguration(RetryConfiguration.builder().build())
-                        .circuitBreaker(cb) // using the actual circuit breaker, not the config
+                        .circuitBreakerConfiguration(circuitBreakerConfiguration)
                         .build();
 
         // Create Clients using above ClientConfiguration

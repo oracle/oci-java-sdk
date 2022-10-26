@@ -5,19 +5,21 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateVcnDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateVcnDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateVcnDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cidrBlock",
@@ -51,93 +53,96 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The CIDR IP address block of the VCN.
-         * Example: {@code 10.0.0.0/16}
-         *
-         **/
+        /** The CIDR IP address block of the VCN. Example: {@code 10.0.0.0/16} */
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
-         * The CIDR IP address block of the VCN.
-         * Example: {@code 10.0.0.0/16}
+         * The CIDR IP address block of the VCN. Example: {@code 10.0.0.0/16}
          *
          * @param cidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to contain the VCN.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to contain the VCN.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an IPv6
-         * /56 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * The addresses in this block will be considered private and cannot be accessed
-         * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-         * <p>
-         * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR block.
-         * <p>
-         * Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock},
-         * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-         * (see the {@code ipv6PublicCidrBlock} of the {@link Vcn} object). If you do
-         * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-         * IP address space ({@code ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space
-         * ({@code ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the same
-         * IPv6 IP address for both private and public (internet) communication. You control whether
-         * an IPv6 address can be used for internet communication by using the {@code isInternetAccessAllowed}
-         * attribute in the {@link Ipv6} object.
-         * <p>
-         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code 2001:0db8:0123::/48}
+         * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an
+         * IPv6 /56 CIDR block from the supported ranges (see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+         * addresses in this block will be considered private and cannot be accessed from the
+         * internet. The documentation refers to this as a *custom CIDR* for the VCN.
          *
-         **/
+         * <p>If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR
+         * block.
+         *
+         * <p>Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock}, Oracle *also*
+         * assigns the VCN an IPv6 CIDR block for the VCN's public IP address space (see the {@code
+         * ipv6PublicCidrBlock} of the {@link Vcn} object). If you do not assign a custom CIDR,
+         * Oracle uses the *same* Oracle-assigned CIDR for both the private IP address space ({@code
+         * ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space ({@code
+         * ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use
+         * the same IPv6 IP address for both private and public (internet) communication. You
+         * control whether an IPv6 address can be used for internet communication by using the
+         * {@code isInternetAccessAllowed} attribute in the {@link Ipv6} object.
+         *
+         * <p>For important details about IPv6 addressing in a VCN, see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>Example: {@code 2001:0db8:0123::/48}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an IPv6
-         * /56 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * The addresses in this block will be considered private and cannot be accessed
-         * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-         * <p>
-         * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR block.
-         * <p>
-         * Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock},
-         * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-         * (see the {@code ipv6PublicCidrBlock} of the {@link Vcn} object). If you do
-         * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-         * IP address space ({@code ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space
-         * ({@code ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the same
-         * IPv6 IP address for both private and public (internet) communication. You control whether
-         * an IPv6 address can be used for internet communication by using the {@code isInternetAccessAllowed}
-         * attribute in the {@link Ipv6} object.
-         * <p>
-         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code 2001:0db8:0123::/48}
+         * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an
+         * IPv6 /56 CIDR block from the supported ranges (see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+         * addresses in this block will be considered private and cannot be accessed from the
+         * internet. The documentation refers to this as a *custom CIDR* for the VCN.
+         *
+         * <p>If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR
+         * block.
+         *
+         * <p>Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock}, Oracle *also*
+         * assigns the VCN an IPv6 CIDR block for the VCN's public IP address space (see the {@code
+         * ipv6PublicCidrBlock} of the {@link Vcn} object). If you do not assign a custom CIDR,
+         * Oracle uses the *same* Oracle-assigned CIDR for both the private IP address space ({@code
+         * ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space ({@code
+         * ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use
+         * the same IPv6 IP address for both private and public (internet) communication. You
+         * control whether an IPv6 address can be used for internet communication by using the
+         * {@code isInternetAccessAllowed} attribute in the {@link Ipv6} object.
+         *
+         * <p>For important details about IPv6 addressing in a VCN, see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>Example: {@code 2001:0db8:0123::/48}
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
@@ -146,8 +151,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -157,7 +161,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -165,112 +169,106 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
-         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Not required to be unique, but it's a best practice to set unique DNS labels
-         * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
-         * The value cannot be changed.
-         * <p>
-         * You must set this value if you want instances to be able to use hostnames to
-         * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
-         * will not work.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code vcn1}
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
+         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
+         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Not required to be unique,
+         * but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an
+         * alphanumeric string that begins with a letter. The value cannot be changed.
          *
-         **/
+         * <p>You must set this value if you want instances to be able to use hostnames to resolve
+         * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code vcn1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
         /**
-         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
-         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-         * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-         * Not required to be unique, but it's a best practice to set unique DNS labels
-         * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
-         * The value cannot be changed.
-         * <p>
-         * You must set this value if you want instances to be able to use hostnames to
-         * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
-         * will not work.
-         * <p>
-         * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         * <p>
-         * Example: {@code vcn1}
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
+         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
+         * example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Not required to be unique,
+         * but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an
+         * alphanumeric string that begins with a letter. The value cannot be changed.
+         *
+         * <p>You must set this value if you want instances to be able to use hostnames to resolve
+         * other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+         *
+         * <p>For more information, see [DNS in Your Virtual Cloud
+         * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         *
+         * <p>Example: {@code vcn1}
          *
          * @param dnsLabel the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = dnsLabel;
             this.__explicitlySet__.add("dnsLabel");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Whether IPv6 is enabled for the VCN. Default is {@code false}.
-         * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code true}
+         * Whether IPv6 is enabled for the VCN. Default is {@code false}. If enabled, Oracle will
+         * assign the VCN a IPv6 /56 CIDR block. For important details about IPv6 addressing in a
+         * VCN, see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
         private Boolean isIpv6Enabled;
 
         /**
-         * Whether IPv6 is enabled for the VCN. Default is {@code false}.
-         * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-         * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * <p>
-         * Example: {@code true}
+         * Whether IPv6 is enabled for the VCN. Default is {@code false}. If enabled, Oracle will
+         * assign the VCN a IPv6 /56 CIDR block. For important details about IPv6 addressing in a
+         * VCN, see [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         *
+         * <p>Example: {@code true}
          *
          * @param isIpv6Enabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isIpv6Enabled(Boolean isIpv6Enabled) {
             this.isIpv6Enabled = isIpv6Enabled;
             this.__explicitlySet__.add("isIpv6Enabled");
@@ -327,9 +325,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -338,210 +334,204 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The CIDR IP address block of the VCN.
-     * Example: {@code 10.0.0.0/16}
-     *
-     **/
+    /** The CIDR IP address block of the VCN. Example: {@code 10.0.0.0/16} */
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
-     * The CIDR IP address block of the VCN.
-     * Example: {@code 10.0.0.0/16}
+     * The CIDR IP address block of the VCN. Example: {@code 10.0.0.0/16}
      *
      * @return the value
-     **/
+     */
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to contain the VCN.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to contain the VCN.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an IPv6
-     * /56 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The addresses in this block will be considered private and cannot be accessed
-     * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-     * <p>
-     * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR block.
-     * <p>
-     * Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock},
-     * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-     * (see the {@code ipv6PublicCidrBlock} of the {@link Vcn} object). If you do
-     * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-     * IP address space ({@code ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space
-     * ({@code ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the same
-     * IPv6 IP address for both private and public (internet) communication. You control whether
-     * an IPv6 address can be used for internet communication by using the {@code isInternetAccessAllowed}
-     * attribute in the {@link Ipv6} object.
-     * <p>
-     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code 2001:0db8:0123::/48}
+     * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an
+     * IPv6 /56 CIDR block from the supported ranges (see [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * addresses in this block will be considered private and cannot be accessed from the internet.
+     * The documentation refers to this as a *custom CIDR* for the VCN.
      *
-     **/
+     * <p>If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR
+     * block.
+     *
+     * <p>Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock}, Oracle *also*
+     * assigns the VCN an IPv6 CIDR block for the VCN's public IP address space (see the {@code
+     * ipv6PublicCidrBlock} of the {@link Vcn} object). If you do not assign a custom CIDR, Oracle
+     * uses the *same* Oracle-assigned CIDR for both the private IP address space ({@code
+     * ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space ({@code
+     * ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the
+     * same IPv6 IP address for both private and public (internet) communication. You control
+     * whether an IPv6 address can be used for internet communication by using the {@code
+     * isInternetAccessAllowed} attribute in the {@link Ipv6} object.
+     *
+     * <p>For important details about IPv6 addressing in a VCN, see [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>Example: {@code 2001:0db8:0123::/48}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an IPv6
-     * /56 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * The addresses in this block will be considered private and cannot be accessed
-     * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
-     * <p>
-     * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR block.
-     * <p>
-     * Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock},
-     * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
-     * (see the {@code ipv6PublicCidrBlock} of the {@link Vcn} object). If you do
-     * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
-     * IP address space ({@code ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space
-     * ({@code ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the same
-     * IPv6 IP address for both private and public (internet) communication. You control whether
-     * an IPv6 address can be used for internet communication by using the {@code isInternetAccessAllowed}
-     * attribute in the {@link Ipv6} object.
-     * <p>
-     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code 2001:0db8:0123::/48}
+     * If you enable IPv6 for the VCN (see {@code isIpv6Enabled}), you may optionally provide an
+     * IPv6 /56 CIDR block from the supported ranges (see [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+     * addresses in this block will be considered private and cannot be accessed from the internet.
+     * The documentation refers to this as a *custom CIDR* for the VCN.
+     *
+     * <p>If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /56 CIDR
+     * block.
+     *
+     * <p>Regardless of whether you or Oracle assigns the {@code ipv6CidrBlock}, Oracle *also*
+     * assigns the VCN an IPv6 CIDR block for the VCN's public IP address space (see the {@code
+     * ipv6PublicCidrBlock} of the {@link Vcn} object). If you do not assign a custom CIDR, Oracle
+     * uses the *same* Oracle-assigned CIDR for both the private IP address space ({@code
+     * ipv6CidrBlock} in the {@code Vcn} object) and the public IP addreses space ({@code
+     * ipv6PublicCidrBlock} in the {@code Vcn} object). This means that a given VNIC might use the
+     * same IPv6 IP address for both private and public (internet) communication. You control
+     * whether an IPv6 address can be used for internet communication by using the {@code
+     * isInternetAccessAllowed} attribute in the {@link Ipv6} object.
+     *
+     * <p>For important details about IPv6 addressing in a VCN, see [IPv6
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>Example: {@code 2001:0db8:0123::/48}
      *
      * @return the value
-     **/
+     */
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
-     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Not required to be unique, but it's a best practice to set unique DNS labels
-     * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
-     * The value cannot be changed.
-     * <p>
-     * You must set this value if you want instances to be able to use hostnames to
-     * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
-     * will not work.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code vcn1}
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
+     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Not required to be unique, but it's a
+     * best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric
+     * string that begins with a letter. The value cannot be changed.
      *
-     **/
+     * <p>You must set this value if you want instances to be able to use hostnames to resolve other
+     * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code vcn1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
     private final String dnsLabel;
 
     /**
-     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
-     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (for example, {@code bminstance-1.subnet123.vcn1.oraclevcn.com}).
-     * Not required to be unique, but it's a best practice to set unique DNS labels
-     * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
-     * The value cannot be changed.
-     * <p>
-     * You must set this value if you want instances to be able to use hostnames to
-     * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
-     * will not work.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: {@code vcn1}
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
+     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
+     * {@code bminstance-1.subnet123.vcn1.oraclevcn.com}). Not required to be unique, but it's a
+     * best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric
+     * string that begins with a letter. The value cannot be changed.
+     *
+     * <p>You must set this value if you want instances to be able to use hostnames to resolve other
+     * instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
+     *
+     * <p>For more information, see [DNS in Your Virtual Cloud
+     * Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     *
+     * <p>Example: {@code vcn1}
      *
      * @return the value
-     **/
+     */
     public String getDnsLabel() {
         return dnsLabel;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Whether IPv6 is enabled for the VCN. Default is {@code false}.
-     * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code true}
+     * Whether IPv6 is enabled for the VCN. Default is {@code false}. If enabled, Oracle will assign
+     * the VCN a IPv6 /56 CIDR block. For important details about IPv6 addressing in a VCN, see
+     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
     private final Boolean isIpv6Enabled;
 
     /**
-     * Whether IPv6 is enabled for the VCN. Default is {@code false}.
-     * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     * <p>
-     * Example: {@code true}
+     * Whether IPv6 is enabled for the VCN. Default is {@code false}. If enabled, Oracle will assign
+     * the VCN a IPv6 /56 CIDR block. For important details about IPv6 addressing in a VCN, see
+     * [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsIpv6Enabled() {
         return isIpv6Enabled;
     }
@@ -553,6 +543,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

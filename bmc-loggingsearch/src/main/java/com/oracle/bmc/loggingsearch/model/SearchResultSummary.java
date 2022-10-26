@@ -5,21 +5,22 @@
 package com.oracle.bmc.loggingsearch.model;
 
 /**
- * Summary of results.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of results. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SearchResultSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SearchResultSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SearchResultSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SearchResultSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resultCount", "fieldCount"})
     public SearchResultSummary(Integer resultCount, Integer fieldCount) {
@@ -30,33 +31,31 @@ public final class SearchResultSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Total number of search results.
-         **/
+        /** Total number of search results. */
         @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
         private Integer resultCount;
 
         /**
          * Total number of search results.
+         *
          * @param resultCount the value to set
          * @return this builder
-         **/
+         */
         public Builder resultCount(Integer resultCount) {
             this.resultCount = resultCount;
             this.__explicitlySet__.add("resultCount");
             return this;
         }
-        /**
-         * Total number of field schema information.
-         **/
+        /** Total number of field schema information. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldCount")
         private Integer fieldCount;
 
         /**
          * Total number of field schema information.
+         *
          * @param fieldCount the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldCount(Integer fieldCount) {
             this.fieldCount = fieldCount;
             this.__explicitlySet__.add("fieldCount");
@@ -86,9 +85,7 @@ public final class SearchResultSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,30 +94,28 @@ public final class SearchResultSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Total number of search results.
-     **/
+    /** Total number of search results. */
     @com.fasterxml.jackson.annotation.JsonProperty("resultCount")
     private final Integer resultCount;
 
     /**
      * Total number of search results.
+     *
      * @return the value
-     **/
+     */
     public Integer getResultCount() {
         return resultCount;
     }
 
-    /**
-     * Total number of field schema information.
-     **/
+    /** Total number of field schema information. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldCount")
     private final Integer fieldCount;
 
     /**
      * Total number of field schema information.
+     *
      * @return the value
-     **/
+     */
     public Integer getFieldCount() {
         return fieldCount;
     }
@@ -132,6 +127,7 @@ public final class SearchResultSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

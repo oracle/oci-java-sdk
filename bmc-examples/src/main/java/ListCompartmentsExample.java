@@ -21,8 +21,10 @@ public class ListCompartmentsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -67,7 +69,8 @@ public class ListCompartmentsExample {
             cp2 = ExampleCompartmentHelper.createCompartment(identityClient, tenantId, "CP-2");
             cp3 = ExampleCompartmentHelper.createCompartment(identityClient, tenantId, "CP-3");
 
-            // If we create/update and then try to use compartments straight away, sometimes we can get a 404. To try and avoid this, the script
+            // If we create/update and then try to use compartments straight away, sometimes we can
+            // get a 404. To try and avoid this, the script
             // adds a short delay between the compartment management operations
             Thread.sleep(10000);
 

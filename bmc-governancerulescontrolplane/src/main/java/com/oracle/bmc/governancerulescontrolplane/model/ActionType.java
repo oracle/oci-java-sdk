@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.governancerulescontrolplane.model;
 
-/**
- * Possible types of actions.
- **/
+/** Possible types of actions. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
-public enum ActionType {
+public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

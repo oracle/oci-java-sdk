@@ -5,19 +5,21 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The common fields for Cost Analysis UI rendering.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The common fields for Cost Analysis UI rendering. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostAnalysisUI.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CostAnalysisUI extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CostAnalysisUI
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"graph", "isCumulativeGraph"})
     public CostAnalysisUI(Graph graph, Boolean isCumulativeGraph) {
@@ -28,33 +30,31 @@ public final class CostAnalysisUI extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The graph type.
-         **/
+        /** The graph type. */
         @com.fasterxml.jackson.annotation.JsonProperty("graph")
         private Graph graph;
 
         /**
          * The graph type.
+         *
          * @param graph the value to set
          * @return this builder
-         **/
+         */
         public Builder graph(Graph graph) {
             this.graph = graph;
             this.__explicitlySet__.add("graph");
             return this;
         }
-        /**
-         * A cumulative graph.
-         **/
+        /** A cumulative graph. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCumulativeGraph")
         private Boolean isCumulativeGraph;
 
         /**
          * A cumulative graph.
+         *
          * @param isCumulativeGraph the value to set
          * @return this builder
-         **/
+         */
         public Builder isCumulativeGraph(Boolean isCumulativeGraph) {
             this.isCumulativeGraph = isCumulativeGraph;
             this.__explicitlySet__.add("isCumulativeGraph");
@@ -84,9 +84,7 @@ public final class CostAnalysisUI extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,17 +93,15 @@ public final class CostAnalysisUI extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The graph type.
-     **/
-    public enum Graph {
+    /** The graph type. */
+    public enum Graph implements com.oracle.bmc.http.internal.BmcEnum {
         Bars("BARS"),
         Lines("LINES"),
         StackedLines("STACKED_LINES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -143,30 +139,28 @@ public final class CostAnalysisUI extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The graph type.
-     **/
+    /** The graph type. */
     @com.fasterxml.jackson.annotation.JsonProperty("graph")
     private final Graph graph;
 
     /**
      * The graph type.
+     *
      * @return the value
-     **/
+     */
     public Graph getGraph() {
         return graph;
     }
 
-    /**
-     * A cumulative graph.
-     **/
+    /** A cumulative graph. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCumulativeGraph")
     private final Boolean isCumulativeGraph;
 
     /**
      * A cumulative graph.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCumulativeGraph() {
         return isCumulativeGraph;
     }
@@ -178,6 +172,7 @@ public final class CostAnalysisUI extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

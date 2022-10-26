@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for tuning the compatibility and performance of VM shapes.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Options for tuning the compatibility and performance of VM shapes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateLaunchOptions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateLaunchOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateLaunchOptions
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bootVolumeType",
@@ -40,128 +40,135 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Emulation type for the boot volume.
-         * * {@code ISCSI} - ISCSI attached block storage device.
-         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
-         * storage volumes on platform images.
-         * <p>
-         * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
-         * the boot volume and the primary VNIC.
-         * <p>
-         * If the instance is running when you change the boot volume attachment type, it will be rebooted.
-         * <p>
-         **Note:** Some instances might not function properly if you change the boot volume attachment type. After
-         * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-         * as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
+         * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage
+         * device. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot
+         * volumes and remote block storage volumes on platform images.
          *
-         **/
+         * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
+         * except for the boot volume and the primary VNIC.
+         *
+         * <p>If the instance is running when you change the boot volume attachment type, it will be
+         * rebooted.
+         *
+         * <p>*Note:** Some instances might not function properly if you change the boot volume
+         * attachment type. After the instance reboots and is running, connect to it. If the
+         * connection fails or the OS doesn't behave as expected, the changes are not supported.
+         * Revert the instance to the original boot volume attachment type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
         private BootVolumeType bootVolumeType;
 
         /**
-         * Emulation type for the boot volume.
-         * * {@code ISCSI} - ISCSI attached block storage device.
-         * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
-         * storage volumes on platform images.
-         * <p>
-         * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
-         * the boot volume and the primary VNIC.
-         * <p>
-         * If the instance is running when you change the boot volume attachment type, it will be rebooted.
-         * <p>
-         **Note:** Some instances might not function properly if you change the boot volume attachment type. After
-         * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-         * as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
+         * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage
+         * device. * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot
+         * volumes and remote block storage volumes on platform images.
+         *
+         * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
+         * except for the boot volume and the primary VNIC.
+         *
+         * <p>If the instance is running when you change the boot volume attachment type, it will be
+         * rebooted.
+         *
+         * <p>*Note:** Some instances might not function properly if you change the boot volume
+         * attachment type. After the instance reboots and is running, connect to it. If the
+         * connection fails or the OS doesn't behave as expected, the changes are not supported.
+         * Revert the instance to the original boot volume attachment type.
          *
          * @param bootVolumeType the value to set
          * @return this builder
-         **/
+         */
         public Builder bootVolumeType(BootVolumeType bootVolumeType) {
             this.bootVolumeType = bootVolumeType;
             this.__explicitlySet__.add("bootVolumeType");
             return this;
         }
         /**
-         * Emulation type for the physical network interface card (NIC).
-         * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
-         * when you launch an instance using hardware-assisted (SR-IOV) networking.
-         * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
-         * <p>
-         * Before you change the networking type, detach all VNICs and block volumes except for the primary
-         * VNIC and the boot volume.
-         * <p>
-         * The image must have paravirtualized drivers installed. For more information, see
-         * [Editing an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-         * <p>
-         * If the instance is running when you change the network type, it will be rebooted.
-         * <p>
-         **Note:** Some instances might not function properly if you change the networking type. After
-         * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-         * as expected, the changes are not supported. Revert the instance to the original networking type.
+         * Emulation type for the physical network interface card (NIC). * {@code VFIO} - Direct
+         * attached Virtual Function network controller. This is the networking type when you launch
+         * an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} - VM
+         * instances launch with paravirtualized devices using VirtIO drivers.
          *
-         **/
+         * <p>Before you change the networking type, detach all VNICs and block volumes except for
+         * the primary VNIC and the boot volume.
+         *
+         * <p>The image must have paravirtualized drivers installed. For more information, see
+         * [Editing an
+         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         *
+         * <p>If the instance is running when you change the network type, it will be rebooted.
+         *
+         * <p>*Note:** Some instances might not function properly if you change the networking type.
+         * After the instance reboots and is running, connect to it. If the connection fails or the
+         * OS doesn't behave as expected, the changes are not supported. Revert the instance to the
+         * original networking type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("networkType")
         private NetworkType networkType;
 
         /**
-         * Emulation type for the physical network interface card (NIC).
-         * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
-         * when you launch an instance using hardware-assisted (SR-IOV) networking.
-         * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
-         * <p>
-         * Before you change the networking type, detach all VNICs and block volumes except for the primary
-         * VNIC and the boot volume.
-         * <p>
-         * The image must have paravirtualized drivers installed. For more information, see
-         * [Editing an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-         * <p>
-         * If the instance is running when you change the network type, it will be rebooted.
-         * <p>
-         **Note:** Some instances might not function properly if you change the networking type. After
-         * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-         * as expected, the changes are not supported. Revert the instance to the original networking type.
+         * Emulation type for the physical network interface card (NIC). * {@code VFIO} - Direct
+         * attached Virtual Function network controller. This is the networking type when you launch
+         * an instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} - VM
+         * instances launch with paravirtualized devices using VirtIO drivers.
+         *
+         * <p>Before you change the networking type, detach all VNICs and block volumes except for
+         * the primary VNIC and the boot volume.
+         *
+         * <p>The image must have paravirtualized drivers installed. For more information, see
+         * [Editing an
+         * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         *
+         * <p>If the instance is running when you change the network type, it will be rebooted.
+         *
+         * <p>*Note:** Some instances might not function properly if you change the networking type.
+         * After the instance reboots and is running, connect to it. If the connection fails or the
+         * OS doesn't behave as expected, the changes are not supported. Revert the instance to the
+         * original networking type.
          *
          * @param networkType the value to set
          * @return this builder
-         **/
+         */
         public Builder networkType(NetworkType networkType) {
             this.networkType = networkType;
             this.__explicitlySet__.add("networkType");
             return this;
         }
         /**
-         * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
-         * To enable in-transit encryption for block volumes and boot volumes, this field must be set to {@code true}.
-         * <p>
-         * Data in transit is transferred over an internal and highly secure network. If you have specific
-         * compliance requirements related to the encryption of the data while it is moving between the
-         * instance and the boot volume or the block volume, you can enable in-transit encryption.
-         * In-transit encryption is not enabled by default.
-         * <p>
-         * All boot volumes and block volumes are encrypted at rest.
-         * <p>
-         * For more information, see [Block Volume Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+         * Whether to enable in-transit encryption for the volume's paravirtualized attachment. To
+         * enable in-transit encryption for block volumes and boot volumes, this field must be set
+         * to {@code true}.
          *
-         **/
+         * <p>Data in transit is transferred over an internal and highly secure network. If you have
+         * specific compliance requirements related to the encryption of the data while it is moving
+         * between the instance and the boot volume or the block volume, you can enable in-transit
+         * encryption. In-transit encryption is not enabled by default.
+         *
+         * <p>All boot volumes and block volumes are encrypted at rest.
+         *
+         * <p>For more information, see [Block Volume
+         * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
-         * To enable in-transit encryption for block volumes and boot volumes, this field must be set to {@code true}.
-         * <p>
-         * Data in transit is transferred over an internal and highly secure network. If you have specific
-         * compliance requirements related to the encryption of the data while it is moving between the
-         * instance and the boot volume or the block volume, you can enable in-transit encryption.
-         * In-transit encryption is not enabled by default.
-         * <p>
-         * All boot volumes and block volumes are encrypted at rest.
-         * <p>
-         * For more information, see [Block Volume Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+         * Whether to enable in-transit encryption for the volume's paravirtualized attachment. To
+         * enable in-transit encryption for block volumes and boot volumes, this field must be set
+         * to {@code true}.
+         *
+         * <p>Data in transit is transferred over an internal and highly secure network. If you have
+         * specific compliance requirements related to the encryption of the data while it is moving
+         * between the instance and the boot volume or the block volume, you can enable in-transit
+         * encryption. In-transit encryption is not enabled by default.
+         *
+         * <p>All boot volumes and block volumes are encrypted at rest.
+         *
+         * <p>For more information, see [Block Volume
+         * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
          *
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
@@ -198,9 +205,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -210,22 +215,22 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Emulation type for the boot volume.
-     * * {@code ISCSI} - ISCSI attached block storage device.
-     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
-     * storage volumes on platform images.
-     * <p>
-     * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
-     * the boot volume and the primary VNIC.
-     * <p>
-     * If the instance is running when you change the boot volume attachment type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the boot volume attachment type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
+     * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
+     * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
+     * remote block storage volumes on platform images.
      *
-     **/
-    public enum BootVolumeType {
+     * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
+     * except for the boot volume and the primary VNIC.
+     *
+     * <p>If the instance is running when you change the boot volume attachment type, it will be
+     * rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the boot volume
+     * attachment type. After the instance reboots and is running, connect to it. If the connection
+     * fails or the OS doesn't behave as expected, the changes are not supported. Revert the
+     * instance to the original boot volume attachment type.
+     */
+    public enum BootVolumeType implements com.oracle.bmc.http.internal.BmcEnum {
         Iscsi("ISCSI"),
         Paravirtualized("PARAVIRTUALIZED"),
         ;
@@ -258,65 +263,66 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * Emulation type for the boot volume.
-     * * {@code ISCSI} - ISCSI attached block storage device.
-     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
-     * storage volumes on platform images.
-     * <p>
-     * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
-     * the boot volume and the primary VNIC.
-     * <p>
-     * If the instance is running when you change the boot volume attachment type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the boot volume attachment type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
+     * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
+     * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
+     * remote block storage volumes on platform images.
      *
-     **/
+     * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
+     * except for the boot volume and the primary VNIC.
+     *
+     * <p>If the instance is running when you change the boot volume attachment type, it will be
+     * rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the boot volume
+     * attachment type. After the instance reboots and is running, connect to it. If the connection
+     * fails or the OS doesn't behave as expected, the changes are not supported. Revert the
+     * instance to the original boot volume attachment type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
     private final BootVolumeType bootVolumeType;
 
     /**
-     * Emulation type for the boot volume.
-     * * {@code ISCSI} - ISCSI attached block storage device.
-     * * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and remote block
-     * storage volumes on platform images.
-     * <p>
-     * Before you change the boot volume attachment type, detach all block volumes and VNICs except for
-     * the boot volume and the primary VNIC.
-     * <p>
-     * If the instance is running when you change the boot volume attachment type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the boot volume attachment type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original boot volume attachment type.
+     * Emulation type for the boot volume. * {@code ISCSI} - ISCSI attached block storage device. *
+     * {@code PARAVIRTUALIZED} - Paravirtualized disk. This is the default for boot volumes and
+     * remote block storage volumes on platform images.
+     *
+     * <p>Before you change the boot volume attachment type, detach all block volumes and VNICs
+     * except for the boot volume and the primary VNIC.
+     *
+     * <p>If the instance is running when you change the boot volume attachment type, it will be
+     * rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the boot volume
+     * attachment type. After the instance reboots and is running, connect to it. If the connection
+     * fails or the OS doesn't behave as expected, the changes are not supported. Revert the
+     * instance to the original boot volume attachment type.
      *
      * @return the value
-     **/
+     */
     public BootVolumeType getBootVolumeType() {
         return bootVolumeType;
     }
 
     /**
-     * Emulation type for the physical network interface card (NIC).
-     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
-     * when you launch an instance using hardware-assisted (SR-IOV) networking.
-     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * <p>
-     * Before you change the networking type, detach all VNICs and block volumes except for the primary
-     * VNIC and the boot volume.
-     * <p>
-     * The image must have paravirtualized drivers installed. For more information, see
-     * [Editing an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-     * <p>
-     * If the instance is running when you change the network type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the networking type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original networking type.
+     * Emulation type for the physical network interface card (NIC). * {@code VFIO} - Direct
+     * attached Virtual Function network controller. This is the networking type when you launch an
+     * instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} - VM
+     * instances launch with paravirtualized devices using VirtIO drivers.
      *
-     **/
-    public enum NetworkType {
+     * <p>Before you change the networking type, detach all VNICs and block volumes except for the
+     * primary VNIC and the boot volume.
+     *
+     * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
+     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     *
+     * <p>If the instance is running when you change the network type, it will be rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the networking type.
+     * After the instance reboots and is running, connect to it. If the connection fails or the OS
+     * doesn't behave as expected, the changes are not supported. Revert the instance to the
+     * original networking type.
+     */
+    public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
         Vfio("VFIO"),
         Paravirtualized("PARAVIRTUALIZED"),
         ;
@@ -349,83 +355,87 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * Emulation type for the physical network interface card (NIC).
-     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
-     * when you launch an instance using hardware-assisted (SR-IOV) networking.
-     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * <p>
-     * Before you change the networking type, detach all VNICs and block volumes except for the primary
-     * VNIC and the boot volume.
-     * <p>
-     * The image must have paravirtualized drivers installed. For more information, see
-     * [Editing an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-     * <p>
-     * If the instance is running when you change the network type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the networking type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original networking type.
+     * Emulation type for the physical network interface card (NIC). * {@code VFIO} - Direct
+     * attached Virtual Function network controller. This is the networking type when you launch an
+     * instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} - VM
+     * instances launch with paravirtualized devices using VirtIO drivers.
      *
-     **/
+     * <p>Before you change the networking type, detach all VNICs and block volumes except for the
+     * primary VNIC and the boot volume.
+     *
+     * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
+     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     *
+     * <p>If the instance is running when you change the network type, it will be rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the networking type.
+     * After the instance reboots and is running, connect to it. If the connection fails or the OS
+     * doesn't behave as expected, the changes are not supported. Revert the instance to the
+     * original networking type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
     private final NetworkType networkType;
 
     /**
-     * Emulation type for the physical network interface card (NIC).
-     * * {@code VFIO} - Direct attached Virtual Function network controller. This is the networking type
-     * when you launch an instance using hardware-assisted (SR-IOV) networking.
-     * * {@code PARAVIRTUALIZED} - VM instances launch with paravirtualized devices using VirtIO drivers.
-     * <p>
-     * Before you change the networking type, detach all VNICs and block volumes except for the primary
-     * VNIC and the boot volume.
-     * <p>
-     * The image must have paravirtualized drivers installed. For more information, see
-     * [Editing an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-     * <p>
-     * If the instance is running when you change the network type, it will be rebooted.
-     * <p>
-     **Note:** Some instances might not function properly if you change the networking type. After
-     * the instance reboots and is running, connect to it. If the connection fails or the OS doesn't behave
-     * as expected, the changes are not supported. Revert the instance to the original networking type.
+     * Emulation type for the physical network interface card (NIC). * {@code VFIO} - Direct
+     * attached Virtual Function network controller. This is the networking type when you launch an
+     * instance using hardware-assisted (SR-IOV) networking. * {@code PARAVIRTUALIZED} - VM
+     * instances launch with paravirtualized devices using VirtIO drivers.
+     *
+     * <p>Before you change the networking type, detach all VNICs and block volumes except for the
+     * primary VNIC and the boot volume.
+     *
+     * <p>The image must have paravirtualized drivers installed. For more information, see [Editing
+     * an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     *
+     * <p>If the instance is running when you change the network type, it will be rebooted.
+     *
+     * <p>*Note:** Some instances might not function properly if you change the networking type.
+     * After the instance reboots and is running, connect to it. If the connection fails or the OS
+     * doesn't behave as expected, the changes are not supported. Revert the instance to the
+     * original networking type.
      *
      * @return the value
-     **/
+     */
     public NetworkType getNetworkType() {
         return networkType;
     }
 
     /**
-     * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
-     * To enable in-transit encryption for block volumes and boot volumes, this field must be set to {@code true}.
-     * <p>
-     * Data in transit is transferred over an internal and highly secure network. If you have specific
-     * compliance requirements related to the encryption of the data while it is moving between the
-     * instance and the boot volume or the block volume, you can enable in-transit encryption.
-     * In-transit encryption is not enabled by default.
-     * <p>
-     * All boot volumes and block volumes are encrypted at rest.
-     * <p>
-     * For more information, see [Block Volume Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+     * Whether to enable in-transit encryption for the volume's paravirtualized attachment. To
+     * enable in-transit encryption for block volumes and boot volumes, this field must be set to
+     * {@code true}.
      *
-     **/
+     * <p>Data in transit is transferred over an internal and highly secure network. If you have
+     * specific compliance requirements related to the encryption of the data while it is moving
+     * between the instance and the boot volume or the block volume, you can enable in-transit
+     * encryption. In-transit encryption is not enabled by default.
+     *
+     * <p>All boot volumes and block volumes are encrypted at rest.
+     *
+     * <p>For more information, see [Block Volume
+     * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether to enable in-transit encryption for the volume's paravirtualized attachment.
-     * To enable in-transit encryption for block volumes and boot volumes, this field must be set to {@code true}.
-     * <p>
-     * Data in transit is transferred over an internal and highly secure network. If you have specific
-     * compliance requirements related to the encryption of the data while it is moving between the
-     * instance and the boot volume or the block volume, you can enable in-transit encryption.
-     * In-transit encryption is not enabled by default.
-     * <p>
-     * All boot volumes and block volumes are encrypted at rest.
-     * <p>
-     * For more information, see [Block Volume Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
+     * Whether to enable in-transit encryption for the volume's paravirtualized attachment. To
+     * enable in-transit encryption for block volumes and boot volumes, this field must be set to
+     * {@code true}.
+     *
+     * <p>Data in transit is transferred over an internal and highly secure network. If you have
+     * specific compliance requirements related to the encryption of the data while it is moving
+     * between the instance and the boot volume or the block volume, you can enable in-transit
+     * encryption. In-transit encryption is not enabled by default.
+     *
+     * <p>All boot volumes and block volumes are encrypted at rest.
+     *
+     * <p>For more information, see [Block Volume
+     * Encryption](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm#Encrypti).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
@@ -437,6 +447,7 @@ public final class UpdateLaunchOptions extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

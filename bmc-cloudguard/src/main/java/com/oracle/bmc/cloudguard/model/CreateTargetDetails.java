@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information about new Target.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about new Target. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateTargetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateTargetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateTargetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateTargetDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -61,37 +62,35 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
     public static class Builder {
         /**
          * DetectorTemplate identifier.
-         * <p>
-         * Avoid entering confidential information.
          *
-         **/
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * DetectorTemplate identifier.
-         * <p>
-         * Avoid entering confidential information.
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Compartment Identifier where the resource is created
-         **/
+        /** Compartment Identifier where the resource is created */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier where the resource is created
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -99,127 +98,120 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The target description.
-         * <p>
-         * Avoid entering confidential information.
          *
-         **/
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The target description.
-         * <p>
-         * Avoid entering confidential information.
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * possible type of targets(COMPARTMENT/FACLOUD)
-         **/
+        /** possible type of targets(COMPARTMENT/FACLOUD) */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
         private TargetResourceType targetResourceType;
 
         /**
          * possible type of targets(COMPARTMENT/FACLOUD)
+         *
          * @param targetResourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceType(TargetResourceType targetResourceType) {
             this.targetResourceType = targetResourceType;
             this.__explicitlySet__.add("targetResourceType");
             return this;
         }
-        /**
-         * Resource ID which the target uses to monitor
-         **/
+        /** Resource ID which the target uses to monitor */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
         private String targetResourceId;
 
         /**
          * Resource ID which the target uses to monitor
+         *
          * @param targetResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResourceId(String targetResourceId) {
             this.targetResourceId = targetResourceId;
             this.__explicitlySet__.add("targetResourceId");
             return this;
         }
-        /**
-         * List of detector recipes to associate with target
-         **/
+        /** List of detector recipes to associate with target */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
         private java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
         /**
          * List of detector recipes to associate with target
+         *
          * @param targetDetectorRecipes the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDetectorRecipes(
                 java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes) {
             this.targetDetectorRecipes = targetDetectorRecipes;
             this.__explicitlySet__.add("targetDetectorRecipes");
             return this;
         }
-        /**
-         * List of responder recipes to associate with target
-         **/
+        /** List of responder recipes to associate with target */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
         private java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
         /**
          * List of responder recipes to associate with target
+         *
          * @param targetResponderRecipes the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResponderRecipes(
                 java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes) {
             this.targetResponderRecipes = targetResponderRecipes;
             this.__explicitlySet__.add("targetResponderRecipes");
             return this;
         }
-        /**
-         * The current state of the DetectorRule.
-         **/
+        /** The current state of the DetectorRule. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the DetectorRule.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         * <p>
-         * Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
-         **/
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         * <p>
-         * Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -228,8 +220,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -239,7 +230,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -305,9 +296,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -318,164 +307,154 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * DetectorTemplate identifier.
-     * <p>
-     * Avoid entering confidential information.
      *
-     **/
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * DetectorTemplate identifier.
-     * <p>
-     * Avoid entering confidential information.
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Compartment Identifier where the resource is created
-     **/
+    /** Compartment Identifier where the resource is created */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier where the resource is created
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The target description.
-     * <p>
-     * Avoid entering confidential information.
      *
-     **/
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The target description.
-     * <p>
-     * Avoid entering confidential information.
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * possible type of targets(COMPARTMENT/FACLOUD)
-     **/
+    /** possible type of targets(COMPARTMENT/FACLOUD) */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceType")
     private final TargetResourceType targetResourceType;
 
     /**
      * possible type of targets(COMPARTMENT/FACLOUD)
+     *
      * @return the value
-     **/
+     */
     public TargetResourceType getTargetResourceType() {
         return targetResourceType;
     }
 
-    /**
-     * Resource ID which the target uses to monitor
-     **/
+    /** Resource ID which the target uses to monitor */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResourceId")
     private final String targetResourceId;
 
     /**
      * Resource ID which the target uses to monitor
+     *
      * @return the value
-     **/
+     */
     public String getTargetResourceId() {
         return targetResourceId;
     }
 
-    /**
-     * List of detector recipes to associate with target
-     **/
+    /** List of detector recipes to associate with target */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipes")
     private final java.util.List<CreateTargetDetectorRecipeDetails> targetDetectorRecipes;
 
     /**
      * List of detector recipes to associate with target
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CreateTargetDetectorRecipeDetails> getTargetDetectorRecipes() {
         return targetDetectorRecipes;
     }
 
-    /**
-     * List of responder recipes to associate with target
-     **/
+    /** List of responder recipes to associate with target */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipes")
     private final java.util.List<CreateTargetResponderRecipeDetails> targetResponderRecipes;
 
     /**
      * List of responder recipes to associate with target
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CreateTargetResponderRecipeDetails> getTargetResponderRecipes() {
         return targetResponderRecipes;
     }
 
-    /**
-     * The current state of the DetectorRule.
-     **/
+    /** The current state of the DetectorRule. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the DetectorRule.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     * <p>
-     * Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
-     **/
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     * <p>
-     * Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -487,6 +466,7 @@ public final class CreateTargetDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

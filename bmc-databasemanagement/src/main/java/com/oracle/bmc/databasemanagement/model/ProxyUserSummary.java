@@ -5,19 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of the proxy user.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary of the proxy user. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProxyUserSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ProxyUserSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ProxyUserSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "authentication", "flags"})
     public ProxyUserSummary(String name, Authentication authentication, Flags flags) {
@@ -29,49 +31,50 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of a proxy user or the name of the client user.
-         **/
+        /** The name of a proxy user or the name of the client user. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of a proxy user or the name of the client user.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
-         **/
+         * Indicates whether the proxy is required to supply the client credentials (YES) or not
+         * (NO).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("authentication")
         private Authentication authentication;
 
         /**
-         * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
+         * Indicates whether the proxy is required to supply the client credentials (YES) or not
+         * (NO).
+         *
          * @param authentication the value to set
          * @return this builder
-         **/
+         */
         public Builder authentication(Authentication authentication) {
             this.authentication = authentication;
             this.__explicitlySet__.add("authentication");
             return this;
         }
-        /**
-         * The flags associated with the proxy/client pair.
-         **/
+        /** The flags associated with the proxy/client pair. */
         @com.fasterxml.jackson.annotation.JsonProperty("flags")
         private Flags flags;
 
         /**
          * The flags associated with the proxy/client pair.
+         *
          * @param flags the value to set
          * @return this builder
-         **/
+         */
         public Builder flags(Flags flags) {
             this.flags = flags;
             this.__explicitlySet__.add("flags");
@@ -105,9 +108,7 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,30 +117,29 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of a proxy user or the name of the client user.
-     **/
+    /** The name of a proxy user or the name of the client user. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of a proxy user or the name of the client user.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
-     **/
-    public enum Authentication {
+     */
+    public enum Authentication implements com.oracle.bmc.http.internal.BmcEnum {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -180,30 +180,29 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
     };
     /**
      * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
     private final Authentication authentication;
 
     /**
      * Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
+     *
      * @return the value
-     **/
+     */
     public Authentication getAuthentication() {
         return authentication;
     }
 
-    /**
-     * The flags associated with the proxy/client pair.
-     **/
-    public enum Flags {
+    /** The flags associated with the proxy/client pair. */
+    public enum Flags implements com.oracle.bmc.http.internal.BmcEnum {
         ProxyMayActivateAllClientRoles("PROXY_MAY_ACTIVATE_ALL_CLIENT_ROLES"),
         NoClientRolesMayBeActivated("NO_CLIENT_ROLES_MAY_BE_ACTIVATED"),
         ProxyMayActivateRole("PROXY_MAY_ACTIVATE_ROLE"),
         ProxyMayNotActivateRole("PROXY_MAY_NOT_ACTIVATE_ROLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -241,16 +240,15 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The flags associated with the proxy/client pair.
-     **/
+    /** The flags associated with the proxy/client pair. */
     @com.fasterxml.jackson.annotation.JsonProperty("flags")
     private final Flags flags;
 
     /**
      * The flags associated with the proxy/client pair.
+     *
      * @return the value
-     **/
+     */
     public Flags getFlags() {
         return flags;
     }
@@ -262,6 +260,7 @@ public final class ProxyUserSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

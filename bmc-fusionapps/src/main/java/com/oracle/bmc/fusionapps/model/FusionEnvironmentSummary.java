@@ -5,22 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Summary of the internal FA Environment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the internal FA Environment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FusionEnvironmentSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FusionEnvironmentSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FusionEnvironmentSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -87,49 +87,46 @@ public final class FusionEnvironmentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier that is immutable on creation
-         **/
+        /** Unique identifier that is immutable on creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * FusionEnvironment Identifier, can be renamed
-         **/
+        /** FusionEnvironment Identifier, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * FusionEnvironment Identifier, can be renamed
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The next maintenance for this environment
-         **/
+        /** The next maintenance for this environment */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpcomingMaintenance")
         private java.util.Date timeUpcomingMaintenance;
 
         /**
          * The next maintenance for this environment
+         *
          * @param timeUpcomingMaintenance the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpcomingMaintenance(java.util.Date timeUpcomingMaintenance) {
             this.timeUpcomingMaintenance = timeUpcomingMaintenance;
             this.__explicitlySet__.add("timeUpcomingMaintenance");
@@ -144,230 +141,220 @@ public final class FusionEnvironmentSummary
             this.__explicitlySet__.add("maintenancePolicy");
             return this;
         }
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * FusionEnvironmentFamily Identifier
-         **/
+        /** FusionEnvironmentFamily Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentFamilyId")
         private String fusionEnvironmentFamilyId;
 
         /**
          * FusionEnvironmentFamily Identifier
+         *
          * @param fusionEnvironmentFamilyId the value to set
          * @return this builder
-         **/
+         */
         public Builder fusionEnvironmentFamilyId(String fusionEnvironmentFamilyId) {
             this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             this.__explicitlySet__.add("fusionEnvironmentFamilyId");
             return this;
         }
-        /**
-         * List of subscription IDs.
-         **/
+        /** List of subscription IDs. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
         private java.util.List<String> subscriptionIds;
 
         /**
          * List of subscription IDs.
+         *
          * @param subscriptionIds the value to set
          * @return this builder
-         **/
+         */
         public Builder subscriptionIds(java.util.List<String> subscriptionIds) {
             this.subscriptionIds = subscriptionIds;
             this.__explicitlySet__.add("subscriptionIds");
             return this;
         }
-        /**
-         * Patch bundle names
-         **/
+        /** Patch bundle names */
         @com.fasterxml.jackson.annotation.JsonProperty("appliedPatchBundles")
         private java.util.List<String> appliedPatchBundles;
 
         /**
          * Patch bundle names
+         *
          * @param appliedPatchBundles the value to set
          * @return this builder
-         **/
+         */
         public Builder appliedPatchBundles(java.util.List<String> appliedPatchBundles) {
             this.appliedPatchBundles = appliedPatchBundles;
             this.__explicitlySet__.add("appliedPatchBundles");
             return this;
         }
-        /**
-         * Type of the FusionEnvironment.
-         **/
+        /** Type of the FusionEnvironment. */
         @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentType")
         private FusionEnvironment.FusionEnvironmentType fusionEnvironmentType;
 
         /**
          * Type of the FusionEnvironment.
+         *
          * @param fusionEnvironmentType the value to set
          * @return this builder
-         **/
+         */
         public Builder fusionEnvironmentType(
                 FusionEnvironment.FusionEnvironmentType fusionEnvironmentType) {
             this.fusionEnvironmentType = fusionEnvironmentType;
             this.__explicitlySet__.add("fusionEnvironmentType");
             return this;
         }
-        /**
-         * Version of Fusion Apps used by this environment
-         **/
+        /** Version of Fusion Apps used by this environment */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Version of Fusion Apps used by this environment
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * Public URL
-         **/
+        /** Public URL */
         @com.fasterxml.jackson.annotation.JsonProperty("publicUrl")
         private String publicUrl;
 
         /**
          * Public URL
+         *
          * @param publicUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder publicUrl(String publicUrl) {
             this.publicUrl = publicUrl;
             this.__explicitlySet__.add("publicUrl");
             return this;
         }
-        /**
-         * DNS prefix
-         **/
+        /** DNS prefix */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsPrefix")
         private String dnsPrefix;
 
         /**
          * DNS prefix
+         *
          * @param dnsPrefix the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsPrefix(String dnsPrefix) {
             this.dnsPrefix = dnsPrefix;
             this.__explicitlySet__.add("dnsPrefix");
             return this;
         }
-        /**
-         * Language packs
-         **/
+        /** Language packs */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalLanguagePacks")
         private java.util.List<String> additionalLanguagePacks;
 
         /**
          * Language packs
+         *
          * @param additionalLanguagePacks the value to set
          * @return this builder
-         **/
+         */
         public Builder additionalLanguagePacks(java.util.List<String> additionalLanguagePacks) {
             this.additionalLanguagePacks = additionalLanguagePacks;
             this.__explicitlySet__.add("additionalLanguagePacks");
             return this;
         }
-        /**
-         * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-         **/
+        /** The time the the FusionEnvironment was created. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-         **/
+        /** The time the FusionEnvironment was updated. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the FusionEnvironment.
-         **/
+        /** The current state of the FusionEnvironment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private FusionEnvironment.LifecycleState lifecycleState;
 
         /**
          * The current state of the FusionEnvironment.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(FusionEnvironment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -376,8 +363,7 @@ public final class FusionEnvironmentSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -387,7 +373,7 @@ public final class FusionEnvironmentSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -489,9 +475,7 @@ public final class FusionEnvironmentSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -500,44 +484,41 @@ public final class FusionEnvironmentSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier that is immutable on creation
-     **/
+    /** Unique identifier that is immutable on creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * FusionEnvironment Identifier, can be renamed
-     **/
+    /** FusionEnvironment Identifier, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * FusionEnvironment Identifier, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The next maintenance for this environment
-     **/
+    /** The next maintenance for this environment */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpcomingMaintenance")
     private final java.util.Date timeUpcomingMaintenance;
 
     /**
      * The next maintenance for this environment
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpcomingMaintenance() {
         return timeUpcomingMaintenance;
     }
@@ -549,220 +530,209 @@ public final class FusionEnvironmentSummary
         return maintenancePolicy;
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * FusionEnvironmentFamily Identifier
-     **/
+    /** FusionEnvironmentFamily Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentFamilyId")
     private final String fusionEnvironmentFamilyId;
 
     /**
      * FusionEnvironmentFamily Identifier
+     *
      * @return the value
-     **/
+     */
     public String getFusionEnvironmentFamilyId() {
         return fusionEnvironmentFamilyId;
     }
 
-    /**
-     * List of subscription IDs.
-     **/
+    /** List of subscription IDs. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
     private final java.util.List<String> subscriptionIds;
 
     /**
      * List of subscription IDs.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSubscriptionIds() {
         return subscriptionIds;
     }
 
-    /**
-     * Patch bundle names
-     **/
+    /** Patch bundle names */
     @com.fasterxml.jackson.annotation.JsonProperty("appliedPatchBundles")
     private final java.util.List<String> appliedPatchBundles;
 
     /**
      * Patch bundle names
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAppliedPatchBundles() {
         return appliedPatchBundles;
     }
 
-    /**
-     * Type of the FusionEnvironment.
-     **/
+    /** Type of the FusionEnvironment. */
     @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentType")
     private final FusionEnvironment.FusionEnvironmentType fusionEnvironmentType;
 
     /**
      * Type of the FusionEnvironment.
+     *
      * @return the value
-     **/
+     */
     public FusionEnvironment.FusionEnvironmentType getFusionEnvironmentType() {
         return fusionEnvironmentType;
     }
 
-    /**
-     * Version of Fusion Apps used by this environment
-     **/
+    /** Version of Fusion Apps used by this environment */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Version of Fusion Apps used by this environment
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * Public URL
-     **/
+    /** Public URL */
     @com.fasterxml.jackson.annotation.JsonProperty("publicUrl")
     private final String publicUrl;
 
     /**
      * Public URL
+     *
      * @return the value
-     **/
+     */
     public String getPublicUrl() {
         return publicUrl;
     }
 
-    /**
-     * DNS prefix
-     **/
+    /** DNS prefix */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsPrefix")
     private final String dnsPrefix;
 
     /**
      * DNS prefix
+     *
      * @return the value
-     **/
+     */
     public String getDnsPrefix() {
         return dnsPrefix;
     }
 
-    /**
-     * Language packs
-     **/
+    /** Language packs */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalLanguagePacks")
     private final java.util.List<String> additionalLanguagePacks;
 
     /**
      * Language packs
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAdditionalLanguagePacks() {
         return additionalLanguagePacks;
     }
 
-    /**
-     * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
-     **/
+    /** The time the the FusionEnvironment was created. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the FusionEnvironment was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the FusionEnvironment.
-     **/
+    /** The current state of the FusionEnvironment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final FusionEnvironment.LifecycleState lifecycleState;
 
     /**
      * The current state of the FusionEnvironment.
+     *
      * @return the value
-     **/
+     */
     public FusionEnvironment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -774,6 +744,7 @@ public final class FusionEnvironmentSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

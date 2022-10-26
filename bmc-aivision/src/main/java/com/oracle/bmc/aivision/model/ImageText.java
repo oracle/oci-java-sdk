@@ -5,19 +5,20 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The detected text.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The detected text. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageText.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ImageText extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"words", "lines"})
     public ImageText(java.util.List<Word> words, java.util.List<Line> lines) {
@@ -28,33 +29,31 @@ public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The words recognized in an image.
-         **/
+        /** The words recognized in an image. */
         @com.fasterxml.jackson.annotation.JsonProperty("words")
         private java.util.List<Word> words;
 
         /**
          * The words recognized in an image.
+         *
          * @param words the value to set
          * @return this builder
-         **/
+         */
         public Builder words(java.util.List<Word> words) {
             this.words = words;
             this.__explicitlySet__.add("words");
             return this;
         }
-        /**
-         * The lines of text recognized in an image.
-         **/
+        /** The lines of text recognized in an image. */
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<Line> lines;
 
         /**
          * The lines of text recognized in an image.
+         *
          * @param lines the value to set
          * @return this builder
-         **/
+         */
         public Builder lines(java.util.List<Line> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
@@ -84,9 +83,7 @@ public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * The words recognized in an image.
-     **/
+    /** The words recognized in an image. */
     @com.fasterxml.jackson.annotation.JsonProperty("words")
     private final java.util.List<Word> words;
 
     /**
      * The words recognized in an image.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Word> getWords() {
         return words;
     }
 
-    /**
-     * The lines of text recognized in an image.
-     **/
+    /** The lines of text recognized in an image. */
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<Line> lines;
 
     /**
      * The lines of text recognized in an image.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Line> getLines() {
         return lines;
     }
@@ -130,6 +125,7 @@ public final class ImageText extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

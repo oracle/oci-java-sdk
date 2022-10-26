@@ -5,20 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Results of the comparison of an item between two security assessments.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Results of the comparison of an item between two security assessments. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Diffs.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Diffs extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "current",
@@ -65,66 +65,72 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
         /**
-         * This array identifies the items that are present in the baseline, but are missing from the current assessment.
-         **/
+         * This array identifies the items that are present in the baseline, but are missing from
+         * the current assessment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("removedItems")
         private java.util.List<String> removedItems;
 
         /**
-         * This array identifies the items that are present in the baseline, but are missing from the current assessment.
+         * This array identifies the items that are present in the baseline, but are missing from
+         * the current assessment.
+         *
          * @param removedItems the value to set
          * @return this builder
-         **/
+         */
         public Builder removedItems(java.util.List<String> removedItems) {
             this.removedItems = removedItems;
             this.__explicitlySet__.add("removedItems");
             return this;
         }
         /**
-         * This array identifies the items that are present in the current assessment, but are missing from the baseline.
-         **/
+         * This array identifies the items that are present in the current assessment, but are
+         * missing from the baseline.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("addedItems")
         private java.util.List<String> addedItems;
 
         /**
-         * This array identifies the items that are present in the current assessment, but are missing from the baseline.
+         * This array identifies the items that are present in the current assessment, but are
+         * missing from the baseline.
+         *
          * @param addedItems the value to set
          * @return this builder
-         **/
+         */
         public Builder addedItems(java.util.List<String> addedItems) {
             this.addedItems = addedItems;
             this.__explicitlySet__.add("addedItems");
             return this;
         }
         /**
-         * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
-         *
-         **/
+         * This array contains the items that are present in both the current assessment and the
+         * baseline, but are different in the two assessments.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedItems")
         private java.util.List<String> modifiedItems;
 
         /**
-         * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
+         * This array contains the items that are present in both the current assessment and the
+         * baseline, but are different in the two assessments.
          *
          * @param modifiedItems the value to set
          * @return this builder
-         **/
+         */
         public Builder modifiedItems(java.util.List<String> modifiedItems) {
             this.modifiedItems = modifiedItems;
             this.__explicitlySet__.add("modifiedItems");
             return this;
         }
-        /**
-         * The severity of this diff.
-         **/
+        /** The severity of this diff. */
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * The severity of this diff.
+         *
          * @param severity the value to set
          * @return this builder
-         **/
+         */
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
@@ -173,9 +179,7 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,53 +203,58 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * This array identifies the items that are present in the baseline, but are missing from the current assessment.
-     **/
+     * This array identifies the items that are present in the baseline, but are missing from the
+     * current assessment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("removedItems")
     private final java.util.List<String> removedItems;
 
     /**
-     * This array identifies the items that are present in the baseline, but are missing from the current assessment.
+     * This array identifies the items that are present in the baseline, but are missing from the
+     * current assessment.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getRemovedItems() {
         return removedItems;
     }
 
     /**
-     * This array identifies the items that are present in the current assessment, but are missing from the baseline.
-     **/
+     * This array identifies the items that are present in the current assessment, but are missing
+     * from the baseline.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("addedItems")
     private final java.util.List<String> addedItems;
 
     /**
-     * This array identifies the items that are present in the current assessment, but are missing from the baseline.
+     * This array identifies the items that are present in the current assessment, but are missing
+     * from the baseline.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAddedItems() {
         return addedItems;
     }
 
     /**
-     * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
-     *
-     **/
+     * This array contains the items that are present in both the current assessment and the
+     * baseline, but are different in the two assessments.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedItems")
     private final java.util.List<String> modifiedItems;
 
     /**
-     * This array contains the items that are present in both the current assessment and the baseline, but are different in the two assessments.
+     * This array contains the items that are present in both the current assessment and the
+     * baseline, but are different in the two assessments.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getModifiedItems() {
         return modifiedItems;
     }
 
-    /**
-     * The severity of this diff.
-     **/
-    public enum Severity {
+    /** The severity of this diff. */
+    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -254,8 +263,8 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         Pass("PASS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -294,16 +303,15 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return UnknownEnumValue;
         }
     };
-    /**
-     * The severity of this diff.
-     **/
+    /** The severity of this diff. */
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * The severity of this diff.
+     *
      * @return the value
-     **/
+     */
     public Severity getSeverity() {
         return severity;
     }
@@ -315,6 +323,7 @@ public final class Diffs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

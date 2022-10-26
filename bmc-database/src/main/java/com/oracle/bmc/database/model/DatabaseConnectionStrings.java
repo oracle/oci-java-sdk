@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Connection strings to connect to an Oracle Database.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Connection strings to connect to an Oracle Database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseConnectionStrings.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseConnectionStrings.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseConnectionStrings
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cdbDefault", "cdbIpDefault", "allConnectionStrings"})
     public DatabaseConnectionStrings(
@@ -36,49 +35,46 @@ public final class DatabaseConnectionStrings
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Host name based CDB Connection String.
-         **/
+        /** Host name based CDB Connection String. */
         @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
         private String cdbDefault;
 
         /**
          * Host name based CDB Connection String.
+         *
          * @param cdbDefault the value to set
          * @return this builder
-         **/
+         */
         public Builder cdbDefault(String cdbDefault) {
             this.cdbDefault = cdbDefault;
             this.__explicitlySet__.add("cdbDefault");
             return this;
         }
-        /**
-         * IP based CDB Connection String.
-         **/
+        /** IP based CDB Connection String. */
         @com.fasterxml.jackson.annotation.JsonProperty("cdbIpDefault")
         private String cdbIpDefault;
 
         /**
          * IP based CDB Connection String.
+         *
          * @param cdbIpDefault the value to set
          * @return this builder
-         **/
+         */
         public Builder cdbIpDefault(String cdbIpDefault) {
             this.cdbIpDefault = cdbIpDefault;
             this.__explicitlySet__.add("cdbIpDefault");
             return this;
         }
-        /**
-         * All connection strings to use to connect to the Database.
-         **/
+        /** All connection strings to use to connect to the Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
         /**
          * All connection strings to use to connect to the Database.
+         *
          * @param allConnectionStrings the value to set
          * @return this builder
-         **/
+         */
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
@@ -113,9 +109,7 @@ public final class DatabaseConnectionStrings
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,44 +118,41 @@ public final class DatabaseConnectionStrings
         return new Builder().copy(this);
     }
 
-    /**
-     * Host name based CDB Connection String.
-     **/
+    /** Host name based CDB Connection String. */
     @com.fasterxml.jackson.annotation.JsonProperty("cdbDefault")
     private final String cdbDefault;
 
     /**
      * Host name based CDB Connection String.
+     *
      * @return the value
-     **/
+     */
     public String getCdbDefault() {
         return cdbDefault;
     }
 
-    /**
-     * IP based CDB Connection String.
-     **/
+    /** IP based CDB Connection String. */
     @com.fasterxml.jackson.annotation.JsonProperty("cdbIpDefault")
     private final String cdbIpDefault;
 
     /**
      * IP based CDB Connection String.
+     *
      * @return the value
-     **/
+     */
     public String getCdbIpDefault() {
         return cdbIpDefault;
     }
 
-    /**
-     * All connection strings to use to connect to the Database.
-     **/
+    /** All connection strings to use to connect to the Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
     /**
      * All connection strings to use to connect to the Database.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }
@@ -173,6 +164,7 @@ public final class DatabaseConnectionStrings
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

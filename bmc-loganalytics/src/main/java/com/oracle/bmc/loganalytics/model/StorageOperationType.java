@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/**
- * These are the asynchronous operation name for a storage work Request
- *
- **/
+/** These are the asynchronous operation name for a storage work Request */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum StorageOperationType {
+public enum StorageOperationType implements com.oracle.bmc.http.internal.BmcEnum {
     OffboardTenancy("OFFBOARD_TENANCY"),
     PurgeStorageData("PURGE_STORAGE_DATA"),
     RecallArchivedStorageData("RECALL_ARCHIVED_STORAGE_DATA"),

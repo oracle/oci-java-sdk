@@ -5,21 +5,25 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The policy that specifies the maintenance and upgrade preferences for an environment. For more
+ * information about the options, see [Understanding Environment
+ * Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MaintenancePolicy.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MaintenancePolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MaintenancePolicy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MaintenancePolicy
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"monthlyPatchingOverride", "environmentMaintenanceOverride"})
     public MaintenancePolicy(
@@ -33,32 +37,40 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
-         **/
+         * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion
+         * environment is not patched monthly. This setting overrides the environment family
+         * setting. When not set, the environment follows the environment family policy.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("monthlyPatchingOverride")
         private MonthlyPatchingOverride monthlyPatchingOverride;
 
         /**
-         * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
+         * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion
+         * environment is not patched monthly. This setting overrides the environment family
+         * setting. When not set, the environment follows the environment family policy.
+         *
          * @param monthlyPatchingOverride the value to set
          * @return this builder
-         **/
+         */
         public Builder monthlyPatchingOverride(MonthlyPatchingOverride monthlyPatchingOverride) {
             this.monthlyPatchingOverride = monthlyPatchingOverride;
             this.__explicitlySet__.add("monthlyPatchingOverride");
             return this;
         }
         /**
-         * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
-         **/
+         * User choice to upgrade both test and prod pods at the same time. Overrides fusion
+         * environment families'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentMaintenanceOverride")
         private EnvironmentMaintenanceOverride environmentMaintenanceOverride;
 
         /**
-         * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
+         * User choice to upgrade both test and prod pods at the same time. Overrides fusion
+         * environment families'.
+         *
          * @param environmentMaintenanceOverride the value to set
          * @return this builder
-         **/
+         */
         public Builder environmentMaintenanceOverride(
                 EnvironmentMaintenanceOverride environmentMaintenanceOverride) {
             this.environmentMaintenanceOverride = environmentMaintenanceOverride;
@@ -91,9 +103,7 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,9 +113,11 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
-     **/
-    public enum MonthlyPatchingOverride {
+     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion
+     * environment is not patched monthly. This setting overrides the environment family setting.
+     * When not set, the environment follows the environment family policy.
+     */
+    public enum MonthlyPatchingOverride implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
@@ -139,23 +151,29 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
-     **/
+     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion
+     * environment is not patched monthly. This setting overrides the environment family setting.
+     * When not set, the environment follows the environment family policy.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("monthlyPatchingOverride")
     private final MonthlyPatchingOverride monthlyPatchingOverride;
 
     /**
-     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
+     * When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion
+     * environment is not patched monthly. This setting overrides the environment family setting.
+     * When not set, the environment follows the environment family policy.
+     *
      * @return the value
-     **/
+     */
     public MonthlyPatchingOverride getMonthlyPatchingOverride() {
         return monthlyPatchingOverride;
     }
 
     /**
-     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
-     **/
-    public enum EnvironmentMaintenanceOverride {
+     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment
+     * families'.
+     */
+    public enum EnvironmentMaintenanceOverride implements com.oracle.bmc.http.internal.BmcEnum {
         Prod("PROD"),
         NonProd("NON_PROD"),
         None("NONE"),
@@ -189,15 +207,18 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
         }
     };
     /**
-     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
-     **/
+     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment
+     * families'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentMaintenanceOverride")
     private final EnvironmentMaintenanceOverride environmentMaintenanceOverride;
 
     /**
-     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment families'.
+     * User choice to upgrade both test and prod pods at the same time. Overrides fusion environment
+     * families'.
+     *
      * @return the value
-     **/
+     */
     public EnvironmentMaintenanceOverride getEnvironmentMaintenanceOverride() {
         return environmentMaintenanceOverride;
     }
@@ -209,6 +230,7 @@ public final class MaintenancePolicy extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

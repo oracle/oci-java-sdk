@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cims.model;
 
-/**
- * The kind of support ticket, such as a technical support request.
- **/
+/** The kind of support ticket, such as a technical support request. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum ProblemType {
+public enum ProblemType implements com.oracle.bmc.http.internal.BmcEnum {
     Limit("LIMIT"),
     LegacyLimit("LEGACY_LIMIT"),
     Tech("TECH"),

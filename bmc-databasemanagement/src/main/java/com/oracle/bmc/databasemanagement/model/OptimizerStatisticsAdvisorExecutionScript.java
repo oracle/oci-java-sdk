@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Oracle system-generated script for the Optimizer Statistics Advisor execution.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Oracle system-generated script for the Optimizer Statistics Advisor execution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OptimizerStatisticsAdvisorExecutionScript.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OptimizerStatisticsAdvisorExecutionScript.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OptimizerStatisticsAdvisorExecutionScript
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"script"})
     public OptimizerStatisticsAdvisorExecutionScript(String script) {
@@ -30,17 +30,16 @@ public final class OptimizerStatisticsAdvisorExecutionScript
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Optimizer Statistics Advisor execution script.
-         **/
+        /** The Optimizer Statistics Advisor execution script. */
         @com.fasterxml.jackson.annotation.JsonProperty("script")
         private String script;
 
         /**
          * The Optimizer Statistics Advisor execution script.
+         *
          * @param script the value to set
          * @return this builder
-         **/
+         */
         public Builder script(String script) {
             this.script = script;
             this.__explicitlySet__.add("script");
@@ -68,9 +67,7 @@ public final class OptimizerStatisticsAdvisorExecutionScript
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class OptimizerStatisticsAdvisorExecutionScript
         return new Builder().copy(this);
     }
 
-    /**
-     * The Optimizer Statistics Advisor execution script.
-     **/
+    /** The Optimizer Statistics Advisor execution script. */
     @com.fasterxml.jackson.annotation.JsonProperty("script")
     private final String script;
 
     /**
      * The Optimizer Statistics Advisor execution script.
+     *
      * @return the value
-     **/
+     */
     public String getScript() {
         return script;
     }
@@ -100,6 +96,7 @@ public final class OptimizerStatisticsAdvisorExecutionScript
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

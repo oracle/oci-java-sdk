@@ -5,20 +5,20 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Complete information of a specific release of Java. Includes the artifact details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Complete information of a specific release of Java. Includes the artifact details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaRelease.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JavaRelease extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "artifacts",
@@ -61,113 +61,106 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of Java artifacts.
-         **/
+        /** List of Java artifacts. */
         @com.fasterxml.jackson.annotation.JsonProperty("artifacts")
         private java.util.List<JavaArtifact> artifacts;
 
         /**
          * List of Java artifacts.
+         *
          * @param artifacts the value to set
          * @return this builder
-         **/
+         */
         public Builder artifacts(java.util.List<JavaArtifact> artifacts) {
             this.artifacts = artifacts;
             this.__explicitlySet__.add("artifacts");
             return this;
         }
-        /**
-         * Java release version identifier.
-         **/
+        /** Java release version identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
         private String releaseVersion;
 
         /**
          * Java release version identifier.
+         *
          * @param releaseVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = releaseVersion;
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
-        /**
-         * Java release family identifier.
-         **/
+        /** Java release family identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
         private String familyVersion;
 
         /**
          * Java release family identifier.
+         *
          * @param familyVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = familyVersion;
             this.__explicitlySet__.add("familyVersion");
             return this;
         }
-        /**
-         * Parent Java release version identifier. This is applicable for BPR releases.
-         **/
+        /** Parent Java release version identifier. This is applicable for BPR releases. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentReleaseVersion")
         private String parentReleaseVersion;
 
         /**
          * Parent Java release version identifier. This is applicable for BPR releases.
+         *
          * @param parentReleaseVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder parentReleaseVersion(String parentReleaseVersion) {
             this.parentReleaseVersion = parentReleaseVersion;
             this.__explicitlySet__.add("parentReleaseVersion");
             return this;
         }
-        /**
-         * The security status of the Java version.
-         **/
+        /** The security status of the Java version. */
         @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
         private JreSecurityStatus securityStatus;
 
         /**
          * The security status of the Java version.
+         *
          * @param securityStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder securityStatus(JreSecurityStatus securityStatus) {
             this.securityStatus = securityStatus;
             this.__explicitlySet__.add("securityStatus");
             return this;
         }
-        /**
-         * Release category of the Java version.
-         **/
+        /** Release category of the Java version. */
         @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
         private ReleaseType releaseType;
 
         /**
          * Release category of the Java version.
+         *
          * @param releaseType the value to set
          * @return this builder
-         **/
+         */
         public Builder releaseType(ReleaseType releaseType) {
             this.releaseType = releaseType;
             this.__explicitlySet__.add("releaseType");
             return this;
         }
-        /**
-         * License type for the Java version.
-         **/
+        /** License type for the Java version. */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
         /**
          * License type for the Java version.
+         *
          * @param licenseType the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseType(LicenseType licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
@@ -192,32 +185,34 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         **/
+         * The release date of the Java version (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private java.util.Date releaseDate;
 
         /**
-         * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The release date of the Java version (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param releaseDate the value to set
          * @return this builder
-         **/
+         */
         public Builder releaseDate(java.util.Date releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
-        /**
-         * Release notes associated with the Java version.
-         **/
+        /** Release notes associated with the Java version. */
         @com.fasterxml.jackson.annotation.JsonProperty("releaseNotesUrl")
         private String releaseNotesUrl;
 
         /**
          * Release notes associated with the Java version.
+         *
          * @param releaseNotesUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder releaseNotesUrl(String releaseNotesUrl) {
             this.releaseNotesUrl = releaseNotesUrl;
             this.__explicitlySet__.add("releaseNotesUrl");
@@ -286,9 +281,7 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -297,100 +290,93 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * List of Java artifacts.
-     **/
+    /** List of Java artifacts. */
     @com.fasterxml.jackson.annotation.JsonProperty("artifacts")
     private final java.util.List<JavaArtifact> artifacts;
 
     /**
      * List of Java artifacts.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<JavaArtifact> getArtifacts() {
         return artifacts;
     }
 
-    /**
-     * Java release version identifier.
-     **/
+    /** Java release version identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
     private final String releaseVersion;
 
     /**
      * Java release version identifier.
+     *
      * @return the value
-     **/
+     */
     public String getReleaseVersion() {
         return releaseVersion;
     }
 
-    /**
-     * Java release family identifier.
-     **/
+    /** Java release family identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
     private final String familyVersion;
 
     /**
      * Java release family identifier.
+     *
      * @return the value
-     **/
+     */
     public String getFamilyVersion() {
         return familyVersion;
     }
 
-    /**
-     * Parent Java release version identifier. This is applicable for BPR releases.
-     **/
+    /** Parent Java release version identifier. This is applicable for BPR releases. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentReleaseVersion")
     private final String parentReleaseVersion;
 
     /**
      * Parent Java release version identifier. This is applicable for BPR releases.
+     *
      * @return the value
-     **/
+     */
     public String getParentReleaseVersion() {
         return parentReleaseVersion;
     }
 
-    /**
-     * The security status of the Java version.
-     **/
+    /** The security status of the Java version. */
     @com.fasterxml.jackson.annotation.JsonProperty("securityStatus")
     private final JreSecurityStatus securityStatus;
 
     /**
      * The security status of the Java version.
+     *
      * @return the value
-     **/
+     */
     public JreSecurityStatus getSecurityStatus() {
         return securityStatus;
     }
 
-    /**
-     * Release category of the Java version.
-     **/
+    /** Release category of the Java version. */
     @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
     private final ReleaseType releaseType;
 
     /**
      * Release category of the Java version.
+     *
      * @return the value
-     **/
+     */
     public ReleaseType getReleaseType() {
         return releaseType;
     }
 
-    /**
-     * License type for the Java version.
-     **/
+    /** License type for the Java version. */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
     /**
      * License type for the Java version.
+     *
      * @return the value
-     **/
+     */
     public LicenseType getLicenseType() {
         return licenseType;
     }
@@ -410,29 +396,31 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     **/
+     * The release date of the Java version (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final java.util.Date releaseDate;
 
     /**
-     * The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The release date of the Java version (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getReleaseDate() {
         return releaseDate;
     }
 
-    /**
-     * Release notes associated with the Java version.
-     **/
+    /** Release notes associated with the Java version. */
     @com.fasterxml.jackson.annotation.JsonProperty("releaseNotesUrl")
     private final String releaseNotesUrl;
 
     /**
      * Release notes associated with the Java version.
+     *
      * @return the value
-     **/
+     */
     public String getReleaseNotesUrl() {
         return releaseNotesUrl;
     }
@@ -444,6 +432,7 @@ public final class JavaRelease extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

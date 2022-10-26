@@ -5,22 +5,22 @@
 package com.oracle.bmc.apmcontrolplane.model;
 
 /**
- * Details of the Data Key to be generated.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of the Data Key to be generated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenerateDataKeyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = GenerateDataKeyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GenerateDataKeyDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type"})
     public GenerateDataKeyDetails(String name, DataKeyTypes type) {
@@ -31,10 +31,7 @@ public final class GenerateDataKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-         *
-         **/
+        /** Name of the Data Key. The name uniquely identifies a Data Key within an APM domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -43,23 +40,22 @@ public final class GenerateDataKeyDetails
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Type of the Data Key.
-         **/
+        /** Type of the Data Key. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DataKeyTypes type;
 
         /**
          * Type of the Data Key.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(DataKeyTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -89,9 +85,7 @@ public final class GenerateDataKeyDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,10 +94,7 @@ public final class GenerateDataKeyDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
-     *
-     **/
+    /** Name of the Data Key. The name uniquely identifies a Data Key within an APM domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -111,21 +102,20 @@ public final class GenerateDataKeyDetails
      * Name of the Data Key. The name uniquely identifies a Data Key within an APM domain.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Type of the Data Key.
-     **/
+    /** Type of the Data Key. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DataKeyTypes type;
 
     /**
      * Type of the Data Key.
+     *
      * @return the value
-     **/
+     */
     public DataKeyTypes getType() {
         return type;
     }
@@ -137,6 +127,7 @@ public final class GenerateDataKeyDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,13 +9,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 
 /**
- * Simple wrapper over FileInputStream that also exposes the File used
- * to create the stream.
- * <p>
- * This version also support mark/reset.
+ * Simple wrapper over FileInputStream that also exposes the File used to create the stream.
+ *
+ * <p>This version also support mark/reset.
  */
 public class WrappedFileInputStream extends FileInputStream implements DuplicatableInputStream {
     private static final org.slf4j.Logger LOG =
@@ -55,8 +54,8 @@ public class WrappedFileInputStream extends FileInputStream implements Duplicata
     }
 
     /**
-     * Same as calling the ctor, except will throw an unchecked IllegalArgumentException
-     * if the file isn't found.
+     * Same as calling the ctor, except will throw an unchecked IllegalArgumentException if the file
+     * isn't found.
      *
      * @param file the file to read from.
      * @return a new stream.

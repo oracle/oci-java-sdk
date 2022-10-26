@@ -10,17 +10,16 @@ import com.oracle.bmc.core.model.*;
 public class ListComputeCapacityReservationInstancesResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages
-     * of results remain. For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -29,15 +28,14 @@ public class ListComputeCapacityReservationInstancesResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -45,13 +43,12 @@ public class ListComputeCapacityReservationInstancesResponse
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances.
-     */
+    /** A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances. */
     private java.util.List<com.oracle.bmc.core.model.CapacityReservationInstanceSummary> items;
 
     /**
      * A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.core.model.CapacityReservationInstanceSummary> getItems() {
@@ -67,7 +64,7 @@ public class ListComputeCapacityReservationInstancesResponse
     })
     private ListComputeCapacityReservationInstancesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.CapacityReservationInstanceSummary> items) {
@@ -77,33 +74,36 @@ public class ListComputeCapacityReservationInstancesResponse
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListComputeCapacityReservationInstancesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages
-         * of results remain. For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -114,15 +114,14 @@ public class ListComputeCapacityReservationInstancesResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,13 +131,12 @@ public class ListComputeCapacityReservationInstancesResponse
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances.
-         */
+        /** A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances. */
         private java.util.List<com.oracle.bmc.core.model.CapacityReservationInstanceSummary> items;
 
         /**
          * A list of com.oracle.bmc.core.model.CapacityReservationInstanceSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -151,8 +149,10 @@ public class ListComputeCapacityReservationInstancesResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListComputeCapacityReservationInstancesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -165,8 +165,10 @@ public class ListComputeCapacityReservationInstancesResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListComputeCapacityReservationInstancesResponse build() {
             return new ListComputeCapacityReservationInstancesResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -175,6 +177,7 @@ public class ListComputeCapacityReservationInstancesResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

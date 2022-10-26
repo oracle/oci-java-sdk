@@ -5,26 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage CLASSIFY command.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Command descriptor for querylanguage CLASSIFY command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ClassifyCommandDescriptor.Builder.class
-)
+        builder = ClassifyCommandDescriptor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -82,54 +80,57 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
             return this;
         }
         /**
-         * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
-         *
-         **/
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to
+         * top N.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("topCount")
         private Integer topCount;
 
         /**
-         * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to
+         * top N.
          *
          * @param topCount the value to set
          * @return this builder
-         **/
+         */
         public Builder topCount(Integer topCount) {
             this.topCount = topCount;
             this.__explicitlySet__.add("topCount");
             return this;
         }
         /**
-         * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
-         *
-         **/
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to
+         * bottom N.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bottomCount")
         private Integer bottomCount;
 
         /**
-         * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
+         * Value specified in CLASSIFY command in queryString if set limits the results returned to
+         * bottom N.
          *
          * @param bottomCount the value to set
          * @return this builder
-         **/
+         */
         public Builder bottomCount(Integer bottomCount) {
             this.bottomCount = bottomCount;
             this.__explicitlySet__.add("bottomCount");
             return this;
         }
         /**
-         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
-         *
-         **/
+         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in
+         * correlate results.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("correlate")
         private java.util.List<FieldsAddRemoveField> correlate;
 
         /**
-         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
+         * Fields specified in CLASSIFY command in queryString if set include / exclude fields in
+         * correlate results.
          *
          * @param correlate the value to set
          * @return this builder
-         **/
+         */
         public Builder correlate(java.util.List<FieldsAddRemoveField> correlate) {
             this.correlate = correlate;
             this.__explicitlySet__.add("correlate");
@@ -190,9 +191,7 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,49 +224,52 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
     }
 
     /**
-     * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
-     *
-     **/
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to top
+     * N.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("topCount")
     private final Integer topCount;
 
     /**
-     * Value specified in CLASSIFY command in queryString if set limits the results returned to top N.
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to top
+     * N.
      *
      * @return the value
-     **/
+     */
     public Integer getTopCount() {
         return topCount;
     }
 
     /**
-     * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
-     *
-     **/
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to
+     * bottom N.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bottomCount")
     private final Integer bottomCount;
 
     /**
-     * Value specified in CLASSIFY command in queryString if set limits the results returned to bottom N.
+     * Value specified in CLASSIFY command in queryString if set limits the results returned to
+     * bottom N.
      *
      * @return the value
-     **/
+     */
     public Integer getBottomCount() {
         return bottomCount;
     }
 
     /**
-     * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
-     *
-     **/
+     * Fields specified in CLASSIFY command in queryString if set include / exclude fields in
+     * correlate results.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("correlate")
     private final java.util.List<FieldsAddRemoveField> correlate;
 
     /**
-     * Fields specified in CLASSIFY command in queryString if set include / exclude fields in correlate results.
+     * Fields specified in CLASSIFY command in queryString if set include / exclude fields in
+     * correlate results.
      *
      * @return the value
-     **/
+     */
     public java.util.List<FieldsAddRemoveField> getCorrelate() {
         return correlate;
     }
@@ -279,6 +281,7 @@ public final class ClassifyCommandDescriptor extends AbstractCommandDescriptor {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

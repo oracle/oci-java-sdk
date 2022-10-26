@@ -5,21 +5,22 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RequestProtection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RequestProtection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RequestProtection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RequestProtection
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rules",
@@ -40,73 +41,76 @@ public final class RequestProtection extends com.oracle.bmc.http.internal.Explic
     public static class Builder {
         /**
          * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
-         * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
-         *
-         **/
+         * ProtectionRules in this array can only use protection Capabilities of
+         * REQUEST_PROTECTION_CAPABILITY type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<ProtectionRule> rules;
 
         /**
          * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
-         * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
+         * ProtectionRules in this array can only use protection Capabilities of
+         * REQUEST_PROTECTION_CAPABILITY type.
          *
          * @param rules the value to set
          * @return this builder
-         **/
+         */
         public Builder rules(java.util.List<ProtectionRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
             return this;
         }
         /**
-         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
-         * <p>
-         * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is
+         * exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
          *
-         **/
+         * <p>Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitInBytes")
         private Integer bodyInspectionSizeLimitInBytes;
 
         /**
-         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
-         * <p>
-         * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+         * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is
+         * exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
+         *
+         * <p>Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
          *
          * @param bodyInspectionSizeLimitInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder bodyInspectionSizeLimitInBytes(Integer bodyInspectionSizeLimitInBytes) {
             this.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
             this.__explicitlySet__.add("bodyInspectionSizeLimitInBytes");
             return this;
         }
         /**
-         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
-         * body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
-         * <p>
-         * If this field is {@code null} HTTP message body will inspected up to {@code bodyInspectionSizeLimitInBytes} and the rest
-         * will not be inspected by Protection Capabilities.
-         * <p>
-         * Allowed action types:
-         * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP
+         * message body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
          *
-         **/
+         * <p>If this field is {@code null} HTTP message body will inspected up to {@code
+         * bodyInspectionSizeLimitInBytes} and the rest will not be inspected by Protection
+         * Capabilities.
+         *
+         * <p>Allowed action types: * **RETURN_HTTP_RESPONSE** terminates further execution of
+         * modules and rules and returns defined HTTP response.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitExceededActionName")
         private String bodyInspectionSizeLimitExceededActionName;
 
         /**
-         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
-         * body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
-         * <p>
-         * If this field is {@code null} HTTP message body will inspected up to {@code bodyInspectionSizeLimitInBytes} and the rest
-         * will not be inspected by Protection Capabilities.
-         * <p>
-         * Allowed action types:
-         * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+         * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP
+         * message body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
+         *
+         * <p>If this field is {@code null} HTTP message body will inspected up to {@code
+         * bodyInspectionSizeLimitInBytes} and the rest will not be inspected by Protection
+         * Capabilities.
+         *
+         * <p>Allowed action types: * **RETURN_HTTP_RESPONSE** terminates further execution of
+         * modules and rules and returns defined HTTP response.
          *
          * @param bodyInspectionSizeLimitExceededActionName the value to set
          * @return this builder
-         **/
+         */
         public Builder bodyInspectionSizeLimitExceededActionName(
                 String bodyInspectionSizeLimitExceededActionName) {
             this.bodyInspectionSizeLimitExceededActionName =
@@ -146,9 +150,7 @@ public final class RequestProtection extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,68 +161,71 @@ public final class RequestProtection extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
-     * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
-     *
-     **/
+     * ProtectionRules in this array can only use protection Capabilities of
+     * REQUEST_PROTECTION_CAPABILITY type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<ProtectionRule> rules;
 
     /**
      * Ordered list of ProtectionRules. Rules are executed in order of appearance in this array.
-     * ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
+     * ProtectionRules in this array can only use protection Capabilities of
+     * REQUEST_PROTECTION_CAPABILITY type.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ProtectionRule> getRules() {
         return rules;
     }
 
     /**
-     * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
-     * <p>
-     * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+     * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is
+     * exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
      *
-     **/
+     * <p>Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitInBytes")
     private final Integer bodyInspectionSizeLimitInBytes;
 
     /**
-     * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
-     * <p>
-     * Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
+     * Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is
+     * exceeded are defined in {@code bodyInspectionSizeLimitExceededActionName}.
+     *
+     * <p>Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
      *
      * @return the value
-     **/
+     */
     public Integer getBodyInspectionSizeLimitInBytes() {
         return bodyInspectionSizeLimitInBytes;
     }
 
     /**
-     * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
-     * body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
-     * <p>
-     * If this field is {@code null} HTTP message body will inspected up to {@code bodyInspectionSizeLimitInBytes} and the rest
-     * will not be inspected by Protection Capabilities.
-     * <p>
-     * Allowed action types:
-     * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+     * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP
+     * message body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
      *
-     **/
+     * <p>If this field is {@code null} HTTP message body will inspected up to {@code
+     * bodyInspectionSizeLimitInBytes} and the rest will not be inspected by Protection
+     * Capabilities.
+     *
+     * <p>Allowed action types: * **RETURN_HTTP_RESPONSE** terminates further execution of modules
+     * and rules and returns defined HTTP response.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bodyInspectionSizeLimitExceededActionName")
     private final String bodyInspectionSizeLimitExceededActionName;
 
     /**
-     * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message
-     * body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
-     * <p>
-     * If this field is {@code null} HTTP message body will inspected up to {@code bodyInspectionSizeLimitInBytes} and the rest
-     * will not be inspected by Protection Capabilities.
-     * <p>
-     * Allowed action types:
-     * * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
+     * References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP
+     * message body size exceeds limit set in field {@code bodyInspectionSizeLimitInBytes}.
+     *
+     * <p>If this field is {@code null} HTTP message body will inspected up to {@code
+     * bodyInspectionSizeLimitInBytes} and the rest will not be inspected by Protection
+     * Capabilities.
+     *
+     * <p>Allowed action types: * **RETURN_HTTP_RESPONSE** terminates further execution of modules
+     * and rules and returns defined HTTP response.
      *
      * @return the value
-     **/
+     */
     public String getBodyInspectionSizeLimitExceededActionName() {
         return bodyInspectionSizeLimitExceededActionName;
     }
@@ -232,6 +237,7 @@ public final class RequestProtection extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

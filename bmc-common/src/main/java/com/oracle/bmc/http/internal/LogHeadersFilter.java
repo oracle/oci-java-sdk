@@ -4,55 +4,34 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
-import javax.annotation.Priority;
-import javax.ws.rs.Priorities;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
-import javax.ws.rs.client.ClientResponseContext;
-import javax.ws.rs.client.ClientResponseFilter;
-import javax.ws.rs.core.MultivaluedMap;
-
+import com.oracle.bmc.http.client.HttpRequest;
+import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.util.VisibleForTesting;
 
-/**
- * Filter that logs all of the outbound and inbound headers at debug level.
- */
-@Priority(Priorities.USER)
-public class LogHeadersFilter implements ClientResponseFilter, ClientRequestFilter {
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+/** Filter that logs all of the outbound and inbound headers at debug level. */
+public class LogHeadersFilter implements RequestInterceptor {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LogHeadersFilter.class);
 
-    @Override
-    public void filter(ClientRequestContext requestContext, ClientResponseContext responseContext)
-            throws IOException {
-        if (!LOG.isDebugEnabled()) {
-            return;
-        }
-        LOG.debug(
-                "Received '{}' response for '{}' request to '{}'",
-                responseContext.getStatus(),
-                requestContext.getMethod(),
-                requestContext.getUri());
-        MultivaluedMap<String, String> headers = responseContext.getHeaders();
-        for (Entry<String, List<String>> entry : headers.entrySet()) {
-            LOG.debug("Received header '{}' with value '{}'", entry.getKey(), entry.getValue());
-        }
+    @VisibleForTesting
+    protected List<String> maskValue(List<String> values) {
+        return values.stream()
+                .map(e -> e.replaceAll("(?<=keyId=)\"(.*?)\"", "\"REDACTED\""))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public void filter(ClientRequestContext requestContext) throws IOException {
+    public void intercept(HttpRequest request) {
         if (!LOG.isDebugEnabled()) {
             return;
         }
-        LOG.debug(
-                "Sending '{}' request to '{}'",
-                requestContext.getMethod(),
-                requestContext.getUri());
-        MultivaluedMap<String, String> headers = requestContext.getStringHeaders();
+        LOG.debug("Sending '{}' request to '{}'", request.method(), request.uri());
+        Map<String, List<String>> headers = request.headers();
         for (Entry<String, List<String>> entry : headers.entrySet()) {
             List<String> value = entry.getValue();
             if (entry.getKey() != null && entry.getKey().equalsIgnoreCase("authorization")) {
@@ -60,12 +39,5 @@ public class LogHeadersFilter implements ClientResponseFilter, ClientRequestFilt
             }
             LOG.debug("Sending header '{}' with value '{}'", entry.getKey(), value);
         }
-    }
-
-    @VisibleForTesting
-    protected List<String> maskValue(List<String> values) {
-        return values.stream()
-                .map(e -> e.replaceAll("(?<=keyId=)\"(.*?)\"", "\"REDACTED\""))
-                .collect(Collectors.toList());
     }
 }

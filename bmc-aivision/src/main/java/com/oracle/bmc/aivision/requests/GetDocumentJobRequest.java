@@ -6,30 +6,24 @@ package com.oracle.bmc.aivision.requests;
 
 import com.oracle.bmc.aivision.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetDocumentJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDocumentJobRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/GetDocumentJobExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDocumentJobRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Document job id.
-     */
+    /** Document job id. */
     private String documentJobId;
 
-    /**
-     * Document job id.
-     */
+    /** Document job id. */
     public String getDocumentJobId() {
         return documentJobId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -37,17 +31,15 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDocumentJobRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Document job id.
-         */
+        /** Document job id. */
         private String documentJobId = null;
 
         /**
          * Document job id.
+         *
          * @param documentJobId the value to set
          * @return this builder instance
          */
@@ -56,13 +48,12 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -73,18 +64,19 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -96,6 +88,7 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetDocumentJobRequest o) {
@@ -109,10 +102,11 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetDocumentJobRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetDocumentJobRequest
          */
@@ -126,7 +120,8 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetDocumentJobRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDocumentJobRequest
@@ -142,6 +137,7 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -150,6 +146,7 @@ public class GetDocumentJobRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

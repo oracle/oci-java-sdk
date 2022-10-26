@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to resize a data file or temp file within the tablespace.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details required to resize a data file or temp file within the tablespace. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResizeDataFileDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResizeDataFileDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResizeDataFileDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -63,10 +63,7 @@ public final class ResizeDataFileDetails
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-        /**
-         * Specifies whether the file is a data file or temp file.
-         *
-         **/
+        /** Specifies whether the file is a data file or temp file. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileType")
         private FileType fileType;
 
@@ -75,16 +72,13 @@ public final class ResizeDataFileDetails
          *
          * @param fileType the value to set
          * @return this builder
-         **/
+         */
         public Builder fileType(FileType fileType) {
             this.fileType = fileType;
             this.__explicitlySet__.add("fileType");
             return this;
         }
-        /**
-         * Name of the data file or temp file to be resized.
-         *
-         **/
+        /** Name of the data file or temp file to be resized. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataFile")
         private String dataFile;
 
@@ -93,16 +87,13 @@ public final class ResizeDataFileDetails
          *
          * @param dataFile the value to set
          * @return this builder
-         **/
+         */
         public Builder dataFile(String dataFile) {
             this.dataFile = dataFile;
             this.__explicitlySet__.add("dataFile");
             return this;
         }
-        /**
-         * The new size of the data file or temp file.
-         *
-         **/
+        /** The new size of the data file or temp file. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
         private TablespaceStorageSize fileSize;
 
@@ -111,16 +102,13 @@ public final class ResizeDataFileDetails
          *
          * @param fileSize the value to set
          * @return this builder
-         **/
+         */
         public Builder fileSize(TablespaceStorageSize fileSize) {
             this.fileSize = fileSize;
             this.__explicitlySet__.add("fileSize");
             return this;
         }
-        /**
-         * Specifies whether the data file or temp file can be extended automatically.
-         *
-         **/
+        /** Specifies whether the data file or temp file can be extended automatically. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
         private Boolean isAutoExtensible;
 
@@ -129,25 +117,26 @@ public final class ResizeDataFileDetails
          *
          * @param isAutoExtensible the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoExtensible(Boolean isAutoExtensible) {
             this.isAutoExtensible = isAutoExtensible;
             this.__explicitlySet__.add("isAutoExtensible");
             return this;
         }
         /**
-         * The size of the next increment of disk space to be allocated automatically when more extents are required.
-         *
-         **/
+         * The size of the next increment of disk space to be allocated automatically when more
+         * extents are required.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
         private TablespaceStorageSize autoExtendNextSize;
 
         /**
-         * The size of the next increment of disk space to be allocated automatically when more extents are required.
+         * The size of the next increment of disk space to be allocated automatically when more
+         * extents are required.
          *
          * @param autoExtendNextSize the value to set
          * @return this builder
-         **/
+         */
         public Builder autoExtendNextSize(TablespaceStorageSize autoExtendNextSize) {
             this.autoExtendNextSize = autoExtendNextSize;
             this.__explicitlySet__.add("autoExtendNextSize");
@@ -155,8 +144,7 @@ public final class ResizeDataFileDetails
         }
         /**
          * The maximum disk space allowed for automatic extension of the data files or temp files.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
         private TablespaceStorageSize autoExtendMaxSize;
 
@@ -165,16 +153,13 @@ public final class ResizeDataFileDetails
          *
          * @param autoExtendMaxSize the value to set
          * @return this builder
-         **/
+         */
         public Builder autoExtendMaxSize(TablespaceStorageSize autoExtendMaxSize) {
             this.autoExtendMaxSize = autoExtendMaxSize;
             this.__explicitlySet__.add("autoExtendMaxSize");
             return this;
         }
-        /**
-         * Specifies whether the disk space of the data file or temp file can be limited.
-         *
-         **/
+        /** Specifies whether the disk space of the data file or temp file can be limited. */
         @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
         private Boolean isMaxSizeUnlimited;
 
@@ -183,7 +168,7 @@ public final class ResizeDataFileDetails
          *
          * @param isMaxSizeUnlimited the value to set
          * @return this builder
-         **/
+         */
         public Builder isMaxSizeUnlimited(Boolean isMaxSizeUnlimited) {
             this.isMaxSizeUnlimited = isMaxSizeUnlimited;
             this.__explicitlySet__.add("isMaxSizeUnlimited");
@@ -240,9 +225,7 @@ public final class ResizeDataFileDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -258,11 +241,8 @@ public final class ResizeDataFileDetails
         return credentialDetails;
     }
 
-    /**
-     * Specifies whether the file is a data file or temp file.
-     *
-     **/
-    public enum FileType {
+    /** Specifies whether the file is a data file or temp file. */
+    public enum FileType implements com.oracle.bmc.http.internal.BmcEnum {
         Datafile("DATAFILE"),
         Tempfile("TEMPFILE"),
         ;
@@ -294,10 +274,7 @@ public final class ResizeDataFileDetails
             throw new IllegalArgumentException("Invalid FileType: " + key);
         }
     };
-    /**
-     * Specifies whether the file is a data file or temp file.
-     *
-     **/
+    /** Specifies whether the file is a data file or temp file. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileType")
     private final FileType fileType;
 
@@ -305,15 +282,12 @@ public final class ResizeDataFileDetails
      * Specifies whether the file is a data file or temp file.
      *
      * @return the value
-     **/
+     */
     public FileType getFileType() {
         return fileType;
     }
 
-    /**
-     * Name of the data file or temp file to be resized.
-     *
-     **/
+    /** Name of the data file or temp file to be resized. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataFile")
     private final String dataFile;
 
@@ -321,15 +295,12 @@ public final class ResizeDataFileDetails
      * Name of the data file or temp file to be resized.
      *
      * @return the value
-     **/
+     */
     public String getDataFile() {
         return dataFile;
     }
 
-    /**
-     * The new size of the data file or temp file.
-     *
-     **/
+    /** The new size of the data file or temp file. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileSize")
     private final TablespaceStorageSize fileSize;
 
@@ -337,15 +308,12 @@ public final class ResizeDataFileDetails
      * The new size of the data file or temp file.
      *
      * @return the value
-     **/
+     */
     public TablespaceStorageSize getFileSize() {
         return fileSize;
     }
 
-    /**
-     * Specifies whether the data file or temp file can be extended automatically.
-     *
-     **/
+    /** Specifies whether the data file or temp file can be extended automatically. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExtensible")
     private final Boolean isAutoExtensible;
 
@@ -353,31 +321,29 @@ public final class ResizeDataFileDetails
      * Specifies whether the data file or temp file can be extended automatically.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoExtensible() {
         return isAutoExtensible;
     }
 
     /**
-     * The size of the next increment of disk space to be allocated automatically when more extents are required.
-     *
-     **/
+     * The size of the next increment of disk space to be allocated automatically when more extents
+     * are required.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendNextSize")
     private final TablespaceStorageSize autoExtendNextSize;
 
     /**
-     * The size of the next increment of disk space to be allocated automatically when more extents are required.
+     * The size of the next increment of disk space to be allocated automatically when more extents
+     * are required.
      *
      * @return the value
-     **/
+     */
     public TablespaceStorageSize getAutoExtendNextSize() {
         return autoExtendNextSize;
     }
 
-    /**
-     * The maximum disk space allowed for automatic extension of the data files or temp files.
-     *
-     **/
+    /** The maximum disk space allowed for automatic extension of the data files or temp files. */
     @com.fasterxml.jackson.annotation.JsonProperty("autoExtendMaxSize")
     private final TablespaceStorageSize autoExtendMaxSize;
 
@@ -385,15 +351,12 @@ public final class ResizeDataFileDetails
      * The maximum disk space allowed for automatic extension of the data files or temp files.
      *
      * @return the value
-     **/
+     */
     public TablespaceStorageSize getAutoExtendMaxSize() {
         return autoExtendMaxSize;
     }
 
-    /**
-     * Specifies whether the disk space of the data file or temp file can be limited.
-     *
-     **/
+    /** Specifies whether the disk space of the data file or temp file can be limited. */
     @com.fasterxml.jackson.annotation.JsonProperty("isMaxSizeUnlimited")
     private final Boolean isMaxSizeUnlimited;
 
@@ -401,7 +364,7 @@ public final class ResizeDataFileDetails
      * Specifies whether the disk space of the data file or temp file can be limited.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsMaxSizeUnlimited() {
         return isMaxSizeUnlimited;
     }
@@ -413,6 +376,7 @@ public final class ResizeDataFileDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

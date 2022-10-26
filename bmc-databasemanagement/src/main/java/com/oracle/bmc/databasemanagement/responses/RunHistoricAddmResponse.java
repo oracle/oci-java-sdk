@@ -9,15 +9,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * The returned HistoricAddmResult instance.
-     */
+    /** The returned HistoricAddmResult instance. */
     private com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult;
 
     /**
      * The returned HistoricAddmResult instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.HistoricAddmResult getHistoricAddmResult() {
@@ -46,7 +44,7 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private RunHistoricAddmResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,33 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
         this.historicAddmResult = historicAddmResult;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<RunHistoricAddmResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +88,12 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned HistoricAddmResult instance.
-         */
+        /** The returned HistoricAddmResult instance. */
         private com.oracle.bmc.databasemanagement.model.HistoricAddmResult historicAddmResult;
 
         /**
          * The returned HistoricAddmResult instance.
+         *
          * @param historicAddmResult the value to set
          * @return this builder
          */
@@ -106,8 +105,10 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(RunHistoricAddmResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,8 +120,10 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public RunHistoricAddmResponse build() {
             return new RunHistoricAddmResponse(
                     __httpStatusCode__, headers, opcRequestId, historicAddmResult);
@@ -129,6 +132,7 @@ public class RunHistoricAddmResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

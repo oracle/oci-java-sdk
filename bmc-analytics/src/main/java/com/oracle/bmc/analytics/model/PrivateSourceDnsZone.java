@@ -5,22 +5,22 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Private source DNS Zone model.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Private source DNS Zone model. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PrivateSourceDnsZone.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PrivateSourceDnsZone.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PrivateSourceDnsZone
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dnsZone", "description"})
     public PrivateSourceDnsZone(String dnsZone, String description) {
@@ -31,10 +31,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-         *
-         **/
+        /** Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com. */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
         private String dnsZone;
 
@@ -43,16 +40,13 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
          *
          * @param dnsZone the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsZone(String dnsZone) {
             this.dnsZone = dnsZone;
             this.__explicitlySet__.add("dnsZone");
             return this;
         }
-        /**
-         * Description of private source dns zone.
-         *
-         **/
+        /** Description of private source dns zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -61,7 +55,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -91,9 +85,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,10 +94,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-     *
-     **/
+    /** Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZone")
     private final String dnsZone;
 
@@ -113,15 +102,12 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
      * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
      *
      * @return the value
-     **/
+     */
     public String getDnsZone() {
         return dnsZone;
     }
 
-    /**
-     * Description of private source dns zone.
-     *
-     **/
+    /** Description of private source dns zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -129,7 +115,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
      * Description of private source dns zone.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -141,6 +127,7 @@ public final class PrivateSourceDnsZone extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

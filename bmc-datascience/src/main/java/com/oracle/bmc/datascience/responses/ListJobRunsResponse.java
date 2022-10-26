@@ -9,13 +9,16 @@ import com.oracle.bmc.datascience.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of results. When this header appears in the response, additional
+     * pages of results remain. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -24,13 +27,16 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the previous page of results. When this header appears in the response, previous
+     * pages of results exist. See [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -39,15 +45,14 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, then provide the request ID.
-     *
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, then provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -55,13 +60,12 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
-     */
+    /** A list of com.oracle.bmc.datascience.model.JobRunSummary instances. */
     private java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> items;
 
     /**
      * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> getItems() {
@@ -78,7 +82,7 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListJobRunsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcPrevPage,
             String opcRequestId,
@@ -90,29 +94,35 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListJobRunsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of results. When this header appears in the response, additional pages of results remain. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of results. When this header appears in the response, additional
+         * pages of results remain. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -123,13 +133,16 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * Retrieves the previous page of results. When this header appears in the response, previous pages of results exist. See [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the previous page of results. When this header appears in the response,
+         * previous pages of results exist. See [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -140,15 +153,14 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, then provide the request ID.
-         *
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, then provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -158,13 +170,12 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
-         */
+        /** A list of com.oracle.bmc.datascience.model.JobRunSummary instances. */
         private java.util.List<com.oracle.bmc.datascience.model.JobRunSummary> items;
 
         /**
          * A list of com.oracle.bmc.datascience.model.JobRunSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -175,8 +186,10 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListJobRunsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -190,8 +203,10 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListJobRunsResponse build() {
             return new ListJobRunsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcPrevPage, opcRequestId, items);
@@ -200,6 +215,7 @@ public class ListJobRunsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

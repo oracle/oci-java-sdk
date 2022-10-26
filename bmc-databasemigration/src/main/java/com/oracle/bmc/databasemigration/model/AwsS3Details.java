@@ -5,21 +5,21 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * AWS S3 bucket details used for source Connection resources with RDS_ORACLE type.
- * Only supported for source Connection resources with RDS_ORACLE type.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * AWS S3 bucket details used for source Connection resources with RDS_ORACLE type. Only supported
+ * for source Connection resources with RDS_ORACLE type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwsS3Details.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AwsS3Details extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "region"})
     public AwsS3Details(String name, String region) {
@@ -30,10 +30,7 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * S3 bucket name.
-         *
-         **/
+        /** S3 bucket name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -42,29 +39,28 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * AWS region code where the S3 bucket is located.
-         * Region code should match the documented available regions:
+         * AWS region code where the S3 bucket is located. Region code should match the documented
+         * available regions:
          * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * AWS region code where the S3 bucket is located.
-         * Region code should match the documented available regions:
+         * AWS region code where the S3 bucket is located. Region code should match the documented
+         * available regions:
          * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -94,9 +90,7 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,10 +99,7 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * S3 bucket name.
-     *
-     **/
+    /** S3 bucket name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -116,27 +107,26 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
      * S3 bucket name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * AWS region code where the S3 bucket is located.
-     * Region code should match the documented available regions:
+     * AWS region code where the S3 bucket is located. Region code should match the documented
+     * available regions:
      * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * AWS region code where the S3 bucket is located.
-     * Region code should match the documented available regions:
+     * AWS region code where the S3 bucket is located. Region code should match the documented
+     * available regions:
      * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
@@ -148,6 +138,7 @@ public final class AwsS3Details extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

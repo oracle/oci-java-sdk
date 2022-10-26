@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The list of supported platform configuration options for this shape.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The list of supported platform configuration options for this shape. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ShapePlatformConfigOptions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ShapePlatformConfigOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ShapePlatformConfigOptions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -62,10 +61,7 @@ public final class ShapePlatformConfigOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of platform being configured.
-         *
-         **/
+        /** The type of platform being configured. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -74,7 +70,7 @@ public final class ShapePlatformConfigOptions
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -231,9 +227,7 @@ public final class ShapePlatformConfigOptions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -242,11 +236,8 @@ public final class ShapePlatformConfigOptions
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of platform being configured.
-     *
-     **/
-    public enum Type {
+    /** The type of platform being configured. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdRomeBm("AMD_ROME_BM"),
         AmdRomeBmGpu("AMD_ROME_BM_GPU"),
@@ -256,8 +247,8 @@ public final class ShapePlatformConfigOptions
         IntelVm("INTEL_VM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -294,10 +285,7 @@ public final class ShapePlatformConfigOptions
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of platform being configured.
-     *
-     **/
+    /** The type of platform being configured. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -305,7 +293,7 @@ public final class ShapePlatformConfigOptions
      * The type of platform being configured.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -382,6 +370,7 @@ public final class ShapePlatformConfigOptions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

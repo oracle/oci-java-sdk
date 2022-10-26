@@ -8,10 +8,7 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -23,13 +20,12 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /**
-     * The returned VolumeGroupBackup instance.
-     */
+    /** The returned VolumeGroupBackup instance. */
     private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
     /**
      * The returned VolumeGroupBackup instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.VolumeGroupBackup getVolumeGroupBackup() {
@@ -44,7 +40,7 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
     })
     private UpdateVolumeGroupBackupResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup) {
         super(__httpStatusCode__, headers);
@@ -52,25 +48,26 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
         this.volumeGroupBackup = volumeGroupBackup;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateVolumeGroupBackupResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -84,13 +81,12 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned VolumeGroupBackup instance.
-         */
+        /** The returned VolumeGroupBackup instance. */
         private com.oracle.bmc.core.model.VolumeGroupBackup volumeGroupBackup;
 
         /**
          * The returned VolumeGroupBackup instance.
+         *
          * @param volumeGroupBackup the value to set
          * @return this builder
          */
@@ -102,8 +98,10 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateVolumeGroupBackupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +113,10 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateVolumeGroupBackupResponse build() {
             return new UpdateVolumeGroupBackupResponse(
                     __httpStatusCode__, headers, etag, volumeGroupBackup);
@@ -125,6 +125,7 @@ public class UpdateVolumeGroupBackupResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

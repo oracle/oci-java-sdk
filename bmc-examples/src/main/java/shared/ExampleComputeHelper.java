@@ -26,19 +26,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * This class provides several utility functions for basic interactions with the Compute service. These functions
- * may be referenced by multiple examples in order to keep example files focused on the behavior being showcased.
+ * This class provides several utility functions for basic interactions with the Compute service.
+ * These functions may be referenced by multiple examples in order to keep example files focused on
+ * the behavior being showcased.
  */
 public final class ExampleComputeHelper {
 
     /**
-     * Retrieves an image which is compatible with the given operating system, version and instance shape.
+     * Retrieves an image which is compatible with the given operating system, version and instance
+     * shape.
      *
      * @param computeClient the client used to communicate with the service
      * @param compartmentId the OCID of the compartment to search
      * @param instanceShape the target shape for the instance
-     * @param instanceOs    the OS installed on the instance
-     * @param osVersion     the version of the OS installed on the instance
+     * @param instanceOs the OS installed on the instance
+     * @param osVersion the version of the OS installed on the instance
      * @return an Image which may be used to launch an instance
      */
     public static Image getImageForShape(
@@ -80,10 +82,11 @@ public final class ExampleComputeHelper {
     /**
      * Launches an instance and waits for it to become available/running
      *
-     * @param computeClient   the client used to communicate with the service
+     * @param computeClient the client used to communicate with the service
      * @param instanceDetails tLaunchInstanceDetails for the instance to be created
      * @return the created instance
-     * @throws Exception if an error was encountered while waiting for the instance to become running/available
+     * @throws Exception if an error was encountered while waiting for the instance to become
+     *     running/available
      */
     public static Instance launchInstance(
             final ComputeClient computeClient, final LaunchInstanceDetails instanceDetails)
@@ -116,7 +119,7 @@ public final class ExampleComputeHelper {
      * Terminates an instance and waits for it to be terminated.
      *
      * @param computeClient the client used to communicate with the service
-     * @param instanceId    the instance OCID to terminate
+     * @param instanceId the instance OCID to terminate
      * @throws Exception if an error occurred while waiting for the instance to be terminated
      */
     public static void terminateInstance(final ComputeClient computeClient, final String instanceId)
@@ -138,7 +141,7 @@ public final class ExampleComputeHelper {
      * Retrieves VNIC attachments for a given compute instance OCID.
      *
      * @param computeClient the client used to communicate with the service
-     * @param vnicAttachmentsRequest  ListVnicAttachmentsRequest used to retrieve VNICs
+     * @param vnicAttachmentsRequest ListVnicAttachmentsRequest used to retrieve VNICs
      * @return the ids of the returned VNIC attachments
      */
     public static List<String> getVnicIds(
@@ -160,14 +163,14 @@ public final class ExampleComputeHelper {
 
     /**
      * Retrieve the list of shapes available for the compartment
+     *
      * @param computeClient the client used to communicate with the service
      * @param compartmentId the OCID of the compartment to search
      * @return List of VM shapes available for the given compartment
      */
     public static List<Shape> getVMShapes(ComputeClient computeClient, String compartmentId) {
         List<Shape> vmShapes =
-                getShapes(computeClient, compartmentId)
-                        .stream()
+                getShapes(computeClient, compartmentId).stream()
                         .filter(name -> name.getShape().startsWith("VM"))
                         .collect(Collectors.toList());
         if (vmShapes.isEmpty()) {
@@ -177,8 +180,8 @@ public final class ExampleComputeHelper {
     }
 
     /**
-     * Retieves the images available for the given shape
-     * and operating system
+     * Retieves the images available for the given shape and operating system
+     *
      * @param computeClient the client used to communicate with the service
      * @param compartmentId the OCID of the compartment to search
      * @param shape the target shape for the instance
@@ -204,6 +207,7 @@ public final class ExampleComputeHelper {
 
     /**
      * Retrieve the list of shapes available for the compartment
+     *
      * @param computeClient the client used to communicate with the service
      * @param compartmentId the OCID of the compartment to search
      * @return List of shapes available for the given compartment

@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Artifact used in the pipeline.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Artifact used in the pipeline. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeployPipelineArtifact.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DeployPipelineArtifact.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DeployPipelineArtifact
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"deployArtifactId", "displayName", "deployPipelineStages"})
     public DeployPipelineArtifact(
@@ -35,33 +35,31 @@ public final class DeployPipelineArtifact
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of an artifact
-         **/
+        /** The OCID of an artifact */
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
         private String deployArtifactId;
 
         /**
          * The OCID of an artifact
+         *
          * @param deployArtifactId the value to set
          * @return this builder
-         **/
+         */
         public Builder deployArtifactId(String deployArtifactId) {
             this.deployArtifactId = deployArtifactId;
             this.__explicitlySet__.add("deployArtifactId");
             return this;
         }
-        /**
-         * Display name of the artifact. Avoid entering confidential information.
-         **/
+        /** Display name of the artifact. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the artifact. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -105,9 +103,7 @@ public final class DeployPipelineArtifact
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,30 +112,28 @@ public final class DeployPipelineArtifact
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of an artifact
-     **/
+    /** The OCID of an artifact */
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactId")
     private final String deployArtifactId;
 
     /**
      * The OCID of an artifact
+     *
      * @return the value
-     **/
+     */
     public String getDeployArtifactId() {
         return deployArtifactId;
     }
 
-    /**
-     * Display name of the artifact. Avoid entering confidential information.
-     **/
+    /** Display name of the artifact. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the artifact. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -158,6 +152,7 @@ public final class DeployPipelineArtifact
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

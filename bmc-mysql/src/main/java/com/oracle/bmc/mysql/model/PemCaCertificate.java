@@ -5,37 +5,36 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The CA certificate in PEM format.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The CA certificate in PEM format. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PemCaCertificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "certificateType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "certificateType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PemCaCertificate extends CaCertificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The string containing the CA certificate in PEM format.
-         **/
+        /** The string containing the CA certificate in PEM format. */
         @com.fasterxml.jackson.annotation.JsonProperty("contents")
         private String contents;
 
         /**
          * The string containing the CA certificate in PEM format.
+         *
          * @param contents the value to set
          * @return this builder
-         **/
+         */
         public Builder contents(String contents) {
             this.contents = contents;
             this.__explicitlySet__.add("contents");
@@ -62,9 +61,7 @@ public final class PemCaCertificate extends CaCertificate {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class PemCaCertificate extends CaCertificate {
         this.contents = contents;
     }
 
-    /**
-     * The string containing the CA certificate in PEM format.
-     **/
+    /** The string containing the CA certificate in PEM format. */
     @com.fasterxml.jackson.annotation.JsonProperty("contents")
     private final String contents;
 
     /**
      * The string containing the CA certificate in PEM format.
+     *
      * @return the value
-     **/
+     */
     public String getContents() {
         return contents;
     }
@@ -100,6 +96,7 @@ public final class PemCaCertificate extends CaCertificate {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

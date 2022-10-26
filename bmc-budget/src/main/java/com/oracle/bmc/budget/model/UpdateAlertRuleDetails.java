@@ -5,22 +5,22 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * The update alert rule details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The update alert rule details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateAlertRuleDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateAlertRuleDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAlertRuleDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -57,171 +57,174 @@ public final class UpdateAlertRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the alert rule. Avoid entering confidential information.
-         **/
+        /** The name of the alert rule. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the alert rule. Avoid entering confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
-         * FORECAST (the alert triggers based on predicted usage).
-         *
-         **/
+         * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual
+         * usage), or FORECAST (the alert triggers based on predicted usage).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AlertType type;
 
         /**
-         * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
-         * FORECAST (the alert triggers based on predicted usage).
+         * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual
+         * usage), or FORECAST (the alert triggers based on predicted usage).
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(AlertType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The threshold for triggering the alert, expressed as a whole number or decimal value.
-         * If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
-         * If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-         *
-         **/
+         * The threshold for triggering the alert, expressed as a whole number or decimal value. If
+         * the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the
+         * decimal point, and up to two digits after the decimal point. If the thresholdType is
+         * PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal
+         * point.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("threshold")
         private java.math.BigDecimal threshold;
 
         /**
-         * The threshold for triggering the alert, expressed as a whole number or decimal value.
-         * If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
-         * If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
+         * The threshold for triggering the alert, expressed as a whole number or decimal value. If
+         * the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the
+         * decimal point, and up to two digits after the decimal point. If the thresholdType is
+         * PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal
+         * point.
          *
          * @param threshold the value to set
          * @return this builder
-         **/
+         */
         public Builder threshold(java.math.BigDecimal threshold) {
             this.threshold = threshold;
             this.__explicitlySet__.add("threshold");
             return this;
         }
-        /**
-         * The type of threshold.
-         **/
+        /** The type of threshold. */
         @com.fasterxml.jackson.annotation.JsonProperty("thresholdType")
         private ThresholdType thresholdType;
 
         /**
          * The type of threshold.
+         *
          * @param thresholdType the value to set
          * @return this builder
-         **/
+         */
         public Builder thresholdType(ThresholdType thresholdType) {
             this.thresholdType = thresholdType;
             this.__explicitlySet__.add("thresholdType");
             return this;
         }
         /**
-         * The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
-         **/
+         * The audience that receives the alert when it triggers. If you need to clear out this
+         * value, pass in an empty string instead of a null value.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recipients")
         private String recipients;
 
         /**
-         * The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
+         * The audience that receives the alert when it triggers. If you need to clear out this
+         * value, pass in an empty string instead of a null value.
+         *
          * @param recipients the value to set
          * @return this builder
-         **/
+         */
         public Builder recipients(String recipients) {
             this.recipients = recipients;
             this.__explicitlySet__.add("recipients");
             return this;
         }
-        /**
-         * The description of the alert rule.
-         **/
+        /** The description of the alert rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the alert rule.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The message to be delivered to the recipients when an alert is triggered.
-         **/
+        /** The message to be delivered to the recipients when an alert is triggered. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * The message to be delivered to the recipients when an alert is triggered.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -283,9 +286,7 @@ public final class UpdateAlertRuleDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -294,16 +295,15 @@ public final class UpdateAlertRuleDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the alert rule. Avoid entering confidential information.
-     **/
+    /** The name of the alert rule. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the alert rule. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -311,8 +311,7 @@ public final class UpdateAlertRuleDetails
     /**
      * The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
      * FORECAST (the alert triggers based on predicted usage).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AlertType type;
 
@@ -321,127 +320,130 @@ public final class UpdateAlertRuleDetails
      * FORECAST (the alert triggers based on predicted usage).
      *
      * @return the value
-     **/
+     */
     public AlertType getType() {
         return type;
     }
 
     /**
-     * The threshold for triggering the alert, expressed as a whole number or decimal value.
-     * If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
-     * If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
-     *
-     **/
+     * The threshold for triggering the alert, expressed as a whole number or decimal value. If the
+     * thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point,
+     * and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum
+     * value is 10000 and can have up to two digits after the decimal point.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("threshold")
     private final java.math.BigDecimal threshold;
 
     /**
-     * The threshold for triggering the alert, expressed as a whole number or decimal value.
-     * If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
-     * If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
+     * The threshold for triggering the alert, expressed as a whole number or decimal value. If the
+     * thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point,
+     * and up to two digits after the decimal point. If the thresholdType is PERCENTAGE, the maximum
+     * value is 10000 and can have up to two digits after the decimal point.
      *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getThreshold() {
         return threshold;
     }
 
-    /**
-     * The type of threshold.
-     **/
+    /** The type of threshold. */
     @com.fasterxml.jackson.annotation.JsonProperty("thresholdType")
     private final ThresholdType thresholdType;
 
     /**
      * The type of threshold.
+     *
      * @return the value
-     **/
+     */
     public ThresholdType getThresholdType() {
         return thresholdType;
     }
 
     /**
-     * The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
-     **/
+     * The audience that receives the alert when it triggers. If you need to clear out this value,
+     * pass in an empty string instead of a null value.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recipients")
     private final String recipients;
 
     /**
-     * The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
+     * The audience that receives the alert when it triggers. If you need to clear out this value,
+     * pass in an empty string instead of a null value.
+     *
      * @return the value
-     **/
+     */
     public String getRecipients() {
         return recipients;
     }
 
-    /**
-     * The description of the alert rule.
-     **/
+    /** The description of the alert rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the alert rule.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The message to be delivered to the recipients when an alert is triggered.
-     **/
+    /** The message to be delivered to the recipients when an alert is triggered. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * The message to be delivered to the recipients when an alert is triggered.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -453,6 +455,7 @@ public final class UpdateAlertRuleDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

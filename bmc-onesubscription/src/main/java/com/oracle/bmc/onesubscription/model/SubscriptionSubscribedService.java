@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscribed Service summary
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Subscribed Service summary <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SubscriptionSubscribedService.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SubscriptionSubscribedService.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SubscriptionSubscribedService
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -106,10 +105,7 @@ public final class SubscriptionSubscribedService
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * SPM internal Subscribed Service ID
-         *
-         **/
+        /** SPM internal Subscribed Service ID */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -118,7 +114,7 @@ public final class SubscriptionSubscribedService
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -133,10 +129,7 @@ public final class SubscriptionSubscribedService
             this.__explicitlySet__.add("product");
             return this;
         }
-        /**
-         * Subscribed service quantity
-         *
-         **/
+        /** Subscribed service quantity */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
@@ -145,16 +138,13 @@ public final class SubscriptionSubscribedService
          *
          * @param quantity the value to set
          * @return this builder
-         **/
+         */
         public Builder quantity(String quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /**
-         * Subscribed service status
-         *
-         **/
+        /** Subscribed service status */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
@@ -163,16 +153,13 @@ public final class SubscriptionSubscribedService
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Subscribed service operation type
-         *
-         **/
+        /** Subscribed service operation type */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private String operationType;
 
@@ -181,16 +168,13 @@ public final class SubscriptionSubscribedService
          *
          * @param operationType the value to set
          * @return this builder
-         **/
+         */
         public Builder operationType(String operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /**
-         * Subscribed service net unit price
-         *
-         **/
+        /** Subscribed service net unit price */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
@@ -199,16 +183,13 @@ public final class SubscriptionSubscribedService
          *
          * @param netUnitPrice the value to set
          * @return this builder
-         **/
+         */
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /**
-         * Subscribed service used amount
-         *
-         **/
+        /** Subscribed service used amount */
         @com.fasterxml.jackson.annotation.JsonProperty("usedAmount")
         private String usedAmount;
 
@@ -217,16 +198,13 @@ public final class SubscriptionSubscribedService
          *
          * @param usedAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder usedAmount(String usedAmount) {
             this.usedAmount = usedAmount;
             this.__explicitlySet__.add("usedAmount");
             return this;
         }
-        /**
-         * Subscribed sercice available or remaining amount
-         *
-         **/
+        /** Subscribed sercice available or remaining amount */
         @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
         private String availableAmount;
 
@@ -235,54 +213,47 @@ public final class SubscriptionSubscribedService
          *
          * @param availableAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder availableAmount(String availableAmount) {
             this.availableAmount = availableAmount;
             this.__explicitlySet__.add("availableAmount");
             return this;
         }
-        /**
-         * Funded Allocation line value
-         * example: 12000.00
-         *
-         **/
+        /** Funded Allocation line value example: 12000.00 */
         @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
         private String fundedAllocationValue;
 
         /**
-         * Funded Allocation line value
-         * example: 12000.00
+         * Funded Allocation line value example: 12000.00
          *
          * @param fundedAllocationValue the value to set
          * @return this builder
-         **/
+         */
         public Builder fundedAllocationValue(String fundedAllocationValue) {
             this.fundedAllocationValue = fundedAllocationValue;
             this.__explicitlySet__.add("fundedAllocationValue");
             return this;
         }
         /**
-         * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-         *
-         **/
+         * This field contains the name of the partner to which the subscription belongs - depending
+         * on which the invoicing may differ
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("partnerTransactionType")
         private String partnerTransactionType;
 
         /**
-         * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+         * This field contains the name of the partner to which the subscription belongs - depending
+         * on which the invoicing may differ
          *
          * @param partnerTransactionType the value to set
          * @return this builder
-         **/
+         */
         public Builder partnerTransactionType(String partnerTransactionType) {
             this.partnerTransactionType = partnerTransactionType;
             this.__explicitlySet__.add("partnerTransactionType");
             return this;
         }
-        /**
-         * Term value in Months
-         *
-         **/
+        /** Term value in Months */
         @com.fasterxml.jackson.annotation.JsonProperty("termValue")
         private Long termValue;
 
@@ -291,16 +262,13 @@ public final class SubscriptionSubscribedService
          *
          * @param termValue the value to set
          * @return this builder
-         **/
+         */
         public Builder termValue(Long termValue) {
             this.termValue = termValue;
             this.__explicitlySet__.add("termValue");
             return this;
         }
-        /**
-         * Term value UOM
-         *
-         **/
+        /** Term value UOM */
         @com.fasterxml.jackson.annotation.JsonProperty("termValueUom")
         private String termValueUom;
 
@@ -309,16 +277,13 @@ public final class SubscriptionSubscribedService
          *
          * @param termValueUom the value to set
          * @return this builder
-         **/
+         */
         public Builder termValueUom(String termValueUom) {
             this.termValueUom = termValueUom;
             this.__explicitlySet__.add("termValueUom");
             return this;
         }
-        /**
-         * Booking Opportunity Number of Subscribed Service
-         *
-         **/
+        /** Booking Opportunity Number of Subscribed Service */
         @com.fasterxml.jackson.annotation.JsonProperty("bookingOptyNumber")
         private String bookingOptyNumber;
 
@@ -327,16 +292,13 @@ public final class SubscriptionSubscribedService
          *
          * @param bookingOptyNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder bookingOptyNumber(String bookingOptyNumber) {
             this.bookingOptyNumber = bookingOptyNumber;
             this.__explicitlySet__.add("bookingOptyNumber");
             return this;
         }
-        /**
-         * Subscribed service total value
-         *
-         **/
+        /** Subscribed service total value */
         @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
         private String totalValue;
 
@@ -345,16 +307,13 @@ public final class SubscriptionSubscribedService
          *
          * @param totalValue the value to set
          * @return this builder
-         **/
+         */
         public Builder totalValue(String totalValue) {
             this.totalValue = totalValue;
             this.__explicitlySet__.add("totalValue");
             return this;
         }
-        /**
-         * Subscribed service Promotion Amount
-         *
-         **/
+        /** Subscribed service Promotion Amount */
         @com.fasterxml.jackson.annotation.JsonProperty("originalPromoAmount")
         private String originalPromoAmount;
 
@@ -363,16 +322,13 @@ public final class SubscriptionSubscribedService
          *
          * @param originalPromoAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder originalPromoAmount(String originalPromoAmount) {
             this.originalPromoAmount = originalPromoAmount;
             this.__explicitlySet__.add("originalPromoAmount");
             return this;
         }
-        /**
-         * Sales Order Number associated to the subscribed service
-         *
-         **/
+        /** Sales Order Number associated to the subscribed service */
         @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
         private Long orderNumber;
 
@@ -381,16 +337,13 @@ public final class SubscriptionSubscribedService
          *
          * @param orderNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder orderNumber(Long orderNumber) {
             this.orderNumber = orderNumber;
             this.__explicitlySet__.add("orderNumber");
             return this;
         }
-        /**
-         * Subscribed service data center region
-         *
-         **/
+        /** Subscribed service data center region */
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
         private String dataCenterRegion;
 
@@ -399,16 +352,13 @@ public final class SubscriptionSubscribedService
          *
          * @param dataCenterRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder dataCenterRegion(String dataCenterRegion) {
             this.dataCenterRegion = dataCenterRegion;
             this.__explicitlySet__.add("dataCenterRegion");
             return this;
         }
-        /**
-         * Subscribed service pricing model
-         *
-         **/
+        /** Subscribed service pricing model */
         @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
         private String pricingModel;
 
@@ -417,16 +367,13 @@ public final class SubscriptionSubscribedService
          *
          * @param pricingModel the value to set
          * @return this builder
-         **/
+         */
         public Builder pricingModel(String pricingModel) {
             this.pricingModel = pricingModel;
             this.__explicitlySet__.add("pricingModel");
             return this;
         }
-        /**
-         * Subscribed service program type
-         *
-         **/
+        /** Subscribed service program type */
         @com.fasterxml.jackson.annotation.JsonProperty("programType")
         private String programType;
 
@@ -435,16 +382,13 @@ public final class SubscriptionSubscribedService
          *
          * @param programType the value to set
          * @return this builder
-         **/
+         */
         public Builder programType(String programType) {
             this.programType = programType;
             this.__explicitlySet__.add("programType");
             return this;
         }
-        /**
-         * Subscribed service promotion type
-         *
-         **/
+        /** Subscribed service promotion type */
         @com.fasterxml.jackson.annotation.JsonProperty("promoType")
         private String promoType;
 
@@ -453,16 +397,13 @@ public final class SubscriptionSubscribedService
          *
          * @param promoType the value to set
          * @return this builder
-         **/
+         */
         public Builder promoType(String promoType) {
             this.promoType = promoType;
             this.__explicitlySet__.add("promoType");
             return this;
         }
-        /**
-         * Subscribed service CSI number
-         *
-         **/
+        /** Subscribed service CSI number */
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private Long csi;
 
@@ -471,16 +412,13 @@ public final class SubscriptionSubscribedService
          *
          * @param csi the value to set
          * @return this builder
-         **/
+         */
         public Builder csi(Long csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
-        /**
-         * Subscribed service intent to pay flag
-         *
-         **/
+        /** Subscribed service intent to pay flag */
         @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
         private Boolean isIntentToPay;
 
@@ -489,16 +427,13 @@ public final class SubscriptionSubscribedService
          *
          * @param isIntentToPay the value to set
          * @return this builder
-         **/
+         */
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             this.__explicitlySet__.add("isIntentToPay");
             return this;
         }
-        /**
-         * Subscribed service start date
-         *
-         **/
+        /** Subscribed service start date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -507,16 +442,13 @@ public final class SubscriptionSubscribedService
          *
          * @param timeStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /**
-         * Subscribed service end date
-         *
-         **/
+        /** Subscribed service end date */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -525,16 +457,13 @@ public final class SubscriptionSubscribedService
          *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /**
-         * List of Commitment services of a line
-         *
-         **/
+        /** List of Commitment services of a line */
         @com.fasterxml.jackson.annotation.JsonProperty("commitmentServices")
         private java.util.List<CommitmentService> commitmentServices;
 
@@ -543,7 +472,7 @@ public final class SubscriptionSubscribedService
          *
          * @param commitmentServices the value to set
          * @return this builder
-         **/
+         */
         public Builder commitmentServices(java.util.List<CommitmentService> commitmentServices) {
             this.commitmentServices = commitmentServices;
             this.__explicitlySet__.add("commitmentServices");
@@ -668,9 +597,7 @@ public final class SubscriptionSubscribedService
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -679,10 +606,7 @@ public final class SubscriptionSubscribedService
         return new Builder().copy(this);
     }
 
-    /**
-     * SPM internal Subscribed Service ID
-     *
-     **/
+    /** SPM internal Subscribed Service ID */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -690,7 +614,7 @@ public final class SubscriptionSubscribedService
      * SPM internal Subscribed Service ID
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
@@ -702,10 +626,7 @@ public final class SubscriptionSubscribedService
         return product;
     }
 
-    /**
-     * Subscribed service quantity
-     *
-     **/
+    /** Subscribed service quantity */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
@@ -713,15 +634,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service quantity
      *
      * @return the value
-     **/
+     */
     public String getQuantity() {
         return quantity;
     }
 
-    /**
-     * Subscribed service status
-     *
-     **/
+    /** Subscribed service status */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
@@ -729,15 +647,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service status
      *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * Subscribed service operation type
-     *
-     **/
+    /** Subscribed service operation type */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final String operationType;
 
@@ -745,15 +660,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service operation type
      *
      * @return the value
-     **/
+     */
     public String getOperationType() {
         return operationType;
     }
 
-    /**
-     * Subscribed service net unit price
-     *
-     **/
+    /** Subscribed service net unit price */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
@@ -761,15 +673,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service net unit price
      *
      * @return the value
-     **/
+     */
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /**
-     * Subscribed service used amount
-     *
-     **/
+    /** Subscribed service used amount */
     @com.fasterxml.jackson.annotation.JsonProperty("usedAmount")
     private final String usedAmount;
 
@@ -777,15 +686,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service used amount
      *
      * @return the value
-     **/
+     */
     public String getUsedAmount() {
         return usedAmount;
     }
 
-    /**
-     * Subscribed sercice available or remaining amount
-     *
-     **/
+    /** Subscribed sercice available or remaining amount */
     @com.fasterxml.jackson.annotation.JsonProperty("availableAmount")
     private final String availableAmount;
 
@@ -793,49 +699,42 @@ public final class SubscriptionSubscribedService
      * Subscribed sercice available or remaining amount
      *
      * @return the value
-     **/
+     */
     public String getAvailableAmount() {
         return availableAmount;
     }
 
-    /**
-     * Funded Allocation line value
-     * example: 12000.00
-     *
-     **/
+    /** Funded Allocation line value example: 12000.00 */
     @com.fasterxml.jackson.annotation.JsonProperty("fundedAllocationValue")
     private final String fundedAllocationValue;
 
     /**
-     * Funded Allocation line value
-     * example: 12000.00
+     * Funded Allocation line value example: 12000.00
      *
      * @return the value
-     **/
+     */
     public String getFundedAllocationValue() {
         return fundedAllocationValue;
     }
 
     /**
-     * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
-     *
-     **/
+     * This field contains the name of the partner to which the subscription belongs - depending on
+     * which the invoicing may differ
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("partnerTransactionType")
     private final String partnerTransactionType;
 
     /**
-     * This field contains the name of the partner to which the subscription belongs - depending on which the invoicing may differ
+     * This field contains the name of the partner to which the subscription belongs - depending on
+     * which the invoicing may differ
      *
      * @return the value
-     **/
+     */
     public String getPartnerTransactionType() {
         return partnerTransactionType;
     }
 
-    /**
-     * Term value in Months
-     *
-     **/
+    /** Term value in Months */
     @com.fasterxml.jackson.annotation.JsonProperty("termValue")
     private final Long termValue;
 
@@ -843,15 +742,12 @@ public final class SubscriptionSubscribedService
      * Term value in Months
      *
      * @return the value
-     **/
+     */
     public Long getTermValue() {
         return termValue;
     }
 
-    /**
-     * Term value UOM
-     *
-     **/
+    /** Term value UOM */
     @com.fasterxml.jackson.annotation.JsonProperty("termValueUom")
     private final String termValueUom;
 
@@ -859,15 +755,12 @@ public final class SubscriptionSubscribedService
      * Term value UOM
      *
      * @return the value
-     **/
+     */
     public String getTermValueUom() {
         return termValueUom;
     }
 
-    /**
-     * Booking Opportunity Number of Subscribed Service
-     *
-     **/
+    /** Booking Opportunity Number of Subscribed Service */
     @com.fasterxml.jackson.annotation.JsonProperty("bookingOptyNumber")
     private final String bookingOptyNumber;
 
@@ -875,15 +768,12 @@ public final class SubscriptionSubscribedService
      * Booking Opportunity Number of Subscribed Service
      *
      * @return the value
-     **/
+     */
     public String getBookingOptyNumber() {
         return bookingOptyNumber;
     }
 
-    /**
-     * Subscribed service total value
-     *
-     **/
+    /** Subscribed service total value */
     @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
     private final String totalValue;
 
@@ -891,15 +781,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service total value
      *
      * @return the value
-     **/
+     */
     public String getTotalValue() {
         return totalValue;
     }
 
-    /**
-     * Subscribed service Promotion Amount
-     *
-     **/
+    /** Subscribed service Promotion Amount */
     @com.fasterxml.jackson.annotation.JsonProperty("originalPromoAmount")
     private final String originalPromoAmount;
 
@@ -907,15 +794,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service Promotion Amount
      *
      * @return the value
-     **/
+     */
     public String getOriginalPromoAmount() {
         return originalPromoAmount;
     }
 
-    /**
-     * Sales Order Number associated to the subscribed service
-     *
-     **/
+    /** Sales Order Number associated to the subscribed service */
     @com.fasterxml.jackson.annotation.JsonProperty("orderNumber")
     private final Long orderNumber;
 
@@ -923,15 +807,12 @@ public final class SubscriptionSubscribedService
      * Sales Order Number associated to the subscribed service
      *
      * @return the value
-     **/
+     */
     public Long getOrderNumber() {
         return orderNumber;
     }
 
-    /**
-     * Subscribed service data center region
-     *
-     **/
+    /** Subscribed service data center region */
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenterRegion")
     private final String dataCenterRegion;
 
@@ -939,15 +820,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service data center region
      *
      * @return the value
-     **/
+     */
     public String getDataCenterRegion() {
         return dataCenterRegion;
     }
 
-    /**
-     * Subscribed service pricing model
-     *
-     **/
+    /** Subscribed service pricing model */
     @com.fasterxml.jackson.annotation.JsonProperty("pricingModel")
     private final String pricingModel;
 
@@ -955,15 +833,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service pricing model
      *
      * @return the value
-     **/
+     */
     public String getPricingModel() {
         return pricingModel;
     }
 
-    /**
-     * Subscribed service program type
-     *
-     **/
+    /** Subscribed service program type */
     @com.fasterxml.jackson.annotation.JsonProperty("programType")
     private final String programType;
 
@@ -971,15 +846,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service program type
      *
      * @return the value
-     **/
+     */
     public String getProgramType() {
         return programType;
     }
 
-    /**
-     * Subscribed service promotion type
-     *
-     **/
+    /** Subscribed service promotion type */
     @com.fasterxml.jackson.annotation.JsonProperty("promoType")
     private final String promoType;
 
@@ -987,15 +859,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service promotion type
      *
      * @return the value
-     **/
+     */
     public String getPromoType() {
         return promoType;
     }
 
-    /**
-     * Subscribed service CSI number
-     *
-     **/
+    /** Subscribed service CSI number */
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final Long csi;
 
@@ -1003,15 +872,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service CSI number
      *
      * @return the value
-     **/
+     */
     public Long getCsi() {
         return csi;
     }
 
-    /**
-     * Subscribed service intent to pay flag
-     *
-     **/
+    /** Subscribed service intent to pay flag */
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
     private final Boolean isIntentToPay;
 
@@ -1019,15 +885,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service intent to pay flag
      *
      * @return the value
-     **/
+     */
     public Boolean getIsIntentToPay() {
         return isIntentToPay;
     }
 
-    /**
-     * Subscribed service start date
-     *
-     **/
+    /** Subscribed service start date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -1035,15 +898,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service start date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /**
-     * Subscribed service end date
-     *
-     **/
+    /** Subscribed service end date */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -1051,15 +911,12 @@ public final class SubscriptionSubscribedService
      * Subscribed service end date
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /**
-     * List of Commitment services of a line
-     *
-     **/
+    /** List of Commitment services of a line */
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServices")
     private final java.util.List<CommitmentService> commitmentServices;
 
@@ -1067,7 +924,7 @@ public final class SubscriptionSubscribedService
      * List of Commitment services of a line
      *
      * @return the value
-     **/
+     */
     public java.util.List<CommitmentService> getCommitmentServices() {
         return commitmentServices;
     }
@@ -1079,6 +936,7 @@ public final class SubscriptionSubscribedService
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

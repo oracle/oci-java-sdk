@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Rest data asset.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the Rest data asset. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataAssetFromRestDetails.Builder.class
-)
+        builder = DataAssetFromRestDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataAssetFromRestDetails extends DataAsset {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -143,33 +142,31 @@ public final class DataAssetFromRestDetails extends DataAsset {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-        /**
-         * The base url of the rest server.
-         **/
+        /** The base url of the rest server. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
         private String baseUrl;
 
         /**
          * The base url of the rest server.
+         *
          * @param baseUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder baseUrl(String baseUrl) {
             this.baseUrl = baseUrl;
             this.__explicitlySet__.add("baseUrl");
             return this;
         }
-        /**
-         * The manifest file content of the rest APIs.
-         **/
+        /** The manifest file content of the rest APIs. */
         @com.fasterxml.jackson.annotation.JsonProperty("manifestFileContent")
         private String manifestFileContent;
 
         /**
          * The manifest file content of the rest APIs.
+         *
          * @param manifestFileContent the value to set
          * @return this builder
-         **/
+         */
         public Builder manifestFileContent(String manifestFileContent) {
             this.manifestFileContent = manifestFileContent;
             this.__explicitlySet__.add("manifestFileContent");
@@ -267,9 +264,7 @@ public final class DataAssetFromRestDetails extends DataAsset {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -315,30 +310,28 @@ public final class DataAssetFromRestDetails extends DataAsset {
         this.defaultConnection = defaultConnection;
     }
 
-    /**
-     * The base url of the rest server.
-     **/
+    /** The base url of the rest server. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseUrl")
     private final String baseUrl;
 
     /**
      * The base url of the rest server.
+     *
      * @return the value
-     **/
+     */
     public String getBaseUrl() {
         return baseUrl;
     }
 
-    /**
-     * The manifest file content of the rest APIs.
-     **/
+    /** The manifest file content of the rest APIs. */
     @com.fasterxml.jackson.annotation.JsonProperty("manifestFileContent")
     private final String manifestFileContent;
 
     /**
      * The manifest file content of the rest APIs.
+     *
      * @return the value
-     **/
+     */
     public String getManifestFileContent() {
         return manifestFileContent;
     }
@@ -357,6 +350,7 @@ public final class DataAssetFromRestDetails extends DataAsset {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,15 +9,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /**
-     * The returned SubscriptionMapping instance.
-     */
+    /** The returned SubscriptionMapping instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping subscriptionMapping;
 
     /**
      * The returned SubscriptionMapping instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping
@@ -63,7 +58,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetSubscriptionMappingResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping
@@ -74,31 +69,34 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
         this.subscriptionMapping = subscriptionMapping;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetSubscriptionMappingResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -108,10 +106,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -125,14 +120,13 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned SubscriptionMapping instance.
-         */
+        /** The returned SubscriptionMapping instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SubscriptionMapping
                 subscriptionMapping;
 
         /**
          * The returned SubscriptionMapping instance.
+         *
          * @param subscriptionMapping the value to set
          * @return this builder
          */
@@ -145,8 +139,10 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetSubscriptionMappingResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -159,8 +155,10 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetSubscriptionMappingResponse build() {
             return new GetSubscriptionMappingResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, subscriptionMapping);
@@ -169,6 +167,7 @@ public class GetSubscriptionMappingResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

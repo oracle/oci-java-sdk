@@ -11,7 +11,6 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -26,17 +25,16 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * For list pagination. If this header appears in the response, then this
-     * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of invoices.
-     *
+     * For list pagination. If this header appears in the response, then this is a partial list of
+     * invoices. Include this value as the {@code page} parameter in a subsequent GET request to get
+     * the next batch of invoices.
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. If this header appears in the response, then this
-     * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of invoices.
+     * For list pagination. If this header appears in the response, then this is a partial list of
+     * invoices. Include this value as the {@code page} parameter in a subsequent GET request to get
+     * the next batch of invoices.
      *
      * @return the value
      */
@@ -44,26 +42,24 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         return opcNextPage;
     }
 
-    /**
-     * The total number of items that match the query.
-     */
+    /** The total number of items that match the query. */
     private Integer opcTotalItems;
 
     /**
      * The total number of items that match the query.
+     *
      * @return the value
      */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
 
-    /**
-     * The returned SubscriptionCollection instance.
-     */
+    /** The returned SubscriptionCollection instance. */
     private com.oracle.bmc.ospgateway.model.SubscriptionCollection subscriptionCollection;
 
     /**
      * The returned SubscriptionCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ospgateway.model.SubscriptionCollection getSubscriptionCollection() {
@@ -80,7 +76,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListSubscriptionsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
@@ -92,17 +88,20 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         this.subscriptionCollection = subscriptionCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListSubscriptionsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -110,7 +109,6 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -127,17 +125,16 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * For list pagination. If this header appears in the response, then this
-         * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of invoices.
-         *
+         * For list pagination. If this header appears in the response, then this is a partial list
+         * of invoices. Include this value as the {@code page} parameter in a subsequent GET request
+         * to get the next batch of invoices.
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. If this header appears in the response, then this
-         * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of invoices.
+         * For list pagination. If this header appears in the response, then this is a partial list
+         * of invoices. Include this value as the {@code page} parameter in a subsequent GET request
+         * to get the next batch of invoices.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -147,13 +144,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * The total number of items that match the query.
-         */
+        /** The total number of items that match the query. */
         private Integer opcTotalItems;
 
         /**
          * The total number of items that match the query.
+         *
          * @param opcTotalItems the value to set
          * @return this builder
          */
@@ -162,13 +158,12 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * The returned SubscriptionCollection instance.
-         */
+        /** The returned SubscriptionCollection instance. */
         private com.oracle.bmc.ospgateway.model.SubscriptionCollection subscriptionCollection;
 
         /**
          * The returned SubscriptionCollection instance.
+         *
          * @param subscriptionCollection the value to set
          * @return this builder
          */
@@ -180,8 +175,10 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListSubscriptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -195,8 +192,10 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListSubscriptionsResponse build() {
             return new ListSubscriptionsResponse(
                     __httpStatusCode__,
@@ -210,6 +209,7 @@ public class ListSubscriptionsResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,19 +5,20 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The overall monthly reward summary.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The overall monthly reward summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RewardDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RewardDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RewardDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenancyId",
@@ -45,97 +46,91 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the target tenancy.
-         **/
+        /** The OCID of the target tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The OCID of the target tenancy.
+         *
          * @param tenancyId the value to set
          * @return this builder
-         **/
+         */
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /**
-         * The entitlement ID from MQS, which is the same as the subcription ID.
-         **/
+        /** The entitlement ID from MQS, which is the same as the subcription ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
          * The entitlement ID from MQS, which is the same as the subcription ID.
+         *
          * @param subscriptionId the value to set
          * @return this builder
-         **/
+         */
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-        /**
-         * The currency unit for the reward amount.
-         **/
+        /** The currency unit for the reward amount. */
         @com.fasterxml.jackson.annotation.JsonProperty("currency")
         private String currency;
 
         /**
          * The currency unit for the reward amount.
+         *
          * @param currency the value to set
          * @return this builder
-         **/
+         */
         public Builder currency(String currency) {
             this.currency = currency;
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /**
-         * The current Rewards percentage in decimal format.
-         **/
+        /** The current Rewards percentage in decimal format. */
         @com.fasterxml.jackson.annotation.JsonProperty("rewardsRate")
         private Double rewardsRate;
 
         /**
          * The current Rewards percentage in decimal format.
+         *
          * @param rewardsRate the value to set
          * @return this builder
-         **/
+         */
         public Builder rewardsRate(Double rewardsRate) {
             this.rewardsRate = rewardsRate;
             this.__explicitlySet__.add("rewardsRate");
             return this;
         }
-        /**
-         * The total number of available rewards for a given subscription ID.
-         **/
+        /** The total number of available rewards for a given subscription ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalRewardsAvailable")
         private Float totalRewardsAvailable;
 
         /**
          * The total number of available rewards for a given subscription ID.
+         *
          * @param totalRewardsAvailable the value to set
          * @return this builder
-         **/
+         */
         public Builder totalRewardsAvailable(Float totalRewardsAvailable) {
             this.totalRewardsAvailable = totalRewardsAvailable;
             this.__explicitlySet__.add("totalRewardsAvailable");
             return this;
         }
-        /**
-         * The redemption code used in the Billing Center during the reward redemption process.
-         **/
+        /** The redemption code used in the Billing Center during the reward redemption process. */
         @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
         private String redemptionCode;
 
         /**
          * The redemption code used in the Billing Center during the reward redemption process.
+         *
          * @param redemptionCode the value to set
          * @return this builder
-         **/
+         */
         public Builder redemptionCode(String redemptionCode) {
             this.redemptionCode = redemptionCode;
             this.__explicitlySet__.add("redemptionCode");
@@ -184,9 +179,7 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +188,80 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the target tenancy.
-     **/
+    /** The OCID of the target tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The OCID of the target tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /**
-     * The entitlement ID from MQS, which is the same as the subcription ID.
-     **/
+    /** The entitlement ID from MQS, which is the same as the subcription ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
      * The entitlement ID from MQS, which is the same as the subcription ID.
+     *
      * @return the value
-     **/
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
 
-    /**
-     * The currency unit for the reward amount.
-     **/
+    /** The currency unit for the reward amount. */
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
     private final String currency;
 
     /**
      * The currency unit for the reward amount.
+     *
      * @return the value
-     **/
+     */
     public String getCurrency() {
         return currency;
     }
 
-    /**
-     * The current Rewards percentage in decimal format.
-     **/
+    /** The current Rewards percentage in decimal format. */
     @com.fasterxml.jackson.annotation.JsonProperty("rewardsRate")
     private final Double rewardsRate;
 
     /**
      * The current Rewards percentage in decimal format.
+     *
      * @return the value
-     **/
+     */
     public Double getRewardsRate() {
         return rewardsRate;
     }
 
-    /**
-     * The total number of available rewards for a given subscription ID.
-     **/
+    /** The total number of available rewards for a given subscription ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalRewardsAvailable")
     private final Float totalRewardsAvailable;
 
     /**
      * The total number of available rewards for a given subscription ID.
+     *
      * @return the value
-     **/
+     */
     public Float getTotalRewardsAvailable() {
         return totalRewardsAvailable;
     }
 
-    /**
-     * The redemption code used in the Billing Center during the reward redemption process.
-     **/
+    /** The redemption code used in the Billing Center during the reward redemption process. */
     @com.fasterxml.jackson.annotation.JsonProperty("redemptionCode")
     private final String redemptionCode;
 
     /**
      * The redemption code used in the Billing Center during the reward redemption process.
+     *
      * @return the value
-     **/
+     */
     public String getRedemptionCode() {
         return redemptionCode;
     }
@@ -286,6 +273,7 @@ public final class RewardDetails extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

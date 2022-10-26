@@ -6,7 +6,9 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateTablespaceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTablespaceRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateTablespaceExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTablespaceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class UpdateTablespaceRequest
@@ -14,53 +16,44 @@ public class UpdateTablespaceRequest
                 com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /**
-     * The name of the tablespace.
-     */
+    /** The name of the tablespace. */
     private String tablespaceName;
 
-    /**
-     * The name of the tablespace.
-     */
+    /** The name of the tablespace. */
     public String getTablespaceName() {
         return tablespaceName;
     }
-    /**
-     * The details required to update a tablespace.
-     */
+    /** The details required to update a tablespace. */
     private com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails updateTablespaceDetails;
 
-    /**
-     * The details required to update a tablespace.
-     */
+    /** The details required to update a tablespace. */
     public com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails
             getUpdateTablespaceDetails() {
         return updateTablespaceDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -73,17 +66,19 @@ public class UpdateTablespaceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTablespaceRequest,
                     com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -92,13 +87,12 @@ public class UpdateTablespaceRequest
             return this;
         }
 
-        /**
-         * The name of the tablespace.
-         */
+        /** The name of the tablespace. */
         private String tablespaceName = null;
 
         /**
          * The name of the tablespace.
+         *
          * @param tablespaceName the value to set
          * @return this builder instance
          */
@@ -107,14 +101,13 @@ public class UpdateTablespaceRequest
             return this;
         }
 
-        /**
-         * The details required to update a tablespace.
-         */
+        /** The details required to update a tablespace. */
         private com.oracle.bmc.databasemanagement.model.UpdateTablespaceDetails
                 updateTablespaceDetails = null;
 
         /**
          * The details required to update a tablespace.
+         *
          * @param updateTablespaceDetails the value to set
          * @return this builder instance
          */
@@ -125,13 +118,12 @@ public class UpdateTablespaceRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -142,18 +134,19 @@ public class UpdateTablespaceRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -165,6 +158,7 @@ public class UpdateTablespaceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateTablespaceRequest o) {
@@ -180,10 +174,11 @@ public class UpdateTablespaceRequest
         /**
          * Build the instance of UpdateTablespaceRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateTablespaceRequest
          */
@@ -196,6 +191,7 @@ public class UpdateTablespaceRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -208,7 +204,8 @@ public class UpdateTablespaceRequest
         /**
          * Build the instance of UpdateTablespaceRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTablespaceRequest
@@ -220,12 +217,14 @@ public class UpdateTablespaceRequest
             request.updateTablespaceDetails = updateTablespaceDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateTablespaceRequest(managedDatabaseId, tablespaceName, updateTablespaceDetails, opcRequestId);
+            // new UpdateTablespaceRequest(managedDatabaseId, tablespaceName,
+            // updateTablespaceDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -238,6 +237,7 @@ public class UpdateTablespaceRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

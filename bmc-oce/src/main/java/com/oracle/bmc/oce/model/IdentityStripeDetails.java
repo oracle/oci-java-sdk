@@ -5,22 +5,22 @@
 package com.oracle.bmc.oce.model;
 
 /**
- * Details of the identity stripe used for OceInstance
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of the identity stripe used for OceInstance <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = IdentityStripeDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = IdentityStripeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class IdentityStripeDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceName", "tenancy"})
     public IdentityStripeDetails(String serviceName, String tenancy) {
@@ -32,40 +32,38 @@ public final class IdentityStripeDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the Identity Cloud Service instance in My Services to be used.
-         * Example: {@code secondstripe}
-         *
-         **/
+         * Name of the Identity Cloud Service instance in My Services to be used. Example: {@code
+         * secondstripe}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
-         * Name of the Identity Cloud Service instance in My Services to be used.
-         * Example: {@code secondstripe}
+         * Name of the Identity Cloud Service instance in My Services to be used. Example: {@code
+         * secondstripe}
          *
          * @param serviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
         /**
-         * Value of the Identity Cloud Service tenancy.
-         * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
-         *
-         **/
+         * Value of the Identity Cloud Service tenancy. Example: {@code
+         * idcs-8416ebdd0d674f84803f4193cce026e9}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
         private String tenancy;
 
         /**
-         * Value of the Identity Cloud Service tenancy.
-         * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
+         * Value of the Identity Cloud Service tenancy. Example: {@code
+         * idcs-8416ebdd0d674f84803f4193cce026e9}
          *
          * @param tenancy the value to set
          * @return this builder
-         **/
+         */
         public Builder tenancy(String tenancy) {
             this.tenancy = tenancy;
             this.__explicitlySet__.add("tenancy");
@@ -95,9 +93,7 @@ public final class IdentityStripeDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,37 +103,35 @@ public final class IdentityStripeDetails
     }
 
     /**
-     * Name of the Identity Cloud Service instance in My Services to be used.
-     * Example: {@code secondstripe}
-     *
-     **/
+     * Name of the Identity Cloud Service instance in My Services to be used. Example: {@code
+     * secondstripe}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
-     * Name of the Identity Cloud Service instance in My Services to be used.
-     * Example: {@code secondstripe}
+     * Name of the Identity Cloud Service instance in My Services to be used. Example: {@code
+     * secondstripe}
      *
      * @return the value
-     **/
+     */
     public String getServiceName() {
         return serviceName;
     }
 
     /**
-     * Value of the Identity Cloud Service tenancy.
-     * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
-     *
-     **/
+     * Value of the Identity Cloud Service tenancy. Example: {@code
+     * idcs-8416ebdd0d674f84803f4193cce026e9}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
     private final String tenancy;
 
     /**
-     * Value of the Identity Cloud Service tenancy.
-     * Example: {@code idcs-8416ebdd0d674f84803f4193cce026e9}
+     * Value of the Identity Cloud Service tenancy. Example: {@code
+     * idcs-8416ebdd0d674f84803f4193cce026e9}
      *
      * @return the value
-     **/
+     */
     public String getTenancy() {
         return tenancy;
     }
@@ -149,6 +143,7 @@ public final class IdentityStripeDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

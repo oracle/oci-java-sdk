@@ -5,21 +5,22 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Specifications for the new index.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifications for the new index. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateIndexDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIndexDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateIndexDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateIndexDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "compartmentId", "keys", "isIfNotExists"})
     public CreateIndexDetails(
@@ -36,81 +37,71 @@ public final class CreateIndexDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Index name.
-         **/
+        /** Index name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Index name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The OCID of the table's compartment.  Required
-         * if the tableNameOrId path parameter is a table name.
-         * Optional if tableNameOrId is an OCID.  If tableNameOrId
-         * is an OCID, and compartmentId is supplied, the latter
-         * must match the identified table's compartmentId.
-         *
-         **/
+         * The OCID of the table's compartment. Required if the tableNameOrId path parameter is a
+         * table name. Optional if tableNameOrId is an OCID. If tableNameOrId is an OCID, and
+         * compartmentId is supplied, the latter must match the identified table's compartmentId.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the table's compartment.  Required
-         * if the tableNameOrId path parameter is a table name.
-         * Optional if tableNameOrId is an OCID.  If tableNameOrId
-         * is an OCID, and compartmentId is supplied, the latter
-         * must match the identified table's compartmentId.
+         * The OCID of the table's compartment. Required if the tableNameOrId path parameter is a
+         * table name. Optional if tableNameOrId is an OCID. If tableNameOrId is an OCID, and
+         * compartmentId is supplied, the latter must match the identified table's compartmentId.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * A set of keys for a secondary index.
-         **/
+        /** A set of keys for a secondary index. */
         @com.fasterxml.jackson.annotation.JsonProperty("keys")
         private java.util.List<IndexKey> keys;
 
         /**
          * A set of keys for a secondary index.
+         *
          * @param keys the value to set
          * @return this builder
-         **/
+         */
         public Builder keys(java.util.List<IndexKey> keys) {
             this.keys = keys;
             this.__explicitlySet__.add("keys");
             return this;
         }
         /**
-         * If true, the operation completes successfully even when the
-         * index exists.  Otherwise, an attempt to create an index
-         * that already exists will return an error.
-         *
-         **/
+         * If true, the operation completes successfully even when the index exists. Otherwise, an
+         * attempt to create an index that already exists will return an error.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
         private Boolean isIfNotExists;
 
         /**
-         * If true, the operation completes successfully even when the
-         * index exists.  Otherwise, an attempt to create an index
-         * that already exists will return an error.
+         * If true, the operation completes successfully even when the index exists. Otherwise, an
+         * attempt to create an index that already exists will return an error.
          *
          * @param isIfNotExists the value to set
          * @return this builder
-         **/
+         */
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = isIfNotExists;
             this.__explicitlySet__.add("isIfNotExists");
@@ -148,9 +139,7 @@ public final class CreateIndexDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,74 +148,64 @@ public final class CreateIndexDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Index name.
-     **/
+    /** Index name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Index name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The OCID of the table's compartment.  Required
-     * if the tableNameOrId path parameter is a table name.
-     * Optional if tableNameOrId is an OCID.  If tableNameOrId
-     * is an OCID, and compartmentId is supplied, the latter
-     * must match the identified table's compartmentId.
-     *
-     **/
+     * The OCID of the table's compartment. Required if the tableNameOrId path parameter is a table
+     * name. Optional if tableNameOrId is an OCID. If tableNameOrId is an OCID, and compartmentId is
+     * supplied, the latter must match the identified table's compartmentId.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the table's compartment.  Required
-     * if the tableNameOrId path parameter is a table name.
-     * Optional if tableNameOrId is an OCID.  If tableNameOrId
-     * is an OCID, and compartmentId is supplied, the latter
-     * must match the identified table's compartmentId.
+     * The OCID of the table's compartment. Required if the tableNameOrId path parameter is a table
+     * name. Optional if tableNameOrId is an OCID. If tableNameOrId is an OCID, and compartmentId is
+     * supplied, the latter must match the identified table's compartmentId.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * A set of keys for a secondary index.
-     **/
+    /** A set of keys for a secondary index. */
     @com.fasterxml.jackson.annotation.JsonProperty("keys")
     private final java.util.List<IndexKey> keys;
 
     /**
      * A set of keys for a secondary index.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<IndexKey> getKeys() {
         return keys;
     }
 
     /**
-     * If true, the operation completes successfully even when the
-     * index exists.  Otherwise, an attempt to create an index
-     * that already exists will return an error.
-     *
-     **/
+     * If true, the operation completes successfully even when the index exists. Otherwise, an
+     * attempt to create an index that already exists will return an error.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
     private final Boolean isIfNotExists;
 
     /**
-     * If true, the operation completes successfully even when the
-     * index exists.  Otherwise, an attempt to create an index
-     * that already exists will return an error.
+     * If true, the operation completes successfully even when the index exists. Otherwise, an
+     * attempt to create an index that already exists will return an error.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsIfNotExists() {
         return isIfNotExists;
     }
@@ -238,6 +217,7 @@ public final class CreateIndexDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,10 +9,7 @@ import com.oracle.bmc.databasemanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class CreateDbManagementPrivateEndpointResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -25,13 +22,14 @@ public class CreateDbManagementPrivateEndpointResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -40,15 +38,14 @@ public class CreateDbManagementPrivateEndpointResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -56,10 +53,7 @@ public class CreateDbManagementPrivateEndpointResponse
         return opcRequestId;
     }
 
-    /**
-     * The full URI of the Database Management private endpoint.
-     *
-     */
+    /** The full URI of the Database Management private endpoint. */
     private String location;
 
     /**
@@ -71,14 +65,13 @@ public class CreateDbManagementPrivateEndpointResponse
         return location;
     }
 
-    /**
-     * The returned DbManagementPrivateEndpoint instance.
-     */
+    /** The returned DbManagementPrivateEndpoint instance. */
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
     /**
      * The returned DbManagementPrivateEndpoint instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
@@ -97,7 +90,7 @@ public class CreateDbManagementPrivateEndpointResponse
     })
     private CreateDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -112,25 +105,26 @@ public class CreateDbManagementPrivateEndpointResponse
         this.dbManagementPrivateEndpoint = dbManagementPrivateEndpoint;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateDbManagementPrivateEndpointResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -145,13 +139,14 @@ public class CreateDbManagementPrivateEndpointResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -162,15 +157,14 @@ public class CreateDbManagementPrivateEndpointResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -180,10 +174,7 @@ public class CreateDbManagementPrivateEndpointResponse
             return this;
         }
 
-        /**
-         * The full URI of the Database Management private endpoint.
-         *
-         */
+        /** The full URI of the Database Management private endpoint. */
         private String location;
 
         /**
@@ -197,14 +188,13 @@ public class CreateDbManagementPrivateEndpointResponse
             return this;
         }
 
-        /**
-         * The returned DbManagementPrivateEndpoint instance.
-         */
+        /** The returned DbManagementPrivateEndpoint instance. */
         private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                 dbManagementPrivateEndpoint;
 
         /**
          * The returned DbManagementPrivateEndpoint instance.
+         *
          * @param dbManagementPrivateEndpoint the value to set
          * @return this builder
          */
@@ -217,8 +207,10 @@ public class CreateDbManagementPrivateEndpointResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDbManagementPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -233,8 +225,10 @@ public class CreateDbManagementPrivateEndpointResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDbManagementPrivateEndpointResponse build() {
             return new CreateDbManagementPrivateEndpointResponse(
                     __httpStatusCode__,
@@ -249,6 +243,7 @@ public class CreateDbManagementPrivateEndpointResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

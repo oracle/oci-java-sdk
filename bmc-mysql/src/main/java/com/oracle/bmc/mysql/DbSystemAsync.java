@@ -7,61 +7,57 @@ package com.oracle.bmc.mysql;
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 
-/**
- * The API for the MySQL Database Service
- */
+/** The API for the MySQL Database Service */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public interface DbSystemAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Adds an Analytics Cluster to the DB System.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Adds an Analytics Cluster to the DB System.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddAnalyticsClusterResponse> addAnalyticsCluster(
             AddAnalyticsClusterRequest request,
@@ -72,13 +68,12 @@ public interface DbSystemAsync extends AutoCloseable {
     /**
      * Adds a HeatWave cluster to the DB System.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddHeatWaveClusterResponse> addHeatWaveCluster(
             AddHeatWaveClusterRequest request,
@@ -89,13 +84,12 @@ public interface DbSystemAsync extends AutoCloseable {
     /**
      * Creates and launches a DB System.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDbSystemResponse> createDbSystem(
             CreateDbSystemRequest request,
@@ -103,17 +97,15 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Deletes the Analytics Cluster including terminating, detaching, removing, finalizing and
-     * otherwise deleting all related resources.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Deletes the Analytics Cluster including
+     * terminating, detaching, removing, finalizing and otherwise deleting all related resources.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAnalyticsClusterResponse> deleteAnalyticsCluster(
             DeleteAnalyticsClusterRequest request,
@@ -122,16 +114,15 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a DB System, including terminating, detaching,
-     * removing, finalizing and otherwise deleting all related resources.
-     *
+     * Delete a DB System, including terminating, detaching, removing, finalizing and otherwise
+     * deleting all related resources.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDbSystemResponse> deleteDbSystem(
             DeleteDbSystemRequest request,
@@ -142,13 +133,12 @@ public interface DbSystemAsync extends AutoCloseable {
      * Deletes the HeatWave cluster including terminating, detaching, removing, finalizing and
      * otherwise deleting all related resources.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteHeatWaveClusterResponse> deleteHeatWaveCluster(
             DeleteHeatWaveClusterRequest request,
@@ -157,16 +147,15 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Sends a request to estimate the memory footprints of user tables when loaded to Analytics Cluster memory.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Sends a request to estimate the memory
+     * footprints of user tables when loaded to Analytics Cluster memory.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateAnalyticsClusterMemoryEstimateResponse>
             generateAnalyticsClusterMemoryEstimate(
@@ -177,15 +166,15 @@ public interface DbSystemAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave cluster memory.
-     *
+     * Sends a request to estimate the memory footprints of user tables when loaded to HeatWave
+     * cluster memory.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
             generateHeatWaveClusterMemoryEstimate(
@@ -196,16 +185,14 @@ public interface DbSystemAsync extends AutoCloseable {
                             handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets information about the Analytics Cluster.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Gets information about the Analytics Cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAnalyticsClusterResponse> getAnalyticsCluster(
             GetAnalyticsClusterRequest request,
@@ -214,17 +201,15 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Gets the most recent Analytics Cluster memory estimate that can be used to determine a suitable
-     * Analytics Cluster size.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Gets the most recent Analytics Cluster memory
+     * estimate that can be used to determine a suitable Analytics Cluster size.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAnalyticsClusterMemoryEstimateResponse>
             getAnalyticsClusterMemoryEstimate(
@@ -239,10 +224,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDbSystemResponse> getDbSystem(
             GetDbSystemRequest request,
@@ -253,10 +238,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetHeatWaveClusterResponse> getHeatWaveCluster(
             GetHeatWaveClusterRequest request,
@@ -265,16 +250,15 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the most recent HeatWave cluster memory estimate that can be used to determine a suitable
-     * HeatWave cluster size.
-     *
+     * Gets the most recent HeatWave cluster memory estimate that can be used to determine a
+     * suitable HeatWave cluster size.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>
             getHeatWaveClusterMemoryEstimate(
@@ -285,16 +269,15 @@ public interface DbSystemAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Get a list of DB Systems in the specified compartment.
-     * The default sort order is by timeUpdated, descending.
-     *
+     * Get a list of DB Systems in the specified compartment. The default sort order is by
+     * timeUpdated, descending.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
             ListDbSystemsRequest request,
@@ -302,16 +285,14 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Restarts the Analytics Cluster.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Restarts the Analytics Cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestartAnalyticsClusterResponse> restartAnalyticsCluster(
             RestartAnalyticsClusterRequest request,
@@ -324,10 +305,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestartDbSystemResponse> restartDbSystem(
             RestartDbSystemRequest request,
@@ -339,10 +320,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RestartHeatWaveClusterResponse> restartHeatWaveCluster(
             RestartHeatWaveClusterRequest request,
@@ -351,16 +332,14 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Starts the Analytics Cluster.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Starts the Analytics Cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartAnalyticsClusterResponse> startAnalyticsCluster(
             StartAnalyticsClusterRequest request,
@@ -373,10 +352,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
             StartDbSystemRequest request,
@@ -388,10 +367,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StartHeatWaveClusterResponse> startHeatWaveCluster(
             StartHeatWaveClusterRequest request,
@@ -400,16 +379,14 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Stops the Analytics Cluster.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Stops the Analytics Cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopAnalyticsClusterResponse> stopAnalyticsCluster(
             StopAnalyticsClusterRequest request,
@@ -419,16 +396,15 @@ public interface DbSystemAsync extends AutoCloseable {
 
     /**
      * Stops the specified DB System.
-     * <p>
-     * A stopped DB System is not billed.
      *
+     * <p>A stopped DB System is not billed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
             StopDbSystemRequest request,
@@ -440,10 +416,10 @@ public interface DbSystemAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<StopHeatWaveClusterResponse> stopHeatWaveCluster(
             StopHeatWaveClusterRequest request,
@@ -452,16 +428,14 @@ public interface DbSystemAsync extends AutoCloseable {
                     handler);
 
     /**
-     * DEPRECATED -- please use HeatWave API instead.
-     * Updates the Analytics Cluster.
-     *
+     * DEPRECATED -- please use HeatWave API instead. Updates the Analytics Cluster.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAnalyticsClusterResponse> updateAnalyticsCluster(
             UpdateAnalyticsClusterRequest request,
@@ -471,21 +445,19 @@ public interface DbSystemAsync extends AutoCloseable {
 
     /**
      * Update the configuration of a DB System.
-     * <p>
-     * Updating different fields in the DB System will have different results
-     * on the uptime of the DB System. For example, changing the displayName of
-     * a DB System will take effect immediately, but changing the shape of a
-     * DB System is an asynchronous operation that involves provisioning new
-     * Compute resources, pausing the DB System and migrating storage
-     * before making the DB System available again.
      *
+     * <p>Updating different fields in the DB System will have different results on the uptime of
+     * the DB System. For example, changing the displayName of a DB System will take effect
+     * immediately, but changing the shape of a DB System is an asynchronous operation that involves
+     * provisioning new Compute resources, pausing the DB System and migrating storage before making
+     * the DB System available again.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
             UpdateDbSystemRequest request,
@@ -495,13 +467,12 @@ public interface DbSystemAsync extends AutoCloseable {
     /**
      * Updates the HeatWave cluster.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateHeatWaveClusterResponse> updateHeatWaveCluster(
             UpdateHeatWaveClusterRequest request,

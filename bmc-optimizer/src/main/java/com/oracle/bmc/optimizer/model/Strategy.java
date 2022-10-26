@@ -5,20 +5,21 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * The metadata associated with the strategy. The strategy is the method used to apply the recommendation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata associated with the strategy. The strategy is the method used to apply the
+ * recommendation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Strategy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Strategy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Strategy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"strategyName", "isDefault", "parametersDefinition"})
     public Strategy(
@@ -33,49 +34,46 @@ public final class Strategy extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the strategy.
-         **/
+        /** The name of the strategy. */
         @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
         private String strategyName;
 
         /**
          * The name of the strategy.
+         *
          * @param strategyName the value to set
          * @return this builder
-         **/
+         */
         public Builder strategyName(String strategyName) {
             this.strategyName = strategyName;
             this.__explicitlySet__.add("strategyName");
             return this;
         }
-        /**
-         * Whether this is the default recommendation strategy.
-         **/
+        /** Whether this is the default recommendation strategy. */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * Whether this is the default recommendation strategy.
+         *
          * @param isDefault the value to set
          * @return this builder
-         **/
+         */
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /**
-         * The list of strategies for the parameters.
-         **/
+        /** The list of strategies for the parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("parametersDefinition")
         private java.util.List<StrategyParameter> parametersDefinition;
 
         /**
          * The list of strategies for the parameters.
+         *
          * @param parametersDefinition the value to set
          * @return this builder
-         **/
+         */
         public Builder parametersDefinition(
                 java.util.List<StrategyParameter> parametersDefinition) {
             this.parametersDefinition = parametersDefinition;
@@ -110,9 +108,7 @@ public final class Strategy extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,44 +117,41 @@ public final class Strategy extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the strategy.
-     **/
+    /** The name of the strategy. */
     @com.fasterxml.jackson.annotation.JsonProperty("strategyName")
     private final String strategyName;
 
     /**
      * The name of the strategy.
+     *
      * @return the value
-     **/
+     */
     public String getStrategyName() {
         return strategyName;
     }
 
-    /**
-     * Whether this is the default recommendation strategy.
-     **/
+    /** Whether this is the default recommendation strategy. */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * Whether this is the default recommendation strategy.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
 
-    /**
-     * The list of strategies for the parameters.
-     **/
+    /** The list of strategies for the parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("parametersDefinition")
     private final java.util.List<StrategyParameter> parametersDefinition;
 
     /**
      * The list of strategies for the parameters.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<StrategyParameter> getParametersDefinition() {
         return parametersDefinition;
     }
@@ -170,6 +163,7 @@ public final class Strategy extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

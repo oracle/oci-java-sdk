@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import javax.annotation.Nonnull;
 import java.io.IOException;
 import java.io.InputStream;
@@ -135,10 +135,12 @@ class ProgressTrackingInputStreamFactory {
         }
 
         /**
-         * The progress tracking input stream resulting from this call will re-use the progress tracker from the parent
-         * progress tracking input stream after resetting it, thus invalidating the progress tracked by the parent
-         * stream until now. To ensure correctness of the progress tracking functionality, do NOT read from the parent
-         * stream after duplicating from it.
+         * The progress tracking input stream resulting from this call will re-use the progress
+         * tracker from the parent progress tracking input stream after resetting it, thus
+         * invalidating the progress tracked by the parent stream until now. To ensure correctness
+         * of the progress tracking functionality, do NOT read from the parent stream after
+         * duplicating from it.
+         *
          * @return The duplicated progress tracking input stream.
          */
         @Override

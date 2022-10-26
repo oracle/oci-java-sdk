@@ -6,79 +6,61 @@ package com.oracle.bmc.optimizer.requests;
 
 import com.oracle.bmc.optimizer.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfilesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfilesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListProfilesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfilesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Optional. A filter that returns results that match the name specified.
-     */
+    /** Optional. A filter that returns results that match the name specified. */
     private String name;
 
-    /**
-     * Optional. A filter that returns results that match the name specified.
-     */
+    /** Optional. A filter that returns results that match the name specified. */
     public String getName() {
         return name;
     }
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.optimizer.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.optimizer.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
+     * sensitive.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
+     * sensitive.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Name("NAME"),
         Timecreated("TIMECREATED"),
         ;
@@ -112,36 +94,29 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
+     * sensitive.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * A filter that returns results that match the lifecycle state specified.
-     *
-     */
+    /** A filter that returns results that match the lifecycle state specified. */
     private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState;
 
-    /**
-     * A filter that returns results that match the lifecycle state specified.
-     *
-     */
+    /** A filter that returns results that match the lifecycle state specified. */
     public com.oracle.bmc.optimizer.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -150,17 +125,15 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProfilesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment.
-         */
+        /** The OCID of the compartment. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -169,13 +142,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Optional. A filter that returns results that match the name specified.
-         */
+        /** Optional. A filter that returns results that match the name specified. */
         private String name = null;
 
         /**
          * Optional. A filter that returns results that match the name specified.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -184,13 +156,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a paginated "List" call.
-         */
+        /** The maximum number of items to return in a paginated "List" call. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -199,10 +170,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -216,13 +184,12 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.optimizer.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -232,13 +199,16 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
-         *
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order
+         * is case sensitive.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order
+         * is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -248,10 +218,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * A filter that returns results that match the lifecycle state specified.
-         *
-         */
+        /** A filter that returns results that match the lifecycle state specified. */
         private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState = null;
 
         /**
@@ -267,15 +234,14 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -287,18 +253,19 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -310,6 +277,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListProfilesRequest o) {
@@ -329,10 +297,11 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListProfilesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListProfilesRequest
          */
@@ -346,7 +315,8 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListProfilesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListProfilesRequest
@@ -362,12 +332,14 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.lifecycleState = lifecycleState;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProfilesRequest(compartmentId, name, limit, page, sortOrder, sortBy, lifecycleState, opcRequestId);
+            // new ListProfilesRequest(compartmentId, name, limit, page, sortOrder, sortBy,
+            // lifecycleState, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -384,6 +356,7 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

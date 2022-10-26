@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmconfig.model;
 
-/**
- * Metric Type
- **/
+/** Metric Type */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-public enum MetricTypes {
+public enum MetricTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Counter("COUNTER"),
     Gauge("GAUGE"),
 

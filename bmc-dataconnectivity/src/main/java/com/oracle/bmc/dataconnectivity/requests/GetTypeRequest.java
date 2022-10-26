@@ -6,75 +6,59 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetTypeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTypeRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetTypeExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTypeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     private String registryId;
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     public String getRegistryId() {
         return registryId;
     }
-    /**
-     * Key of the a specific type.
-     */
+    /** Key of the a specific type. */
     private String typeKey;
 
-    /**
-     * Key of the a specific type.
-     */
+    /** Key of the a specific type. */
     public String getTypeKey() {
         return typeKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Specifies the fields to get for an object.
-     */
+    /** Specifies the fields to get for an object. */
     private java.util.List<String> fields;
 
-    /**
-     * Specifies the fields to get for an object.
-     */
+    /** Specifies the fields to get for an object. */
     public java.util.List<String> getFields() {
         return fields;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetTypeRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The registry OCID.
-         */
+        /** The registry OCID. */
         private String registryId = null;
 
         /**
          * The registry OCID.
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -83,13 +67,12 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
-        /**
-         * Key of the a specific type.
-         */
+        /** Key of the a specific type. */
         private String typeKey = null;
 
         /**
          * Key of the a specific type.
+         *
          * @param typeKey the value to set
          * @return this builder instance
          */
@@ -99,17 +82,14 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -119,13 +99,12 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
-        /**
-         * Specifies the fields to get for an object.
-         */
+        /** Specifies the fields to get for an object. */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
+         *
          * @param fields the value to set
          * @return this builder instance
          */
@@ -136,6 +115,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Singular setter. Specifies the fields to get for an object.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -145,18 +125,19 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,6 +149,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetTypeRequest o) {
@@ -183,10 +165,11 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         /**
          * Build the instance of GetTypeRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetTypeRequest
          */
@@ -200,7 +183,8 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         /**
          * Build the instance of GetTypeRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetTypeRequest
@@ -218,6 +202,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -230,6 +215,7 @@ public class GetTypeRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

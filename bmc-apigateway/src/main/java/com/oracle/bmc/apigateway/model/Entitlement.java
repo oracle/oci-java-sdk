@@ -5,20 +5,21 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * A usage plan entitlement, comprising of rate limits, quotas and the deployments they are applied to.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A usage plan entitlement, comprising of rate limits, quotas and the deployments they are applied
+ * to. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Entitlement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Entitlement extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description", "rateLimit", "quota", "targets"})
     public Entitlement(
@@ -37,10 +38,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An entitlement name, unique within a usage plan.
-         *
-         **/
+        /** An entitlement name, unique within a usage plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -49,27 +47,26 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * A user-friendly description. To provide some insight about the resource.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly description. To provide some insight about the resource. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-friendly description. To provide some insight about the resource.
-         * Avoid entering confidential information.
+         * A user-friendly description. To provide some insight about the resource. Avoid entering
+         * confidential information.
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -93,10 +90,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("quota");
             return this;
         }
-        /**
-         * A collection of targeted deployments that the entitlement will be applied to.
-         *
-         **/
+        /** A collection of targeted deployments that the entitlement will be applied to. */
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<EntitlementTarget> targets;
 
@@ -105,7 +99,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param targets the value to set
          * @return this builder
-         **/
+         */
         public Builder targets(java.util.List<EntitlementTarget> targets) {
             this.targets = targets;
             this.__explicitlySet__.add("targets");
@@ -146,9 +140,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,10 +149,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * An entitlement name, unique within a usage plan.
-     *
-     **/
+    /** An entitlement name, unique within a usage plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -168,25 +157,24 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
      * An entitlement name, unique within a usage plan.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * A user-friendly description. To provide some insight about the resource.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly description. To provide some insight about the resource. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description. To provide some insight about the resource.
-     * Avoid entering confidential information.
+     * A user-friendly description. To provide some insight about the resource. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -205,10 +193,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
         return quota;
     }
 
-    /**
-     * A collection of targeted deployments that the entitlement will be applied to.
-     *
-     **/
+    /** A collection of targeted deployments that the entitlement will be applied to. */
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<EntitlementTarget> targets;
 
@@ -216,7 +201,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
      * A collection of targeted deployments that the entitlement will be applied to.
      *
      * @return the value
-     **/
+     */
     public java.util.List<EntitlementTarget> getTargets() {
         return targets;
     }
@@ -228,6 +213,7 @@ public final class Entitlement extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

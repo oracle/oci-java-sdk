@@ -6,98 +6,74 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportDataAssetRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ImportDataAssetExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportDataAssetRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ImportDataAssetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.ImportDataAssetDetails> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique data asset key.
-     */
+    /** Unique data asset key. */
     private String dataAssetKey;
 
-    /**
-     * Unique data asset key.
-     */
+    /** Unique data asset key. */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
-    /**
-     * The file contents to be imported.
-     */
+    /** The file contents to be imported. */
     private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails;
 
-    /**
-     * The file contents to be imported.
-     */
+    /** The file contents to be imported. */
     public com.oracle.bmc.datacatalog.model.ImportDataAssetDetails getImportDataAssetDetails() {
         return importDataAssetDetails;
     }
-    /**
-     * Type of import.
-     */
+    /** Type of import. */
     private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             importType;
 
-    /**
-     * Type of import.
-     */
+    /** Type of import. */
     public java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
             getImportType() {
         return importType;
     }
-    /**
-     * Specify whether to ignore the missing values in the import file.
-     */
+    /** Specify whether to ignore the missing values in the import file. */
     private Boolean isMissingValueIgnored;
 
-    /**
-     * Specify whether to ignore the missing values in the import file.
-     */
+    /** Specify whether to ignore the missing values in the import file. */
     public Boolean getIsMissingValueIgnored() {
         return isMissingValueIgnored;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -105,6 +81,7 @@ public class ImportDataAssetRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -117,17 +94,15 @@ public class ImportDataAssetRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ImportDataAssetRequest,
                     com.oracle.bmc.datacatalog.model.ImportDataAssetDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -136,13 +111,12 @@ public class ImportDataAssetRequest
             return this;
         }
 
-        /**
-         * Unique data asset key.
-         */
+        /** Unique data asset key. */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
+         *
          * @param dataAssetKey the value to set
          * @return this builder instance
          */
@@ -151,14 +125,13 @@ public class ImportDataAssetRequest
             return this;
         }
 
-        /**
-         * The file contents to be imported.
-         */
+        /** The file contents to be imported. */
         private com.oracle.bmc.datacatalog.model.ImportDataAssetDetails importDataAssetDetails =
                 null;
 
         /**
          * The file contents to be imported.
+         *
          * @param importDataAssetDetails the value to set
          * @return this builder instance
          */
@@ -168,14 +141,13 @@ public class ImportDataAssetRequest
             return this;
         }
 
-        /**
-         * Type of import.
-         */
+        /** Type of import. */
         private java.util.List<com.oracle.bmc.datacatalog.model.DataAssetImportExportTypeFilter>
                 importType = null;
 
         /**
          * Type of import.
+         *
          * @param importType the value to set
          * @return this builder instance
          */
@@ -188,6 +160,7 @@ public class ImportDataAssetRequest
 
         /**
          * Singular setter. Type of import.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -195,13 +168,12 @@ public class ImportDataAssetRequest
             return this.importType(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Specify whether to ignore the missing values in the import file.
-         */
+        /** Specify whether to ignore the missing values in the import file. */
         private Boolean isMissingValueIgnored = null;
 
         /**
          * Specify whether to ignore the missing values in the import file.
+         *
          * @param isMissingValueIgnored the value to set
          * @return this builder instance
          */
@@ -210,13 +182,12 @@ public class ImportDataAssetRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -227,20 +198,19 @@ public class ImportDataAssetRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -252,18 +222,19 @@ public class ImportDataAssetRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -275,6 +246,7 @@ public class ImportDataAssetRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ImportDataAssetRequest o) {
@@ -293,10 +265,11 @@ public class ImportDataAssetRequest
         /**
          * Build the instance of ImportDataAssetRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ImportDataAssetRequest
          */
@@ -309,6 +282,7 @@ public class ImportDataAssetRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -321,7 +295,8 @@ public class ImportDataAssetRequest
         /**
          * Build the instance of ImportDataAssetRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ImportDataAssetRequest
@@ -336,12 +311,14 @@ public class ImportDataAssetRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ImportDataAssetRequest(catalogId, dataAssetKey, importDataAssetDetails, importType, isMissingValueIgnored, opcRequestId, opcRetryToken);
+            // new ImportDataAssetRequest(catalogId, dataAssetKey, importDataAssetDetails,
+            // importType, isMissingValueIgnored, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -357,6 +334,7 @@ public class ImportDataAssetRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

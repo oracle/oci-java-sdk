@@ -8,10 +8,7 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetComputeCapacityReservationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /**
-     * The returned ComputeCapacityReservation instance.
-     */
+    /** The returned ComputeCapacityReservation instance. */
     private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
     /**
      * The returned ComputeCapacityReservation instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.ComputeCapacityReservation getComputeCapacityReservation() {
@@ -62,7 +57,7 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
     })
     private GetComputeCapacityReservationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation) {
@@ -72,25 +67,26 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
         this.computeCapacityReservation = computeCapacityReservation;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetComputeCapacityReservationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +101,14 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +118,12 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /**
-         * The returned ComputeCapacityReservation instance.
-         */
+        /** The returned ComputeCapacityReservation instance. */
         private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
         /**
          * The returned ComputeCapacityReservation instance.
+         *
          * @param computeCapacityReservation the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetComputeCapacityReservationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetComputeCapacityReservationResponse build() {
             return new GetComputeCapacityReservationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, computeCapacityReservation);
@@ -165,6 +163,7 @@ public class GetComputeCapacityReservationResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

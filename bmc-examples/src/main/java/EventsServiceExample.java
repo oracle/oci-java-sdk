@@ -35,23 +35,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * This class provides examples of basic events service usage.
- * - creating a rule
- * - retrieving a rule
- * - updating a rule
- * - deleting a rule
- * - listing all rules in a given compartment
+ * This class provides examples of basic events service usage. - creating a rule - retrieving a rule
+ * - updating a rule - deleting a rule - listing all rules in a given compartment
  */
 public class EventsServiceExample implements Closeable {
 
-    final static String configurationFilePath = "~/.oci/config";
-    final static String profile = "DEFAULT";
+    static final String configurationFilePath = "~/.oci/config";
+    static final String profile = "DEFAULT";
 
     private final EventsClient eventsClient;
 
     public EventsServiceExample() throws Exception {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -64,6 +62,7 @@ public class EventsServiceExample implements Closeable {
 
     /**
      * Shows examples of how to create, read, update, list and delete Rules.
+     *
      * @param args Command line arguments
      * @throws Exception Throws Exceptions
      */
@@ -99,11 +98,12 @@ public class EventsServiceExample implements Closeable {
     }
 
     /**
-     * We create a new Rule here.
-     * Our Rule has a condition that is used to filter out particular events that are of interest to us.
-     * When an event matches our condition, an Action is triggered.
-     * Here, our action would be to copy the event of interest, to an OSS stream.
-     * @param compartmentId OCID of compartment where the Rule should be created. Must match the compartment where events are emitted.
+     * We create a new Rule here. Our Rule has a condition that is used to filter out particular
+     * events that are of interest to us. When an event matches our condition, an Action is
+     * triggered. Here, our action would be to copy the event of interest, to an OSS stream.
+     *
+     * @param compartmentId OCID of compartment where the Rule should be created. Must match the
+     *     compartment where events are emitted.
      * @param streamId OCID of OSS stream where the matching events must be copied over to.
      * @return The Rule that was created.
      */
@@ -164,6 +164,7 @@ public class EventsServiceExample implements Closeable {
 
     /**
      * Retrieves a Rule by calling the Events Service.
+     *
      * @param ruleId OCID of Rule that needs to be retrieved.
      * @return The Rule that was retrieved
      */
@@ -181,6 +182,7 @@ public class EventsServiceExample implements Closeable {
 
     /**
      * Updates the display name of a Rule.
+     *
      * @param ruleId OCID of the Rule that needs to be updated.
      * @param newDisplayName The new display name
      * @return The updated Rule
@@ -209,8 +211,9 @@ public class EventsServiceExample implements Closeable {
     }
 
     /**
-     * Lists all rules in a given compartment.
-     * Clients can set various additional filter and sorting criteria during the listing (not shown here).
+     * Lists all rules in a given compartment. Clients can set various additional filter and sorting
+     * criteria during the listing (not shown here).
+     *
      * @param compartmentId OCID of the compartment where Rules will be listed
      * @return The list of Rule(s) in the compartment
      */
@@ -235,6 +238,7 @@ public class EventsServiceExample implements Closeable {
 
     /**
      * Delete a Rule
+     *
      * @param ruleId OCID of the Rule to be deleted.
      */
     private void deleteRule(final String ruleId) {
@@ -252,6 +256,7 @@ public class EventsServiceExample implements Closeable {
 
     /**
      * Validates the input, passed in via the command line arguments.
+     *
      * @param args Command line arguments
      */
     private static void validateArguments(final String[] args) {

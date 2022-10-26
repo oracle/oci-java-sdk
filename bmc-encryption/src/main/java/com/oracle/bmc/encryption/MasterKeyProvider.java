@@ -7,9 +7,7 @@ package com.oracle.bmc.encryption;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.encryption.internal.CryptoAlgorithm;
 
-/**
- * Represents a MasterKeyProvider that holds MasterKeys.
- */
+/** Represents a MasterKeyProvider that holds MasterKeys. */
 public interface MasterKeyProvider<K extends AbstractAuthenticationDetailsProvider> {
     MasterKey getMasterKey();
 

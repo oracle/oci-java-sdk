@@ -5,34 +5,29 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration tablespace settings valid for ADB-D target type using auto create feature.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Migration tablespace settings valid for ADB-D target type using auto create feature. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateADBDedicatedAutoCreateTablespaceDetails.Builder.class
-)
+        builder = CreateADBDedicatedAutoCreateTablespaceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "targetType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "targetType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateADBDedicatedAutoCreateTablespaceDetails
         extends CreateTargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * True to auto-create tablespace in the target Database.
-         *
-         **/
+        /** True to auto-create tablespace in the target Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
         private Boolean isAutoCreate;
 
@@ -41,16 +36,13 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
          *
          * @param isAutoCreate the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoCreate(Boolean isAutoCreate) {
             this.isAutoCreate = isAutoCreate;
             this.__explicitlySet__.add("isAutoCreate");
             return this;
         }
-        /**
-         * True set tablespace to big file.
-         *
-         **/
+        /** True set tablespace to big file. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
         private Boolean isBigFile;
 
@@ -59,16 +51,13 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
          *
          * @param isBigFile the value to set
          * @return this builder
-         **/
+         */
         public Builder isBigFile(Boolean isBigFile) {
             this.isBigFile = isBigFile;
             this.__explicitlySet__.add("isBigFile");
             return this;
         }
-        /**
-         * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
-         *
-         **/
+        /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
         @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
         private Integer extendSizeInMBs;
 
@@ -77,7 +66,7 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
          *
          * @param extendSizeInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder extendSizeInMBs(Integer extendSizeInMBs) {
             this.extendSizeInMBs = extendSizeInMBs;
             this.__explicitlySet__.add("extendSizeInMBs");
@@ -112,9 +101,7 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,10 +119,7 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         this.extendSizeInMBs = extendSizeInMBs;
     }
 
-    /**
-     * True to auto-create tablespace in the target Database.
-     *
-     **/
+    /** True to auto-create tablespace in the target Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
     private final Boolean isAutoCreate;
 
@@ -143,15 +127,12 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
      * True to auto-create tablespace in the target Database.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoCreate() {
         return isAutoCreate;
     }
 
-    /**
-     * True set tablespace to big file.
-     *
-     **/
+    /** True set tablespace to big file. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
     private final Boolean isBigFile;
 
@@ -159,15 +140,12 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
      * True set tablespace to big file.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsBigFile() {
         return isBigFile;
     }
 
-    /**
-     * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
-     *
-     **/
+    /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
     @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
     private final Integer extendSizeInMBs;
 
@@ -175,7 +153,7 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
      * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
      *
      * @return the value
-     **/
+     */
     public Integer getExtendSizeInMBs() {
         return extendSizeInMBs;
     }
@@ -187,6 +165,7 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

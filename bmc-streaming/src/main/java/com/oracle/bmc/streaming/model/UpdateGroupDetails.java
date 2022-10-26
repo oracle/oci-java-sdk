@@ -5,22 +5,22 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Request body for operationally managing a group.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Request body for operationally managing a group. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateGroupDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateGroupDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateGroupDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "time"})
     public UpdateGroupDetails(Type type, java.util.Date time) {
@@ -31,33 +31,31 @@ public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of the cursor.
-         **/
+        /** The type of the cursor. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of the cursor.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The time to consume from if type is AT_TIME.
-         **/
+        /** The time to consume from if type is AT_TIME. */
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private java.util.Date time;
 
         /**
          * The time to consume from if type is AT_TIME.
+         *
          * @param time the value to set
          * @return this builder
-         **/
+         */
         public Builder time(java.util.Date time) {
             this.time = time;
             this.__explicitlySet__.add("time");
@@ -87,9 +85,7 @@ public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,10 +94,8 @@ public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of the cursor.
-     **/
-    public enum Type {
+    /** The type of the cursor. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         AtTime("AT_TIME"),
         Latest("LATEST"),
         TrimHorizon("TRIM_HORIZON"),
@@ -134,30 +128,28 @@ public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.Expli
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /**
-     * The type of the cursor.
-     **/
+    /** The type of the cursor. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of the cursor.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * The time to consume from if type is AT_TIME.
-     **/
+    /** The time to consume from if type is AT_TIME. */
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final java.util.Date time;
 
     /**
      * The time to consume from if type is AT_TIME.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTime() {
         return time;
     }
@@ -169,6 +161,7 @@ public final class UpdateGroupDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

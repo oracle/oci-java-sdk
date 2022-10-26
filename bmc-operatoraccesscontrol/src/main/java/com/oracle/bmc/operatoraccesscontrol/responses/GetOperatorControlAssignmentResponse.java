@@ -8,10 +8,7 @@ import com.oracle.bmc.operatoraccesscontrol.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,14 +36,13 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /**
-     * The returned OperatorControlAssignment instance.
-     */
+    /** The returned OperatorControlAssignment instance. */
     private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
             operatorControlAssignment;
 
     /**
      * The returned OperatorControlAssignment instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
@@ -64,7 +59,7 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
     })
     private GetOperatorControlAssignmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
@@ -75,25 +70,26 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
         this.operatorControlAssignment = operatorControlAssignment;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetOperatorControlAssignmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -108,15 +104,14 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -126,14 +121,13 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * The returned OperatorControlAssignment instance.
-         */
+        /** The returned OperatorControlAssignment instance. */
         private com.oracle.bmc.operatoraccesscontrol.model.OperatorControlAssignment
                 operatorControlAssignment;
 
         /**
          * The returned OperatorControlAssignment instance.
+         *
          * @param operatorControlAssignment the value to set
          * @return this builder
          */
@@ -146,8 +140,10 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetOperatorControlAssignmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -160,8 +156,10 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetOperatorControlAssignmentResponse build() {
             return new GetOperatorControlAssignmentResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, operatorControlAssignment);
@@ -170,6 +168,7 @@ public class GetOperatorControlAssignmentResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

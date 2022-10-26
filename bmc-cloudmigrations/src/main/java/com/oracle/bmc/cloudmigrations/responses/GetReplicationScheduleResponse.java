@@ -8,10 +8,7 @@ import com.oracle.bmc.cloudmigrations.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control, see {@code if-match.}
-     *
-     */
+    /** For optimistic concurrency control, see {@code if-match.} */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * The returned ReplicationSchedule instance.
-     */
+    /** The returned ReplicationSchedule instance. */
     private com.oracle.bmc.cloudmigrations.model.ReplicationSchedule replicationSchedule;
 
     /**
      * The returned ReplicationSchedule instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.cloudmigrations.model.ReplicationSchedule getReplicationSchedule() {
@@ -62,7 +57,7 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetReplicationScheduleResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.cloudmigrations.model.ReplicationSchedule replicationSchedule) {
@@ -72,25 +67,26 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
         this.replicationSchedule = replicationSchedule;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetReplicationScheduleResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control, see {@code if-match.}
-         *
-         */
+        /** For optimistic concurrency control, see {@code if-match.} */
         private String etag;
 
         /**
@@ -105,15 +101,14 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +118,12 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned ReplicationSchedule instance.
-         */
+        /** The returned ReplicationSchedule instance. */
         private com.oracle.bmc.cloudmigrations.model.ReplicationSchedule replicationSchedule;
 
         /**
          * The returned ReplicationSchedule instance.
+         *
          * @param replicationSchedule the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetReplicationScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetReplicationScheduleResponse build() {
             return new GetReplicationScheduleResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, replicationSchedule);
@@ -165,6 +163,7 @@ public class GetReplicationScheduleResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

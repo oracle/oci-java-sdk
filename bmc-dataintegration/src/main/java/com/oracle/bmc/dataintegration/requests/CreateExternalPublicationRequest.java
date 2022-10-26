@@ -6,74 +6,61 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateExternalPublicationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateExternalPublicationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * CreateExternalPublicationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class CreateExternalPublicationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails> {
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     private String workspaceId;
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /**
-     * The task key.
-     */
+    /** The task key. */
     private String taskKey;
 
-    /**
-     * The task key.
-     */
+    /** The task key. */
     public String getTaskKey() {
         return taskKey;
     }
-    /**
-     * Details needed to publish a task to OCI DataFlow application.
-     */
+    /** Details needed to publish a task to OCI DataFlow application. */
     private com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
             createExternalPublicationDetails;
 
-    /**
-     * Details needed to publish a task to OCI DataFlow application.
-     */
+    /** Details needed to publish a task to OCI DataFlow application. */
     public com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
             getCreateExternalPublicationDetails() {
         return createExternalPublicationDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -81,6 +68,7 @@ public class CreateExternalPublicationRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -93,17 +81,15 @@ public class CreateExternalPublicationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateExternalPublicationRequest,
                     com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The workspace ID.
-         */
+        /** The workspace ID. */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -112,13 +98,12 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
-        /**
-         * The task key.
-         */
+        /** The task key. */
         private String taskKey = null;
 
         /**
          * The task key.
+         *
          * @param taskKey the value to set
          * @return this builder instance
          */
@@ -127,14 +112,13 @@ public class CreateExternalPublicationRequest
             return this;
         }
 
-        /**
-         * Details needed to publish a task to OCI DataFlow application.
-         */
+        /** Details needed to publish a task to OCI DataFlow application. */
         private com.oracle.bmc.dataintegration.model.CreateExternalPublicationDetails
                 createExternalPublicationDetails = null;
 
         /**
          * Details needed to publish a task to OCI DataFlow application.
+         *
          * @param createExternalPublicationDetails the value to set
          * @return this builder instance
          */
@@ -146,17 +130,14 @@ public class CreateExternalPublicationRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -167,13 +148,14 @@ public class CreateExternalPublicationRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -185,18 +167,19 @@ public class CreateExternalPublicationRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -208,6 +191,7 @@ public class CreateExternalPublicationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateExternalPublicationRequest o) {
@@ -224,10 +208,11 @@ public class CreateExternalPublicationRequest
         /**
          * Build the instance of CreateExternalPublicationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateExternalPublicationRequest
          */
@@ -240,6 +225,7 @@ public class CreateExternalPublicationRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -253,7 +239,8 @@ public class CreateExternalPublicationRequest
         /**
          * Build the instance of CreateExternalPublicationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateExternalPublicationRequest
@@ -266,12 +253,14 @@ public class CreateExternalPublicationRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateExternalPublicationRequest(workspaceId, taskKey, createExternalPublicationDetails, opcRequestId, opcRetryToken);
+            // new CreateExternalPublicationRequest(workspaceId, taskKey,
+            // createExternalPublicationDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -285,6 +274,7 @@ public class CreateExternalPublicationRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,29 +6,30 @@ package com.oracle.bmc.identity.model;
 
 /**
  * A mapping between a single group defined by the identity provider (IdP) you're federating with
- * and a single IAM Service {@link Group} in Oracle Cloud Infrastructure.
- * For more information about group mappings and what they're for, see
- * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
- * <p>
- * A given IdP group can be mapped to zero, one, or multiple IAM Service groups, and vice versa.
+ * and a single IAM Service {@link Group} in Oracle Cloud Infrastructure. For more information about
+ * group mappings and what they're for, see [Identity Providers and
+ * Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
+ *
+ * <p>A given IdP group can be mapped to zero, one, or multiple IAM Service groups, and vice versa.
  * But each {@code IdPGroupMapping} object is between only a single IdP group and IAM Service group.
  * Each {@code IdPGroupMapping} object has its own OCID.
- * <p>
- **Note:** Any users who are in more than 50 IdP groups cannot be authenticated to use the Oracle
- * Cloud Infrastructure Console.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Note:** Any users who are in more than 50 IdP groups cannot be authenticated to use the
+ * Oracle Cloud Infrastructure Console. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdpGroupMapping.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IdpGroupMapping extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class IdpGroupMapping
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -62,81 +63,76 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the {@code IdpGroupMapping}.
-         **/
+        /** The OCID of the {@code IdpGroupMapping}. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the {@code IdpGroupMapping}.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the {@code IdentityProvider} this mapping belongs to.
-         **/
+        /** The OCID of the {@code IdentityProvider} this mapping belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("idpId")
         private String idpId;
 
         /**
          * The OCID of the {@code IdentityProvider} this mapping belongs to.
+         *
          * @param idpId the value to set
          * @return this builder
-         **/
+         */
         public Builder idpId(String idpId) {
             this.idpId = idpId;
             this.__explicitlySet__.add("idpId");
             return this;
         }
-        /**
-         * The name of the IdP group that is mapped to the IAM Service group.
-         **/
+        /** The name of the IdP group that is mapped to the IAM Service group. */
         @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
         /**
          * The name of the IdP group that is mapped to the IAM Service group.
+         *
          * @param idpGroupName the value to set
          * @return this builder
-         **/
+         */
         public Builder idpGroupName(String idpGroupName) {
             this.idpGroupName = idpGroupName;
             this.__explicitlySet__.add("idpGroupName");
             return this;
         }
-        /**
-         * The OCID of the IAM Service group that is mapped to the IdP group.
-         **/
+        /** The OCID of the IAM Service group that is mapped to the IdP group. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         /**
          * The OCID of the IAM Service group that is mapped to the IdP group.
+         *
          * @param groupId the value to set
          * @return this builder
-         **/
+         */
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
             return this;
         }
-        /**
-         * The OCID of the tenancy containing the {@code IdentityProvider}.
-         **/
+        /** The OCID of the tenancy containing the {@code IdentityProvider}. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy containing the {@code IdentityProvider}.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -144,57 +140,54 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Date and time the mapping was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the mapping was created, in the format defined by RFC3339.
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
-         * from CREATING to ACTIVE before using it.
-         *
-         **/
+         * The mapping's current state. After creating a mapping object, make sure its {@code
+         * lifecycleState} changes from CREATING to ACTIVE before using it.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
-         * from CREATING to ACTIVE before using it.
+         * The mapping's current state. After creating a mapping object, make sure its {@code
+         * lifecycleState} changes from CREATING to ACTIVE before using it.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The detailed status of INACTIVE lifecycleState.
-         **/
+        /** The detailed status of INACTIVE lifecycleState. */
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         /**
          * The detailed status of INACTIVE lifecycleState.
+         *
          * @param inactiveStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder inactiveStatus(Long inactiveStatus) {
             this.inactiveStatus = inactiveStatus;
             this.__explicitlySet__.add("inactiveStatus");
@@ -251,9 +244,7 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -262,102 +253,95 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the {@code IdpGroupMapping}.
-     **/
+    /** The OCID of the {@code IdpGroupMapping}. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the {@code IdpGroupMapping}.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the {@code IdentityProvider} this mapping belongs to.
-     **/
+    /** The OCID of the {@code IdentityProvider} this mapping belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("idpId")
     private final String idpId;
 
     /**
      * The OCID of the {@code IdentityProvider} this mapping belongs to.
+     *
      * @return the value
-     **/
+     */
     public String getIdpId() {
         return idpId;
     }
 
-    /**
-     * The name of the IdP group that is mapped to the IAM Service group.
-     **/
+    /** The name of the IdP group that is mapped to the IAM Service group. */
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
     private final String idpGroupName;
 
     /**
      * The name of the IdP group that is mapped to the IAM Service group.
+     *
      * @return the value
-     **/
+     */
     public String getIdpGroupName() {
         return idpGroupName;
     }
 
-    /**
-     * The OCID of the IAM Service group that is mapped to the IdP group.
-     **/
+    /** The OCID of the IAM Service group that is mapped to the IdP group. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
     /**
      * The OCID of the IAM Service group that is mapped to the IdP group.
+     *
      * @return the value
-     **/
+     */
     public String getGroupId() {
         return groupId;
     }
 
-    /**
-     * The OCID of the tenancy containing the {@code IdentityProvider}.
-     **/
+    /** The OCID of the tenancy containing the {@code IdentityProvider}. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy containing the {@code IdentityProvider}.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * Date and time the mapping was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the mapping was created, in the format defined by RFC3339.
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
-     *
-     **/
-    public enum LifecycleState {
+     * The mapping's current state. After creating a mapping object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -365,8 +349,8 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -406,33 +390,31 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
         }
     };
     /**
-     * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
-     *
-     **/
+     * The mapping's current state. After creating a mapping object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The mapping's current state.  After creating a mapping object, make sure its {@code lifecycleState} changes
-     * from CREATING to ACTIVE before using it.
+     * The mapping's current state. After creating a mapping object, make sure its {@code
+     * lifecycleState} changes from CREATING to ACTIVE before using it.
      *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The detailed status of INACTIVE lifecycleState.
-     **/
+    /** The detailed status of INACTIVE lifecycleState. */
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     private final Long inactiveStatus;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
+     *
      * @return the value
-     **/
+     */
     public Long getInactiveStatus() {
         return inactiveStatus;
     }
@@ -444,6 +426,7 @@ public final class IdpGroupMapping extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

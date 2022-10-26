@@ -10,8 +10,9 @@ import com.oracle.bmc.mysql.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of WorkRequests.
- * <p>
- * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ *
+ * <p>The default configuration used is defined by {@link
+ * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class WorkRequestsWaiters {

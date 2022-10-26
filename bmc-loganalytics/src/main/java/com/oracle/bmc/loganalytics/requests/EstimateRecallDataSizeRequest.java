@@ -6,53 +6,43 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EstimateRecallDataSizeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use EstimateRecallDataSizeRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/EstimateRecallDataSizeExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * EstimateRecallDataSizeRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class EstimateRecallDataSizeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails> {
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /**
-     * This is the input to estimate the size of data to be recalled.
-     */
+    /** This is the input to estimate the size of data to be recalled. */
     private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
             estimateRecallDataSizeDetails;
 
-    /**
-     * This is the input to estimate the size of data to be recalled.
-     */
+    /** This is the input to estimate the size of data to be recalled. */
     public com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
             getEstimateRecallDataSizeDetails() {
         return estimateRecallDataSizeDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -70,14 +60,10 @@ public class EstimateRecallDataSizeRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EstimateRecallDataSizeRequest,
                     com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Logging Analytics namespace used for the request.
-         *
-         */
+        /** The Logging Analytics namespace used for the request. */
         private String namespaceName = null;
 
         /**
@@ -91,14 +77,13 @@ public class EstimateRecallDataSizeRequest
             return this;
         }
 
-        /**
-         * This is the input to estimate the size of data to be recalled.
-         */
+        /** This is the input to estimate the size of data to be recalled. */
         private com.oracle.bmc.loganalytics.model.EstimateRecallDataSizeDetails
                 estimateRecallDataSizeDetails = null;
 
         /**
          * This is the input to estimate the size of data to be recalled.
+         *
          * @param estimateRecallDataSizeDetails the value to set
          * @return this builder instance
          */
@@ -109,13 +94,12 @@ public class EstimateRecallDataSizeRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -126,18 +110,19 @@ public class EstimateRecallDataSizeRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -149,6 +134,7 @@ public class EstimateRecallDataSizeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(EstimateRecallDataSizeRequest o) {
@@ -163,10 +149,11 @@ public class EstimateRecallDataSizeRequest
         /**
          * Build the instance of EstimateRecallDataSizeRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of EstimateRecallDataSizeRequest
          */
@@ -179,6 +166,7 @@ public class EstimateRecallDataSizeRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -191,7 +179,8 @@ public class EstimateRecallDataSizeRequest
         /**
          * Build the instance of EstimateRecallDataSizeRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of EstimateRecallDataSizeRequest
@@ -202,12 +191,14 @@ public class EstimateRecallDataSizeRequest
             request.estimateRecallDataSizeDetails = estimateRecallDataSizeDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new EstimateRecallDataSizeRequest(namespaceName, estimateRecallDataSizeDetails, opcRequestId);
+            // new EstimateRecallDataSizeRequest(namespaceName, estimateRecallDataSizeDetails,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -219,6 +210,7 @@ public class EstimateRecallDataSizeRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

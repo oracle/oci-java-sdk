@@ -5,57 +5,58 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Credentials to access the Oracle Process Cloud Service application in the source environment. Application Migration connects to the
- * application in the source environment with the supplied credentials.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Credentials to access the Oracle Process Cloud Service application in the source environment.
+ * Application Migration connects to the application in the source environment with the supplied
+ * credentials. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PcsDiscoveryDetails.Builder.class
-)
+        builder = PcsDiscoveryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PcsDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Application administrator username to access the Oracle Process Cloud Service application in the source environment.
-         **/
+         * Application administrator username to access the Oracle Process Cloud Service application
+         * in the source environment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
         private String serviceInstanceUser;
 
         /**
-         * Application administrator username to access the Oracle Process Cloud Service application in the source environment.
+         * Application administrator username to access the Oracle Process Cloud Service application
+         * in the source environment.
+         *
          * @param serviceInstanceUser the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstanceUser(String serviceInstanceUser) {
             this.serviceInstanceUser = serviceInstanceUser;
             this.__explicitlySet__.add("serviceInstanceUser");
             return this;
         }
-        /**
-         * Password for this user.
-         **/
+        /** Password for this user. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
         private String serviceInstancePassword;
 
         /**
          * Password for this user.
+         *
          * @param serviceInstancePassword the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstancePassword(String serviceInstancePassword) {
             this.serviceInstancePassword = serviceInstancePassword;
             this.__explicitlySet__.add("serviceInstancePassword");
@@ -86,9 +87,7 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,29 +104,31 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * Application administrator username to access the Oracle Process Cloud Service application in the source environment.
-     **/
+     * Application administrator username to access the Oracle Process Cloud Service application in
+     * the source environment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceUser")
     private final String serviceInstanceUser;
 
     /**
-     * Application administrator username to access the Oracle Process Cloud Service application in the source environment.
+     * Application administrator username to access the Oracle Process Cloud Service application in
+     * the source environment.
+     *
      * @return the value
-     **/
+     */
     public String getServiceInstanceUser() {
         return serviceInstanceUser;
     }
 
-    /**
-     * Password for this user.
-     **/
+    /** Password for this user. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstancePassword")
     private final String serviceInstancePassword;
 
     /**
      * Password for this user.
+     *
      * @return the value
-     **/
+     */
     public String getServiceInstancePassword() {
         return serviceInstancePassword;
     }
@@ -139,6 +140,7 @@ public final class PcsDiscoveryDetails extends DiscoveryDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

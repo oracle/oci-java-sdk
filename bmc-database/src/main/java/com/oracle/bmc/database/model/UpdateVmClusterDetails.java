@@ -5,24 +5,25 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for updating the VM cluster. Applies to Exadata Cloud@Customer instances only.
- * For details on updating a cloud VM cluster in an Exadata Cloud Service instance, see {@link #updateCloudVmClusterDetails(UpdateCloudVmClusterDetailsRequest) updateCloudVmClusterDetails}
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for updating the VM cluster. Applies to Exadata Cloud@Customer instances only. For
+ * details on updating a cloud VM cluster in an Exadata Cloud Service instance, see {@link
+ * #updateCloudVmClusterDetails(UpdateCloudVmClusterDetailsRequest) updateCloudVmClusterDetails}
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateVmClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateVmClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateVmClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpuCoreCount",
@@ -71,115 +72,114 @@ public final class UpdateVmClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of CPU cores to enable for the VM cluster.
-         **/
+        /** The number of CPU cores to enable for the VM cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
          * The number of CPU cores to enable for the VM cluster.
+         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
         /**
-         * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
-         **/
+         * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed
+         * for the fractional part.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
         /**
-         * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+         * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed
+         * for the fractional part.
+         *
          * @param ocpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
-        /**
-         * The memory to be allocated in GBs.
-         **/
+        /** The memory to be allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
          * The memory to be allocated in GBs.
+         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-        /**
-         * The local node storage to be allocated in GBs.
-         **/
+        /** The local node storage to be allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
         private Integer dbNodeStorageSizeInGBs;
 
         /**
          * The local node storage to be allocated in GBs.
+         *
          * @param dbNodeStorageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
             this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
-        /**
-         * The data disk group size to be allocated in TBs.
-         **/
+        /** The data disk group size to be allocated in TBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Double dataStorageSizeInTBs;
 
         /**
          * The data disk group size to be allocated in TBs.
+         *
          * @param dataStorageSizeInTBs the value to set
          * @return this builder
-         **/
+         */
         public Builder dataStorageSizeInTBs(Double dataStorageSizeInTBs) {
             this.dataStorageSizeInTBs = dataStorageSizeInTBs;
             this.__explicitlySet__.add("dataStorageSizeInTBs");
             return this;
         }
-        /**
-         * The data disk group size to be allocated in GBs.
-         **/
+        /** The data disk group size to be allocated in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Double dataStorageSizeInGBs;
 
         /**
          * The data disk group size to be allocated in GBs.
+         *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder dataStorageSizeInGBs(Double dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
         /**
-         * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-         *
-         **/
+         * The Oracle license model that applies to the VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to the VM cluster. The default is
+         * BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -187,15 +187,16 @@ public final class UpdateVmClusterDetails
         }
         /**
          * The public key portion of one or more key pairs used for SSH access to the VM cluster.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
         /**
          * The public key portion of one or more key pairs used for SSH access to the VM cluster.
+         *
          * @param sshPublicKeys the value to set
          * @return this builder
-         **/
+         */
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
@@ -220,44 +221,46 @@ public final class UpdateVmClusterDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -344,9 +347,7 @@ public final class UpdateVmClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -355,95 +356,93 @@ public final class UpdateVmClusterDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of CPU cores to enable for the VM cluster.
-     **/
+    /** The number of CPU cores to enable for the VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
      * The number of CPU cores to enable for the VM cluster.
+     *
      * @return the value
-     **/
+     */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
     /**
-     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
-     **/
+     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for
+     * the fractional part.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
     /**
-     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for
+     * the fractional part.
+     *
      * @return the value
-     **/
+     */
     public Float getOcpuCount() {
         return ocpuCount;
     }
 
-    /**
-     * The memory to be allocated in GBs.
-     **/
+    /** The memory to be allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
      * The memory to be allocated in GBs.
+     *
      * @return the value
-     **/
+     */
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
 
-    /**
-     * The local node storage to be allocated in GBs.
-     **/
+    /** The local node storage to be allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
     private final Integer dbNodeStorageSizeInGBs;
 
     /**
      * The local node storage to be allocated in GBs.
+     *
      * @return the value
-     **/
+     */
     public Integer getDbNodeStorageSizeInGBs() {
         return dbNodeStorageSizeInGBs;
     }
 
-    /**
-     * The data disk group size to be allocated in TBs.
-     **/
+    /** The data disk group size to be allocated in TBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     private final Double dataStorageSizeInTBs;
 
     /**
      * The data disk group size to be allocated in TBs.
+     *
      * @return the value
-     **/
+     */
     public Double getDataStorageSizeInTBs() {
         return dataStorageSizeInTBs;
     }
 
-    /**
-     * The data disk group size to be allocated in GBs.
-     **/
+    /** The data disk group size to be allocated in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Double dataStorageSizeInGBs;
 
     /**
      * The data disk group size to be allocated in GBs.
+     *
      * @return the value
-     **/
+     */
     public Double getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
     }
 
     /**
-     * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-     *
-     **/
-    public enum LicenseModel {
+     * The Oracle license model that applies to the VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
+     */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -476,31 +475,31 @@ public final class UpdateVmClusterDetails
         }
     };
     /**
-     * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-     *
-     **/
+     * The Oracle license model that applies to the VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to the VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the VM cluster. The default is
+     * BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
-    /**
-     * The public key portion of one or more key pairs used for SSH access to the VM cluster.
-     **/
+    /** The public key portion of one or more key pairs used for SSH access to the VM cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     private final java.util.List<String> sshPublicKeys;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSshPublicKeys() {
         return sshPublicKeys;
     }
@@ -520,41 +519,43 @@ public final class UpdateVmClusterDetails
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -573,6 +574,7 @@ public final class UpdateVmClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

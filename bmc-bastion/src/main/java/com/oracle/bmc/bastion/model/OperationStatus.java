@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.bastion.model;
 
-/**
- * Possible operation status.
- **/
+/** Possible operation status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-public enum OperationStatus {
+public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

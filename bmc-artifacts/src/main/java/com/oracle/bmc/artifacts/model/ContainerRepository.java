@@ -5,21 +5,22 @@
 package com.oracle.bmc.artifacts.model;
 
 /**
- * Container repository metadata.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Container repository metadata. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ContainerRepository.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ContainerRepository extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ContainerRepository.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ContainerRepository
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -71,167 +72,163 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the compartment in which the container repository exists.
-         **/
+        /** The OCID of the compartment in which the container repository exists. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment in which the container repository exists.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The id of the user or principal that created the resource.
-         **/
+        /** The id of the user or principal that created the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * The id of the user or principal that created the resource.
+         *
          * @param createdBy the value to set
          * @return this builder
-         **/
+         */
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /**
-         * The container repository name.
-         **/
+        /** The container repository name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The container repository name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-         * <p>
-         * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container repository.
          *
-         **/
+         * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-         * <p>
-         * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the container repository.
+         *
+         * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Total number of images.
-         **/
+        /** Total number of images. */
         @com.fasterxml.jackson.annotation.JsonProperty("imageCount")
         private Integer imageCount;
 
         /**
          * Total number of images.
+         *
          * @param imageCount the value to set
          * @return this builder
-         **/
+         */
         public Builder imageCount(Integer imageCount) {
             this.imageCount = imageCount;
             this.__explicitlySet__.add("imageCount");
             return this;
         }
         /**
-         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-         **/
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable
+         * repository.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
         private Boolean isImmutable;
 
         /**
-         * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * Whether the repository is immutable. Images cannot be overwritten in an immutable
+         * repository.
+         *
          * @param isImmutable the value to set
          * @return this builder
-         **/
+         */
         public Builder isImmutable(Boolean isImmutable) {
             this.isImmutable = isImmutable;
             this.__explicitlySet__.add("isImmutable");
             return this;
         }
-        /**
-         * Whether the repository is public. A public repository allows unauthenticated access.
-         **/
+        /** Whether the repository is public. A public repository allows unauthenticated access. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
         /**
          * Whether the repository is public. A public repository allows unauthenticated access.
+         *
          * @param isPublic the value to set
          * @return this builder
-         **/
+         */
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
             return this;
         }
-        /**
-         * Total number of layers.
-         **/
+        /** Total number of layers. */
         @com.fasterxml.jackson.annotation.JsonProperty("layerCount")
         private Integer layerCount;
 
         /**
          * Total number of layers.
+         *
          * @param layerCount the value to set
          * @return this builder
-         **/
+         */
         public Builder layerCount(Integer layerCount) {
             this.layerCount = layerCount;
             this.__explicitlySet__.add("layerCount");
             return this;
         }
-        /**
-         * Total storage in bytes consumed by layers.
-         **/
+        /** Total storage in bytes consumed by layers. */
         @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
         private Long layersSizeInBytes;
 
         /**
          * Total storage in bytes consumed by layers.
+         *
          * @param layersSizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder layersSizeInBytes(Long layersSizeInBytes) {
             this.layersSizeInBytes = layersSizeInBytes;
             this.__explicitlySet__.add("layersSizeInBytes");
             return this;
         }
-        /**
-         * The current state of the container repository.
-         **/
+        /** The current state of the container repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the container repository.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -246,49 +243,46 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("readme");
             return this;
         }
-        /**
-         * An RFC 3339 timestamp indicating when the repository was created.
-         **/
+        /** An RFC 3339 timestamp indicating when the repository was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * An RFC 3339 timestamp indicating when the repository was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-         **/
+        /** An RFC 3339 timestamp indicating when an image was last pushed to the repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastPushed")
         private java.util.Date timeLastPushed;
 
         /**
          * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
+         *
          * @param timeLastPushed the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastPushed(java.util.Date timeLastPushed) {
             this.timeLastPushed = timeLastPushed;
             this.__explicitlySet__.add("timeLastPushed");
             return this;
         }
-        /**
-         * Total storage size in GBs that will be charged.
-         **/
+        /** Total storage size in GBs that will be charged. */
         @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
         private Long billableSizeInGBs;
 
         /**
          * Total storage size in GBs that will be charged.
+         *
          * @param billableSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder billableSizeInGBs(Long billableSizeInGBs) {
             this.billableSizeInGBs = billableSizeInGBs;
             this.__explicitlySet__.add("billableSizeInGBs");
@@ -369,9 +363,7 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -380,149 +372,142 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the compartment in which the container repository exists.
-     **/
+    /** The OCID of the compartment in which the container repository exists. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment in which the container repository exists.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The id of the user or principal that created the resource.
-     **/
+    /** The id of the user or principal that created the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * The id of the user or principal that created the resource.
+     *
      * @return the value
-     **/
+     */
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /**
-     * The container repository name.
-     **/
+    /** The container repository name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The container repository name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-     * <p>
-     * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container repository.
      *
-     **/
+     * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
-     * <p>
-     * Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the container repository.
+     *
+     * <p>Example: {@code ocid1.containerrepo.oc1..exampleuniqueID}
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Total number of images.
-     **/
+    /** Total number of images. */
     @com.fasterxml.jackson.annotation.JsonProperty("imageCount")
     private final Integer imageCount;
 
     /**
      * Total number of images.
+     *
      * @return the value
-     **/
+     */
     public Integer getImageCount() {
         return imageCount;
     }
 
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isImmutable")
     private final Boolean isImmutable;
 
     /**
      * Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsImmutable() {
         return isImmutable;
     }
 
-    /**
-     * Whether the repository is public. A public repository allows unauthenticated access.
-     **/
+    /** Whether the repository is public. A public repository allows unauthenticated access. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
     /**
      * Whether the repository is public. A public repository allows unauthenticated access.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
 
-    /**
-     * Total number of layers.
-     **/
+    /** Total number of layers. */
     @com.fasterxml.jackson.annotation.JsonProperty("layerCount")
     private final Integer layerCount;
 
     /**
      * Total number of layers.
+     *
      * @return the value
-     **/
+     */
     public Integer getLayerCount() {
         return layerCount;
     }
 
-    /**
-     * Total storage in bytes consumed by layers.
-     **/
+    /** Total storage in bytes consumed by layers. */
     @com.fasterxml.jackson.annotation.JsonProperty("layersSizeInBytes")
     private final Long layersSizeInBytes;
 
     /**
      * Total storage in bytes consumed by layers.
+     *
      * @return the value
-     **/
+     */
     public Long getLayersSizeInBytes() {
         return layersSizeInBytes;
     }
 
-    /**
-     * The current state of the container repository.
-     **/
-    public enum LifecycleState {
+    /** The current state of the container repository. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Available("AVAILABLE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -561,16 +546,15 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the container repository.
-     **/
+    /** The current state of the container repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the container repository.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -582,44 +566,41 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
         return readme;
     }
 
-    /**
-     * An RFC 3339 timestamp indicating when the repository was created.
-     **/
+    /** An RFC 3339 timestamp indicating when the repository was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * An RFC 3339 timestamp indicating when the repository was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-     **/
+    /** An RFC 3339 timestamp indicating when an image was last pushed to the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastPushed")
     private final java.util.Date timeLastPushed;
 
     /**
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastPushed() {
         return timeLastPushed;
     }
 
-    /**
-     * Total storage size in GBs that will be charged.
-     **/
+    /** Total storage size in GBs that will be charged. */
     @com.fasterxml.jackson.annotation.JsonProperty("billableSizeInGBs")
     private final Long billableSizeInGBs;
 
     /**
      * Total storage size in GBs that will be charged.
+     *
      * @return the value
-     **/
+     */
     public Long getBillableSizeInGBs() {
         return billableSizeInGBs;
     }
@@ -631,6 +612,7 @@ public final class ContainerRepository extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

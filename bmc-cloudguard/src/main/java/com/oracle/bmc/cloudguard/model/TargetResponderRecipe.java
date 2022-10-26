@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Details of Target ResponderRecipe
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of Target ResponderRecipe <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TargetResponderRecipe.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TargetResponderRecipe.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TargetResponderRecipe
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,162 +60,160 @@ public final class TargetResponderRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier of TargetResponderRecipe that can't be changed after creation.
-         **/
+        /** Unique identifier of TargetResponderRecipe that can't be changed after creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Unique identifier for Responder Recipe of which this is an extension.
-         **/
+        /** Unique identifier for Responder Recipe of which this is an extension. */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
         private String responderRecipeId;
 
         /**
          * Unique identifier for Responder Recipe of which this is an extension.
+         *
          * @param responderRecipeId the value to set
          * @return this builder
-         **/
+         */
         public Builder responderRecipeId(String responderRecipeId) {
             this.responderRecipeId = responderRecipeId;
             this.__explicitlySet__.add("responderRecipeId");
             return this;
         }
-        /**
-         * Compartment Identifier
-         **/
+        /** Compartment Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * ResponderRecipe display name.
-         **/
+        /** ResponderRecipe display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * ResponderRecipe display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * ResponderRecipe description.
-         **/
+        /** ResponderRecipe description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * ResponderRecipe description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Owner of ResponderRecipe
-         **/
+        /** Owner of ResponderRecipe */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
          * Owner of ResponderRecipe
+         *
          * @param owner the value to set
          * @return this builder
-         **/
+         */
         public Builder owner(OwnerType owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
         /**
-         * The date and time the target responder recipe rule was created. Format defined by RFC3339.
-         **/
+         * The date and time the target responder recipe rule was created. Format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the target responder recipe rule was created. Format defined by RFC3339.
+         * The date and time the target responder recipe rule was created. Format defined by
+         * RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
-         **/
+         * The date and time the target responder recipe rule was updated. Format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+         * The date and time the target responder recipe rule was updated. Format defined by
+         * RFC3339.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * List of responder rules associated with the recipe - user input
-         **/
+        /** List of responder rules associated with the recipe - user input */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<TargetResponderRecipeResponderRule> responderRules;
 
         /**
          * List of responder rules associated with the recipe - user input
+         *
          * @param responderRules the value to set
          * @return this builder
-         **/
+         */
         public Builder responderRules(
                 java.util.List<TargetResponderRecipeResponderRule> responderRules) {
             this.responderRules = responderRules;
             this.__explicitlySet__.add("responderRules");
             return this;
         }
-        /**
-         * List of responder rules associated with the recipe after applying all defaults
-         **/
+        /** List of responder rules associated with the recipe after applying all defaults */
         @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
         private java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
 
         /**
          * List of responder rules associated with the recipe after applying all defaults
+         *
          * @param effectiveResponderRules the value to set
          * @return this builder
-         **/
+         */
         public Builder effectiveResponderRules(
                 java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules) {
             this.effectiveResponderRules = effectiveResponderRules;
@@ -281,9 +279,7 @@ public final class TargetResponderRecipe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -292,142 +288,136 @@ public final class TargetResponderRecipe
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier of TargetResponderRecipe that can't be changed after creation.
-     **/
+    /** Unique identifier of TargetResponderRecipe that can't be changed after creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Unique identifier for Responder Recipe of which this is an extension.
-     **/
+    /** Unique identifier for Responder Recipe of which this is an extension. */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRecipeId")
     private final String responderRecipeId;
 
     /**
      * Unique identifier for Responder Recipe of which this is an extension.
+     *
      * @return the value
-     **/
+     */
     public String getResponderRecipeId() {
         return responderRecipeId;
     }
 
-    /**
-     * Compartment Identifier
-     **/
+    /** Compartment Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * ResponderRecipe display name.
-     **/
+    /** ResponderRecipe display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * ResponderRecipe display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * ResponderRecipe description.
-     **/
+    /** ResponderRecipe description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * ResponderRecipe description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Owner of ResponderRecipe
-     **/
+    /** Owner of ResponderRecipe */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
      * Owner of ResponderRecipe
+     *
      * @return the value
-     **/
+     */
     public OwnerType getOwner() {
         return owner;
     }
 
     /**
      * The date and time the target responder recipe rule was created. Format defined by RFC3339.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the target responder recipe rule was created. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the target responder recipe rule was updated. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * List of responder rules associated with the recipe - user input
-     **/
+    /** List of responder rules associated with the recipe - user input */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<TargetResponderRecipeResponderRule> responderRules;
 
     /**
      * List of responder rules associated with the recipe - user input
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TargetResponderRecipeResponderRule> getResponderRules() {
         return responderRules;
     }
 
-    /**
-     * List of responder rules associated with the recipe after applying all defaults
-     **/
+    /** List of responder rules associated with the recipe after applying all defaults */
     @com.fasterxml.jackson.annotation.JsonProperty("effectiveResponderRules")
     private final java.util.List<TargetResponderRecipeResponderRule> effectiveResponderRules;
 
     /**
      * List of responder rules associated with the recipe after applying all defaults
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TargetResponderRecipeResponderRule> getEffectiveResponderRules() {
         return effectiveResponderRules;
     }
@@ -439,6 +429,7 @@ public final class TargetResponderRecipe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

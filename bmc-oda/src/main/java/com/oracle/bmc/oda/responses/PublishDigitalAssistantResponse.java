@@ -9,12 +9,15 @@ import com.oracle.bmc.oda.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+     * control.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,15 +25,14 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -38,13 +40,12 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * The returned DigitalAssistant instance.
-     */
+    /** The returned DigitalAssistant instance. */
     private com.oracle.bmc.oda.model.DigitalAssistant digitalAssistant;
 
     /**
      * The returned DigitalAssistant instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.oda.model.DigitalAssistant getDigitalAssistant() {
@@ -60,7 +61,7 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
     })
     private PublishDigitalAssistantResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.oda.model.DigitalAssistant digitalAssistant) {
@@ -70,28 +71,35 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
         this.digitalAssistant = digitalAssistant;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    PublishDigitalAssistantResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
+         * control.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -101,15 +109,14 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +126,12 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned DigitalAssistant instance.
-         */
+        /** The returned DigitalAssistant instance. */
         private com.oracle.bmc.oda.model.DigitalAssistant digitalAssistant;
 
         /**
          * The returned DigitalAssistant instance.
+         *
          * @param digitalAssistant the value to set
          * @return this builder
          */
@@ -137,8 +143,10 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(PublishDigitalAssistantResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +159,10 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public PublishDigitalAssistantResponse build() {
             return new PublishDigitalAssistantResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, digitalAssistant);
@@ -161,6 +171,7 @@ public class PublishDigitalAssistantResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

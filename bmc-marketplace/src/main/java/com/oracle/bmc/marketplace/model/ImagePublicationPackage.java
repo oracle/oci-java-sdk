@@ -5,25 +5,24 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A publication package for image publications.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A publication package for image publications. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImagePublicationPackage.Builder.class
-)
+        builder = ImagePublicationPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "packageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "packageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImagePublicationPackage extends PublicationPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,18 +80,23 @@ public final class ImagePublicationPackage extends PublicationPackage {
             return this;
         }
         /**
-         * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
-         *
-         **/
+         * The ID of the listing resource associated with this publication package. For more
+         * information, see
+         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * in the Core Services API.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
         private String appCatalogListingId;
 
         /**
-         * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+         * The ID of the listing resource associated with this publication package. For more
+         * information, see
+         * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+         * in the Core Services API.
          *
          * @param appCatalogListingId the value to set
          * @return this builder
-         **/
+         */
         public Builder appCatalogListingId(String appCatalogListingId) {
             this.appCatalogListingId = appCatalogListingId;
             this.__explicitlySet__.add("appCatalogListingId");
@@ -100,31 +104,31 @@ public final class ImagePublicationPackage extends PublicationPackage {
         }
         /**
          * The resource version of the listing resource associated with this publication package.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
         private String appCatalogListingResourceVersion;
 
         /**
          * The resource version of the listing resource associated with this publication package.
+         *
          * @param appCatalogListingResourceVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder appCatalogListingResourceVersion(String appCatalogListingResourceVersion) {
             this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
             this.__explicitlySet__.add("appCatalogListingResourceVersion");
             return this;
         }
-        /**
-         * The ID of the image that corresponds to the package.
-         **/
+        /** The ID of the image that corresponds to the package. */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The ID of the image that corresponds to the package.
+         *
          * @param imageId the value to set
          * @return this builder
-         **/
+         */
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -185,9 +189,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -214,45 +216,48 @@ public final class ImagePublicationPackage extends PublicationPackage {
     }
 
     /**
-     * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
-     *
-     **/
+     * The ID of the listing resource associated with this publication package. For more
+     * information, see
+     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * in the Core Services API.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingId")
     private final String appCatalogListingId;
 
     /**
-     * The ID of the listing resource associated with this publication package. For more information, see [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/) in the Core Services API.
+     * The ID of the listing resource associated with this publication package. For more
+     * information, see
+     * [AppCatalogListing](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/)
+     * in the Core Services API.
      *
      * @return the value
-     **/
+     */
     public String getAppCatalogListingId() {
         return appCatalogListingId;
     }
 
-    /**
-     * The resource version of the listing resource associated with this publication package.
-     **/
+    /** The resource version of the listing resource associated with this publication package. */
     @com.fasterxml.jackson.annotation.JsonProperty("appCatalogListingResourceVersion")
     private final String appCatalogListingResourceVersion;
 
     /**
      * The resource version of the listing resource associated with this publication package.
+     *
      * @return the value
-     **/
+     */
     public String getAppCatalogListingResourceVersion() {
         return appCatalogListingResourceVersion;
     }
 
-    /**
-     * The ID of the image that corresponds to the package.
-     **/
+    /** The ID of the image that corresponds to the package. */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The ID of the image that corresponds to the package.
+     *
      * @return the value
-     **/
+     */
     public String getImageId() {
         return imageId;
     }
@@ -264,6 +269,7 @@ public final class ImagePublicationPackage extends PublicationPackage {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

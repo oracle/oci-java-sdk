@@ -5,22 +5,22 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for international market pricing.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The model for international market pricing. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InternationalMarketPrice.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InternationalMarketPrice.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InternationalMarketPrice
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currencyCode", "currencySymbol", "rate"})
     public InternationalMarketPrice(
@@ -33,49 +33,46 @@ public final class InternationalMarketPrice
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The currency of the pricing model.
-         **/
+        /** The currency of the pricing model. */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private PricingCurrencyEnum currencyCode;
 
         /**
          * The currency of the pricing model.
+         *
          * @param currencyCode the value to set
          * @return this builder
-         **/
+         */
         public Builder currencyCode(PricingCurrencyEnum currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /**
-         * The symbol of the currency
-         **/
+        /** The symbol of the currency */
         @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
         private String currencySymbol;
 
         /**
          * The symbol of the currency
+         *
          * @param currencySymbol the value to set
          * @return this builder
-         **/
+         */
         public Builder currencySymbol(String currencySymbol) {
             this.currencySymbol = currencySymbol;
             this.__explicitlySet__.add("currencySymbol");
             return this;
         }
-        /**
-         * The pricing rate.
-         **/
+        /** The pricing rate. */
         @com.fasterxml.jackson.annotation.JsonProperty("rate")
         private Double rate;
 
         /**
          * The pricing rate.
+         *
          * @param rate the value to set
          * @return this builder
-         **/
+         */
         public Builder rate(Double rate) {
             this.rate = rate;
             this.__explicitlySet__.add("rate");
@@ -109,9 +106,7 @@ public final class InternationalMarketPrice
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +115,41 @@ public final class InternationalMarketPrice
         return new Builder().copy(this);
     }
 
-    /**
-     * The currency of the pricing model.
-     **/
+    /** The currency of the pricing model. */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final PricingCurrencyEnum currencyCode;
 
     /**
      * The currency of the pricing model.
+     *
      * @return the value
-     **/
+     */
     public PricingCurrencyEnum getCurrencyCode() {
         return currencyCode;
     }
 
-    /**
-     * The symbol of the currency
-     **/
+    /** The symbol of the currency */
     @com.fasterxml.jackson.annotation.JsonProperty("currencySymbol")
     private final String currencySymbol;
 
     /**
      * The symbol of the currency
+     *
      * @return the value
-     **/
+     */
     public String getCurrencySymbol() {
         return currencySymbol;
     }
 
-    /**
-     * The pricing rate.
-     **/
+    /** The pricing rate. */
     @com.fasterxml.jackson.annotation.JsonProperty("rate")
     private final Double rate;
 
     /**
      * The pricing rate.
+     *
      * @return the value
-     **/
+     */
     public Double getRate() {
         return rate;
     }
@@ -169,6 +161,7 @@ public final class InternationalMarketPrice
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

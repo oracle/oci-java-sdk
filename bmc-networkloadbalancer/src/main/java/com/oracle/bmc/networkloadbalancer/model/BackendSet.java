@@ -5,24 +5,25 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The configuration of a network load balancer backend set.
- * For more information about backend set configuration, see
- * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
- * <p>
- **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * The configuration of a network load balancer backend set. For more information about backend set
+ * configuration, see [Managing Backend
+ * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Caution:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendSet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BackendSet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -52,27 +53,26 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
     public static class Builder {
         /**
          * A user-friendly name for the backend set that must be unique and cannot be changed.
-         * <p>
-         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
-         * contain spaces. Avoid entering confidential information.
-         * <p>
-         * Example: {@code example_backend_set}
          *
-         **/
+         * <p>Valid backend set names include only alphanumeric characters, dashes, and underscores.
+         * Backend set names cannot contain spaces. Avoid entering confidential information.
+         *
+         * <p>Example: {@code example_backend_set}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * A user-friendly name for the backend set that must be unique and cannot be changed.
-         * <p>
-         * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
-         * contain spaces. Avoid entering confidential information.
-         * <p>
-         * Example: {@code example_backend_set}
+         *
+         * <p>Valid backend set names include only alphanumeric characters, dashes, and underscores.
+         * Backend set names cannot contain spaces. Avoid entering confidential information.
+         *
+         * <p>Example: {@code example_backend_set}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -80,68 +80,64 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
         }
         /**
          * The network load balancer policy for the backend set.
-         * <p>
-         * Example: {@code FIVE_TUPLE}
          *
-         **/
+         * <p>Example: {@code FIVE_TUPLE}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private NetworkLoadBalancingPolicy policy;
 
         /**
          * The network load balancer policy for the backend set.
-         * <p>
-         * Example: {@code FIVE_TUPLE}
+         *
+         * <p>Example: {@code FIVE_TUPLE}
          *
          * @param policy the value to set
          * @return this builder
-         **/
+         */
         public Builder policy(NetworkLoadBalancingPolicy policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
         /**
-         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
-         * The value is true by default.
-         *
-         **/
+         * If this parameter is enabled, then the network load balancer preserves the source IP of
+         * the packet when it is forwarded to backends. Backends see the original source IP. If the
+         * isPreserveSourceDestination parameter is enabled for the network load balancer resource,
+         * then this parameter cannot be disabled. The value is true by default.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
         private Boolean isPreserveSource;
 
         /**
-         * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-         * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
-         * The value is true by default.
+         * If this parameter is enabled, then the network load balancer preserves the source IP of
+         * the packet when it is forwarded to backends. Backends see the original source IP. If the
+         * isPreserveSourceDestination parameter is enabled for the network load balancer resource,
+         * then this parameter cannot be disabled. The value is true by default.
          *
          * @param isPreserveSource the value to set
          * @return this builder
-         **/
+         */
         public Builder isPreserveSource(Boolean isPreserveSource) {
             this.isPreserveSource = isPreserveSource;
             this.__explicitlySet__.add("isPreserveSource");
             return this;
         }
-        /**
-         * IP version associated with the backend set.
-         **/
+        /** IP version associated with the backend set. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
 
         /**
          * IP version associated with the backend set.
+         *
          * @param ipVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder ipVersion(IpVersion ipVersion) {
             this.ipVersion = ipVersion;
             this.__explicitlySet__.add("ipVersion");
             return this;
         }
-        /**
-         * Array of backends.
-         *
-         **/
+        /** Array of backends. */
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<Backend> backends;
 
@@ -150,7 +146,7 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
          *
          * @param backends the value to set
          * @return this builder
-         **/
+         */
         public Builder backends(java.util.List<Backend> backends) {
             this.backends = backends;
             this.__explicitlySet__.add("backends");
@@ -208,9 +204,7 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,88 +215,83 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
-     * <p>
-     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
-     * contain spaces. Avoid entering confidential information.
-     * <p>
-     * Example: {@code example_backend_set}
      *
-     **/
+     * <p>Valid backend set names include only alphanumeric characters, dashes, and underscores.
+     * Backend set names cannot contain spaces. Avoid entering confidential information.
+     *
+     * <p>Example: {@code example_backend_set}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
-     * <p>
-     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
-     * contain spaces. Avoid entering confidential information.
-     * <p>
-     * Example: {@code example_backend_set}
+     *
+     * <p>Valid backend set names include only alphanumeric characters, dashes, and underscores.
+     * Backend set names cannot contain spaces. Avoid entering confidential information.
+     *
+     * <p>Example: {@code example_backend_set}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * The network load balancer policy for the backend set.
-     * <p>
-     * Example: {@code FIVE_TUPLE}
      *
-     **/
+     * <p>Example: {@code FIVE_TUPLE}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final NetworkLoadBalancingPolicy policy;
 
     /**
      * The network load balancer policy for the backend set.
-     * <p>
-     * Example: {@code FIVE_TUPLE}
+     *
+     * <p>Example: {@code FIVE_TUPLE}
      *
      * @return the value
-     **/
+     */
     public NetworkLoadBalancingPolicy getPolicy() {
         return policy;
     }
 
     /**
-     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
-     * The value is true by default.
-     *
-     **/
+     * If this parameter is enabled, then the network load balancer preserves the source IP of the
+     * packet when it is forwarded to backends. Backends see the original source IP. If the
+     * isPreserveSourceDestination parameter is enabled for the network load balancer resource, then
+     * this parameter cannot be disabled. The value is true by default.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSource")
     private final Boolean isPreserveSource;
 
     /**
-     * If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-     * Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
-     * The value is true by default.
+     * If this parameter is enabled, then the network load balancer preserves the source IP of the
+     * packet when it is forwarded to backends. Backends see the original source IP. If the
+     * isPreserveSourceDestination parameter is enabled for the network load balancer resource, then
+     * this parameter cannot be disabled. The value is true by default.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPreserveSource() {
         return isPreserveSource;
     }
 
-    /**
-     * IP version associated with the backend set.
-     **/
+    /** IP version associated with the backend set. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
 
     /**
      * IP version associated with the backend set.
+     *
      * @return the value
-     **/
+     */
     public IpVersion getIpVersion() {
         return ipVersion;
     }
 
-    /**
-     * Array of backends.
-     *
-     **/
+    /** Array of backends. */
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
     private final java.util.List<Backend> backends;
 
@@ -310,7 +299,7 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
      * Array of backends.
      *
      * @return the value
-     **/
+     */
     public java.util.List<Backend> getBackends() {
         return backends;
     }
@@ -329,6 +318,7 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

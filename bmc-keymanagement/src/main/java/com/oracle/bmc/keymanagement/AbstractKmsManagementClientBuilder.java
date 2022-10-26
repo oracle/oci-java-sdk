@@ -8,6 +8,7 @@ import com.oracle.bmc.Service;
 
 /**
  * An abstract client builder for clients that need the managementEndpoint
+ *
  * @param <B> actual builder class
  * @param <C> client class
  */

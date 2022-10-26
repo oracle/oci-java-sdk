@@ -45,16 +45,6 @@ public class FileBasedKeySupplier implements SessionKeySupplier {
     }
 
     @Override
-    public RSAPublicKey getPublicKey() {
-        return (RSAPublicKey) keyPair.getPublic();
-    }
-
-    @Override
-    public RSAPrivateKey getPrivateKey() {
-        return (RSAPrivateKey) keyPair.getPrivate();
-    }
-
-    @Override
     public void refreshKeys() {
         if (this.privateKeyPath == null) {
             throw new IllegalArgumentException("privateKeyPath not set");

@@ -4,73 +4,70 @@
  */
 package com.oracle.bmc;
 
-import com.oracle.bmc.internal.GuavaUtils;
-import com.oracle.bmc.util.VisibleForTesting;
-import com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder;
+import com.oracle.bmc.http.client.HttpClient;
+import com.oracle.bmc.http.client.HttpProvider;
+import com.oracle.bmc.http.client.HttpResponse;
+import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.client.StandardClientProperties;
+import com.oracle.bmc.http.internal.SyncFutureWaiter;
 import com.oracle.bmc.internal.EndpointBuilder;
-
 import com.oracle.bmc.model.RegionSchema;
 import com.oracle.bmc.model.internal.JsonConverter;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.FileUtils;
 import com.oracle.bmc.util.internal.NameUtils;
-import java.util.concurrent.locks.ReentrantLock;
 import com.oracle.bmc.util.internal.StringUtils;
+import org.slf4j.Logger;
 
 import javax.annotation.Nonnull;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.client.ClientProperties;
-import org.slf4j.Logger;
-import javax.ws.rs.core.MediaType;
 import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
+import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
+
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
-import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
+import static com.oracle.bmc.http.internal.HeaderUtils.AUTHORIZATION_HEADER_NAME;
+import static com.oracle.bmc.http.internal.HeaderUtils.MEDIA_TYPE_APPLICATION_JSON;
 
 /**
  * Class containing all of the known Regions that can be contacted.
- * <p>
- * Note, not all services may be available in all regions.
+ *
+ * <p>Note, not all services may be available in all regions.
  */
 public final class Region implements Serializable, Comparable<Region> {
-
     // Region metadata env attribute key
     private static final String OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA";
 
     // Default realm metadata env attribute key
     private static final String OCI_DEFAULT_REALM_ENV_VAR_NAME = "OCI_DEFAULT_REALM";
 
-    //The regions-config file path location
+    // The regions-config file path location
     private static final String REGIONS_CONFIG_FILE_PATH = "~/.oci/regions-config.json";
 
-    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Region.class);
+    // LinkedHashMap to ensure stable ordering of registered regions
+    private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
+    private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Region.class);
     private static volatile boolean hasUsedEnvVar = false;
     private static volatile boolean hasUsedConfigFile = false;
-
     private static final ReentrantLock lock = new ReentrantLock();
 
-    private static volatile boolean hasOptedForInstanceMetadataService = false;
     @VisibleForTesting static volatile boolean hasUsedInstanceMetadataService = false;
+    private static volatile boolean hasOptedForInstanceMetadataService = false;
     private static volatile boolean hasReceivedInstanceMetadataServiceResponse = false;
     private static volatile boolean hasWarnedAboutValuesWithoutInstanceMetadataService = false;
-    private static volatile ClientConfig imdsClientConfiguration = new ClientConfig();
-
-    static {
-        imdsClientConfiguration =
-                imdsClientConfiguration.property(ClientProperties.CONNECT_TIMEOUT, 30000);
-        imdsClientConfiguration =
-                imdsClientConfiguration.property(ClientProperties.READ_TIMEOUT, 60000);
-    }
 
     @VisibleForTesting static volatile String defaultRealmEnvVar = getDefaultRealmFromEnv();
 
@@ -79,46 +76,48 @@ public final class Region implements Serializable, Comparable<Region> {
         return defaultRealmEnvVar;
     }
 
-    // LinkedHashMap to ensure stable ordering of registered regions
-    private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
-
     // Region registered through the instance metadata service.
     public static volatile Region regionFromImds = null;
 
     // OC1
     public static final Region AP_CHUNCHEON_1 = register("ap-chuncheon-1", Realm.OC1, "yny");
-    public static final Region AP_MELBOURNE_1 = register("ap-melbourne-1", Realm.OC1, "mel");
     public static final Region AP_HYDERABAD_1 = register("ap-hyderabad-1", Realm.OC1, "hyd");
+    public static final Region AP_MELBOURNE_1 = register("ap-melbourne-1", Realm.OC1, "mel");
     public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1, "bom");
     public static final Region AP_OSAKA_1 = register("ap-osaka-1", Realm.OC1, "kix");
     public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1, "icn");
     public static final Region AP_SYDNEY_1 = register("ap-sydney-1", Realm.OC1, "syd");
     public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1, "nrt");
+    public static final Region AP_SINGAPORE_1 = register("ap-singapore-1", Realm.OC1, "sin");
     public static final Region CA_MONTREAL_1 = register("ca-montreal-1", Realm.OC1, "yul");
     public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1, "yyz");
     public static final Region EU_AMSTERDAM_1 = register("eu-amsterdam-1", Realm.OC1, "ams");
     public static final Region EU_FRANKFURT_1 = register("eu-frankfurt-1", Realm.OC1, "fra");
+    public static final Region EU_MARSEILLE_1 = register("eu-marseille-1", Realm.OC1, "mrs");
     public static final Region EU_ZURICH_1 = register("eu-zurich-1", Realm.OC1, "zrh");
+    public static final Region ME_ABUDHABI_1 = register("me-abudhabi-1", Realm.OC1, "auh");
     public static final Region ME_JEDDAH_1 = register("me-jeddah-1", Realm.OC1, "jed");
     public static final Region ME_DUBAI_1 = register("me-dubai-1", Realm.OC1, "dxb");
+    public static final Region SA_SANTIAGO_1 = register("sa-santiago-1", Realm.OC1, "scl");
     public static final Region SA_SAOPAULO_1 = register("sa-saopaulo-1", Realm.OC1, "gru");
+    public static final Region SA_VINHEDO_1 = register("sa-vinhedo-1", Realm.OC1, "vcp");
+    public static final Region UK_CARDIFF_1 = register("uk-cardiff-1", Realm.OC1, "cwl");
     public static final Region UK_LONDON_1 = register("uk-london-1", Realm.OC1, "lhr");
     public static final Region US_ASHBURN_1 = register("us-ashburn-1", Realm.OC1, "iad");
     public static final Region US_PHOENIX_1 = register("us-phoenix-1", Realm.OC1, "phx");
     public static final Region US_SANJOSE_1 = register("us-sanjose-1", Realm.OC1, "sjc");
-    public static final Region UK_CARDIFF_1 = register("uk-cardiff-1", Realm.OC1, "cwl");
-    public static final Region SA_SANTIAGO_1 = register("sa-santiago-1", Realm.OC1, "scl");
-    public static final Region SA_VINHEDO_1 = register("sa-vinhedo-1", Realm.OC1, "vcp");
     public static final Region IL_JERUSALEM_1 = register("il-jerusalem-1", Realm.OC1, "mtz");
-    public static final Region EU_MARSEILLE_1 = register("eu-marseille-1", Realm.OC1, "mrs");
-    public static final Region AP_SINGAPORE_1 = register("ap-singapore-1", Realm.OC1, "sin");
-    public static final Region ME_ABUDHABI_1 = register("me-abudhabi-1", Realm.OC1, "auh");
-    public static final Region EU_MILAN_1 = register("eu-milan-1", Realm.OC1, "lin");
     public static final Region EU_STOCKHOLM_1 = register("eu-stockholm-1", Realm.OC1, "arn");
+    public static final Region EU_MILAN_1 = register("eu-milan-1", Realm.OC1, "lin");
     public static final Region AF_JOHANNESBURG_1 = register("af-johannesburg-1", Realm.OC1, "jnb");
     public static final Region EU_PARIS_1 = register("eu-paris-1", Realm.OC1, "cdg");
     public static final Region MX_QUERETARO_1 = register("mx-queretaro-1", Realm.OC1, "qro");
     public static final Region EU_MADRID_1 = register("eu-madrid-1", Realm.OC1, "mad");
+    public static final Region US_CHICAGO_1 = register("us-chicago-1", Realm.OC1, "ord");
+    public static final Region ME_NEOM_1 = register("me-neom-1", Realm.OC1, "num");
+    public static final Region EU_KRAGUJEVAC_1 = register("eu-kragujevac-1", Realm.OC1, "kvo");
+    public static final Region MX_MONTERREY_1 = register("mx-monterrey-1", Realm.OC1, "mty");
+    public static final Region SA_VALPARAISO_1 = register("sa-valparaiso-1", Realm.OC1, "vap");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -145,6 +144,27 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC14
     public static final Region EU_DCC_MILAN_1 = register("eu-dcc-milan-1", Realm.OC14, "bgy");
+    public static final Region EU_DCC_DUBLIN_1 = register("eu-dcc-dublin-1", Realm.OC14, "ork");
+    public static final Region EU_DCC_DUBLIN_2 = register("eu-dcc-dublin-2", Realm.OC14, "snn");
+    public static final Region EU_DCC_RATING_2 = register("eu-dcc-rating-2", Realm.OC14, "dtm");
+    public static final Region EU_DCC_MILAN_2 = register("eu-dcc-milan-2", Realm.OC14, "mxp");
+    public static final Region EU_DCC_RATING_1 = register("eu-dcc-rating-1", Realm.OC14, "dus");
+
+    // OC15
+    public static final Region AP_DCC_GAZIPUR_1 = register("ap-dcc-gazipur-1", Realm.OC15, "dac");
+
+    // OC16
+    public static final Region US_WESTJORDAN_1 = register("us-westjordan-1", Realm.OC16, "sgu");
+
+    // OC17
+    public static final Region US_DCC_PHOENIX_1 = register("us-dcc-phoenix-1", Realm.OC17, "ifp");
+    public static final Region US_DCC_PHOENIX_2 = register("us-dcc-phoenix-2", Realm.OC17, "gcn");
+
+    // OC18
+    public static final Region US_DCC_PHOENIX_3 = register("us-dcc-phoenix-3", Realm.OC18, "prc");
+
+    // OC20
+    public static final Region EU_JOVANOVAC_1 = register("eu-jovanovac-1", Realm.OC20, "beg");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -152,21 +172,20 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final long serialVersionUID = -905384972L;
 
     /**
-     * The region identifier as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
+     * The region identifier as defined in
+     * https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
     private final String regionId;
 
     /**
-     * The region key as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
-     * or null if none.
+     * The region key as defined in
+     * https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm or null if none.
      *
-     * Not using {@code Optional<String>} here, since that is not serializable.
+     * <p>Not using Optional<String> here, since that is not serializable.
      */
     private final String regionCode;
 
-    /**
-     * Get the realm this region belongs to.
-     */
+    /** Get the realm this region belongs to. */
     private final Realm realm;
 
     private Region(
@@ -196,9 +215,7 @@ public final class Region implements Serializable, Comparable<Region> {
         return Region.regionFromImds;
     }
 
-    /**
-     * Get the region code.
-     */
+    /** Get the region code. */
     public String getRegionCode() {
         return regionCode != null ? regionCode : regionId;
     }
@@ -206,13 +223,10 @@ public final class Region implements Serializable, Comparable<Region> {
     /**
      * Resolves a service name to its endpoint in the region, if available.
      *
-     * @param service
-     *            The service.
-     * @return The endpoint for the given service, or empty if the service
-     *         endpoint is not known.
+     * @param service The service.
+     * @return The endpoint for the given service, or empty if the service endpoint is not known.
      */
-    public com.google.common /*Guava will be removed soon*/.base.Optional<String> getEndpoint(
-            Service service) {
+    public Optional<String> getEndpoint(Service service) {
         synchronized (SERVICE_TO_REGION_ENDPOINTS) {
             if (!SERVICE_TO_REGION_ENDPOINTS.containsKey(service.getServiceName())) {
                 HashMap<Region, String> endpoints = new HashMap<>();
@@ -234,8 +248,9 @@ public final class Region implements Serializable, Comparable<Region> {
                         service.getServiceName(),
                         endpoints);
             }
+
             String endpoint = SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName()).get(this);
-            return GuavaUtils.adaptToGuava(Optional.ofNullable(endpoint));
+            return Optional.ofNullable(endpoint);
         }
     }
 
@@ -243,12 +258,11 @@ public final class Region implements Serializable, Comparable<Region> {
      * Compares to regions lexicographically based on their regionId.
      *
      * @param other The Region to be compared.
-     * @return the value {@code 0} if the regionId of the compared Region is
-     *  equal to the regionId of this Region; a value less than {@code 0} if
-     *  the regionId of this Region is lexicographically less than the regionId
-     *  of the compared Region; and a value greater than {@code 0} if the
-     *  regionId of this Region is lexicographically greater than the regionId
-     *  of the compared Region.
+     * @return the value {@code 0} if the regionId of the compared Region is equal to the regionId
+     *     of this Region; a value less than {@code 0} if the regionId of this Region is
+     *     lexicographically less than the regionId of the compared Region; and a value greater than
+     *     {@code 0} if the regionId of this Region is lexicographically greater than the regionId
+     *     of the compared Region.
      */
     public int compareTo(Region other) {
         return regionId.compareTo(other.regionId);
@@ -261,11 +275,13 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Return all known Regions in this version of the SDK, except possibly the region returned by IMDS (Instance Metadata
-     * Service, only available on OCI instances), since IMDS is not automatically contacted by this method.
+     * Return all known Regions in this version of the SDK, except possibly the region returned by
+     * IMDS (Instance Metadata Service, only available on OCI instances), since IMDS is not
+     * automatically contacted by this method.
      *
-     * To ensure that this method also returns the region provided by IMDS, call {@link Region#registerFromInstanceMetadataService()}
-     * explicitly before calling {@link Region#values()}.
+     * <p>To ensure that this method also returns the region provided by IMDS, call {@link
+     * Region#registerFromInstanceMetadataService()} explicitly before calling {@link
+     * Region#values()}.
      *
      * @return Known regions
      */
@@ -285,13 +301,12 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Returns the Region object matching the specified name. The name must
-     * match exactly. (Extraneous whitespace characters are not permitted.)
+     * Returns the Region object matching the specified name. The name must match exactly.
+     * (Extraneous whitespace characters are not permitted.)
      *
      * @param name The name of the region
      * @return The Region object matching the specified name, if available.
-     * @throws IllegalArgumentException if no region exists with the specified
-     * name
+     * @throws IllegalArgumentException if no region exists with the specified name
      */
     public static Region valueOf(@Nonnull String name) throws IllegalArgumentException {
         if (name == null) {
@@ -306,9 +321,9 @@ public final class Region implements Serializable, Comparable<Region> {
 
     /**
      * Creates a default endpoint URL for the given service in the given region.
-     * <p>
-     * Note, the regionId is not validated against known regions, this just creates
-     * a URL that follows the default format.
+     *
+     * <p>Note, the regionId is not validated against known regions, this just creates a URL that
+     * follows the default format.
      *
      * @param service The service.
      * @param region The region.
@@ -321,11 +336,10 @@ public final class Region implements Serializable, Comparable<Region> {
     /**
      * Creates a default endpoint URL for the given service in the given region.
      *
-     * <p>
-     * Note, the regionId is not validated against known regions, this just creates
-     * a URL that follows the default format.
-     * <p>
-     * This method uses a realm of {@link Realm#OC1} if the region cannot be determined.
+     * <p>Note, the regionId is not validated against known regions, this just creates a URL that
+     * follows the default format.
+     *
+     * <p>This method uses a realm of {@link Realm#OC1} if the region cannot be determined.
      *
      * @param service The service.
      * @param regionId The region ID.
@@ -346,8 +360,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * Returns the Region object from the canonical public region ID. Throws
      * IllegalArgumentException if the region ID is not known.
      *
-     * @param regionId
-     *            The region ID.
+     * @param regionId The region ID.
      * @return The Region object.
      */
     public static Region fromRegionId(String regionId) {
@@ -363,11 +376,10 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Returns the Region object from the public region code. Throws
-     * IllegalArgumentException if the region code is not known.
+     * Returns the Region object from the public region code. Throws IllegalArgumentException if the
+     * region code is not known.
      *
-     * @param regionCode
-     *            The region code.
+     * @param regionCode The region code.
      * @return The Region object.
      */
     public static Region fromRegionCode(String regionCode) {
@@ -379,11 +391,10 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Returns the Region object from the public region code or id. Throws
-     * IllegalArgumentException if the region code or id is not known.
+     * Returns the Region object from the public region code or id. Throws IllegalArgumentException
+     * if the region code or id is not known.
      *
-     * @param regionCodeOrId
-     *            The region code or id.
+     * @param regionCodeOrId The region code or id.
      * @return The Region object.
      */
     public static Region fromRegionCodeOrId(String regionCodeOrId) {
@@ -395,7 +406,8 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Register a new region. Used to allow the SDK to be forward compatible with unreleased regions.
+     * Register a new region. Used to allow the SDK to be forward compatible with unreleased
+     * regions.
      *
      * @param regionId The region ID.
      * @param realm The realm of the new region.
@@ -412,12 +424,13 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Register a new region. Used to allow the SDK to be forward compatible with unreleased regions.
+     * Register a new region. Used to allow the SDK to be forward compatible with unreleased
+     * regions.
      *
      * @param regionId The region ID.
      * @param realm The realm of the new region.
-     * @param regionCode The 3-letter region code returned by the instance metadata service as the 'region'
-     *        value, if it differs from regionId.  This is only needed for very early regions.
+     * @param regionCode The 3-letter region code returned by the instance metadata service as the
+     *     'region' value, if it differs from regionId. This is only needed for very early regions.
      * @return The registered region (or existing one if found).
      */
     public static Region register(
@@ -433,6 +446,7 @@ public final class Region implements Serializable, Comparable<Region> {
         if (regionId.isEmpty()) {
             throw new IllegalArgumentException("Cannot have empty regionId");
         }
+
         synchronized (KNOWN_REGIONS) {
             for (Region region : KNOWN_REGIONS.values()) {
                 if (region.getRegionId().equals(regionId)) {
@@ -460,9 +474,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static java.util.Optional<Region> maybeFromRegionCodeOrIdWithoutRegistering(
             String regionCodeOrId) {
         synchronized (KNOWN_REGIONS) {
-            return KNOWN_REGIONS
-                    .values()
-                    .stream()
+            return KNOWN_REGIONS.values().stream()
                     .filter(
                             r ->
                                     r.getRegionCode().equalsIgnoreCase(regionCodeOrId)
@@ -471,9 +483,7 @@ public final class Region implements Serializable, Comparable<Region> {
         }
     }
 
-    /**
-     * Register all regions and sets status
-     */
+    /** Register all regions and sets status */
     private static void registerAllRegions() {
 
         if (!hasUsedConfigFile) {
@@ -485,9 +495,7 @@ public final class Region implements Serializable, Comparable<Region> {
         }
     }
 
-    /**
-     * Implements decision tree to determine Region.
-     */
+    /** Implements decision tree to determine Region. */
     private static Optional<Region> getRegionAndRegisterIfNecessary(String regionCodeOrId) {
 
         if (regionCodeOrId.contains("_")) {
@@ -516,7 +524,8 @@ public final class Region implements Serializable, Comparable<Region> {
         }
 
         if (hasOptedForInstanceMetadataService && !hasUsedInstanceMetadataService) {
-            registerFromInstanceMetadataService(); // registers region and sets hasUsedInstanceMetadataService = true;
+            registerFromInstanceMetadataService(); // registers region and sets
+            // hasUsedInstanceMetadataService = true;
             maybeRegion = maybeFromRegionCodeOrIdWithoutRegistering(regionCodeOrId);
             if (maybeRegion.isPresent()) {
                 return maybeRegion;
@@ -534,9 +543,7 @@ public final class Region implements Serializable, Comparable<Region> {
         return Optional.empty();
     }
 
-    /**
-     * Registers region and sets envVarUsed status to true.
-     */
+    /** Registers region and sets envVarUsed status to true. */
     private static void readEnvVar() {
         final String envVar = System.getenv(OCI_REGION_METADATA_ENV_VAR_NAME);
         RegionSchema regionSchema = null;
@@ -556,9 +563,7 @@ public final class Region implements Serializable, Comparable<Region> {
         }
     }
 
-    /**
-     * Registers region using regionId and default realm env var
-     */
+    /** Registers region using regionId and default realm env var */
     private static void registerRegionWithDefaultRealm(String regionId) {
         LOG.info(
                 "Realm domain component from OCI_DEFAULT_REALM env variable is {}",
@@ -576,9 +581,7 @@ public final class Region implements Serializable, Comparable<Region> {
         }
     }
 
-    /**
-     * Registers region and sets hasUsedConfigFile status to true.
-     */
+    /** Registers region and sets hasUsedConfigFile status to true. */
     private static void readConfigFile() {
         hasUsedConfigFile = true;
 
@@ -615,7 +618,6 @@ public final class Region implements Serializable, Comparable<Region> {
                     }
                 }
             }
-
         } catch (Exception e) {
             LOG.warn(
                     "Exception in reading or parsing {} to fetch regions ",
@@ -625,25 +627,16 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Set the client configuration used to contact IMDS (Instance Metadata Service, only available on OCI instances).
-     *
-     * The default configuration uses a 10 second connect timeout and a 60 second read timeout.
-     *
-     * @param clientConfig configuration used to contact IMDS.
-     */
-    public static void setInstanceMetadataServiceClientConfig(ClientConfig clientConfig) {
-        imdsClientConfiguration = clientConfig;
-    }
-
-    /**
-     * Enables contact to IMDS (Instance Metadata Service, only available on OCI instances) if user decides to opt-in.
+     * Enables contact to IMDS (Instance Metadata Service, only available on OCI instances) if user
+     * decides to opt-in.
      */
     public static void enableInstanceMetadataService() {
         hasOptedForInstanceMetadataService = true;
     }
 
     /**
-     * Instructs the SDK to not contact the IMDS (Instance Metadata Service, only available on OCI instances).
+     * Instructs the SDK to not contact the IMDS (Instance Metadata Service, only available on OCI
+     * instances).
      */
     public static void skipInstanceMetadataService() {
         hasUsedInstanceMetadataService = true;
@@ -651,8 +644,9 @@ public final class Region implements Serializable, Comparable<Region> {
     }
 
     /**
-     * Send request to IMDS (Instance Metadata Service, only available on OCI instances), registers region, and sets
-     * hasUsedInstanceMetadataService = true.
+     * Send request to IMDS (Instance Metadata Service, only available on OCI instances), registers
+     * region, and sets hasUsedInstanceMetadataService = true.
+     *
      * @return true if response from IMDS was received
      */
     public static boolean registerFromInstanceMetadataService() {
@@ -660,6 +654,7 @@ public final class Region implements Serializable, Comparable<Region> {
             // only read once
             return hasReceivedInstanceMetadataServiceResponse;
         }
+
         try {
             /*
              * If this method is called by multiple threads before the metadata service is used
@@ -678,39 +673,11 @@ public final class Region implements Serializable, Comparable<Region> {
             }
 
             enableInstanceMetadataService();
-
-            LOG.info(
-                    "Requesting region metadata blob from IMDS at {}",
-                    METADATA_SERVICE_BASE_URL + "instance/regionInfo");
-            final String REGION_INFO = "regionInfo";
-            String regionMetadataSchema =
-                    AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry(
-                            base ->
-                                    base.path(REGION_INFO)
-                                            .request(MediaType.APPLICATION_JSON)
-                                            .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
-                                            .get(String.class),
-                            METADATA_SERVICE_BASE_URL,
-                            REGION_INFO);
-
-            hasReceivedInstanceMetadataServiceResponse = true;
-            LOG.info("Region metadata blob from regionInfo service is {}", regionMetadataSchema);
-
-            if (regionMetadataSchema != null && !regionMetadataSchema.isEmpty()) {
-                RegionSchema regionSchema =
-                        JsonConverter.jsonBlobToObject(regionMetadataSchema, RegionSchema.class);
-
-                if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
-                    regionFromImds =
-                            Region.register(
-                                    regionSchema.getRegionIdentifier(),
-                                    Realm.register(
-                                            regionSchema.getRealmKey(),
-                                            regionSchema.getRealmDomainComponent()),
-                                    regionSchema.getRegionKey());
-                }
+            Region result = getRegionFromImds(METADATA_SERVICE_BASE_URL);
+            if (result != null) {
+                regionFromImds = result;
             }
-
+            hasReceivedInstanceMetadataServiceResponse = true;
         } catch (RuntimeException e) {
             LOG.warn("Rest call to get regionInfo from metadata service failed ", e);
         } finally {
@@ -718,6 +685,88 @@ public final class Region implements Serializable, Comparable<Region> {
             hasUsedInstanceMetadataService = true;
         }
         return hasReceivedInstanceMetadataServiceResponse;
+    }
+
+    @InternalSdk
+    @VisibleForTesting
+    public static Region getRegionFromImds(String metadataServiceBaseUrl) {
+        LOG.info(
+                "Requesting region metadata blob from IMDS at {}",
+                metadataServiceBaseUrl + "instance/regionInfo");
+
+        String regionMetadataSchema = null;
+        Throwable lastException = null;
+        try (HttpClient client =
+                HttpProvider.getDefault()
+                        .newBuilder()
+                        .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
+                        .property(StandardClientProperties.READ_TIMEOUT, Duration.ofSeconds(60))
+                        .property(StandardClientProperties.CONNECT_TIMEOUT, Duration.ofSeconds(30))
+                        .baseUri(URI.create(metadataServiceBaseUrl + "instance/"))
+                        .build()) {
+
+            for (int retry = 0; retry < 3; retry++) {
+                try {
+                    SyncFutureWaiter waiter = new SyncFutureWaiter();
+
+                    try (HttpResponse response =
+                            waiter.listenForResult(
+                                    client.createRequest(Method.GET)
+                                            .offloadExecutor(waiter)
+                                            .appendPathPart("regionInfo")
+                                            .header("Accept", MEDIA_TYPE_APPLICATION_JSON)
+                                            .header(
+                                                    AUTHORIZATION_HEADER_NAME,
+                                                    AUTHORIZATION_HEADER_VALUE)
+                                            .execute())) {
+                        if (response.status() >= 300) {
+                            throw new IOException("Bad response status code " + response.status());
+                        }
+                        regionMetadataSchema = waiter.listenForResult(response.textBody());
+                        break;
+                    }
+                } catch (Throwable e) {
+                    LOG.warn(
+                            "Attempt {} - Rest call to get region info from metadata service failed ",
+                            (retry + 1),
+                            e);
+                    lastException = e;
+                    try {
+                        Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+                    } catch (InterruptedException interruptedException) {
+                        LOG.debug(
+                                "Thread interrupted while waiting to make next call to get region info from instance metadata service",
+                                interruptedException);
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (regionMetadataSchema == null && lastException != null) {
+            if (lastException instanceof RuntimeException) {
+                throw (RuntimeException) lastException;
+            } else {
+                throw new RuntimeException(lastException);
+            }
+        }
+
+        LOG.info("Region metadata blob from regionInfo service is {}", regionMetadataSchema);
+
+        if (regionMetadataSchema != null && !regionMetadataSchema.isEmpty()) {
+            RegionSchema regionSchema =
+                    JsonConverter.jsonBlobToObject(regionMetadataSchema, RegionSchema.class);
+
+            if (regionSchema != null && RegionSchema.isValid(regionSchema)) {
+                return Region.register(
+                        regionSchema.getRegionIdentifier(),
+                        Realm.register(
+                                regionSchema.getRealmKey(), regionSchema.getRealmDomainComponent()),
+                        regionSchema.getRegionKey());
+            }
+        }
+        return null;
     }
 
     public boolean equals(final Object o) {

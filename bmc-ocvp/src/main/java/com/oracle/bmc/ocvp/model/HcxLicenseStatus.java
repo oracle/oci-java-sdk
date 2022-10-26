@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/**
- * HCX on-premise license status.
- **/
+/** HCX on-premise license status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum HcxLicenseStatus {
+public enum HcxLicenseStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Available("AVAILABLE"),
     Consumed("CONSUMED"),
     Deactivated("DEACTIVATED"),

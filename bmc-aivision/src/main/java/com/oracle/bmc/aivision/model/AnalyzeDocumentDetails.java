@@ -5,22 +5,22 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The details of how to analyze a document.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of how to analyze a document. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AnalyzeDocumentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AnalyzeDocumentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AnalyzeDocumentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "features",
@@ -48,17 +48,16 @@ public final class AnalyzeDocumentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The types of document analysis requested.
-         **/
+        /** The types of document analysis requested. */
         @com.fasterxml.jackson.annotation.JsonProperty("features")
         private java.util.List<DocumentFeature> features;
 
         /**
          * The types of document analysis requested.
+         *
          * @param features the value to set
          * @return this builder
-         **/
+         */
         public Builder features(java.util.List<DocumentFeature> features) {
             this.features = features;
             this.__explicitlySet__.add("features");
@@ -73,17 +72,16 @@ public final class AnalyzeDocumentDetails
             this.__explicitlySet__.add("document");
             return this;
         }
-        /**
-         * The OCID of the compartment that calls the API.
-         **/
+        /** The OCID of the compartment that calls the API. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that calls the API.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -98,33 +96,31 @@ public final class AnalyzeDocumentDetails
             this.__explicitlySet__.add("outputLocation");
             return this;
         }
-        /**
-         * The document language, abbreviated according to ISO 639-2.
-         **/
+        /** The document language, abbreviated according to ISO 639-2. */
         @com.fasterxml.jackson.annotation.JsonProperty("language")
         private DocumentLanguage language;
 
         /**
          * The document language, abbreviated according to ISO 639-2.
+         *
          * @param language the value to set
          * @return this builder
-         **/
+         */
         public Builder language(DocumentLanguage language) {
             this.language = language;
             this.__explicitlySet__.add("language");
             return this;
         }
-        /**
-         * The document type.
-         **/
+        /** The document type. */
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private DocumentType documentType;
 
         /**
          * The document type.
+         *
          * @param documentType the value to set
          * @return this builder
-         **/
+         */
         public Builder documentType(DocumentType documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
@@ -173,9 +169,7 @@ public final class AnalyzeDocumentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,16 +178,15 @@ public final class AnalyzeDocumentDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The types of document analysis requested.
-     **/
+    /** The types of document analysis requested. */
     @com.fasterxml.jackson.annotation.JsonProperty("features")
     private final java.util.List<DocumentFeature> features;
 
     /**
      * The types of document analysis requested.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DocumentFeature> getFeatures() {
         return features;
     }
@@ -205,16 +198,15 @@ public final class AnalyzeDocumentDetails
         return document;
     }
 
-    /**
-     * The OCID of the compartment that calls the API.
-     **/
+    /** The OCID of the compartment that calls the API. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that calls the API.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -226,30 +218,28 @@ public final class AnalyzeDocumentDetails
         return outputLocation;
     }
 
-    /**
-     * The document language, abbreviated according to ISO 639-2.
-     **/
+    /** The document language, abbreviated according to ISO 639-2. */
     @com.fasterxml.jackson.annotation.JsonProperty("language")
     private final DocumentLanguage language;
 
     /**
      * The document language, abbreviated according to ISO 639-2.
+     *
      * @return the value
-     **/
+     */
     public DocumentLanguage getLanguage() {
         return language;
     }
 
-    /**
-     * The document type.
-     **/
+    /** The document type. */
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final DocumentType documentType;
 
     /**
      * The document type.
+     *
      * @return the value
-     **/
+     */
     public DocumentType getDocumentType() {
         return documentType;
     }
@@ -261,6 +251,7 @@ public final class AnalyzeDocumentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

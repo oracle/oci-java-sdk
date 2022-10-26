@@ -5,56 +5,52 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Policy to specify how to modify the response code, body and headers.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Policy to specify how to modify the response code, body and headers. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModifyResponseValidationFailurePolicy.Builder.class
-)
+        builder = ModifyResponseValidationFailurePolicy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ModifyResponseValidationFailurePolicy extends ValidationFailurePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * HTTP response code, can include context variables.
-         **/
+        /** HTTP response code, can include context variables. */
         @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
         private String responseCode;
 
         /**
          * HTTP response code, can include context variables.
+         *
          * @param responseCode the value to set
          * @return this builder
-         **/
+         */
         public Builder responseCode(String responseCode) {
             this.responseCode = responseCode;
             this.__explicitlySet__.add("responseCode");
             return this;
         }
-        /**
-         * HTTP response message.
-         **/
+        /** HTTP response message. */
         @com.fasterxml.jackson.annotation.JsonProperty("responseMessage")
         private String responseMessage;
 
         /**
          * HTTP response message.
+         *
          * @param responseMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder responseMessage(String responseMessage) {
             this.responseMessage = responseMessage;
             this.__explicitlySet__.add("responseMessage");
@@ -101,9 +97,7 @@ public final class ModifyResponseValidationFailurePolicy extends ValidationFailu
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,30 +117,28 @@ public final class ModifyResponseValidationFailurePolicy extends ValidationFailu
         this.responseHeaderTransformations = responseHeaderTransformations;
     }
 
-    /**
-     * HTTP response code, can include context variables.
-     **/
+    /** HTTP response code, can include context variables. */
     @com.fasterxml.jackson.annotation.JsonProperty("responseCode")
     private final String responseCode;
 
     /**
      * HTTP response code, can include context variables.
+     *
      * @return the value
-     **/
+     */
     public String getResponseCode() {
         return responseCode;
     }
 
-    /**
-     * HTTP response message.
-     **/
+    /** HTTP response message. */
     @com.fasterxml.jackson.annotation.JsonProperty("responseMessage")
     private final String responseMessage;
 
     /**
      * HTTP response message.
+     *
      * @return the value
-     **/
+     */
     public String getResponseMessage() {
         return responseMessage;
     }
@@ -165,6 +157,7 @@ public final class ModifyResponseValidationFailurePolicy extends ValidationFailu
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

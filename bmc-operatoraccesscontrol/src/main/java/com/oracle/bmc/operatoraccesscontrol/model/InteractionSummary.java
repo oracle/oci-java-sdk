@@ -5,21 +5,22 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Summary of access request customer and operator conversation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of access request customer and operator conversation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InteractionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InteractionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = InteractionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InteractionSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,99 +48,97 @@ public final class InteractionSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The uniqueId of the message.
-         **/
+        /** The uniqueId of the message. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The uniqueId of the message.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * customer or operator id who is part of this conversation.
-         **/
+        /** customer or operator id who is part of this conversation. */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * customer or operator id who is part of this conversation.
+         *
          * @param userId the value to set
          * @return this builder
-         **/
+         */
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /**
-         * customer or operator Name who is part of this conversation.
-         **/
+        /** customer or operator Name who is part of this conversation. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * customer or operator Name who is part of this conversation.
+         *
          * @param userName the value to set
          * @return this builder
-         **/
+         */
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-        /**
-         * contains the information exchanged between operator and customer.
-         **/
+        /** contains the information exchanged between operator and customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * contains the information exchanged between operator and customer.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /**
-         * Whether the userConversation is an operator or customer.
-         **/
+        /** Whether the userConversation is an operator or customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("userType")
         private String userType;
 
         /**
          * Whether the userConversation is an operator or customer.
+         *
          * @param userType the value to set
          * @return this builder
-         **/
+         */
         public Builder userType(String userType) {
             this.userType = userType;
             this.__explicitlySet__.add("userType");
             return this;
         }
         /**
-         * Time when the conversation happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-         *
-         **/
+         * Time when the conversation happened in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfConversation")
         private java.util.Date timeOfConversation;
 
         /**
-         * Time when the conversation happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+         * Time when the conversation happened in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+         * '2020-05-22T21:10:29.600Z'
          *
          * @param timeOfConversation the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfConversation(java.util.Date timeOfConversation) {
             this.timeOfConversation = timeOfConversation;
             this.__explicitlySet__.add("timeOfConversation");
@@ -188,9 +187,7 @@ public final class InteractionSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -199,88 +196,86 @@ public final class InteractionSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The uniqueId of the message.
-     **/
+    /** The uniqueId of the message. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The uniqueId of the message.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * customer or operator id who is part of this conversation.
-     **/
+    /** customer or operator id who is part of this conversation. */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * customer or operator id who is part of this conversation.
+     *
      * @return the value
-     **/
+     */
     public String getUserId() {
         return userId;
     }
 
-    /**
-     * customer or operator Name who is part of this conversation.
-     **/
+    /** customer or operator Name who is part of this conversation. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * customer or operator Name who is part of this conversation.
+     *
      * @return the value
-     **/
+     */
     public String getUserName() {
         return userName;
     }
 
-    /**
-     * contains the information exchanged between operator and customer.
-     **/
+    /** contains the information exchanged between operator and customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * contains the information exchanged between operator and customer.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
-    /**
-     * Whether the userConversation is an operator or customer.
-     **/
+    /** Whether the userConversation is an operator or customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("userType")
     private final String userType;
 
     /**
      * Whether the userConversation is an operator or customer.
+     *
      * @return the value
-     **/
+     */
     public String getUserType() {
         return userType;
     }
 
     /**
-     * Time when the conversation happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-     *
-     **/
+     * Time when the conversation happened in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfConversation")
     private final java.util.Date timeOfConversation;
 
     /**
-     * Time when the conversation happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
+     * Time when the conversation happened in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
+     * '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfConversation() {
         return timeOfConversation;
     }
@@ -292,6 +287,7 @@ public final class InteractionSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/**
- * The status of a work request.
- **/
+/** The status of a work request. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum WorkRequestStatus {
+public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

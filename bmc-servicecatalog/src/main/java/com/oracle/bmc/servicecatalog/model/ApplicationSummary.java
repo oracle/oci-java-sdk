@@ -5,21 +5,22 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /**
- * The model for summary of an application in service catalog.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The model for summary of an application in service catalog. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ApplicationSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApplicationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ApplicationSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ApplicationSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityId",
@@ -56,65 +57,61 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Identifier of the application from a service catalog.
-         **/
+        /** Identifier of the application from a service catalog. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * Identifier of the application from a service catalog.
+         *
          * @param entityId the value to set
          * @return this builder
-         **/
+         */
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /**
-         * The type of an application in the service catalog.
-         **/
+        /** The type of an application in the service catalog. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The type of an application in the service catalog.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /**
-         * The name that service catalog should use to display this application.
-         **/
+        /** The name that service catalog should use to display this application. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name that service catalog should use to display this application.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Indicates whether the application is featured.
-         **/
+        /** Indicates whether the application is featured. */
         @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
         private Boolean isFeatured;
 
         /**
          * Indicates whether the application is featured.
+         *
          * @param isFeatured the value to set
          * @return this builder
-         **/
+         */
         public Builder isFeatured(Boolean isFeatured) {
             this.isFeatured = isFeatured;
             this.__explicitlySet__.add("isFeatured");
@@ -129,17 +126,16 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("publisher");
             return this;
         }
-        /**
-         * A short description of the application.
-         **/
+        /** A short description of the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
         /**
          * A short description of the application.
+         *
          * @param shortDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
@@ -154,33 +150,31 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("logo");
             return this;
         }
-        /**
-         * Summary of the pricing types available across all packages in the application.
-         **/
+        /** Summary of the pricing types available across all packages in the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
         private PricingTypeEnum pricingType;
 
         /**
          * Summary of the pricing types available across all packages in the application.
+         *
          * @param pricingType the value to set
          * @return this builder
-         **/
+         */
         public Builder pricingType(PricingTypeEnum pricingType) {
             this.pricingType = pricingType;
             this.__explicitlySet__.add("pricingType");
             return this;
         }
-        /**
-         * The type of the packages withing the application.
-         **/
+        /** The type of the packages withing the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypeEnum packageType;
 
         /**
          * The type of the packages withing the application.
+         *
          * @param packageType the value to set
          * @return this builder
-         **/
+         */
         public Builder packageType(PackageTypeEnum packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
@@ -241,9 +235,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -252,58 +244,54 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Identifier of the application from a service catalog.
-     **/
+    /** Identifier of the application from a service catalog. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * Identifier of the application from a service catalog.
+     *
      * @return the value
-     **/
+     */
     public String getEntityId() {
         return entityId;
     }
 
-    /**
-     * The type of an application in the service catalog.
-     **/
+    /** The type of an application in the service catalog. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The type of an application in the service catalog.
+     *
      * @return the value
-     **/
+     */
     public String getEntityType() {
         return entityType;
     }
 
-    /**
-     * The name that service catalog should use to display this application.
-     **/
+    /** The name that service catalog should use to display this application. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name that service catalog should use to display this application.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Indicates whether the application is featured.
-     **/
+    /** Indicates whether the application is featured. */
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
     private final Boolean isFeatured;
 
     /**
      * Indicates whether the application is featured.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsFeatured() {
         return isFeatured;
     }
@@ -315,16 +303,15 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         return publisher;
     }
 
-    /**
-     * A short description of the application.
-     **/
+    /** A short description of the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
     /**
      * A short description of the application.
+     *
      * @return the value
-     **/
+     */
     public String getShortDescription() {
         return shortDescription;
     }
@@ -336,30 +323,28 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
         return logo;
     }
 
-    /**
-     * Summary of the pricing types available across all packages in the application.
-     **/
+    /** Summary of the pricing types available across all packages in the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("pricingType")
     private final PricingTypeEnum pricingType;
 
     /**
      * Summary of the pricing types available across all packages in the application.
+     *
      * @return the value
-     **/
+     */
     public PricingTypeEnum getPricingType() {
         return pricingType;
     }
 
-    /**
-     * The type of the packages withing the application.
-     **/
+    /** The type of the packages withing the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypeEnum packageType;
 
     /**
      * The type of the packages withing the application.
+     *
      * @return the value
-     **/
+     */
     public PackageTypeEnum getPackageType() {
         return packageType;
     }
@@ -371,6 +356,7 @@ public final class ApplicationSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,26 +8,20 @@ import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     *
-     */
+    /** */
     private String opcRequestId;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned MultipleTransferPackages instance.
-     */
+    /** The returned MultipleTransferPackages instance. */
     private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
     /**
      * The returned MultipleTransferPackages instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dts.model.MultipleTransferPackages getMultipleTransferPackages() {
@@ -42,7 +36,7 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListTransferPackagesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages) {
         super(__httpStatusCode__, headers);
@@ -50,28 +44,28 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
         this.multipleTransferPackages = multipleTransferPackages;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTransferPackagesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String opcRequestId;
 
         /**
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -80,13 +74,12 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned MultipleTransferPackages instance.
-         */
+        /** The returned MultipleTransferPackages instance. */
         private com.oracle.bmc.dts.model.MultipleTransferPackages multipleTransferPackages;
 
         /**
          * The returned MultipleTransferPackages instance.
+         *
          * @param multipleTransferPackages the value to set
          * @return this builder
          */
@@ -98,8 +91,10 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTransferPackagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -111,8 +106,10 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTransferPackagesResponse build() {
             return new ListTransferPackagesResponse(
                     __httpStatusCode__, headers, opcRequestId, multipleTransferPackages);
@@ -121,6 +118,7 @@ public class ListTransferPackagesResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

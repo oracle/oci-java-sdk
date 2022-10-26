@@ -8,10 +8,7 @@ import com.oracle.bmc.mediaservices.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /**
-     * The returned MediaWorkflowJob instance.
-     */
+    /** The returned MediaWorkflowJob instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflowJob mediaWorkflowJob;
 
     /**
      * The returned MediaWorkflowJob instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mediaservices.model.MediaWorkflowJob getMediaWorkflowJob() {
@@ -62,7 +57,7 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetMediaWorkflowJobResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.MediaWorkflowJob mediaWorkflowJob) {
@@ -72,25 +67,25 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
         this.mediaWorkflowJob = mediaWorkflowJob;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetMediaWorkflowJobResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned MediaWorkflowJob instance.
-         */
+        /** The returned MediaWorkflowJob instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflowJob mediaWorkflowJob;
 
         /**
          * The returned MediaWorkflowJob instance.
+         *
          * @param mediaWorkflowJob the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetMediaWorkflowJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetMediaWorkflowJobResponse build() {
             return new GetMediaWorkflowJobResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, mediaWorkflowJob);
@@ -165,6 +162,7 @@ public class GetMediaWorkflowJobResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

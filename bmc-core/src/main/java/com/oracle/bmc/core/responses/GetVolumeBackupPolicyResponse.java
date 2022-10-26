@@ -8,10 +8,7 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * The returned VolumeBackupPolicy instance.
-     */
+    /** The returned VolumeBackupPolicy instance. */
     private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
     /**
      * The returned VolumeBackupPolicy instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.VolumeBackupPolicy getVolumeBackupPolicy() {
@@ -62,7 +57,7 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetVolumeBackupPolicyResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy) {
@@ -72,25 +67,25 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
         this.volumeBackupPolicy = volumeBackupPolicy;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetVolumeBackupPolicyResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned VolumeBackupPolicy instance.
-         */
+        /** The returned VolumeBackupPolicy instance. */
         private com.oracle.bmc.core.model.VolumeBackupPolicy volumeBackupPolicy;
 
         /**
          * The returned VolumeBackupPolicy instance.
+         *
          * @param volumeBackupPolicy the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetVolumeBackupPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetVolumeBackupPolicyResponse build() {
             return new GetVolumeBackupPolicyResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, volumeBackupPolicy);
@@ -165,6 +162,7 @@ public class GetVolumeBackupPolicyResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

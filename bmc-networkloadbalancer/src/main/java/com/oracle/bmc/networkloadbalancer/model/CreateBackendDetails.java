@@ -6,22 +6,23 @@ package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The configuration of a backend server that is a member of a network load balancer backend set.
- * For more information, see [Managing Backend Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * For more information, see [Managing Backend
+ * Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateBackendDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateBackendDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateBackendDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateBackendDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -56,60 +57,53 @@ public final class CreateBackendDetails extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated.
-         * Example: {@code webServer1}
-         *
-         **/
+         * Optional unique name identifying the backend within the backend set. If not specified,
+         * then one will be generated. Example: {@code webServer1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated.
-         * Example: {@code webServer1}
+         * Optional unique name identifying the backend within the backend set. If not specified,
+         * then one will be generated. Example: {@code webServer1}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The IP address of the backend server.
-         * Example: {@code 10.0.0.3}
-         *
-         **/
+        /** The IP address of the backend server. Example: {@code 10.0.0.3} */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The IP address of the backend server.
-         * Example: {@code 10.0.0.3}
+         * The IP address of the backend server. Example: {@code 10.0.0.3}
          *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * The IP OCID/Instance OCID associated with the backend server.
-         * Example: {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
-         *
-         **/
+         * The IP OCID/Instance OCID associated with the backend server. Example: {@code
+         * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The IP OCID/Instance OCID associated with the backend server.
-         * Example: {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
+         * The IP OCID/Instance OCID associated with the backend server. Example: {@code
+         * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
          *
          * @param targetId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -117,123 +111,120 @@ public final class CreateBackendDetails extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * The communication port for the backend server.
-         * <p>
-         * Example: {@code 8080}
          *
-         **/
+         * <p>Example: {@code 8080}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The communication port for the backend server.
-         * <p>
-         * Example: {@code 8080}
+         *
+         * <p>Example: {@code 8080}
          *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-         * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
-         * as a server weighted '1'.
-         * For more information about load balancing policies, see
-         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
-         * <p>
-         * Example: {@code 3}
+         * The network load balancing policy weight assigned to the server. Backend servers with a
+         * higher weight receive a larger proportion of incoming traffic. For example, a server
+         * weighted '3' receives three times the number of new connections as a server weighted '1'.
+         * For more information about load balancing policies, see [How Network Load Balancing
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
          *
-         **/
+         * <p>Example: {@code 3}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
         /**
-         * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-         * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
-         * as a server weighted '1'.
-         * For more information about load balancing policies, see
-         * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
-         * <p>
-         * Example: {@code 3}
+         * The network load balancing policy weight assigned to the server. Backend servers with a
+         * higher weight receive a larger proportion of incoming traffic. For example, a server
+         * weighted '3' receives three times the number of new connections as a server weighted '1'.
+         * For more information about load balancing policies, see [How Network Load Balancing
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+         *
+         * <p>Example: {@code 3}
          *
          * @param weight the value to set
          * @return this builder
-         **/
+         */
         public Builder weight(Integer weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
             return this;
         }
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
-         * incoming traffic.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should drain this server. Servers marked "isDrain"
+         * receive no incoming traffic.
          *
-         **/
+         * <p>Example: {@code false}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
         private Boolean isDrain;
 
         /**
-         * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
-         * incoming traffic.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should drain this server. Servers marked "isDrain"
+         * receive no incoming traffic.
+         *
+         * <p>Example: {@code false}
          *
          * @param isDrain the value to set
          * @return this builder
-         **/
+         */
         public Builder isDrain(Boolean isDrain) {
             this.isDrain = isDrain;
             this.__explicitlySet__.add("isDrain");
             return this;
         }
         /**
-         * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
-         * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should treat this server as a backup unit. If {@code
+         * true}, then the network load balancer forwards no ingress traffic to this backend server
+         * unless all other backend servers not marked as "isBackup" fail the health check policy.
          *
-         **/
+         * <p>Example: {@code false}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
         private Boolean isBackup;
 
         /**
-         * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
-         * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should treat this server as a backup unit. If {@code
+         * true}, then the network load balancer forwards no ingress traffic to this backend server
+         * unless all other backend servers not marked as "isBackup" fail the health check policy.
+         *
+         * <p>Example: {@code false}
          *
          * @param isBackup the value to set
          * @return this builder
-         **/
+         */
         public Builder isBackup(Boolean isBackup) {
             this.isBackup = isBackup;
             this.__explicitlySet__.add("isBackup");
             return this;
         }
         /**
-         * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
-         * traffic.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should treat this server as offline. Offline servers
+         * receive no incoming traffic.
          *
-         **/
+         * <p>Example: {@code false}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isOffline")
         private Boolean isOffline;
 
         /**
-         * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
-         * traffic.
-         * <p>
-         * Example: {@code false}
+         * Whether the network load balancer should treat this server as offline. Offline servers
+         * receive no incoming traffic.
+         *
+         * <p>Example: {@code false}
          *
          * @param isOffline the value to set
          * @return this builder
-         **/
+         */
         public Builder isOffline(Boolean isOffline) {
             this.isOffline = isOffline;
             this.__explicitlySet__.add("isOffline");
@@ -290,9 +281,7 @@ public final class CreateBackendDetails extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,169 +291,159 @@ public final class CreateBackendDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated.
-     * Example: {@code webServer1}
-     *
-     **/
+     * Optional unique name identifying the backend within the backend set. If not specified, then
+     * one will be generated. Example: {@code webServer1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Optional unique name identifying the backend within the backend set. If not specified, then one will be generated.
-     * Example: {@code webServer1}
+     * Optional unique name identifying the backend within the backend set. If not specified, then
+     * one will be generated. Example: {@code webServer1}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The IP address of the backend server.
-     * Example: {@code 10.0.0.3}
-     *
-     **/
+    /** The IP address of the backend server. Example: {@code 10.0.0.3} */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The IP address of the backend server.
-     * Example: {@code 10.0.0.3}
+     * The IP address of the backend server. Example: {@code 10.0.0.3}
      *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * The IP OCID/Instance OCID associated with the backend server.
-     * Example: {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
-     *
-     **/
+     * The IP OCID/Instance OCID associated with the backend server. Example: {@code
+     * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The IP OCID/Instance OCID associated with the backend server.
-     * Example: {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
+     * The IP OCID/Instance OCID associated with the backend server. Example: {@code
+     * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>}
      *
      * @return the value
-     **/
+     */
     public String getTargetId() {
         return targetId;
     }
 
     /**
      * The communication port for the backend server.
-     * <p>
-     * Example: {@code 8080}
      *
-     **/
+     * <p>Example: {@code 8080}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The communication port for the backend server.
-     * <p>
-     * Example: {@code 8080}
+     *
+     * <p>Example: {@code 8080}
      *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-     * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
-     * as a server weighted '1'.
-     * For more information about load balancing policies, see
-     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
-     * <p>
-     * Example: {@code 3}
+     * The network load balancing policy weight assigned to the server. Backend servers with a
+     * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
+     * '3' receives three times the number of new connections as a server weighted '1'. For more
+     * information about load balancing policies, see [How Network Load Balancing Policies
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      *
-     **/
+     * <p>Example: {@code 3}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Integer weight;
 
     /**
-     * The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-     * proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections
-     * as a server weighted '1'.
-     * For more information about load balancing policies, see
-     * [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
-     * <p>
-     * Example: {@code 3}
+     * The network load balancing policy weight assigned to the server. Backend servers with a
+     * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
+     * '3' receives three times the number of new connections as a server weighted '1'. For more
+     * information about load balancing policies, see [How Network Load Balancing Policies
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
+     *
+     * <p>Example: {@code 3}
      *
      * @return the value
-     **/
+     */
     public Integer getWeight() {
         return weight;
     }
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
-     * incoming traffic.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
+     * no incoming traffic.
      *
-     **/
+     * <p>Example: {@code false}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDrain")
     private final Boolean isDrain;
 
     /**
-     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive no
-     * incoming traffic.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should drain this server. Servers marked "isDrain" receive
+     * no incoming traffic.
+     *
+     * <p>Example: {@code false}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsDrain() {
         return isDrain;
     }
 
     /**
-     * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should treat this server as a backup unit. If {@code true},
+     * then the network load balancer forwards no ingress traffic to this backend server unless all
+     * other backend servers not marked as "isBackup" fail the health check policy.
      *
-     **/
+     * <p>Example: {@code false}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackup")
     private final Boolean isBackup;
 
     /**
-     * Whether the network load balancer should treat this server as a backup unit. If {@code true}, then the network load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should treat this server as a backup unit. If {@code true},
+     * then the network load balancer forwards no ingress traffic to this backend server unless all
+     * other backend servers not marked as "isBackup" fail the health check policy.
+     *
+     * <p>Example: {@code false}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsBackup() {
         return isBackup;
     }
 
     /**
-     * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
-     * traffic.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should treat this server as offline. Offline servers
+     * receive no incoming traffic.
      *
-     **/
+     * <p>Example: {@code false}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isOffline")
     private final Boolean isOffline;
 
     /**
-     * Whether the network load balancer should treat this server as offline. Offline servers receive no incoming
-     * traffic.
-     * <p>
-     * Example: {@code false}
+     * Whether the network load balancer should treat this server as offline. Offline servers
+     * receive no incoming traffic.
+     *
+     * <p>Example: {@code false}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsOffline() {
         return isOffline;
     }
@@ -476,6 +455,7 @@ public final class CreateBackendDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

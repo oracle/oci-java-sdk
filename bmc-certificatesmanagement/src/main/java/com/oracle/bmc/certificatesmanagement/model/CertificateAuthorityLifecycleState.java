@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.certificatesmanagement.model;
 
-/**
- * The current lifecycle state of the certificate authority (CA).
- **/
+/** The current lifecycle state of the certificate authority (CA). */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum CertificateAuthorityLifecycleState {
+public enum CertificateAuthorityLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

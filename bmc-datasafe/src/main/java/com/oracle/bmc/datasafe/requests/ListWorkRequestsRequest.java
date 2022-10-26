@@ -6,46 +6,38 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListWorkRequestsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     private String compartmentId;
 
-    /**
-     * A filter to return only resources that match the specified compartment OCID.
-     */
+    /** A filter to return only resources that match the specified compartment OCID. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * A filter to return only work requests that match the specific operation type.
-     */
+    /** A filter to return only work requests that match the specific operation type. */
     private String operationType;
 
-    /**
-     * A filter to return only work requests that match the specific operation type.
-     */
+    /** A filter to return only work requests that match the specific operation type. */
     public String getOperationType() {
         return operationType;
     }
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order is descending.
-     *
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
+     * order is descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order is descending.
-     *
-     **/
-    public enum SortBy {
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
+     * order is descending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Starttime("STARTTIME"),
         Finishtime("FINISHTIME"),
         Acceptedtime("ACCEPTEDTIME"),
@@ -80,22 +72,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-     * The default order is descending.
-     *
+     * The field used for sorting. Only one sorting order (sortOrder) can be specified. The default
+     * order is descending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -128,63 +115,65 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /**
-     * The sort order to use, either ascending (ASC) or descending (DESC).
-     */
+    /** The sort order to use, either ascending (ASC) or descending (DESC). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * A filter to return only work requests that match the specified resource OCID.
-     */
+    /** A filter to return only work requests that match the specified resource OCID. */
     private String resourceId;
 
-    /**
-     * A filter to return only work requests that match the specified resource OCID.
-     */
+    /** A filter to return only work requests that match the specified resource OCID. */
     public String getResourceId() {
         return resourceId;
     }
     /**
-     * A filter to return only work requests that are associated to the specified target database OCID.
+     * A filter to return only work requests that are associated to the specified target database
+     * OCID.
      */
     private String targetDatabaseId;
 
     /**
-     * A filter to return only work requests that are associated to the specified target database OCID.
+     * A filter to return only work requests that are associated to the specified target database
+     * OCID.
      */
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving
+     * results. It is usually retrieved from a previous "List" call. For details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List"
+     * call. For details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
@@ -193,17 +182,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A filter to return only resources that match the specified compartment OCID.
-         */
+        /** A filter to return only resources that match the specified compartment OCID. */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -212,13 +199,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return only work requests that match the specific operation type.
-         */
+        /** A filter to return only work requests that match the specific operation type. */
         private String operationType = null;
 
         /**
          * A filter to return only work requests that match the specific operation type.
+         *
          * @param operationType the value to set
          * @return this builder instance
          */
@@ -228,15 +214,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-         * The default order is descending.
-         *
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified. The
+         * default order is descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used for sorting. Only one sorting order (sortOrder) can be specified.
-         * The default order is descending.
+         * The field used for sorting. Only one sorting order (sortOrder) can be specified. The
+         * default order is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -246,13 +231,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending (ASC) or descending (DESC).
-         */
+        /** The sort order to use, either ascending (ASC) or descending (DESC). */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -261,13 +245,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter to return only work requests that match the specified resource OCID.
-         */
+        /** A filter to return only work requests that match the specified resource OCID. */
         private String resourceId = null;
 
         /**
          * A filter to return only work requests that match the specified resource OCID.
+         *
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -277,12 +260,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only work requests that are associated to the specified target database OCID.
+         * A filter to return only work requests that are associated to the specified target
+         * database OCID.
          */
         private String targetDatabaseId = null;
 
         /**
-         * A filter to return only work requests that are associated to the specified target database OCID.
+         * A filter to return only work requests that are associated to the specified target
+         * database OCID.
+         *
          * @param targetDatabaseId the value to set
          * @return this builder instance
          */
@@ -291,13 +277,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -307,12 +292,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving
+         * results. It is usually retrieved from a previous "List" call. For details about how
+         * pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -322,12 +314,17 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List"
+         * call. For details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -338,18 +335,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -361,6 +359,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsRequest o) {
@@ -381,10 +380,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestsRequest
          */
@@ -398,7 +398,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestsRequest
@@ -415,12 +416,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder, resourceId, targetDatabaseId, opcRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, operationType, sortBy, sortOrder,
+            // resourceId, targetDatabaseId, opcRequestId, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -438,6 +441,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

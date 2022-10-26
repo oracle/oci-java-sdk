@@ -6,9 +6,7 @@ package com.oracle.bmc.auth.internal;
 
 import com.oracle.bmc.auth.SessionKeySupplier;
 
-/**
- * This class returns a security token, supplied as a fixed value.
- */
+/** This class returns a security token, supplied as a fixed value. */
 public class FixedContentResourcePrincipalFederationClient implements FederationClient {
     private final SecurityTokenAdapter securityTokenAdapter;
 

@@ -5,21 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateSubnetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateSubnetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateSubnetDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "definedTags",
@@ -57,24 +58,25 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -82,104 +84,103 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the set of DHCP options the subnet will use.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the set of DHCP options the subnet will use.
          *
          * @param dhcpOptionsId the value to set
          * @return this builder
-         **/
+         */
         public Builder dhcpOptionsId(String dhcpOptionsId) {
             this.dhcpOptionsId = dhcpOptionsId;
             this.__explicitlySet__.add("dhcpOptionsId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the subnet will use.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the subnet will use.
          *
          * @param routeTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
-         * The OCIDs of the security list or lists the subnet will use. This
-         * replaces the entire current set of security lists. Remember that
-         * security lists are associated *with the subnet*, but the rules are
-         * applied to the individual VNICs in the subnet.
-         *
-         **/
+         * The OCIDs of the security list or lists the subnet will use. This replaces the entire
+         * current set of security lists. Remember that security lists are associated *with the
+         * subnet*, but the rules are applied to the individual VNICs in the subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
         private java.util.List<String> securityListIds;
 
         /**
-         * The OCIDs of the security list or lists the subnet will use. This
-         * replaces the entire current set of security lists. Remember that
-         * security lists are associated *with the subnet*, but the rules are
-         * applied to the individual VNICs in the subnet.
+         * The OCIDs of the security list or lists the subnet will use. This replaces the entire
+         * current set of security lists. Remember that security lists are associated *with the
+         * subnet*, but the rules are applied to the individual VNICs in the subnet.
          *
          * @param securityListIds the value to set
          * @return this builder
-         **/
+         */
         public Builder securityListIds(java.util.List<String> securityListIds) {
             this.securityListIds = securityListIds;
             this.__explicitlySet__.add("securityListIds");
@@ -187,95 +188,96 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
-         * <p>
-         * - Must be valid.
-         * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
-         * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
-         * - Must contain all IP addresses in use in the old CIDR range.
-         * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
-         * <p>
-         **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
-         * <p>
-         * Example: {@code 172.16.0.0/16}
          *
-         **/
+         * <p>- Must be valid. - The CIDR block's IP range must be completely within one of the
+         * VCN's CIDR block ranges. - The old and new CIDR block ranges must use the same network
+         * address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}. - Must contain all IP
+         * addresses in use in the old CIDR range. - The new CIDR range's broadcast address (last IP
+         * address of CIDR range) must not be an IP address in use in the old CIDR range.
+         *
+         * <p>*Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs
+         * for this resource while the update is in progress.
+         *
+         * <p>Example: {@code 172.16.0.0/16}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
          * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
-         * <p>
-         * - Must be valid.
-         * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
-         * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
-         * - Must contain all IP addresses in use in the old CIDR range.
-         * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
-         * <p>
-         **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
-         * <p>
-         * Example: {@code 172.16.0.0/16}
+         *
+         * <p>- Must be valid. - The CIDR block's IP range must be completely within one of the
+         * VCN's CIDR block ranges. - The old and new CIDR block ranges must use the same network
+         * address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}. - Must contain all IP
+         * addresses in use in the old CIDR range. - The new CIDR range's broadcast address (last IP
+         * address of CIDR range) must not be an IP address in use in the old CIDR range.
+         *
+         * <p>*Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs
+         * for this resource while the update is in progress.
+         *
+         * <p>Example: {@code 172.16.0.0/16}
          *
          * @param cidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * This is the IPv6 CIDR block for the subnet's IP address space.
-         * The subnet size is always /64.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * The provided CIDR must maintain the following rules -
-         * <p>
-         * a. The IPv6 CIDR block is valid and correctly formatted.
-         * b. The IPv6 CIDR is within the parent VCN IPv6 range.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
+         * /64. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+         * provided CIDR must maintain the following rules -
          *
-         **/
+         * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
+         * the parent VCN IPv6 range.
+         *
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
         private String ipv6CidrBlock;
 
         /**
-         * This is the IPv6 CIDR block for the subnet's IP address space.
-         * The subnet size is always /64.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         * The provided CIDR must maintain the following rules -
-         * <p>
-         * a. The IPv6 CIDR block is valid and correctly formatted.
-         * b. The IPv6 CIDR is within the parent VCN IPv6 range.
-         * <p>
-         * Example: {@code 2001:0db8:0123:1111::/64}
+         * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always
+         * /64. See [IPv6
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm). The
+         * provided CIDR must maintain the following rules -
+         *
+         * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within
+         * the parent VCN IPv6 range.
+         *
+         * <p>Example: {@code 2001:0db8:0123:1111::/64}
          *
          * @param ipv6CidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.__explicitlySet__.add("ipv6CidrBlock");
             return this;
         }
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-         * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
-         *
-         **/
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
+         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
+         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
+         * IPv6 CIDR blocks allowed to a subnet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-         * - The CIDR blocks must be valid.
-         * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-         * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+         * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR
+         * blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR
+         * blocks must be valid. - Multiple CIDR blocks must not overlap each other or the
+         * on-premises network CIDR block. - The number of CIDR blocks must not exceed the limit of
+         * IPv6 CIDR blocks allowed to a subnet.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
             this.ipv6CidrBlocks = ipv6CidrBlocks;
             this.__explicitlySet__.add("ipv6CidrBlocks");
@@ -336,9 +338,7 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -348,207 +348,206 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the set of DHCP options the subnet will use.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
     private final String dhcpOptionsId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the set of DHCP options the subnet will use.
      *
      * @return the value
-     **/
+     */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the subnet will use.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the subnet will use.
      *
      * @return the value
-     **/
+     */
     public String getRouteTableId() {
         return routeTableId;
     }
 
     /**
-     * The OCIDs of the security list or lists the subnet will use. This
-     * replaces the entire current set of security lists. Remember that
-     * security lists are associated *with the subnet*, but the rules are
-     * applied to the individual VNICs in the subnet.
-     *
-     **/
+     * The OCIDs of the security list or lists the subnet will use. This replaces the entire current
+     * set of security lists. Remember that security lists are associated *with the subnet*, but the
+     * rules are applied to the individual VNICs in the subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
     private final java.util.List<String> securityListIds;
 
     /**
-     * The OCIDs of the security list or lists the subnet will use. This
-     * replaces the entire current set of security lists. Remember that
-     * security lists are associated *with the subnet*, but the rules are
-     * applied to the individual VNICs in the subnet.
+     * The OCIDs of the security list or lists the subnet will use. This replaces the entire current
+     * set of security lists. Remember that security lists are associated *with the subnet*, but the
+     * rules are applied to the individual VNICs in the subnet.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSecurityListIds() {
         return securityListIds;
     }
 
     /**
      * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
-     * <p>
-     * - Must be valid.
-     * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
-     * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
-     * - Must contain all IP addresses in use in the old CIDR range.
-     * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
-     * <p>
-     **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
-     * <p>
-     * Example: {@code 172.16.0.0/16}
      *
-     **/
+     * <p>- Must be valid. - The CIDR block's IP range must be completely within one of the VCN's
+     * CIDR block ranges. - The old and new CIDR block ranges must use the same network address.
+     * Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}. - Must contain all IP addresses in use
+     * in the old CIDR range. - The new CIDR range's broadcast address (last IP address of CIDR
+     * range) must not be an IP address in use in the old CIDR range.
+     *
+     * <p>*Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for
+     * this resource while the update is in progress.
+     *
+     * <p>Example: {@code 172.16.0.0/16}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
      * The CIDR block of the subnet. The new CIDR block must meet the following criteria:
-     * <p>
-     * - Must be valid.
-     * - The CIDR block's IP range must be completely within one of the VCN's CIDR block ranges.
-     * - The old and new CIDR block ranges must use the same network address. Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}.
-     * - Must contain all IP addresses in use in the old CIDR range.
-     * - The new CIDR range's broadcast address (last IP address of CIDR range) must not be an IP address in use in the old CIDR range.
-     * <p>
-     **Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for this resource while the update is in progress.
-     * <p>
-     * Example: {@code 172.16.0.0/16}
+     *
+     * <p>- Must be valid. - The CIDR block's IP range must be completely within one of the VCN's
+     * CIDR block ranges. - The old and new CIDR block ranges must use the same network address.
+     * Example: {@code 10.0.0.0/25} and {@code 10.0.0.0/24}. - Must contain all IP addresses in use
+     * in the old CIDR range. - The new CIDR range's broadcast address (last IP address of CIDR
+     * range) must not be an IP address in use in the old CIDR range.
+     *
+     * <p>*Note:** If you are changing the CIDR block, you cannot create VNICs or private IPs for
+     * this resource while the update is in progress.
+     *
+     * <p>Example: {@code 172.16.0.0/16}
      *
      * @return the value
-     **/
+     */
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * This is the IPv6 CIDR block for the subnet's IP address space.
-     * The subnet size is always /64.
+     * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
      * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * The provided CIDR must maintain the following rules -
-     * <p>
-     * a. The IPv6 CIDR block is valid and correctly formatted.
-     * b. The IPv6 CIDR is within the parent VCN IPv6 range.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
      *
-     **/
+     * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
+     * parent VCN IPv6 range.
+     *
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
     private final String ipv6CidrBlock;
 
     /**
-     * This is the IPv6 CIDR block for the subnet's IP address space.
-     * The subnet size is always /64.
+     * This is the IPv6 CIDR block for the subnet's IP address space. The subnet size is always /64.
      * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * The provided CIDR must maintain the following rules -
-     * <p>
-     * a. The IPv6 CIDR block is valid and correctly formatted.
-     * b. The IPv6 CIDR is within the parent VCN IPv6 range.
-     * <p>
-     * Example: {@code 2001:0db8:0123:1111::/64}
+     *
+     * <p>a. The IPv6 CIDR block is valid and correctly formatted. b. The IPv6 CIDR is within the
+     * parent VCN IPv6 range.
+     *
+     * <p>Example: {@code 2001:0db8:0123:1111::/64}
      *
      * @return the value
-     **/
+     */
     public String getIpv6CidrBlock() {
         return ipv6CidrBlock;
     }
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
-     *
-     **/
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
+     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
+     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
+     * subnet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
     /**
-     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-     * - The CIDR blocks must be valid.
-     * - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-     * - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+     * The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks,
+     * BYOIPv6 CIDR blocks) for the subnet that meets the following criteria: - The CIDR blocks must
+     * be valid. - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR
+     * block. - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a
+     * subnet.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getIpv6CidrBlocks() {
         return ipv6CidrBlocks;
     }
@@ -560,6 +559,7 @@ public final class UpdateSubnetDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

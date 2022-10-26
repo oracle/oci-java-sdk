@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A materialized dynamic field, rules have been applied and all fields are concrete.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A materialized dynamic field, rules have been applied and all fields are concrete. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MaterializedDynamicField.Builder.class
-)
+        builder = MaterializedDynamicField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MaterializedDynamicField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,17 +88,16 @@ public final class MaterializedDynamicField extends TypedObject {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Reference key value to an object within the document.
-         **/
+        /** Reference key value to an object within the document. */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
         /**
          * Reference key value to an object within the document.
+         *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -169,9 +167,7 @@ public final class MaterializedDynamicField extends TypedObject {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,16 +192,15 @@ public final class MaterializedDynamicField extends TypedObject {
         this.type = type;
     }
 
-    /**
-     * Reference key value to an object within the document.
-     **/
+    /** Reference key value to an object within the document. */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
     /**
      * Reference key value to an object within the document.
+     *
      * @return the value
-     **/
+     */
     public String getScope() {
         return scope;
     }
@@ -224,6 +219,7 @@ public final class MaterializedDynamicField extends TypedObject {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

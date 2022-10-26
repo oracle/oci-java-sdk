@@ -5,33 +5,30 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * An object that represents the action of configuring an access control rule. Access control rules permit access
- * to application resources based on user-specified match conditions. This rule applies only to HTTP listeners.
- * **NOTES:**
- * *  If you do not specify any access control rules, the default rule is to allow all traffic.
- * *  If you add access control rules, the load balancer denies any traffic that does not match the rules.
- * *  Maximum of two match conditions can be specified in a rule.
- * *  You can specify this rule only with the following {@code RuleCondition} combinations:
- * *  {@code SOURCE_IP_ADDRESS}
- * *  {@code SOURCE_VCN_ID}
- * *  {@code SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS}
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An object that represents the action of configuring an access control rule. Access control rules
+ * permit access to application resources based on user-specified match conditions. This rule
+ * applies only to HTTP listeners. **NOTES:** * If you do not specify any access control rules, the
+ * default rule is to allow all traffic. * If you add access control rules, the load balancer denies
+ * any traffic that does not match the rules. * Maximum of two match conditions can be specified in
+ * a rule. * You can specify this rule only with the following {@code RuleCondition} combinations: *
+ * {@code SOURCE_IP_ADDRESS} * {@code SOURCE_VCN_ID} * {@code SOURCE_VCN_ID",
+ * "SOURCE_VCN_IP_ADDRESS} <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AllowRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "action"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "action")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AllowRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -47,8 +44,7 @@ public final class AllowRule extends Rule {
         /**
          * A brief description of the access control rule. Avoid entering confidential information.
          * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -58,7 +54,7 @@ public final class AllowRule extends Rule {
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -88,9 +84,7 @@ public final class AllowRule extends Rule {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,8 +110,7 @@ public final class AllowRule extends Rule {
     /**
      * A brief description of the access control rule. Avoid entering confidential information.
      * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -126,7 +119,7 @@ public final class AllowRule extends Rule {
      * example: {@code 192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.}
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -138,6 +131,7 @@ public final class AllowRule extends Rule {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

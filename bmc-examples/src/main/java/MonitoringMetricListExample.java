@@ -18,20 +18,18 @@ import java.io.IOException;
  * This class demonstrates how to use the Monitoring api in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Listing metrics</li>
+ *   <li>Listing metrics
  * </ul>
  *
  * This class makes the following assumptions:
+ *
  * <ul>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Region where the example will be run is: us-phoenix-1</li>
- *   <li>
- *      The user has the appropriate permissions to post/list/get metrics in the compartment specified.
- *   </li>
- * <ul>
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Region where the example will be run is: us-phoenix-1
+ *   <li>The user has the appropriate permissions to post/list/get metrics in the compartment
+ *       specified.
+ *       <ul>
  */
 public class MonitoringMetricListExample {
 
@@ -45,9 +43,7 @@ public class MonitoringMetricListExample {
                         + "MonitoringMetricListExample <compartment> [<namespace> [<metricName>]]");
     }
 
-    /**
-     * The entry point for the example.
-     */
+    /** The entry point for the example. */
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
             printUsageAndThrowException("Insufficient args\n");

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-/**
- * Storage tiers supported by Object Storage
- **/
+/** Storage tiers supported by Object Storage */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum StorageTier {
+public enum StorageTier implements com.oracle.bmc.http.internal.BmcEnum {
     Standard("Standard"),
     InfrequentAccess("InfrequentAccess"),
     Archive("Archive"),

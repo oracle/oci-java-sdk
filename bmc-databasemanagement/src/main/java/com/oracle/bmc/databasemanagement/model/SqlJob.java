@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the SQL job.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the SQL job. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlJob.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "jobType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "jobType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlJob extends Job {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -169,85 +169,90 @@ public final class SqlJob extends Job {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
-         **/
+        /** The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType. */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
         private SqlType sqlType;
 
         /**
          * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
+         *
          * @param sqlType the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlType(SqlType sqlType) {
             this.sqlType = sqlType;
             this.__explicitlySet__.add("sqlType");
             return this;
         }
         /**
-         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
-         **/
+         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL
+         * operationType.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
-         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
+         * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL
+         * operationType.
+         *
          * @param sqlText the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-        /**
-         * The SQL operation type.
-         **/
+        /** The SQL operation type. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
          * The SQL operation type.
+         *
          * @param operationType the value to set
          * @return this builder
-         **/
+         */
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
-         * then the user name should exist on all the databases in the group with the same password.
-         *
-         **/
+         * The database user name used to execute the SQL job. If the job is being executed on a
+         * Managed Database Group, then the user name should exist on all the databases in the group
+         * with the same password.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
-         * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
-         * then the user name should exist on all the databases in the group with the same password.
+         * The database user name used to execute the SQL job. If the job is being executed on a
+         * Managed Database Group, then the user name should exist on all the databases in the group
+         * with the same password.
          *
          * @param userName the value to set
          * @return this builder
-         **/
+         */
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
-         **/
+         * The role of the database user. Indicates whether the database user is a normal user or
+         * sysdba.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         * The role of the database user. Indicates whether the database user is a normal user or
+         * sysdba.
+         *
          * @param role the value to set
          * @return this builder
-         **/
+         */
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -356,9 +361,7 @@ public final class SqlJob extends Job {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -414,18 +417,16 @@ public final class SqlJob extends Job {
         this.role = role;
     }
 
-    /**
-     * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
-     **/
-    public enum SqlType {
+    /** The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType. */
+    public enum SqlType implements com.oracle.bmc.http.internal.BmcEnum {
         Query("QUERY"),
         Dml("DML"),
         Ddl("DDL"),
         Plsql("PLSQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -464,43 +465,43 @@ public final class SqlJob extends Job {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
-     **/
+    /** The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType. */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlType")
     private final SqlType sqlType;
 
     /**
      * The type of SQL. This is a mandatory field for the EXECUTE_SQL operationType.
+     *
      * @return the value
-     **/
+     */
     public SqlType getSqlType() {
         return sqlType;
     }
 
     /**
-     * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
-     **/
+     * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL
+     * operationType.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
-     * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL operationType.
+     * The SQL text to be executed in the job. This is a mandatory field for the EXECUTE_SQL
+     * operationType.
+     *
      * @return the value
-     **/
+     */
     public String getSqlText() {
         return sqlText;
     }
 
-    /**
-     * The SQL operation type.
-     **/
-    public enum OperationType {
+    /** The SQL operation type. */
+    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
         ExecuteSql("EXECUTE_SQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -539,48 +540,49 @@ public final class SqlJob extends Job {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The SQL operation type.
-     **/
+    /** The SQL operation type. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
      * The SQL operation type.
+     *
      * @return the value
-     **/
+     */
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
-     * then the user name should exist on all the databases in the group with the same password.
-     *
-     **/
+     * The database user name used to execute the SQL job. If the job is being executed on a Managed
+     * Database Group, then the user name should exist on all the databases in the group with the
+     * same password.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The database user name used to execute the SQL job. If the job is being executed on a Managed Database Group,
-     * then the user name should exist on all the databases in the group with the same password.
+     * The database user name used to execute the SQL job. If the job is being executed on a Managed
+     * Database Group, then the user name should exist on all the databases in the group with the
+     * same password.
      *
      * @return the value
-     **/
+     */
     public String getUserName() {
         return userName;
     }
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
-     **/
-    public enum Role {
+     * The role of the database user. Indicates whether the database user is a normal user or
+     * sysdba.
+     */
+    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
         Normal("NORMAL"),
         Sysdba("SYSDBA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -618,15 +620,18 @@ public final class SqlJob extends Job {
         }
     };
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
-     **/
+     * The role of the database user. Indicates whether the database user is a normal user or
+     * sysdba.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     * The role of the database user. Indicates whether the database user is a normal user or
+     * sysdba.
+     *
      * @return the value
-     **/
+     */
     public Role getRole() {
         return role;
     }
@@ -638,6 +643,7 @@ public final class SqlJob extends Job {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,85 +6,73 @@ package com.oracle.bmc.apigateway.requests;
 
 import com.oracle.bmc.apigateway.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListDeploymentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDeploymentsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apigateway/ListDeploymentsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDeploymentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ocid of the compartment in which to list resources.
-     */
+    /** The ocid of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ocid of the compartment in which to list resources.
-     */
+    /** The ocid of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Filter deployments by the gateway ocid.
-     */
+    /** Filter deployments by the gateway ocid. */
     private String gatewayId;
 
-    /**
-     * Filter deployments by the gateway ocid.
-     */
+    /** Filter deployments by the gateway ocid. */
     public String getGatewayId() {
         return gatewayId;
     }
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
      *
+     * <p>Example: {@code My new resource}
      */
     private String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
-     * <p>
-     * Example: {@code My new resource}
      *
+     * <p>Example: {@code My new resource}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * A filter to return only resources that match the given lifecycle state.
-     * <p>
-     * Example: {@code SUCCEEDED}
      *
+     * <p>Example: {@code SUCCEEDED}
      */
     private com.oracle.bmc.apigateway.model.Deployment.LifecycleState lifecycleState;
 
     /**
      * A filter to return only resources that match the given lifecycle state.
-     * <p>
-     * Example: {@code SUCCEEDED}
      *
+     * <p>Example: {@code SUCCEEDED}
      */
     public com.oracle.bmc.apigateway.model.Deployment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
@@ -96,8 +84,8 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
-     **/
-    public enum SortOrder {
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -137,22 +125,18 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for {@code timeCreated} is descending. Default order for
-     * {@code displayName} is ascending. The {@code displayName} sort order is case
-     * sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
+     * {@code displayName} sort order is case sensitive.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for {@code timeCreated} is descending. Default order for
-     * {@code displayName} is ascending. The {@code displayName} sort order is case
-     * sensitive.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
+     * {@code displayName} sort order is case sensitive.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -186,23 +170,17 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for {@code timeCreated} is descending. Default order for
-     * {@code displayName} is ascending. The {@code displayName} sort order is case
-     * sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * {@code timeCreated} is descending. Default order for {@code displayName} is ascending. The
+     * {@code displayName} sort order is case sensitive.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request id for tracing.
-     */
+    /** The client request id for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request id for tracing.
-     */
+    /** The client request id for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -210,17 +188,15 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDeploymentsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ocid of the compartment in which to list resources.
-         */
+        /** The ocid of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ocid of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -229,13 +205,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * Filter deployments by the gateway ocid.
-         */
+        /** Filter deployments by the gateway ocid. */
         private String gatewayId = null;
 
         /**
          * Filter deployments by the gateway ocid.
+         *
          * @param gatewayId the value to set
          * @return this builder instance
          */
@@ -246,16 +221,15 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
          *
+         * <p>Example: {@code My new resource}
          */
         private String displayName = null;
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
-         * <p>
-         * Example: {@code My new resource}
+         *
+         * <p>Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -267,16 +241,15 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * A filter to return only resources that match the given lifecycle state.
-         * <p>
-         * Example: {@code SUCCEEDED}
          *
+         * <p>Example: {@code SUCCEEDED}
          */
         private com.oracle.bmc.apigateway.model.Deployment.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state.
-         * <p>
-         * Example: {@code SUCCEEDED}
+         *
+         * <p>Example: {@code SUCCEEDED}
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -287,13 +260,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -303,12 +275,15 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -318,12 +293,15 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
+         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy
+         * value.
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy value.
+         * The sort order to use, either 'asc' or 'desc'. The default order depends on the sortBy
+         * value.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -333,19 +311,16 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}).
-         * Default order for {@code timeCreated} is descending. Default order for
-         * {@code displayName} is ascending. The {@code displayName} sort order is case
-         * sensitive.
-         *
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for {@code timeCreated} is descending. Default order for {@code displayName} is
+         * ascending. The {@code displayName} sort order is case sensitive.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}).
-         * Default order for {@code timeCreated} is descending. Default order for
-         * {@code displayName} is ascending. The {@code displayName} sort order is case
-         * sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for {@code timeCreated} is descending. Default order for {@code displayName} is
+         * ascending. The {@code displayName} sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -355,13 +330,12 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /**
-         * The client request id for tracing.
-         */
+        /** The client request id for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request id for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -372,18 +346,19 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -395,6 +370,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDeploymentsRequest o) {
@@ -415,10 +391,11 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDeploymentsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDeploymentsRequest
          */
@@ -432,7 +409,8 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListDeploymentsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDeploymentsRequest
@@ -449,12 +427,14 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDeploymentsRequest(compartmentId, gatewayId, displayName, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDeploymentsRequest(compartmentId, gatewayId, displayName, lifecycleState,
+            // limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -472,6 +452,7 @@ public class ListDeploymentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

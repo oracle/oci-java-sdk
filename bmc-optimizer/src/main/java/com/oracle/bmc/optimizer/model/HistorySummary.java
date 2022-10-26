@@ -5,20 +5,21 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * The metadata associated with the recommendation history and its related resources.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata associated with the recommendation history and its related resources. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HistorySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HistorySummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HistorySummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,129 +80,121 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique OCID associated with the recommendation history.
-         **/
+        /** The unique OCID associated with the recommendation history. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique OCID associated with the recommendation history.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name assigned to the resource.
-         **/
+        /** The name assigned to the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name assigned to the resource.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The kind of resource.
-         **/
+        /** The kind of resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The kind of resource.
+         *
          * @param resourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /**
-         * The unique OCID associated with the category.
-         **/
+        /** The unique OCID associated with the category. */
         @com.fasterxml.jackson.annotation.JsonProperty("categoryId")
         private String categoryId;
 
         /**
          * The unique OCID associated with the category.
+         *
          * @param categoryId the value to set
          * @return this builder
-         **/
+         */
         public Builder categoryId(String categoryId) {
             this.categoryId = categoryId;
             this.__explicitlySet__.add("categoryId");
             return this;
         }
-        /**
-         * The unique OCID associated with the recommendation.
-         **/
+        /** The unique OCID associated with the recommendation. */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
         private String recommendationId;
 
         /**
          * The unique OCID associated with the recommendation.
+         *
          * @param recommendationId the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendationId(String recommendationId) {
             this.recommendationId = recommendationId;
             this.__explicitlySet__.add("recommendationId");
             return this;
         }
-        /**
-         * The name assigned to the recommendation.
-         **/
+        /** The name assigned to the recommendation. */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendationName")
         private String recommendationName;
 
         /**
          * The name assigned to the recommendation.
+         *
          * @param recommendationName the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendationName(String recommendationName) {
             this.recommendationName = recommendationName;
             this.__explicitlySet__.add("recommendationName");
             return this;
         }
-        /**
-         * The unique OCID associated with the resource.
-         **/
+        /** The unique OCID associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The unique OCID associated with the resource.
+         *
          * @param resourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /**
-         * The unique OCID associated with the resource action.
-         **/
+        /** The unique OCID associated with the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
         private String resourceActionId;
 
         /**
          * The unique OCID associated with the resource action.
+         *
          * @param resourceActionId the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceActionId(String resourceActionId) {
             this.resourceActionId = resourceActionId;
             this.__explicitlySet__.add("resourceActionId");
@@ -216,81 +209,76 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * The OCID of the compartment.
-         **/
+        /** The OCID of the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The name assigned to the compartment.
-         **/
+        /** The name assigned to the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
         private String compartmentName;
 
         /**
          * The name assigned to the compartment.
+         *
          * @param compartmentName the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentName(String compartmentName) {
             this.compartmentName = compartmentName;
             this.__explicitlySet__.add("compartmentName");
             return this;
         }
-        /**
-         * The recommendation history's current state.
-         **/
+        /** The recommendation history's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The recommendation history's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The estimated cost savings, in dollars, for the resource action.
-         **/
+        /** The estimated cost savings, in dollars, for the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedCostSaving")
         private Double estimatedCostSaving;
 
         /**
          * The estimated cost savings, in dollars, for the resource action.
+         *
          * @param estimatedCostSaving the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedCostSaving(Double estimatedCostSaving) {
             this.estimatedCostSaving = estimatedCostSaving;
             this.__explicitlySet__.add("estimatedCostSaving");
             return this;
         }
-        /**
-         * The current status of the resource action.
-         **/
+        /** The current status of the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The current status of the resource action.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -298,87 +286,84 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
         }
         /**
          * Custom metadata key/value pairs for the resource action.
-         * <p>
-         **Metadata Example**
-         * <p>
-         * "metadata" : {
-         *          "cpuRecommendedShape": "VM.Standard1.1",
-         *          "computeMemoryUtilization": "26.05734124418388",
-         *          "currentShape": "VM.Standard1.2",
-         *          "instanceRecommendedShape": "VM.Standard1.1",
-         *          "computeCpuUtilization": "7.930035319720132",
-         *          "memoryRecommendedShape": "None"
-         *       }
          *
-         **/
+         * <p>*Metadata Example**
+         *
+         * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+         * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+         * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+         * "None" }
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
          * Custom metadata key/value pairs for the resource action.
-         * <p>
-         **Metadata Example**
-         * <p>
-         * "metadata" : {
-         *          "cpuRecommendedShape": "VM.Standard1.1",
-         *          "computeMemoryUtilization": "26.05734124418388",
-         *          "currentShape": "VM.Standard1.2",
-         *          "instanceRecommendedShape": "VM.Standard1.1",
-         *          "computeCpuUtilization": "7.930035319720132",
-         *          "memoryRecommendedShape": "None"
-         *       }
+         *
+         * <p>*Metadata Example**
+         *
+         * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+         * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+         * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+         * "None" }
          *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
-         * Additional metadata key/value pairs that you provide.
-         * They serve the same purpose and functionality as fields in the {@code metadata} object.
-         * <p>
-         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-         * <p>
-         * For example:
-         * <p>
-         * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+         * Additional metadata key/value pairs that you provide. They serve the same purpose and
+         * functionality as fields in the {@code metadata} object.
          *
-         **/
+         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+         * objects (whereas {@code metadata} fields are string/string maps only).
+         *
+         * <p>For example:
+         *
+         * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+         * {"name":"VM.Standard2.8"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
         private java.util.Map<String, Object> extendedMetadata;
 
         /**
-         * Additional metadata key/value pairs that you provide.
-         * They serve the same purpose and functionality as fields in the {@code metadata} object.
-         * <p>
-         * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-         * <p>
-         * For example:
-         * <p>
-         * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+         * Additional metadata key/value pairs that you provide. They serve the same purpose and
+         * functionality as fields in the {@code metadata} object.
+         *
+         * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+         * objects (whereas {@code metadata} fields are string/string maps only).
+         *
+         * <p>For example:
+         *
+         * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+         * {"name":"VM.Standard2.8"}}}
          *
          * @param extendedMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder extendedMetadata(java.util.Map<String, Object> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
             return this;
         }
         /**
-         * The date and time the recommendation history was created, in the format defined by RFC3339.
-         **/
+         * The date and time the recommendation history was created, in the format defined by
+         * RFC3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the recommendation history was created, in the format defined by RFC3339.
+         * The date and time the recommendation history was created, in the format defined by
+         * RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -471,9 +456,7 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -482,114 +465,106 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique OCID associated with the recommendation history.
-     **/
+    /** The unique OCID associated with the recommendation history. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique OCID associated with the recommendation history.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name assigned to the resource.
-     **/
+    /** The name assigned to the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name assigned to the resource.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The kind of resource.
-     **/
+    /** The kind of resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The kind of resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceType() {
         return resourceType;
     }
 
-    /**
-     * The unique OCID associated with the category.
-     **/
+    /** The unique OCID associated with the category. */
     @com.fasterxml.jackson.annotation.JsonProperty("categoryId")
     private final String categoryId;
 
     /**
      * The unique OCID associated with the category.
+     *
      * @return the value
-     **/
+     */
     public String getCategoryId() {
         return categoryId;
     }
 
-    /**
-     * The unique OCID associated with the recommendation.
-     **/
+    /** The unique OCID associated with the recommendation. */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationId")
     private final String recommendationId;
 
     /**
      * The unique OCID associated with the recommendation.
+     *
      * @return the value
-     **/
+     */
     public String getRecommendationId() {
         return recommendationId;
     }
 
-    /**
-     * The name assigned to the recommendation.
-     **/
+    /** The name assigned to the recommendation. */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendationName")
     private final String recommendationName;
 
     /**
      * The name assigned to the recommendation.
+     *
      * @return the value
-     **/
+     */
     public String getRecommendationName() {
         return recommendationName;
     }
 
-    /**
-     * The unique OCID associated with the resource.
-     **/
+    /** The unique OCID associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The unique OCID associated with the resource.
+     *
      * @return the value
-     **/
+     */
     public String getResourceId() {
         return resourceId;
     }
 
-    /**
-     * The unique OCID associated with the resource action.
-     **/
+    /** The unique OCID associated with the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceActionId")
     private final String resourceActionId;
 
     /**
      * The unique OCID associated with the resource action.
+     *
      * @return the value
-     **/
+     */
     public String getResourceActionId() {
         return resourceActionId;
     }
@@ -601,154 +576,144 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
         return action;
     }
 
-    /**
-     * The OCID of the compartment.
-     **/
+    /** The OCID of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The name assigned to the compartment.
-     **/
+    /** The name assigned to the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
     private final String compartmentName;
 
     /**
      * The name assigned to the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentName() {
         return compartmentName;
     }
 
-    /**
-     * The recommendation history's current state.
-     **/
+    /** The recommendation history's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The recommendation history's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The estimated cost savings, in dollars, for the resource action.
-     **/
+    /** The estimated cost savings, in dollars, for the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedCostSaving")
     private final Double estimatedCostSaving;
 
     /**
      * The estimated cost savings, in dollars, for the resource action.
+     *
      * @return the value
-     **/
+     */
     public Double getEstimatedCostSaving() {
         return estimatedCostSaving;
     }
 
-    /**
-     * The current status of the resource action.
-     **/
+    /** The current status of the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The current status of the resource action.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
     /**
      * Custom metadata key/value pairs for the resource action.
-     * <p>
-     **Metadata Example**
-     * <p>
-     * "metadata" : {
-     *          "cpuRecommendedShape": "VM.Standard1.1",
-     *          "computeMemoryUtilization": "26.05734124418388",
-     *          "currentShape": "VM.Standard1.2",
-     *          "instanceRecommendedShape": "VM.Standard1.1",
-     *          "computeCpuUtilization": "7.930035319720132",
-     *          "memoryRecommendedShape": "None"
-     *       }
      *
-     **/
+     * <p>*Metadata Example**
+     *
+     * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+     * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+     * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+     * "None" }
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
      * Custom metadata key/value pairs for the resource action.
-     * <p>
-     **Metadata Example**
-     * <p>
-     * "metadata" : {
-     *          "cpuRecommendedShape": "VM.Standard1.1",
-     *          "computeMemoryUtilization": "26.05734124418388",
-     *          "currentShape": "VM.Standard1.2",
-     *          "instanceRecommendedShape": "VM.Standard1.1",
-     *          "computeCpuUtilization": "7.930035319720132",
-     *          "memoryRecommendedShape": "None"
-     *       }
+     *
+     * <p>*Metadata Example**
+     *
+     * <p>"metadata" : { "cpuRecommendedShape": "VM.Standard1.1", "computeMemoryUtilization":
+     * "26.05734124418388", "currentShape": "VM.Standard1.2", "instanceRecommendedShape":
+     * "VM.Standard1.1", "computeCpuUtilization": "7.930035319720132", "memoryRecommendedShape":
+     * "None" }
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
 
     /**
-     * Additional metadata key/value pairs that you provide.
-     * They serve the same purpose and functionality as fields in the {@code metadata} object.
-     * <p>
-     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-     * <p>
-     * For example:
-     * <p>
-     * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and
+     * functionality as fields in the {@code metadata} object.
      *
-     **/
+     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+     * objects (whereas {@code metadata} fields are string/string maps only).
+     *
+     * <p>For example:
+     *
+     * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+     * {"name":"VM.Standard2.8"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     private final java.util.Map<String, Object> extendedMetadata;
 
     /**
-     * Additional metadata key/value pairs that you provide.
-     * They serve the same purpose and functionality as fields in the {@code metadata} object.
-     * <p>
-     * They are distinguished from {@code metadata} fields in that these can be nested JSON objects (whereas {@code metadata} fields are string/string maps only).
-     * <p>
-     * For example:
-     * <p>
-     * {@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape": {"name":"VM.Standard2.8"}}}
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and
+     * functionality as fields in the {@code metadata} object.
+     *
+     * <p>They are distinguished from {@code metadata} fields in that these can be nested JSON
+     * objects (whereas {@code metadata} fields are string/string maps only).
+     *
+     * <p>For example:
+     *
+     * <p>{@code {"CurrentShape": {"name":"VM.Standard2.16"}, "RecommendedShape":
+     * {"name":"VM.Standard2.8"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getExtendedMetadata() {
         return extendedMetadata;
     }
 
     /**
      * The date and time the recommendation history was created, in the format defined by RFC3339.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the recommendation history was created, in the format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -760,6 +725,7 @@ public final class HistorySummary extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

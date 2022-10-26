@@ -9,13 +9,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +40,12 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /**
-     * The returned DataAsset instance.
-     */
+    /** The returned DataAsset instance. */
     private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
     /**
      * The returned DataAsset instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.DataAsset getDataAsset() {
@@ -62,7 +61,7 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
     })
     private AddDataSelectorPatternsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.DataAsset dataAsset) {
@@ -72,29 +71,34 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
         this.dataAsset = dataAsset;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    AddDataSelectorPatternsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -105,15 +109,14 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +126,12 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned DataAsset instance.
-         */
+        /** The returned DataAsset instance. */
         private com.oracle.bmc.datacatalog.model.DataAsset dataAsset;
 
         /**
          * The returned DataAsset instance.
+         *
          * @param dataAsset the value to set
          * @return this builder
          */
@@ -140,8 +142,10 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(AddDataSelectorPatternsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +158,10 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public AddDataSelectorPatternsResponse build() {
             return new AddDataSelectorPatternsResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, dataAsset);
@@ -164,6 +170,7 @@ public class AddDataSelectorPatternsResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -8,39 +8,28 @@ import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     *
-     */
+    /** */
     private String opcRequestId;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     *
-     */
+    /** */
     private String etag;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned TransferDevice instance.
-     */
+    /** The returned TransferDevice instance. */
     private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
     /**
      * The returned TransferDevice instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dts.model.TransferDevice getTransferDevice() {
@@ -56,7 +45,7 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
     })
     private UpdateTransferDeviceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferDevice transferDevice) {
@@ -66,28 +55,28 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
         this.transferDevice = transferDevice;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateTransferDeviceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String opcRequestId;
 
         /**
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -96,13 +85,10 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String etag;
 
         /**
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -111,13 +97,12 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned TransferDevice instance.
-         */
+        /** The returned TransferDevice instance. */
         private com.oracle.bmc.dts.model.TransferDevice transferDevice;
 
         /**
          * The returned TransferDevice instance.
+         *
          * @param transferDevice the value to set
          * @return this builder
          */
@@ -128,8 +113,10 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateTransferDeviceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -142,8 +129,10 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateTransferDeviceResponse build() {
             return new UpdateTransferDeviceResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, transferDevice);
@@ -152,6 +141,7 @@ public class UpdateTransferDeviceResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

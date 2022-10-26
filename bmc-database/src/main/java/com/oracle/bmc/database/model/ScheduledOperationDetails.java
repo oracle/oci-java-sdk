@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of scheduled operation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of scheduled operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ScheduledOperationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ScheduledOperationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ScheduledOperationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dayOfWeek", "scheduledStartTime", "scheduledStopTime"})
     public ScheduledOperationDetails(
@@ -43,33 +42,31 @@ public final class ScheduledOperationDetails
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
-        /**
-         * auto start time. value must be of ISO-8601 format "HH:mm"
-         **/
+        /** auto start time. value must be of ISO-8601 format "HH:mm" */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledStartTime")
         private String scheduledStartTime;
 
         /**
          * auto start time. value must be of ISO-8601 format "HH:mm"
+         *
          * @param scheduledStartTime the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledStartTime(String scheduledStartTime) {
             this.scheduledStartTime = scheduledStartTime;
             this.__explicitlySet__.add("scheduledStartTime");
             return this;
         }
-        /**
-         * auto stop time. value must be of ISO-8601 format "HH:mm"
-         **/
+        /** auto stop time. value must be of ISO-8601 format "HH:mm" */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledStopTime")
         private String scheduledStopTime;
 
         /**
          * auto stop time. value must be of ISO-8601 format "HH:mm"
+         *
          * @param scheduledStopTime the value to set
          * @return this builder
-         **/
+         */
         public Builder scheduledStopTime(String scheduledStopTime) {
             this.scheduledStopTime = scheduledStopTime;
             this.__explicitlySet__.add("scheduledStopTime");
@@ -104,9 +101,7 @@ public final class ScheduledOperationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,30 +117,28 @@ public final class ScheduledOperationDetails
         return dayOfWeek;
     }
 
-    /**
-     * auto start time. value must be of ISO-8601 format "HH:mm"
-     **/
+    /** auto start time. value must be of ISO-8601 format "HH:mm" */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStartTime")
     private final String scheduledStartTime;
 
     /**
      * auto start time. value must be of ISO-8601 format "HH:mm"
+     *
      * @return the value
-     **/
+     */
     public String getScheduledStartTime() {
         return scheduledStartTime;
     }
 
-    /**
-     * auto stop time. value must be of ISO-8601 format "HH:mm"
-     **/
+    /** auto stop time. value must be of ISO-8601 format "HH:mm" */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledStopTime")
     private final String scheduledStopTime;
 
     /**
      * auto stop time. value must be of ISO-8601 format "HH:mm"
+     *
      * @return the value
-     **/
+     */
     public String getScheduledStopTime() {
         return scheduledStopTime;
     }
@@ -157,6 +150,7 @@ public final class ScheduledOperationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

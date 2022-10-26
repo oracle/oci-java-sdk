@@ -5,34 +5,32 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * The location of the input(s).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The location of the input(s). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "locationType",
-    defaultImpl = InputLocation.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "locationType",
+        defaultImpl = InputLocation.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ObjectListFileInputLocation.class,
-        name = "OBJECT_LIST_FILE_INPUT_LOCATION"
-    ),
+            value = ObjectListFileInputLocation.class,
+            name = "OBJECT_LIST_FILE_INPUT_LOCATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ObjectListInlineInputLocation.class,
-        name = "OBJECT_LIST_INLINE_INPUT_LOCATION"
-    )
+            value = ObjectListInlineInputLocation.class,
+            name = "OBJECT_LIST_INLINE_INPUT_LOCATION")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class InputLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class InputLocation extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected InputLocation() {
@@ -46,6 +44,7 @@ public class InputLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -78,17 +77,14 @@ public class InputLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return result;
     }
 
-    /**
-     * The type of input location.
-     *
-     **/
-    public enum LocationType {
+    /** The type of input location. */
+    public enum LocationType implements com.oracle.bmc.http.internal.BmcEnum {
         ObjectListInlineInputLocation("OBJECT_LIST_INLINE_INPUT_LOCATION"),
         ObjectListFileInputLocation("OBJECT_LIST_FILE_INPUT_LOCATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

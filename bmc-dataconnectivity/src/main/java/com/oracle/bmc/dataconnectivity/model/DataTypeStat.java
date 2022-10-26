@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Statistical data in profiling results.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Statistical data in profiling results. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataTypeStat.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DataTypeStat extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "confidence", "freq", "freqPercentage"})
     public DataTypeStat(String value, Integer confidence, Long freq, Double freqPercentage) {
@@ -30,65 +31,65 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Value of the confidence of the profile result.
-         **/
+        /** Value of the confidence of the profile result. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Value of the confidence of the profile result.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
         /**
-         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
-         **/
+         * Placeholder for now, in future we will return the confidence of the profile result
+         * (because we are using sampled data and not whole data)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Integer confidence;
 
         /**
-         * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+         * Placeholder for now, in future we will return the confidence of the profile result
+         * (because we are using sampled data and not whole data)
+         *
          * @param confidence the value to set
          * @return this builder
-         **/
+         */
         public Builder confidence(Integer confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /**
-         * The number of times the value appeared.
-         **/
+        /** The number of times the value appeared. */
         @com.fasterxml.jackson.annotation.JsonProperty("freq")
         private Long freq;
 
         /**
          * The number of times the value appeared.
+         *
          * @param freq the value to set
          * @return this builder
-         **/
+         */
         public Builder freq(Long freq) {
             this.freq = freq;
             this.__explicitlySet__.add("freq");
             return this;
         }
-        /**
-         * Frequency percentage across the sampled row counts (excluding nulls).
-         **/
+        /** Frequency percentage across the sampled row counts (excluding nulls). */
         @com.fasterxml.jackson.annotation.JsonProperty("freqPercentage")
         private Double freqPercentage;
 
         /**
          * Frequency percentage across the sampled row counts (excluding nulls).
+         *
          * @param freqPercentage the value to set
          * @return this builder
-         **/
+         */
         public Builder freqPercentage(Double freqPercentage) {
             this.freqPercentage = freqPercentage;
             this.__explicitlySet__.add("freqPercentage");
@@ -125,9 +126,7 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,58 +135,58 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Value of the confidence of the profile result.
-     **/
+    /** Value of the confidence of the profile result. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Value of the confidence of the profile result.
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
     /**
-     * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
-     **/
+     * Placeholder for now, in future we will return the confidence of the profile result (because
+     * we are using sampled data and not whole data)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Integer confidence;
 
     /**
-     * Placeholder for now, in future we will return the confidence of the profile result (because we are using sampled data and not whole data)
+     * Placeholder for now, in future we will return the confidence of the profile result (because
+     * we are using sampled data and not whole data)
+     *
      * @return the value
-     **/
+     */
     public Integer getConfidence() {
         return confidence;
     }
 
-    /**
-     * The number of times the value appeared.
-     **/
+    /** The number of times the value appeared. */
     @com.fasterxml.jackson.annotation.JsonProperty("freq")
     private final Long freq;
 
     /**
      * The number of times the value appeared.
+     *
      * @return the value
-     **/
+     */
     public Long getFreq() {
         return freq;
     }
 
-    /**
-     * Frequency percentage across the sampled row counts (excluding nulls).
-     **/
+    /** Frequency percentage across the sampled row counts (excluding nulls). */
     @com.fasterxml.jackson.annotation.JsonProperty("freqPercentage")
     private final Double freqPercentage;
 
     /**
      * Frequency percentage across the sampled row counts (excluding nulls).
+     *
      * @return the value
-     **/
+     */
     public Double getFreqPercentage() {
         return freqPercentage;
     }
@@ -199,6 +198,7 @@ public final class DataTypeStat extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

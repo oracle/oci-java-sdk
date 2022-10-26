@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Projected utilization object containing dbid and daysToReach value
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Projected utilization object containing dbid and daysToReach value <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceInsightProjectedUtilizationItem.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResourceInsightProjectedUtilizationItem.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResourceInsightProjectedUtilizationItem
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "daysToReach"})
     public ResourceInsightProjectedUtilizationItem(String id, Integer daysToReach) {
@@ -31,33 +31,31 @@ public final class ResourceInsightProjectedUtilizationItem
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Db id
-         **/
+        /** Db id */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Db id
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Days to reach projected utilization
-         **/
+        /** Days to reach projected utilization */
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReach")
         private Integer daysToReach;
 
         /**
          * Days to reach projected utilization
+         *
          * @param daysToReach the value to set
          * @return this builder
-         **/
+         */
         public Builder daysToReach(Integer daysToReach) {
             this.daysToReach = daysToReach;
             this.__explicitlySet__.add("daysToReach");
@@ -88,9 +86,7 @@ public final class ResourceInsightProjectedUtilizationItem
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class ResourceInsightProjectedUtilizationItem
         return new Builder().copy(this);
     }
 
-    /**
-     * Db id
-     **/
+    /** Db id */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Db id
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Days to reach projected utilization
-     **/
+    /** Days to reach projected utilization */
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReach")
     private final Integer daysToReach;
 
     /**
      * Days to reach projected utilization
+     *
      * @return the value
-     **/
+     */
     public Integer getDaysToReach() {
         return daysToReach;
     }
@@ -134,6 +128,7 @@ public final class ResourceInsightProjectedUtilizationItem
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

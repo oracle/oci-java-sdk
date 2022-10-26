@@ -6,109 +6,73 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListViewsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListViewsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListViewsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListViewsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment the resource belongs to.
-     */
+    /** The OCID of the compartment the resource belongs to. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need
-     * to contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The displayName of a resource.
-     */
+    /** The displayName of a resource. */
     private String displayName;
 
-    /**
-     * The displayName of a resource.
-     */
+    /** The displayName of a resource. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     private String id;
 
-    /**
-     * The OCID of a resource.
-     */
+    /** The OCID of a resource. */
     public String getId() {
         return id;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     private Long limit;
 
-    /**
-     * The maximum number of items to return in a page of the collection.
-     *
-     */
+    /** The maximum number of items to return in a page of the collection. */
     public Long getLimit() {
         return limit;
     }
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    /**
-     * The order to sort the resources.
-     *
-     */
+    /** The order to sort the resources. */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The field by which to sort views.
-     */
+    /** The field by which to sort views. */
     private SortBy sortBy;
 
-    /**
-     * The field by which to sort views.
-     **/
-    public enum SortBy {
+    /** The field by which to sort views. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         ;
@@ -141,33 +105,21 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /**
-     * The field by which to sort views.
-     */
+    /** The field by which to sort views. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     private com.oracle.bmc.dns.model.ViewSummary.LifecycleState lifecycleState;
 
-    /**
-     * The state of a resource.
-     */
+    /** The state of a resource. */
     public com.oracle.bmc.dns.model.ViewSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /**
-     * Specifies to operate only on resources that have a matching DNS scope.
-     *
-     */
+    /** Specifies to operate only on resources that have a matching DNS scope. */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -175,17 +127,15 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListViewsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment the resource belongs to.
-         */
+        /** The OCID of the compartment the resource belongs to. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,17 +145,14 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need
-         * to contact Oracle about a particular request, please provide
-         * the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -215,13 +162,12 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The displayName of a resource.
-         */
+        /** The displayName of a resource. */
         private String displayName = null;
 
         /**
          * The displayName of a resource.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -230,13 +176,12 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The OCID of a resource.
-         */
+        /** The OCID of a resource. */
         private String id = null;
 
         /**
          * The OCID of a resource.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -245,10 +190,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -262,10 +204,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a page of the collection.
-         *
-         */
+        /** The maximum number of items to return in a page of the collection. */
         private Long limit = null;
 
         /**
@@ -279,10 +218,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The order to sort the resources.
-         *
-         */
+        /** The order to sort the resources. */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
@@ -296,13 +232,12 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The field by which to sort views.
-         */
+        /** The field by which to sort views. */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort views.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -311,13 +246,12 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The state of a resource.
-         */
+        /** The state of a resource. */
         private com.oracle.bmc.dns.model.ViewSummary.LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -327,10 +261,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * Specifies to operate only on resources that have a matching DNS scope.
-         *
-         */
+        /** Specifies to operate only on resources that have a matching DNS scope. */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -346,18 +277,19 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -369,6 +301,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListViewsRequest o) {
@@ -390,10 +323,11 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListViewsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListViewsRequest
          */
@@ -407,7 +341,8 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListViewsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListViewsRequest
@@ -425,12 +360,14 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.lifecycleState = lifecycleState;
             request.scope = scope;
             return request;
-            // new ListViewsRequest(compartmentId, opcRequestId, displayName, id, page, limit, sortOrder, sortBy, lifecycleState, scope);
+            // new ListViewsRequest(compartmentId, opcRequestId, displayName, id, page, limit,
+            // sortOrder, sortBy, lifecycleState, scope);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -449,6 +386,7 @@ public class ListViewsRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

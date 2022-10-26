@@ -40,13 +40,8 @@ import java.util.concurrent.TimeUnit;
 import com.oracle.bmc.util.internal.StringUtils;
 
 /**
- * This class provides an example of basic streaming usage.
- * - List streams
- * - Get a stream
- * - Create a stream
- * - Delete a stream
- * - Publish to a stream
- * - Consume from a stream partition, using a cursor
+ * This class provides an example of basic streaming usage. - List streams - Get a stream - Create a
+ * stream - Delete a stream - Publish to a stream - Consume from a stream partition, using a cursor
  * - Consume from a stream, using a group cursor
  */
 public class StreamsExample {
@@ -55,8 +50,10 @@ public class StreamsExample {
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -77,7 +74,8 @@ public class StreamsExample {
         final int partitions = 1;
 
         // We want to be good samaritan, so we'll reuse a stream if its already created.
-        // This will utilize ListStreams() to determine if a stream exists and return it, or create a new one.
+        // This will utilize ListStreams() to determine if a stream exists and return it, or create
+        // a new one.
         Stream stream =
                 getOrCreateStream(adminClient, compartmentId, exampleStreamName, partitions);
 
@@ -97,7 +95,8 @@ public class StreamsExample {
             // ignore, just continue a bit earlier
         }
 
-        // Use a cursor for getting messages; each getMessages call will return a next-cursor for iteration.
+        // Use a cursor for getting messages; each getMessages call will return a next-cursor for
+        // iteration.
         // There are a couple kinds of cursors.
 
         // A cursor can be created at a given partition/offset.
@@ -277,8 +276,7 @@ public class StreamsExample {
                 System.out.println(
                         String.format(
                                 "Published message to partition %s, offset %s.",
-                                entry.getPartition(),
-                                entry.getOffset()));
+                                entry.getPartition(), entry.getOffset()));
             }
         }
     }

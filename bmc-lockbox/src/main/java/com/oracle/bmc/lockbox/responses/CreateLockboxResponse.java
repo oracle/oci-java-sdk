@@ -9,15 +9,14 @@ import com.oracle.bmc.lockbox.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,13 +25,14 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
-     *
+     * this contains the full URI for the get request, e.g.
+     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
      */
     private String location;
 
     /**
-     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+     * this contains the full URI for the get request, e.g.
+     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
      *
      * @return the value
      */
@@ -40,10 +40,7 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
         return location;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -55,13 +52,12 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
         return etag;
     }
 
-    /**
-     * The returned Lockbox instance.
-     */
+    /** The returned Lockbox instance. */
     private com.oracle.bmc.lockbox.model.Lockbox lockbox;
 
     /**
      * The returned Lockbox instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.lockbox.model.Lockbox getLockbox() {
@@ -78,7 +74,7 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private CreateLockboxResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String location,
             String etag,
@@ -90,31 +86,33 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
         this.lockbox = lockbox;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateLockboxResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -125,13 +123,14 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
-         *
+         * this contains the full URI for the get request, e.g.
+         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
          */
         private String location;
 
         /**
-         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+         * this contains the full URI for the get request, e.g.
+         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
          *
          * @param location the value to set
          * @return this builder
@@ -141,10 +140,7 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -158,13 +154,12 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /**
-         * The returned Lockbox instance.
-         */
+        /** The returned Lockbox instance. */
         private com.oracle.bmc.lockbox.model.Lockbox lockbox;
 
         /**
          * The returned Lockbox instance.
+         *
          * @param lockbox the value to set
          * @return this builder
          */
@@ -175,8 +170,10 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateLockboxResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -190,8 +187,10 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateLockboxResponse build() {
             return new CreateLockboxResponse(
                     __httpStatusCode__, headers, opcRequestId, location, etag, lockbox);
@@ -200,6 +199,7 @@ public class CreateLockboxResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

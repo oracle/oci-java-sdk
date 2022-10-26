@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Pre-Migration advisor result.
- *
- **/
+/** Pre-Migration advisor result. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum AdvisorResults {
+public enum AdvisorResults implements com.oracle.bmc.http.internal.BmcEnum {
     Fatal("FATAL"),
     Blocker("BLOCKER"),
     Warning("WARNING"),

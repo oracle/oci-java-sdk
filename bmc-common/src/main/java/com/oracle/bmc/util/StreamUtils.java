@@ -22,9 +22,7 @@ import java.io.Reader;
 import java.nio.charset.Charset;
 import java.util.Optional;
 
-/**
- * Utility methods to work with streams.
- */
+/** Utility methods to work with streams. */
 public class StreamUtils {
 
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(StreamUtils.class);
@@ -34,8 +32,7 @@ public class StreamUtils {
     /**
      * Close a stream without raising an exception.
      *
-     * @param stream
-     *            The stream to close.
+     * @param stream The stream to close.
      */
     public static void closeQuietly(InputStream stream) {
         if (stream != null) {
@@ -48,12 +45,11 @@ public class StreamUtils {
     }
 
     /**
-     * Convert a File to an InputStream. This uses {@link WrappedFileInputStream}
-     * so the caller still has access to the original file if needed. If the file
-     * is not valid, an IllegalArgumentException will be raised.
+     * Convert a File to an InputStream. This uses {@link WrappedFileInputStream} so the caller
+     * still has access to the original file if needed. If the file is not valid, an
+     * IllegalArgumentException will be raised.
      *
-     * @param file
-     *            The file to convert to a stream.
+     * @param file The file to convert to a stream.
      * @return A new InputStream instance.
      */
     public static InputStream toInputStream(File file) {
@@ -61,12 +57,10 @@ public class StreamUtils {
     }
 
     /**
-     * Creates a new {@link ByteArrayInputStream}. This uses
-     * {@link WrappedByteArrayInputStream} so the underlying buffer can be
-     * reused by multiple copies of the stream if needed.
+     * Creates a new {@link ByteArrayInputStream}. This uses {@link WrappedByteArrayInputStream} so
+     * the underlying buffer can be reused by multiple copies of the stream if needed.
      *
-     * @param buffer
-     *            The byte buffer.
+     * @param buffer The byte buffer.
      * @return A new ByteArrayInputStream instance.
      */
     public static ByteArrayInputStream createByteArrayInputStream(byte[] buffer) {
@@ -75,6 +69,7 @@ public class StreamUtils {
 
     /**
      * Convert the input stream to a string.
+     *
      * @param is input stream
      * @param charset charset to use
      * @return string
@@ -94,6 +89,7 @@ public class StreamUtils {
 
     /**
      * Convert the input stream to a byte array.
+     *
      * @param inputStream input stream
      * @return byte array
      */
@@ -111,11 +107,13 @@ public class StreamUtils {
     }
 
     /**
-     * Return {@link Optional#empty()} if the content of the two input streams is the same. Otherwise,
-     * it returns a description of the first difference.
+     * Return {@link Optional#empty()} if the content of the two input streams is the same.
+     * Otherwise, it returns a description of the first difference.
+     *
      * @param input1 first input stream
      * @param input2 second input stream
-     * @return description of the first difference, or {@link Optional#empty()} if the contents are the same
+     * @return description of the first difference, or {@link Optional#empty()} if the contents are
+     *     the same
      * @throws IOException
      */
     public static Optional<String> contentDiffers(InputStream input1, InputStream input2)
@@ -146,13 +144,15 @@ public class StreamUtils {
 
     /**
      * Skip the specified number of bytes in the stream.
+     *
      * @param is stream
      * @param count number of bytes to skip
      * @return number of bytes that were skipped
      * @throws IOException
      */
     public static long skipBytesInStream(InputStream is, long count) throws IOException {
-        // not wrapping in a buffered input stream; that could lead to reading more bytes than we want to skip
+        // not wrapping in a buffered input stream; that could lead to reading more bytes than we
+        // want to skip
         long bytesRead;
         for (bytesRead = 0; bytesRead < count; ++bytesRead) {
             int read = is.read();
@@ -164,8 +164,9 @@ public class StreamUtils {
     }
 
     /**
-     * Limit the number of bytes remaining in the input stream to at most this many bytes.
-     * The input stream may reach its end earlier.
+     * Limit the number of bytes remaining in the input stream to at most this many bytes. The input
+     * stream may reach its end earlier.
+     *
      * @param is input stream
      * @param limit upper limit of remaining bytes
      * @return limited stream

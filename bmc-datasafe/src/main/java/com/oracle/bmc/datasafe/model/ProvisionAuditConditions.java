@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Represents audit policies with corresponding audit provisioning conditions.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Represents audit policies with corresponding audit provisioning conditions. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ProvisionAuditConditions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ProvisionAuditConditions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ProvisionAuditConditions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "auditPolicyName",
@@ -43,70 +43,82 @@ public final class ProvisionAuditConditions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates the audit policy name available for provisioning from Data Safe. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-         *
-         **/
+         * Indicates the audit policy name available for provisioning from Data Safe. Refer to the
+         * [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
+         * for seeded audit policy names. For custom policies, refer to the user-defined policy name
+         * created in the target database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
         private String auditPolicyName;
 
         /**
-         * Indicates the audit policy name available for provisioning from Data Safe. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+         * Indicates the audit policy name available for provisioning from Data Safe. Refer to the
+         * [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
+         * for seeded audit policy names. For custom policies, refer to the user-defined policy name
+         * created in the target database.
          *
          * @param auditPolicyName the value to set
          * @return this builder
-         **/
+         */
         public Builder auditPolicyName(String auditPolicyName) {
             this.auditPolicyName = auditPolicyName;
             this.__explicitlySet__.add("auditPolicyName");
             return this;
         }
-        /**
-         * Indicates whether the privileged user list is managed by Data Safe.
-         **/
+        /** Indicates whether the privileged user list is managed by Data Safe. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivUsersManagedByDataSafe")
         private Boolean isPrivUsersManagedByDataSafe;
 
         /**
          * Indicates whether the privileged user list is managed by Data Safe.
+         *
          * @param isPrivUsersManagedByDataSafe the value to set
          * @return this builder
-         **/
+         */
         public Builder isPrivUsersManagedByDataSafe(Boolean isPrivUsersManagedByDataSafe) {
             this.isPrivUsersManagedByDataSafe = isPrivUsersManagedByDataSafe;
             this.__explicitlySet__.add("isPrivUsersManagedByDataSafe");
             return this;
         }
         /**
-         * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
-         *
-         **/
+         * Indicates whether the policy has to be enabled or disabled in the target database. Set
+         * this to true if you want the audit policy to be enabled in the target database. If the
+         * seeded audit policy is not already created in the database, the provisioning creates and
+         * enables them. If this is set to false, the policy will be disabled in the target
+         * database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+         * Indicates whether the policy has to be enabled or disabled in the target database. Set
+         * this to true if you want the audit policy to be enabled in the target database. If the
+         * seeded audit policy is not already created in the database, the provisioning creates and
+         * enables them. If this is set to false, the policy will be disabled in the target
+         * database.
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * Indicates the users/roles in the target database for which the audit policy will be enforced, and the success/failure event condition to generate the audit event.
-         *
-         **/
+         * Indicates the users/roles in the target database for which the audit policy will be
+         * enforced, and the success/failure event condition to generate the audit event.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("enableConditions")
         private java.util.List<EnableConditions> enableConditions;
 
         /**
-         * Indicates the users/roles in the target database for which the audit policy will be enforced, and the success/failure event condition to generate the audit event.
+         * Indicates the users/roles in the target database for which the audit policy will be
+         * enforced, and the success/failure event condition to generate the audit event.
          *
          * @param enableConditions the value to set
          * @return this builder
-         **/
+         */
         public Builder enableConditions(java.util.List<EnableConditions> enableConditions) {
             this.enableConditions = enableConditions;
             this.__explicitlySet__.add("enableConditions");
@@ -147,9 +159,7 @@ public final class ProvisionAuditConditions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,63 +169,73 @@ public final class ProvisionAuditConditions
     }
 
     /**
-     * Indicates the audit policy name available for provisioning from Data Safe. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
-     *
-     **/
+     * Indicates the audit policy name available for provisioning from Data Safe. Refer to the
+     * [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
+     * for seeded audit policy names. For custom policies, refer to the user-defined policy name
+     * created in the target database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("auditPolicyName")
     private final String auditPolicyName;
 
     /**
-     * Indicates the audit policy name available for provisioning from Data Safe. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+     * Indicates the audit policy name available for provisioning from Data Safe. Refer to the
+     * [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827)
+     * for seeded audit policy names. For custom policies, refer to the user-defined policy name
+     * created in the target database.
      *
      * @return the value
-     **/
+     */
     public String getAuditPolicyName() {
         return auditPolicyName;
     }
 
-    /**
-     * Indicates whether the privileged user list is managed by Data Safe.
-     **/
+    /** Indicates whether the privileged user list is managed by Data Safe. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivUsersManagedByDataSafe")
     private final Boolean isPrivUsersManagedByDataSafe;
 
     /**
      * Indicates whether the privileged user list is managed by Data Safe.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPrivUsersManagedByDataSafe() {
         return isPrivUsersManagedByDataSafe;
     }
 
     /**
-     * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
-     *
-     **/
+     * Indicates whether the policy has to be enabled or disabled in the target database. Set this
+     * to true if you want the audit policy to be enabled in the target database. If the seeded
+     * audit policy is not already created in the database, the provisioning creates and enables
+     * them. If this is set to false, the policy will be disabled in the target database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+     * Indicates whether the policy has to be enabled or disabled in the target database. Set this
+     * to true if you want the audit policy to be enabled in the target database. If the seeded
+     * audit policy is not already created in the database, the provisioning creates and enables
+     * them. If this is set to false, the policy will be disabled in the target database.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Indicates the users/roles in the target database for which the audit policy will be enforced, and the success/failure event condition to generate the audit event.
-     *
-     **/
+     * Indicates the users/roles in the target database for which the audit policy will be enforced,
+     * and the success/failure event condition to generate the audit event.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("enableConditions")
     private final java.util.List<EnableConditions> enableConditions;
 
     /**
-     * Indicates the users/roles in the target database for which the audit policy will be enforced, and the success/failure event condition to generate the audit event.
+     * Indicates the users/roles in the target database for which the audit policy will be enforced,
+     * and the success/failure event condition to generate the audit event.
      *
      * @return the value
-     **/
+     */
     public java.util.List<EnableConditions> getEnableConditions() {
         return enableConditions;
     }
@@ -227,6 +247,7 @@ public final class ProvisionAuditConditions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

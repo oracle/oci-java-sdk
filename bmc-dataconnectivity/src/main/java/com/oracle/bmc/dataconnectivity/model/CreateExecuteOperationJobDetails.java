@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Input details to execute an operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Input details to execute an operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateExecuteOperationJobDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateExecuteOperationJobDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateExecuteOperationJobDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operation", "callOperationConfig", "inputRecords"})
     public CreateExecuteOperationJobDetails(
@@ -53,17 +53,16 @@ public final class CreateExecuteOperationJobDetails
             this.__explicitlySet__.add("callOperationConfig");
             return this;
         }
-        /**
-         * Collection of the input parameters supplied.
-         **/
+        /** Collection of the input parameters supplied. */
         @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
         private java.util.List<OperationInputRecord> inputRecords;
 
         /**
          * Collection of the input parameters supplied.
+         *
          * @param inputRecords the value to set
          * @return this builder
-         **/
+         */
         public Builder inputRecords(java.util.List<OperationInputRecord> inputRecords) {
             this.inputRecords = inputRecords;
             this.__explicitlySet__.add("inputRecords");
@@ -98,9 +97,7 @@ public final class CreateExecuteOperationJobDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,16 +120,15 @@ public final class CreateExecuteOperationJobDetails
         return callOperationConfig;
     }
 
-    /**
-     * Collection of the input parameters supplied.
-     **/
+    /** Collection of the input parameters supplied. */
     @com.fasterxml.jackson.annotation.JsonProperty("inputRecords")
     private final java.util.List<OperationInputRecord> inputRecords;
 
     /**
      * Collection of the input parameters supplied.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<OperationInputRecord> getInputRecords() {
         return inputRecords;
     }
@@ -144,6 +140,7 @@ public final class CreateExecuteOperationJobDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

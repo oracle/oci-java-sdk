@@ -6,18 +6,17 @@ package com.oracle.bmc.ailanguage.responses;
 
 import com.oracle.bmc.ailanguage.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /**
-     * The returned BatchDetectLanguageKeyPhrasesResult instance.
-     */
+    /** The returned BatchDetectLanguageKeyPhrasesResult instance. */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
             batchDetectLanguageKeyPhrasesResult;
 
     /**
      * The returned BatchDetectLanguageKeyPhrasesResult instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
@@ -48,7 +46,7 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
     })
     private BatchDetectLanguageKeyPhrasesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
                     batchDetectLanguageKeyPhrasesResult) {
@@ -57,31 +55,34 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
         this.batchDetectLanguageKeyPhrasesResult = batchDetectLanguageKeyPhrasesResult;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    BatchDetectLanguageKeyPhrasesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -91,14 +92,13 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /**
-         * The returned BatchDetectLanguageKeyPhrasesResult instance.
-         */
+        /** The returned BatchDetectLanguageKeyPhrasesResult instance. */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult
                 batchDetectLanguageKeyPhrasesResult;
 
         /**
          * The returned BatchDetectLanguageKeyPhrasesResult instance.
+         *
          * @param batchDetectLanguageKeyPhrasesResult the value to set
          * @return this builder
          */
@@ -111,8 +111,10 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(BatchDetectLanguageKeyPhrasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -124,8 +126,10 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public BatchDetectLanguageKeyPhrasesResponse build() {
             return new BatchDetectLanguageKeyPhrasesResponse(
                     __httpStatusCode__, headers, opcRequestId, batchDetectLanguageKeyPhrasesResult);
@@ -134,6 +138,7 @@ public class BatchDetectLanguageKeyPhrasesResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

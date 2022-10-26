@@ -5,19 +5,20 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Address details model
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Address details model <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BillToAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BillToAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BillToAddress extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "contactName",
@@ -69,145 +70,136 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the contact person
-         **/
+        /** Name of the contact person */
         @com.fasterxml.jackson.annotation.JsonProperty("contactName")
         private String contactName;
 
         /**
          * Name of the contact person
+         *
          * @param contactName the value to set
          * @return this builder
-         **/
+         */
         public Builder contactName(String contactName) {
             this.contactName = contactName;
             this.__explicitlySet__.add("contactName");
             return this;
         }
-        /**
-         * Name of the customer company
-         **/
+        /** Name of the customer company */
         @com.fasterxml.jackson.annotation.JsonProperty("companyName")
         private String companyName;
 
         /**
          * Name of the customer company
+         *
          * @param companyName the value to set
          * @return this builder
-         **/
+         */
         public Builder companyName(String companyName) {
             this.companyName = companyName;
             this.__explicitlySet__.add("companyName");
             return this;
         }
-        /**
-         * Address line 1
-         **/
+        /** Address line 1 */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLine1")
         private String addressLine1;
 
         /**
          * Address line 1
+         *
          * @param addressLine1 the value to set
          * @return this builder
-         **/
+         */
         public Builder addressLine1(String addressLine1) {
             this.addressLine1 = addressLine1;
             this.__explicitlySet__.add("addressLine1");
             return this;
         }
-        /**
-         * Address line 2
-         **/
+        /** Address line 2 */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLine2")
         private String addressLine2;
 
         /**
          * Address line 2
+         *
          * @param addressLine2 the value to set
          * @return this builder
-         **/
+         */
         public Builder addressLine2(String addressLine2) {
             this.addressLine2 = addressLine2;
             this.__explicitlySet__.add("addressLine2");
             return this;
         }
-        /**
-         * Address line 3
-         **/
+        /** Address line 3 */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLine3")
         private String addressLine3;
 
         /**
          * Address line 3
+         *
          * @param addressLine3 the value to set
          * @return this builder
-         **/
+         */
         public Builder addressLine3(String addressLine3) {
             this.addressLine3 = addressLine3;
             this.__explicitlySet__.add("addressLine3");
             return this;
         }
-        /**
-         * Address line 4
-         **/
+        /** Address line 4 */
         @com.fasterxml.jackson.annotation.JsonProperty("addressLine4")
         private String addressLine4;
 
         /**
          * Address line 4
+         *
          * @param addressLine4 the value to set
          * @return this builder
-         **/
+         */
         public Builder addressLine4(String addressLine4) {
             this.addressLine4 = addressLine4;
             this.__explicitlySet__.add("addressLine4");
             return this;
         }
-        /**
-         * Street name
-         **/
+        /** Street name */
         @com.fasterxml.jackson.annotation.JsonProperty("streetName")
         private String streetName;
 
         /**
          * Street name
+         *
          * @param streetName the value to set
          * @return this builder
-         **/
+         */
         public Builder streetName(String streetName) {
             this.streetName = streetName;
             this.__explicitlySet__.add("streetName");
             return this;
         }
-        /**
-         * House no
-         **/
+        /** House no */
         @com.fasterxml.jackson.annotation.JsonProperty("streetNumber")
         private String streetNumber;
 
         /**
          * House no
+         *
          * @param streetNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder streetNumber(String streetNumber) {
             this.streetNumber = streetNumber;
             this.__explicitlySet__.add("streetNumber");
             return this;
         }
-        /**
-         * Name of the city
-         **/
+        /** Name of the city */
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
         /**
          * Name of the city
+         *
          * @param city the value to set
          * @return this builder
-         **/
+         */
         public Builder city(String city) {
             this.city = city;
             this.__explicitlySet__.add("city");
@@ -222,65 +214,61 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * County name
-         **/
+        /** County name */
         @com.fasterxml.jackson.annotation.JsonProperty("county")
         private String county;
 
         /**
          * County name
+         *
          * @param county the value to set
          * @return this builder
-         **/
+         */
         public Builder county(String county) {
             this.county = county;
             this.__explicitlySet__.add("county");
             return this;
         }
-        /**
-         * Name of the state
-         **/
+        /** Name of the state */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
          * Name of the state
+         *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /**
-         * ZIP no
-         **/
+        /** ZIP no */
         @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
         private String postalCode;
 
         /**
          * ZIP no
+         *
          * @param postalCode the value to set
          * @return this builder
-         **/
+         */
         public Builder postalCode(String postalCode) {
             this.postalCode = postalCode;
             this.__explicitlySet__.add("postalCode");
             return this;
         }
-        /**
-         * Name of the province
-         **/
+        /** Name of the province */
         @com.fasterxml.jackson.annotation.JsonProperty("province")
         private String province;
 
         /**
          * Name of the province
+         *
          * @param province the value to set
          * @return this builder
-         **/
+         */
         public Builder province(String province) {
             this.province = province;
             this.__explicitlySet__.add("province");
@@ -361,9 +349,7 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -372,128 +358,119 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the contact person
-     **/
+    /** Name of the contact person */
     @com.fasterxml.jackson.annotation.JsonProperty("contactName")
     private final String contactName;
 
     /**
      * Name of the contact person
+     *
      * @return the value
-     **/
+     */
     public String getContactName() {
         return contactName;
     }
 
-    /**
-     * Name of the customer company
-     **/
+    /** Name of the customer company */
     @com.fasterxml.jackson.annotation.JsonProperty("companyName")
     private final String companyName;
 
     /**
      * Name of the customer company
+     *
      * @return the value
-     **/
+     */
     public String getCompanyName() {
         return companyName;
     }
 
-    /**
-     * Address line 1
-     **/
+    /** Address line 1 */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLine1")
     private final String addressLine1;
 
     /**
      * Address line 1
+     *
      * @return the value
-     **/
+     */
     public String getAddressLine1() {
         return addressLine1;
     }
 
-    /**
-     * Address line 2
-     **/
+    /** Address line 2 */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLine2")
     private final String addressLine2;
 
     /**
      * Address line 2
+     *
      * @return the value
-     **/
+     */
     public String getAddressLine2() {
         return addressLine2;
     }
 
-    /**
-     * Address line 3
-     **/
+    /** Address line 3 */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLine3")
     private final String addressLine3;
 
     /**
      * Address line 3
+     *
      * @return the value
-     **/
+     */
     public String getAddressLine3() {
         return addressLine3;
     }
 
-    /**
-     * Address line 4
-     **/
+    /** Address line 4 */
     @com.fasterxml.jackson.annotation.JsonProperty("addressLine4")
     private final String addressLine4;
 
     /**
      * Address line 4
+     *
      * @return the value
-     **/
+     */
     public String getAddressLine4() {
         return addressLine4;
     }
 
-    /**
-     * Street name
-     **/
+    /** Street name */
     @com.fasterxml.jackson.annotation.JsonProperty("streetName")
     private final String streetName;
 
     /**
      * Street name
+     *
      * @return the value
-     **/
+     */
     public String getStreetName() {
         return streetName;
     }
 
-    /**
-     * House no
-     **/
+    /** House no */
     @com.fasterxml.jackson.annotation.JsonProperty("streetNumber")
     private final String streetNumber;
 
     /**
      * House no
+     *
      * @return the value
-     **/
+     */
     public String getStreetNumber() {
         return streetNumber;
     }
 
-    /**
-     * Name of the city
-     **/
+    /** Name of the city */
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
     /**
      * Name of the city
+     *
      * @return the value
-     **/
+     */
     public String getCity() {
         return city;
     }
@@ -505,58 +482,54 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
         return country;
     }
 
-    /**
-     * County name
-     **/
+    /** County name */
     @com.fasterxml.jackson.annotation.JsonProperty("county")
     private final String county;
 
     /**
      * County name
+     *
      * @return the value
-     **/
+     */
     public String getCounty() {
         return county;
     }
 
-    /**
-     * Name of the state
-     **/
+    /** Name of the state */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
      * Name of the state
+     *
      * @return the value
-     **/
+     */
     public String getState() {
         return state;
     }
 
-    /**
-     * ZIP no
-     **/
+    /** ZIP no */
     @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
     private final String postalCode;
 
     /**
      * ZIP no
+     *
      * @return the value
-     **/
+     */
     public String getPostalCode() {
         return postalCode;
     }
 
-    /**
-     * Name of the province
-     **/
+    /** Name of the province */
     @com.fasterxml.jackson.annotation.JsonProperty("province")
     private final String province;
 
     /**
      * Name of the province
+     *
      * @return the value
-     **/
+     */
     public String getProvince() {
         return province;
     }
@@ -568,6 +541,7 @@ public final class BillToAddress extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

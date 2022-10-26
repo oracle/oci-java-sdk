@@ -6,42 +6,32 @@ package com.oracle.bmc.fusionapps.requests;
 
 import com.oracle.bmc.fusionapps.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetScheduledActivityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetScheduledActivityRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetScheduledActivityExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetScheduledActivityRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class GetScheduledActivityRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * unique FusionEnvironment identifier
-     */
+    /** unique FusionEnvironment identifier */
     private String fusionEnvironmentId;
 
-    /**
-     * unique FusionEnvironment identifier
-     */
+    /** unique FusionEnvironment identifier */
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
-    /**
-     * Unique ScheduledActivity identifier.
-     */
+    /** Unique ScheduledActivity identifier. */
     private String scheduledActivityId;
 
-    /**
-     * Unique ScheduledActivity identifier.
-     */
+    /** Unique ScheduledActivity identifier. */
     public String getScheduledActivityId() {
         return scheduledActivityId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,17 +39,15 @@ public class GetScheduledActivityRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetScheduledActivityRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * unique FusionEnvironment identifier
-         */
+        /** unique FusionEnvironment identifier */
         private String fusionEnvironmentId = null;
 
         /**
          * unique FusionEnvironment identifier
+         *
          * @param fusionEnvironmentId the value to set
          * @return this builder instance
          */
@@ -68,13 +56,12 @@ public class GetScheduledActivityRequest
             return this;
         }
 
-        /**
-         * Unique ScheduledActivity identifier.
-         */
+        /** Unique ScheduledActivity identifier. */
         private String scheduledActivityId = null;
 
         /**
          * Unique ScheduledActivity identifier.
+         *
          * @param scheduledActivityId the value to set
          * @return this builder instance
          */
@@ -83,13 +70,12 @@ public class GetScheduledActivityRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -100,18 +86,19 @@ public class GetScheduledActivityRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -123,6 +110,7 @@ public class GetScheduledActivityRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetScheduledActivityRequest o) {
@@ -137,10 +125,11 @@ public class GetScheduledActivityRequest
         /**
          * Build the instance of GetScheduledActivityRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetScheduledActivityRequest
          */
@@ -154,7 +143,8 @@ public class GetScheduledActivityRequest
         /**
          * Build the instance of GetScheduledActivityRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetScheduledActivityRequest
@@ -165,12 +155,14 @@ public class GetScheduledActivityRequest
             request.scheduledActivityId = scheduledActivityId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetScheduledActivityRequest(fusionEnvironmentId, scheduledActivityId, opcRequestId);
+            // new GetScheduledActivityRequest(fusionEnvironmentId, scheduledActivityId,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -182,6 +174,7 @@ public class GetScheduledActivityRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -14,28 +14,26 @@ import com.oracle.bmc.identity.responses.ListUsersResponse;
 import java.io.IOException;
 
 /**
- * This class demonstrates the different pagination mechanisms available in the Java SDK. It covers three
- * ways of doing pagination:
+ * This class demonstrates the different pagination mechanisms available in the Java SDK. It covers
+ * three ways of doing pagination:
  *
  * <ul>
- *   <li>Manually handling next page tokens</li>
- *   <li>Using the paginator exposed by each service client to iterate through responses to service calls</li>
- *   <li>Using the paginator exposed by each sertvice client to iterate through the models/resources returned by service calls</li>
+ *   <li>Manually handling next page tokens
+ *   <li>Using the paginator exposed by each service client to iterate through responses to service
+ *       calls
+ *   <li>Using the paginator exposed by each sertvice client to iterate through the models/resources
+ *       returned by service calls
  * </ul>
  *
  * This class also makes the following assumptions:
  *
  * <ul>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>
- *      The ListUsers operation in Identity service will be used to demonstrate pagination, so you should ensure that
- *      you have permissions to call this operation
- *   </li>
- *   <li>The region used is us-phoenix-1</li>
- * <ul>
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>The ListUsers operation in Identity service will be used to demonstrate pagination, so you
+ *       should ensure that you have permissions to call this operation
+ *   <li>The region used is us-phoenix-1
+ *       <ul>
  */
 public class PaginationExample {
 
@@ -46,9 +44,9 @@ public class PaginationExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of the tenancy (so we can list users)</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the tenancy (so we can list users)
+     *     </ul>
      */
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
@@ -58,8 +56,10 @@ public class PaginationExample {
 
         final String tenancyId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -83,7 +83,8 @@ public class PaginationExample {
      * tokens returned by service responses
      *
      * @param identityClient the client used to make service calls
-     * @param compartmentId the OCID of the compartment we'll issue the ListUsers request against. This should be your tenancy OCID
+     * @param compartmentId the OCID of the compartment we'll issue the ListUsers request against.
+     *     This should be your tenancy OCID
      */
     private static void doManualPagination(
             final IdentityClient identityClient, final String compartmentId) {
@@ -110,13 +111,15 @@ public class PaginationExample {
     }
 
     /**
-     * This method demonstrates how to do pagination by using the Paginator offered by the service client. Each service
-     * client has a getPaginators() method which will return a Paginator. The Paginator will have methods which vend a
-     * {@link java.lang.Iterable} that can be used to iterate over either Response objects returned by a service call or
-     * resources/records being listed.
+     * This method demonstrates how to do pagination by using the Paginator offered by the service
+     * client. Each service client has a getPaginators() method which will return a Paginator. The
+     * Paginator will have methods which vend a {@link java.lang.Iterable} that can be used to
+     * iterate over either Response objects returned by a service call or resources/records being
+     * listed.
      *
-     * This method demonstrates how to iterate over the Response objects using the Paginator. The methods used to
-     * get an iterable over Response objects are always of the form <operation>ResponseIterator().
+     * <p>This method demonstrates how to iterate over the Response objects using the Paginator. The
+     * methods used to get an iterable over Response objects are always of the form
+     * <operation>ResponseIterator().
      */
     private static void doPaginateWithResponsePaginator(
             final IdentityClient identityClient, final String compartmentId) {
@@ -142,13 +145,15 @@ public class PaginationExample {
     }
 
     /**
-     * This method demonstrates how to do pagination by using the Paginator offered by the service client. Each service
-     * client has a getPaginators() method which will return a Paginator. The Paginator will have methods which vend a
-     * {@link java.lang.Iterable} that can be used to iterate over either Response objects returned by a service call or
-     * resources/records being listed.
+     * This method demonstrates how to do pagination by using the Paginator offered by the service
+     * client. Each service client has a getPaginators() method which will return a Paginator. The
+     * Paginator will have methods which vend a {@link java.lang.Iterable} that can be used to
+     * iterate over either Response objects returned by a service call or resources/records being
+     * listed.
      *
-     * This method demonstrates how to iterate over the resources/records using the Paginator. The methods used to
-     * get an iterable over resources/records are always of the form <operation>RecordIterator().
+     * <p>This method demonstrates how to iterate over the resources/records using the Paginator.
+     * The methods used to get an iterable over resources/records are always of the form
+     * <operation>RecordIterator().
      */
     private static void doPaginateWithRecordPaginator(
             final IdentityClient identityClient, final String compartmentId) {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Details request to add statements to a route distribution.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details request to add statements to a route distribution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AddDrgRouteDistributionStatementsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AddDrgRouteDistributionStatementsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AddDrgRouteDistributionStatementsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"statements"})
     public AddDrgRouteDistributionStatementsDetails(
@@ -34,8 +33,7 @@ public final class AddDrgRouteDistributionStatementsDetails
     public static class Builder {
         /**
          * The collection of route distribution statements to insert into the route distribution.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<AddDrgRouteDistributionStatementDetails> statements;
 
@@ -44,7 +42,7 @@ public final class AddDrgRouteDistributionStatementsDetails
          *
          * @param statements the value to set
          * @return this builder
-         **/
+         */
         public Builder statements(
                 java.util.List<AddDrgRouteDistributionStatementDetails> statements) {
             this.statements = statements;
@@ -73,9 +71,7 @@ public final class AddDrgRouteDistributionStatementsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,10 +80,7 @@ public final class AddDrgRouteDistributionStatementsDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The collection of route distribution statements to insert into the route distribution.
-     *
-     **/
+    /** The collection of route distribution statements to insert into the route distribution. */
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
     private final java.util.List<AddDrgRouteDistributionStatementDetails> statements;
 
@@ -95,7 +88,7 @@ public final class AddDrgRouteDistributionStatementsDetails
      * The collection of route distribution statements to insert into the route distribution.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AddDrgRouteDistributionStatementDetails> getStatements() {
         return statements;
     }
@@ -107,6 +100,7 @@ public final class AddDrgRouteDistributionStatementsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

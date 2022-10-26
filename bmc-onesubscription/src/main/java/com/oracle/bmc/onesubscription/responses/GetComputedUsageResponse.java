@@ -11,7 +11,6 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,13 +24,12 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned ComputedUsage instance.
-     */
+    /** The returned ComputedUsage instance. */
     private com.oracle.bmc.onesubscription.model.ComputedUsage computedUsage;
 
     /**
      * The returned ComputedUsage instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.onesubscription.model.ComputedUsage getComputedUsage() {
@@ -46,7 +44,7 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetComputedUsageResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.onesubscription.model.ComputedUsage computedUsage) {
         super(__httpStatusCode__, headers);
@@ -54,17 +52,20 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
         this.computedUsage = computedUsage;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetComputedUsageResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -72,7 +73,6 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -88,13 +88,12 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned ComputedUsage instance.
-         */
+        /** The returned ComputedUsage instance. */
         private com.oracle.bmc.onesubscription.model.ComputedUsage computedUsage;
 
         /**
          * The returned ComputedUsage instance.
+         *
          * @param computedUsage the value to set
          * @return this builder
          */
@@ -106,8 +105,10 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetComputedUsageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,8 +120,10 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetComputedUsageResponse build() {
             return new GetComputedUsageResponse(
                     __httpStatusCode__, headers, opcRequestId, computedUsage);
@@ -129,6 +132,7 @@ public class GetComputedUsageResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

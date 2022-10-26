@@ -5,23 +5,22 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * The metadata associated with the recommendation strategy.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata associated with the recommendation strategy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RecommendationStrategySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RecommendationStrategySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RecommendationStrategySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "strategies"})
     public RecommendationStrategySummary(String name, java.util.List<Strategy> strategies) {
@@ -32,33 +31,31 @@ public final class RecommendationStrategySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The display name of the recommendation.
-         **/
+        /** The display name of the recommendation. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The display name of the recommendation.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The list of strategies used.
-         **/
+        /** The list of strategies used. */
         @com.fasterxml.jackson.annotation.JsonProperty("strategies")
         private java.util.List<Strategy> strategies;
 
         /**
          * The list of strategies used.
+         *
          * @param strategies the value to set
          * @return this builder
-         **/
+         */
         public Builder strategies(java.util.List<Strategy> strategies) {
             this.strategies = strategies;
             this.__explicitlySet__.add("strategies");
@@ -89,9 +86,7 @@ public final class RecommendationStrategySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +95,28 @@ public final class RecommendationStrategySummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The display name of the recommendation.
-     **/
+    /** The display name of the recommendation. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The display name of the recommendation.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The list of strategies used.
-     **/
+    /** The list of strategies used. */
     @com.fasterxml.jackson.annotation.JsonProperty("strategies")
     private final java.util.List<Strategy> strategies;
 
     /**
      * The list of strategies used.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Strategy> getStrategies() {
         return strategies;
     }
@@ -135,6 +128,7 @@ public final class RecommendationStrategySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

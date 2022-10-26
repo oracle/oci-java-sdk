@@ -14,16 +14,14 @@ import java.net.SocketTimeoutException;
 import java.nio.charset.StandardCharsets;
 
 /**
- * This class contains examples for encrypting/decrypting Text or Strings
- * on the client side using KMS service.
+ * This class contains examples for encrypting/decrypting Text or Strings on the client side using
+ * KMS service.
  *
- * Instructions:
- * As a pre-requisite for this example you must have a vault created in KMS with at least one master key.
- * OCI KMS has APIs that allow creating master keys or importing a previously generated key, either will work.
- * You can refer to the example at examples/kms_example.py for an example of how to create a master key.
- * Update the values for VAULT_ID and MASTER_KEY_ID below with the values for your vault and key and then run
- * the example.
- *
+ * <p>Instructions: As a pre-requisite for this example you must have a vault created in KMS with at
+ * least one master key. OCI KMS has APIs that allow creating master keys or importing a previously
+ * generated key, either will work. You can refer to the example at examples/kms_example.py for an
+ * example of how to create a master key. Update the values for VAULT_ID and MASTER_KEY_ID below
+ * with the values for your vault and key and then run the example.
  */
 public class ClientSideEncryptionWithSignerExample {
 

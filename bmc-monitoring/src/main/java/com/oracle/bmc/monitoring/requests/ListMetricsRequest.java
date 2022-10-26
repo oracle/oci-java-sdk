@@ -6,7 +6,9 @@ package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMetricsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListMetricsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMetricsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class ListMetricsRequest
@@ -14,107 +16,97 @@ public class ListMetricsRequest
                 com.oracle.bmc.monitoring.model.ListMetricsDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-     * resources monitored by the metric that you are searching for. Use tenancyId to search in
-     * the root compartment.
-     * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the resources monitored by the metric that you are searching for.
+     * Use tenancyId to search in the root compartment.
      *
+     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-     * resources monitored by the metric that you are searching for. Use tenancyId to search in
-     * the root compartment.
-     * <p>
-     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the resources monitored by the metric that you are searching for.
+     * Use tenancyId to search in the root compartment.
      *
+     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The dimensions used to filter metrics.
-     */
+    /** The dimensions used to filter metrics. */
     private com.oracle.bmc.monitoring.model.ListMetricsDetails listMetricsDetails;
 
-    /**
-     * The dimensions used to filter metrics.
-     */
+    /** The dimensions used to filter metrics. */
     public com.oracle.bmc.monitoring.model.ListMetricsDetails getListMetricsDetails() {
         return listMetricsDetails;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a particular
-     * request, please provide the complete request ID.
-     *
+     * Customer part of the request identifier token. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a particular
-     * request, please provide the complete request ID.
-     *
+     * Customer part of the request identifier token. If you need to contact Oracle about a
+     * particular request, please provide the complete request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Default: 1000
-     * <p>
-     * Example: 500
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Default: 1000
+     *
+     * <p>Example: 500
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     * <p>
-     * Default: 1000
-     * <p>
-     * Example: 500
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
+     * <p>Default: 1000
+     *
+     * <p>Example: 500
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
-     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
-     * then the call is rejected. When false, returns resources from only the compartment specified in
-     * compartmentId. Default is false.
-     *
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
+     * compartment). A true value requires the user to have tenancy-level permissions. If this
+     * requirement is not met, then the call is rejected. When false, returns resources from only
+     * the compartment specified in compartmentId. Default is false.
      */
     private Boolean compartmentIdInSubtree;
 
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
-     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
-     * then the call is rejected. When false, returns resources from only the compartment specified in
-     * compartmentId. Default is false.
-     *
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
+     * compartment). A true value requires the user to have tenancy-level permissions. If this
+     * requirement is not met, then the call is rejected. When false, returns resources from only
+     * the compartment specified in compartmentId. Default is false.
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
@@ -122,6 +114,7 @@ public class ListMetricsRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -133,26 +126,24 @@ public class ListMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMetricsRequest, com.oracle.bmc.monitoring.model.ListMetricsDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-         * resources monitored by the metric that you are searching for. Use tenancyId to search in
-         * the root compartment.
-         * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the resources monitored by the metric that you are
+         * searching for. Use tenancyId to search in the root compartment.
          *
+         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
-         * resources monitored by the metric that you are searching for. Use tenancyId to search in
-         * the root compartment.
-         * <p>
-         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the resources monitored by the metric that you are
+         * searching for. Use tenancyId to search in the root compartment.
+         *
+         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -162,13 +153,12 @@ public class ListMetricsRequest
             return this;
         }
 
-        /**
-         * The dimensions used to filter metrics.
-         */
+        /** The dimensions used to filter metrics. */
         private com.oracle.bmc.monitoring.model.ListMetricsDetails listMetricsDetails = null;
 
         /**
          * The dimensions used to filter metrics.
+         *
          * @param listMetricsDetails the value to set
          * @return this builder instance
          */
@@ -179,15 +169,14 @@ public class ListMetricsRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a particular
-         * request, please provide the complete request ID.
-         *
+         * Customer part of the request identifier token. If you need to contact Oracle about a
+         * particular request, please provide the complete request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a particular
-         * request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a
+         * particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -198,15 +187,16 @@ public class ListMetricsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -217,23 +207,24 @@ public class ListMetricsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Default: 1000
-         * <p>
-         * Example: 500
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
+         * <p>Default: 1000
+         *
+         * <p>Example: 500
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         * <p>
-         * Default: 1000
-         * <p>
-         * Example: 500
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
+         * <p>Default: 1000
+         *
+         * <p>Example: 500
          *
          * @param limit the value to set
          * @return this builder instance
@@ -245,20 +236,19 @@ public class ListMetricsRequest
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
-         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
-         * then the call is rejected. When false, returns resources from only the compartment specified in
-         * compartmentId. Default is false.
-         *
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
+         * compartment). A true value requires the user to have tenancy-level permissions. If this
+         * requirement is not met, then the call is rejected. When false, returns resources from
+         * only the compartment specified in compartmentId. Default is false.
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
-         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
-         * then the call is rejected. When false, returns resources from only the compartment specified in
-         * compartmentId. Default is false.
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
+         * compartment). A true value requires the user to have tenancy-level permissions. If this
+         * requirement is not met, then the call is rejected. When false, returns resources from
+         * only the compartment specified in compartmentId. Default is false.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -270,18 +260,19 @@ public class ListMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -293,6 +284,7 @@ public class ListMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListMetricsRequest o) {
@@ -310,10 +302,11 @@ public class ListMetricsRequest
         /**
          * Build the instance of ListMetricsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListMetricsRequest
          */
@@ -326,6 +319,7 @@ public class ListMetricsRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -338,7 +332,8 @@ public class ListMetricsRequest
         /**
          * Build the instance of ListMetricsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMetricsRequest
@@ -352,12 +347,14 @@ public class ListMetricsRequest
             request.limit = limit;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             return request;
-            // new ListMetricsRequest(compartmentId, listMetricsDetails, opcRequestId, page, limit, compartmentIdInSubtree);
+            // new ListMetricsRequest(compartmentId, listMetricsDetails, opcRequestId, page, limit,
+            // compartmentIdInSubtree);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -372,6 +369,7 @@ public class ListMetricsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,55 +5,52 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details about Object Storage job execution result location type.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details about Object Storage job execution result location type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ObjectStorageJobExecutionResultLocation.Builder.class
-)
+        builder = ObjectStorageJobExecutionResultLocation.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageJobExecutionResultLocation extends JobExecutionResultLocation {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Object Storage namespace used for job execution result storage.
-         **/
+        /** The Object Storage namespace used for job execution result storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * The Object Storage namespace used for job execution result storage.
+         *
          * @param namespaceName the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /**
-         * The name of the bucket used for job execution result storage.
-         **/
+        /** The name of the bucket used for job execution result storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The name of the bucket used for job execution result storage.
+         *
          * @param bucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
@@ -85,9 +82,7 @@ public final class ObjectStorageJobExecutionResultLocation extends JobExecutionR
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +98,28 @@ public final class ObjectStorageJobExecutionResultLocation extends JobExecutionR
         this.bucketName = bucketName;
     }
 
-    /**
-     * The Object Storage namespace used for job execution result storage.
-     **/
+    /** The Object Storage namespace used for job execution result storage. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * The Object Storage namespace used for job execution result storage.
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /**
-     * The name of the bucket used for job execution result storage.
-     **/
+    /** The name of the bucket used for job execution result storage. */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the bucket used for job execution result storage.
+     *
      * @return the value
-     **/
+     */
     public String getBucketName() {
         return bucketName;
     }
@@ -138,6 +131,7 @@ public final class ObjectStorageJobExecutionResultLocation extends JobExecutionR
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

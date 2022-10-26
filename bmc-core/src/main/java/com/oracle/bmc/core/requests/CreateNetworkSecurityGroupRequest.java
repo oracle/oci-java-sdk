@@ -6,22 +6,21 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNetworkSecurityGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNetworkSecurityGroupRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateNetworkSecurityGroupExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * CreateNetworkSecurityGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateNetworkSecurityGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails> {
 
-    /**
-     * Details for creating a network security group.
-     */
+    /** Details for creating a network security group. */
     private com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails
             createNetworkSecurityGroupDetails;
 
-    /**
-     * Details for creating a network security group.
-     */
+    /** Details for creating a network security group. */
     public com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails
             getCreateNetworkSecurityGroupDetails() {
         return createNetworkSecurityGroupDetails;
@@ -29,20 +28,18 @@ public class CreateNetworkSecurityGroupRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -50,6 +47,7 @@ public class CreateNetworkSecurityGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -62,18 +60,16 @@ public class CreateNetworkSecurityGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateNetworkSecurityGroupRequest,
                     com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Details for creating a network security group.
-         */
+        /** Details for creating a network security group. */
         private com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails
                 createNetworkSecurityGroupDetails = null;
 
         /**
          * Details for creating a network security group.
+         *
          * @param createNetworkSecurityGroupDetails the value to set
          * @return this builder instance
          */
@@ -86,20 +82,19 @@ public class CreateNetworkSecurityGroupRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -111,18 +106,19 @@ public class CreateNetworkSecurityGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -134,6 +130,7 @@ public class CreateNetworkSecurityGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateNetworkSecurityGroupRequest o) {
@@ -147,10 +144,11 @@ public class CreateNetworkSecurityGroupRequest
         /**
          * Build the instance of CreateNetworkSecurityGroupRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateNetworkSecurityGroupRequest
          */
@@ -163,6 +161,7 @@ public class CreateNetworkSecurityGroupRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -175,7 +174,8 @@ public class CreateNetworkSecurityGroupRequest
         /**
          * Build the instance of CreateNetworkSecurityGroupRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateNetworkSecurityGroupRequest
@@ -185,12 +185,14 @@ public class CreateNetworkSecurityGroupRequest
             request.createNetworkSecurityGroupDetails = createNetworkSecurityGroupDetails;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateNetworkSecurityGroupRequest(createNetworkSecurityGroupDetails, opcRetryToken);
+            // new CreateNetworkSecurityGroupRequest(createNetworkSecurityGroupDetails,
+            // opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -201,6 +203,7 @@ public class CreateNetworkSecurityGroupRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

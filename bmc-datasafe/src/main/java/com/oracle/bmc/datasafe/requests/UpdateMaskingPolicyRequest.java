@@ -6,71 +6,58 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateMaskingPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMaskingPolicyRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateMaskingPolicyExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMaskingPolicyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateMaskingPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateMaskingPolicyDetails> {
 
-    /**
-     * The OCID of the masking policy.
-     */
+    /** The OCID of the masking policy. */
     private String maskingPolicyId;
 
-    /**
-     * The OCID of the masking policy.
-     */
+    /** The OCID of the masking policy. */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
-    /**
-     * Details to update a masking policy.
-     */
+    /** Details to update a masking policy. */
     private com.oracle.bmc.datasafe.model.UpdateMaskingPolicyDetails updateMaskingPolicyDetails;
 
-    /**
-     * Details to update a masking policy.
-     */
+    /** Details to update a masking policy. */
     public com.oracle.bmc.datasafe.model.UpdateMaskingPolicyDetails
             getUpdateMaskingPolicyDetails() {
         return updateMaskingPolicyDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the if-match parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * if-match parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -83,17 +70,15 @@ public class UpdateMaskingPolicyRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateMaskingPolicyRequest,
                     com.oracle.bmc.datasafe.model.UpdateMaskingPolicyDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the masking policy.
-         */
+        /** The OCID of the masking policy. */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
+         *
          * @param maskingPolicyId the value to set
          * @return this builder instance
          */
@@ -102,14 +87,13 @@ public class UpdateMaskingPolicyRequest
             return this;
         }
 
-        /**
-         * Details to update a masking policy.
-         */
+        /** Details to update a masking policy. */
         private com.oracle.bmc.datasafe.model.UpdateMaskingPolicyDetails
                 updateMaskingPolicyDetails = null;
 
         /**
          * Details to update a masking policy.
+         *
          * @param updateMaskingPolicyDetails the value to set
          * @return this builder instance
          */
@@ -121,21 +105,18 @@ public class UpdateMaskingPolicyRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the if-match parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * if-match parameter to the value of the etag from a previous GET or POST response for that
+         * resource. The resource will be updated or deleted only if the etag you provide matches
+         * the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -145,13 +126,12 @@ public class UpdateMaskingPolicyRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -162,18 +142,19 @@ public class UpdateMaskingPolicyRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,6 +166,7 @@ public class UpdateMaskingPolicyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateMaskingPolicyRequest o) {
@@ -200,10 +182,11 @@ public class UpdateMaskingPolicyRequest
         /**
          * Build the instance of UpdateMaskingPolicyRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateMaskingPolicyRequest
          */
@@ -216,6 +199,7 @@ public class UpdateMaskingPolicyRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -228,7 +212,8 @@ public class UpdateMaskingPolicyRequest
         /**
          * Build the instance of UpdateMaskingPolicyRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateMaskingPolicyRequest
@@ -240,12 +225,14 @@ public class UpdateMaskingPolicyRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMaskingPolicyRequest(maskingPolicyId, updateMaskingPolicyDetails, ifMatch, opcRequestId);
+            // new UpdateMaskingPolicyRequest(maskingPolicyId, updateMaskingPolicyDetails, ifMatch,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -258,6 +245,7 @@ public class UpdateMaskingPolicyRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

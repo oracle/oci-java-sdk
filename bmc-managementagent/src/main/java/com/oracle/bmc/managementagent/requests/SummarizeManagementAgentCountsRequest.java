@@ -6,76 +6,79 @@ package com.oracle.bmc.managementagent.requests;
 
 import com.oracle.bmc.managementagent.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentCountsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeManagementAgentCountsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/managementagent/SummarizeManagementAgentCountsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * SummarizeManagementAgentCountsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class SummarizeManagementAgentCountsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment to which a request will be scoped.
-     */
+    /** The OCID of the compartment to which a request will be scoped. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment to which a request will be scoped.
-     */
+    /** The OCID of the compartment to which a request will be scoped. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+     * The field by which to group Management Agents. Currently, only one groupBy dimension is
+     * supported at a time.
      */
     private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy> groupBy;
 
     /**
-     * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+     * The field by which to group Management Agents. Currently, only one groupBy dimension is
+     * supported at a time.
      */
     public java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy>
             getGroupBy() {
         return groupBy;
     }
     /**
-     * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+     * When set to true then agents that have at least one plugin deployed will be returned. When
+     * set to false only agents that have no plugins deployed will be returned.
      */
     private Boolean hasPlugins;
 
     /**
-     * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+     * When set to true then agents that have at least one plugin deployed will be returned. When
+     * set to false only agents that have no plugins deployed will be returned.
      */
     public Boolean getHasPlugins() {
         return hasPlugins;
     }
     /**
-     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     * A filter to return either agents or gateway types depending upon install type selected by
+     * user. By default both install type will be returned.
      */
     private com.oracle.bmc.managementagent.model.InstallTypes installType;
 
     /**
-     * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+     * A filter to return either agents or gateway types depending upon install type selected by
+     * user. By default both install type will be returned.
      */
     public com.oracle.bmc.managementagent.model.InstallTypes getInstallType() {
         return installType;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -83,17 +86,15 @@ public class SummarizeManagementAgentCountsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeManagementAgentCountsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment to which a request will be scoped.
-         */
+        /** The OCID of the compartment to which a request will be scoped. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment to which a request will be scoped.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -103,13 +104,16 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
-         * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         * The field by which to group Management Agents. Currently, only one groupBy dimension is
+         * supported at a time.
          */
         private java.util.List<com.oracle.bmc.managementagent.model.ManagementAgentGroupBy>
                 groupBy = null;
 
         /**
-         * The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         * The field by which to group Management Agents. Currently, only one groupBy dimension is
+         * supported at a time.
+         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -121,7 +125,9 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
-         * Singular setter. The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+         * Singular setter. The field by which to group Management Agents. Currently, only one
+         * groupBy dimension is supported at a time.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -130,12 +136,15 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
-         * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+         * When set to true then agents that have at least one plugin deployed will be returned.
+         * When set to false only agents that have no plugins deployed will be returned.
          */
         private Boolean hasPlugins = null;
 
         /**
-         * When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+         * When set to true then agents that have at least one plugin deployed will be returned.
+         * When set to false only agents that have no plugins deployed will be returned.
+         *
          * @param hasPlugins the value to set
          * @return this builder instance
          */
@@ -145,12 +154,15 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
-         * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         * A filter to return either agents or gateway types depending upon install type selected by
+         * user. By default both install type will be returned.
          */
         private com.oracle.bmc.managementagent.model.InstallTypes installType = null;
 
         /**
-         * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+         * A filter to return either agents or gateway types depending upon install type selected by
+         * user. By default both install type will be returned.
+         *
          * @param installType the value to set
          * @return this builder instance
          */
@@ -160,12 +172,15 @@ public class SummarizeManagementAgentCountsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -174,13 +189,12 @@ public class SummarizeManagementAgentCountsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -191,18 +205,19 @@ public class SummarizeManagementAgentCountsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -214,6 +229,7 @@ public class SummarizeManagementAgentCountsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(SummarizeManagementAgentCountsRequest o) {
@@ -231,10 +247,11 @@ public class SummarizeManagementAgentCountsRequest
         /**
          * Build the instance of SummarizeManagementAgentCountsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of SummarizeManagementAgentCountsRequest
          */
@@ -248,7 +265,8 @@ public class SummarizeManagementAgentCountsRequest
         /**
          * Build the instance of SummarizeManagementAgentCountsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeManagementAgentCountsRequest
@@ -263,12 +281,14 @@ public class SummarizeManagementAgentCountsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeManagementAgentCountsRequest(compartmentId, groupBy, hasPlugins, installType, page, opcRequestId);
+            // new SummarizeManagementAgentCountsRequest(compartmentId, groupBy, hasPlugins,
+            // installType, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -283,6 +303,7 @@ public class SummarizeManagementAgentCountsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

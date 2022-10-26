@@ -5,20 +5,20 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a span snapshot object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Definition of a span snapshot object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SpanSnapshot.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SpanSnapshot extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -49,10 +49,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier (spanId) for the trace span.
-         *
-         **/
+        /** Unique identifier (spanId) for the trace span. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -61,16 +58,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Span name associated with the trace.
-         *
-         **/
+        /** Span name associated with the trace. */
         @com.fasterxml.jackson.annotation.JsonProperty("spanName")
         private String spanName;
 
@@ -79,16 +73,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param spanName the value to set
          * @return this builder
-         **/
+         */
         public Builder spanName(String spanName) {
             this.spanName = spanName;
             this.__explicitlySet__.add("spanName");
             return this;
         }
-        /**
-         * Start time of the span.
-         *
-         **/
+        /** Start time of the span. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -97,16 +88,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * End time of the span.
-         *
-         **/
+        /** End time of the span. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
@@ -115,16 +103,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param timeEnded the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /**
-         * Span snapshots properties.
-         *
-         **/
+        /** Span snapshots properties. */
         @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshotDetails")
         private java.util.List<SnapshotDetail> spanSnapshotDetails;
 
@@ -133,16 +118,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param spanSnapshotDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder spanSnapshotDetails(java.util.List<SnapshotDetail> spanSnapshotDetails) {
             this.spanSnapshotDetails = spanSnapshotDetails;
             this.__explicitlySet__.add("spanSnapshotDetails");
             return this;
         }
-        /**
-         * Thread snapshots.
-         *
-         **/
+        /** Thread snapshots. */
         @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshots")
         private java.util.List<ThreadSnapshot> threadSnapshots;
 
@@ -151,16 +133,13 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param threadSnapshots the value to set
          * @return this builder
-         **/
+         */
         public Builder threadSnapshots(java.util.List<ThreadSnapshot> threadSnapshots) {
             this.threadSnapshots = threadSnapshots;
             this.__explicitlySet__.add("threadSnapshots");
             return this;
         }
-        /**
-         * An array of child span snapshots.
-         *
-         **/
+        /** An array of child span snapshots. */
         @com.fasterxml.jackson.annotation.JsonProperty("children")
         private java.util.List<SpanSnapshot> children;
 
@@ -169,7 +148,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param children the value to set
          * @return this builder
-         **/
+         */
         public Builder children(java.util.List<SpanSnapshot> children) {
             this.children = children;
             this.__explicitlySet__.add("children");
@@ -222,9 +201,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,10 +210,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier (spanId) for the trace span.
-     *
-     **/
+    /** Unique identifier (spanId) for the trace span. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -244,15 +218,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * Unique identifier (spanId) for the trace span.
      *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Span name associated with the trace.
-     *
-     **/
+    /** Span name associated with the trace. */
     @com.fasterxml.jackson.annotation.JsonProperty("spanName")
     private final String spanName;
 
@@ -260,15 +231,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * Span name associated with the trace.
      *
      * @return the value
-     **/
+     */
     public String getSpanName() {
         return spanName;
     }
 
-    /**
-     * Start time of the span.
-     *
-     **/
+    /** Start time of the span. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -276,15 +244,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * Start time of the span.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * End time of the span.
-     *
-     **/
+    /** End time of the span. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
@@ -292,15 +257,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * End time of the span.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /**
-     * Span snapshots properties.
-     *
-     **/
+    /** Span snapshots properties. */
     @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshotDetails")
     private final java.util.List<SnapshotDetail> spanSnapshotDetails;
 
@@ -308,15 +270,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * Span snapshots properties.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SnapshotDetail> getSpanSnapshotDetails() {
         return spanSnapshotDetails;
     }
 
-    /**
-     * Thread snapshots.
-     *
-     **/
+    /** Thread snapshots. */
     @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshots")
     private final java.util.List<ThreadSnapshot> threadSnapshots;
 
@@ -324,15 +283,12 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * Thread snapshots.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ThreadSnapshot> getThreadSnapshots() {
         return threadSnapshots;
     }
 
-    /**
-     * An array of child span snapshots.
-     *
-     **/
+    /** An array of child span snapshots. */
     @com.fasterxml.jackson.annotation.JsonProperty("children")
     private final java.util.List<SpanSnapshot> children;
 
@@ -340,7 +296,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
      * An array of child span snapshots.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SpanSnapshot> getChildren() {
         return children;
     }
@@ -352,6 +308,7 @@ public final class SpanSnapshot extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

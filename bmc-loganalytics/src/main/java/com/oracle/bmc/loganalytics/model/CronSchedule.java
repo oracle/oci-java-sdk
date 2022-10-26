@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Cron schedule for a scheduled task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Cron schedule for a scheduled task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CronSchedule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CronSchedule extends Schedule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -42,33 +42,31 @@ public final class CronSchedule extends Schedule {
             this.__explicitlySet__.add("timeOfFirstExecution");
             return this;
         }
-        /**
-         * Value in cron format.
-         **/
+        /** Value in cron format. */
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
         /**
          * Value in cron format.
+         *
          * @param expression the value to set
          * @return this builder
-         **/
+         */
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
-        /**
-         * Time zone, by default UTC.
-         **/
+        /** Time zone, by default UTC. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
          * Time zone, by default UTC.
+         *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -109,9 +107,7 @@ public final class CronSchedule extends Schedule {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,30 +127,28 @@ public final class CronSchedule extends Schedule {
         this.timeZone = timeZone;
     }
 
-    /**
-     * Value in cron format.
-     **/
+    /** Value in cron format. */
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
     /**
      * Value in cron format.
+     *
      * @return the value
-     **/
+     */
     public String getExpression() {
         return expression;
     }
 
-    /**
-     * Time zone, by default UTC.
-     **/
+    /** Time zone, by default UTC. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
      * Time zone, by default UTC.
+     *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
@@ -166,6 +160,7 @@ public final class CronSchedule extends Schedule {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

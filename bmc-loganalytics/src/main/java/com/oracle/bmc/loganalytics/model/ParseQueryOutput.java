@@ -5,20 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Returns a parser agnostic breakdown of a query string for client query string introspection.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Returns a parser agnostic breakdown of a query string for client query string introspection. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParseQueryOutput.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParseQueryOutput extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParseQueryOutput
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -43,10 +44,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Display string formatted by query builder of user specified query string.
-         *
-         **/
+        /** Display string formatted by query builder of user specified query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
         private String displayQueryString;
 
@@ -55,16 +53,13 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
          *
          * @param displayQueryString the value to set
          * @return this builder
-         **/
+         */
         public Builder displayQueryString(String displayQueryString) {
             this.displayQueryString = displayQueryString;
             this.__explicitlySet__.add("displayQueryString");
             return this;
         }
-        /**
-         * Internal string formatted by query builder of user specified query string.
-         *
-         **/
+        /** Internal string formatted by query builder of user specified query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
         private String internalQueryString;
 
@@ -73,16 +68,13 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
          *
          * @param internalQueryString the value to set
          * @return this builder
-         **/
+         */
         public Builder internalQueryString(String internalQueryString) {
             this.internalQueryString = internalQueryString;
             this.__explicitlySet__.add("internalQueryString");
             return this;
         }
-        /**
-         * List of columns returned by the specified query string as result output.
-         *
-         **/
+        /** List of columns returned by the specified query string as result output. */
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<AbstractColumn> columns;
 
@@ -91,16 +83,13 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
          *
          * @param columns the value to set
          * @return this builder
-         **/
+         */
         public Builder columns(java.util.List<AbstractColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-        /**
-         * Operation response time.
-         *
-         **/
+        /** Operation response time. */
         @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
         private Long responseTimeInMs;
 
@@ -109,16 +98,13 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
          *
          * @param responseTimeInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder responseTimeInMs(Long responseTimeInMs) {
             this.responseTimeInMs = responseTimeInMs;
             this.__explicitlySet__.add("responseTimeInMs");
             return this;
         }
-        /**
-         * List of querylanguage command descriptors, describing the specfied query string.
-         *
-         **/
+        /** List of querylanguage command descriptors, describing the specfied query string. */
         @com.fasterxml.jackson.annotation.JsonProperty("commands")
         private java.util.List<AbstractCommandDescriptor> commands;
 
@@ -127,7 +113,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
          *
          * @param commands the value to set
          * @return this builder
-         **/
+         */
         public Builder commands(java.util.List<AbstractCommandDescriptor> commands) {
             this.commands = commands;
             this.__explicitlySet__.add("commands");
@@ -172,9 +158,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -183,10 +167,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Display string formatted by query builder of user specified query string.
-     *
-     **/
+    /** Display string formatted by query builder of user specified query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
@@ -194,15 +175,12 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
      * Display string formatted by query builder of user specified query string.
      *
      * @return the value
-     **/
+     */
     public String getDisplayQueryString() {
         return displayQueryString;
     }
 
-    /**
-     * Internal string formatted by query builder of user specified query string.
-     *
-     **/
+    /** Internal string formatted by query builder of user specified query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
@@ -210,15 +188,12 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
      * Internal string formatted by query builder of user specified query string.
      *
      * @return the value
-     **/
+     */
     public String getInternalQueryString() {
         return internalQueryString;
     }
 
-    /**
-     * List of columns returned by the specified query string as result output.
-     *
-     **/
+    /** List of columns returned by the specified query string as result output. */
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<AbstractColumn> columns;
 
@@ -226,15 +201,12 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
      * List of columns returned by the specified query string as result output.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractColumn> getColumns() {
         return columns;
     }
 
-    /**
-     * Operation response time.
-     *
-     **/
+    /** Operation response time. */
     @com.fasterxml.jackson.annotation.JsonProperty("responseTimeInMs")
     private final Long responseTimeInMs;
 
@@ -242,15 +214,12 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
      * Operation response time.
      *
      * @return the value
-     **/
+     */
     public Long getResponseTimeInMs() {
         return responseTimeInMs;
     }
 
-    /**
-     * List of querylanguage command descriptors, describing the specfied query string.
-     *
-     **/
+    /** List of querylanguage command descriptors, describing the specfied query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("commands")
     private final java.util.List<AbstractCommandDescriptor> commands;
 
@@ -258,7 +227,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
      * List of querylanguage command descriptors, describing the specfied query string.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractCommandDescriptor> getCommands() {
         return commands;
     }
@@ -270,6 +239,7 @@ public final class ParseQueryOutput extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

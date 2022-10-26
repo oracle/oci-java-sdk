@@ -6,108 +6,95 @@ package com.oracle.bmc.adm.requests;
 
 import com.oracle.bmc.adm.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationDependencyVulnerabilitiesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListApplicationDependencyVulnerabilitiesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListApplicationDependencyVulnerabilitiesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListApplicationDependencyVulnerabilitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Vulnerability Audit identifier path parameter.
-     */
+    /** Unique Vulnerability Audit identifier path parameter. */
     private String vulnerabilityAuditId;
 
-    /**
-     * Unique Vulnerability Audit identifier path parameter.
-     */
+    /** Unique Vulnerability Audit identifier path parameter. */
     public String getVulnerabilityAuditId() {
         return vulnerabilityAuditId;
     }
-    /**
-     * A filter to return only Vulnerability Audits that match the specified id.
-     */
+    /** A filter to return only Vulnerability Audits that match the specified id. */
     private String vulnerabilityId;
 
-    /**
-     * A filter to return only Vulnerability Audits that match the specified id.
-     */
+    /** A filter to return only Vulnerability Audits that match the specified id. */
     public String getVulnerabilityId() {
         return vulnerabilityId;
     }
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
-     *
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+     * System Version 3 (CVSS V3) greater or equal than the specified value.
      */
     private Float cvssV3GreaterThanOrEqual;
 
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
-     *
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+     * System Version 3 (CVSS V3) greater or equal than the specified value.
      */
     public Float getCvssV3GreaterThanOrEqual() {
         return cvssV3GreaterThanOrEqual;
     }
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
-     *
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+     * System Version 2 (CVSS V2) greater or equal than the specified value.
      */
     private Float cvssV2GreaterThanOrEqual;
 
     /**
-     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
-     *
+     * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+     * System Version 2 (CVSS V2) greater or equal than the specified value.
      */
     public Float getCvssV2GreaterThanOrEqual() {
         return cvssV2GreaterThanOrEqual;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from
+     * the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     */
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for gav is ascending
+     * where ascending corresponds to alphanumerical order. Default order for nodeId is ascending
+     * where ascending corresponds to alphanumerical order.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. Default order for gav is ascending
+     * where ascending corresponds to alphanumerical order. Default order for nodeId is ascending
+     * where ascending corresponds to alphanumerical order.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Gav("gav"),
         NodeId("nodeId"),
         ;
@@ -141,33 +128,30 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided.
-     * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-     * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-     *
+     * The field to sort by. Only one sort order may be provided. Default order for gav is ascending
+     * where ascending corresponds to alphanumerical order. Default order for nodeId is ascending
+     * where ascending corresponds to alphanumerical order.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+     * A filter to return only resources that match the entire GAV (Group Artifact Version)
+     * identifier given.
      */
     private String gav;
 
     /**
-     * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+     * A filter to return only resources that match the entire GAV (Group Artifact Version)
+     * identifier given.
      */
     public String getGav() {
         return gav;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -175,17 +159,15 @@ public class ListApplicationDependencyVulnerabilitiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApplicationDependencyVulnerabilitiesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Vulnerability Audit identifier path parameter.
-         */
+        /** Unique Vulnerability Audit identifier path parameter. */
         private String vulnerabilityAuditId = null;
 
         /**
          * Unique Vulnerability Audit identifier path parameter.
+         *
          * @param vulnerabilityAuditId the value to set
          * @return this builder instance
          */
@@ -194,13 +176,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
-        /**
-         * A filter to return only Vulnerability Audits that match the specified id.
-         */
+        /** A filter to return only Vulnerability Audits that match the specified id. */
         private String vulnerabilityId = null;
 
         /**
          * A filter to return only Vulnerability Audits that match the specified id.
+         *
          * @param vulnerabilityId the value to set
          * @return this builder instance
          */
@@ -210,13 +191,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
-         *
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+         * System Version 3 (CVSS V3) greater or equal than the specified value.
          */
         private Float cvssV3GreaterThanOrEqual = null;
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+         * System Version 3 (CVSS V3) greater or equal than the specified value.
          *
          * @param cvssV3GreaterThanOrEqual the value to set
          * @return this builder instance
@@ -227,13 +209,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
-         *
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+         * System Version 2 (CVSS V2) greater or equal than the specified value.
          */
         private Float cvssV2GreaterThanOrEqual = null;
 
         /**
-         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
+         * A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring
+         * System Version 2 (CVSS V2) greater or equal than the specified value.
          *
          * @param cvssV2GreaterThanOrEqual the value to set
          * @return this builder instance
@@ -243,13 +226,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -259,12 +241,15 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come
+         * from the {@code opc-next-page} header field of a previous response.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -273,13 +258,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         */
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -289,17 +273,16 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided.
-         * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-         * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
-         *
+         * The field to sort by. Only one sort order may be provided. Default order for gav is
+         * ascending where ascending corresponds to alphanumerical order. Default order for nodeId
+         * is ascending where ascending corresponds to alphanumerical order.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided.
-         * Default order for gav is ascending where ascending corresponds to alphanumerical order.
-         * Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
+         * The field to sort by. Only one sort order may be provided. Default order for gav is
+         * ascending where ascending corresponds to alphanumerical order. Default order for nodeId
+         * is ascending where ascending corresponds to alphanumerical order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -310,12 +293,15 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         * A filter to return only resources that match the entire GAV (Group Artifact Version)
+         * identifier given.
          */
         private String gav = null;
 
         /**
-         * A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+         * A filter to return only resources that match the entire GAV (Group Artifact Version)
+         * identifier given.
+         *
          * @param gav the value to set
          * @return this builder instance
          */
@@ -324,13 +310,12 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -341,18 +326,19 @@ public class ListApplicationDependencyVulnerabilitiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -364,6 +350,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListApplicationDependencyVulnerabilitiesRequest o) {
@@ -383,12 +370,14 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * Build the instance of ListApplicationDependencyVulnerabilitiesRequest as configured by this builder
+         * Build the instance of ListApplicationDependencyVulnerabilitiesRequest as configured by
+         * this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListApplicationDependencyVulnerabilitiesRequest
          */
@@ -401,9 +390,11 @@ public class ListApplicationDependencyVulnerabilitiesRequest
         }
 
         /**
-         * Build the instance of ListApplicationDependencyVulnerabilitiesRequest as configured by this builder
+         * Build the instance of ListApplicationDependencyVulnerabilitiesRequest as configured by
+         * this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListApplicationDependencyVulnerabilitiesRequest
@@ -422,12 +413,15 @@ public class ListApplicationDependencyVulnerabilitiesRequest
             request.gav = gav;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId, vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page, sortOrder, sortBy, gav, opcRequestId);
+            // new ListApplicationDependencyVulnerabilitiesRequest(vulnerabilityAuditId,
+            // vulnerabilityId, cvssV3GreaterThanOrEqual, cvssV2GreaterThanOrEqual, limit, page,
+            // sortOrder, sortBy, gav, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -446,6 +440,7 @@ public class ListApplicationDependencyVulnerabilitiesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

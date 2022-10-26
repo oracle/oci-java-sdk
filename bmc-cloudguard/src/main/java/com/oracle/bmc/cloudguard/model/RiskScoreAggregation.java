@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Provides the dimensions and their corresponding risk score.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Provides the dimensions and their corresponding risk score. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RiskScoreAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RiskScoreAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RiskScoreAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RiskScoreAggregation
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dimensionsMap", "riskScore"})
     public RiskScoreAggregation(java.util.Map<String, String> dimensionsMap, Integer riskScore) {
@@ -30,33 +31,31 @@ public final class RiskScoreAggregation extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The key-value pairs of dimensions and their names.
-         **/
+        /** The key-value pairs of dimensions and their names. */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
          * The key-value pairs of dimensions and their names.
+         *
          * @param dimensionsMap the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
             return this;
         }
-        /**
-         * The risk score with given dimensions
-         **/
+        /** The risk score with given dimensions */
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Integer riskScore;
 
         /**
          * The risk score with given dimensions
+         *
          * @param riskScore the value to set
          * @return this builder
-         **/
+         */
         public Builder riskScore(Integer riskScore) {
             this.riskScore = riskScore;
             this.__explicitlySet__.add("riskScore");
@@ -87,9 +86,7 @@ public final class RiskScoreAggregation extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,30 +95,28 @@ public final class RiskScoreAggregation extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The key-value pairs of dimensions and their names.
-     **/
+    /** The key-value pairs of dimensions and their names. */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
      * The key-value pairs of dimensions and their names.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
 
-    /**
-     * The risk score with given dimensions
-     **/
+    /** The risk score with given dimensions */
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Integer riskScore;
 
     /**
      * The risk score with given dimensions
+     *
      * @return the value
-     **/
+     */
     public Integer getRiskScore() {
         return riskScore;
     }
@@ -133,6 +128,7 @@ public final class RiskScoreAggregation extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

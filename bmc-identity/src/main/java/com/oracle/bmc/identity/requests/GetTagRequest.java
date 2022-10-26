@@ -6,48 +6,34 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTagRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/GetTagExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTagRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the tag namespace.
-     *
-     */
+    /** The OCID of the tag namespace. */
     private String tagNamespaceId;
 
-    /**
-     * The OCID of the tag namespace.
-     *
-     */
+    /** The OCID of the tag namespace. */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
-    /**
-     * The name of the tag.
-     *
-     */
+    /** The name of the tag. */
     private String tagName;
 
-    /**
-     * The name of the tag.
-     *
-     */
+    /** The name of the tag. */
     public String getTagName() {
         return tagName;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetTagRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the tag namespace.
-         *
-         */
+        /** The OCID of the tag namespace. */
         private String tagNamespaceId = null;
 
         /**
@@ -61,10 +47,7 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
-        /**
-         * The name of the tag.
-         *
-         */
+        /** The name of the tag. */
         private String tagName = null;
 
         /**
@@ -80,18 +63,19 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -103,6 +87,7 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetTagRequest o) {
@@ -116,10 +101,11 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetTagRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetTagRequest
          */
@@ -133,7 +119,8 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetTagRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetTagRequest
@@ -149,6 +136,7 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -157,6 +145,7 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

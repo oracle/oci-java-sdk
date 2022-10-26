@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudmigrations.model;
 
-/**
- * Time window for the metrics query
- **/
+/** Time window for the metrics query */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum MetricTimeWindow {
+public enum MetricTimeWindow implements com.oracle.bmc.http.internal.BmcEnum {
     _1d("1d"),
     _7d("7d"),
     _30d("30d"),

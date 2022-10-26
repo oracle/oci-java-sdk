@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * SourceSummaryReport
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SourceSummaryReport <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SourceSummaryReport.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SourceSummaryReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SourceSummaryReport.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SourceSummaryReport
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nonOobCount", "autoAssociationSourceCount", "oobCount"})
     public SourceSummaryReport(
@@ -32,49 +33,46 @@ public final class SourceSummaryReport extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The count of custom (user defined) sources.
-         **/
+        /** The count of custom (user defined) sources. */
         @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
         private Integer nonOobCount;
 
         /**
          * The count of custom (user defined) sources.
+         *
          * @param nonOobCount the value to set
          * @return this builder
-         **/
+         */
         public Builder nonOobCount(Integer nonOobCount) {
             this.nonOobCount = nonOobCount;
             this.__explicitlySet__.add("nonOobCount");
             return this;
         }
-        /**
-         * The count of sources set to auto-associate.
-         **/
+        /** The count of sources set to auto-associate. */
         @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
         private Integer autoAssociationSourceCount;
 
         /**
          * The count of sources set to auto-associate.
+         *
          * @param autoAssociationSourceCount the value to set
          * @return this builder
-         **/
+         */
         public Builder autoAssociationSourceCount(Integer autoAssociationSourceCount) {
             this.autoAssociationSourceCount = autoAssociationSourceCount;
             this.__explicitlySet__.add("autoAssociationSourceCount");
             return this;
         }
-        /**
-         * The count of built in sources.
-         **/
+        /** The count of built in sources. */
         @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
         private Integer oobCount;
 
         /**
          * The count of built in sources.
+         *
          * @param oobCount the value to set
          * @return this builder
-         **/
+         */
         public Builder oobCount(Integer oobCount) {
             this.oobCount = oobCount;
             this.__explicitlySet__.add("oobCount");
@@ -109,9 +107,7 @@ public final class SourceSummaryReport extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +116,41 @@ public final class SourceSummaryReport extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The count of custom (user defined) sources.
-     **/
+    /** The count of custom (user defined) sources. */
     @com.fasterxml.jackson.annotation.JsonProperty("nonOobCount")
     private final Integer nonOobCount;
 
     /**
      * The count of custom (user defined) sources.
+     *
      * @return the value
-     **/
+     */
     public Integer getNonOobCount() {
         return nonOobCount;
     }
 
-    /**
-     * The count of sources set to auto-associate.
-     **/
+    /** The count of sources set to auto-associate. */
     @com.fasterxml.jackson.annotation.JsonProperty("autoAssociationSourceCount")
     private final Integer autoAssociationSourceCount;
 
     /**
      * The count of sources set to auto-associate.
+     *
      * @return the value
-     **/
+     */
     public Integer getAutoAssociationSourceCount() {
         return autoAssociationSourceCount;
     }
 
-    /**
-     * The count of built in sources.
-     **/
+    /** The count of built in sources. */
     @com.fasterxml.jackson.annotation.JsonProperty("oobCount")
     private final Integer oobCount;
 
     /**
      * The count of built in sources.
+     *
      * @return the value
-     **/
+     */
     public Integer getOobCount() {
         return oobCount;
     }
@@ -169,6 +162,7 @@ public final class SourceSummaryReport extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

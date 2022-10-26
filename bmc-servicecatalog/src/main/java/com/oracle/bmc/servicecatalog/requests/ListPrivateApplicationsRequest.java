@@ -6,86 +6,73 @@ package com.oracle.bmc.servicecatalog.requests;
 
 import com.oracle.bmc.servicecatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPrivateApplicationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicecatalog/ListPrivateApplicationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListPrivateApplicationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 public class ListPrivateApplicationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The unique identifier for the compartment.
-     */
+    /** The unique identifier for the compartment. */
     private String compartmentId;
 
-    /**
-     * The unique identifier for the compartment.
-     */
+    /** The unique identifier for the compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The unique identifier for the private application.
-     */
+    /** The unique identifier for the private application. */
     private String privateApplicationId;
 
-    /**
-     * The unique identifier for the private application.
-     */
+    /** The unique identifier for the private application. */
     public String getPrivateApplicationId() {
         return privateApplicationId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-     *
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
+     * The default is 30.
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-     *
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
+     * The default is 30.
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by.
-     * Default is {@code TIMECREATED}.
-     *
+     * The field to use to sort listed results. You can only specify one field to sort by. Default
+     * is {@code TIMECREATED}.
      */
     private SortBy sortBy;
 
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by.
-     * Default is {@code TIMECREATED}.
-     *
-     **/
-    public enum SortBy {
+     * The field to use to sort listed results. You can only specify one field to sort by. Default
+     * is {@code TIMECREATED}.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Lifecyclestate("LIFECYCLESTATE"),
         ;
@@ -119,22 +106,17 @@ public class ListPrivateApplicationsRequest
     };
 
     /**
-     * The field to use to sort listed results. You can only specify one field to sort by.
-     * Default is {@code TIMECREATED}.
-     *
+     * The field to use to sort listed results. You can only specify one field to sort by. Default
+     * is {@code TIMECREATED}.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
-     */
+    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
-     **/
-    public enum SortOrder {
+    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -167,20 +149,14 @@ public class ListPrivateApplicationsRequest
         }
     };
 
-    /**
-     * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
-     */
+    /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Exact match name filter.
-     */
+    /** Exact match name filter. */
     private String displayName;
 
-    /**
-     * Exact match name filter.
-     */
+    /** Exact match name filter. */
     public String getDisplayName() {
         return displayName;
     }
@@ -188,17 +164,15 @@ public class ListPrivateApplicationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPrivateApplicationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The unique identifier for the compartment.
-         */
+        /** The unique identifier for the compartment. */
         private String compartmentId = null;
 
         /**
          * The unique identifier for the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -207,13 +181,12 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
-        /**
-         * The unique identifier for the private application.
-         */
+        /** The unique identifier for the private application. */
         private String privateApplicationId = null;
 
         /**
          * The unique identifier for the private application.
+         *
          * @param privateApplicationId the value to set
          * @return this builder instance
          */
@@ -223,15 +196,14 @@ public class ListPrivateApplicationsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -242,13 +214,14 @@ public class ListPrivateApplicationsRequest
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-         *
+         * How many records to return. Specify a value greater than zero and less than or equal to
+         * 1000. The default is 30.
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to
+         * 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -258,13 +231,12 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -276,7 +248,6 @@ public class ListPrivateApplicationsRequest
         /**
          * The field to use to sort listed results. You can only specify one field to sort by.
          * Default is {@code TIMECREATED}.
-         *
          */
         private SortBy sortBy = null;
 
@@ -292,13 +263,12 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
-        /**
-         * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
-         */
+        /** The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to apply, either {@code ASC} or {@code DESC}. Default is {@code ASC}.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -307,13 +277,12 @@ public class ListPrivateApplicationsRequest
             return this;
         }
 
-        /**
-         * Exact match name filter.
-         */
+        /** Exact match name filter. */
         private String displayName = null;
 
         /**
          * Exact match name filter.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -324,18 +293,19 @@ public class ListPrivateApplicationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -347,6 +317,7 @@ public class ListPrivateApplicationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListPrivateApplicationsRequest o) {
@@ -366,10 +337,11 @@ public class ListPrivateApplicationsRequest
         /**
          * Build the instance of ListPrivateApplicationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListPrivateApplicationsRequest
          */
@@ -383,7 +355,8 @@ public class ListPrivateApplicationsRequest
         /**
          * Build the instance of ListPrivateApplicationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPrivateApplicationsRequest
@@ -399,12 +372,14 @@ public class ListPrivateApplicationsRequest
             request.sortOrder = sortOrder;
             request.displayName = displayName;
             return request;
-            // new ListPrivateApplicationsRequest(compartmentId, privateApplicationId, opcRequestId, limit, page, sortBy, sortOrder, displayName);
+            // new ListPrivateApplicationsRequest(compartmentId, privateApplicationId, opcRequestId,
+            // limit, page, sortBy, sortOrder, displayName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -421,6 +396,7 @@ public class ListPrivateApplicationsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

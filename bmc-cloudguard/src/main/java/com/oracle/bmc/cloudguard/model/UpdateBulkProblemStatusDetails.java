@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * List of problem ids to be passed in to update the Problem status.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * List of problem ids to be passed in to update the Problem status. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateBulkProblemStatusDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateBulkProblemStatusDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateBulkProblemStatusDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "problemIds", "comment"})
     public UpdateBulkProblemStatusDetails(
@@ -33,49 +33,46 @@ public final class UpdateBulkProblemStatusDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Action taken by user
-         **/
+        /** Action taken by user */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ProblemLifecycleDetail status;
 
         /**
          * Action taken by user
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(ProblemLifecycleDetail status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * List of ProblemIds to be passed in to update the Problem status.
-         **/
+        /** List of ProblemIds to be passed in to update the Problem status. */
         @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
         private java.util.List<String> problemIds;
 
         /**
          * List of ProblemIds to be passed in to update the Problem status.
+         *
          * @param problemIds the value to set
          * @return this builder
-         **/
+         */
         public Builder problemIds(java.util.List<String> problemIds) {
             this.problemIds = problemIds;
             this.__explicitlySet__.add("problemIds");
             return this;
         }
-        /**
-         * User defined comment to be passed in to update the problem.
-         **/
+        /** User defined comment to be passed in to update the problem. */
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
          * User defined comment to be passed in to update the problem.
+         *
          * @param comment the value to set
          * @return this builder
-         **/
+         */
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
@@ -109,9 +106,7 @@ public final class UpdateBulkProblemStatusDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,44 +115,41 @@ public final class UpdateBulkProblemStatusDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Action taken by user
-     **/
+    /** Action taken by user */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ProblemLifecycleDetail status;
 
     /**
      * Action taken by user
+     *
      * @return the value
-     **/
+     */
     public ProblemLifecycleDetail getStatus() {
         return status;
     }
 
-    /**
-     * List of ProblemIds to be passed in to update the Problem status.
-     **/
+    /** List of ProblemIds to be passed in to update the Problem status. */
     @com.fasterxml.jackson.annotation.JsonProperty("problemIds")
     private final java.util.List<String> problemIds;
 
     /**
      * List of ProblemIds to be passed in to update the Problem status.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getProblemIds() {
         return problemIds;
     }
 
-    /**
-     * User defined comment to be passed in to update the problem.
-     **/
+    /** User defined comment to be passed in to update the problem. */
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
      * User defined comment to be passed in to update the problem.
+     *
      * @return the value
-     **/
+     */
     public String getComment() {
         return comment;
     }
@@ -169,6 +161,7 @@ public final class UpdateBulkProblemStatusDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

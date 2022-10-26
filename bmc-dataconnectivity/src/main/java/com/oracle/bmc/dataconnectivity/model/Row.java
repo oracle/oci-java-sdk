@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Data preview row values.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Data preview row values. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Row.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Row extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"values"})
     public Row(java.util.List<String> values) {
@@ -27,17 +28,16 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Array of all the sampled rows.
-         **/
+        /** Array of all the sampled rows. */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
          * Array of all the sampled rows.
+         *
          * @param values the value to set
          * @return this builder
-         **/
+         */
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -64,9 +64,7 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -75,16 +73,15 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return new Builder().copy(this);
     }
 
-    /**
-     * Array of all the sampled rows.
-     **/
+    /** Array of all the sampled rows. */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
      * Array of all the sampled rows.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getValues() {
         return values;
     }
@@ -96,6 +93,7 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

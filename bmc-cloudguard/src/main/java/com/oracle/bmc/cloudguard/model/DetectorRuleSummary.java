@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of the Detector Rules.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the Detector Rules. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DetectorRuleSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = DetectorRuleSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DetectorRuleSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,145 +72,136 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique identifier of the detector rule
-         **/
+        /** The unique identifier of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of the detector rule
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * DetectorTemplate Identifier, can be renamed
-         **/
+        /** DetectorTemplate Identifier, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * DetectorTemplate Identifier, can be renamed
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description for detector rule
-         **/
+        /** Description for detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description for detector rule
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Recommendation for detector rule
-         **/
+        /** Recommendation for detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
         private String recommendation;
 
         /**
          * Recommendation for detector rule
+         *
          * @param recommendation the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendation(String recommendation) {
             this.recommendation = recommendation;
             this.__explicitlySet__.add("recommendation");
             return this;
         }
-        /**
-         * possible type of detectors
-         **/
+        /** possible type of detectors */
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
          * possible type of detectors
+         *
          * @param detector the value to set
          * @return this builder
-         **/
+         */
         public Builder detector(DetectorEnum detector) {
             this.detector = detector;
             this.__explicitlySet__.add("detector");
             return this;
         }
-        /**
-         * service type of the configuration to which the rule is applied
-         **/
+        /** service type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
         private String serviceType;
 
         /**
          * service type of the configuration to which the rule is applied
+         *
          * @param serviceType the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceType(String serviceType) {
             this.serviceType = serviceType;
             this.__explicitlySet__.add("serviceType");
             return this;
         }
-        /**
-         * resource type of the configuration to which the rule is applied
-         **/
+        /** resource type of the configuration to which the rule is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * resource type of the configuration to which the rule is applied
+         *
          * @param resourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /**
-         * List of cloudguard managed list types related to this rule
-         **/
+        /** List of cloudguard managed list types related to this rule */
         @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
         private java.util.List<ManagedListTypes> managedListTypes;
 
         /**
          * List of cloudguard managed list types related to this rule
+         *
          * @param managedListTypes the value to set
          * @return this builder
-         **/
+         */
         public Builder managedListTypes(java.util.List<ManagedListTypes> managedListTypes) {
             this.managedListTypes = managedListTypes;
             this.__explicitlySet__.add("managedListTypes");
             return this;
         }
-        /**
-         * List of CandidateResponderRule related to this rule
-         **/
+        /** List of CandidateResponderRule related to this rule */
         @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
         private java.util.List<CandidateResponderRule> candidateResponderRules;
 
         /**
          * List of CandidateResponderRule related to this rule
+         *
          * @param candidateResponderRules the value to set
          * @return this builder
-         **/
+         */
         public Builder candidateResponderRules(
                 java.util.List<CandidateResponderRule> candidateResponderRules) {
             this.candidateResponderRules = candidateResponderRules;
@@ -225,65 +217,65 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("detectorDetails");
             return this;
         }
-        /**
-         * The date and time the detector rule was created. Format defined by RFC3339.
-         **/
+        /** The date and time the detector rule was created. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the detector rule was created. Format defined by RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time the detector rule was updated. Format defined by RFC3339.
-         **/
+        /** The date and time the detector rule was updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the detector rule was updated. Format defined by RFC3339.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the detector rule
-         **/
+        /** The current state of the detector rule */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the detector rule
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -364,9 +356,7 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -375,107 +365,99 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique identifier of the detector rule
-     **/
+    /** The unique identifier of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of the detector rule
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * DetectorTemplate Identifier, can be renamed
-     **/
+    /** DetectorTemplate Identifier, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * DetectorTemplate Identifier, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description for detector rule
-     **/
+    /** Description for detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description for detector rule
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Recommendation for detector rule
-     **/
+    /** Recommendation for detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendation")
     private final String recommendation;
 
     /**
      * Recommendation for detector rule
+     *
      * @return the value
-     **/
+     */
     public String getRecommendation() {
         return recommendation;
     }
 
-    /**
-     * possible type of detectors
-     **/
+    /** possible type of detectors */
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
      * possible type of detectors
+     *
      * @return the value
-     **/
+     */
     public DetectorEnum getDetector() {
         return detector;
     }
 
-    /**
-     * service type of the configuration to which the rule is applied
-     **/
+    /** service type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final String serviceType;
 
     /**
      * service type of the configuration to which the rule is applied
+     *
      * @return the value
-     **/
+     */
     public String getServiceType() {
         return serviceType;
     }
 
-    /**
-     * resource type of the configuration to which the rule is applied
-     **/
+    /** resource type of the configuration to which the rule is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * resource type of the configuration to which the rule is applied
+     *
      * @return the value
-     **/
+     */
     public String getResourceType() {
         return resourceType;
     }
 
-    /**
-     **/
-    public enum ManagedListTypes {
+    /** */
+    public enum ManagedListTypes implements com.oracle.bmc.http.internal.BmcEnum {
         CidrBlock("CIDR_BLOCK"),
         Users("USERS"),
         Groups("GROUPS"),
@@ -490,8 +472,8 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         Generic("GENERIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -530,30 +512,28 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * List of cloudguard managed list types related to this rule
-     **/
+    /** List of cloudguard managed list types related to this rule */
     @com.fasterxml.jackson.annotation.JsonProperty("managedListTypes")
     private final java.util.List<ManagedListTypes> managedListTypes;
 
     /**
      * List of cloudguard managed list types related to this rule
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ManagedListTypes> getManagedListTypes() {
         return managedListTypes;
     }
 
-    /**
-     * List of CandidateResponderRule related to this rule
-     **/
+    /** List of CandidateResponderRule related to this rule */
     @com.fasterxml.jackson.annotation.JsonProperty("candidateResponderRules")
     private final java.util.List<CandidateResponderRule> candidateResponderRules;
 
     /**
      * List of CandidateResponderRule related to this rule
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CandidateResponderRule> getCandidateResponderRules() {
         return candidateResponderRules;
     }
@@ -565,58 +545,58 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
         return detectorDetails;
     }
 
-    /**
-     * The date and time the detector rule was created. Format defined by RFC3339.
-     **/
+    /** The date and time the detector rule was created. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the detector rule was created. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the detector rule was updated. Format defined by RFC3339.
-     **/
+    /** The date and time the detector rule was updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the detector rule was updated. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the detector rule
-     **/
+    /** The current state of the detector rule */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the detector rule
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -628,6 +608,7 @@ public final class DetectorRuleSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

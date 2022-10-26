@@ -5,21 +5,22 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Availability Domains
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Availability Domains <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AvailabilityDomain.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AvailabilityDomain extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AvailabilityDomain.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AvailabilityDomain
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ads"})
     public AvailabilityDomain(Ads ads) {
@@ -29,17 +30,16 @@ public final class AvailabilityDomain extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Availability Domain Identifiers
-         **/
+        /** Availability Domain Identifiers */
         @com.fasterxml.jackson.annotation.JsonProperty("ads")
         private Ads ads;
 
         /**
          * Availability Domain Identifiers
+         *
          * @param ads the value to set
          * @return this builder
-         **/
+         */
         public Builder ads(Ads ads) {
             this.ads = ads;
             this.__explicitlySet__.add("ads");
@@ -66,9 +66,7 @@ public final class AvailabilityDomain extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,10 +75,8 @@ public final class AvailabilityDomain extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Availability Domain Identifiers
-     **/
-    public enum Ads {
+    /** Availability Domain Identifiers */
+    public enum Ads implements com.oracle.bmc.http.internal.BmcEnum {
         Ad1("AD1"),
         Ad2("AD2"),
         Ad3("AD3"),
@@ -113,16 +109,15 @@ public final class AvailabilityDomain extends com.oracle.bmc.http.internal.Expli
             throw new IllegalArgumentException("Invalid Ads: " + key);
         }
     };
-    /**
-     * Availability Domain Identifiers
-     **/
+    /** Availability Domain Identifiers */
     @com.fasterxml.jackson.annotation.JsonProperty("ads")
     private final Ads ads;
 
     /**
      * Availability Domain Identifiers
+     *
      * @return the value
-     **/
+     */
     public Ads getAds() {
         return ads;
     }
@@ -134,6 +129,7 @@ public final class AvailabilityDomain extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

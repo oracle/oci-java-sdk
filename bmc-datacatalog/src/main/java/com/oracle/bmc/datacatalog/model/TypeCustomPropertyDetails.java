@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Array of custom property IDs for which we have to associate the custom property to the type
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Array of custom property IDs for which we have to associate the custom property to the type <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TypeCustomPropertyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TypeCustomPropertyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TypeCustomPropertyDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"customPropertyIds", "isEventEnabled"})
     public TypeCustomPropertyDetails(
@@ -32,33 +32,31 @@ public final class TypeCustomPropertyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * array of custom property Ids
-         **/
+        /** array of custom property Ids */
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
         private java.util.List<String> customPropertyIds;
 
         /**
          * array of custom property Ids
+         *
          * @param customPropertyIds the value to set
          * @return this builder
-         **/
+         */
         public Builder customPropertyIds(java.util.List<String> customPropertyIds) {
             this.customPropertyIds = customPropertyIds;
             this.__explicitlySet__.add("customPropertyIds");
             return this;
         }
-        /**
-         * If an OCI Event will be emitted when the custom property is modified.
-         **/
+        /** If an OCI Event will be emitted when the custom property is modified. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
         /**
          * If an OCI Event will be emitted when the custom property is modified.
+         *
          * @param isEventEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
@@ -89,9 +87,7 @@ public final class TypeCustomPropertyDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +96,28 @@ public final class TypeCustomPropertyDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * array of custom property Ids
-     **/
+    /** array of custom property Ids */
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyIds")
     private final java.util.List<String> customPropertyIds;
 
     /**
      * array of custom property Ids
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getCustomPropertyIds() {
         return customPropertyIds;
     }
 
-    /**
-     * If an OCI Event will be emitted when the custom property is modified.
-     **/
+    /** If an OCI Event will be emitted when the custom property is modified. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }
@@ -135,6 +129,7 @@ public final class TypeCustomPropertyDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

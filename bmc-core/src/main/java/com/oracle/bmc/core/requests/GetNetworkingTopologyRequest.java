@@ -6,46 +6,49 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetNetworkingTopologyRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetNetworkingTopologyExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetNetworkingTopologyRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetNetworkingTopologyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
-     * Setting this to {@code ACCESSIBLE} returns only compartments for which a
-     * user has INSPECT permissions, either directly or indirectly (permissions can be on a
-     * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
-     * indirect INSPECT permissions.
-     * <p>
-     * When set to {@code ANY} permissions are not checked.
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}. Setting this
+     * to {@code ACCESSIBLE} returns only compartments for which a user has INSPECT permissions,
+     * either directly or indirectly (permissions can be on a resource in a subcompartment). A
+     * restricted set of fields is returned for compartments in which a user has indirect INSPECT
+     * permissions.
      *
+     * <p>When set to {@code ANY} permissions are not checked.
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
-     * Setting this to {@code ACCESSIBLE} returns only compartments for which a
-     * user has INSPECT permissions, either directly or indirectly (permissions can be on a
-     * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
-     * indirect INSPECT permissions.
-     * <p>
-     * When set to {@code ANY} permissions are not checked.
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}. Setting this
+     * to {@code ACCESSIBLE} returns only compartments for which a user has INSPECT permissions,
+     * either directly or indirectly (permissions can be on a resource in a subcompartment). A
+     * restricted set of fields is returned for compartments in which a user has indirect INSPECT
+     * permissions.
      *
-     **/
-    public enum AccessLevel {
+     * <p>When set to {@code ANY} permissions are not checked.
+     */
+    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Any("ANY"),
         Accessible("ACCESSIBLE"),
         ;
@@ -79,84 +82,73 @@ public class GetNetworkingTopologyRequest
     };
 
     /**
-     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
-     * Setting this to {@code ACCESSIBLE} returns only compartments for which a
-     * user has INSPECT permissions, either directly or indirectly (permissions can be on a
-     * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
-     * indirect INSPECT permissions.
-     * <p>
-     * When set to {@code ANY} permissions are not checked.
+     * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}. Setting this
+     * to {@code ACCESSIBLE} returns only compartments for which a user has INSPECT permissions,
+     * either directly or indirectly (permissions can be on a resource in a subcompartment). A
+     * restricted set of fields is returned for compartments in which a user has indirect INSPECT
+     * permissions.
      *
+     * <p>When set to {@code ANY} permissions are not checked.
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
     /**
-     * When set to true, the hierarchy of compartments is traversed
-     * and the specified compartment and its subcompartments are
-     * inspected depending on the the setting of {@code accessLevel}.
+     * When set to true, the hierarchy of compartments is traversed and the specified compartment
+     * and its subcompartments are inspected depending on the the setting of {@code accessLevel}.
      * Default is false.
-     *
      */
     private Boolean queryCompartmentSubtree;
 
     /**
-     * When set to true, the hierarchy of compartments is traversed
-     * and the specified compartment and its subcompartments are
-     * inspected depending on the the setting of {@code accessLevel}.
+     * When set to true, the hierarchy of compartments is traversed and the specified compartment
+     * and its subcompartments are inspected depending on the the setting of {@code accessLevel}.
      * Default is false.
-     *
      */
     public Boolean getQueryCompartmentSubtree() {
         return queryCompartmentSubtree;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * For querying if there is a cached value on the server. The If-None-Match HTTP request header
-     * makes the request conditional. For GET and HEAD methods, the server will send back the requested
-     * resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
-     * For other methods, the request will be processed only if the eventually existing resource's
-     * ETag doesn't match any of the values listed.
-     *
+     * makes the request conditional. For GET and HEAD methods, the server will send back the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given
+     * ones. For other methods, the request will be processed only if the eventually existing
+     * resource's ETag doesn't match any of the values listed.
      */
     private String ifNoneMatch;
 
     /**
      * For querying if there is a cached value on the server. The If-None-Match HTTP request header
-     * makes the request conditional. For GET and HEAD methods, the server will send back the requested
-     * resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
-     * For other methods, the request will be processed only if the eventually existing resource's
-     * ETag doesn't match any of the values listed.
-     *
+     * makes the request conditional. For GET and HEAD methods, the server will send back the
+     * requested resource, with a 200 status, only if it doesn't have an ETag matching the given
+     * ones. For other methods, the request will be processed only if the eventually existing
+     * resource's ETag doesn't match any of the values listed.
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
     /**
-     * The Cache-Control HTTP header holds directives (instructions)
-     * for caching in both requests and responses.
-     *
+     * The Cache-Control HTTP header holds directives (instructions) for caching in both requests
+     * and responses.
      */
     private String cacheControl;
 
     /**
-     * The Cache-Control HTTP header holds directives (instructions)
-     * for caching in both requests and responses.
-     *
+     * The Cache-Control HTTP header holds directives (instructions) for caching in both requests
+     * and responses.
      */
     public String getCacheControl() {
         return cacheControl;
@@ -165,17 +157,19 @@ public class GetNetworkingTopologyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetNetworkingTopologyRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -185,25 +179,24 @@ public class GetNetworkingTopologyRequest
         }
 
         /**
-         * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
-         * Setting this to {@code ACCESSIBLE} returns only compartments for which a
-         * user has INSPECT permissions, either directly or indirectly (permissions can be on a
-         * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
-         * indirect INSPECT permissions.
-         * <p>
-         * When set to {@code ANY} permissions are not checked.
+         * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}. Setting
+         * this to {@code ACCESSIBLE} returns only compartments for which a user has INSPECT
+         * permissions, either directly or indirectly (permissions can be on a resource in a
+         * subcompartment). A restricted set of fields is returned for compartments in which a user
+         * has indirect INSPECT permissions.
          *
+         * <p>When set to {@code ANY} permissions are not checked.
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}.
-         * Setting this to {@code ACCESSIBLE} returns only compartments for which a
-         * user has INSPECT permissions, either directly or indirectly (permissions can be on a
-         * resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
-         * indirect INSPECT permissions.
-         * <p>
-         * When set to {@code ANY} permissions are not checked.
+         * Valid values are {@code ANY} and {@code ACCESSIBLE}. The default is {@code ANY}. Setting
+         * this to {@code ACCESSIBLE} returns only compartments for which a user has INSPECT
+         * permissions, either directly or indirectly (permissions can be on a resource in a
+         * subcompartment). A restricted set of fields is returned for compartments in which a user
+         * has indirect INSPECT permissions.
+         *
+         * <p>When set to {@code ANY} permissions are not checked.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -214,19 +207,16 @@ public class GetNetworkingTopologyRequest
         }
 
         /**
-         * When set to true, the hierarchy of compartments is traversed
-         * and the specified compartment and its subcompartments are
-         * inspected depending on the the setting of {@code accessLevel}.
-         * Default is false.
-         *
+         * When set to true, the hierarchy of compartments is traversed and the specified
+         * compartment and its subcompartments are inspected depending on the the setting of {@code
+         * accessLevel}. Default is false.
          */
         private Boolean queryCompartmentSubtree = null;
 
         /**
-         * When set to true, the hierarchy of compartments is traversed
-         * and the specified compartment and its subcompartments are
-         * inspected depending on the the setting of {@code accessLevel}.
-         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and the specified
+         * compartment and its subcompartments are inspected depending on the the setting of {@code
+         * accessLevel}. Default is false.
          *
          * @param queryCompartmentSubtree the value to set
          * @return this builder instance
@@ -237,15 +227,14 @@ public class GetNetworkingTopologyRequest
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -256,21 +245,20 @@ public class GetNetworkingTopologyRequest
         }
 
         /**
-         * For querying if there is a cached value on the server. The If-None-Match HTTP request header
-         * makes the request conditional. For GET and HEAD methods, the server will send back the requested
-         * resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
-         * For other methods, the request will be processed only if the eventually existing resource's
-         * ETag doesn't match any of the values listed.
-         *
+         * For querying if there is a cached value on the server. The If-None-Match HTTP request
+         * header makes the request conditional. For GET and HEAD methods, the server will send back
+         * the requested resource, with a 200 status, only if it doesn't have an ETag matching the
+         * given ones. For other methods, the request will be processed only if the eventually
+         * existing resource's ETag doesn't match any of the values listed.
          */
         private String ifNoneMatch = null;
 
         /**
-         * For querying if there is a cached value on the server. The If-None-Match HTTP request header
-         * makes the request conditional. For GET and HEAD methods, the server will send back the requested
-         * resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
-         * For other methods, the request will be processed only if the eventually existing resource's
-         * ETag doesn't match any of the values listed.
+         * For querying if there is a cached value on the server. The If-None-Match HTTP request
+         * header makes the request conditional. For GET and HEAD methods, the server will send back
+         * the requested resource, with a 200 status, only if it doesn't have an ETag matching the
+         * given ones. For other methods, the request will be processed only if the eventually
+         * existing resource's ETag doesn't match any of the values listed.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -281,15 +269,14 @@ public class GetNetworkingTopologyRequest
         }
 
         /**
-         * The Cache-Control HTTP header holds directives (instructions)
-         * for caching in both requests and responses.
-         *
+         * The Cache-Control HTTP header holds directives (instructions) for caching in both
+         * requests and responses.
          */
         private String cacheControl = null;
 
         /**
-         * The Cache-Control HTTP header holds directives (instructions)
-         * for caching in both requests and responses.
+         * The Cache-Control HTTP header holds directives (instructions) for caching in both
+         * requests and responses.
          *
          * @param cacheControl the value to set
          * @return this builder instance
@@ -301,18 +288,19 @@ public class GetNetworkingTopologyRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -324,6 +312,7 @@ public class GetNetworkingTopologyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetNetworkingTopologyRequest o) {
@@ -341,10 +330,11 @@ public class GetNetworkingTopologyRequest
         /**
          * Build the instance of GetNetworkingTopologyRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetNetworkingTopologyRequest
          */
@@ -358,7 +348,8 @@ public class GetNetworkingTopologyRequest
         /**
          * Build the instance of GetNetworkingTopologyRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetNetworkingTopologyRequest
@@ -372,12 +363,14 @@ public class GetNetworkingTopologyRequest
             request.ifNoneMatch = ifNoneMatch;
             request.cacheControl = cacheControl;
             return request;
-            // new GetNetworkingTopologyRequest(compartmentId, accessLevel, queryCompartmentSubtree, opcRequestId, ifNoneMatch, cacheControl);
+            // new GetNetworkingTopologyRequest(compartmentId, accessLevel, queryCompartmentSubtree,
+            // opcRequestId, ifNoneMatch, cacheControl);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -392,6 +385,7 @@ public class GetNetworkingTopologyRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * UpdateLookupMetadataDetails
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * UpdateLookupMetadataDetails <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateLookupMetadataDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateLookupMetadataDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateLookupMetadataDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "defaultMatchValue",
@@ -45,85 +45,80 @@ public final class UpdateLookupMetadataDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The default match value.
-         **/
+        /** The default match value. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
         private String defaultMatchValue;
 
         /**
          * The default match value.
+         *
          * @param defaultMatchValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultMatchValue(String defaultMatchValue) {
             this.defaultMatchValue = defaultMatchValue;
             this.__explicitlySet__.add("defaultMatchValue");
             return this;
         }
-        /**
-         * The lookup description.
-         **/
+        /** The lookup description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The lookup description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The lookup fields.
-         **/
+        /** The lookup fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("fields")
         private java.util.List<LogAnalyticsLookupFields> fields;
 
         /**
          * The lookup fields.
+         *
          * @param fields the value to set
          * @return this builder
-         **/
+         */
         public Builder fields(java.util.List<LogAnalyticsLookupFields> fields) {
             this.fields = fields;
             this.__explicitlySet__.add("fields");
             return this;
         }
-        /**
-         * The maximum number of matches.
-         **/
+        /** The maximum number of matches. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
         private Long maxMatches;
 
         /**
          * The maximum number of matches.
+         *
          * @param maxMatches the value to set
          * @return this builder
-         **/
+         */
         public Builder maxMatches(Long maxMatches) {
             this.maxMatches = maxMatches;
             this.__explicitlySet__.add("maxMatches");
             return this;
         }
         /**
-         * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
-         * Oracle-defined category assignments cannot be removed.
-         *
-         **/
+         * An array of categories to assign to the lookup. Specifying the name attribute for each
+         * category would suffice. Oracle-defined category assignments cannot be removed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
         /**
-         * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
-         * Oracle-defined category assignments cannot be removed.
+         * An array of categories to assign to the lookup. Specifying the name attribute for each
+         * category would suffice. Oracle-defined category assignments cannot be removed.
          *
          * @param categories the value to set
          * @return this builder
-         **/
+         */
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -168,9 +163,7 @@ public final class UpdateLookupMetadataDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,76 +172,71 @@ public final class UpdateLookupMetadataDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The default match value.
-     **/
+    /** The default match value. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultMatchValue")
     private final String defaultMatchValue;
 
     /**
      * The default match value.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultMatchValue() {
         return defaultMatchValue;
     }
 
-    /**
-     * The lookup description.
-     **/
+    /** The lookup description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The lookup description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The lookup fields.
-     **/
+    /** The lookup fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("fields")
     private final java.util.List<LogAnalyticsLookupFields> fields;
 
     /**
      * The lookup fields.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsLookupFields> getFields() {
         return fields;
     }
 
-    /**
-     * The maximum number of matches.
-     **/
+    /** The maximum number of matches. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxMatches")
     private final Long maxMatches;
 
     /**
      * The maximum number of matches.
+     *
      * @return the value
-     **/
+     */
     public Long getMaxMatches() {
         return maxMatches;
     }
 
     /**
-     * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
-     * Oracle-defined category assignments cannot be removed.
-     *
-     **/
+     * An array of categories to assign to the lookup. Specifying the name attribute for each
+     * category would suffice. Oracle-defined category assignments cannot be removed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
     /**
-     * An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
-     * Oracle-defined category assignments cannot be removed.
+     * An array of categories to assign to the lookup. Specifying the name attribute for each
+     * category would suffice. Oracle-defined category assignments cannot be removed.
      *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }
@@ -260,6 +248,7 @@ public final class UpdateLookupMetadataDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,10 +8,7 @@ import com.oracle.bmc.osmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,15 +37,14 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * A decimal number representing the number of seconds the client
-     * should wait before polling this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling
+     * this endpoint again.
      */
     private Float retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client
-     * should wait before polling this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling
+     * this endpoint again.
      *
      * @return the value
      */
@@ -57,13 +52,12 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
         return retryAfter;
     }
 
-    /**
-     * The returned ManagedInstanceGroup instance.
-     */
+    /** The returned ManagedInstanceGroup instance. */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
     /**
      * The returned ManagedInstanceGroup instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.osmanagement.model.ManagedInstanceGroup getManagedInstanceGroup() {
@@ -80,7 +74,7 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
     })
     private GetManagedInstanceGroupResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             Float retryAfter,
@@ -92,25 +86,26 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
         this.managedInstanceGroup = managedInstanceGroup;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetManagedInstanceGroupResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -125,15 +120,14 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -144,15 +138,14 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * A decimal number representing the number of seconds the client
-         * should wait before polling this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling
+         * this endpoint again.
          */
         private Float retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client
-         * should wait before polling this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling
+         * this endpoint again.
          *
          * @param retryAfter the value to set
          * @return this builder
@@ -162,13 +155,12 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned ManagedInstanceGroup instance.
-         */
+        /** The returned ManagedInstanceGroup instance. */
         private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
         /**
          * The returned ManagedInstanceGroup instance.
+         *
          * @param managedInstanceGroup the value to set
          * @return this builder
          */
@@ -180,8 +172,10 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetManagedInstanceGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -195,8 +189,10 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetManagedInstanceGroupResponse build() {
             return new GetManagedInstanceGroupResponse(
                     __httpStatusCode__,
@@ -210,6 +206,7 @@ public class GetManagedInstanceGroupResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

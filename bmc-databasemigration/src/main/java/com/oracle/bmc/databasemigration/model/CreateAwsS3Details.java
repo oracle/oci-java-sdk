@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * AWS S3 bucket details used for source Connection resources with RDS_ORACLE type.
- * Only supported for source Connection resources with RDS_ORACLE type.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * AWS S3 bucket details used for source Connection resources with RDS_ORACLE type. Only supported
+ * for source Connection resources with RDS_ORACLE type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateAwsS3Details.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateAwsS3Details.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateAwsS3Details
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "region", "accessKeyId", "secretAccessKey"})
     public CreateAwsS3Details(
@@ -35,10 +35,7 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * S3 bucket name.
-         *
-         **/
+        /** S3 bucket name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -47,69 +44,66 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * AWS region code where the S3 bucket is located.
-         * Region code should match the documented available regions:
+         * AWS region code where the S3 bucket is located. Region code should match the documented
+         * available regions:
          * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * AWS region code where the S3 bucket is located.
-         * Region code should match the documented available regions:
+         * AWS region code where the S3 bucket is located. Region code should match the documented
+         * available regions:
          * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * AWS access key credentials identifier
-         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-         *
-         **/
+         * AWS access key credentials identifier Details:
+         * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
         /**
-         * AWS access key credentials identifier
-         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * AWS access key credentials identifier Details:
+         * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
          *
          * @param accessKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder accessKeyId(String accessKeyId) {
             this.accessKeyId = accessKeyId;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
         /**
-         * AWS secret access key credentials
-         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-         *
-         **/
+         * AWS secret access key credentials Details:
+         * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private String secretAccessKey;
 
         /**
-         * AWS secret access key credentials
-         * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         * AWS secret access key credentials Details:
+         * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
          *
          * @param secretAccessKey the value to set
          * @return this builder
-         **/
+         */
         public Builder secretAccessKey(String secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
             this.__explicitlySet__.add("secretAccessKey");
@@ -147,9 +141,7 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,10 +150,7 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * S3 bucket name.
-     *
-     **/
+    /** S3 bucket name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -169,63 +158,60 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
      * S3 bucket name.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * AWS region code where the S3 bucket is located.
-     * Region code should match the documented available regions:
+     * AWS region code where the S3 bucket is located. Region code should match the documented
+     * available regions:
      * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * AWS region code where the S3 bucket is located.
-     * Region code should match the documented available regions:
+     * AWS region code where the S3 bucket is located. Region code should match the documented
+     * available regions:
      * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
     /**
-     * AWS access key credentials identifier
-     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-     *
-     **/
+     * AWS access key credentials identifier Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
     /**
-     * AWS access key credentials identifier
-     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * AWS access key credentials identifier Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
      *
      * @return the value
-     **/
+     */
     public String getAccessKeyId() {
         return accessKeyId;
     }
 
     /**
-     * AWS secret access key credentials
-     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-     *
-     **/
+     * AWS secret access key credentials Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final String secretAccessKey;
 
     /**
-     * AWS secret access key credentials
-     * Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+     * AWS secret access key credentials Details:
+     * https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
      *
      * @return the value
-     **/
+     */
     public String getSecretAccessKey() {
         return secretAccessKey;
     }
@@ -237,6 +223,7 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -246,8 +233,8 @@ public final class CreateAwsS3Details extends com.oracle.bmc.http.internal.Expli
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", region=").append(String.valueOf(this.region));
-        sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
-        sb.append(", secretAccessKey=").append(String.valueOf(this.secretAccessKey));
+        sb.append(", accessKeyId=").append("<redacted>");
+        sb.append(", secretAccessKey=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

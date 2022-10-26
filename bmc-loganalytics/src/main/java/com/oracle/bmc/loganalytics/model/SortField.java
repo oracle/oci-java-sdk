@@ -5,24 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Field outlining queryString sort command fields and their corresponding sort order.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Field outlining queryString sort command fields and their corresponding sort order. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SortField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SortField extends AbstractField {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -115,10 +114,7 @@ public final class SortField extends AbstractField {
             this.__explicitlySet__.add("unitType");
             return this;
         }
-        /**
-         * Sort order for the field specified in the queryString.
-         *
-         **/
+        /** Sort order for the field specified in the queryString. */
         @com.fasterxml.jackson.annotation.JsonProperty("direction")
         private Direction direction;
 
@@ -127,7 +123,7 @@ public final class SortField extends AbstractField {
          *
          * @param direction the value to set
          * @return this builder
-         **/
+         */
         public Builder direction(Direction direction) {
             this.direction = direction;
             this.__explicitlySet__.add("direction");
@@ -196,9 +192,7 @@ public final class SortField extends AbstractField {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -234,17 +228,14 @@ public final class SortField extends AbstractField {
         this.direction = direction;
     }
 
-    /**
-     * Sort order for the field specified in the queryString.
-     *
-     **/
-    public enum Direction {
+    /** Sort order for the field specified in the queryString. */
+    public enum Direction implements com.oracle.bmc.http.internal.BmcEnum {
         Ascending("ASCENDING"),
         Descending("DESCENDING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -283,10 +274,7 @@ public final class SortField extends AbstractField {
             return UnknownEnumValue;
         }
     };
-    /**
-     * Sort order for the field specified in the queryString.
-     *
-     **/
+    /** Sort order for the field specified in the queryString. */
     @com.fasterxml.jackson.annotation.JsonProperty("direction")
     private final Direction direction;
 
@@ -294,7 +282,7 @@ public final class SortField extends AbstractField {
      * Sort order for the field specified in the queryString.
      *
      * @return the value
-     **/
+     */
     public Direction getDirection() {
         return direction;
     }
@@ -306,6 +294,7 @@ public final class SortField extends AbstractField {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

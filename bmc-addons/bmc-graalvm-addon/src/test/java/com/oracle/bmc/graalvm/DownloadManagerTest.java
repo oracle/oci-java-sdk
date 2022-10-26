@@ -219,8 +219,10 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
 
             // the end of the range is inclusive; if the file is 100 bytes, the last byte is 99
             // we want to request everything except the first and the last byte, so the start is 1
-            // (skipping byte 0), and the end is TEST_FILE_LENGTH - 2 (minus 1, because the last byte
-            // is not the length, but one less than the length; and minus 1 again to skip the last byte)
+            // (skipping byte 0), and the end is TEST_FILE_LENGTH - 2 (minus 1, because the last
+            // byte
+            // is not the length, but one less than the length; and minus 1 again to skip the last
+            // byte)
             Range range = new Range(1L, TEST_FILE.length() - 1 - 1);
             GetObjectResponse startAndEndResponse =
                     downloadManager.getObject(
@@ -265,7 +267,8 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
                                     .range(range)
                                     .build());
 
-            // just as a sanity check, also download this with straight Object Storage, no download manager
+            // just as a sanity check, also download this with straight Object Storage, no download
+            // manager
             GetObjectResponse endOnlyResponseNoManager =
                     CLIENT.getObject(
                             GetObjectRequest.builder()
@@ -367,7 +370,8 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
                                     .range(range)
                                     .build());
 
-            // just as a sanity check, also download this with straight Object Storage, no download manager
+            // just as a sanity check, also download this with straight Object Storage, no download
+            // manager
             GetObjectResponse endOnlyResponseNoManager =
                     CLIENT.getObject(
                             GetObjectRequest.builder()
@@ -426,7 +430,8 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
                                     .range(range)
                                     .build());
 
-            // just as a sanity check, also download this with straight Object Storage, no download manager
+            // just as a sanity check, also download this with straight Object Storage, no download
+            // manager
             GetObjectResponse endOnlyResponseNoManager =
                     CLIENT.getObject(
                             GetObjectRequest.builder()
@@ -480,8 +485,10 @@ public class DownloadManagerTest extends BaseObjectStorageTest {
         InputStream expectedStream = new FileInputStream(testFile);
         StreamUtils.skipBytesInStream(expectedStream, startByte);
 
-        // assume file length is 100; start of range is 1, end of range is 98 (but both are inclusive)
-        // so we are allowed to read 98 - 1 + 1 = 98 bytes (just not the first byte and the last byte)
+        // assume file length is 100; start of range is 1, end of range is 98 (but both are
+        // inclusive)
+        // so we are allowed to read 98 - 1 + 1 = 98 bytes (just not the first byte and the last
+        // byte)
         expectedStream =
                 StreamUtils.limitRemainingStreamLength(expectedStream, endByte - startByte + 1);
 

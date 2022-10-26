@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The properties used in create UserDefinedFunction validation operations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The properties used in create UserDefinedFunction validation operations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateUserDefinedFunctionValidationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateUserDefinedFunctionValidationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateUserDefinedFunctionValidationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -70,48 +70,51 @@ public final class CreateUserDefinedFunctionValidationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Generated key that can be used in API calls to identify user defined function. On scenarios where reference to the user defined function is needed, a value can be passed in create.
-         **/
+         * Generated key that can be used in API calls to identify user defined function. On
+         * scenarios where reference to the user defined function is needed, a value can be passed
+         * in create.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify user defined function. On scenarios where reference to the user defined function is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify user defined function. On
+         * scenarios where reference to the user defined function is needed, a value can be passed
+         * in create.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The type of the object.
-         **/
+        /** The type of the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private ModelType modelType;
 
         /**
          * The type of the object.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /**
-         * The model version of an object.
-         **/
+        /** The model version of an object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -127,64 +130,70 @@ public final class CreateUserDefinedFunctionValidationDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The version of the object that is used to track changes in the object instance.
-         **/
+        /** The version of the object that is used to track changes in the object instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-        /**
-         * An array of function signature.
-         **/
+        /** An array of function signature. */
         @com.fasterxml.jackson.annotation.JsonProperty("signatures")
         private java.util.List<FunctionSignature> signatures;
 
         /**
          * An array of function signature.
+         *
          * @param signatures the value to set
          * @return this builder
-         **/
+         */
         public Builder signatures(java.util.List<FunctionSignature> signatures) {
             this.signatures = signatures;
             this.__explicitlySet__.add("signatures");
@@ -199,33 +208,35 @@ public final class CreateUserDefinedFunctionValidationDetails
             this.__explicitlySet__.add("expr");
             return this;
         }
-        /**
-         * Detailed description for the object.
-         **/
+        /** Detailed description for the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
@@ -241,16 +252,19 @@ public final class CreateUserDefinedFunctionValidationDetails
             return this;
         }
         /**
-         * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-         **/
+         * A key map. If provided, key is replaced with generated key. This structure provides
+         * mapping between user provided key and generated key.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
         private java.util.Map<String, String> keyMap;
 
         /**
-         * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+         * A key map. If provided, key is replaced with generated key. This structure provides
+         * mapping between user provided key and generated key.
+         *
          * @param keyMap the value to set
          * @return this builder
-         **/
+         */
         public Builder keyMap(java.util.Map<String, String> keyMap) {
             this.keyMap = keyMap;
             this.__explicitlySet__.add("keyMap");
@@ -327,9 +341,7 @@ public final class CreateUserDefinedFunctionValidationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -339,23 +351,24 @@ public final class CreateUserDefinedFunctionValidationDetails
     }
 
     /**
-     * Generated key that can be used in API calls to identify user defined function. On scenarios where reference to the user defined function is needed, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify user defined function. On scenarios
+     * where reference to the user defined function is needed, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify user defined function. On scenarios where reference to the user defined function is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify user defined function. On scenarios
+     * where reference to the user defined function is needed, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The type of the object.
-     **/
-    public enum ModelType {
+    /** The type of the object. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         DisUserDefinedFunction("DIS_USER_DEFINED_FUNCTION"),
         ;
 
@@ -386,30 +399,28 @@ public final class CreateUserDefinedFunctionValidationDetails
             throw new IllegalArgumentException("Invalid ModelType: " + key);
         }
     };
-    /**
-     * The type of the object.
-     **/
+    /** The type of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final ModelType modelType;
 
     /**
      * The type of the object.
+     *
      * @return the value
-     **/
+     */
     public ModelType getModelType() {
         return modelType;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -422,57 +433,61 @@ public final class CreateUserDefinedFunctionValidationDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
-    /**
-     * An array of function signature.
-     **/
+    /** An array of function signature. */
     @com.fasterxml.jackson.annotation.JsonProperty("signatures")
     private final java.util.List<FunctionSignature> signatures;
 
     /**
      * An array of function signature.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<FunctionSignature> getSignatures() {
         return signatures;
     }
@@ -484,30 +499,32 @@ public final class CreateUserDefinedFunctionValidationDetails
         return expr;
     }
 
-    /**
-     * Detailed description for the object.
-     **/
+    /** Detailed description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
@@ -520,15 +537,18 @@ public final class CreateUserDefinedFunctionValidationDetails
     }
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-     **/
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     private final java.util.Map<String, String> keyMap;
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getKeyMap() {
         return keyMap;
     }
@@ -540,6 +560,7 @@ public final class CreateUserDefinedFunctionValidationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

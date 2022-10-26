@@ -5,19 +5,21 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * The result of an analytics aggregation on a set of assets.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The result of an analytics aggregation on a set of assets. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AssetAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AssetAggregation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AssetAggregation
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensions",
@@ -48,113 +50,106 @@ public final class AssetAggregation extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The dimensions along which assets can be aggregated for analytics.
-         **/
+        /** The dimensions along which assets can be aggregated for analytics. */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
          * The dimensions along which assets can be aggregated for analytics.
+         *
          * @param dimensions the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /**
-         * Returns the total number of observations from the group of assets.
-         **/
+        /** Returns the total number of observations from the group of assets. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
         /**
          * Returns the total number of observations from the group of assets.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * Returns the highest value from all the assets.
-         **/
+        /** Returns the highest value from all the assets. */
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Double max;
 
         /**
          * Returns the highest value from all the assets.
+         *
          * @param max the value to set
          * @return this builder
-         **/
+         */
         public Builder max(Double max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-        /**
-         * Returns the value of sum divided by count from the group of assets.
-         **/
+        /** Returns the value of sum divided by count from the group of assets. */
         @com.fasterxml.jackson.annotation.JsonProperty("mean")
         private Double mean;
 
         /**
          * Returns the value of sum divided by count from the group of assets.
+         *
          * @param mean the value to set
          * @return this builder
-         **/
+         */
         public Builder mean(Double mean) {
             this.mean = mean;
             this.__explicitlySet__.add("mean");
             return this;
         }
-        /**
-         * Returns the lowest value from the group of assets.
-         **/
+        /** Returns the lowest value from the group of assets. */
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Double min;
 
         /**
          * Returns the lowest value from the group of assets.
+         *
          * @param min the value to set
          * @return this builder
-         **/
+         */
         public Builder min(Double min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /**
-         * Returns all values added together from the group of assets.
-         **/
+        /** Returns all values added together from the group of assets. */
         @com.fasterxml.jackson.annotation.JsonProperty("sum")
         private Double sum;
 
         /**
          * Returns all values added together from the group of assets.
+         *
          * @param sum the value to set
          * @return this builder
-         **/
+         */
         public Builder sum(Double sum) {
             this.sum = sum;
             this.__explicitlySet__.add("sum");
             return this;
         }
-        /**
-         * Aggregated property.
-         **/
+        /** Aggregated property. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedProperty")
         private String aggregatedProperty;
 
         /**
          * Aggregated property.
+         *
          * @param aggregatedProperty the value to set
          * @return this builder
-         **/
+         */
         public Builder aggregatedProperty(String aggregatedProperty) {
             this.aggregatedProperty = aggregatedProperty;
             this.__explicitlySet__.add("aggregatedProperty");
@@ -207,9 +202,7 @@ public final class AssetAggregation extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,100 +211,93 @@ public final class AssetAggregation extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The dimensions along which assets can be aggregated for analytics.
-     **/
+    /** The dimensions along which assets can be aggregated for analytics. */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
      * The dimensions along which assets can be aggregated for analytics.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
-    /**
-     * Returns the total number of observations from the group of assets.
-     **/
+    /** Returns the total number of observations from the group of assets. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
     /**
      * Returns the total number of observations from the group of assets.
+     *
      * @return the value
-     **/
+     */
     public Long getCount() {
         return count;
     }
 
-    /**
-     * Returns the highest value from all the assets.
-     **/
+    /** Returns the highest value from all the assets. */
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Double max;
 
     /**
      * Returns the highest value from all the assets.
+     *
      * @return the value
-     **/
+     */
     public Double getMax() {
         return max;
     }
 
-    /**
-     * Returns the value of sum divided by count from the group of assets.
-     **/
+    /** Returns the value of sum divided by count from the group of assets. */
     @com.fasterxml.jackson.annotation.JsonProperty("mean")
     private final Double mean;
 
     /**
      * Returns the value of sum divided by count from the group of assets.
+     *
      * @return the value
-     **/
+     */
     public Double getMean() {
         return mean;
     }
 
-    /**
-     * Returns the lowest value from the group of assets.
-     **/
+    /** Returns the lowest value from the group of assets. */
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Double min;
 
     /**
      * Returns the lowest value from the group of assets.
+     *
      * @return the value
-     **/
+     */
     public Double getMin() {
         return min;
     }
 
-    /**
-     * Returns all values added together from the group of assets.
-     **/
+    /** Returns all values added together from the group of assets. */
     @com.fasterxml.jackson.annotation.JsonProperty("sum")
     private final Double sum;
 
     /**
      * Returns all values added together from the group of assets.
+     *
      * @return the value
-     **/
+     */
     public Double getSum() {
         return sum;
     }
 
-    /**
-     * Aggregated property.
-     **/
+    /** Aggregated property. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedProperty")
     private final String aggregatedProperty;
 
     /**
      * Aggregated property.
+     *
      * @return the value
-     **/
+     */
     public String getAggregatedProperty() {
         return aggregatedProperty;
     }
@@ -323,6 +309,7 @@ public final class AssetAggregation extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

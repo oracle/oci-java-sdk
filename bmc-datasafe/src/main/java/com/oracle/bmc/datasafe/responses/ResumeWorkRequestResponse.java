@@ -9,13 +9,14 @@ import com.oracle.bmc.datasafe.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,15 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * A non-negative integer representing the number of seconds the client should wait before polling this endpoint again.
+     * A non-negative integer representing the number of seconds the client should wait before
+     * polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A non-negative integer representing the number of seconds the client should wait before polling this endpoint again.
+     * A non-negative integer representing the number of seconds the client should wait before
+     * polling this endpoint again.
+     *
      * @return the value
      */
     public Integer getRetryAfter() {
@@ -44,7 +48,7 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ResumeWorkRequestResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             Integer retryAfter) {
         super(__httpStatusCode__, headers);
@@ -52,29 +56,33 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
         this.retryAfter = retryAfter;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ResumeWorkRequestResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -85,12 +93,15 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * A non-negative integer representing the number of seconds the client should wait before polling this endpoint again.
+         * A non-negative integer representing the number of seconds the client should wait before
+         * polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A non-negative integer representing the number of seconds the client should wait before polling this endpoint again.
+         * A non-negative integer representing the number of seconds the client should wait before
+         * polling this endpoint again.
+         *
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -101,8 +112,10 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ResumeWorkRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -114,8 +127,10 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ResumeWorkRequestResponse build() {
             return new ResumeWorkRequestResponse(
                     __httpStatusCode__, headers, opcRequestId, retryAfter);
@@ -124,6 +139,7 @@ public class ResumeWorkRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

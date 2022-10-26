@@ -5,15 +5,11 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Data Catalog resource type which can be used in recommendations.
- * - DATA_ENTITY
- * - ATTRIBUTE
- * - TERM
+ * Data Catalog resource type which can be used in recommendations. - DATA_ENTITY - ATTRIBUTE - TERM
  * - CATEGORY
- *
- **/
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum RecommendationResourceType {
+public enum RecommendationResourceType implements com.oracle.bmc.http.internal.BmcEnum {
     DataEntity("DATA_ENTITY"),
     Attribute("ATTRIBUTE"),
     Term("TERM"),

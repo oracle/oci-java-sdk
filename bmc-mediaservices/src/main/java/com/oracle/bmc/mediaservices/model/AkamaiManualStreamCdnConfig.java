@@ -5,199 +5,187 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * Configuration fields for manual Akamai configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configuration fields for manual Akamai configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AkamaiManualStreamCdnConfig.Builder.class
-)
+        builder = AkamaiManualStreamCdnConfig.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of data used to compute the signature.
-         **/
+        /** The type of data used to compute the signature. */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSignType")
         private OriginAuthSignType originAuthSignType;
 
         /**
          * The type of data used to compute the signature.
+         *
          * @param originAuthSignType the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSignType(OriginAuthSignType originAuthSignType) {
             this.originAuthSignType = originAuthSignType;
             this.__explicitlySet__.add("originAuthSignType");
             return this;
         }
-        /**
-         * The type of encryption used to compute the signature.
-         **/
+        /** The type of encryption used to compute the signature. */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSignEncryption")
         private OriginAuthSignEncryption originAuthSignEncryption;
 
         /**
          * The type of encryption used to compute the signature.
+         *
          * @param originAuthSignEncryption the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSignEncryption(OriginAuthSignEncryption originAuthSignEncryption) {
             this.originAuthSignEncryption = originAuthSignEncryption;
             this.__explicitlySet__.add("originAuthSignEncryption");
             return this;
         }
-        /**
-         * The shared secret key A, two for errorless key rotation.
-         **/
+        /** The shared secret key A, two for errorless key rotation. */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyA")
         private String originAuthSecretKeyA;
 
         /**
          * The shared secret key A, two for errorless key rotation.
+         *
          * @param originAuthSecretKeyA the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSecretKeyA(String originAuthSecretKeyA) {
             this.originAuthSecretKeyA = originAuthSecretKeyA;
             this.__explicitlySet__.add("originAuthSecretKeyA");
             return this;
         }
-        /**
-         * Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-         **/
+        /** Nonce identifier for originAuthSecretKeyA (used to determine key used to sign). */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyNonceA")
         private String originAuthSecretKeyNonceA;
 
         /**
          * Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
+         *
          * @param originAuthSecretKeyNonceA the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSecretKeyNonceA(String originAuthSecretKeyNonceA) {
             this.originAuthSecretKeyNonceA = originAuthSecretKeyNonceA;
             this.__explicitlySet__.add("originAuthSecretKeyNonceA");
             return this;
         }
-        /**
-         * The shared secret key B, two for errorless key rotation.
-         **/
+        /** The shared secret key B, two for errorless key rotation. */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyB")
         private String originAuthSecretKeyB;
 
         /**
          * The shared secret key B, two for errorless key rotation.
+         *
          * @param originAuthSecretKeyB the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSecretKeyB(String originAuthSecretKeyB) {
             this.originAuthSecretKeyB = originAuthSecretKeyB;
             this.__explicitlySet__.add("originAuthSecretKeyB");
             return this;
         }
-        /**
-         * Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-         **/
+        /** Nonce identifier for originAuthSecretKeyB (used to determine key used to sign). */
         @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyNonceB")
         private String originAuthSecretKeyNonceB;
 
         /**
          * Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
+         *
          * @param originAuthSecretKeyNonceB the value to set
          * @return this builder
-         **/
+         */
         public Builder originAuthSecretKeyNonceB(String originAuthSecretKeyNonceB) {
             this.originAuthSecretKeyNonceB = originAuthSecretKeyNonceB;
             this.__explicitlySet__.add("originAuthSecretKeyNonceB");
             return this;
         }
-        /**
-         * The hostname of the CDN edge server to use when building CDN URLs.
-         **/
+        /** The hostname of the CDN edge server to use when building CDN URLs. */
         @com.fasterxml.jackson.annotation.JsonProperty("edgeHostname")
         private String edgeHostname;
 
         /**
          * The hostname of the CDN edge server to use when building CDN URLs.
+         *
          * @param edgeHostname the value to set
          * @return this builder
-         **/
+         */
         public Builder edgeHostname(String edgeHostname) {
             this.edgeHostname = edgeHostname;
             this.__explicitlySet__.add("edgeHostname");
             return this;
         }
-        /**
-         * The path to prepend when building CDN URLs.
-         **/
+        /** The path to prepend when building CDN URLs. */
         @com.fasterxml.jackson.annotation.JsonProperty("edgePathPrefix")
         private String edgePathPrefix;
 
         /**
          * The path to prepend when building CDN URLs.
+         *
          * @param edgePathPrefix the value to set
          * @return this builder
-         **/
+         */
         public Builder edgePathPrefix(String edgePathPrefix) {
             this.edgePathPrefix = edgePathPrefix;
             this.__explicitlySet__.add("edgePathPrefix");
             return this;
         }
-        /**
-         * Whether token authentication should be used at the CDN edge.
-         **/
+        /** Whether token authentication should be used at the CDN edge. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEdgeTokenAuth")
         private Boolean isEdgeTokenAuth;
 
         /**
          * Whether token authentication should be used at the CDN edge.
+         *
          * @param isEdgeTokenAuth the value to set
          * @return this builder
-         **/
+         */
         public Builder isEdgeTokenAuth(Boolean isEdgeTokenAuth) {
             this.isEdgeTokenAuth = isEdgeTokenAuth;
             this.__explicitlySet__.add("isEdgeTokenAuth");
             return this;
         }
-        /**
-         * The encryption key to use for edge token authentication.
-         **/
+        /** The encryption key to use for edge token authentication. */
         @com.fasterxml.jackson.annotation.JsonProperty("edgeTokenKey")
         private String edgeTokenKey;
 
         /**
          * The encryption key to use for edge token authentication.
+         *
          * @param edgeTokenKey the value to set
          * @return this builder
-         **/
+         */
         public Builder edgeTokenKey(String edgeTokenKey) {
             this.edgeTokenKey = edgeTokenKey;
             this.__explicitlySet__.add("edgeTokenKey");
             return this;
         }
-        /**
-         * Salt to use when encrypting authentication token.
-         **/
+        /** Salt to use when encrypting authentication token. */
         @com.fasterxml.jackson.annotation.JsonProperty("edgeTokenSalt")
         private String edgeTokenSalt;
 
         /**
          * Salt to use when encrypting authentication token.
+         *
          * @param edgeTokenSalt the value to set
          * @return this builder
-         **/
+         */
         public Builder edgeTokenSalt(String edgeTokenSalt) {
             this.edgeTokenSalt = edgeTokenSalt;
             this.__explicitlySet__.add("edgeTokenSalt");
@@ -266,9 +254,7 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -304,15 +290,13 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
         this.edgeTokenSalt = edgeTokenSalt;
     }
 
-    /**
-     * The type of data used to compute the signature.
-     **/
-    public enum OriginAuthSignType {
+    /** The type of data used to compute the signature. */
+    public enum OriginAuthSignType implements com.oracle.bmc.http.internal.BmcEnum {
         ForwardUrl("ForwardURL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -351,29 +335,26 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of data used to compute the signature.
-     **/
+    /** The type of data used to compute the signature. */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSignType")
     private final OriginAuthSignType originAuthSignType;
 
     /**
      * The type of data used to compute the signature.
+     *
      * @return the value
-     **/
+     */
     public OriginAuthSignType getOriginAuthSignType() {
         return originAuthSignType;
     }
 
-    /**
-     * The type of encryption used to compute the signature.
-     **/
-    public enum OriginAuthSignEncryption {
+    /** The type of encryption used to compute the signature. */
+    public enum OriginAuthSignEncryption implements com.oracle.bmc.http.internal.BmcEnum {
         Sha256Hmac("SHA256-HMAC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -412,142 +393,132 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of encryption used to compute the signature.
-     **/
+    /** The type of encryption used to compute the signature. */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSignEncryption")
     private final OriginAuthSignEncryption originAuthSignEncryption;
 
     /**
      * The type of encryption used to compute the signature.
+     *
      * @return the value
-     **/
+     */
     public OriginAuthSignEncryption getOriginAuthSignEncryption() {
         return originAuthSignEncryption;
     }
 
-    /**
-     * The shared secret key A, two for errorless key rotation.
-     **/
+    /** The shared secret key A, two for errorless key rotation. */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyA")
     private final String originAuthSecretKeyA;
 
     /**
      * The shared secret key A, two for errorless key rotation.
+     *
      * @return the value
-     **/
+     */
     public String getOriginAuthSecretKeyA() {
         return originAuthSecretKeyA;
     }
 
-    /**
-     * Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
-     **/
+    /** Nonce identifier for originAuthSecretKeyA (used to determine key used to sign). */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyNonceA")
     private final String originAuthSecretKeyNonceA;
 
     /**
      * Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
+     *
      * @return the value
-     **/
+     */
     public String getOriginAuthSecretKeyNonceA() {
         return originAuthSecretKeyNonceA;
     }
 
-    /**
-     * The shared secret key B, two for errorless key rotation.
-     **/
+    /** The shared secret key B, two for errorless key rotation. */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyB")
     private final String originAuthSecretKeyB;
 
     /**
      * The shared secret key B, two for errorless key rotation.
+     *
      * @return the value
-     **/
+     */
     public String getOriginAuthSecretKeyB() {
         return originAuthSecretKeyB;
     }
 
-    /**
-     * Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
-     **/
+    /** Nonce identifier for originAuthSecretKeyB (used to determine key used to sign). */
     @com.fasterxml.jackson.annotation.JsonProperty("originAuthSecretKeyNonceB")
     private final String originAuthSecretKeyNonceB;
 
     /**
      * Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
+     *
      * @return the value
-     **/
+     */
     public String getOriginAuthSecretKeyNonceB() {
         return originAuthSecretKeyNonceB;
     }
 
-    /**
-     * The hostname of the CDN edge server to use when building CDN URLs.
-     **/
+    /** The hostname of the CDN edge server to use when building CDN URLs. */
     @com.fasterxml.jackson.annotation.JsonProperty("edgeHostname")
     private final String edgeHostname;
 
     /**
      * The hostname of the CDN edge server to use when building CDN URLs.
+     *
      * @return the value
-     **/
+     */
     public String getEdgeHostname() {
         return edgeHostname;
     }
 
-    /**
-     * The path to prepend when building CDN URLs.
-     **/
+    /** The path to prepend when building CDN URLs. */
     @com.fasterxml.jackson.annotation.JsonProperty("edgePathPrefix")
     private final String edgePathPrefix;
 
     /**
      * The path to prepend when building CDN URLs.
+     *
      * @return the value
-     **/
+     */
     public String getEdgePathPrefix() {
         return edgePathPrefix;
     }
 
-    /**
-     * Whether token authentication should be used at the CDN edge.
-     **/
+    /** Whether token authentication should be used at the CDN edge. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEdgeTokenAuth")
     private final Boolean isEdgeTokenAuth;
 
     /**
      * Whether token authentication should be used at the CDN edge.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEdgeTokenAuth() {
         return isEdgeTokenAuth;
     }
 
-    /**
-     * The encryption key to use for edge token authentication.
-     **/
+    /** The encryption key to use for edge token authentication. */
     @com.fasterxml.jackson.annotation.JsonProperty("edgeTokenKey")
     private final String edgeTokenKey;
 
     /**
      * The encryption key to use for edge token authentication.
+     *
      * @return the value
-     **/
+     */
     public String getEdgeTokenKey() {
         return edgeTokenKey;
     }
 
-    /**
-     * Salt to use when encrypting authentication token.
-     **/
+    /** Salt to use when encrypting authentication token. */
     @com.fasterxml.jackson.annotation.JsonProperty("edgeTokenSalt")
     private final String edgeTokenSalt;
 
     /**
      * Salt to use when encrypting authentication token.
+     *
      * @return the value
-     **/
+     */
     public String getEdgeTokenSalt() {
         return edgeTokenSalt;
     }
@@ -559,6 +530,7 @@ public final class AkamaiManualStreamCdnConfig extends StreamCdnConfigSection {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

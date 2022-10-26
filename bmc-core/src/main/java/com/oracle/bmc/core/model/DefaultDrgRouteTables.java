@@ -5,28 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The default DRG route table for this DRG. Each network type
- * has a default DRG route table.
- * <p>
- * You can update a network type to use a different DRG route table, but
- * each network type must have a default DRG route table. You cannot delete
- * a default DRG route table.
+ * The default DRG route table for this DRG. Each network type has a default DRG route table.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>You can update a network type to use a different DRG route table, but each network type must
+ * have a default DRG route table. You cannot delete a default DRG route table. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DefaultDrgRouteTables.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DefaultDrgRouteTables.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DefaultDrgRouteTables
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcn",
@@ -46,80 +43,82 @@ public final class DefaultDrgRouteTables
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type VCN on creation.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcn")
         private String vcn;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type VCN on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type VCN on creation.
          *
          * @param vcn the value to set
          * @return this builder
-         **/
+         */
         public Builder vcn(String vcn) {
             this.vcn = vcn;
             this.__explicitlySet__.add("vcn");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
-         * of type IPSEC_TUNNEL on creation.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on
+         * creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipsecTunnel")
         private String ipsecTunnel;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
-         * of type IPSEC_TUNNEL on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on
+         * creation.
          *
          * @param ipsecTunnel the value to set
          * @return this builder
-         **/
+         */
         public Builder ipsecTunnel(String ipsecTunnel) {
             this.ipsecTunnel = ipsecTunnel;
             this.__explicitlySet__.add("ipsecTunnel");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type VIRTUAL_CIRCUIT on creation.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT
+         * on creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuit")
         private String virtualCircuit;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type VIRTUAL_CIRCUIT on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT
+         * on creation.
          *
          * @param virtualCircuit the value to set
          * @return this builder
-         **/
+         */
         public Builder virtualCircuit(String virtualCircuit) {
             this.virtualCircuit = virtualCircuit;
             this.__explicitlySet__.add("virtualCircuit");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type REMOTE_PEERING_CONNECTION on creation.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type
+         * REMOTE_PEERING_CONNECTION on creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("remotePeeringConnection")
         private String remotePeeringConnection;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-         * of type REMOTE_PEERING_CONNECTION on creation.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the default DRG route table to be assigned to DRG attachments of type
+         * REMOTE_PEERING_CONNECTION on creation.
          *
          * @param remotePeeringConnection the value to set
          * @return this builder
-         **/
+         */
         public Builder remotePeeringConnection(String remotePeeringConnection) {
             this.remotePeeringConnection = remotePeeringConnection;
             this.__explicitlySet__.add("remotePeeringConnection");
@@ -160,9 +159,7 @@ public final class DefaultDrgRouteTables
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,73 +169,73 @@ public final class DefaultDrgRouteTables
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type VCN on creation.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type VCN on creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcn")
     private final String vcn;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type VCN on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type VCN on creation.
      *
      * @return the value
-     **/
+     */
     public String getVcn() {
         return vcn;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
-     * of type IPSEC_TUNNEL on creation.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecTunnel")
     private final String ipsecTunnel;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table assigned to DRG attachments
-     * of type IPSEC_TUNNEL on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table assigned to DRG attachments of type IPSEC_TUNNEL on creation.
      *
      * @return the value
-     **/
+     */
     public String getIpsecTunnel() {
         return ipsecTunnel;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type VIRTUAL_CIRCUIT on creation.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on
+     * creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuit")
     private final String virtualCircuit;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type VIRTUAL_CIRCUIT on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type VIRTUAL_CIRCUIT on
+     * creation.
      *
      * @return the value
-     **/
+     */
     public String getVirtualCircuit() {
         return virtualCircuit;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type REMOTE_PEERING_CONNECTION on creation.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type
+     * REMOTE_PEERING_CONNECTION on creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("remotePeeringConnection")
     private final String remotePeeringConnection;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the default DRG route table to be assigned to DRG attachments
-     * of type REMOTE_PEERING_CONNECTION on creation.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the default DRG route table to be assigned to DRG attachments of type
+     * REMOTE_PEERING_CONNECTION on creation.
      *
      * @return the value
-     **/
+     */
     public String getRemotePeeringConnection() {
         return remotePeeringConnection;
     }
@@ -250,6 +247,7 @@ public final class DefaultDrgRouteTables
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,42 +6,36 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseRegionalWalletExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAutonomousDatabaseRegionalWalletRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousDatabaseRegionalWalletExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateAutonomousDatabaseRegionalWalletRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateAutonomousDatabaseRegionalWalletRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
 
-    /**
-     * Request to update the properties of Autonomous Database regional wallet.
-     */
+    /** Request to update the properties of Autonomous Database regional wallet. */
     private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             updateAutonomousDatabaseWalletDetails;
 
-    /**
-     * Request to update the properties of Autonomous Database regional wallet.
-     */
+    /** Request to update the properties of Autonomous Database regional wallet. */
     public com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
             getUpdateAutonomousDatabaseWalletDetails() {
         return updateAutonomousDatabaseWalletDetails;
     }
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -54,18 +48,16 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateAutonomousDatabaseRegionalWalletRequest,
                     com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Request to update the properties of Autonomous Database regional wallet.
-         */
+        /** Request to update the properties of Autonomous Database regional wallet. */
         private com.oracle.bmc.database.model.UpdateAutonomousDatabaseWalletDetails
                 updateAutonomousDatabaseWalletDetails = null;
 
         /**
          * Request to update the properties of Autonomous Database regional wallet.
+         *
          * @param updateAutonomousDatabaseWalletDetails the value to set
          * @return this builder instance
          */
@@ -76,10 +68,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         *
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
@@ -95,18 +84,19 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -118,6 +108,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateAutonomousDatabaseRegionalWalletRequest o) {
@@ -129,12 +120,14 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         }
 
         /**
-         * Build the instance of UpdateAutonomousDatabaseRegionalWalletRequest as configured by this builder
+         * Build the instance of UpdateAutonomousDatabaseRegionalWalletRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateAutonomousDatabaseRegionalWalletRequest
          */
@@ -148,6 +141,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -159,9 +153,11 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
         }
 
         /**
-         * Build the instance of UpdateAutonomousDatabaseRegionalWalletRequest as configured by this builder
+         * Build the instance of UpdateAutonomousDatabaseRegionalWalletRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateAutonomousDatabaseRegionalWalletRequest
@@ -172,12 +168,15 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
             request.updateAutonomousDatabaseWalletDetails = updateAutonomousDatabaseWalletDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateAutonomousDatabaseRegionalWalletRequest(updateAutonomousDatabaseWalletDetails, opcRequestId);
+            // new
+            // UpdateAutonomousDatabaseRegionalWalletRequest(updateAutonomousDatabaseWalletDetails,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -188,6 +187,7 @@ public class UpdateAutonomousDatabaseRegionalWalletRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

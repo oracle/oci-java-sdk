@@ -6,66 +6,53 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructureShapesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAutonomousExadataInfrastructureShapesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousExadataInfrastructureShapesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListAutonomousExadataInfrastructureShapesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListAutonomousExadataInfrastructureShapesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The name of the Availability Domain.
-     */
+    /** The name of the Availability Domain. */
     private String availabilityDomain;
 
-    /**
-     * The name of the Availability Domain.
-     */
+    /** The name of the Availability Domain. */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     private String page;
 
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     public String getPage() {
         return page;
     }
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     *
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,17 +60,15 @@ public class ListAutonomousExadataInfrastructureShapesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousExadataInfrastructureShapesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The name of the Availability Domain.
-         */
+        /** The name of the Availability Domain. */
         private String availabilityDomain = null;
 
         /**
          * The name of the Availability Domain.
+         *
          * @param availabilityDomain the value to set
          * @return this builder instance
          */
@@ -93,12 +78,15 @@ public class ListAutonomousExadataInfrastructureShapesRequest
         }
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -107,13 +95,12 @@ public class ListAutonomousExadataInfrastructureShapesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return per page.
-         */
+        /** The maximum number of items to return per page. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -122,13 +109,12 @@ public class ListAutonomousExadataInfrastructureShapesRequest
             return this;
         }
 
-        /**
-         * The pagination token to continue listing from.
-         */
+        /** The pagination token to continue listing from. */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -137,10 +123,7 @@ public class ListAutonomousExadataInfrastructureShapesRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         *
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
@@ -156,18 +139,19 @@ public class ListAutonomousExadataInfrastructureShapesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -179,6 +163,7 @@ public class ListAutonomousExadataInfrastructureShapesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListAutonomousExadataInfrastructureShapesRequest o) {
@@ -193,12 +178,14 @@ public class ListAutonomousExadataInfrastructureShapesRequest
         }
 
         /**
-         * Build the instance of ListAutonomousExadataInfrastructureShapesRequest as configured by this builder
+         * Build the instance of ListAutonomousExadataInfrastructureShapesRequest as configured by
+         * this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListAutonomousExadataInfrastructureShapesRequest
          */
@@ -211,9 +198,11 @@ public class ListAutonomousExadataInfrastructureShapesRequest
         }
 
         /**
-         * Build the instance of ListAutonomousExadataInfrastructureShapesRequest as configured by this builder
+         * Build the instance of ListAutonomousExadataInfrastructureShapesRequest as configured by
+         * this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAutonomousExadataInfrastructureShapesRequest
@@ -227,12 +216,14 @@ public class ListAutonomousExadataInfrastructureShapesRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAutonomousExadataInfrastructureShapesRequest(availabilityDomain, compartmentId, limit, page, opcRequestId);
+            // new ListAutonomousExadataInfrastructureShapesRequest(availabilityDomain,
+            // compartmentId, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -246,6 +237,7 @@ public class ListAutonomousExadataInfrastructureShapesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

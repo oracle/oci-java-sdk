@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Provides the dimensions and their corresponding count.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Provides the dimensions and their corresponding count. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ActivityProblemAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ActivityProblemAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ActivityProblemAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensionsMap",
@@ -42,17 +42,16 @@ public final class ActivityProblemAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The key-value pairs of dimensions and their names.
-         **/
+        /** The key-value pairs of dimensions and their names. */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
         private java.util.Map<String, String> dimensionsMap;
 
         /**
          * The key-value pairs of dimensions and their names.
+         *
          * @param dimensionsMap the value to set
          * @return this builder
-         **/
+         */
         public Builder dimensionsMap(java.util.Map<String, String> dimensionsMap) {
             this.dimensionsMap = dimensionsMap;
             this.__explicitlySet__.add("dimensionsMap");
@@ -76,17 +75,16 @@ public final class ActivityProblemAggregation
             this.__explicitlySet__.add("geographicalLocation");
             return this;
         }
-        /**
-         * The number of occurences with given dimension/s
-         **/
+        /** The number of occurences with given dimension/s */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * The number of occurences with given dimension/s
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -127,9 +125,7 @@ public final class ActivityProblemAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,16 +134,15 @@ public final class ActivityProblemAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * The key-value pairs of dimensions and their names.
-     **/
+    /** The key-value pairs of dimensions and their names. */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionsMap")
     private final java.util.Map<String, String> dimensionsMap;
 
     /**
      * The key-value pairs of dimensions and their names.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getDimensionsMap() {
         return dimensionsMap;
     }
@@ -166,16 +161,15 @@ public final class ActivityProblemAggregation
         return geographicalLocation;
     }
 
-    /**
-     * The number of occurences with given dimension/s
-     **/
+    /** The number of occurences with given dimension/s */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * The number of occurences with given dimension/s
+     *
      * @return the value
-     **/
+     */
     public Integer getCount() {
         return count;
     }
@@ -187,6 +181,7 @@ public final class ActivityProblemAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

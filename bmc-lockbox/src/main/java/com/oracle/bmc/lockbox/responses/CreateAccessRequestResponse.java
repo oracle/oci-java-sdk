@@ -9,13 +9,14 @@ import com.oracle.bmc.lockbox.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,13 +41,14 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
-     *
+     * this contains the full URI for the get request, e.g.
+     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
      */
     private String location;
 
     /**
-     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+     * this contains the full URI for the get request, e.g.
+     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
      *
      * @return the value
      */
@@ -55,10 +56,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -70,13 +68,12 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         return etag;
     }
 
-    /**
-     * The returned AccessRequest instance.
-     */
+    /** The returned AccessRequest instance. */
     private com.oracle.bmc.lockbox.model.AccessRequest accessRequest;
 
     /**
      * The returned AccessRequest instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.lockbox.model.AccessRequest getAccessRequest() {
@@ -94,7 +91,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateAccessRequestResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
@@ -108,29 +105,33 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         this.accessRequest = accessRequest;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateAccessRequestResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -141,15 +142,14 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -160,13 +160,14 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
-         *
+         * this contains the full URI for the get request, e.g.
+         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
          */
         private String location;
 
         /**
-         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+         * this contains the full URI for the get request, e.g.
+         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
          *
          * @param location the value to set
          * @return this builder
@@ -176,10 +177,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -193,13 +191,12 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned AccessRequest instance.
-         */
+        /** The returned AccessRequest instance. */
         private com.oracle.bmc.lockbox.model.AccessRequest accessRequest;
 
         /**
          * The returned AccessRequest instance.
+         *
          * @param accessRequest the value to set
          * @return this builder
          */
@@ -210,8 +207,10 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateAccessRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -226,8 +225,10 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateAccessRequestResponse build() {
             return new CreateAccessRequestResponse(
                     __httpStatusCode__,
@@ -242,6 +243,7 @@ public class CreateAccessRequestResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

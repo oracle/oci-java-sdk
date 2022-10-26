@@ -5,19 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Information derived from parsing a NoSQL SQL statement.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information derived from parsing a NoSQL SQL statement. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatementSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StatementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class StatementSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operation",
@@ -45,10 +47,7 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The operation represented in the statement, e.g. CREATE_TABLE.
-         *
-         **/
+        /** The operation represented in the statement, e.g. CREATE_TABLE. */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
@@ -57,87 +56,82 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
          *
          * @param operation the value to set
          * @return this builder
-         **/
+         */
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /**
-         * The table name from the SQL statement.
-         **/
+        /** The table name from the SQL statement. */
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
         /**
          * The table name from the SQL statement.
+         *
          * @param tableName the value to set
          * @return this builder
-         **/
+         */
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-        /**
-         * The index name from the SQL statement, if present.
-         **/
+        /** The index name from the SQL statement, if present. */
         @com.fasterxml.jackson.annotation.JsonProperty("indexName")
         private String indexName;
 
         /**
          * The index name from the SQL statement, if present.
+         *
          * @param indexName the value to set
          * @return this builder
-         **/
+         */
         public Builder indexName(String indexName) {
             this.indexName = indexName;
             this.__explicitlySet__.add("indexName");
             return this;
         }
-        /**
-         * True if the statement includes "IF EXISTS."
-         **/
+        /** True if the statement includes "IF EXISTS." */
         @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
         private Boolean isIfExists;
 
         /**
          * True if the statement includes "IF EXISTS."
+         *
          * @param isIfExists the value to set
          * @return this builder
-         **/
+         */
         public Builder isIfExists(Boolean isIfExists) {
             this.isIfExists = isIfExists;
             this.__explicitlySet__.add("isIfExists");
             return this;
         }
-        /**
-         * True if the statement includes "IF NOT EXISTS."
-         **/
+        /** True if the statement includes "IF NOT EXISTS." */
         @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
         private Boolean isIfNotExists;
 
         /**
          * True if the statement includes "IF NOT EXISTS."
+         *
          * @param isIfNotExists the value to set
          * @return this builder
-         **/
+         */
         public Builder isIfNotExists(Boolean isIfNotExists) {
             this.isIfNotExists = isIfNotExists;
             this.__explicitlySet__.add("isIfNotExists");
             return this;
         }
-        /**
-         * If present, indicates a syntax error in the statement.
-         **/
+        /** If present, indicates a syntax error in the statement. */
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxError")
         private String syntaxError;
 
         /**
          * If present, indicates a syntax error in the statement.
+         *
          * @param syntaxError the value to set
          * @return this builder
-         **/
+         */
         public Builder syntaxError(String syntaxError) {
             this.syntaxError = syntaxError;
             this.__explicitlySet__.add("syntaxError");
@@ -186,9 +180,7 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,11 +189,8 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The operation represented in the statement, e.g. CREATE_TABLE.
-     *
-     **/
-    public enum Operation {
+    /** The operation represented in the statement, e.g. CREATE_TABLE. */
+    public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
         CreateTable("CREATE_TABLE"),
         AlterTable("ALTER_TABLE"),
         DropTable("DROP_TABLE"),
@@ -213,8 +202,8 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
         Delete("DELETE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -253,10 +242,7 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The operation represented in the statement, e.g. CREATE_TABLE.
-     *
-     **/
+    /** The operation represented in the statement, e.g. CREATE_TABLE. */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
@@ -264,77 +250,72 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
      * The operation represented in the statement, e.g. CREATE_TABLE.
      *
      * @return the value
-     **/
+     */
     public Operation getOperation() {
         return operation;
     }
 
-    /**
-     * The table name from the SQL statement.
-     **/
+    /** The table name from the SQL statement. */
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
     /**
      * The table name from the SQL statement.
+     *
      * @return the value
-     **/
+     */
     public String getTableName() {
         return tableName;
     }
 
-    /**
-     * The index name from the SQL statement, if present.
-     **/
+    /** The index name from the SQL statement, if present. */
     @com.fasterxml.jackson.annotation.JsonProperty("indexName")
     private final String indexName;
 
     /**
      * The index name from the SQL statement, if present.
+     *
      * @return the value
-     **/
+     */
     public String getIndexName() {
         return indexName;
     }
 
-    /**
-     * True if the statement includes "IF EXISTS."
-     **/
+    /** True if the statement includes "IF EXISTS." */
     @com.fasterxml.jackson.annotation.JsonProperty("isIfExists")
     private final Boolean isIfExists;
 
     /**
      * True if the statement includes "IF EXISTS."
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsIfExists() {
         return isIfExists;
     }
 
-    /**
-     * True if the statement includes "IF NOT EXISTS."
-     **/
+    /** True if the statement includes "IF NOT EXISTS." */
     @com.fasterxml.jackson.annotation.JsonProperty("isIfNotExists")
     private final Boolean isIfNotExists;
 
     /**
      * True if the statement includes "IF NOT EXISTS."
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsIfNotExists() {
         return isIfNotExists;
     }
 
-    /**
-     * If present, indicates a syntax error in the statement.
-     **/
+    /** If present, indicates a syntax error in the statement. */
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxError")
     private final String syntaxError;
 
     /**
      * If present, indicates a syntax error in the statement.
+     *
      * @return the value
-     **/
+     */
     public String getSyntaxError() {
         return syntaxError;
     }
@@ -346,6 +327,7 @@ public final class StatementSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

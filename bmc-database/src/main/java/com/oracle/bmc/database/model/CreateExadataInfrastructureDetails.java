@@ -5,24 +5,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Request to create Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
- * See {@link #createCloudExadataInfrastructureDetails(CreateCloudExadataInfrastructureDetailsRequest) createCloudExadataInfrastructureDetails} for information on creating a cloud Exadata infrastructure resource in an Exadata Cloud Service instance.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Request to create Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances
+ * only. See {@link
+ * #createCloudExadataInfrastructureDetails(CreateCloudExadataInfrastructureDetailsRequest)
+ * createCloudExadataInfrastructureDetails} for information on creating a cloud Exadata
+ * infrastructure resource in an Exadata Cloud Service instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateExadataInfrastructureDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateExadataInfrastructureDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateExadataInfrastructureDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -93,204 +95,200 @@ public final class CreateExadataInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
-         *
-         **/
+         * The user-friendly name for the Exadata infrastructure. The name does not need to be
+         * unique.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
+         * The user-friendly name for the Exadata infrastructure. The name does not need to be
+         * unique.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-         *
-         **/
+         * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage,
+         * and memory resources allocated to the instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+         * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage,
+         * and memory resources allocated to the instance.
          *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-         *
-         **/
+         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure
+         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure
+         * Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
-        /**
-         * The IP address for the first control plane server.
-         **/
+        /** The IP address for the first control plane server. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer1")
         private String cloudControlPlaneServer1;
 
         /**
          * The IP address for the first control plane server.
+         *
          * @param cloudControlPlaneServer1 the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudControlPlaneServer1(String cloudControlPlaneServer1) {
             this.cloudControlPlaneServer1 = cloudControlPlaneServer1;
             this.__explicitlySet__.add("cloudControlPlaneServer1");
             return this;
         }
-        /**
-         * The IP address for the second control plane server.
-         **/
+        /** The IP address for the second control plane server. */
         @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer2")
         private String cloudControlPlaneServer2;
 
         /**
          * The IP address for the second control plane server.
+         *
          * @param cloudControlPlaneServer2 the value to set
          * @return this builder
-         **/
+         */
         public Builder cloudControlPlaneServer2(String cloudControlPlaneServer2) {
             this.cloudControlPlaneServer2 = cloudControlPlaneServer2;
             this.__explicitlySet__.add("cloudControlPlaneServer2");
             return this;
         }
-        /**
-         * The netmask for the control plane network.
-         **/
+        /** The netmask for the control plane network. */
         @com.fasterxml.jackson.annotation.JsonProperty("netmask")
         private String netmask;
 
         /**
          * The netmask for the control plane network.
+         *
          * @param netmask the value to set
          * @return this builder
-         **/
+         */
         public Builder netmask(String netmask) {
             this.netmask = netmask;
             this.__explicitlySet__.add("netmask");
             return this;
         }
-        /**
-         * The gateway for the control plane network.
-         **/
+        /** The gateway for the control plane network. */
         @com.fasterxml.jackson.annotation.JsonProperty("gateway")
         private String gateway;
 
         /**
          * The gateway for the control plane network.
+         *
          * @param gateway the value to set
          * @return this builder
-         **/
+         */
         public Builder gateway(String gateway) {
             this.gateway = gateway;
             this.__explicitlySet__.add("gateway");
             return this;
         }
-        /**
-         * The CIDR block for the Exadata administration network.
-         **/
+        /** The CIDR block for the Exadata administration network. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminNetworkCIDR")
         private String adminNetworkCIDR;
 
         /**
          * The CIDR block for the Exadata administration network.
+         *
          * @param adminNetworkCIDR the value to set
          * @return this builder
-         **/
+         */
         public Builder adminNetworkCIDR(String adminNetworkCIDR) {
             this.adminNetworkCIDR = adminNetworkCIDR;
             this.__explicitlySet__.add("adminNetworkCIDR");
             return this;
         }
-        /**
-         * The CIDR block for the Exadata InfiniBand interconnect.
-         **/
+        /** The CIDR block for the Exadata InfiniBand interconnect. */
         @com.fasterxml.jackson.annotation.JsonProperty("infiniBandNetworkCIDR")
         private String infiniBandNetworkCIDR;
 
         /**
          * The CIDR block for the Exadata InfiniBand interconnect.
+         *
          * @param infiniBandNetworkCIDR the value to set
          * @return this builder
-         **/
+         */
         public Builder infiniBandNetworkCIDR(String infiniBandNetworkCIDR) {
             this.infiniBandNetworkCIDR = infiniBandNetworkCIDR;
             this.__explicitlySet__.add("infiniBandNetworkCIDR");
             return this;
         }
         /**
-         * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
-         * for enhanced security.
-         *
-         **/
+         * The corporate network proxy for access to the control plane network. Oracle recommends
+         * using an HTTPS proxy when possible for enhanced security.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("corporateProxy")
         private String corporateProxy;
 
         /**
-         * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
-         * for enhanced security.
+         * The corporate network proxy for access to the control plane network. Oracle recommends
+         * using an HTTPS proxy when possible for enhanced security.
          *
          * @param corporateProxy the value to set
          * @return this builder
-         **/
+         */
         public Builder corporateProxy(String corporateProxy) {
             this.corporateProxy = corporateProxy;
             this.__explicitlySet__.add("corporateProxy");
             return this;
         }
-        /**
-         * The list of contacts for the Exadata infrastructure.
-         **/
+        /** The list of contacts for the Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("contacts")
         private java.util.List<ExadataInfrastructureContact> contacts;
 
         /**
          * The list of contacts for the Exadata infrastructure.
+         *
          * @param contacts the value to set
          * @return this builder
-         **/
+         */
         public Builder contacts(java.util.List<ExadataInfrastructureContact> contacts) {
             this.contacts = contacts;
             this.__explicitlySet__.add("contacts");
@@ -305,131 +303,134 @@ public final class CreateExadataInfrastructureDetails
             this.__explicitlySet__.add("maintenanceWindow");
             return this;
         }
-        /**
-         * The number of storage servers for the Exadata infrastructure.
-         **/
+        /** The number of storage servers for the Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
         private Integer storageCount;
 
         /**
          * The number of storage servers for the Exadata infrastructure.
+         *
          * @param storageCount the value to set
          * @return this builder
-         **/
+         */
         public Builder storageCount(Integer storageCount) {
             this.storageCount = storageCount;
             this.__explicitlySet__.add("storageCount");
             return this;
         }
-        /**
-         * The number of compute servers for the Exadata infrastructure.
-         **/
+        /** The number of compute servers for the Exadata infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Integer computeCount;
 
         /**
          * The number of compute servers for the Exadata infrastructure.
+         *
          * @param computeCount the value to set
          * @return this builder
-         **/
+         */
         public Builder computeCount(Integer computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-        /**
-         * The list of DNS server IP addresses. Maximum of 3 allowed.
-         **/
+        /** The list of DNS server IP addresses. Maximum of 3 allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
         private java.util.List<String> dnsServer;
 
         /**
          * The list of DNS server IP addresses. Maximum of 3 allowed.
+         *
          * @param dnsServer the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsServer(java.util.List<String> dnsServer) {
             this.dnsServer = dnsServer;
             this.__explicitlySet__.add("dnsServer");
             return this;
         }
-        /**
-         * The list of NTP server IP addresses. Maximum of 3 allowed.
-         **/
+        /** The list of NTP server IP addresses. Maximum of 3 allowed. */
         @com.fasterxml.jackson.annotation.JsonProperty("ntpServer")
         private java.util.List<String> ntpServer;
 
         /**
          * The list of NTP server IP addresses. Maximum of 3 allowed.
+         *
          * @param ntpServer the value to set
          * @return this builder
-         **/
+         */
         public Builder ntpServer(java.util.List<String> ntpServer) {
             this.ntpServer = ntpServer;
             this.__explicitlySet__.add("ntpServer");
             return this;
         }
         /**
-         * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
-         * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
-         * using the UpdateExadatainfrastructure API.
-         *
-         **/
+         * Indicates whether cps offline diagnostic report is enabled for this Exadata
+         * infrastructure. This will allow a customer to quickly check status themselves and fix
+         * problems on their end, saving time and frustration for both Oracle and the customer when
+         * they find the CPS in a disconnected state.You can enable offline diagnostic report during
+         * Exadata infrastructure provisioning. You can also disable or enable it at any time using
+         * the UpdateExadatainfrastructure API.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
         private Boolean isCpsOfflineReportEnabled;
 
         /**
-         * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
-         * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
-         * using the UpdateExadatainfrastructure API.
+         * Indicates whether cps offline diagnostic report is enabled for this Exadata
+         * infrastructure. This will allow a customer to quickly check status themselves and fix
+         * problems on their end, saving time and frustration for both Oracle and the customer when
+         * they find the CPS in a disconnected state.You can enable offline diagnostic report during
+         * Exadata infrastructure provisioning. You can also disable or enable it at any time using
+         * the UpdateExadatainfrastructure API.
          *
          * @param isCpsOfflineReportEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isCpsOfflineReportEnabled(Boolean isCpsOfflineReportEnabled) {
             this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
             this.__explicitlySet__.add("isCpsOfflineReportEnabled");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -535,9 +536,7 @@ public final class CreateExadataInfrastructureDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -547,25 +546,25 @@ public final class CreateExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -573,155 +572,149 @@ public final class CreateExadataInfrastructureDetails
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
-     *
-     **/
+     * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and
+     * memory resources allocated to the instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
+     * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and
+     * memory resources allocated to the instance.
      *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
 
     /**
-     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
-     *
-     **/
+     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time
+     * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
 
-    /**
-     * The IP address for the first control plane server.
-     **/
+    /** The IP address for the first control plane server. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer1")
     private final String cloudControlPlaneServer1;
 
     /**
      * The IP address for the first control plane server.
+     *
      * @return the value
-     **/
+     */
     public String getCloudControlPlaneServer1() {
         return cloudControlPlaneServer1;
     }
 
-    /**
-     * The IP address for the second control plane server.
-     **/
+    /** The IP address for the second control plane server. */
     @com.fasterxml.jackson.annotation.JsonProperty("cloudControlPlaneServer2")
     private final String cloudControlPlaneServer2;
 
     /**
      * The IP address for the second control plane server.
+     *
      * @return the value
-     **/
+     */
     public String getCloudControlPlaneServer2() {
         return cloudControlPlaneServer2;
     }
 
-    /**
-     * The netmask for the control plane network.
-     **/
+    /** The netmask for the control plane network. */
     @com.fasterxml.jackson.annotation.JsonProperty("netmask")
     private final String netmask;
 
     /**
      * The netmask for the control plane network.
+     *
      * @return the value
-     **/
+     */
     public String getNetmask() {
         return netmask;
     }
 
-    /**
-     * The gateway for the control plane network.
-     **/
+    /** The gateway for the control plane network. */
     @com.fasterxml.jackson.annotation.JsonProperty("gateway")
     private final String gateway;
 
     /**
      * The gateway for the control plane network.
+     *
      * @return the value
-     **/
+     */
     public String getGateway() {
         return gateway;
     }
 
-    /**
-     * The CIDR block for the Exadata administration network.
-     **/
+    /** The CIDR block for the Exadata administration network. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminNetworkCIDR")
     private final String adminNetworkCIDR;
 
     /**
      * The CIDR block for the Exadata administration network.
+     *
      * @return the value
-     **/
+     */
     public String getAdminNetworkCIDR() {
         return adminNetworkCIDR;
     }
 
-    /**
-     * The CIDR block for the Exadata InfiniBand interconnect.
-     **/
+    /** The CIDR block for the Exadata InfiniBand interconnect. */
     @com.fasterxml.jackson.annotation.JsonProperty("infiniBandNetworkCIDR")
     private final String infiniBandNetworkCIDR;
 
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
+     *
      * @return the value
-     **/
+     */
     public String getInfiniBandNetworkCIDR() {
         return infiniBandNetworkCIDR;
     }
 
     /**
-     * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
-     * for enhanced security.
-     *
-     **/
+     * The corporate network proxy for access to the control plane network. Oracle recommends using
+     * an HTTPS proxy when possible for enhanced security.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("corporateProxy")
     private final String corporateProxy;
 
     /**
-     * The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
-     * for enhanced security.
+     * The corporate network proxy for access to the control plane network. Oracle recommends using
+     * an HTTPS proxy when possible for enhanced security.
      *
      * @return the value
-     **/
+     */
     public String getCorporateProxy() {
         return corporateProxy;
     }
 
-    /**
-     * The list of contacts for the Exadata infrastructure.
-     **/
+    /** The list of contacts for the Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     private final java.util.List<ExadataInfrastructureContact> contacts;
 
     /**
      * The list of contacts for the Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ExadataInfrastructureContact> getContacts() {
         return contacts;
     }
@@ -733,118 +726,121 @@ public final class CreateExadataInfrastructureDetails
         return maintenanceWindow;
     }
 
-    /**
-     * The number of storage servers for the Exadata infrastructure.
-     **/
+    /** The number of storage servers for the Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageCount")
     private final Integer storageCount;
 
     /**
      * The number of storage servers for the Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getStorageCount() {
         return storageCount;
     }
 
-    /**
-     * The number of compute servers for the Exadata infrastructure.
-     **/
+    /** The number of compute servers for the Exadata infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Integer computeCount;
 
     /**
      * The number of compute servers for the Exadata infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getComputeCount() {
         return computeCount;
     }
 
-    /**
-     * The list of DNS server IP addresses. Maximum of 3 allowed.
-     **/
+    /** The list of DNS server IP addresses. Maximum of 3 allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServer")
     private final java.util.List<String> dnsServer;
 
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDnsServer() {
         return dnsServer;
     }
 
-    /**
-     * The list of NTP server IP addresses. Maximum of 3 allowed.
-     **/
+    /** The list of NTP server IP addresses. Maximum of 3 allowed. */
     @com.fasterxml.jackson.annotation.JsonProperty("ntpServer")
     private final java.util.List<String> ntpServer;
 
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNtpServer() {
         return ntpServer;
     }
 
     /**
-     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
-     * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
-     * using the UpdateExadatainfrastructure API.
-     *
-     **/
+     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure.
+     * This will allow a customer to quickly check status themselves and fix problems on their end,
+     * saving time and frustration for both Oracle and the customer when they find the CPS in a
+     * disconnected state.You can enable offline diagnostic report during Exadata infrastructure
+     * provisioning. You can also disable or enable it at any time using the
+     * UpdateExadatainfrastructure API.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isCpsOfflineReportEnabled")
     private final Boolean isCpsOfflineReportEnabled;
 
     /**
-     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
-     * for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
-     * using the UpdateExadatainfrastructure API.
+     * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure.
+     * This will allow a customer to quickly check status themselves and fix problems on their end,
+     * saving time and frustration for both Oracle and the customer when they find the CPS in a
+     * disconnected state.You can enable offline diagnostic report during Exadata infrastructure
+     * provisioning. You can also disable or enable it at any time using the
+     * UpdateExadatainfrastructure API.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsCpsOfflineReportEnabled() {
         return isCpsOfflineReportEnabled;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -856,6 +852,7 @@ public final class CreateExadataInfrastructureDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

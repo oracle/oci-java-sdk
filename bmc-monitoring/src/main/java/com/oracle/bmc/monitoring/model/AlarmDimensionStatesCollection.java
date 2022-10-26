@@ -5,23 +5,22 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The list of current alarm state entries for each metric stream that matches the filters.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The list of current alarm state entries for each metric stream that matches the filters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AlarmDimensionStatesCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AlarmDimensionStatesCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AlarmDimensionStatesCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "alarmId",
@@ -44,18 +43,19 @@ public final class AlarmDimensionStatesCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve alarm state entries for.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm to retrieve alarm state entries for.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
         private String alarmId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve alarm state entries for.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm to retrieve alarm state entries for.
          *
          * @param alarmId the value to set
          * @return this builder
-         **/
+         */
         public Builder alarmId(String alarmId) {
             this.alarmId = alarmId;
             this.__explicitlySet__.add("alarmId");
@@ -63,41 +63,39 @@ public final class AlarmDimensionStatesCollection
         }
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
+         *
+         * <p>Example: {@code true}
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-         * Example: {@code true}
-         *
-         **/
+         * When set to {@code true}, splits notifications per metric stream. When set to {@code
+         * false}, groups notifications across metric streams. Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
         private Boolean isNotificationsPerMetricDimensionEnabled;
 
         /**
-         * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-         * Example: {@code true}
+         * When set to {@code true}, splits notifications per metric stream. When set to {@code
+         * false}, groups notifications across metric streams. Example: {@code true}
          *
          * @param isNotificationsPerMetricDimensionEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isNotificationsPerMetricDimensionEnabled(
                 Boolean isNotificationsPerMetricDimensionEnabled) {
             this.isNotificationsPerMetricDimensionEnabled =
@@ -105,10 +103,7 @@ public final class AlarmDimensionStatesCollection
             this.__explicitlySet__.add("isNotificationsPerMetricDimensionEnabled");
             return this;
         }
-        /**
-         * Array of alarm state entries.
-         *
-         **/
+        /** Array of alarm state entries. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AlarmDimensionStatesEntry> items;
 
@@ -117,7 +112,7 @@ public final class AlarmDimensionStatesCollection
          *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<AlarmDimensionStatesEntry> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -159,9 +154,7 @@ public final class AlarmDimensionStatesCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,63 +164,59 @@ public final class AlarmDimensionStatesCollection
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve alarm state entries for.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm to retrieve alarm state entries for.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")
     private final String alarmId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm to retrieve alarm state entries for.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm to retrieve alarm state entries for.
      *
      * @return the value
-     **/
+     */
     public String getAlarmId() {
         return alarmId;
     }
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-     * Example: {@code true}
-     *
-     **/
+     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
+     * groups notifications across metric streams. Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isNotificationsPerMetricDimensionEnabled")
     private final Boolean isNotificationsPerMetricDimensionEnabled;
 
     /**
-     * When set to {@code true}, splits notifications per metric stream. When set to {@code false}, groups notifications across metric streams.
-     * Example: {@code true}
+     * When set to {@code true}, splits notifications per metric stream. When set to {@code false},
+     * groups notifications across metric streams. Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsNotificationsPerMetricDimensionEnabled() {
         return isNotificationsPerMetricDimensionEnabled;
     }
 
-    /**
-     * Array of alarm state entries.
-     *
-     **/
+    /** Array of alarm state entries. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AlarmDimensionStatesEntry> items;
 
@@ -235,7 +224,7 @@ public final class AlarmDimensionStatesCollection
      * Array of alarm state entries.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AlarmDimensionStatesEntry> getItems() {
         return items;
     }
@@ -247,6 +236,7 @@ public final class AlarmDimensionStatesCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

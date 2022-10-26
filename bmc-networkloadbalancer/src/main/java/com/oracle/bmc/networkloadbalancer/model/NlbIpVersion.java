@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/**
- * Mode specifying the IP version of NLB.
- **/
+/** Mode specifying the IP version of NLB. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum NlbIpVersion {
+public enum NlbIpVersion implements com.oracle.bmc.http.internal.BmcEnum {
     Ipv4("IPV4"),
     Ipv4AndIpv6("IPV4_AND_IPV6"),
 

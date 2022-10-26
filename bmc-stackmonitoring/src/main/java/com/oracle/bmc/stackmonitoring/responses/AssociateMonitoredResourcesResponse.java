@@ -8,10 +8,7 @@ import com.oracle.bmc.stackmonitoring.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,14 +36,13 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /**
-     * The returned MonitoredResourceAssociation instance.
-     */
+    /** The returned MonitoredResourceAssociation instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
             monitoredResourceAssociation;
 
     /**
      * The returned MonitoredResourceAssociation instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
@@ -64,7 +59,7 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
     })
     private AssociateMonitoredResourcesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
@@ -75,25 +70,26 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
         this.monitoredResourceAssociation = monitoredResourceAssociation;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    AssociateMonitoredResourcesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -108,15 +104,14 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -126,14 +121,13 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /**
-         * The returned MonitoredResourceAssociation instance.
-         */
+        /** The returned MonitoredResourceAssociation instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResourceAssociation
                 monitoredResourceAssociation;
 
         /**
          * The returned MonitoredResourceAssociation instance.
+         *
          * @param monitoredResourceAssociation the value to set
          * @return this builder
          */
@@ -146,8 +140,10 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(AssociateMonitoredResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -160,8 +156,10 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public AssociateMonitoredResourcesResponse build() {
             return new AssociateMonitoredResourcesResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, monitoredResourceAssociation);
@@ -170,6 +168,7 @@ public class AssociateMonitoredResourcesResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

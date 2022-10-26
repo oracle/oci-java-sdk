@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/**
- * Monitor status.
- **/
+/** Monitor status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum MonitorStatus {
+public enum MonitorStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
     Invalid("INVALID"),

@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Reference contains application configuration information.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Reference contains application configuration information. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Reference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Reference extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -58,160 +59,158 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The reference's key, key of the object that is being used by a published object or its dependents.
-         **/
+         * The reference's key, key of the object that is being used by a published object or its
+         * dependents.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The reference's key, key of the object that is being used by a published object or its dependents.
+         * The reference's key, key of the object that is being used by a published object or its
+         * dependents.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The name of reference object.
-         **/
+        /** The name of reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of reference object.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The identifier of reference object.
-         **/
+        /** The identifier of reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
          * The identifier of reference object.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /**
-         * The identifier path of reference object.
-         **/
+        /** The identifier path of reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
         private String identifierPath;
 
         /**
          * The identifier path of reference object.
+         *
          * @param identifierPath the value to set
          * @return this builder
-         **/
+         */
         public Builder identifierPath(String identifierPath) {
             this.identifierPath = identifierPath;
             this.__explicitlySet__.add("identifierPath");
             return this;
         }
-        /**
-         * The description of reference object.
-         **/
+        /** The description of reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of reference object.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The type of reference object.
-         **/
+        /** The type of reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of reference object.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The new reference object to use instead of the original reference. For example, this can be a data asset reference.
-         **/
+         * The new reference object to use instead of the original reference. For example, this can
+         * be a data asset reference.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
         private Object targetObject;
 
         /**
-         * The new reference object to use instead of the original reference. For example, this can be a data asset reference.
+         * The new reference object to use instead of the original reference. For example, this can
+         * be a data asset reference.
+         *
          * @param targetObject the value to set
          * @return this builder
-         **/
+         */
         public Builder targetObject(Object targetObject) {
             this.targetObject = targetObject;
             this.__explicitlySet__.add("targetObject");
             return this;
         }
-        /**
-         * The application key of the reference object.
-         **/
+        /** The application key of the reference object. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
         private String applicationKey;
 
         /**
          * The application key of the reference object.
+         *
          * @param applicationKey the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationKey(String applicationKey) {
             this.applicationKey = applicationKey;
             this.__explicitlySet__.add("applicationKey");
             return this;
         }
-        /**
-         * List of published objects where this is used.
-         **/
+        /** List of published objects where this is used. */
         @com.fasterxml.jackson.annotation.JsonProperty("usedBy")
         private java.util.List<ReferenceUsedBy> usedBy;
 
         /**
          * List of published objects where this is used.
+         *
          * @param usedBy the value to set
          * @return this builder
-         **/
+         */
         public Builder usedBy(java.util.List<ReferenceUsedBy> usedBy) {
             this.usedBy = usedBy;
             this.__explicitlySet__.add("usedBy");
             return this;
         }
-        /**
-         * List of references that are dependent on this reference.
-         **/
+        /** List of references that are dependent on this reference. */
         @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
         private java.util.List<ChildReference> childReferences;
 
         /**
          * List of references that are dependent on this reference.
+         *
          * @param childReferences the value to set
          * @return this builder
-         **/
+         */
         public Builder childReferences(java.util.List<ChildReference> childReferences) {
             this.childReferences = childReferences;
             this.__explicitlySet__.add("childReferences");
@@ -276,9 +275,7 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -288,79 +285,76 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * The reference's key, key of the object that is being used by a published object or its dependents.
-     **/
+     * The reference's key, key of the object that is being used by a published object or its
+     * dependents.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The reference's key, key of the object that is being used by a published object or its dependents.
+     * The reference's key, key of the object that is being used by a published object or its
+     * dependents.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The name of reference object.
-     **/
+    /** The name of reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of reference object.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The identifier of reference object.
-     **/
+    /** The identifier of reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * The identifier of reference object.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
 
-    /**
-     * The identifier path of reference object.
-     **/
+    /** The identifier path of reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("identifierPath")
     private final String identifierPath;
 
     /**
      * The identifier path of reference object.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifierPath() {
         return identifierPath;
     }
 
-    /**
-     * The description of reference object.
-     **/
+    /** The description of reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of reference object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The type of reference object.
-     **/
-    public enum Type {
+    /** The type of reference object. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         OracleDataAsset("ORACLE_DATA_ASSET"),
         OracleObjectStorageDataAsset("ORACLE_OBJECT_STORAGE_DATA_ASSET"),
         OracleAtpDataAsset("ORACLE_ATP_DATA_ASSET"),
@@ -378,8 +372,8 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
         RestTask("REST_TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -416,72 +410,71 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of reference object.
-     **/
+    /** The type of reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of reference object.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
     /**
-     * The new reference object to use instead of the original reference. For example, this can be a data asset reference.
-     **/
+     * The new reference object to use instead of the original reference. For example, this can be a
+     * data asset reference.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("targetObject")
     private final Object targetObject;
 
     /**
-     * The new reference object to use instead of the original reference. For example, this can be a data asset reference.
+     * The new reference object to use instead of the original reference. For example, this can be a
+     * data asset reference.
+     *
      * @return the value
-     **/
+     */
     public Object getTargetObject() {
         return targetObject;
     }
 
-    /**
-     * The application key of the reference object.
-     **/
+    /** The application key of the reference object. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationKey")
     private final String applicationKey;
 
     /**
      * The application key of the reference object.
+     *
      * @return the value
-     **/
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
 
-    /**
-     * List of published objects where this is used.
-     **/
+    /** List of published objects where this is used. */
     @com.fasterxml.jackson.annotation.JsonProperty("usedBy")
     private final java.util.List<ReferenceUsedBy> usedBy;
 
     /**
      * List of published objects where this is used.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ReferenceUsedBy> getUsedBy() {
         return usedBy;
     }
 
-    /**
-     * List of references that are dependent on this reference.
-     **/
+    /** List of references that are dependent on this reference. */
     @com.fasterxml.jackson.annotation.JsonProperty("childReferences")
     private final java.util.List<ChildReference> childReferences;
 
     /**
      * List of references that are dependent on this reference.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ChildReference> getChildReferences() {
         return childReferences;
     }
@@ -493,6 +486,7 @@ public final class Reference extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

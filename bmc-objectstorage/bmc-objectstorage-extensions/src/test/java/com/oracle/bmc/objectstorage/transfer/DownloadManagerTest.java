@@ -29,15 +29,12 @@ import java.util.concurrent.TimeUnit;
 
 public class DownloadManagerTest {
 
-    /**
-     * Use this for all tests to save setup/teardown time. Tests should not
-     * modify this data!
-     */
+    /** Use this for all tests to save setup/teardown time. Tests should not modify this data! */
     private static byte[] data;
 
     /**
-     * Use the same executor service for all tests to save setup/teardown time.
-     * Test should not terminate this service!
+     * Use the same executor service for all tests to save setup/teardown time. Test should not
+     * terminate this service!
      */
     private static ExecutorService executorService;
 

@@ -6,72 +6,58 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScheduleRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/CreateScheduleExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateScheduleRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class CreateScheduleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.CreateScheduleDetails> {
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     private String workspaceId;
 
-    /**
-     * The workspace ID.
-     */
+    /** The workspace ID. */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /**
-     * The application key.
-     */
+    /** The application key. */
     private String applicationKey;
 
-    /**
-     * The application key.
-     */
+    /** The application key. */
     public String getApplicationKey() {
         return applicationKey;
     }
-    /**
-     * Request body parameter for Schedule details
-     */
+    /** Request body parameter for Schedule details */
     private com.oracle.bmc.dataintegration.model.CreateScheduleDetails createScheduleDetails;
 
-    /**
-     * Request body parameter for Schedule details
-     */
+    /** Request body parameter for Schedule details */
     public com.oracle.bmc.dataintegration.model.CreateScheduleDetails getCreateScheduleDetails() {
         return createScheduleDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -79,6 +65,7 @@ public class CreateScheduleRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -91,17 +78,15 @@ public class CreateScheduleRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateScheduleRequest,
                     com.oracle.bmc.dataintegration.model.CreateScheduleDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The workspace ID.
-         */
+        /** The workspace ID. */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
+         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -110,13 +95,12 @@ public class CreateScheduleRequest
             return this;
         }
 
-        /**
-         * The application key.
-         */
+        /** The application key. */
         private String applicationKey = null;
 
         /**
          * The application key.
+         *
          * @param applicationKey the value to set
          * @return this builder instance
          */
@@ -125,14 +109,13 @@ public class CreateScheduleRequest
             return this;
         }
 
-        /**
-         * Request body parameter for Schedule details
-         */
+        /** Request body parameter for Schedule details */
         private com.oracle.bmc.dataintegration.model.CreateScheduleDetails createScheduleDetails =
                 null;
 
         /**
          * Request body parameter for Schedule details
+         *
          * @param createScheduleDetails the value to set
          * @return this builder instance
          */
@@ -143,17 +126,14 @@ public class CreateScheduleRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -164,13 +144,14 @@ public class CreateScheduleRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -182,18 +163,19 @@ public class CreateScheduleRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -205,6 +187,7 @@ public class CreateScheduleRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateScheduleRequest o) {
@@ -221,10 +204,11 @@ public class CreateScheduleRequest
         /**
          * Build the instance of CreateScheduleRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateScheduleRequest
          */
@@ -237,6 +221,7 @@ public class CreateScheduleRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -249,7 +234,8 @@ public class CreateScheduleRequest
         /**
          * Build the instance of CreateScheduleRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateScheduleRequest
@@ -262,12 +248,14 @@ public class CreateScheduleRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateScheduleRequest(workspaceId, applicationKey, createScheduleDetails, opcRequestId, opcRetryToken);
+            // new CreateScheduleRequest(workspaceId, applicationKey, createScheduleDetails,
+            // opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -281,6 +269,7 @@ public class CreateScheduleRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

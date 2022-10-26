@@ -5,21 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Statistics showing the number of findings with a particular risk level for each category.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Statistics showing the number of findings with a particular risk level for each category. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SectionStatistics.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SectionStatistics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SectionStatistics.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SectionStatistics
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetsCount",
@@ -53,131 +54,123 @@ public final class SectionStatistics extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The number of targets that contributed to the counts at this risk level.
-         **/
+        /** The number of targets that contributed to the counts at this risk level. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
 
         /**
          * The number of targets that contributed to the counts at this risk level.
+         *
          * @param targetsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = targetsCount;
             this.__explicitlySet__.add("targetsCount");
             return this;
         }
-        /**
-         * The number of findings in the Auditing category.
-         **/
+        /** The number of findings in the Auditing category. */
         @com.fasterxml.jackson.annotation.JsonProperty("auditingFindingsCount")
         private Integer auditingFindingsCount;
 
         /**
          * The number of findings in the Auditing category.
+         *
          * @param auditingFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder auditingFindingsCount(Integer auditingFindingsCount) {
             this.auditingFindingsCount = auditingFindingsCount;
             this.__explicitlySet__.add("auditingFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the Authorization Control category.
-         **/
+        /** The number of findings in the Authorization Control category. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorizationControlFindingsCount")
         private Integer authorizationControlFindingsCount;
 
         /**
          * The number of findings in the Authorization Control category.
+         *
          * @param authorizationControlFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder authorizationControlFindingsCount(
                 Integer authorizationControlFindingsCount) {
             this.authorizationControlFindingsCount = authorizationControlFindingsCount;
             this.__explicitlySet__.add("authorizationControlFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the Data Encryption category.
-         **/
+        /** The number of findings in the Data Encryption category. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataEncryptionFindingsCount")
         private Integer dataEncryptionFindingsCount;
 
         /**
          * The number of findings in the Data Encryption category.
+         *
          * @param dataEncryptionFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder dataEncryptionFindingsCount(Integer dataEncryptionFindingsCount) {
             this.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
             this.__explicitlySet__.add("dataEncryptionFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the Database Configuration category.
-         **/
+        /** The number of findings in the Database Configuration category. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationFindingsCount")
         private Integer dbConfigurationFindingsCount;
 
         /**
          * The number of findings in the Database Configuration category.
+         *
          * @param dbConfigurationFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder dbConfigurationFindingsCount(Integer dbConfigurationFindingsCount) {
             this.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
             this.__explicitlySet__.add("dbConfigurationFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the Fine-Grained Access Control category.
-         **/
+        /** The number of findings in the Fine-Grained Access Control category. */
         @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControlFindingsCount")
         private Integer fineGrainedAccessControlFindingsCount;
 
         /**
          * The number of findings in the Fine-Grained Access Control category.
+         *
          * @param fineGrainedAccessControlFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder fineGrainedAccessControlFindingsCount(
                 Integer fineGrainedAccessControlFindingsCount) {
             this.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
             this.__explicitlySet__.add("fineGrainedAccessControlFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the Privileges and Roles category.
-         **/
+        /** The number of findings in the Privileges and Roles category. */
         @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRolesFindingsCount")
         private Integer privilegesAndRolesFindingsCount;
 
         /**
          * The number of findings in the Privileges and Roles category.
+         *
          * @param privilegesAndRolesFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder privilegesAndRolesFindingsCount(Integer privilegesAndRolesFindingsCount) {
             this.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
             this.__explicitlySet__.add("privilegesAndRolesFindingsCount");
             return this;
         }
-        /**
-         * The number of findings in the User Accounts category.
-         **/
+        /** The number of findings in the User Accounts category. */
         @com.fasterxml.jackson.annotation.JsonProperty("userAccountsFindingsCount")
         private Integer userAccountsFindingsCount;
 
         /**
          * The number of findings in the User Accounts category.
+         *
          * @param userAccountsFindingsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder userAccountsFindingsCount(Integer userAccountsFindingsCount) {
             this.userAccountsFindingsCount = userAccountsFindingsCount;
             this.__explicitlySet__.add("userAccountsFindingsCount");
@@ -236,9 +229,7 @@ public final class SectionStatistics extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -247,114 +238,106 @@ public final class SectionStatistics extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The number of targets that contributed to the counts at this risk level.
-     **/
+    /** The number of targets that contributed to the counts at this risk level. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
     private final Integer targetsCount;
 
     /**
      * The number of targets that contributed to the counts at this risk level.
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetsCount() {
         return targetsCount;
     }
 
-    /**
-     * The number of findings in the Auditing category.
-     **/
+    /** The number of findings in the Auditing category. */
     @com.fasterxml.jackson.annotation.JsonProperty("auditingFindingsCount")
     private final Integer auditingFindingsCount;
 
     /**
      * The number of findings in the Auditing category.
+     *
      * @return the value
-     **/
+     */
     public Integer getAuditingFindingsCount() {
         return auditingFindingsCount;
     }
 
-    /**
-     * The number of findings in the Authorization Control category.
-     **/
+    /** The number of findings in the Authorization Control category. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorizationControlFindingsCount")
     private final Integer authorizationControlFindingsCount;
 
     /**
      * The number of findings in the Authorization Control category.
+     *
      * @return the value
-     **/
+     */
     public Integer getAuthorizationControlFindingsCount() {
         return authorizationControlFindingsCount;
     }
 
-    /**
-     * The number of findings in the Data Encryption category.
-     **/
+    /** The number of findings in the Data Encryption category. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataEncryptionFindingsCount")
     private final Integer dataEncryptionFindingsCount;
 
     /**
      * The number of findings in the Data Encryption category.
+     *
      * @return the value
-     **/
+     */
     public Integer getDataEncryptionFindingsCount() {
         return dataEncryptionFindingsCount;
     }
 
-    /**
-     * The number of findings in the Database Configuration category.
-     **/
+    /** The number of findings in the Database Configuration category. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbConfigurationFindingsCount")
     private final Integer dbConfigurationFindingsCount;
 
     /**
      * The number of findings in the Database Configuration category.
+     *
      * @return the value
-     **/
+     */
     public Integer getDbConfigurationFindingsCount() {
         return dbConfigurationFindingsCount;
     }
 
-    /**
-     * The number of findings in the Fine-Grained Access Control category.
-     **/
+    /** The number of findings in the Fine-Grained Access Control category. */
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAccessControlFindingsCount")
     private final Integer fineGrainedAccessControlFindingsCount;
 
     /**
      * The number of findings in the Fine-Grained Access Control category.
+     *
      * @return the value
-     **/
+     */
     public Integer getFineGrainedAccessControlFindingsCount() {
         return fineGrainedAccessControlFindingsCount;
     }
 
-    /**
-     * The number of findings in the Privileges and Roles category.
-     **/
+    /** The number of findings in the Privileges and Roles category. */
     @com.fasterxml.jackson.annotation.JsonProperty("privilegesAndRolesFindingsCount")
     private final Integer privilegesAndRolesFindingsCount;
 
     /**
      * The number of findings in the Privileges and Roles category.
+     *
      * @return the value
-     **/
+     */
     public Integer getPrivilegesAndRolesFindingsCount() {
         return privilegesAndRolesFindingsCount;
     }
 
-    /**
-     * The number of findings in the User Accounts category.
-     **/
+    /** The number of findings in the User Accounts category. */
     @com.fasterxml.jackson.annotation.JsonProperty("userAccountsFindingsCount")
     private final Integer userAccountsFindingsCount;
 
     /**
      * The number of findings in the User Accounts category.
+     *
      * @return the value
-     **/
+     */
     public Integer getUserAccountsFindingsCount() {
         return userAccountsFindingsCount;
     }
@@ -366,6 +349,7 @@ public final class SectionStatistics extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

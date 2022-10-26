@@ -5,20 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details about Oracle GoldenGate Microservices.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about Oracle GoldenGate Microservices. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GoldenGateHub.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class GoldenGateHub extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class GoldenGateHub extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "restAdminCredentials",
@@ -90,29 +90,25 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Oracle GoldenGate hub's REST endpoint.
-         * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-         *
-         **/
+         * Oracle GoldenGate hub's REST endpoint. Refer to
+         * https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
-         * Oracle GoldenGate hub's REST endpoint.
-         * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+         * Oracle GoldenGate hub's REST endpoint. Refer to
+         * https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
          *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /**
-         * Name of GoldenGate deployment to operate on source database
-         *
-         **/
+        /** Name of GoldenGate deployment to operate on source database */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
         private String sourceMicroservicesDeploymentName;
 
@@ -121,16 +117,13 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param sourceMicroservicesDeploymentName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceMicroservicesDeploymentName(String sourceMicroservicesDeploymentName) {
             this.sourceMicroservicesDeploymentName = sourceMicroservicesDeploymentName;
             this.__explicitlySet__.add("sourceMicroservicesDeploymentName");
             return this;
         }
-        /**
-         * Name of GoldenGate deployment to operate on target database
-         *
-         **/
+        /** Name of GoldenGate deployment to operate on target database */
         @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
         private String targetMicroservicesDeploymentName;
 
@@ -139,16 +132,13 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param targetMicroservicesDeploymentName the value to set
          * @return this builder
-         **/
+         */
         public Builder targetMicroservicesDeploymentName(String targetMicroservicesDeploymentName) {
             this.targetMicroservicesDeploymentName = targetMicroservicesDeploymentName;
             this.__explicitlySet__.add("targetMicroservicesDeploymentName");
             return this;
         }
-        /**
-         * OCID of GoldenGate compute instance.
-         *
-         **/
+        /** OCID of GoldenGate compute instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeId")
         private String computeId;
 
@@ -157,7 +147,7 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param computeId the value to set
          * @return this builder
-         **/
+         */
         public Builder computeId(String computeId) {
             this.computeId = computeId;
             this.__explicitlySet__.add("computeId");
@@ -217,9 +207,7 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -257,27 +245,23 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * Oracle GoldenGate hub's REST endpoint.
-     * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-     *
-     **/
+     * Oracle GoldenGate hub's REST endpoint. Refer to
+     * https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * Oracle GoldenGate hub's REST endpoint.
-     * Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
+     * Oracle GoldenGate hub's REST endpoint. Refer to
+     * https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
      *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * Name of GoldenGate deployment to operate on source database
-     *
-     **/
+    /** Name of GoldenGate deployment to operate on source database */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMicroservicesDeploymentName")
     private final String sourceMicroservicesDeploymentName;
 
@@ -285,15 +269,12 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
      * Name of GoldenGate deployment to operate on source database
      *
      * @return the value
-     **/
+     */
     public String getSourceMicroservicesDeploymentName() {
         return sourceMicroservicesDeploymentName;
     }
 
-    /**
-     * Name of GoldenGate deployment to operate on target database
-     *
-     **/
+    /** Name of GoldenGate deployment to operate on target database */
     @com.fasterxml.jackson.annotation.JsonProperty("targetMicroservicesDeploymentName")
     private final String targetMicroservicesDeploymentName;
 
@@ -301,15 +282,12 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
      * Name of GoldenGate deployment to operate on target database
      *
      * @return the value
-     **/
+     */
     public String getTargetMicroservicesDeploymentName() {
         return targetMicroservicesDeploymentName;
     }
 
-    /**
-     * OCID of GoldenGate compute instance.
-     *
-     **/
+    /** OCID of GoldenGate compute instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")
     private final String computeId;
 
@@ -317,7 +295,7 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
      * OCID of GoldenGate compute instance.
      *
      * @return the value
-     **/
+     */
     public String getComputeId() {
         return computeId;
     }
@@ -329,6 +307,7 @@ public final class GoldenGateHub extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

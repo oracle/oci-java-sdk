@@ -5,25 +5,24 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Description of an asset source.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of an asset source. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateVmWareAssetSourceDetails.Builder.class
-)
+        builder = CreateVmWareAssetSourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -109,16 +108,19 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
             return this;
         }
         /**
-         * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
-         **/
+         * Endpoint for VMware asset discovery and replication in the form of {@code
+         * https://<host>:<port>/sdk}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcenterEndpoint")
         private String vcenterEndpoint;
 
         /**
-         * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
+         * Endpoint for VMware asset discovery and replication in the form of {@code
+         * https://<host>:<port>/sdk}
+         *
          * @param vcenterEndpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder vcenterEndpoint(String vcenterEndpoint) {
             this.vcenterEndpoint = vcenterEndpoint;
             this.__explicitlySet__.add("vcenterEndpoint");
@@ -143,32 +145,38 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
             return this;
         }
         /**
-         * Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-         **/
+         * Flag indicating whether historical metrics are collected for assets, originating from
+         * this asset source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("areHistoricalMetricsCollected")
         private Boolean areHistoricalMetricsCollected;
 
         /**
-         * Flag indicating whether historical metrics are collected for assets, originating from this asset source.
+         * Flag indicating whether historical metrics are collected for assets, originating from
+         * this asset source.
+         *
          * @param areHistoricalMetricsCollected the value to set
          * @return this builder
-         **/
+         */
         public Builder areHistoricalMetricsCollected(Boolean areHistoricalMetricsCollected) {
             this.areHistoricalMetricsCollected = areHistoricalMetricsCollected;
             this.__explicitlySet__.add("areHistoricalMetricsCollected");
             return this;
         }
         /**
-         * Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-         **/
+         * Flag indicating whether real-time metrics are collected for assets, originating from this
+         * asset source.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("areRealtimeMetricsCollected")
         private Boolean areRealtimeMetricsCollected;
 
         /**
-         * Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
+         * Flag indicating whether real-time metrics are collected for assets, originating from this
+         * asset source.
+         *
          * @param areRealtimeMetricsCollected the value to set
          * @return this builder
-         **/
+         */
         public Builder areRealtimeMetricsCollected(Boolean areRealtimeMetricsCollected) {
             this.areRealtimeMetricsCollected = areRealtimeMetricsCollected;
             this.__explicitlySet__.add("areRealtimeMetricsCollected");
@@ -249,9 +257,7 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -294,15 +300,18 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
     }
 
     /**
-     * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
-     **/
+     * Endpoint for VMware asset discovery and replication in the form of {@code
+     * https://<host>:<port>/sdk}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterEndpoint")
     private final String vcenterEndpoint;
 
     /**
-     * Endpoint for VMware asset discovery and replication in the form of {@code https://<host>:<port>/sdk}
+     * Endpoint for VMware asset discovery and replication in the form of {@code
+     * https://<host>:<port>/sdk}
+     *
      * @return the value
-     **/
+     */
     public String getVcenterEndpoint() {
         return vcenterEndpoint;
     }
@@ -322,29 +331,35 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
     }
 
     /**
-     * Flag indicating whether historical metrics are collected for assets, originating from this asset source.
-     **/
+     * Flag indicating whether historical metrics are collected for assets, originating from this
+     * asset source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("areHistoricalMetricsCollected")
     private final Boolean areHistoricalMetricsCollected;
 
     /**
-     * Flag indicating whether historical metrics are collected for assets, originating from this asset source.
+     * Flag indicating whether historical metrics are collected for assets, originating from this
+     * asset source.
+     *
      * @return the value
-     **/
+     */
     public Boolean getAreHistoricalMetricsCollected() {
         return areHistoricalMetricsCollected;
     }
 
     /**
-     * Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
-     **/
+     * Flag indicating whether real-time metrics are collected for assets, originating from this
+     * asset source.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("areRealtimeMetricsCollected")
     private final Boolean areRealtimeMetricsCollected;
 
     /**
-     * Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
+     * Flag indicating whether real-time metrics are collected for assets, originating from this
+     * asset source.
+     *
      * @return the value
-     **/
+     */
     public Boolean getAreRealtimeMetricsCollected() {
         return areRealtimeMetricsCollected;
     }
@@ -356,6 +371,7 @@ public final class CreateVmWareAssetSourceDetails extends CreateAssetSourceDetai
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

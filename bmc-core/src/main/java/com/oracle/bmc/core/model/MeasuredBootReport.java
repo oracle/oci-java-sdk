@@ -5,21 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The measured boot report for a shielded instance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The measured boot report for a shielded instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MeasuredBootReport.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MeasuredBootReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MeasuredBootReport.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MeasuredBootReport
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isPolicyVerificationSuccessful", "measurements"})
     public MeasuredBootReport(
@@ -31,10 +32,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Whether the verification succeeded, and the new values match the expected values.
-         *
-         **/
+        /** Whether the verification succeeded, and the new values match the expected values. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
         private Boolean isPolicyVerificationSuccessful;
 
@@ -43,7 +41,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
          *
          * @param isPolicyVerificationSuccessful the value to set
          * @return this builder
-         **/
+         */
         public Builder isPolicyVerificationSuccessful(Boolean isPolicyVerificationSuccessful) {
             this.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
             this.__explicitlySet__.add("isPolicyVerificationSuccessful");
@@ -83,9 +81,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,10 +90,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * Whether the verification succeeded, and the new values match the expected values.
-     *
-     **/
+    /** Whether the verification succeeded, and the new values match the expected values. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPolicyVerificationSuccessful")
     private final Boolean isPolicyVerificationSuccessful;
 
@@ -105,7 +98,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
      * Whether the verification succeeded, and the new values match the expected values.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPolicyVerificationSuccessful() {
         return isPolicyVerificationSuccessful;
     }
@@ -124,6 +117,7 @@ public final class MeasuredBootReport extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

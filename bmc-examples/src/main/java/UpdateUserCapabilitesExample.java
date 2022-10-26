@@ -20,7 +20,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 public class UpdateUserCapabilitesExample {
-    final static RetryPolicy RETRY_POLICY =
+    static final RetryPolicy RETRY_POLICY =
             new RetryPolicy()
                     .retryOn(new RetryPredicate())
                     .withDelay(1, TimeUnit.SECONDS)
@@ -31,8 +31,10 @@ public class UpdateUserCapabilitesExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -53,7 +55,8 @@ public class UpdateUserCapabilitesExample {
         // Get the created user.
         final GetUserRequest getUserRequest = GetUserRequest.builder().userId(user.getId()).build();
 
-        // If we create/update and then try to use compartments straight away, sometimes we can get a 404.
+        // If we create/update and then try to use compartments straight away, sometimes we can get
+        // a 404.
         // To try and avoid this, this example uses retries with a short delay.
         GetUserResponse getUserResponse =
                 Failsafe.with(RETRY_POLICY)

@@ -5,44 +5,43 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Details about the Oracle Cloud@Customer account, the source environment from which you want to migrate the application.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the Oracle Cloud@Customer account, the source environment from which you want to
+ * migrate the application. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OccSourceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OccSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
-         * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
-         * then enter 567890123.
-         *
-         **/
+         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS),
+         * enter the service instance ID. For example, if Compute-567890123 is the account name of
+         * your Oracle Cloud@Customer Compute service entitlement, then enter 567890123.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
         private String computeAccount;
 
         /**
-         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
-         * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
-         * then enter 567890123.
+         * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS),
+         * enter the service instance ID. For example, if Compute-567890123 is the account name of
+         * your Oracle Cloud@Customer Compute service entitlement, then enter 567890123.
          *
          * @param computeAccount the value to set
          * @return this builder
-         **/
+         */
         public Builder computeAccount(String computeAccount) {
             this.computeAccount = computeAccount;
             this.__explicitlySet__.add("computeAccount");
@@ -69,9 +68,7 @@ public final class OccSourceDetails extends SourceDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -87,21 +84,20 @@ public final class OccSourceDetails extends SourceDetails {
     }
 
     /**
-     * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
-     * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
-     * then enter 567890123.
-     *
-     **/
+     * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter
+     * the service instance ID. For example, if Compute-567890123 is the account name of your Oracle
+     * Cloud@Customer Compute service entitlement, then enter 567890123.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeAccount")
     private final String computeAccount;
 
     /**
-     * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter the service instance ID.
-     * For example, if Compute-567890123 is the account name of your Oracle Cloud@Customer Compute service entitlement,
-     * then enter 567890123.
+     * If you are using an Oracle Cloud@Customer account with Identity Cloud Service (IDCS), enter
+     * the service instance ID. For example, if Compute-567890123 is the account name of your Oracle
+     * Cloud@Customer Compute service entitlement, then enter 567890123.
      *
      * @return the value
-     **/
+     */
     public String getComputeAccount() {
         return computeAccount;
     }
@@ -113,6 +109,7 @@ public final class OccSourceDetails extends SourceDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

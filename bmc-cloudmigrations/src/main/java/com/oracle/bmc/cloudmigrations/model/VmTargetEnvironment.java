@@ -5,25 +5,24 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Description of the VM target environment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of the VM target environment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VmTargetEnvironment.Builder.class
-)
+        builder = VmTargetEnvironment.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "targetEnvironmentType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "targetEnvironmentType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VmTargetEnvironment extends TargetEnvironment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,113 +34,106 @@ public final class VmTargetEnvironment extends TargetEnvironment {
             this.__explicitlySet__.add("targetCompartmentId");
             return this;
         }
-        /**
-         * Availability Domain of the VM configuration.
-         **/
+        /** Availability Domain of the VM configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * Availability Domain of the VM configuration.
+         *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * Fault domain of the VM configuration.
-         **/
+        /** Fault domain of the VM configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * Fault domain of the VM configuration.
+         *
          * @param faultDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /**
-         * OCID of the VM configuration VCN.
-         **/
+        /** OCID of the VM configuration VCN. */
         @com.fasterxml.jackson.annotation.JsonProperty("vcn")
         private String vcn;
 
         /**
          * OCID of the VM configuration VCN.
+         *
          * @param vcn the value to set
          * @return this builder
-         **/
+         */
         public Builder vcn(String vcn) {
             this.vcn = vcn;
             this.__explicitlySet__.add("vcn");
             return this;
         }
-        /**
-         * OCID of the VM configuration subnet.
-         **/
+        /** OCID of the VM configuration subnet. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnet")
         private String subnet;
 
         /**
          * OCID of the VM configuration subnet.
+         *
          * @param subnet the value to set
          * @return this builder
-         **/
+         */
         public Builder subnet(String subnet) {
             this.subnet = subnet;
             this.__explicitlySet__.add("subnet");
             return this;
         }
-        /**
-         * OCID of the dedicated VM configuration host.
-         **/
+        /** OCID of the dedicated VM configuration host. */
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHost")
         private String dedicatedVmHost;
 
         /**
          * OCID of the dedicated VM configuration host.
+         *
          * @param dedicatedVmHost the value to set
          * @return this builder
-         **/
+         */
         public Builder dedicatedVmHost(String dedicatedVmHost) {
             this.dedicatedVmHost = dedicatedVmHost;
             this.__explicitlySet__.add("dedicatedVmHost");
             return this;
         }
-        /**
-         * Microsoft license for the VM configuration.
-         **/
+        /** Microsoft license for the VM configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("msLicense")
         private String msLicense;
 
         /**
          * Microsoft license for the VM configuration.
+         *
          * @param msLicense the value to set
          * @return this builder
-         **/
+         */
         public Builder msLicense(String msLicense) {
             this.msLicense = msLicense;
             this.__explicitlySet__.add("msLicense");
             return this;
         }
-        /**
-         * Preferred VM shape type provided by the customer.
-         **/
+        /** Preferred VM shape type provided by the customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("preferredShapeType")
         private VmTargetAsset.PreferredShapeType preferredShapeType;
 
         /**
          * Preferred VM shape type provided by the customer.
+         *
          * @param preferredShapeType the value to set
          * @return this builder
-         **/
+         */
         public Builder preferredShapeType(VmTargetAsset.PreferredShapeType preferredShapeType) {
             this.preferredShapeType = preferredShapeType;
             this.__explicitlySet__.add("preferredShapeType");
@@ -198,9 +190,7 @@ public final class VmTargetEnvironment extends TargetEnvironment {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,100 +219,93 @@ public final class VmTargetEnvironment extends TargetEnvironment {
         this.preferredShapeType = preferredShapeType;
     }
 
-    /**
-     * Availability Domain of the VM configuration.
-     **/
+    /** Availability Domain of the VM configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * Availability Domain of the VM configuration.
+     *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * Fault domain of the VM configuration.
-     **/
+    /** Fault domain of the VM configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * Fault domain of the VM configuration.
+     *
      * @return the value
-     **/
+     */
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /**
-     * OCID of the VM configuration VCN.
-     **/
+    /** OCID of the VM configuration VCN. */
     @com.fasterxml.jackson.annotation.JsonProperty("vcn")
     private final String vcn;
 
     /**
      * OCID of the VM configuration VCN.
+     *
      * @return the value
-     **/
+     */
     public String getVcn() {
         return vcn;
     }
 
-    /**
-     * OCID of the VM configuration subnet.
-     **/
+    /** OCID of the VM configuration subnet. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnet")
     private final String subnet;
 
     /**
      * OCID of the VM configuration subnet.
+     *
      * @return the value
-     **/
+     */
     public String getSubnet() {
         return subnet;
     }
 
-    /**
-     * OCID of the dedicated VM configuration host.
-     **/
+    /** OCID of the dedicated VM configuration host. */
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHost")
     private final String dedicatedVmHost;
 
     /**
      * OCID of the dedicated VM configuration host.
+     *
      * @return the value
-     **/
+     */
     public String getDedicatedVmHost() {
         return dedicatedVmHost;
     }
 
-    /**
-     * Microsoft license for the VM configuration.
-     **/
+    /** Microsoft license for the VM configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("msLicense")
     private final String msLicense;
 
     /**
      * Microsoft license for the VM configuration.
+     *
      * @return the value
-     **/
+     */
     public String getMsLicense() {
         return msLicense;
     }
 
-    /**
-     * Preferred VM shape type provided by the customer.
-     **/
+    /** Preferred VM shape type provided by the customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("preferredShapeType")
     private final VmTargetAsset.PreferredShapeType preferredShapeType;
 
     /**
      * Preferred VM shape type provided by the customer.
+     *
      * @return the value
-     **/
+     */
     public VmTargetAsset.PreferredShapeType getPreferredShapeType() {
         return preferredShapeType;
     }
@@ -334,6 +317,7 @@ public final class VmTargetEnvironment extends TargetEnvironment {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

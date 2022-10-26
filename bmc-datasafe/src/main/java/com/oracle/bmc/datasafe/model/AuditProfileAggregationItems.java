@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details of audit profile aggregation items.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of audit profile aggregation items. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AuditProfileAggregationItems.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AuditProfileAggregationItems.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AuditProfileAggregationItems
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dimensions", "count"})
     public AuditProfileAggregationItems(AuditProfileDimensions dimensions, Long count) {
@@ -40,17 +40,16 @@ public final class AuditProfileAggregationItems
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /**
-         * Total count of aggregated metric.
-         **/
+        /** Total count of aggregated metric. */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Long count;
 
         /**
          * Total count of aggregated metric.
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Long count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -81,9 +80,7 @@ public final class AuditProfileAggregationItems
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,16 +96,15 @@ public final class AuditProfileAggregationItems
         return dimensions;
     }
 
-    /**
-     * Total count of aggregated metric.
-     **/
+    /** Total count of aggregated metric. */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Long count;
 
     /**
      * Total count of aggregated metric.
+     *
      * @return the value
-     **/
+     */
     public Long getCount() {
         return count;
     }
@@ -120,6 +116,7 @@ public final class AuditProfileAggregationItems
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

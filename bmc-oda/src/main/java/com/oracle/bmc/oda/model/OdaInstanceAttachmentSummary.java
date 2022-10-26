@@ -5,22 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Description of an ODA instance attachment.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of an ODA instance attachment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OdaInstanceAttachmentSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OdaInstanceAttachmentSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OdaInstanceAttachmentSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -67,96 +67,98 @@ public final class OdaInstanceAttachmentSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique immutable identifier that was assigned when the ODA instance attachment was created.
-         **/
+         * Unique immutable identifier that was assigned when the ODA instance attachment was
+         * created.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique immutable identifier that was assigned when the ODA instance attachment was created.
+         * Unique immutable identifier that was assigned when the ODA instance attachment was
+         * created.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the ODA instance to which the attachment applies.
-         **/
+        /** The OCID of the ODA instance to which the attachment applies. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the ODA instance to which the attachment applies.
+         *
          * @param instanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
         /**
-         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which the ODA instance is or is being attached.
-         **/
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to
+         * which the ODA instance is or is being attached.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
         private String attachToId;
 
         /**
-         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which the ODA instance is or is being attached.
+         * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to
+         * which the ODA instance is or is being attached.
+         *
          * @param attachToId the value to set
          * @return this builder
-         **/
+         */
         public Builder attachToId(String attachToId) {
             this.attachToId = attachToId;
             this.__explicitlySet__.add("attachToId");
             return this;
         }
-        /**
-         * The type of attachment defined as an enum.
-         **/
+        /** The type of attachment defined as an enum. */
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
         private AttachmentType attachmentType;
 
         /**
          * The type of attachment defined as an enum.
+         *
          * @param attachmentType the value to set
          * @return this builder
-         **/
+         */
         public Builder attachmentType(AttachmentType attachmentType) {
             this.attachmentType = attachmentType;
             this.__explicitlySet__.add("attachmentType");
             return this;
         }
-        /**
-         * Attachment-specific metadata, defined by the target service.
-         **/
+        /** Attachment-specific metadata, defined by the target service. */
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
         private String attachmentMetadata;
 
         /**
          * Attachment-specific metadata, defined by the target service.
+         *
          * @param attachmentMetadata the value to set
          * @return this builder
-         **/
+         */
         public Builder attachmentMetadata(String attachmentMetadata) {
             this.attachmentMetadata = attachmentMetadata;
             this.__explicitlySet__.add("attachmentMetadata");
             return this;
         }
-        /**
-         * List of operation names that are restricted while this ODA instance is attached.
-         **/
+        /** List of operation names that are restricted while this ODA instance is attached. */
         @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
         private java.util.List<String> restrictedOperations;
 
         /**
          * List of operation names that are restricted while this ODA instance is attached.
+         *
          * @param restrictedOperations the value to set
          * @return this builder
-         **/
+         */
         public Builder restrictedOperations(java.util.List<String> restrictedOperations) {
             this.restrictedOperations = restrictedOperations;
             this.__explicitlySet__.add("restrictedOperations");
@@ -171,49 +173,46 @@ public final class OdaInstanceAttachmentSummary
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /**
-         * The time the attachment was created. An RFC3339 formatted datetime string
-         **/
+        /** The time the attachment was created. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the attachment was created. An RFC3339 formatted datetime string
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time the attachment was last modified. An RFC3339 formatted datetime string
-         **/
+        /** The time the attachment was last modified. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdate")
         private java.util.Date timeLastUpdate;
 
         /**
          * The time the attachment was last modified. An RFC3339 formatted datetime string
+         *
          * @param timeLastUpdate the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastUpdate(java.util.Date timeLastUpdate) {
             this.timeLastUpdate = timeLastUpdate;
             this.__explicitlySet__.add("timeLastUpdate");
             return this;
         }
-        /**
-         * The current state of the attachment.
-         **/
+        /** The current state of the attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OdaInstanceAttachment.LifecycleState lifecycleState;
 
         /**
          * The current state of the attachment.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(OdaInstanceAttachment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -222,8 +221,7 @@ public final class OdaInstanceAttachmentSummary
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope.
          * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -233,27 +231,26 @@ public final class OdaInstanceAttachmentSummary
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -327,9 +324,7 @@ public final class OdaInstanceAttachmentSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -340,55 +335,56 @@ public final class OdaInstanceAttachmentSummary
 
     /**
      * Unique immutable identifier that was assigned when the ODA instance attachment was created.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique immutable identifier that was assigned when the ODA instance attachment was created.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the ODA instance to which the attachment applies.
-     **/
+    /** The OCID of the ODA instance to which the attachment applies. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the ODA instance to which the attachment applies.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
     /**
-     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which the ODA instance is or is being attached.
-     **/
+     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which
+     * the ODA instance is or is being attached.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("attachToId")
     private final String attachToId;
 
     /**
-     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which the ODA instance is or is being attached.
+     * The OCID of the target instance (which could be any other OCI PaaS/SaaS resource), to which
+     * the ODA instance is or is being attached.
+     *
      * @return the value
-     **/
+     */
     public String getAttachToId() {
         return attachToId;
     }
 
-    /**
-     * The type of attachment defined as an enum.
-     **/
-    public enum AttachmentType {
+    /** The type of attachment defined as an enum. */
+    public enum AttachmentType implements com.oracle.bmc.http.internal.BmcEnum {
         Fusion("FUSION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -427,44 +423,41 @@ public final class OdaInstanceAttachmentSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of attachment defined as an enum.
-     **/
+    /** The type of attachment defined as an enum. */
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentType")
     private final AttachmentType attachmentType;
 
     /**
      * The type of attachment defined as an enum.
+     *
      * @return the value
-     **/
+     */
     public AttachmentType getAttachmentType() {
         return attachmentType;
     }
 
-    /**
-     * Attachment-specific metadata, defined by the target service.
-     **/
+    /** Attachment-specific metadata, defined by the target service. */
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentMetadata")
     private final String attachmentMetadata;
 
     /**
      * Attachment-specific metadata, defined by the target service.
+     *
      * @return the value
-     **/
+     */
     public String getAttachmentMetadata() {
         return attachmentMetadata;
     }
 
-    /**
-     * List of operation names that are restricted while this ODA instance is attached.
-     **/
+    /** List of operation names that are restricted while this ODA instance is attached. */
     @com.fasterxml.jackson.annotation.JsonProperty("restrictedOperations")
     private final java.util.List<String> restrictedOperations;
 
     /**
      * List of operation names that are restricted while this ODA instance is attached.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getRestrictedOperations() {
         return restrictedOperations;
     }
@@ -476,80 +469,75 @@ public final class OdaInstanceAttachmentSummary
         return owner;
     }
 
-    /**
-     * The time the attachment was created. An RFC3339 formatted datetime string
-     **/
+    /** The time the attachment was created. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the attachment was created. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the attachment was last modified. An RFC3339 formatted datetime string
-     **/
+    /** The time the attachment was last modified. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdate")
     private final java.util.Date timeLastUpdate;
 
     /**
      * The time the attachment was last modified. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastUpdate() {
         return timeLastUpdate;
     }
 
-    /**
-     * The current state of the attachment.
-     **/
+    /** The current state of the attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OdaInstanceAttachment.LifecycleState lifecycleState;
 
     /**
      * The current state of the attachment.
+     *
      * @return the value
-     **/
+     */
     public OdaInstanceAttachment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -561,6 +549,7 @@ public final class OdaInstanceAttachmentSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

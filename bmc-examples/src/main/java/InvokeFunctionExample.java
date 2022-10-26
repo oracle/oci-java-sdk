@@ -79,49 +79,47 @@ import java.util.List;
 
 public class InvokeFunctionExample {
 
-    final static Region DEFAULT_REGION = Region.US_PHOENIX_1;
+    static final Region DEFAULT_REGION = Region.US_PHOENIX_1;
 
-    final static String SETUP = "setup";
-    final static String INVOKE = "invoke";
-    final static String TEARDOWN = "teardown";
+    static final String SETUP = "setup";
+    static final String INVOKE = "invoke";
+    static final String TEARDOWN = "teardown";
 
     /**
-     * This is a basic example of how to register and invoke a serverless Function
-     * on OCI using the Java SDK.
+     * This is a basic example of how to register and invoke a serverless Function on OCI using the
+     * Java SDK.
      *
-     * The example has some pre-requisites. In particular you will need to create a
-     * Function image and publish it to OCI Registry. The best way to do this is with the 'Fn
-     * CLI':
+     * <p>The example has some pre-requisites. In particular you will need to create a Function
+     * image and publish it to OCI Registry. The best way to do this is with the 'Fn CLI':
      *
-     * 1. Install Fn CLI : https://github.com/fnproject/cli
+     * <p>1. Install Fn CLI : https://github.com/fnproject/cli
      *
-     * 2. Create Function - Quick Guide :
-     * https://github.com/fnproject/fn/blob/master/README.md
+     * <p>2. Create Function - Quick Guide : https://github.com/fnproject/fn/blob/master/README.md
      *
-     * This sample will do following things:
+     * <p>This sample will do following things:
      *
-     * 1. Create VCN and subnets - Provide an endpoint on which your function can be
-     * invoked.
+     * <p>1. Create VCN and subnets - Provide an endpoint on which your function can be invoked.
      *
-     * 2. Create Application and Function - Register and configure your function.
+     * <p>2. Create Application and Function - Register and configure your function.
      *
-     * 3. Invoke Function - How your function can be invoked.
+     * <p>3. Invoke Function - How your function can be invoked.
      *
-     * 4. Clean-up - Tidy up the resources created above.
+     * <p>4. Clean-up - Tidy up the resources created above.
      *
-     * NB: To simplify things, this example is hardcoded to use the 'us-phoenix-1' OCI
-     * region.
+     * <p>NB: To simplify things, this example is hardcoded to use the 'us-phoenix-1' OCI region.
      *
-     * NB: Currently, after invoking a function we must wait up to 30 minutes before
-     * clearing down any supporting Subnets and VCN.
+     * <p>NB: Currently, after invoking a function we must wait up to 30 minutes before clearing
+     * down any supporting Subnets and VCN.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The operation to perform - 'setup', 'invoke' or 'teardown'.</li>
-     *   <li>The OCID of the compartment where the function and associated resources will be created.</li>
-     *   <li>A valid OCI Registry function image.</li>
-     *   <li>The payload to be sent to the function on invocation (optional).</li>
-     * </ul>
+     *     <ul>
+     *       <li>The operation to perform - 'setup', 'invoke' or 'teardown'.
+     *       <li>The OCID of the compartment where the function and associated resources will be
+     *           created.
+     *       <li>A valid OCI Registry function image.
+     *       <li>The payload to be sent to the function on invocation (optional).
+     *     </ul>
+     *
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -158,8 +156,10 @@ public class InvokeFunctionExample {
         // Configure Auth
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -188,13 +188,11 @@ public class InvokeFunctionExample {
     /**
      * Create all the OCI and Fn resources required to invoke a function.
      *
-     * @param provider      the OCI credentials provider.
-     * @param region        the OCI region in which to create the required
-     *                      resources.
-     * @param compartmentId the compartment in which to create the required
-     *                      resources.
-     * @param name          a name prefix to easily identify the resources.
-     * @param image         a valid OCI Registry image for the function.
+     * @param provider the OCI credentials provider.
+     * @param region the OCI region in which to create the required resources.
+     * @param compartmentId the compartment in which to create the required resources.
+     * @param name a name prefix to easily identify the resources.
+     * @param image a valid OCI Registry image for the function.
      * @throws Exception
      */
     public static void setupResources(
@@ -286,13 +284,11 @@ public class InvokeFunctionExample {
     /**
      * Invoke a function.
      *
-     * @param provider      the OCI credentials provider.
-     * @param region        the OCI region in which to create the required
-     *                      resources.
-     * @param compartmentId the compartment in which to created the required
-     *                      resources.
-     * @param name          a name prefix to easily identify the resources.
-     * @param payload       the payload to be sent to the function on invocation.
+     * @param provider the OCI credentials provider.
+     * @param region the OCI region in which to create the required resources.
+     * @param compartmentId the compartment in which to created the required resources.
+     * @param name a name prefix to easily identify the resources.
+     * @param payload the payload to be sent to the function on invocation.
      * @throws Exception
      */
     public static void invokeFunction(
@@ -329,15 +325,12 @@ public class InvokeFunctionExample {
     /**
      * Remove all resources created by the 'setup' operation.
      *
-     * NB: Resources can only be removed 30 minutes after the last Function
-     * invocation.
+     * <p>NB: Resources can only be removed 30 minutes after the last Function invocation.
      *
-     * @param provider      the OCI credentials provider.
-     * @param region        the OCI region in which to create the required
-     *                      resources.
-     * @param compartmentId the compartment in which to created the required
-     *                      resources.
-     * @param name          a name prefix to easily identify the resources.
+     * @param provider the OCI credentials provider.
+     * @param region the OCI region in which to create the required resources.
+     * @param compartmentId the compartment in which to created the required resources.
+     * @param name a name prefix to easily identify the resources.
      * @throws Exception
      */
     public static void teardownResources(
@@ -426,9 +419,8 @@ public class InvokeFunctionExample {
     /**
      * List the AvailabilityDomains.
      *
-     * @param identityClient the service client to use to fetch the
-     *                       AvailabilityDomains.
-     * @param compartmentId  the OCID of the compartment to check.
+     * @param identityClient the service client to use to fetch the AvailabilityDomains.
+     * @param compartmentId the OCID of the compartment to check.
      * @return the list of AvailabilityDomains.
      * @throws Exception
      */
@@ -449,11 +441,10 @@ public class InvokeFunctionExample {
     /**
      * Creates a VCN and waits for it to become available to use.
      *
-     * @param vcnClient          the service client to use to create the VCN.
-     * @param compartmentId      the OCID of the compartment where the VCN will be
-     *                           created.
-     * @param displayName        the displayName of the VCN.
-     * @param cidrBlock          the CidrBlock allocated for the VCN.
+     * @param vcnClient the service client to use to create the VCN.
+     * @param compartmentId the OCID of the compartment where the VCN will be created.
+     * @param displayName the displayName of the VCN.
+     * @param cidrBlock the CidrBlock allocated for the VCN.
      * @return the created VCN.
      * @throws Exception
      */
@@ -491,10 +482,10 @@ public class InvokeFunctionExample {
     /**
      * Gets VCN info of a single uniquely named VCN in the specified compartment.
      *
-     * @param vcnClient      the service client to use to query the VCN.
-     * @param compartmentId  of the VCN.
+     * @param vcnClient the service client to use to query the VCN.
+     * @param compartmentId of the VCN.
      * @param vcnDisplayName of the VCN.
-     * @return               the VCN.
+     * @return the VCN.
      * @throws Exception
      */
     public static Vcn getUniqueVcnByName(
@@ -527,7 +518,7 @@ public class InvokeFunctionExample {
      * Deletes a VCN and waits for it to be deleted.
      *
      * @param vcnClient the service client to use to delete the VCN.
-     * @param vcn       the VCN to delete.
+     * @param vcn the VCN to delete.
      * @throws Exception
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
@@ -577,12 +568,12 @@ public class InvokeFunctionExample {
     }
 
     /**
-     * Gets InternetGateway info of a single uniquely named InternetGateway in the
-     * specified compartment.
+     * Gets InternetGateway info of a single uniquely named InternetGateway in the specified
+     * compartment.
      *
-     * @param vcnClient     the service client to use to query the InternetGateway.
+     * @param vcnClient the service client to use to query the InternetGateway.
      * @param compartmentId of the InternetGateway.
-     * @param vcnId         of the InternetGateway's associated VCN.
+     * @param vcnId of the InternetGateway's associated VCN.
      * @param igDisplayName of the InternetGateway.
      * @return the InternetGateway.
      * @throws Exception
@@ -620,7 +611,7 @@ public class InvokeFunctionExample {
      * Deletes a InternetGateway and waits for it to be deleted.
      *
      * @param vcnClient the service client to use to delete the InternetGateway.
-     * @param igId      the InternetGateway to delete.
+     * @param igId the InternetGateway to delete.
      * @throws Exception
      */
     private static void deleteInternetGateway(
@@ -639,16 +630,15 @@ public class InvokeFunctionExample {
     // === OCI Route Table Helpers ===
 
     /**
-     * Configure the default RouteTable of the specified InternetGateway to ensure it
-     * contains a single outbound route for all traffic.
+     * Configure the default RouteTable of the specified InternetGateway to ensure it contains a
+     * single outbound route for all traffic.
      *
-     * NB: You should restrict these routes further if you keep this piece of
-     *     OCI infrastructure.
+     * <p>NB: You should restrict these routes further if you keep this piece of OCI infrastructure.
      *
-     * @param vcnClient      the service client to use to query a RouteTable.
-     * @param compartmentId  of the RouteTable.
-     * @param vcnId          of the RouteTable's associated VCN.
-     * @param igId           of the RouteTable's associated InternetGateway.
+     * @param vcnClient the service client to use to query a RouteTable.
+     * @param compartmentId of the RouteTable.
+     * @param vcnId of the RouteTable's associated VCN.
+     * @param igId of the RouteTable's associated InternetGateway.
      * @param drtDisplayName of the RouteTable.
      * @return the InternetGateway.
      * @throws Exception
@@ -688,12 +678,11 @@ public class InvokeFunctionExample {
     }
 
     /**
-     * Gets RouteTable info of a single uniquely named RouteTable in the
-     * specified compartment.
+     * Gets RouteTable info of a single uniquely named RouteTable in the specified compartment.
      *
-     * @param vcnClient     the service client to use to query a RouteTable.
+     * @param vcnClient the service client to use to query a RouteTable.
      * @param compartmentId of the RouteTable.
-     * @param vcnId         of the RouteTable's associated VCN.
+     * @param vcnId of the RouteTable's associated VCN.
      * @param rtDisplayName of the RouteTable.
      * @return the InternetGateway.
      * @throws Exception
@@ -731,7 +720,7 @@ public class InvokeFunctionExample {
      * Prepares a DefaultRouteTable for deletion by deleting all RouteRules.
      *
      * @param vcnClient the service client to use to delete the RouteTable.
-     * @param rtId      the RouteTable to delete.
+     * @param rtId the RouteTable to delete.
      * @throws Exception
      */
     private static void prepareDefaultRouteTableForDelete(
@@ -922,7 +911,8 @@ public class InvokeFunctionExample {
     }
 
     /**
-     * Gets the Application info of a single uniquely named Application in the specified compartment.
+     * Gets the Application info of a single uniquely named Application in the specified
+     * compartment.
      *
      * @param fnManagementClient the service client to use to get the Application information.
      * @param compartmentId of the application.
@@ -991,8 +981,10 @@ public class InvokeFunctionExample {
      * @param applicationId the OCID of the Application which owns the Function.
      * @param displayName the display name of created Function.
      * @param image an accessible OCI Registry image implementing the function to be executed.
-     * @param memoryInMBs the maximum amount of memory available (128, 256, 512, 1024) to the function in MB.
-     * @param timeoutInSeconds the maximum amount of time a function can execute (30 - 120) in seconds.
+     * @param memoryInMBs the maximum amount of memory available (128, 256, 512, 1024) to the
+     *     function in MB.
+     * @param timeoutInSeconds the maximum amount of time a function can execute (30 - 120) in
+     *     seconds.
      * @return the created Function.
      * @throws Exception
      */

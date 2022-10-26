@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * AbstractParserTestResultLogLine
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * AbstractParserTestResultLogLine <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AbstractParserTestResultLogLine.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AbstractParserTestResultLogLine.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AbstractParserTestResultLogLine
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"originalLogLine", "preProcessedLogLine"})
     public AbstractParserTestResultLogLine(String originalLogLine, String preProcessedLogLine) {
@@ -31,33 +31,31 @@ public final class AbstractParserTestResultLogLine
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The original log line.
-         **/
+        /** The original log line. */
         @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
         private String originalLogLine;
 
         /**
          * The original log line.
+         *
          * @param originalLogLine the value to set
          * @return this builder
-         **/
+         */
         public Builder originalLogLine(String originalLogLine) {
             this.originalLogLine = originalLogLine;
             this.__explicitlySet__.add("originalLogLine");
             return this;
         }
-        /**
-         * The pre-processed log line.
-         **/
+        /** The pre-processed log line. */
         @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
         private String preProcessedLogLine;
 
         /**
          * The pre-processed log line.
+         *
          * @param preProcessedLogLine the value to set
          * @return this builder
-         **/
+         */
         public Builder preProcessedLogLine(String preProcessedLogLine) {
             this.preProcessedLogLine = preProcessedLogLine;
             this.__explicitlySet__.add("preProcessedLogLine");
@@ -89,9 +87,7 @@ public final class AbstractParserTestResultLogLine
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,30 +96,28 @@ public final class AbstractParserTestResultLogLine
         return new Builder().copy(this);
     }
 
-    /**
-     * The original log line.
-     **/
+    /** The original log line. */
     @com.fasterxml.jackson.annotation.JsonProperty("originalLogLine")
     private final String originalLogLine;
 
     /**
      * The original log line.
+     *
      * @return the value
-     **/
+     */
     public String getOriginalLogLine() {
         return originalLogLine;
     }
 
-    /**
-     * The pre-processed log line.
-     **/
+    /** The pre-processed log line. */
     @com.fasterxml.jackson.annotation.JsonProperty("preProcessedLogLine")
     private final String preProcessedLogLine;
 
     /**
      * The pre-processed log line.
+     *
      * @return the value
-     **/
+     */
     public String getPreProcessedLogLine() {
         return preProcessedLogLine;
     }
@@ -135,6 +129,7 @@ public final class AbstractParserTestResultLogLine
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

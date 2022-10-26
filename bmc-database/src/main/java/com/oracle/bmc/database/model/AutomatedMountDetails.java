@@ -5,55 +5,52 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Used for creating NFS Auto Mount backup destinations for autonomous on ExaCC.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Used for creating NFS Auto Mount backup destinations for autonomous on ExaCC. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutomatedMountDetails.Builder.class
-)
+        builder = AutomatedMountDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "mountType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "mountType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AutomatedMountDetails extends MountTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * IP addresses for NFS Auto mount.
-         **/
+        /** IP addresses for NFS Auto mount. */
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
         private java.util.List<String> nfsServer;
 
         /**
          * IP addresses for NFS Auto mount.
+         *
          * @param nfsServer the value to set
          * @return this builder
-         **/
+         */
         public Builder nfsServer(java.util.List<String> nfsServer) {
             this.nfsServer = nfsServer;
             this.__explicitlySet__.add("nfsServer");
             return this;
         }
-        /**
-         * Specifies the directory on which to mount the file system
-         **/
+        /** Specifies the directory on which to mount the file system */
         @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
         private String nfsServerExport;
 
         /**
          * Specifies the directory on which to mount the file system
+         *
          * @param nfsServerExport the value to set
          * @return this builder
-         **/
+         */
         public Builder nfsServerExport(String nfsServerExport) {
             this.nfsServerExport = nfsServerExport;
             this.__explicitlySet__.add("nfsServerExport");
@@ -84,9 +81,7 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,30 +97,28 @@ public final class AutomatedMountDetails extends MountTypeDetails {
         this.nfsServerExport = nfsServerExport;
     }
 
-    /**
-     * IP addresses for NFS Auto mount.
-     **/
+    /** IP addresses for NFS Auto mount. */
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServer")
     private final java.util.List<String> nfsServer;
 
     /**
      * IP addresses for NFS Auto mount.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNfsServer() {
         return nfsServer;
     }
 
-    /**
-     * Specifies the directory on which to mount the file system
-     **/
+    /** Specifies the directory on which to mount the file system */
     @com.fasterxml.jackson.annotation.JsonProperty("nfsServerExport")
     private final String nfsServerExport;
 
     /**
      * Specifies the directory on which to mount the file system
+     *
      * @return the value
-     **/
+     */
     public String getNfsServerExport() {
         return nfsServerExport;
     }
@@ -137,6 +130,7 @@ public final class AutomatedMountDetails extends MountTypeDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

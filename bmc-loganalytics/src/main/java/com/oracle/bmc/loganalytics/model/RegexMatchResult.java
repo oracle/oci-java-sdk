@@ -5,19 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * RegexMatchResult
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * RegexMatchResult <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RegexMatchResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RegexMatchResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RegexMatchResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "matchedLogEntryEndIndex",
@@ -42,81 +44,76 @@ public final class RegexMatchResult extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The matched log entry end index.
-         **/
+        /** The matched log entry end index. */
         @com.fasterxml.jackson.annotation.JsonProperty("matchedLogEntryEndIndex")
         private Integer matchedLogEntryEndIndex;
 
         /**
          * The matched log entry end index.
+         *
          * @param matchedLogEntryEndIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder matchedLogEntryEndIndex(Integer matchedLogEntryEndIndex) {
             this.matchedLogEntryEndIndex = matchedLogEntryEndIndex;
             this.__explicitlySet__.add("matchedLogEntryEndIndex");
             return this;
         }
-        /**
-         * The regular expression score.
-         **/
+        /** The regular expression score. */
         @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
         private Integer regexScore;
 
         /**
          * The regular expression score.
+         *
          * @param regexScore the value to set
          * @return this builder
-         **/
+         */
         public Builder regexScore(Integer regexScore) {
             this.regexScore = regexScore;
             this.__explicitlySet__.add("regexScore");
             return this;
         }
-        /**
-         * The regular expression steps information.
-         **/
+        /** The regular expression steps information. */
         @com.fasterxml.jackson.annotation.JsonProperty("regexStepsInfo")
         private java.util.List<StepInfo> regexStepsInfo;
 
         /**
          * The regular expression steps information.
+         *
          * @param regexStepsInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder regexStepsInfo(java.util.List<StepInfo> regexStepsInfo) {
             this.regexStepsInfo = regexStepsInfo;
             this.__explicitlySet__.add("regexStepsInfo");
             return this;
         }
-        /**
-         * The regular expression step count.
-         **/
+        /** The regular expression step count. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
         private Integer stepCount;
 
         /**
          * The regular expression step count.
+         *
          * @param stepCount the value to set
          * @return this builder
-         **/
+         */
         public Builder stepCount(Integer stepCount) {
             this.stepCount = stepCount;
             this.__explicitlySet__.add("stepCount");
             return this;
         }
-        /**
-         * The regular expression match information.
-         **/
+        /** The regular expression match information. */
         @com.fasterxml.jackson.annotation.JsonProperty("subRegexesMatchInfo")
         private java.util.Map<String, MatchInfo> subRegexesMatchInfo;
 
         /**
          * The regular expression match information.
+         *
          * @param subRegexesMatchInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder subRegexesMatchInfo(java.util.Map<String, MatchInfo> subRegexesMatchInfo) {
             this.subRegexesMatchInfo = subRegexesMatchInfo;
             this.__explicitlySet__.add("subRegexesMatchInfo");
@@ -161,9 +158,7 @@ public final class RegexMatchResult extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +167,67 @@ public final class RegexMatchResult extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The matched log entry end index.
-     **/
+    /** The matched log entry end index. */
     @com.fasterxml.jackson.annotation.JsonProperty("matchedLogEntryEndIndex")
     private final Integer matchedLogEntryEndIndex;
 
     /**
      * The matched log entry end index.
+     *
      * @return the value
-     **/
+     */
     public Integer getMatchedLogEntryEndIndex() {
         return matchedLogEntryEndIndex;
     }
 
-    /**
-     * The regular expression score.
-     **/
+    /** The regular expression score. */
     @com.fasterxml.jackson.annotation.JsonProperty("regexScore")
     private final Integer regexScore;
 
     /**
      * The regular expression score.
+     *
      * @return the value
-     **/
+     */
     public Integer getRegexScore() {
         return regexScore;
     }
 
-    /**
-     * The regular expression steps information.
-     **/
+    /** The regular expression steps information. */
     @com.fasterxml.jackson.annotation.JsonProperty("regexStepsInfo")
     private final java.util.List<StepInfo> regexStepsInfo;
 
     /**
      * The regular expression steps information.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<StepInfo> getRegexStepsInfo() {
         return regexStepsInfo;
     }
 
-    /**
-     * The regular expression step count.
-     **/
+    /** The regular expression step count. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepCount")
     private final Integer stepCount;
 
     /**
      * The regular expression step count.
+     *
      * @return the value
-     **/
+     */
     public Integer getStepCount() {
         return stepCount;
     }
 
-    /**
-     * The regular expression match information.
-     **/
+    /** The regular expression match information. */
     @com.fasterxml.jackson.annotation.JsonProperty("subRegexesMatchInfo")
     private final java.util.Map<String, MatchInfo> subRegexesMatchInfo;
 
     /**
      * The regular expression match information.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, MatchInfo> getSubRegexesMatchInfo() {
         return subRegexesMatchInfo;
     }
@@ -249,6 +239,7 @@ public final class RegexMatchResult extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

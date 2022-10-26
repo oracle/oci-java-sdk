@@ -26,7 +26,6 @@
         <fileSet>
             <directory>${project.build.directory}/apidocs</directory>
             <outputDirectory>apidocs</outputDirectory>
-            <fileMode>0644</fileMode>
         </fileSet>
         <!-- Include the sources and javadoc jars for developers -->
         <fileSet>

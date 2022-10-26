@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in custom property create operations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties used in custom property create operations. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateCustomPropertyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateCustomPropertyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateCustomPropertyDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -70,228 +70,219 @@ public final class CreateCustomPropertyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
+         * entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
+         * entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Detailed description of the custom property.
-         **/
+        /** Detailed description of the custom property. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the custom property.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The data type of the custom property
-         **/
+        /** The data type of the custom property */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private CustomPropertyDataType dataType;
 
         /**
          * The data type of the custom property
+         *
          * @param dataType the value to set
          * @return this builder
-         **/
+         */
         public Builder dataType(CustomPropertyDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /**
-         * If this field allows to sort from UI
-         **/
+        /** If this field allows to sort from UI */
         @com.fasterxml.jackson.annotation.JsonProperty("isSortable")
         private Boolean isSortable;
 
         /**
          * If this field allows to sort from UI
+         *
          * @param isSortable the value to set
          * @return this builder
-         **/
+         */
         public Builder isSortable(Boolean isSortable) {
             this.isSortable = isSortable;
             this.__explicitlySet__.add("isSortable");
             return this;
         }
-        /**
-         * If this field allows to filter or create facets from UI
-         **/
+        /** If this field allows to filter or create facets from UI */
         @com.fasterxml.jackson.annotation.JsonProperty("isFilterable")
         private Boolean isFilterable;
 
         /**
          * If this field allows to filter or create facets from UI
+         *
          * @param isFilterable the value to set
          * @return this builder
-         **/
+         */
         public Builder isFilterable(Boolean isFilterable) {
             this.isFilterable = isFilterable;
             this.__explicitlySet__.add("isFilterable");
             return this;
         }
-        /**
-         * If this field allows multiple values to be set
-         **/
+        /** If this field allows multiple values to be set */
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
         /**
          * If this field allows multiple values to be set
+         *
          * @param isMultiValued the value to set
          * @return this builder
-         **/
+         */
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-        /**
-         * If this field is a hidden field
-         **/
+        /** If this field is a hidden field */
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
          * If this field is a hidden field
+         *
          * @param isHidden the value to set
          * @return this builder
-         **/
+         */
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /**
-         * If this field is a editable field
-         **/
+        /** If this field is a editable field */
         @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
         private Boolean isEditable;
 
         /**
          * If this field is a editable field
+         *
          * @param isEditable the value to set
          * @return this builder
-         **/
+         */
         public Builder isEditable(Boolean isEditable) {
             this.isEditable = isEditable;
             this.__explicitlySet__.add("isEditable");
             return this;
         }
-        /**
-         * If this field is displayed in a list view of applicable objects.
-         **/
+        /** If this field is displayed in a list view of applicable objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
         private Boolean isShownInList;
 
         /**
          * If this field is displayed in a list view of applicable objects.
+         *
          * @param isShownInList the value to set
          * @return this builder
-         **/
+         */
         public Builder isShownInList(Boolean isShownInList) {
             this.isShownInList = isShownInList;
             this.__explicitlySet__.add("isShownInList");
             return this;
         }
-        /**
-         * If this field is allowed to pop in search results
-         **/
+        /** If this field is allowed to pop in search results */
         @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
         private Boolean isHiddenInSearch;
 
         /**
          * If this field is allowed to pop in search results
+         *
          * @param isHiddenInSearch the value to set
          * @return this builder
-         **/
+         */
         public Builder isHiddenInSearch(Boolean isHiddenInSearch) {
             this.isHiddenInSearch = isHiddenInSearch;
             this.__explicitlySet__.add("isHiddenInSearch");
             return this;
         }
-        /**
-         * If an OCI Event will be emitted when the custom property is modified.
-         **/
+        /** If an OCI Event will be emitted when the custom property is modified. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
         /**
          * If an OCI Event will be emitted when the custom property is modified.
+         *
          * @param isEventEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
             return this;
         }
-        /**
-         * Allowed values for the custom property if any
-         **/
+        /** Allowed values for the custom property if any */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<String> allowedValues;
 
         /**
          * Allowed values for the custom property if any
+         *
          * @param allowedValues the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedValues(java.util.List<String> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
             return this;
         }
         /**
-         * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
-         * definition defines it's set of required and optional properties. The map keys are category names and the
-         * values are maps of property name to property value. Every property is contained inside of a category. Most
-         * data assets have required properties within the "default" category. To determine the set of optional and
-         * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
-         * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
-         * it's properties, can be identified from this collection.
-         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
-         *
-         **/
+         * A map of maps that contains the properties which are specific to the data asset type.
+         * Each data asset type definition defines it's set of required and optional properties. The
+         * map keys are category names and the values are maps of property name to property value.
+         * Every property is contained inside of a category. Most data assets have required
+         * properties within the "default" category. To determine the set of optional and required
+         * properties for a data asset type, a query can be done on '/types?type=dataAsset' that
+         * returns a collection of all data asset types. The appropriate data asset type, which
+         * includes definitions of all of it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521",
+         * "database": "orcl"}}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
         /**
-         * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
-         * definition defines it's set of required and optional properties. The map keys are category names and the
-         * values are maps of property name to property value. Every property is contained inside of a category. Most
-         * data assets have required properties within the "default" category. To determine the set of optional and
-         * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
-         * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
-         * it's properties, can be identified from this collection.
-         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+         * A map of maps that contains the properties which are specific to the data asset type.
+         * Each data asset type definition defines it's set of required and optional properties. The
+         * map keys are category names and the values are maps of property name to property value.
+         * Every property is contained inside of a category. Most data assets have required
+         * properties within the "default" category. To determine the set of optional and required
+         * properties for a data asset type, a query can be done on '/types?type=dataAsset' that
+         * returns a collection of all data asset types. The appropriate data asset type, which
+         * includes definitions of all of it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521",
+         * "database": "orcl"}}}}
          *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -368,9 +359,7 @@ public final class CreateCustomPropertyDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -380,203 +369,192 @@ public final class CreateCustomPropertyDetails
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Detailed description of the custom property.
-     **/
+    /** Detailed description of the custom property. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the custom property.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The data type of the custom property
-     **/
+    /** The data type of the custom property */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final CustomPropertyDataType dataType;
 
     /**
      * The data type of the custom property
+     *
      * @return the value
-     **/
+     */
     public CustomPropertyDataType getDataType() {
         return dataType;
     }
 
-    /**
-     * If this field allows to sort from UI
-     **/
+    /** If this field allows to sort from UI */
     @com.fasterxml.jackson.annotation.JsonProperty("isSortable")
     private final Boolean isSortable;
 
     /**
      * If this field allows to sort from UI
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSortable() {
         return isSortable;
     }
 
-    /**
-     * If this field allows to filter or create facets from UI
-     **/
+    /** If this field allows to filter or create facets from UI */
     @com.fasterxml.jackson.annotation.JsonProperty("isFilterable")
     private final Boolean isFilterable;
 
     /**
      * If this field allows to filter or create facets from UI
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsFilterable() {
         return isFilterable;
     }
 
-    /**
-     * If this field allows multiple values to be set
-     **/
+    /** If this field allows multiple values to be set */
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
     /**
      * If this field allows multiple values to be set
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
 
-    /**
-     * If this field is a hidden field
-     **/
+    /** If this field is a hidden field */
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
      * If this field is a hidden field
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsHidden() {
         return isHidden;
     }
 
-    /**
-     * If this field is a editable field
-     **/
+    /** If this field is a editable field */
     @com.fasterxml.jackson.annotation.JsonProperty("isEditable")
     private final Boolean isEditable;
 
     /**
      * If this field is a editable field
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEditable() {
         return isEditable;
     }
 
-    /**
-     * If this field is displayed in a list view of applicable objects.
-     **/
+    /** If this field is displayed in a list view of applicable objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("isShownInList")
     private final Boolean isShownInList;
 
     /**
      * If this field is displayed in a list view of applicable objects.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsShownInList() {
         return isShownInList;
     }
 
-    /**
-     * If this field is allowed to pop in search results
-     **/
+    /** If this field is allowed to pop in search results */
     @com.fasterxml.jackson.annotation.JsonProperty("isHiddenInSearch")
     private final Boolean isHiddenInSearch;
 
     /**
      * If this field is allowed to pop in search results
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsHiddenInSearch() {
         return isHiddenInSearch;
     }
 
-    /**
-     * If an OCI Event will be emitted when the custom property is modified.
-     **/
+    /** If an OCI Event will be emitted when the custom property is modified. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }
 
-    /**
-     * Allowed values for the custom property if any
-     **/
+    /** Allowed values for the custom property if any */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<String> allowedValues;
 
     /**
      * Allowed values for the custom property if any
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedValues() {
         return allowedValues;
     }
 
     /**
-     * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
-     * definition defines it's set of required and optional properties. The map keys are category names and the
-     * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * data assets have required properties within the "default" category. To determine the set of optional and
-     * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
-     * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
-     * it's properties, can be identified from this collection.
-     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
-     *
-     **/
+     * A map of maps that contains the properties which are specific to the data asset type. Each
+     * data asset type definition defines it's set of required and optional properties. The map keys
+     * are category names and the values are maps of property name to property value. Every property
+     * is contained inside of a category. Most data assets have required properties within the
+     * "default" category. To determine the set of optional and required properties for a data asset
+     * type, a query can be done on '/types?type=dataAsset' that returns a collection of all data
+     * asset types. The appropriate data asset type, which includes definitions of all of it's
+     * properties, can be identified from this collection. Example: {@code {"properties": {
+     * "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
     /**
-     * A map of maps that contains the properties which are specific to the data asset type. Each data asset type
-     * definition defines it's set of required and optional properties. The map keys are category names and the
-     * values are maps of property name to property value. Every property is contained inside of a category. Most
-     * data assets have required properties within the "default" category. To determine the set of optional and
-     * required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a
-     * collection of all data asset types. The appropriate data asset type, which includes definitions of all of
-     * it's properties, can be identified from this collection.
-     * Example: {@code {"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
+     * A map of maps that contains the properties which are specific to the data asset type. Each
+     * data asset type definition defines it's set of required and optional properties. The map keys
+     * are category names and the values are maps of property name to property value. Every property
+     * is contained inside of a category. Most data assets have required properties within the
+     * "default" category. To determine the set of optional and required properties for a data asset
+     * type, a query can be done on '/types?type=dataAsset' that returns a collection of all data
+     * asset types. The appropriate data asset type, which includes definitions of all of it's
+     * properties, can be identified from this collection. Example: {@code {"properties": {
+     * "default": { "host": "host1", "port": "1521", "database": "orcl"}}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }
@@ -588,6 +566,7 @@ public final class CreateCustomPropertyDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

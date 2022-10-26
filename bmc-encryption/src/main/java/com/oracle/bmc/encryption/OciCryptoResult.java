@@ -9,9 +9,7 @@ import java.util.Map;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.oracle.bmc.encryption.internal.EncryptionHeader;
 
-/**
- * OciCryptoResult holds the encryption/decryption output.
- */
+/** OciCryptoResult holds the encryption/decryption output. */
 public class OciCryptoResult {
     private final EncryptionHeader header;
     private final byte[] result;
@@ -22,8 +20,8 @@ public class OciCryptoResult {
     }
 
     /**
-     * Get the encryption context.
-     * It can be used to verify the Additional Authenticated Data.
+     * Get the encryption context. It can be used to verify the Additional Authenticated Data.
+     *
      * @return Map of strings.
      */
     public Map<String, String> getContext() {
@@ -36,6 +34,7 @@ public class OciCryptoResult {
 
     /**
      * Returns the encrypted or decrypted bytes associated with this OciCryptoResult.
+     *
      * @return bytes array
      */
     public byte[] getResult() {

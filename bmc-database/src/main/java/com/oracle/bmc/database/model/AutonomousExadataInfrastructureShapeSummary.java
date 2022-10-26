@@ -5,27 +5,28 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
- * If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to
+ * the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousExadataInfrastructureShapeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AutonomousExadataInfrastructureShapeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousExadataInfrastructureShapeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,97 +54,99 @@ public final class AutonomousExadataInfrastructureShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the shape used for the Autonomous Exadata Infrastructure.
-         **/
+        /** The name of the shape used for the Autonomous Exadata Infrastructure. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the shape used for the Autonomous Exadata Infrastructure.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
-         **/
+         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata
+         * Infrastructure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
         private Integer availableCoreCount;
 
         /**
-         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         * The maximum number of CPU cores that can be enabled on the Autonomous Exadata
+         * Infrastructure.
+         *
          * @param availableCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = availableCoreCount;
             this.__explicitlySet__.add("availableCoreCount");
             return this;
         }
         /**
-         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
-         **/
+         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata
+         * Infrastructure.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
         private Integer minimumCoreCount;
 
         /**
-         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+         * The minimum number of CPU cores that can be enabled on the Autonomous Exadata
+         * Infrastructure.
+         *
          * @param minimumCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = minimumCoreCount;
             this.__explicitlySet__.add("minimumCoreCount");
             return this;
         }
-        /**
-         * The increment in which core count can be increased or decreased.
-         **/
+        /** The increment in which core count can be increased or decreased. */
         @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
         private Integer coreCountIncrement;
 
         /**
          * The increment in which core count can be increased or decreased.
+         *
          * @param coreCountIncrement the value to set
          * @return this builder
-         **/
+         */
         public Builder coreCountIncrement(Integer coreCountIncrement) {
             this.coreCountIncrement = coreCountIncrement;
             this.__explicitlySet__.add("coreCountIncrement");
             return this;
         }
-        /**
-         * The minimum number of nodes available for the shape.
-         **/
+        /** The minimum number of nodes available for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
         private Integer minimumNodeCount;
 
         /**
          * The minimum number of nodes available for the shape.
+         *
          * @param minimumNodeCount the value to set
          * @return this builder
-         **/
+         */
         public Builder minimumNodeCount(Integer minimumNodeCount) {
             this.minimumNodeCount = minimumNodeCount;
             this.__explicitlySet__.add("minimumNodeCount");
             return this;
         }
-        /**
-         * The maximum number of nodes available for the shape.
-         **/
+        /** The maximum number of nodes available for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
         private Integer maximumNodeCount;
 
         /**
          * The maximum number of nodes available for the shape.
+         *
          * @param maximumNodeCount the value to set
          * @return this builder
-         **/
+         */
         public Builder maximumNodeCount(Integer maximumNodeCount) {
             this.maximumNodeCount = maximumNodeCount;
             this.__explicitlySet__.add("maximumNodeCount");
@@ -192,9 +195,7 @@ public final class AutonomousExadataInfrastructureShapeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,86 +204,84 @@ public final class AutonomousExadataInfrastructureShapeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the shape used for the Autonomous Exadata Infrastructure.
-     **/
+    /** The name of the shape used for the Autonomous Exadata Infrastructure. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the shape used for the Autonomous Exadata Infrastructure.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     private final Integer availableCoreCount;
 
     /**
      * The maximum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getAvailableCoreCount() {
         return availableCoreCount;
     }
 
     /**
      * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
     private final Integer minimumCoreCount;
 
     /**
      * The minimum number of CPU cores that can be enabled on the Autonomous Exadata Infrastructure.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinimumCoreCount() {
         return minimumCoreCount;
     }
 
-    /**
-     * The increment in which core count can be increased or decreased.
-     **/
+    /** The increment in which core count can be increased or decreased. */
     @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
     private final Integer coreCountIncrement;
 
     /**
      * The increment in which core count can be increased or decreased.
+     *
      * @return the value
-     **/
+     */
     public Integer getCoreCountIncrement() {
         return coreCountIncrement;
     }
 
-    /**
-     * The minimum number of nodes available for the shape.
-     **/
+    /** The minimum number of nodes available for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
     private final Integer minimumNodeCount;
 
     /**
      * The minimum number of nodes available for the shape.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinimumNodeCount() {
         return minimumNodeCount;
     }
 
-    /**
-     * The maximum number of nodes available for the shape.
-     **/
+    /** The maximum number of nodes available for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
     private final Integer maximumNodeCount;
 
     /**
      * The maximum number of nodes available for the shape.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaximumNodeCount() {
         return maximumNodeCount;
     }
@@ -294,6 +293,7 @@ public final class AutonomousExadataInfrastructureShapeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

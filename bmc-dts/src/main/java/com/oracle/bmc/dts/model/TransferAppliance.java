@@ -5,21 +5,22 @@
 package com.oracle.bmc.dts.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TransferAppliance.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TransferAppliance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = TransferAppliance.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TransferAppliance
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "label",
@@ -91,15 +92,16 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
     public static class Builder {
         /**
          * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
+         *
          * @param label the value to set
          * @return this builder
-         **/
+         */
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
@@ -241,49 +243,46 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("returnShippingLabelUri");
             return this;
         }
-        /**
-         * Expected return date from customer for the device, time portion should be zero.
-         **/
+        /** Expected return date from customer for the device, time portion should be zero. */
         @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
         private java.util.Date expectedReturnDate;
 
         /**
          * Expected return date from customer for the device, time portion should be zero.
+         *
          * @param expectedReturnDate the value to set
          * @return this builder
-         **/
+         */
         public Builder expectedReturnDate(java.util.Date expectedReturnDate) {
             this.expectedReturnDate = expectedReturnDate;
             this.__explicitlySet__.add("expectedReturnDate");
             return this;
         }
-        /**
-         * Start time for the window to pickup the device from customer.
-         **/
+        /** Start time for the window to pickup the device from customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
         private java.util.Date pickupWindowStartTime;
 
         /**
          * Start time for the window to pickup the device from customer.
+         *
          * @param pickupWindowStartTime the value to set
          * @return this builder
-         **/
+         */
         public Builder pickupWindowStartTime(java.util.Date pickupWindowStartTime) {
             this.pickupWindowStartTime = pickupWindowStartTime;
             this.__explicitlySet__.add("pickupWindowStartTime");
             return this;
         }
-        /**
-         * End time for the window to pickup the device from customer.
-         **/
+        /** End time for the window to pickup the device from customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
         private java.util.Date pickupWindowEndTime;
 
         /**
          * End time for the window to pickup the device from customer.
+         *
          * @param pickupWindowEndTime the value to set
          * @return this builder
-         **/
+         */
         public Builder pickupWindowEndTime(java.util.Date pickupWindowEndTime) {
             this.pickupWindowEndTime = pickupWindowEndTime;
             this.__explicitlySet__.add("pickupWindowEndTime");
@@ -291,15 +290,16 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
         private Integer minimumStorageCapacityInTerabytes;
 
         /**
          * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+         *
          * @param minimumStorageCapacityInTerabytes the value to set
          * @return this builder
-         **/
+         */
         public Builder minimumStorageCapacityInTerabytes(
                 Integer minimumStorageCapacityInTerabytes) {
             this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
@@ -407,9 +407,7 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -418,23 +416,21 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
-     **/
+    /** Unique alpha-numeric identifier for a transfer appliance auto generated during create. */
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Unique alpha-numeric identifier for a transfer appliance auto generated during create.
+     *
      * @return the value
-     **/
+     */
     public String getLabel() {
         return label;
     }
 
-    /**
-     **/
-    public enum LifecycleState {
+    /** */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Requested("REQUESTED"),
         OraclePreparing("ORACLE_PREPARING"),
         Shipping("SHIPPING"),
@@ -460,8 +456,8 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -606,58 +602,54 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
         return returnShippingLabelUri;
     }
 
-    /**
-     * Expected return date from customer for the device, time portion should be zero.
-     **/
+    /** Expected return date from customer for the device, time portion should be zero. */
     @com.fasterxml.jackson.annotation.JsonProperty("expectedReturnDate")
     private final java.util.Date expectedReturnDate;
 
     /**
      * Expected return date from customer for the device, time portion should be zero.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getExpectedReturnDate() {
         return expectedReturnDate;
     }
 
-    /**
-     * Start time for the window to pickup the device from customer.
-     **/
+    /** Start time for the window to pickup the device from customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowStartTime")
     private final java.util.Date pickupWindowStartTime;
 
     /**
      * Start time for the window to pickup the device from customer.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getPickupWindowStartTime() {
         return pickupWindowStartTime;
     }
 
-    /**
-     * End time for the window to pickup the device from customer.
-     **/
+    /** End time for the window to pickup the device from customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("pickupWindowEndTime")
     private final java.util.Date pickupWindowEndTime;
 
     /**
      * End time for the window to pickup the device from customer.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getPickupWindowEndTime() {
         return pickupWindowEndTime;
     }
 
-    /**
-     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
-     **/
+    /** Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150. */
     @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
     private final Integer minimumStorageCapacityInTerabytes;
 
     /**
      * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinimumStorageCapacityInTerabytes() {
         return minimumStorageCapacityInTerabytes;
     }
@@ -669,6 +661,7 @@ public final class TransferAppliance extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Provides a list of the differences in a comparison of the security assessment with the baseline value.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Provides a list of the differences in a comparison of the security assessment with the baseline
+ * value. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SecurityAssessmentComparison.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SecurityAssessmentComparison.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SecurityAssessmentComparison
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,80 +47,83 @@ public final class SecurityAssessmentComparison
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the security assessment that is being compared with a baseline security assessment.
-         **/
+         * The OCID of the security assessment that is being compared with a baseline security
+         * assessment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the security assessment that is being compared with a baseline security assessment.
+         * The OCID of the security assessment that is being compared with a baseline security
+         * assessment.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the security assessment that is set as a baseline.
-         **/
+        /** The OCID of the security assessment that is set as a baseline. */
         @com.fasterxml.jackson.annotation.JsonProperty("baselineId")
         private String baselineId;
 
         /**
          * The OCID of the security assessment that is set as a baseline.
+         *
          * @param baselineId the value to set
          * @return this builder
-         **/
+         */
         public Builder baselineId(String baselineId) {
             this.baselineId = baselineId;
             this.__explicitlySet__.add("baselineId");
             return this;
         }
-        /**
-         * The current state of the security assessment comparison.
-         **/
+        /** The current state of the security assessment comparison. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the security assessment comparison.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         **/
+         * The date and time when the security assessment comparison was created. Conforms to the
+         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time when the security assessment comparison was created. Conforms to the
+         * format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * A target-based comparison between two security assessments.
-         **/
+        /** A target-based comparison between two security assessments. */
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<SecurityAssessmentComparisonPerTarget> targets;
 
         /**
          * A target-based comparison between two security assessments.
+         *
          * @param targets the value to set
          * @return this builder
-         **/
+         */
         public Builder targets(java.util.List<SecurityAssessmentComparisonPerTarget> targets) {
             this.targets = targets;
             this.__explicitlySet__.add("targets");
@@ -165,9 +168,7 @@ public final class SecurityAssessmentComparison
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,44 +178,44 @@ public final class SecurityAssessmentComparison
     }
 
     /**
-     * The OCID of the security assessment that is being compared with a baseline security assessment.
-     **/
+     * The OCID of the security assessment that is being compared with a baseline security
+     * assessment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the security assessment that is being compared with a baseline security assessment.
+     * The OCID of the security assessment that is being compared with a baseline security
+     * assessment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the security assessment that is set as a baseline.
-     **/
+    /** The OCID of the security assessment that is set as a baseline. */
     @com.fasterxml.jackson.annotation.JsonProperty("baselineId")
     private final String baselineId;
 
     /**
      * The OCID of the security assessment that is set as a baseline.
+     *
      * @return the value
-     **/
+     */
     public String getBaselineId() {
         return baselineId;
     }
 
-    /**
-     * The current state of the security assessment comparison.
-     **/
-    public enum LifecycleState {
+    /** The current state of the security assessment comparison. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -253,44 +254,45 @@ public final class SecurityAssessmentComparison
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the security assessment comparison.
-     **/
+    /** The current state of the security assessment comparison. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the security assessment comparison.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     **/
+     * The date and time when the security assessment comparison was created. Conforms to the format
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the security assessment comparison was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the security assessment comparison was created. Conforms to the format
+     * defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * A target-based comparison between two security assessments.
-     **/
+    /** A target-based comparison between two security assessments. */
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<SecurityAssessmentComparisonPerTarget> targets;
 
     /**
      * A target-based comparison between two security assessments.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SecurityAssessmentComparisonPerTarget> getTargets() {
         return targets;
     }
@@ -302,6 +304,7 @@ public final class SecurityAssessmentComparison
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

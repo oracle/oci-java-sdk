@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary of Detector recipe
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of Detector recipe <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DetectorRecipeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DetectorRecipeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DetectorRecipeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,217 +75,204 @@ public final class DetectorRecipeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Ocid for detector recipe
-         **/
+        /** Ocid for detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Ocid for detector recipe
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * DisplayName of detector recipe
-         **/
+        /** DisplayName of detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * DisplayName of detector recipe
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Detector recipe description
-         **/
+        /** Detector recipe description */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detector recipe description
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * compartmentId of detector recipe
-         **/
+        /** compartmentId of detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * compartmentId of detector recipe
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Recipe Ocid of the Source Recipe to be cloned
-         **/
+        /** Recipe Ocid of the Source Recipe to be cloned */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
         private String sourceDetectorRecipeId;
 
         /**
          * Recipe Ocid of the Source Recipe to be cloned
+         *
          * @param sourceDetectorRecipeId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDetectorRecipeId(String sourceDetectorRecipeId) {
             this.sourceDetectorRecipeId = sourceDetectorRecipeId;
             this.__explicitlySet__.add("sourceDetectorRecipeId");
             return this;
         }
-        /**
-         * Owner of detector recipe
-         **/
+        /** Owner of detector recipe */
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private OwnerType owner;
 
         /**
          * Owner of detector recipe
+         *
          * @param owner the value to set
          * @return this builder
-         **/
+         */
         public Builder owner(OwnerType owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /**
-         * Type of detector
-         **/
+        /** Type of detector */
         @com.fasterxml.jackson.annotation.JsonProperty("detector")
         private DetectorEnum detector;
 
         /**
          * Type of detector
+         *
          * @param detector the value to set
          * @return this builder
-         **/
+         */
         public Builder detector(DetectorEnum detector) {
             this.detector = detector;
             this.__explicitlySet__.add("detector");
             return this;
         }
-        /**
-         * List of detetor rules for the detector type
-         **/
+        /** List of detetor rules for the detector type */
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<DetectorRecipeDetectorRule> detectorRules;
 
         /**
          * List of detetor rules for the detector type
+         *
          * @param detectorRules the value to set
          * @return this builder
-         **/
+         */
         public Builder detectorRules(java.util.List<DetectorRecipeDetectorRule> detectorRules) {
             this.detectorRules = detectorRules;
             this.__explicitlySet__.add("detectorRules");
             return this;
         }
-        /**
-         * The date and time the detector recipe was created. Format defined by RFC3339.
-         **/
+        /** The date and time the detector recipe was created. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the detector recipe was created. Format defined by RFC3339.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The date and time the detector recipe was updated. Format defined by RFC3339.
-         **/
+        /** The date and time the detector recipe was updated. Format defined by RFC3339. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the detector recipe was updated. Format defined by RFC3339.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the resource.
-         **/
+        /** The current state of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The number of days for which source data is retained
-         **/
+        /** The number of days for which source data is retained */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
         private Integer sourceDataRetention;
 
         /**
          * The number of days for which source data is retained
+         *
          * @param sourceDataRetention the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDataRetention(Integer sourceDataRetention) {
             this.sourceDataRetention = sourceDataRetention;
             this.__explicitlySet__.add("sourceDataRetention");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         * <p>
-         * Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
-         **/
+         * <p>Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         * <p>
-         * Avoid entering confidential information.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         *
+         * <p>Avoid entering confidential information.
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -294,8 +281,7 @@ public final class DetectorRecipeSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -305,7 +291,7 @@ public final class DetectorRecipeSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -313,26 +299,27 @@ public final class DetectorRecipeSummary
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * System tags can be viewed by users, but can only be created by the system.
-         * <p>
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
          *
-         **/
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * System tags can be viewed by users, but can only be created by the system.
-         * <p>
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
+         * tags can be viewed by users, but can only be created by the system.
+         *
+         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -417,9 +404,7 @@ public final class DetectorRecipeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -428,234 +413,221 @@ public final class DetectorRecipeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Ocid for detector recipe
-     **/
+    /** Ocid for detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Ocid for detector recipe
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * DisplayName of detector recipe
-     **/
+    /** DisplayName of detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * DisplayName of detector recipe
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Detector recipe description
-     **/
+    /** Detector recipe description */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detector recipe description
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * compartmentId of detector recipe
-     **/
+    /** compartmentId of detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * compartmentId of detector recipe
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Recipe Ocid of the Source Recipe to be cloned
-     **/
+    /** Recipe Ocid of the Source Recipe to be cloned */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetectorRecipeId")
     private final String sourceDetectorRecipeId;
 
     /**
      * Recipe Ocid of the Source Recipe to be cloned
+     *
      * @return the value
-     **/
+     */
     public String getSourceDetectorRecipeId() {
         return sourceDetectorRecipeId;
     }
 
-    /**
-     * Owner of detector recipe
-     **/
+    /** Owner of detector recipe */
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final OwnerType owner;
 
     /**
      * Owner of detector recipe
+     *
      * @return the value
-     **/
+     */
     public OwnerType getOwner() {
         return owner;
     }
 
-    /**
-     * Type of detector
-     **/
+    /** Type of detector */
     @com.fasterxml.jackson.annotation.JsonProperty("detector")
     private final DetectorEnum detector;
 
     /**
      * Type of detector
+     *
      * @return the value
-     **/
+     */
     public DetectorEnum getDetector() {
         return detector;
     }
 
-    /**
-     * List of detetor rules for the detector type
-     **/
+    /** List of detetor rules for the detector type */
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<DetectorRecipeDetectorRule> detectorRules;
 
     /**
      * List of detetor rules for the detector type
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DetectorRecipeDetectorRule> getDetectorRules() {
         return detectorRules;
     }
 
-    /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
-     **/
+    /** The date and time the detector recipe was created. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the detector recipe was created. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
-     **/
+    /** The date and time the detector recipe was updated. Format defined by RFC3339. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the detector recipe was updated. Format defined by RFC3339.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the resource.
-     **/
+    /** The current state of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the resource.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The number of days for which source data is retained
-     **/
+    /** The number of days for which source data is retained */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDataRetention")
     private final Integer sourceDataRetention;
 
     /**
      * The number of days for which source data is retained
+     *
      * @return the value
-     **/
+     */
     public Integer getSourceDataRetention() {
         return sourceDataRetention;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     * <p>
-     * Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
-     **/
+     * <p>Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     * <p>
-     * Avoid entering confidential information.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     *
+     * <p>Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * System tags can be viewed by users, but can only be created by the system.
-     * <p>
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
      *
-     **/
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * System tags can be viewed by users, but can only be created by the system.
-     * <p>
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
+     * can be viewed by users, but can only be created by the system.
+     *
+     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -667,6 +639,7 @@ public final class DetectorRecipeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

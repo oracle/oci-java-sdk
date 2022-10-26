@@ -5,30 +5,29 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Mapped secret used on the firewall policy rules.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Mapped secret used on the firewall policy rules. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source",
-    defaultImpl = MappedSecret.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "source",
+        defaultImpl = MappedSecret.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = VaultMappedSecret.class,
-        name = "OCI_VAULT"
-    )
+            value = VaultMappedSecret.class,
+            name = "OCI_VAULT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class MappedSecret extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class MappedSecret extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type"})
     protected MappedSecret(Type type) {
@@ -38,18 +37,17 @@ public class MappedSecret extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Type of the secrets mapped based on the policy.
-     * <p>
-     * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
-     *  * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      *
-     **/
-    public enum Type {
+     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
+     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
+     */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         SslInboundInspection("SSL_INBOUND_INSPECTION"),
         SslForwardProxy("SSL_FORWARD_PROXY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -88,22 +86,21 @@ public class MappedSecret extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     };
     /**
      * Type of the secrets mapped based on the policy.
-     * <p>
-     * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
-     *  * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      *
-     **/
+     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
+     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the secrets mapped based on the policy.
-     * <p>
-     * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
-     *  * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
+     *
+     * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
+     * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -115,6 +112,7 @@ public class MappedSecret extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

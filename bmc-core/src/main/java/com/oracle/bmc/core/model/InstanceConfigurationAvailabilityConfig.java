@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Options for defining the availabiity of a VM instance after a maintenance event that impacts the
+ * underlying hardware. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceConfigurationAvailabilityConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstanceConfigurationAvailabilityConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfigurationAvailabilityConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"recoveryAction"})
     public InstanceConfigurationAvailabilityConfig(RecoveryAction recoveryAction) {
@@ -32,24 +32,25 @@ public final class InstanceConfigurationAvailabilityConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-         *
-         **/
+         * The lifecycle state for an instance when it is recovered after infrastructure
+         * maintenance. * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state
+         * it was in before the maintenance event. If the instance was running, it is automatically
+         * rebooted. This is the default action when a value is not set. * {@code STOP_INSTANCE} -
+         * The instance is recovered in the stopped state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
         private RecoveryAction recoveryAction;
 
         /**
-         * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-         * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-         * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-         * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+         * The lifecycle state for an instance when it is recovered after infrastructure
+         * maintenance. * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state
+         * it was in before the maintenance event. If the instance was running, it is automatically
+         * rebooted. This is the default action when a value is not set. * {@code STOP_INSTANCE} -
+         * The instance is recovered in the stopped state.
          *
          * @param recoveryAction the value to set
          * @return this builder
-         **/
+         */
         public Builder recoveryAction(RecoveryAction recoveryAction) {
             this.recoveryAction = recoveryAction;
             this.__explicitlySet__.add("recoveryAction");
@@ -77,9 +78,7 @@ public final class InstanceConfigurationAvailabilityConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -89,19 +88,19 @@ public final class InstanceConfigurationAvailabilityConfig
     }
 
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-     *
-     **/
-    public enum RecoveryAction {
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
+     */
+    public enum RecoveryAction implements com.oracle.bmc.http.internal.BmcEnum {
         RestoreInstance("RESTORE_INSTANCE"),
         StopInstance("STOP_INSTANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -141,23 +140,24 @@ public final class InstanceConfigurationAvailabilityConfig
         }
     };
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
-     *
-     **/
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryAction")
     private final RecoveryAction recoveryAction;
 
     /**
-     * The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-     * * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before the maintenance event.
-     * If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-     * * {@code STOP_INSTANCE} - The instance is recovered in the stopped state.
+     * The lifecycle state for an instance when it is recovered after infrastructure maintenance. *
+     * {@code RESTORE_INSTANCE} - The instance is restored to the lifecycle state it was in before
+     * the maintenance event. If the instance was running, it is automatically rebooted. This is the
+     * default action when a value is not set. * {@code STOP_INSTANCE} - The instance is recovered
+     * in the stopped state.
      *
      * @return the value
-     **/
+     */
     public RecoveryAction getRecoveryAction() {
         return recoveryAction;
     }
@@ -169,6 +169,7 @@ public final class InstanceConfigurationAvailabilityConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

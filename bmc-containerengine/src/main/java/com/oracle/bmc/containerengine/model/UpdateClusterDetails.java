@@ -5,21 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define a request to update a cluster.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The properties that define a request to update a cluster. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateClusterDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -47,33 +48,31 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The new name for the cluster. Avoid entering confidential information.
-         **/
+        /** The new name for the cluster. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The new name for the cluster. Avoid entering confidential information.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The version of Kubernetes to which the cluster masters should be upgraded.
-         **/
+        /** The version of Kubernetes to which the cluster masters should be upgraded. */
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
         private String kubernetesVersion;
 
         /**
          * The version of Kubernetes to which the cluster masters should be upgraded.
+         *
          * @param kubernetesVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             this.__explicitlySet__.add("kubernetesVersion");
@@ -89,44 +88,46 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -134,22 +135,21 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The image verification policy for signature validation. Once a policy is created and enabled with
-         * one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
-         * attached to the policy.
-         *
-         **/
+         * The image verification policy for signature validation. Once a policy is created and
+         * enabled with one or more kms keys, the policy will ensure all images deployed has been
+         * signed with the key(s) attached to the policy.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
         private UpdateImagePolicyConfigDetails imagePolicyConfig;
 
         /**
-         * The image verification policy for signature validation. Once a policy is created and enabled with
-         * one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
-         * attached to the policy.
+         * The image verification policy for signature validation. Once a policy is created and
+         * enabled with one or more kms keys, the policy will ensure all images deployed has been
+         * signed with the key(s) attached to the policy.
          *
          * @param imagePolicyConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder imagePolicyConfig(UpdateImagePolicyConfigDetails imagePolicyConfig) {
             this.imagePolicyConfig = imagePolicyConfig;
             this.__explicitlySet__.add("imagePolicyConfig");
@@ -198,9 +198,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -209,30 +207,28 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The new name for the cluster. Avoid entering confidential information.
-     **/
+    /** The new name for the cluster. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The new name for the cluster. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of Kubernetes to which the cluster masters should be upgraded.
-     **/
+    /** The version of Kubernetes to which the cluster masters should be upgraded. */
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     private final String kubernetesVersion;
 
     /**
      * The version of Kubernetes to which the cluster masters should be upgraded.
+     *
      * @return the value
-     **/
+     */
     public String getKubernetesVersion() {
         return kubernetesVersion;
     }
@@ -245,61 +241,62 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The image verification policy for signature validation. Once a policy is created and enabled with
-     * one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
-     * attached to the policy.
-     *
-     **/
+     * The image verification policy for signature validation. Once a policy is created and enabled
+     * with one or more kms keys, the policy will ensure all images deployed has been signed with
+     * the key(s) attached to the policy.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("imagePolicyConfig")
     private final UpdateImagePolicyConfigDetails imagePolicyConfig;
 
     /**
-     * The image verification policy for signature validation. Once a policy is created and enabled with
-     * one or more kms keys, the policy will ensure all images deployed has been signed with the key(s)
-     * attached to the policy.
+     * The image verification policy for signature validation. Once a policy is created and enabled
+     * with one or more kms keys, the policy will ensure all images deployed has been signed with
+     * the key(s) attached to the policy.
      *
      * @return the value
-     **/
+     */
     public UpdateImagePolicyConfigDetails getImagePolicyConfig() {
         return imagePolicyConfig;
     }
@@ -311,6 +308,7 @@ public final class UpdateClusterDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * An object for creating an image publication package.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An object for creating an image publication package. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateImagePublicationPackage.Builder.class
-)
+        builder = CreateImagePublicationPackage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "packageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "packageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateImagePublicationPackage extends CreatePublicationPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -53,17 +52,16 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
             this.__explicitlySet__.add("eula");
             return this;
         }
-        /**
-         * The unique identifier for the base image of the publication.
-         **/
+        /** The unique identifier for the base image of the publication. */
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The unique identifier for the base image of the publication.
+         *
          * @param imageId the value to set
          * @return this builder
-         **/
+         */
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
@@ -101,9 +99,7 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,16 +118,15 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
         this.imageId = imageId;
     }
 
-    /**
-     * The unique identifier for the base image of the publication.
-     **/
+    /** The unique identifier for the base image of the publication. */
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The unique identifier for the base image of the publication.
+     *
      * @return the value
-     **/
+     */
     public String getImageId() {
         return imageId;
     }
@@ -143,6 +138,7 @@ public final class CreateImagePublicationPackage extends CreatePublicationPackag
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

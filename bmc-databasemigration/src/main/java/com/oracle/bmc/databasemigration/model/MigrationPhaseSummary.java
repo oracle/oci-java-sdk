@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration Phase Summary of details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Migration Phase Summary of details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MigrationPhaseSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MigrationPhaseSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MigrationPhaseSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "recommendedAction", "supportedActions"})
     public MigrationPhaseSummary(
@@ -36,10 +35,7 @@ public final class MigrationPhaseSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * ODMS Job phase name
-         *
-         **/
+        /** ODMS Job phase name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private OdmsJobPhases name;
 
@@ -48,43 +44,45 @@ public final class MigrationPhaseSummary
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(OdmsJobPhases name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
-         *
-         **/
+         * Action recommended for this phase. If not included in the response, there is no
+         * recommended action for the phase.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedAction")
         private OdmsPhaseActions recommendedAction;
 
         /**
-         * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
+         * Action recommended for this phase. If not included in the response, there is no
+         * recommended action for the phase.
          *
          * @param recommendedAction the value to set
          * @return this builder
-         **/
+         */
         public Builder recommendedAction(OdmsPhaseActions recommendedAction) {
             this.recommendedAction = recommendedAction;
             this.__explicitlySet__.add("recommendedAction");
             return this;
         }
         /**
-         * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
-         *
-         **/
+         * Array of actions for the corresponding phase. Empty array would indicate there is no
+         * supported action for the phase.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("supportedActions")
         private java.util.List<OdmsPhaseActions> supportedActions;
 
         /**
-         * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
+         * Array of actions for the corresponding phase. Empty array would indicate there is no
+         * supported action for the phase.
          *
          * @param supportedActions the value to set
          * @return this builder
-         **/
+         */
         public Builder supportedActions(java.util.List<OdmsPhaseActions> supportedActions) {
             this.supportedActions = supportedActions;
             this.__explicitlySet__.add("supportedActions");
@@ -119,9 +117,7 @@ public final class MigrationPhaseSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,10 +126,7 @@ public final class MigrationPhaseSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * ODMS Job phase name
-     *
-     **/
+    /** ODMS Job phase name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final OdmsJobPhases name;
 
@@ -141,39 +134,41 @@ public final class MigrationPhaseSummary
      * ODMS Job phase name
      *
      * @return the value
-     **/
+     */
     public OdmsJobPhases getName() {
         return name;
     }
 
     /**
-     * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
-     *
-     **/
+     * Action recommended for this phase. If not included in the response, there is no recommended
+     * action for the phase.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedAction")
     private final OdmsPhaseActions recommendedAction;
 
     /**
-     * Action recommended for this phase. If not included in the response, there is no recommended action for the phase.
+     * Action recommended for this phase. If not included in the response, there is no recommended
+     * action for the phase.
      *
      * @return the value
-     **/
+     */
     public OdmsPhaseActions getRecommendedAction() {
         return recommendedAction;
     }
 
     /**
-     * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
-     *
-     **/
+     * Array of actions for the corresponding phase. Empty array would indicate there is no
+     * supported action for the phase.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("supportedActions")
     private final java.util.List<OdmsPhaseActions> supportedActions;
 
     /**
-     * Array of actions for the corresponding phase. Empty array would indicate there is no supported action for the phase.
+     * Array of actions for the corresponding phase. Empty array would indicate there is no
+     * supported action for the phase.
      *
      * @return the value
-     **/
+     */
     public java.util.List<OdmsPhaseActions> getSupportedActions() {
         return supportedActions;
     }
@@ -185,6 +180,7 @@ public final class MigrationPhaseSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

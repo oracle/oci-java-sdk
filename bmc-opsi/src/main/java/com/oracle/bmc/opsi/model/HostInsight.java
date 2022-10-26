@@ -5,38 +5,35 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Host insight resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Host insight resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource",
-    defaultImpl = HostInsight.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource",
+        defaultImpl = HostInsight.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MacsManagedCloudHostInsight.class,
-        name = "MACS_MANAGED_CLOUD_HOST"
-    ),
+            value = MacsManagedCloudHostInsight.class,
+            name = "MACS_MANAGED_CLOUD_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EmManagedExternalHostInsight.class,
-        name = "EM_MANAGED_EXTERNAL_HOST"
-    ),
+            value = EmManagedExternalHostInsight.class,
+            name = "EM_MANAGED_EXTERNAL_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MacsManagedExternalHostInsight.class,
-        name = "MACS_MANAGED_EXTERNAL_HOST"
-    )
+            value = MacsManagedExternalHostInsight.class,
+            name = "MACS_MANAGED_EXTERNAL_HOST")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class HostInsight extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -87,209 +84,219 @@ public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the host insight resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the host insight resource.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
-     **/
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     * The host name. The host name is unique amongst the hosts managed by the same management
+     * agent.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
-    /**
-     * The user-friendly name for the host. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the host. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostDisplayName")
     private final String hostDisplayName;
 
     /**
      * The user-friendly name for the host. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getHostDisplayName() {
         return hostDisplayName;
     }
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
-     **/
+     * Operations Insights internal representation of the host type. Possible value is
+     * EXTERNAL-HOST.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Operations Insights internal representation of the host type. Possible value is
+     * EXTERNAL-HOST.
+     *
      * @return the value
-     **/
+     */
     public String getHostType() {
         return hostType;
     }
 
     /**
-     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-     **/
+     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other
+     * database types.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("processorCount")
     private final Integer processorCount;
 
     /**
-     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other
+     * database types.
+     *
      * @return the value
-     **/
+     */
     public Integer getProcessorCount() {
         return processorCount;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /**
-     * Indicates the status of a host insight in Operations Insights
-     **/
+    /** Indicates the status of a host insight in Operations Insights */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
      * Indicates the status of a host insight in Operations Insights
+     *
      * @return the value
-     **/
+     */
     public ResourceStatus getStatus() {
         return status;
     }
 
-    /**
-     * The time the the host insight was first enabled. An RFC3339 formatted datetime string
-     **/
+    /** The time the the host insight was first enabled. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the host insight was first enabled. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the host insight was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the host insight was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the host insight was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the host.
-     **/
+    /** The current state of the host. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the host.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -301,6 +308,7 @@ public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

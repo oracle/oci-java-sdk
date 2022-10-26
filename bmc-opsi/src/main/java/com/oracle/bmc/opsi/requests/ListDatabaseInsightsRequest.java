@@ -6,82 +6,72 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseInsightsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseInsightsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListDatabaseInsightsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDatabaseInsightsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListDatabaseInsightsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Unique Enterprise Manager bridge identifier
-     */
+    /** Unique Enterprise Manager bridge identifier */
     private String enterpriseManagerBridgeId;
 
-    /**
-     * Unique Enterprise Manager bridge identifier
-     */
+    /** Unique Enterprise Manager bridge identifier */
     public String getEnterpriseManagerBridgeId() {
         return enterpriseManagerBridgeId;
     }
     /**
-     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of database insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private java.util.List<String> id;
 
     /**
-     * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Optional list of database insight resource
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public java.util.List<String> getId() {
         return id;
     }
-    /**
-     * Resource Status
-     */
+    /** Resource Status */
     private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
 
-    /**
-     * Resource Status
-     */
+    /** Resource Status */
     public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
         return status;
     }
-    /**
-     * Lifecycle states
-     */
+    /** Lifecycle states */
     private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState;
 
-    /**
-     * Lifecycle states
-     */
+    /** Lifecycle states */
     public java.util.List<com.oracle.bmc.opsi.model.LifecycleState> getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-     *
+     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
+     * EXTERNAL-PDB, EXTERNAL-NONCDB.
      */
     private java.util.List<DatabaseType> databaseType;
 
     /**
-     * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-     *
-     **/
-    public enum DatabaseType {
+     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
+     * EXTERNAL-PDB, EXTERNAL-NONCDB.
+     */
+    public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
         AdwS("ADW-S"),
         AtpS("ATP-S"),
         AdwD("ADW-D"),
@@ -128,37 +118,38 @@ public class ListDatabaseInsightsRequest
     };
 
     /**
-     * Filter by one or more database type.
-     * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-     *
+     * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
+     * EXTERNAL-PDB, EXTERNAL-NONCDB.
      */
     public java.util.List<DatabaseType> getDatabaseType() {
         return databaseType;
     }
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-     *
+     * Optional list of database
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * associated DBaaS entity.
      */
     private java.util.List<String> databaseId;
 
     /**
-     * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-     *
+     * Optional list of database
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * associated DBaaS entity.
      */
     public java.util.List<String> getDatabaseId() {
         return databaseId;
     }
     /**
-     * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-     *
+     * Specifies the fields to return in a database summary response. By default all fields are
+     * returned if omitted.
      */
     private java.util.List<Fields> fields;
 
     /**
-     * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-     *
-     **/
-    public enum Fields {
+     * Specifies the fields to return in a database summary response. By default all fields are
+     * returned if omitted.
+     */
+    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
         CompartmentId("compartmentId"),
         DatabaseName("databaseName"),
         DatabaseDisplayName("databaseDisplayName"),
@@ -198,74 +189,62 @@ public class ListDatabaseInsightsRequest
     };
 
     /**
-     * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-     *
+     * Specifies the fields to return in a database summary response. By default all fields are
+     * returned if omitted.
      */
     public java.util.List<Fields> getFields() {
         return fields;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to
-     * return in a paginated "List" call.
-     * For important details about how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     * Example: {@code 50}
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine). Example:
+     * {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from
-     * the previous "List" call. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
-     *
+     * Database insight list sort options. If {@code fields} parameter is selected, the {@code
+     * sortBy} parameter must be one of the fields specified.
      */
     private SortBy sortBy;
 
     /**
-     * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
-     *
-     **/
-    public enum SortBy {
+     * Database insight list sort options. If {@code fields} parameter is selected, the {@code
+     * sortBy} parameter must be one of the fields specified.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DatabaseName("databaseName"),
         DatabaseDisplayName("databaseDisplayName"),
         DatabaseType("databaseType"),
@@ -300,60 +279,48 @@ public class ListDatabaseInsightsRequest
     };
 
     /**
-     * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
-     *
+     * Database insight list sort options. If {@code fields} parameter is selected, the {@code
+     * sortBy} parameter must be one of the fields specified.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-     *
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * exadata insight resource.
      */
     private String exadataInsightId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-     *
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * exadata insight resource.
      */
     public String getExadataInsightId() {
         return exadataInsightId;
     }
-    /**
-     * A flag to search all resources within a given compartment and all sub-compartments.
-     *
-     */
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
     private Boolean compartmentIdInSubtree;
 
-    /**
-     * A flag to search all resources within a given compartment and all sub-compartments.
-     *
-     */
+    /** A flag to search all resources within a given compartment and all sub-compartments. */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /**
-     * Unique Operations Insights PrivateEndpoint identifier
-     */
+    /** Unique Operations Insights PrivateEndpoint identifier */
     private String opsiPrivateEndpointId;
 
-    /**
-     * Unique Operations Insights PrivateEndpoint identifier
-     */
+    /** Unique Operations Insights PrivateEndpoint identifier */
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -362,17 +329,19 @@ public class ListDatabaseInsightsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDatabaseInsightsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -381,13 +350,12 @@ public class ListDatabaseInsightsRequest
             return this;
         }
 
-        /**
-         * Unique Enterprise Manager bridge identifier
-         */
+        /** Unique Enterprise Manager bridge identifier */
         private String enterpriseManagerBridgeId = null;
 
         /**
          * Unique Enterprise Manager bridge identifier
+         *
          * @param enterpriseManagerBridgeId the value to set
          * @return this builder instance
          */
@@ -397,13 +365,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Optional list of database insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private java.util.List<String> id = null;
 
         /**
-         * Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of database insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -414,7 +383,8 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Singular setter. Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of database insight resource
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -423,13 +393,12 @@ public class ListDatabaseInsightsRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Resource Status
-         */
+        /** Resource Status */
         private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
 
         /**
          * Resource Status
+         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -440,6 +409,7 @@ public class ListDatabaseInsightsRequest
 
         /**
          * Singular setter. Resource Status
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -447,13 +417,12 @@ public class ListDatabaseInsightsRequest
             return this.status(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * Lifecycle states
-         */
+        /** Lifecycle states */
         private java.util.List<com.oracle.bmc.opsi.model.LifecycleState> lifecycleState = null;
 
         /**
          * Lifecycle states
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -465,6 +434,7 @@ public class ListDatabaseInsightsRequest
 
         /**
          * Singular setter. Lifecycle states
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -473,15 +443,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Filter by one or more database type.
-         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
-         *
+         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
+         * EXTERNAL-PDB, EXTERNAL-NONCDB.
          */
         private java.util.List<DatabaseType> databaseType = null;
 
         /**
-         * Filter by one or more database type.
-         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D,
+         * EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param databaseType the value to set
          * @return this builder instance
@@ -492,8 +461,8 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Singular setter. Filter by one or more database type.
-         * Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
+         * Singular setter. Filter by one or more database type. Possible values are ADW-S, ATP-S,
+         * ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -503,13 +472,16 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
-         *
+         * Optional list of database
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the associated DBaaS entity.
          */
         private java.util.List<String> databaseId = null;
 
         /**
-         * Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         * Optional list of database
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the associated DBaaS entity.
          *
          * @param databaseId the value to set
          * @return this builder instance
@@ -520,7 +492,9 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Singular setter. Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         * Singular setter. Optional list of database
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * the associated DBaaS entity.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -530,13 +504,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
-         *
+         * Specifies the fields to return in a database summary response. By default all fields are
+         * returned if omitted.
          */
         private java.util.List<Fields> fields = null;
 
         /**
-         * Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
+         * Specifies the fields to return in a database summary response. By default all fields are
+         * returned if omitted.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -547,7 +522,8 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Singular setter. Specifies the fields to return in a database summary response. By default all fields are returned if omitted.
+         * Singular setter. Specifies the fields to return in a database summary response. By
+         * default all fields are returned if omitted.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -557,20 +533,17 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
-         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to
-         * return in a paginated "List" call.
-         * For important details about how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -582,17 +555,16 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from
-         * the previous "List" call. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -602,10 +574,7 @@ public class ListDatabaseInsightsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -620,13 +589,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
-         *
+         * Database insight list sort options. If {@code fields} parameter is selected, the {@code
+         * sortBy} parameter must be one of the fields specified.
          */
         private SortBy sortBy = null;
 
         /**
-         * Database insight list sort options. If {@code fields} parameter is selected, the {@code sortBy} parameter must be one of the fields specified.
+         * Database insight list sort options. If {@code fields} parameter is selected, the {@code
+         * sortBy} parameter must be one of the fields specified.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -637,13 +607,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-         *
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * exadata insight resource.
          */
         private String exadataInsightId = null;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+         * exadata insight resource.
          *
          * @param exadataInsightId the value to set
          * @return this builder instance
@@ -653,10 +624,7 @@ public class ListDatabaseInsightsRequest
             return this;
         }
 
-        /**
-         * A flag to search all resources within a given compartment and all sub-compartments.
-         *
-         */
+        /** A flag to search all resources within a given compartment and all sub-compartments. */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -670,13 +638,12 @@ public class ListDatabaseInsightsRequest
             return this;
         }
 
-        /**
-         * Unique Operations Insights PrivateEndpoint identifier
-         */
+        /** Unique Operations Insights PrivateEndpoint identifier */
         private String opsiPrivateEndpointId = null;
 
         /**
          * Unique Operations Insights PrivateEndpoint identifier
+         *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -686,15 +653,14 @@ public class ListDatabaseInsightsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -706,18 +672,19 @@ public class ListDatabaseInsightsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -729,6 +696,7 @@ public class ListDatabaseInsightsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDatabaseInsightsRequest o) {
@@ -756,10 +724,11 @@ public class ListDatabaseInsightsRequest
         /**
          * Build the instance of ListDatabaseInsightsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDatabaseInsightsRequest
          */
@@ -773,7 +742,8 @@ public class ListDatabaseInsightsRequest
         /**
          * Build the instance of ListDatabaseInsightsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDatabaseInsightsRequest
@@ -797,12 +767,15 @@ public class ListDatabaseInsightsRequest
             request.opsiPrivateEndpointId = opsiPrivateEndpointId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDatabaseInsightsRequest(compartmentId, enterpriseManagerBridgeId, id, status, lifecycleState, databaseType, databaseId, fields, limit, page, sortOrder, sortBy, exadataInsightId, compartmentIdInSubtree, opsiPrivateEndpointId, opcRequestId);
+            // new ListDatabaseInsightsRequest(compartmentId, enterpriseManagerBridgeId, id, status,
+            // lifecycleState, databaseType, databaseId, fields, limit, page, sortOrder, sortBy,
+            // exadataInsightId, compartmentIdInSubtree, opsiPrivateEndpointId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -827,6 +800,7 @@ public class ListDatabaseInsightsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

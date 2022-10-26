@@ -28,12 +28,12 @@ public class ObjectStorageUpdateBucketKmsKeyExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The first argument is the OCID of the compartment where we'll create a bucket</li>
-     *   <li>The second is the name of the bucket to create</li>
-     *   <li>The third is the kmsKey OCID used to create the bucket</li>
-     *   <li>The forth is the kmsKey OCID used to update the bucket kmsKeyId</li>
-     * </ul>
+     *     <ul>
+     *       <li>The first argument is the OCID of the compartment where we'll create a bucket
+     *       <li>The second is the name of the bucket to create
+     *       <li>The third is the kmsKey OCID used to create the bucket
+     *       <li>The forth is the kmsKey OCID used to update the bucket kmsKeyId
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -45,8 +45,10 @@ public class ObjectStorageUpdateBucketKmsKeyExample {
         final String kmsKeyOcid = args[2];
         final String kmsKeyUpdateOcid = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -116,7 +118,8 @@ public class ObjectStorageUpdateBucketKmsKeyExample {
                         .namespace(namespace)
                         .name(bucketName)
                         .kmsKeyId(
-                                "") // "" means remove the current kmsKeyId of the bucket if it has one
+                                "") // "" means remove the current kmsKeyId of the bucket if it has
+                        // one
                         .build();
         updateResponse =
                 objectStorageClient.updateBucket(

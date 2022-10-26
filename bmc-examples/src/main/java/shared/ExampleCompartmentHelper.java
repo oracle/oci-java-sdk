@@ -14,13 +14,13 @@ import com.oracle.bmc.identity.requests.ListCompartmentsRequest;
 import com.oracle.bmc.identity.IdentityPaginators;
 
 /**
- * This class provides several utility functions for basic interactions with the compartments service. These functions
- * may be referenced by multiple examples in order to keep example files focused on the behavior being showcased.
+ * This class provides several utility functions for basic interactions with the compartments
+ * service. These functions may be referenced by multiple examples in order to keep example files
+ * focused on the behavior being showcased.
  */
 public class ExampleCompartmentHelper {
 
     /**
-     *
      * @param client
      * @param compartmentId
      * @param name
@@ -51,7 +51,6 @@ public class ExampleCompartmentHelper {
     }
 
     /**
-     *
      * @param client
      * @param tenantId
      * @param compartmentName

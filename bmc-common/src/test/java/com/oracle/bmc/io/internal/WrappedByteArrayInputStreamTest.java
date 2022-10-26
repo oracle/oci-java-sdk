@@ -48,7 +48,6 @@ public class WrappedByteArrayInputStreamTest {
 
     @Test
     public void testDuplicateStreamWithOffsetLength() throws IOException {
-
         byte[] buffer = new byte[20];
         buffer[2] = 'a';
         buffer[6] = 'b';

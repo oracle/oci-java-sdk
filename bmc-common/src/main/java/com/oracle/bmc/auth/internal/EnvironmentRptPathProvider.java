@@ -13,10 +13,11 @@ import java.util.Map;
 /**
  * This path provider reads the path and resource id from environment variables
  *
- * Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH environment variable for the path and
+ * <p>Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH environment variable for the path and
  * OCI_RESOURCE_PRINCIPAL_RPT_ID environment variable for the resource id,.
  *
- * This path provider is used when the caller provides EnvironmentRptPathProvider as a path provider to the resource principals signer
+ * <p>This path provider is used when the caller provides EnvironmentRptPathProvider as a path
+ * provider to the resource principals signer
  */
 public class EnvironmentRptPathProvider extends AbstractTemplateRptPathProvider {
 

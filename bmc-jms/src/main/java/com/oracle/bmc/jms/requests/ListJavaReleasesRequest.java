@@ -6,120 +6,86 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaReleasesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJavaReleasesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJavaReleasesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJavaReleasesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique Java release version identifier
-     */
+    /** Unique Java release version identifier */
     private String releaseVersion;
 
-    /**
-     * Unique Java release version identifier
-     */
+    /** Unique Java release version identifier */
     public String getReleaseVersion() {
         return releaseVersion;
     }
-    /**
-     * The version identifier for the Java family.
-     */
+    /** The version identifier for the Java family. */
     private String familyVersion;
 
-    /**
-     * The version identifier for the Java family.
-     */
+    /** The version identifier for the Java family. */
     public String getFamilyVersion() {
         return familyVersion;
     }
-    /**
-     * Java release type.
-     */
+    /** Java release type. */
     private com.oracle.bmc.jms.model.ReleaseType releaseType;
 
-    /**
-     * Java release type.
-     */
+    /** Java release type. */
     public com.oracle.bmc.jms.model.ReleaseType getReleaseType() {
         return releaseType;
     }
-    /**
-     * The security status of the Java Runtime.
-     */
+    /** The security status of the Java Runtime. */
     private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus;
 
-    /**
-     * The security status of the Java Runtime.
-     */
+    /** The security status of the Java Runtime. */
     public com.oracle.bmc.jms.model.JreSecurityStatus getJreSecurityStatus() {
         return jreSecurityStatus;
     }
-    /**
-     * Java license type.
-     */
+    /** Java license type. */
     private com.oracle.bmc.jms.model.LicenseType licenseType;
 
-    /**
-     * Java license type.
-     */
+    /** Java license type. */
     public com.oracle.bmc.jms.model.LicenseType getLicenseType() {
         return licenseType;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * If no value is specified _releaseDate_ is default.
-     *
-     */
+    /** If no value is specified _releaseDate_ is default. */
     private com.oracle.bmc.jms.model.JavaReleaseSortBy sortBy;
 
-    /**
-     * If no value is specified _releaseDate_ is default.
-     *
-     */
+    /** If no value is specified _releaseDate_ is default. */
     public com.oracle.bmc.jms.model.JavaReleaseSortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -127,17 +93,15 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListJavaReleasesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique Java release version identifier
-         */
+        /** Unique Java release version identifier */
         private String releaseVersion = null;
 
         /**
          * Unique Java release version identifier
+         *
          * @param releaseVersion the value to set
          * @return this builder instance
          */
@@ -146,13 +110,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The version identifier for the Java family.
-         */
+        /** The version identifier for the Java family. */
         private String familyVersion = null;
 
         /**
          * The version identifier for the Java family.
+         *
          * @param familyVersion the value to set
          * @return this builder instance
          */
@@ -161,13 +124,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Java release type.
-         */
+        /** Java release type. */
         private com.oracle.bmc.jms.model.ReleaseType releaseType = null;
 
         /**
          * Java release type.
+         *
          * @param releaseType the value to set
          * @return this builder instance
          */
@@ -176,13 +138,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The security status of the Java Runtime.
-         */
+        /** The security status of the Java Runtime. */
         private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus = null;
 
         /**
          * The security status of the Java Runtime.
+         *
          * @param jreSecurityStatus the value to set
          * @return this builder instance
          */
@@ -192,13 +153,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Java license type.
-         */
+        /** Java license type. */
         private com.oracle.bmc.jms.model.LicenseType licenseType = null;
 
         /**
          * Java license type.
+         *
          * @param licenseType the value to set
          * @return this builder instance
          */
@@ -207,13 +167,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -223,12 +182,15 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -237,13 +199,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The sort order, either 'asc' or 'desc'.
-         */
+        /** The sort order, either 'asc' or 'desc'. */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -252,10 +213,7 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * If no value is specified _releaseDate_ is default.
-         *
-         */
+        /** If no value is specified _releaseDate_ is default. */
         private com.oracle.bmc.jms.model.JavaReleaseSortBy sortBy = null;
 
         /**
@@ -269,13 +227,12 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -286,18 +243,19 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -309,6 +267,7 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListJavaReleasesRequest o) {
@@ -330,10 +289,11 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListJavaReleasesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListJavaReleasesRequest
          */
@@ -347,7 +307,8 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListJavaReleasesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJavaReleasesRequest
@@ -365,12 +326,14 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJavaReleasesRequest(releaseVersion, familyVersion, releaseType, jreSecurityStatus, licenseType, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListJavaReleasesRequest(releaseVersion, familyVersion, releaseType,
+            // jreSecurityStatus, licenseType, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -389,6 +352,7 @@ public class ListJavaReleasesRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

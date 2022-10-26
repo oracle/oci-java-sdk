@@ -6,80 +6,58 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetDataEntityExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDataEntityRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/GetDataEntityExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDataEntityRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     private String registryId;
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     public String getRegistryId() {
         return registryId;
     }
-    /**
-     * The connection key.
-     */
+    /** The connection key. */
     private String connectionKey;
 
-    /**
-     * The connection key.
-     */
+    /** The connection key. */
     public String getConnectionKey() {
         return connectionKey;
     }
-    /**
-     * The schema resource name used for retrieving schemas.
-     */
+    /** The schema resource name used for retrieving schemas. */
     private String schemaResourceName;
 
-    /**
-     * The schema resource name used for retrieving schemas.
-     */
+    /** The schema resource name used for retrieving schemas. */
     public String getSchemaResourceName() {
         return schemaResourceName;
     }
-    /**
-     * The key of the data entity.
-     */
+    /** The key of the data entity. */
     private String dataEntityKey;
 
-    /**
-     * The key of the data entity.
-     */
+    /** The key of the data entity. */
     public String getDataEntityKey() {
         return dataEntityKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * Endpoint ID used for getDataAssetFullDetails.
-     */
+    /** Endpoint ID used for getDataAssetFullDetails. */
     private String endpointId;
 
-    /**
-     * Endpoint ID used for getDataAssetFullDetails.
-     */
+    /** Endpoint ID used for getDataAssetFullDetails. */
     public String getEndpointId() {
         return endpointId;
     }
@@ -87,17 +65,15 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDataEntityRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The registry OCID.
-         */
+        /** The registry OCID. */
         private String registryId = null;
 
         /**
          * The registry OCID.
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -106,13 +82,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The connection key.
-         */
+        /** The connection key. */
         private String connectionKey = null;
 
         /**
          * The connection key.
+         *
          * @param connectionKey the value to set
          * @return this builder instance
          */
@@ -121,13 +96,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The schema resource name used for retrieving schemas.
-         */
+        /** The schema resource name used for retrieving schemas. */
         private String schemaResourceName = null;
 
         /**
          * The schema resource name used for retrieving schemas.
+         *
          * @param schemaResourceName the value to set
          * @return this builder instance
          */
@@ -136,13 +110,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The key of the data entity.
-         */
+        /** The key of the data entity. */
         private String dataEntityKey = null;
 
         /**
          * The key of the data entity.
+         *
          * @param dataEntityKey the value to set
          * @return this builder instance
          */
@@ -152,17 +125,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -172,13 +142,12 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * Endpoint ID used for getDataAssetFullDetails.
-         */
+        /** Endpoint ID used for getDataAssetFullDetails. */
         private String endpointId = null;
 
         /**
          * Endpoint ID used for getDataAssetFullDetails.
+         *
          * @param endpointId the value to set
          * @return this builder instance
          */
@@ -189,18 +158,19 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -212,6 +182,7 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetDataEntityRequest o) {
@@ -229,10 +200,11 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of GetDataEntityRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetDataEntityRequest
          */
@@ -246,7 +218,8 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of GetDataEntityRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDataEntityRequest
@@ -260,12 +233,14 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.opcRequestId = opcRequestId;
             request.endpointId = endpointId;
             return request;
-            // new GetDataEntityRequest(registryId, connectionKey, schemaResourceName, dataEntityKey, opcRequestId, endpointId);
+            // new GetDataEntityRequest(registryId, connectionKey, schemaResourceName,
+            // dataEntityKey, opcRequestId, endpointId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -280,6 +255,7 @@ public class GetDataEntityRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

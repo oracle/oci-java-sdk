@@ -5,21 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Installation site of a Java Runtime.
- * An installation site is a Java Runtime installed at a specific path on a managed instance.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Installation site of a Java Runtime. An installation site is a Java Runtime installed at a
+ * specific path on a managed instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InstallationSite.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstallationSite extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InstallationSite
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "installationKey",
@@ -63,34 +64,38 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
-         **/
+         * The unique identifier for the installation of a Java Runtime at a specific path on a
+         * specific operating system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
         private String installationKey;
 
         /**
-         * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+         * The unique identifier for the installation of a Java Runtime at a specific path on a
+         * specific operating system.
+         *
          * @param installationKey the value to set
          * @return this builder
-         **/
+         */
         public Builder installationKey(String installationKey) {
             this.installationKey = installationKey;
             this.__explicitlySet__.add("installationKey");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * related managed instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * related managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
@@ -105,17 +110,16 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("jre");
             return this;
         }
-        /**
-         * The file system path of the installation.
-         **/
+        /** The file system path of the installation. */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The file system path of the installation.
+         *
          * @param path the value to set
          * @return this builder
-         **/
+         */
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -130,105 +134,99 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-        /**
-         * The approximate count of applications running on this installation
-         **/
+        /** The approximate count of applications running on this installation */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
 
         /**
          * The approximate count of applications running on this installation
+         *
          * @param approximateApplicationCount the value to set
          * @return this builder
-         **/
+         */
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
             this.approximateApplicationCount = approximateApplicationCount;
             this.__explicitlySet__.add("approximateApplicationCount");
             return this;
         }
         /**
-         * The date and time the resource was _last_ reported to JMS.
-         * This is potentially _after_ the specified time period provided by the filters.
-         * For example, a resource can be last reported to JMS before the start of a specified time period,
-         * if it is also reported during the time period.
-         *
-         **/
+         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
+         * the specified time period provided by the filters. For example, a resource can be last
+         * reported to JMS before the start of a specified time period, if it is also reported
+         * during the time period.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
         /**
-         * The date and time the resource was _last_ reported to JMS.
-         * This is potentially _after_ the specified time period provided by the filters.
-         * For example, a resource can be last reported to JMS before the start of a specified time period,
-         * if it is also reported during the time period.
+         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
+         * the specified time period provided by the filters. For example, a resource can be last
+         * reported to JMS before the start of a specified time period, if it is also reported
+         * during the time period.
          *
          * @param timeLastSeen the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
             return this;
         }
-        /**
-         * The list of operations that are blocklisted.
-         **/
+        /** The list of operations that are blocklisted. */
         @com.fasterxml.jackson.annotation.JsonProperty("blocklist")
         private java.util.List<BlocklistEntry> blocklist;
 
         /**
          * The list of operations that are blocklisted.
+         *
          * @param blocklist the value to set
          * @return this builder
-         **/
+         */
         public Builder blocklist(java.util.List<BlocklistEntry> blocklist) {
             this.blocklist = blocklist;
             this.__explicitlySet__.add("blocklist");
             return this;
         }
-        /**
-         * The lifecycle state of the installation site.
-         **/
+        /** The lifecycle state of the installation site. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The lifecycle state of the installation site.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The type of the source of events.
-         **/
+        /** The type of the source of events. */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceType")
         private ManagedInstanceType managedInstanceType;
 
         /**
          * The type of the source of events.
+         *
          * @param managedInstanceType the value to set
          * @return this builder
-         **/
+         */
         public Builder managedInstanceType(ManagedInstanceType managedInstanceType) {
             this.managedInstanceType = managedInstanceType;
             this.__explicitlySet__.add("managedInstanceType");
             return this;
         }
-        /**
-         * The hostname of the managed instance (if applicable).
-         **/
+        /** The hostname of the managed instance (if applicable). */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * The hostname of the managed instance (if applicable).
+         *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -297,9 +295,7 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -309,31 +305,35 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
-     **/
+     * The unique identifier for the installation of a Java Runtime at a specific path on a specific
+     * operating system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("installationKey")
     private final String installationKey;
 
     /**
-     * The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+     * The unique identifier for the installation of a Java Runtime at a specific path on a specific
+     * operating system.
+     *
      * @return the value
-     **/
+     */
     public String getInstallationKey() {
         return installationKey;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the related managed instance.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * related managed instance.
      *
      * @return the value
-     **/
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
@@ -345,16 +345,15 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
         return jre;
     }
 
-    /**
-     * The file system path of the installation.
-     **/
+    /** The file system path of the installation. */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The file system path of the installation.
+     *
      * @return the value
-     **/
+     */
     public String getPath() {
         return path;
     }
@@ -366,94 +365,88 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
         return operatingSystem;
     }
 
-    /**
-     * The approximate count of applications running on this installation
-     **/
+    /** The approximate count of applications running on this installation */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
     private final Integer approximateApplicationCount;
 
     /**
      * The approximate count of applications running on this installation
+     *
      * @return the value
-     **/
+     */
     public Integer getApproximateApplicationCount() {
         return approximateApplicationCount;
     }
 
     /**
-     * The date and time the resource was _last_ reported to JMS.
-     * This is potentially _after_ the specified time period provided by the filters.
-     * For example, a resource can be last reported to JMS before the start of a specified time period,
-     * if it is also reported during the time period.
-     *
-     **/
+     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
+     * specified time period provided by the filters. For example, a resource can be last reported
+     * to JMS before the start of a specified time period, if it is also reported during the time
+     * period.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
     /**
-     * The date and time the resource was _last_ reported to JMS.
-     * This is potentially _after_ the specified time period provided by the filters.
-     * For example, a resource can be last reported to JMS before the start of a specified time period,
-     * if it is also reported during the time period.
+     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
+     * specified time period provided by the filters. For example, a resource can be last reported
+     * to JMS before the start of a specified time period, if it is also reported during the time
+     * period.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
 
-    /**
-     * The list of operations that are blocklisted.
-     **/
+    /** The list of operations that are blocklisted. */
     @com.fasterxml.jackson.annotation.JsonProperty("blocklist")
     private final java.util.List<BlocklistEntry> blocklist;
 
     /**
      * The list of operations that are blocklisted.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BlocklistEntry> getBlocklist() {
         return blocklist;
     }
 
-    /**
-     * The lifecycle state of the installation site.
-     **/
+    /** The lifecycle state of the installation site. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the installation site.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The type of the source of events.
-     **/
+    /** The type of the source of events. */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceType")
     private final ManagedInstanceType managedInstanceType;
 
     /**
      * The type of the source of events.
+     *
      * @return the value
-     **/
+     */
     public ManagedInstanceType getManagedInstanceType() {
         return managedInstanceType;
     }
 
-    /**
-     * The hostname of the managed instance (if applicable).
-     **/
+    /** The hostname of the managed instance (if applicable). */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * The hostname of the managed instance (if applicable).
+     *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
@@ -465,6 +458,7 @@ public final class InstallationSite extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

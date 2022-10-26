@@ -5,19 +5,20 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Cloud Guard configuration details of a tenancy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Cloud Guard configuration details of a tenancy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Configuration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Configuration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Configuration extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reportingRegion", "status", "selfManageResources"})
     public Configuration(
@@ -30,42 +31,37 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The reporting region value
-         **/
+        /** The reporting region value */
         @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
         private String reportingRegion;
 
         /**
          * The reporting region value
+         *
          * @param reportingRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder reportingRegion(String reportingRegion) {
             this.reportingRegion = reportingRegion;
             this.__explicitlySet__.add("reportingRegion");
             return this;
         }
-        /**
-         * Status of Cloud Guard Tenant
-         **/
+        /** Status of Cloud Guard Tenant */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private CloudGuardStatus status;
 
         /**
          * Status of Cloud Guard Tenant
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(CloudGuardStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Identifies if Oracle managed resources were created by customers
-         *
-         **/
+        /** Identifies if Oracle managed resources were created by customers */
         @com.fasterxml.jackson.annotation.JsonProperty("selfManageResources")
         private Boolean selfManageResources;
 
@@ -74,7 +70,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param selfManageResources the value to set
          * @return this builder
-         **/
+         */
         public Builder selfManageResources(Boolean selfManageResources) {
             this.selfManageResources = selfManageResources;
             this.__explicitlySet__.add("selfManageResources");
@@ -108,9 +104,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,38 +113,33 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The reporting region value
-     **/
+    /** The reporting region value */
     @com.fasterxml.jackson.annotation.JsonProperty("reportingRegion")
     private final String reportingRegion;
 
     /**
      * The reporting region value
+     *
      * @return the value
-     **/
+     */
     public String getReportingRegion() {
         return reportingRegion;
     }
 
-    /**
-     * Status of Cloud Guard Tenant
-     **/
+    /** Status of Cloud Guard Tenant */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final CloudGuardStatus status;
 
     /**
      * Status of Cloud Guard Tenant
+     *
      * @return the value
-     **/
+     */
     public CloudGuardStatus getStatus() {
         return status;
     }
 
-    /**
-     * Identifies if Oracle managed resources were created by customers
-     *
-     **/
+    /** Identifies if Oracle managed resources were created by customers */
     @com.fasterxml.jackson.annotation.JsonProperty("selfManageResources")
     private final Boolean selfManageResources;
 
@@ -158,7 +147,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
      * Identifies if Oracle managed resources were created by customers
      *
      * @return the value
-     **/
+     */
     public Boolean getSelfManageResources() {
         return selfManageResources;
     }
@@ -170,6 +159,7 @@ public final class Configuration extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

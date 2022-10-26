@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Cost estimation for storage
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Cost estimation for storage <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StorageCostEstimation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = StorageCostEstimation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class StorageCostEstimation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "volumes",
@@ -39,49 +39,46 @@ public final class StorageCostEstimation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Volume estimation
-         **/
+        /** Volume estimation */
         @com.fasterxml.jackson.annotation.JsonProperty("volumes")
         private java.util.List<VolumeCostEstimation> volumes;
 
         /**
          * Volume estimation
+         *
          * @param volumes the value to set
          * @return this builder
-         **/
+         */
         public Builder volumes(java.util.List<VolumeCostEstimation> volumes) {
             this.volumes = volumes;
             this.__explicitlySet__.add("volumes");
             return this;
         }
-        /**
-         * Gigabyte storage capacity per month.
-         **/
+        /** Gigabyte storage capacity per month. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonth")
         private java.math.BigDecimal totalGbPerMonth;
 
         /**
          * Gigabyte storage capacity per month.
+         *
          * @param totalGbPerMonth the value to set
          * @return this builder
-         **/
+         */
         public Builder totalGbPerMonth(java.math.BigDecimal totalGbPerMonth) {
             this.totalGbPerMonth = totalGbPerMonth;
             this.__explicitlySet__.add("totalGbPerMonth");
             return this;
         }
-        /**
-         * Gigabyte storage capacity per month by subscription.
-         **/
+        /** Gigabyte storage capacity per month by subscription. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonthBySubscription")
         private java.math.BigDecimal totalGbPerMonthBySubscription;
 
         /**
          * Gigabyte storage capacity per month by subscription.
+         *
          * @param totalGbPerMonthBySubscription the value to set
          * @return this builder
-         **/
+         */
         public Builder totalGbPerMonthBySubscription(
                 java.math.BigDecimal totalGbPerMonthBySubscription) {
             this.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
@@ -117,9 +114,7 @@ public final class StorageCostEstimation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,44 +123,41 @@ public final class StorageCostEstimation
         return new Builder().copy(this);
     }
 
-    /**
-     * Volume estimation
-     **/
+    /** Volume estimation */
     @com.fasterxml.jackson.annotation.JsonProperty("volumes")
     private final java.util.List<VolumeCostEstimation> volumes;
 
     /**
      * Volume estimation
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VolumeCostEstimation> getVolumes() {
         return volumes;
     }
 
-    /**
-     * Gigabyte storage capacity per month.
-     **/
+    /** Gigabyte storage capacity per month. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonth")
     private final java.math.BigDecimal totalGbPerMonth;
 
     /**
      * Gigabyte storage capacity per month.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getTotalGbPerMonth() {
         return totalGbPerMonth;
     }
 
-    /**
-     * Gigabyte storage capacity per month by subscription.
-     **/
+    /** Gigabyte storage capacity per month by subscription. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalGbPerMonthBySubscription")
     private final java.math.BigDecimal totalGbPerMonthBySubscription;
 
     /**
      * Gigabyte storage capacity per month by subscription.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getTotalGbPerMonthBySubscription() {
         return totalGbPerMonthBySubscription;
     }
@@ -177,6 +169,7 @@ public final class StorageCostEstimation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,50 +6,52 @@ package com.oracle.bmc.functions.requests;
 
 import com.oracle.bmc.functions.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/InvokeFunctionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use InvokeFunctionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/InvokeFunctionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use InvokeFunctionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * this function.
      */
     private String functionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * this function.
      */
     public String getFunctionId() {
         return functionId;
     }
     /**
-     * The body of the function invocation.
-     * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-     *
+     * The body of the function invocation. Note: The maximum size of the request is limited. This
+     * limit is currently 6MB and the endpoint will not accept requests that are bigger than this
+     * limit.
      */
     private java.io.InputStream invokeFunctionBody;
 
     /**
-     * The body of the function invocation.
-     * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-     *
+     * The body of the function invocation. Note: The maximum size of the request is limited. This
+     * limit is currently 6MB and the endpoint will not accept requests that are bigger than this
+     * limit.
      */
     public java.io.InputStream getInvokeFunctionBody() {
         return invokeFunctionBody;
     }
     /**
-     * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-     *
+     * An optional intent header that indicates to the FDK the way the event should be interpreted.
+     * E.g. 'httprequest', 'cloudevent'.
      */
     private FnIntent fnIntent;
 
     /**
-     * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-     *
-     **/
-    public enum FnIntent {
+     * An optional intent header that indicates to the FDK the way the event should be interpreted.
+     * E.g. 'httprequest', 'cloudevent'.
+     */
+    public enum FnIntent implements com.oracle.bmc.http.internal.BmcEnum {
         Httprequest("httprequest"),
         Cloudevent("cloudevent"),
         ;
@@ -83,25 +85,25 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-     *
+     * An optional intent header that indicates to the FDK the way the event should be interpreted.
+     * E.g. 'httprequest', 'cloudevent'.
      */
     public FnIntent getFnIntent() {
         return fnIntent;
     }
     /**
-     * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
-     * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-     *
+     * Indicates whether Oracle Functions should execute the request and return the result ('sync')
+     * of the execution, or whether Oracle Functions should return as soon as processing has begun
+     * ('detached') and leave result handling to the function.
      */
     private FnInvokeType fnInvokeType;
 
     /**
-     * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
-     * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-     *
-     **/
-    public enum FnInvokeType {
+     * Indicates whether Oracle Functions should execute the request and return the result ('sync')
+     * of the execution, or whether Oracle Functions should return as soon as processing has begun
+     * ('detached') and leave result handling to the function.
+     */
+    public enum FnInvokeType implements com.oracle.bmc.http.internal.BmcEnum {
         Detached("detached"),
         Sync("sync"),
         ;
@@ -135,9 +137,9 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
-     * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-     *
+     * Indicates whether Oracle Functions should execute the request and return the result ('sync')
+     * of the execution, or whether Oracle Functions should return as soon as processing has begun
+     * ('detached') and leave result handling to the function.
      */
     public FnInvokeType getFnInvokeType() {
         return fnInvokeType;
@@ -145,14 +147,12 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -160,6 +160,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -171,18 +172,18 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     InvokeFunctionRequest, java.io.InputStream> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of this function.
          */
         private String functionId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of this function.
          *
          * @param functionId the value to set
          * @return this builder instance
@@ -193,15 +194,16 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The body of the function invocation.
-         * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
-         *
+         * The body of the function invocation. Note: The maximum size of the request is limited.
+         * This limit is currently 6MB and the endpoint will not accept requests that are bigger
+         * than this limit.
          */
         private java.io.InputStream invokeFunctionBody = null;
 
         /**
-         * The body of the function invocation.
-         * Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+         * The body of the function invocation. Note: The maximum size of the request is limited.
+         * This limit is currently 6MB and the endpoint will not accept requests that are bigger
+         * than this limit.
          *
          * @param invokeFunctionBody the value to set
          * @return this builder instance
@@ -212,13 +214,14 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
-         *
+         * An optional intent header that indicates to the FDK the way the event should be
+         * interpreted. E.g. 'httprequest', 'cloudevent'.
          */
         private FnIntent fnIntent = null;
 
         /**
-         * An optional intent header that indicates to the FDK the way the event should be interpreted. E.g. 'httprequest', 'cloudevent'.
+         * An optional intent header that indicates to the FDK the way the event should be
+         * interpreted. E.g. 'httprequest', 'cloudevent'.
          *
          * @param fnIntent the value to set
          * @return this builder instance
@@ -229,15 +232,16 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
-         * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
-         *
+         * Indicates whether Oracle Functions should execute the request and return the result
+         * ('sync') of the execution, or whether Oracle Functions should return as soon as
+         * processing has begun ('detached') and leave result handling to the function.
          */
         private FnInvokeType fnInvokeType = null;
 
         /**
-         * Indicates whether Oracle Functions should execute the request and return the result ('sync') of the execution,
-         * or whether Oracle Functions should return as soon as processing has begun ('detached') and leave result handling to the function.
+         * Indicates whether Oracle Functions should execute the request and return the result
+         * ('sync') of the execution, or whether Oracle Functions should return as soon as
+         * processing has begun ('detached') and leave result handling to the function.
          *
          * @param fnInvokeType the value to set
          * @return this builder instance
@@ -248,15 +252,14 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -268,18 +271,19 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -291,6 +295,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(InvokeFunctionRequest o) {
@@ -307,10 +312,11 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of InvokeFunctionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of InvokeFunctionRequest
          */
@@ -323,6 +329,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -335,7 +342,8 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of InvokeFunctionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of InvokeFunctionRequest
@@ -348,12 +356,14 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.fnInvokeType = fnInvokeType;
             request.opcRequestId = opcRequestId;
             return request;
-            // new InvokeFunctionRequest(functionId, invokeFunctionBody, fnIntent, fnInvokeType, opcRequestId);
+            // new InvokeFunctionRequest(functionId, invokeFunctionBody, fnIntent, fnInvokeType,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -367,6 +377,7 @@ public class InvokeFunctionRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

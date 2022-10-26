@@ -5,22 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Summary of the data masking activity.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the data masking activity. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DataMaskingActivitySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DataMaskingActivitySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DataMaskingActivitySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -42,17 +42,16 @@ public final class DataMaskingActivitySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier that is immutable on creation.
-         **/
+        /** Unique identifier that is immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -60,47 +59,50 @@ public final class DataMaskingActivitySummary
         }
         /**
          * The current state of the data masking activity Scheduled, In progress , Failed, Completed
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DataMaskingActivity.LifecycleState lifecycleState;
 
         /**
          * The current state of the data masking activity Scheduled, In progress , Failed, Completed
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(DataMaskingActivity.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The time the data masking activity started. An RFC3339 formatted datetime string.
-         **/
+        /** The time the data masking activity started. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStart")
         private java.util.Date timeMaskingStart;
 
         /**
          * The time the data masking activity started. An RFC3339 formatted datetime string.
+         *
          * @param timeMaskingStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMaskingStart(java.util.Date timeMaskingStart) {
             this.timeMaskingStart = timeMaskingStart;
             this.__explicitlySet__.add("timeMaskingStart");
             return this;
         }
         /**
-         * The time the data masking activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-         **/
+         * The time the data masking activity actually completed / cancelled / failed. An RFC3339
+         * formatted datetime string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinish")
         private java.util.Date timeMaskingFinish;
 
         /**
-         * The time the data masking activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+         * The time the data masking activity actually completed / cancelled / failed. An RFC3339
+         * formatted datetime string.
+         *
          * @param timeMaskingFinish the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMaskingFinish(java.util.Date timeMaskingFinish) {
             this.timeMaskingFinish = timeMaskingFinish;
             this.__explicitlySet__.add("timeMaskingFinish");
@@ -141,9 +143,7 @@ public final class DataMaskingActivitySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,58 +152,58 @@ public final class DataMaskingActivitySummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier that is immutable on creation.
-     **/
+    /** Unique identifier that is immutable on creation. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The current state of the data masking activity Scheduled, In progress , Failed, Completed
-     **/
+    /** The current state of the data masking activity Scheduled, In progress , Failed, Completed */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DataMaskingActivity.LifecycleState lifecycleState;
 
     /**
      * The current state of the data masking activity Scheduled, In progress , Failed, Completed
+     *
      * @return the value
-     **/
+     */
     public DataMaskingActivity.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The time the data masking activity started. An RFC3339 formatted datetime string.
-     **/
+    /** The time the data masking activity started. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStart")
     private final java.util.Date timeMaskingStart;
 
     /**
      * The time the data masking activity started. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMaskingStart() {
         return timeMaskingStart;
     }
 
     /**
-     * The time the data masking activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
-     **/
+     * The time the data masking activity actually completed / cancelled / failed. An RFC3339
+     * formatted datetime string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinish")
     private final java.util.Date timeMaskingFinish;
 
     /**
-     * The time the data masking activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+     * The time the data masking activity actually completed / cancelled / failed. An RFC3339
+     * formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMaskingFinish() {
         return timeMaskingFinish;
     }
@@ -215,6 +215,7 @@ public final class DataMaskingActivitySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

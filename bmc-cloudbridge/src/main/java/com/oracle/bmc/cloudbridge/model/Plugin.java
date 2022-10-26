@@ -5,19 +5,20 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Description of plugin
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Description of plugin <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Plugin.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Plugin extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -60,173 +61,173 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Plugin identifier, which can be renamed.
-         **/
+        /** Plugin identifier, which can be renamed. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Plugin identifier, which can be renamed.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Agent identifier.
-         **/
+        /** Agent identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * Agent identifier.
+         *
          * @param agentId the value to set
          * @return this builder
-         **/
+         */
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /**
-         * Plugin version.
-         **/
+        /** Plugin version. */
         @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
         private String pluginVersion;
 
         /**
          * Plugin version.
+         *
          * @param pluginVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder pluginVersion(String pluginVersion) {
             this.pluginVersion = pluginVersion;
             this.__explicitlySet__.add("pluginVersion");
             return this;
         }
-        /**
-         * State to which the customer wants the plugin to move to.
-         **/
+        /** State to which the customer wants the plugin to move to. */
         @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
         private DesiredState desiredState;
 
         /**
          * State to which the customer wants the plugin to move to.
+         *
          * @param desiredState the value to set
          * @return this builder
-         **/
+         */
         public Builder desiredState(DesiredState desiredState) {
             this.desiredState = desiredState;
             this.__explicitlySet__.add("desiredState");
             return this;
         }
-        /**
-         * The time when the Agent was created. An RFC3339 formatted datetime string.
-         **/
+        /** The time when the Agent was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time when the Agent was created. An RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time when the Agent was updated. An RFC3339 formatted datetime string.
-         **/
+        /** The time when the Agent was updated. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when the Agent was updated. An RFC3339 formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the plugin.
-         **/
+        /** The current state of the plugin. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the plugin.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, it can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, it can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value
+         * pair with no predefined name, type, or namespace/scope. For more information, see
+         * [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The freeform tags associated with this resource, if any. Each tag is a simple key-value
+         * pair with no predefined name, type, or namespace/scope. For more information, see
+         * [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped
+         * to namespaces. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The defined tags associated with this resource, if any. Each key is predefined and scoped
+         * to namespaces. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -234,22 +235,25 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * The system tags associated with this resource, if any. The system tags are set by Oracle
+         * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+         * information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -318,9 +322,7 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,58 +331,53 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * Plugin identifier, which can be renamed.
-     **/
+    /** Plugin identifier, which can be renamed. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Plugin identifier, which can be renamed.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Agent identifier.
-     **/
+    /** Agent identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * Agent identifier.
+     *
      * @return the value
-     **/
+     */
     public String getAgentId() {
         return agentId;
     }
 
-    /**
-     * Plugin version.
-     **/
+    /** Plugin version. */
     @com.fasterxml.jackson.annotation.JsonProperty("pluginVersion")
     private final String pluginVersion;
 
     /**
      * Plugin version.
+     *
      * @return the value
-     **/
+     */
     public String getPluginVersion() {
         return pluginVersion;
     }
 
-    /**
-     * State to which the customer wants the plugin to move to.
-     **/
-    public enum DesiredState {
+    /** State to which the customer wants the plugin to move to. */
+    public enum DesiredState implements com.oracle.bmc.http.internal.BmcEnum {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -419,52 +416,47 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * State to which the customer wants the plugin to move to.
-     **/
+    /** State to which the customer wants the plugin to move to. */
     @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
     private final DesiredState desiredState;
 
     /**
      * State to which the customer wants the plugin to move to.
+     *
      * @return the value
-     **/
+     */
     public DesiredState getDesiredState() {
         return desiredState;
     }
 
-    /**
-     * The time when the Agent was created. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the Agent was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when the Agent was created. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time when the Agent was updated. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the Agent was updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when the Agent was updated. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the plugin.
-     **/
-    public enum LifecycleState {
+    /** The current state of the plugin. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Updating("UPDATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -472,8 +464,8 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -512,90 +504,97 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the plugin.
-     **/
+    /** The current state of the plugin. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the plugin.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, it can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, it can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
+     * with no predefined name, type, or namespace/scope. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair
+     * with no predefined name, type, or namespace/scope. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to
+     * namespaces. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * The defined tags associated with this resource, if any. Each key is predefined and scoped to
+     * namespaces. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
-     *
-     **/
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
+     * The system tags associated with this resource, if any. The system tags are set by Oracle
+     * cloud infrastructure services. Each key is predefined and scoped to namespaces. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {orcl-cloud: {free-tier-retain: true}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -607,6 +606,7 @@ public final class Plugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,23 +6,22 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * A report that includes the rules, findings, recommendations, and actions discovered during the
- * execution of the Optimizer Statistics Advisor.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * execution of the Optimizer Statistics Advisor. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OptimizerStatisticsAdvisorExecutionReport.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OptimizerStatisticsAdvisorExecutionReport.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OptimizerStatisticsAdvisorExecutionReport
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"summary", "rules"})
     public OptimizerStatisticsAdvisorExecutionReport(
@@ -34,33 +33,31 @@ public final class OptimizerStatisticsAdvisorExecutionReport
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A summary of the Optimizer Statistics Advisor execution.
-         **/
+        /** A summary of the Optimizer Statistics Advisor execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
          * A summary of the Optimizer Statistics Advisor execution.
+         *
          * @param summary the value to set
          * @return this builder
-         **/
+         */
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /**
-         * The list of rules that were not adhered to by the Optimizer Statistics Collection.
-         **/
+        /** The list of rules that were not adhered to by the Optimizer Statistics Collection. */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AdvisorRule> rules;
 
         /**
          * The list of rules that were not adhered to by the Optimizer Statistics Collection.
+         *
          * @param rules the value to set
          * @return this builder
-         **/
+         */
         public Builder rules(java.util.List<AdvisorRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -91,9 +88,7 @@ public final class OptimizerStatisticsAdvisorExecutionReport
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,30 +97,28 @@ public final class OptimizerStatisticsAdvisorExecutionReport
         return new Builder().copy(this);
     }
 
-    /**
-     * A summary of the Optimizer Statistics Advisor execution.
-     **/
+    /** A summary of the Optimizer Statistics Advisor execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * A summary of the Optimizer Statistics Advisor execution.
+     *
      * @return the value
-     **/
+     */
     public String getSummary() {
         return summary;
     }
 
-    /**
-     * The list of rules that were not adhered to by the Optimizer Statistics Collection.
-     **/
+    /** The list of rules that were not adhered to by the Optimizer Statistics Collection. */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AdvisorRule> rules;
 
     /**
      * The list of rules that were not adhered to by the Optimizer Statistics Collection.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AdvisorRule> getRules() {
         return rules;
     }
@@ -137,6 +130,7 @@ public final class OptimizerStatisticsAdvisorExecutionReport
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

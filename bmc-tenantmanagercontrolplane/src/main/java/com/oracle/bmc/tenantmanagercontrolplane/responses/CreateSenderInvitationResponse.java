@@ -9,15 +9,14 @@ import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,13 +25,14 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -40,10 +40,7 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
         return opcWorkRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -55,13 +52,12 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /**
-     * The returned SenderInvitation instance.
-     */
+    /** The returned SenderInvitation instance. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
     /**
      * The returned SenderInvitation instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation getSenderInvitation() {
@@ -78,7 +74,7 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
     })
     private CreateSenderInvitationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcWorkRequestId,
             String etag,
@@ -90,31 +86,34 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
         this.senderInvitation = senderInvitation;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateSenderInvitationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -125,13 +124,14 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -141,10 +141,7 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -158,13 +155,12 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned SenderInvitation instance.
-         */
+        /** The returned SenderInvitation instance. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SenderInvitation senderInvitation;
 
         /**
          * The returned SenderInvitation instance.
+         *
          * @param senderInvitation the value to set
          * @return this builder
          */
@@ -176,8 +172,10 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateSenderInvitationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -191,8 +189,10 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateSenderInvitationResponse build() {
             return new CreateSenderInvitationResponse(
                     __httpStatusCode__,
@@ -206,6 +206,7 @@ public class CreateSenderInvitationResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to use to update a Deployment.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information to use to update a Deployment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateDeploymentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateDeploymentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDeploymentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -67,10 +66,7 @@ public final class UpdateDeploymentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An object's Display Name.
-         *
-         **/
+        /** An object's Display Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -79,16 +75,13 @@ public final class UpdateDeploymentDetails
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The Oracle license model that applies to a Deployment.
-         *
-         **/
+        /** The Oracle license model that applies to a Deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -97,16 +90,13 @@ public final class UpdateDeploymentDetails
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-        /**
-         * Metadata about this specific object.
-         *
-         **/
+        /** Metadata about this specific object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -115,27 +105,26 @@ public final class UpdateDeploymentDetails
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * A simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope.
+         * Exists for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -144,8 +133,7 @@ public final class UpdateDeploymentDetails
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -155,7 +143,7 @@ public final class UpdateDeploymentDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -163,45 +151,46 @@ public final class UpdateDeploymentDetails
             return this;
         }
         /**
-         * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
-         *
-         **/
+         * An array of [Network Security
+         * Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm)
+         * OCIDs used to define network access for a deployment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+         * An array of [Network Security
+         * Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm)
+         * OCIDs used to define network access for a deployment.
          *
          * @param nsgIds the value to set
          * @return this builder
-         **/
+         */
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet being referenced.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet being referenced.
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /**
-         * True if this object is publicly available.
-         *
-         **/
+        /** True if this object is publicly available. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
@@ -210,16 +199,13 @@ public final class UpdateDeploymentDetails
          *
          * @param isPublic the value to set
          * @return this builder
-         **/
+         */
         public Builder isPublic(Boolean isPublic) {
             this.isPublic = isPublic;
             this.__explicitlySet__.add("isPublic");
             return this;
         }
-        /**
-         * A three-label Fully Qualified Domain Name (FQDN) for a resource.
-         *
-         **/
+        /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
@@ -228,16 +214,13 @@ public final class UpdateDeploymentDetails
          *
          * @param fqdn the value to set
          * @return this builder
-         **/
+         */
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
             return this;
         }
-        /**
-         * The Minimum number of OCPUs to be made available for this Deployment.
-         *
-         **/
+        /** The Minimum number of OCPUs to be made available for this Deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
@@ -246,16 +229,13 @@ public final class UpdateDeploymentDetails
          *
          * @param cpuCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /**
-         * Indicates if auto scaling is enabled for the Deployment's CPU core count.
-         *
-         **/
+        /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
@@ -264,7 +244,7 @@ public final class UpdateDeploymentDetails
          *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
@@ -346,9 +326,7 @@ public final class UpdateDeploymentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -357,10 +335,7 @@ public final class UpdateDeploymentDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * An object's Display Name.
-     *
-     **/
+    /** An object's Display Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -368,15 +343,12 @@ public final class UpdateDeploymentDetails
      * An object's Display Name.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The Oracle license model that applies to a Deployment.
-     *
-     **/
+    /** The Oracle license model that applies to a Deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
@@ -384,15 +356,12 @@ public final class UpdateDeploymentDetails
      * The Oracle license model that applies to a Deployment.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
-    /**
-     * Metadata about this specific object.
-     *
-     **/
+    /** Metadata about this specific object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -400,83 +369,82 @@ public final class UpdateDeploymentDetails
      * Metadata about this specific object.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+     * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
-     *
-     **/
+     * An array of [Network Security
+     * Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm)
+     * OCIDs used to define network access for a deployment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * An array of [Network Security Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * An array of [Network Security
+     * Group](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm)
+     * OCIDs used to define network access for a deployment.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet being referenced.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
-    /**
-     * True if this object is publicly available.
-     *
-     **/
+    /** True if this object is publicly available. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     private final Boolean isPublic;
 
@@ -484,15 +452,12 @@ public final class UpdateDeploymentDetails
      * True if this object is publicly available.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsPublic() {
         return isPublic;
     }
 
-    /**
-     * A three-label Fully Qualified Domain Name (FQDN) for a resource.
-     *
-     **/
+    /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
@@ -500,15 +465,12 @@ public final class UpdateDeploymentDetails
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      * @return the value
-     **/
+     */
     public String getFqdn() {
         return fqdn;
     }
 
-    /**
-     * The Minimum number of OCPUs to be made available for this Deployment.
-     *
-     **/
+    /** The Minimum number of OCPUs to be made available for this Deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
@@ -516,15 +478,12 @@ public final class UpdateDeploymentDetails
      * The Minimum number of OCPUs to be made available for this Deployment.
      *
      * @return the value
-     **/
+     */
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /**
-     * Indicates if auto scaling is enabled for the Deployment's CPU core count.
-     *
-     **/
+    /** Indicates if auto scaling is enabled for the Deployment's CPU core count. */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
@@ -532,7 +491,7 @@ public final class UpdateDeploymentDetails
      * Indicates if auto scaling is enabled for the Deployment's CPU core count.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
@@ -551,6 +510,7 @@ public final class UpdateDeploymentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

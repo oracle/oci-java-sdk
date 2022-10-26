@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The data profile response.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The data profile response. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DataProfile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DataProfile extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityName",
@@ -36,17 +37,16 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Entity name for which profiling is requested.
-         **/
+        /** Entity name for which profiling is requested. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * Entity name for which profiling is requested.
+         *
          * @param entityName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
@@ -61,17 +61,16 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("entityProfileResult");
             return this;
         }
-        /**
-         * Array of profiling results.
-         **/
+        /** Array of profiling results. */
         @com.fasterxml.jackson.annotation.JsonProperty("attributeProfileResults")
         private java.util.List<AttributeProfileResult> attributeProfileResults;
 
         /**
          * Array of profiling results.
+         *
          * @param attributeProfileResults the value to set
          * @return this builder
-         **/
+         */
         public Builder attributeProfileResults(
                 java.util.List<AttributeProfileResult> attributeProfileResults) {
             this.attributeProfileResults = attributeProfileResults;
@@ -109,9 +108,7 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,16 +117,15 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Entity name for which profiling is requested.
-     **/
+    /** Entity name for which profiling is requested. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * Entity name for which profiling is requested.
+     *
      * @return the value
-     **/
+     */
     public String getEntityName() {
         return entityName;
     }
@@ -141,16 +137,15 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
         return entityProfileResult;
     }
 
-    /**
-     * Array of profiling results.
-     **/
+    /** Array of profiling results. */
     @com.fasterxml.jackson.annotation.JsonProperty("attributeProfileResults")
     private final java.util.List<AttributeProfileResult> attributeProfileResults;
 
     /**
      * Array of profiling results.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AttributeProfileResult> getAttributeProfileResults() {
         return attributeProfileResults;
     }
@@ -162,6 +157,7 @@ public final class DataProfile extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

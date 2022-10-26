@@ -7,7 +7,7 @@ package com.oracle.bmc.objectstorage.transfer;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.internal.ClientThreadFactory;
 import com.oracle.bmc.ClientRuntime;
-import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
@@ -34,16 +34,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * UploadManager simplifies interaction with the Object Storage service by abstracting away the method used
- * to upload objects.  Depending on the configuration parameters, UploadManager may choose to do a single
- * PutObject request, or break up the upload into multiple parts and utilize multi-part uploads.
- * <p>
- * An advantage of using multi-part uploads is the ability to retry individual failed parts, as well as
- * being able to upload parts in parallel to reduce upload time.
- * <p>
- * Callers still have full control over how the UploadManager decides to perform the upload using {@link UploadConfiguration}.
- * Callers who want even more control, or need to combine multiple files should look at using {@link MultipartObjectAssembler}
- * directly.
+ * UploadManager simplifies interaction with the Object Storage service by abstracting away the
+ * method used to upload objects. Depending on the configuration parameters, UploadManager may
+ * choose to do a single PutObject request, or break up the upload into multiple parts and utilize
+ * multi-part uploads.
+ *
+ * <p>An advantage of using multi-part uploads is the ability to retry individual failed parts, as
+ * well as being able to upload parts in parallel to reduce upload time.
+ *
+ * <p>Callers still have full control over how the UploadManager decides to perform the upload using
+ * {@link UploadConfiguration}. Callers who want even more control, or need to combine multiple
+ * files should look at using {@link MultipartObjectAssembler} directly.
  */
 public class UploadManager {
     private static final org.slf4j.Logger LOG =
@@ -53,12 +54,9 @@ public class UploadManager {
     private static final String UPLOAD_MANAGER_DEBUG_INFORMATION_LOG =
             String.format(
                     "\nClient Version: %s, OS Version: %s\nSee https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them.\nIf you need to contact support, or file a GitHub issue, please include this full error message.",
-                    ClientRuntime.getRuntime().getClientInfo(),
-                    System.getProperty("os.version"));
+                    ClientRuntime.getRuntime().getClientInfo(), System.getProperty("os.version"));
 
-    /**
-     * Default retry condition, but added timeout, -1, and 409 "ConcurrentObjectUpdate".
-     */
+    /** Default retry condition, but added timeout, -1, and 409 "ConcurrentObjectUpdate". */
     private static final RetryCondition RETRY_CONDITION =
             new DefaultRetryCondition() {
                 @Override
@@ -85,13 +83,13 @@ public class UploadManager {
     private final UploadConfiguration uploadConfiguration;
 
     /**
-     * Initiates a new upload request.  The upload manager will decide whether to use
-     * a single PutObject call or multi-part uploads depending on the {@link UploadConfiguration}
-     * specified.
-     * <p>
-     * Note, if multi-part is used, no MD5 will be returned in the response.  Also, if a multi-part
-     * upload attempt fails, the UploadManager will attempt to abort the upload to avoid leaving
-     * partially complete uploads and parts (unless explicitly disabled via UploadConfiguration).
+     * Initiates a new upload request. The upload manager will decide whether to use a single
+     * PutObject call or multi-part uploads depending on the {@link UploadConfiguration} specified.
+     *
+     * <p>Note, if multi-part is used, no MD5 will be returned in the response. Also, if a
+     * multi-part upload attempt fails, the UploadManager will attempt to abort the upload to avoid
+     * leaving partially complete uploads and parts (unless explicitly disabled via
+     * UploadConfiguration).
      *
      * @param uploadDetails The upload request.
      * @return The response.
@@ -219,12 +217,13 @@ public class UploadManager {
         } catch (Exception e) {
             if (manifest != null) {
                 LOG.error(
-                        "Failed to upload object using multi-part uploads. Failed part numbers = '{}'. Successful parts = '{}'.{}",
+                        "Failed to upload object using multi-part uploads. Failed part numbers = '{}'. Successful parts = '{}'. {}",
                         manifest.listFailedParts(),
                         manifest.listCompletedParts(),
                         UPLOAD_MANAGER_DEBUG_INFORMATION_LOG);
 
-                // try to abort uploads that failed to avoid creating lots of lingering uploads and parts.
+                // try to abort uploads that failed to avoid creating lots of lingering uploads and
+                // parts.
                 if (uploadConfiguration.isDisableAutoAbort()) {
                     LOG.info(
                             "Not aborting failed multipart upload {} per configuration, client must manually abort it",
@@ -234,7 +233,7 @@ public class UploadManager {
                         assembler.abort();
                     } catch (Exception e2) {
                         LOG.warn(
-                                "Failed to abort multipart upload {} after failure to upload object.{}",
+                                "Failed to abort multipart upload {} after failure to upload object. {}",
                                 manifest.getUploadId(),
                                 UPLOAD_MANAGER_DEBUG_INFORMATION_LOG,
                                 e2);
@@ -258,9 +257,8 @@ public class UploadManager {
     }
 
     /**
-     * Determines the first non-null RetryConfiguration
-     *    1 -> RetryConfiguration set on UploadConfiguration
-     *    2 -> Default static RetryConfiguration for UploadManager
+     * Determines the first non-null RetryConfiguration 1 -> RetryConfiguration set on
+     * UploadConfiguration 2 -> Default static RetryConfiguration for UploadManager
      *
      * @return RetryConfiguration first non-null condition or UploadManager default
      */
@@ -278,7 +276,8 @@ public class UploadManager {
             UploadRequest uploadRequest,
             ExecutorService executorService) {
 
-        // in case request != uploadRequest.putObjectRequest then choose the correct RetryConfiguration
+        // in case request != uploadRequest.putObjectRequest then choose the correct
+        // RetryConfiguration
         RetryConfiguration retryToUse =
                 getRetryToUse(
                         uploadRequest.putObjectRequest.getRetryConfiguration(),
@@ -377,11 +376,12 @@ public class UploadManager {
         private final ProgressReporter progressReporter;
 
         /**
-         * Creates a new {@link UploadRequestBuilder} using the given stream and content length.  The stream and length will
-         *  be used to create the final put object request.
-         * <p>
-         * Note, when providing an InputStream, callers can use {@link StreamUtils} to help create streams that can be read
-         * from in parallel (if multi-part upload is used), which should decrease the time to upload the entire object.
+         * Creates a new {@link UploadRequestBuilder} using the given stream and content length. The
+         * stream and length will be used to create the final put object request.
+         *
+         * <p>Note, when providing an InputStream, callers can use {@link StreamUtils} to help
+         * create streams that can be read from in parallel (if multi-part upload is used), which
+         * should decrease the time to upload the entire object.
          *
          * @param stream The stream that should be uploaded.
          * @param contentLength The content length of the object.
@@ -392,8 +392,8 @@ public class UploadManager {
         }
 
         /**
-         * Creates a new {@link UploadRequestBuilder} using the given file.  The file and length (derived from {@link File#length()})
-         * will be used to create the final put object request.
+         * Creates a new {@link UploadRequestBuilder} using the given file. The file and length
+         * (derived from {@link File#length()}) will be used to create the final put object request.
          *
          * @param file The file that should be uploaded.
          * @return a new UploadRequestBuilder instance.
@@ -418,11 +418,11 @@ public class UploadManager {
             private ProgressReporter progressReporter;
 
             /**
-             * Configures whether or not the if-none-match header will be used to prevent
-             * overwrites on PUT.  If this is disabled, the ifNoneMatch value in the PutObjectRequest
-             * builder will be overwritten with "*".
-             * <p>
-             * The default value is 'true'.
+             * Configures whether or not the if-none-match header will be used to prevent overwrites
+             * on PUT. If this is disabled, the ifNoneMatch value in the PutObjectRequest builder
+             * will be overwritten with "*".
+             *
+             * <p>The default value is 'true'.
              *
              * @param allowOverwrite true to allow objects to be overwritten, false if not.
              * @return This builder instance
@@ -433,10 +433,10 @@ public class UploadManager {
             }
 
             /**
-             * Sets the executor service that should be used if the upload being made uses multi-part uploads.
-             * If none is provided, the UploadManager will create a new Executor <i>per upload request</i>.
-             * If the caller prefers to have a shared executor, one can be created by the caller and set
-             * on every UploadRequest through this method.
+             * Sets the executor service that should be used if the upload being made uses
+             * multi-part uploads. If none is provided, the UploadManager will create a new Executor
+             * <i>per upload request</i>. If the caller prefers to have a shared executor, one can
+             * be created by the caller and set on every UploadRequest through this method.
              *
              * @param parallelUploadExecutorService The executor to use.
              * @return This builder instance
@@ -448,8 +448,8 @@ public class UploadManager {
             }
 
             /**
-             * Sets the progress reporter that is used to notify of updates during the upload.
-             * If none is provided, then no progress updates shall be reported.
+             * Sets the progress reporter that is used to notify of updates during the upload. If
+             * none is provided, then no progress updates shall be reported.
              *
              * @param progressReporter The progress reporter to use.
              * @return This builder instance
@@ -460,8 +460,8 @@ public class UploadManager {
             }
 
             /**
-             * Builds a new UploadRequest instance.  The body and content length will be set on the given
-             * request based on the original values provided when creating the builder.
+             * Builds a new UploadRequest instance. The body and content length will be set on the
+             * given request based on the original values provided when creating the builder.
              *
              * @param request The request containing all param except the body and content length.
              * @return A new request instance.
@@ -505,35 +505,30 @@ public class UploadManager {
         }
     }
 
-    /**
-     * The result referencing the uploaded object.
-     */
+    /** The result referencing the uploaded object. */
     public static class UploadResponse {
-        /**
-         * The etag of the object uploaded.
-         */
+        /** The etag of the object uploaded. */
         private final String eTag;
         /**
          * The MD5 of the object uploaded.
-         * <p>
-         * Will be null if the object was uploaded using multi-part.  See {@link #getMultipartMd5()} instead.
+         *
+         * <p>Will be null if the object was uploaded using multi-part. See {@link
+         * #getMultipartMd5()} instead.
          */
         private final String contentMd5;
         /**
          * The multipart MD5 of the object uploaded.
-         * <p>
-         * Will be null if the object was uploaded using standard put-object.  See {@link #getContentMd5()} instead.
+         *
+         * <p>Will be null if the object was uploaded using standard put-object. See {@link
+         * #getContentMd5()} instead.
          */
         private final String multipartMd5;
         /**
-         * The opc-request-id associated with either the PutObject call
-         * or the final CommitMultipartUpload call (if multi-part upload
-         * was used).
+         * The opc-request-id associated with either the PutObject call or the final
+         * CommitMultipartUpload call (if multi-part upload was used).
          */
         private final String opcRequestId;
-        /**
-         * The opc-client-request-id sent with every request, if provided.
-         */
+        /** The opc-client-request-id sent with every request, if provided. */
         private final String opcClientRequestId;
 
         @java.beans.ConstructorProperties({
@@ -556,17 +551,16 @@ public class UploadManager {
             this.opcClientRequestId = opcClientRequestId;
         }
 
-        /**
-         * The etag of the object uploaded.
-         */
+        /** The etag of the object uploaded. */
         public String getETag() {
             return this.eTag;
         }
 
         /**
          * The MD5 of the object uploaded.
-         * <p>
-         * Will be null if the object was uploaded using multi-part.  See {@link #getMultipartMd5()} instead.
+         *
+         * <p>Will be null if the object was uploaded using multi-part. See {@link
+         * #getMultipartMd5()} instead.
          */
         public String getContentMd5() {
             return this.contentMd5;
@@ -574,25 +568,23 @@ public class UploadManager {
 
         /**
          * The multipart MD5 of the object uploaded.
-         * <p>
-         * Will be null if the object was uploaded using standard put-object.  See {@link #getContentMd5()} instead.
+         *
+         * <p>Will be null if the object was uploaded using standard put-object. See {@link
+         * #getContentMd5()} instead.
          */
         public String getMultipartMd5() {
             return this.multipartMd5;
         }
 
         /**
-         * The opc-request-id associated with either the PutObject call
-         * or the final CommitMultipartUpload call (if multi-part upload
-         * was used).
+         * The opc-request-id associated with either the PutObject call or the final
+         * CommitMultipartUpload call (if multi-part upload was used).
          */
         public String getOpcRequestId() {
             return this.opcRequestId;
         }
 
-        /**
-         * The opc-client-request-id sent with every request, if provided.
-         */
+        /** The opc-client-request-id sent with every request, if provided. */
         public String getOpcClientRequestId() {
             return this.opcClientRequestId;
         }

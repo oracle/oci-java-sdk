@@ -5,42 +5,39 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a database insight resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of a database insight resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource",
-    defaultImpl = DatabaseInsightSummary.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource",
+        defaultImpl = DatabaseInsightSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MacsManagedExternalDatabaseInsightSummary.class,
-        name = "MACS_MANAGED_EXTERNAL_DATABASE"
-    ),
+            value = MacsManagedExternalDatabaseInsightSummary.class,
+            name = "MACS_MANAGED_EXTERNAL_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AutonomousDatabaseInsightSummary.class,
-        name = "AUTONOMOUS_DATABASE"
-    ),
+            value = AutonomousDatabaseInsightSummary.class,
+            name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = PeComanagedDatabaseInsightSummary.class,
-        name = "PE_COMANAGED_DATABASE"
-    ),
+            value = PeComanagedDatabaseInsightSummary.class,
+            name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EmManagedExternalDatabaseInsightSummary.class,
-        name = "EM_MANAGED_EXTERNAL_DATABASE"
-    )
+            value = EmManagedExternalDatabaseInsightSummary.class,
+            name = "EM_MANAGED_EXTERNAL_DATABASE")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DatabaseInsightSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class DatabaseInsightSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -103,265 +100,273 @@ public class DatabaseInsightSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the database insight resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database insight resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the database insight resource.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the database.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseId() {
         return databaseId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The database name. The database name is unique within the tenancy.
-     **/
+    /** The database name. The database name is unique within the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * The database name. The database name is unique within the tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /**
-     * The user-friendly name for the database. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the database. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseDisplayName")
     private final String databaseDisplayName;
 
     /**
      * The user-friendly name for the database. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseDisplayName() {
         return databaseDisplayName;
     }
 
-    /**
-     * Operations Insights internal representation of the database type.
-     **/
+    /** Operations Insights internal representation of the database type. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
      * Operations Insights internal representation of the database type.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseType() {
         return databaseType;
     }
 
-    /**
-     * The version of the database.
-     **/
+    /** The version of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
      * The version of the database.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseVersion() {
         return databaseVersion;
     }
 
-    /**
-     * The hostnames for the database.
-     **/
+    /** The hostnames for the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseHostNames")
     private final java.util.List<String> databaseHostNames;
 
     /**
      * The hostnames for the database.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDatabaseHostNames() {
         return databaseHostNames;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
     /**
-     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-     **/
+     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other
+     * database types.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("processorCount")
     private final Integer processorCount;
 
     /**
-     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other
+     * database types.
+     *
      * @return the value
-     **/
+     */
     public Integer getProcessorCount() {
         return processorCount;
     }
 
-    /**
-     * Indicates the status of a database insight in Operations Insights
-     **/
+    /** Indicates the status of a database insight in Operations Insights */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
      * Indicates the status of a database insight in Operations Insights
+     *
      * @return the value
-     **/
+     */
     public ResourceStatus getStatus() {
         return status;
     }
 
-    /**
-     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
-     **/
+    /** The time the the database insight was first enabled. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the database insight was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the database insight was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the database insight was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the database.
-     **/
+    /** The current state of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the database.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
-     **/
+     * A message describing the status of the database connection of this resource. For example, it
+     * can be used to provide actionable information about the permission and content validity of
+     * the database connection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionStatusDetails")
     private final String databaseConnectionStatusDetails;
 
     /**
-     * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+     * A message describing the status of the database connection of this resource. For example, it
+     * can be used to provide actionable information about the permission and content validity of
+     * the database connection.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseConnectionStatusDetails() {
         return databaseConnectionStatusDetails;
     }
@@ -373,6 +378,7 @@ public class DatabaseInsightSummary extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

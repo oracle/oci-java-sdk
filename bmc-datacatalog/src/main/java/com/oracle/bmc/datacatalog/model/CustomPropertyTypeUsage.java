@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Object which describes the indivial object stats for every custom property
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Object which describes the indivial object stats for every custom property <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CustomPropertyTypeUsage.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CustomPropertyTypeUsage.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CustomPropertyTypeUsage
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"typeId", "typeName", "count", "isEventEnabled"})
     public CustomPropertyTypeUsage(
@@ -34,65 +34,61 @@ public final class CustomPropertyTypeUsage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique type key identifier
-         **/
+        /** Unique type key identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("typeId")
         private String typeId;
 
         /**
          * Unique type key identifier
+         *
          * @param typeId the value to set
          * @return this builder
-         **/
+         */
         public Builder typeId(String typeId) {
             this.typeId = typeId;
             this.__explicitlySet__.add("typeId");
             return this;
         }
-        /**
-         * Name of the type associated with
-         **/
+        /** Name of the type associated with */
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
         /**
          * Name of the type associated with
+         *
          * @param typeName the value to set
          * @return this builder
-         **/
+         */
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-        /**
-         * Number of objects associated with this type
-         **/
+        /** Number of objects associated with this type */
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * Number of objects associated with this type
+         *
          * @param count the value to set
          * @return this builder
-         **/
+         */
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /**
-         * If an OCI Event will be emitted when the custom property is modified.
-         **/
+        /** If an OCI Event will be emitted when the custom property is modified. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
         private Boolean isEventEnabled;
 
         /**
          * If an OCI Event will be emitted when the custom property is modified.
+         *
          * @param isEventEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEventEnabled(Boolean isEventEnabled) {
             this.isEventEnabled = isEventEnabled;
             this.__explicitlySet__.add("isEventEnabled");
@@ -130,9 +126,7 @@ public final class CustomPropertyTypeUsage
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,58 +135,54 @@ public final class CustomPropertyTypeUsage
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique type key identifier
-     **/
+    /** Unique type key identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("typeId")
     private final String typeId;
 
     /**
      * Unique type key identifier
+     *
      * @return the value
-     **/
+     */
     public String getTypeId() {
         return typeId;
     }
 
-    /**
-     * Name of the type associated with
-     **/
+    /** Name of the type associated with */
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
     /**
      * Name of the type associated with
+     *
      * @return the value
-     **/
+     */
     public String getTypeName() {
         return typeName;
     }
 
-    /**
-     * Number of objects associated with this type
-     **/
+    /** Number of objects associated with this type */
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * Number of objects associated with this type
+     *
      * @return the value
-     **/
+     */
     public Integer getCount() {
         return count;
     }
 
-    /**
-     * If an OCI Event will be emitted when the custom property is modified.
-     **/
+    /** If an OCI Event will be emitted when the custom property is modified. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEventEnabled")
     private final Boolean isEventEnabled;
 
     /**
      * If an OCI Event will be emitted when the custom property is modified.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEventEnabled() {
         return isEventEnabled;
     }
@@ -204,6 +194,7 @@ public final class CustomPropertyTypeUsage
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

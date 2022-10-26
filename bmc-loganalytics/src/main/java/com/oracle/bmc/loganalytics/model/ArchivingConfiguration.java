@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the configuration for data archiving in object storage
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * This is the configuration for data archiving in object storage <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ArchivingConfiguration.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ArchivingConfiguration.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ArchivingConfiguration
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"activeStorageDuration", "archivalStorageDuration"})
     public ArchivingConfiguration(String activeStorageDuration, String archivalStorageDuration) {
@@ -33,21 +33,20 @@ public final class ArchivingConfiguration
     public static class Builder {
         /**
          * This is the duration data in active storage before data is archived, as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-         *
-         **/
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g.
+         * P365D (not P1Y) or P14D (not P2W).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
         private String activeStorageDuration;
 
         /**
          * This is the duration data in active storage before data is archived, as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g.
+         * P365D (not P1Y) or P14D (not P2W).
          *
          * @param activeStorageDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder activeStorageDuration(String activeStorageDuration) {
             this.activeStorageDuration = activeStorageDuration;
             this.__explicitlySet__.add("activeStorageDuration");
@@ -55,21 +54,20 @@ public final class ArchivingConfiguration
         }
         /**
          * This is the duration before archived data is deleted from object storage, as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations
-         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-         *
-         **/
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g.
+         * P365D (not P1Y) or P14D (not P2W).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("archivalStorageDuration")
         private String archivalStorageDuration;
 
         /**
          * This is the duration before archived data is deleted from object storage, as described in
-         * https://en.wikipedia.org/wiki/ISO_8601#Durations
-         * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+         * https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g.
+         * P365D (not P1Y) or P14D (not P2W).
          *
          * @param archivalStorageDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder archivalStorageDuration(String archivalStorageDuration) {
             this.archivalStorageDuration = archivalStorageDuration;
             this.__explicitlySet__.add("archivalStorageDuration");
@@ -101,9 +99,7 @@ public final class ArchivingConfiguration
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,40 +110,38 @@ public final class ArchivingConfiguration
 
     /**
      * This is the duration data in active storage before data is archived, as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-     *
-     **/
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D
+     * (not P1Y) or P14D (not P2W).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("activeStorageDuration")
     private final String activeStorageDuration;
 
     /**
      * This is the duration data in active storage before data is archived, as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations.
-     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P365D
+     * (not P1Y) or P14D (not P2W).
      *
      * @return the value
-     **/
+     */
     public String getActiveStorageDuration() {
         return activeStorageDuration;
     }
 
     /**
      * This is the duration before archived data is deleted from object storage, as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations
-     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
-     *
-     **/
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D
+     * (not P1Y) or P14D (not P2W).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("archivalStorageDuration")
     private final String archivalStorageDuration;
 
     /**
      * This is the duration before archived data is deleted from object storage, as described in
-     * https://en.wikipedia.org/wiki/ISO_8601#Durations
-     * The largest supported unit is D, e.g. P365D (not P1Y) or P14D (not P2W).
+     * https://en.wikipedia.org/wiki/ISO_8601#Durations The largest supported unit is D, e.g. P365D
+     * (not P1Y) or P14D (not P2W).
      *
      * @return the value
-     **/
+     */
     public String getArchivalStorageDuration() {
         return archivalStorageDuration;
     }
@@ -159,6 +153,7 @@ public final class ArchivingConfiguration
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

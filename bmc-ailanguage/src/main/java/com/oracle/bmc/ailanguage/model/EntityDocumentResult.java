@@ -5,21 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The document response for entities detect call.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * The document response for entities detect call. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EntityDocumentResult.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EntityDocumentResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = EntityDocumentResult.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EntityDocumentResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "entities", "languageCode"})
     public EntityDocumentResult(
@@ -32,49 +33,50 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Document unique identifier defined by the user.
-         **/
+        /** Document unique identifier defined by the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Document unique identifier defined by the user.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * List of detected entities.
-         **/
+        /** List of detected entities. */
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<HierarchicalEntity> entities;
 
         /**
          * List of detected entities.
+         *
          * @param entities the value to set
          * @return this builder
-         **/
+         */
         public Builder entities(java.util.List<HierarchicalEntity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
             return this;
         }
         /**
-         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
-         **/
+         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+         * standard.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+         * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+         * standard.
+         *
          * @param languageCode the value to set
          * @return this builder
-         **/
+         */
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -108,9 +110,7 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +119,45 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Document unique identifier defined by the user.
-     **/
+    /** Document unique identifier defined by the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Document unique identifier defined by the user.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * List of detected entities.
-     **/
+    /** List of detected entities. */
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<HierarchicalEntity> entities;
 
     /**
      * List of detected entities.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<HierarchicalEntity> getEntities() {
         return entities;
     }
 
     /**
-     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
-     **/
+     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+     * standard.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Language code as per [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) standard.
+     * Language code per the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+     * standard.
+     *
      * @return the value
-     **/
+     */
     public String getLanguageCode() {
         return languageCode;
     }
@@ -168,6 +169,7 @@ public final class EntityDocumentResult extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

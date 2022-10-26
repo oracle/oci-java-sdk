@@ -5,19 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the user object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the user object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -57,161 +58,151 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier for the user.
-         **/
+        /** Unique identifier for the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique identifier for the user.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * First name of the user.
-         **/
+        /** First name of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("firstName")
         private String firstName;
 
         /**
          * First name of the user.
+         *
          * @param firstName the value to set
          * @return this builder
-         **/
+         */
         public Builder firstName(String firstName) {
             this.firstName = firstName;
             this.__explicitlySet__.add("firstName");
             return this;
         }
-        /**
-         * Last name of the user.
-         **/
+        /** Last name of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastName")
         private String lastName;
 
         /**
          * Last name of the user.
+         *
          * @param lastName the value to set
          * @return this builder
-         **/
+         */
         public Builder lastName(String lastName) {
             this.lastName = lastName;
             this.__explicitlySet__.add("lastName");
             return this;
         }
-        /**
-         * Country of the user.
-         **/
+        /** Country of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country of the user.
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * CSI to be associated to the user.
-         **/
+        /** CSI to be associated to the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
          * CSI to be associated to the user.
+         *
          * @param csi the value to set
          * @return this builder
-         **/
+         */
         public Builder csi(String csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
-        /**
-         * Contact number of the user.
-         **/
+        /** Contact number of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("phone")
         private String phone;
 
         /**
          * Contact number of the user.
+         *
          * @param phone the value to set
          * @return this builder
-         **/
+         */
         public Builder phone(String phone) {
             this.phone = phone;
             this.__explicitlySet__.add("phone");
             return this;
         }
-        /**
-         * Timezone of the user.
-         **/
+        /** Timezone of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
         /**
          * Timezone of the user.
+         *
          * @param timezone the value to set
          * @return this builder
-         **/
+         */
         public Builder timezone(String timezone) {
             this.timezone = timezone;
             this.__explicitlySet__.add("timezone");
             return this;
         }
-        /**
-         * Organization of the user.
-         **/
+        /** Organization of the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
         private String organizationName;
 
         /**
          * Organization of the user.
+         *
          * @param organizationName the value to set
          * @return this builder
-         **/
+         */
         public Builder organizationName(String organizationName) {
             this.organizationName = organizationName;
             this.__explicitlySet__.add("organizationName");
             return this;
         }
-        /**
-         * The OCID of the tenancy.
-         **/
+        /** The OCID of the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The email of the contact person.
-         **/
+        /** The email of the contact person. */
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
         private String contactEmail;
 
         /**
          * The email of the contact person.
+         *
          * @param contactEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
@@ -276,9 +267,7 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,142 +276,132 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier for the user.
-     **/
+    /** Unique identifier for the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique identifier for the user.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * First name of the user.
-     **/
+    /** First name of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("firstName")
     private final String firstName;
 
     /**
      * First name of the user.
+     *
      * @return the value
-     **/
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /**
-     * Last name of the user.
-     **/
+    /** Last name of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastName")
     private final String lastName;
 
     /**
      * Last name of the user.
+     *
      * @return the value
-     **/
+     */
     public String getLastName() {
         return lastName;
     }
 
-    /**
-     * Country of the user.
-     **/
+    /** Country of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country of the user.
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * CSI to be associated to the user.
-     **/
+    /** CSI to be associated to the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
      * CSI to be associated to the user.
+     *
      * @return the value
-     **/
+     */
     public String getCsi() {
         return csi;
     }
 
-    /**
-     * Contact number of the user.
-     **/
+    /** Contact number of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
     private final String phone;
 
     /**
      * Contact number of the user.
+     *
      * @return the value
-     **/
+     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * Timezone of the user.
-     **/
+    /** Timezone of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
     /**
      * Timezone of the user.
+     *
      * @return the value
-     **/
+     */
     public String getTimezone() {
         return timezone;
     }
 
-    /**
-     * Organization of the user.
-     **/
+    /** Organization of the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("organizationName")
     private final String organizationName;
 
     /**
      * Organization of the user.
+     *
      * @return the value
-     **/
+     */
     public String getOrganizationName() {
         return organizationName;
     }
 
-    /**
-     * The OCID of the tenancy.
-     **/
+    /** The OCID of the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The email of the contact person.
-     **/
+    /** The email of the contact person. */
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     private final String contactEmail;
 
     /**
      * The email of the contact person.
+     *
      * @return the value
-     **/
+     */
     public String getContactEmail() {
         return contactEmail;
     }
@@ -434,6 +413,7 @@ public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

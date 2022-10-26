@@ -9,15 +9,14 @@ import com.oracle.bmc.apmsynthetics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned MonitorResult instance.
-     */
+    /** The returned MonitorResult instance. */
     private com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult;
 
     /**
      * The returned MonitorResult instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apmsynthetics.model.MonitorResult getMonitorResult() {
@@ -46,7 +44,7 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetMonitorResultResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,33 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
         this.monitorResult = monitorResult;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetMonitorResultResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +88,12 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned MonitorResult instance.
-         */
+        /** The returned MonitorResult instance. */
         private com.oracle.bmc.apmsynthetics.model.MonitorResult monitorResult;
 
         /**
          * The returned MonitorResult instance.
+         *
          * @param monitorResult the value to set
          * @return this builder
          */
@@ -106,8 +105,10 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetMonitorResultResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,8 +120,10 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetMonitorResultResponse build() {
             return new GetMonitorResultResponse(
                     __httpStatusCode__, headers, opcRequestId, monitorResult);
@@ -129,6 +132,7 @@ public class GetMonitorResultResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details used to download a security assessment report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details used to download a security assessment report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DownloadSecurityAssessmentReportDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DownloadSecurityAssessmentReportDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DownloadSecurityAssessmentReportDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"format"})
     public DownloadSecurityAssessmentReportDetails(Format format) {
@@ -30,17 +30,16 @@ public final class DownloadSecurityAssessmentReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Format of the report.
-         **/
+        /** Format of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
         /**
          * Format of the report.
+         *
          * @param format the value to set
          * @return this builder
-         **/
+         */
         public Builder format(Format format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -68,9 +67,7 @@ public final class DownloadSecurityAssessmentReportDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,10 +76,8 @@ public final class DownloadSecurityAssessmentReportDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Format of the report.
-     **/
-    public enum Format {
+    /** Format of the report. */
+    public enum Format implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
         ;
@@ -114,16 +109,15 @@ public final class DownloadSecurityAssessmentReportDetails
             throw new IllegalArgumentException("Invalid Format: " + key);
         }
     };
-    /**
-     * Format of the report.
-     **/
+    /** Format of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
     /**
      * Format of the report.
+     *
      * @return the value
-     **/
+     */
     public Format getFormat() {
         return format;
     }
@@ -135,6 +129,7 @@ public final class DownloadSecurityAssessmentReportDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

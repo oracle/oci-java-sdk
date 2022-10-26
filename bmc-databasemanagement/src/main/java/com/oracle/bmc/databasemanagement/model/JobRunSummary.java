@@ -5,19 +5,20 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of a specific job run.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A summary of a specific job run. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobRunSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JobRunSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JobRunSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -57,161 +58,167 @@ public final class JobRunSummary extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The identifier of the job run.
-         **/
+        /** The identifier of the job run. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The identifier of the job run.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the job run.
-         **/
+        /** The name of the job run. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the job run.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which the parent job resides.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which the parent job resides.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * parent job.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * parent job.
+         *
          * @param jobId the value to set
          * @return this builder
-         **/
+         */
         public Builder jobId(String jobId) {
             this.jobId = jobId;
             this.__explicitlySet__.add("jobId");
             return this;
         }
-        /**
-         * The name of the parent job.
-         **/
+        /** The name of the parent job. */
         @com.fasterxml.jackson.annotation.JsonProperty("jobName")
         private String jobName;
 
         /**
          * The name of the parent job.
+         *
          * @param jobName the value to set
          * @return this builder
-         **/
+         */
         public Builder jobName(String jobName) {
             this.jobName = jobName;
             this.__explicitlySet__.add("jobName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database Group where the parent job has to be executed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
         private String managedDatabaseGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database Group where the parent job has to be executed.
+         *
          * @param managedDatabaseGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder managedDatabaseGroupId(String managedDatabaseGroupId) {
             this.managedDatabaseGroupId = managedDatabaseGroupId;
             this.__explicitlySet__.add("managedDatabaseGroupId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the parent job has to be executed.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database where the parent job has to be executed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
         private String managedDatabaseId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the parent job has to be executed.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Managed Database where the parent job has to be executed.
+         *
          * @param managedDatabaseId the value to set
          * @return this builder
-         **/
+         */
         public Builder managedDatabaseId(String managedDatabaseId) {
             this.managedDatabaseId = managedDatabaseId;
             this.__explicitlySet__.add("managedDatabaseId");
             return this;
         }
-        /**
-         * The status of the job run.
-         **/
+        /** The status of the job run. */
         @com.fasterxml.jackson.annotation.JsonProperty("runStatus")
         private JobRun.RunStatus runStatus;
 
         /**
          * The status of the job run.
+         *
          * @param runStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder runStatus(JobRun.RunStatus runStatus) {
             this.runStatus = runStatus;
             this.__explicitlySet__.add("runStatus");
             return this;
         }
-        /**
-         * The date and time when the job run was submitted.
-         **/
+        /** The date and time when the job run was submitted. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeSubmitted")
         private java.util.Date timeSubmitted;
 
         /**
          * The date and time when the job run was submitted.
+         *
          * @param timeSubmitted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeSubmitted(java.util.Date timeSubmitted) {
             this.timeSubmitted = timeSubmitted;
             this.__explicitlySet__.add("timeSubmitted");
             return this;
         }
-        /**
-         * The date and time when the job run was last updated.
-         **/
+        /** The date and time when the job run was last updated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time when the job run was last updated.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -276,9 +283,7 @@ public final class JobRunSummary extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,142 +292,148 @@ public final class JobRunSummary extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The identifier of the job run.
-     **/
+    /** The identifier of the job run. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The identifier of the job run.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name of the job run.
-     **/
+    /** The name of the job run. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the job run.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which the parent job resides.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the parent job resides.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which the parent job resides.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * parent job.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
     private final String jobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent job.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * parent job.
+     *
      * @return the value
-     **/
+     */
     public String getJobId() {
         return jobId;
     }
 
-    /**
-     * The name of the parent job.
-     **/
+    /** The name of the parent job. */
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
     private final String jobName;
 
     /**
      * The name of the parent job.
+     *
      * @return the value
-     **/
+     */
     public String getJobName() {
         return jobName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database Group where the parent job has to be executed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the parent job has to be executed.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database Group where the parent job has to be executed.
+     *
      * @return the value
-     **/
+     */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the parent job has to be executed.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database where the parent job has to be executed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Managed Database where the parent job has to be executed.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Managed Database where the parent job has to be executed.
+     *
      * @return the value
-     **/
+     */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
 
-    /**
-     * The status of the job run.
-     **/
+    /** The status of the job run. */
     @com.fasterxml.jackson.annotation.JsonProperty("runStatus")
     private final JobRun.RunStatus runStatus;
 
     /**
      * The status of the job run.
+     *
      * @return the value
-     **/
+     */
     public JobRun.RunStatus getRunStatus() {
         return runStatus;
     }
 
-    /**
-     * The date and time when the job run was submitted.
-     **/
+    /** The date and time when the job run was submitted. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeSubmitted")
     private final java.util.Date timeSubmitted;
 
     /**
      * The date and time when the job run was submitted.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeSubmitted() {
         return timeSubmitted;
     }
 
-    /**
-     * The date and time when the job run was last updated.
-     **/
+    /** The date and time when the job run was last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time when the job run was last updated.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -434,6 +445,7 @@ public final class JobRunSummary extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

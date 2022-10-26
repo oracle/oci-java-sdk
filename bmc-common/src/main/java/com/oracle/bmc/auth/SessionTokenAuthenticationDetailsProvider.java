@@ -17,14 +17,16 @@ import java.util.Scanner;
 import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
- * Implementation of {@link AuthenticationDetailsProvider} that uses a session token for authentication.
+ * Implementation of {@link AuthenticationDetailsProvider} that uses a session token for
+ * authentication.
  */
 public class SessionTokenAuthenticationDetailsProvider
-        implements AuthenticationDetailsProvider, RegionProvider,
+        implements AuthenticationDetailsProvider,
+                RegionProvider,
                 RefreshableOnNotAuthenticatedProvider<String> {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SessionTokenAuthenticationDetailsProvider.class);
-    private final static String CONFIG_FILE_DEBUG_INFORMATION_LOG =
+    private static final String CONFIG_FILE_DEBUG_INFORMATION_LOG =
             "\nFor more information about OCI configuration file and how to get required information, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm";
     private final SimplePrivateKeySupplier privateKeySupplier;
     private final Region region;
@@ -36,24 +38,21 @@ public class SessionTokenAuthenticationDetailsProvider
     private String sessionToken;
 
     /**
-     * Creates a new instance using the config file at the default location
-     *  and the default profile. See {@link ConfigFileReader#DEFAULT_FILE_PATH}.
+     * Creates a new instance using the config file at the default location and the default profile.
+     * See {@link ConfigFileReader#DEFAULT_FILE_PATH}.
      *
-     * @throws IOException
-     *             if the configuration file could not be loaded
+     * @throws IOException if the configuration file could not be loaded
      */
     public SessionTokenAuthenticationDetailsProvider() throws IOException {
         this(ConfigFileReader.parseDefault());
     }
 
     /**
-     * Creates a new instance using the config file at the default location,
-     * see {@link ConfigFileReader#DEFAULT_FILE_PATH}.
+     * Creates a new instance using the config file at the default location, see {@link
+     * ConfigFileReader#DEFAULT_FILE_PATH}.
      *
-     * @param profile
-     *            profile to load, optional
-     * @throws IOException
-     *             if the configuration file could not be loaded
+     * @param profile profile to load, optional
+     * @throws IOException if the configuration file could not be loaded
      */
     public SessionTokenAuthenticationDetailsProvider(String profile) throws IOException {
         this(ConfigFileReader.parseDefault(profile));
@@ -62,12 +61,9 @@ public class SessionTokenAuthenticationDetailsProvider
     /**
      * Creates a new instance.
      *
-     * @param configurationFilePath
-     *            path to the OCI configuration file
-     * @param profile
-     *            profile to load, optional
-     * @throws IOException
-     *             if the configuration file could not be loaded
+     * @param configurationFilePath path to the OCI configuration file
+     * @param profile profile to load, optional
+     * @throws IOException if the configuration file could not be loaded
      */
     public SessionTokenAuthenticationDetailsProvider(String configurationFilePath, String profile)
             throws IOException {
@@ -77,10 +73,8 @@ public class SessionTokenAuthenticationDetailsProvider
     /**
      * Creates a new instance.
      *
-     * @param configFile
-     *            The configuration file to use.
-     * @throws IOException
-     *            if the configuration file could not be loaded
+     * @param configFile The configuration file to use.
+     * @throws IOException if the configuration file could not be loaded
      */
     public SessionTokenAuthenticationDetailsProvider(ConfigFile configFile) throws IOException {
         this.sessionTokenFilePath =
@@ -110,8 +104,7 @@ public class SessionTokenAuthenticationDetailsProvider
     /**
      * Loads the session token from the file specified in the file path.
      *
-     * @param sessionTokenFilePath
-     *            The file path to set the session token from.
+     * @param sessionTokenFilePath The file path to set the session token from.
      */
     public void setSessionTokenFromFilePath(String sessionTokenFilePath) throws IOException {
         File sessionTokenFile = new File(expandUserHome(sessionTokenFilePath));
@@ -128,16 +121,13 @@ public class SessionTokenAuthenticationDetailsProvider
     /**
      * Sets the session token directly from a string.
      *
-     * @param sessionToken
-     *            The session token to use.
+     * @param sessionToken The session token to use.
      */
     public void setSessionToken(String sessionToken) {
         this.sessionToken = sessionToken;
     }
 
-    /**
-     * Refreshes the session token from the file defined in the OCI config file.
-     */
+    /** Refreshes the session token from the file defined in the OCI config file. */
     @Override
     public String refresh() {
         LOG.debug("Refreshing session token");

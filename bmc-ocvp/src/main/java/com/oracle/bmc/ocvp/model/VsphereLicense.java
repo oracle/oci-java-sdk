@@ -5,20 +5,21 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * License for vSphere upgrade.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * License for vSphere upgrade. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VsphereLicense.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VsphereLicense extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VsphereLicense
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"licenseType", "licenseKey"})
     public VsphereLicense(String licenseType, String licenseKey) {
@@ -29,33 +30,31 @@ public final class VsphereLicense extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * vSphere license type.
-         **/
+        /** vSphere license type. */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
         /**
          * vSphere license type.
+         *
          * @param licenseType the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-        /**
-         * vSphere license key value.
-         **/
+        /** vSphere license key value. */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseKey")
         private String licenseKey;
 
         /**
          * vSphere license key value.
+         *
          * @param licenseKey the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseKey(String licenseKey) {
             this.licenseKey = licenseKey;
             this.__explicitlySet__.add("licenseKey");
@@ -85,9 +84,7 @@ public final class VsphereLicense extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,30 +93,28 @@ public final class VsphereLicense extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * vSphere license type.
-     **/
+    /** vSphere license type. */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
     /**
      * vSphere license type.
+     *
      * @return the value
-     **/
+     */
     public String getLicenseType() {
         return licenseType;
     }
 
-    /**
-     * vSphere license key value.
-     **/
+    /** vSphere license key value. */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseKey")
     private final String licenseKey;
 
     /**
      * vSphere license key value.
+     *
      * @return the value
-     **/
+     */
     public String getLicenseKey() {
         return licenseKey;
     }
@@ -131,6 +126,7 @@ public final class VsphereLicense extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

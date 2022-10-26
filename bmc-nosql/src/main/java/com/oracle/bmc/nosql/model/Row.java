@@ -5,19 +5,20 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * The result of GetRow.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The result of GetRow. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Row.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Row extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "timeOfExpiration", "usage"})
     public Row(
@@ -32,39 +33,35 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The map of values from a row.
-         **/
+        /** The map of values from a row. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.Map<String, Object> value;
 
         /**
          * The map of values from a row.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(java.util.Map<String, Object> value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
         /**
-         * The expiration time of the row. A zero value indicates that
-         * the row does not expire. An RFC3339 formatted datetime
-         * string.
-         *
-         **/
+         * The expiration time of the row. A zero value indicates that the row does not expire. An
+         * RFC3339 formatted datetime string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
         private java.util.Date timeOfExpiration;
 
         /**
-         * The expiration time of the row. A zero value indicates that
-         * the row does not expire. An RFC3339 formatted datetime
-         * string.
+         * The expiration time of the row. A zero value indicates that the row does not expire. An
+         * RFC3339 formatted datetime string.
          *
          * @param timeOfExpiration the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfExpiration(java.util.Date timeOfExpiration) {
             this.timeOfExpiration = timeOfExpiration;
             this.__explicitlySet__.add("timeOfExpiration");
@@ -106,9 +103,7 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,36 +112,32 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return new Builder().copy(this);
     }
 
-    /**
-     * The map of values from a row.
-     **/
+    /** The map of values from a row. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final java.util.Map<String, Object> value;
 
     /**
      * The map of values from a row.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getValue() {
         return value;
     }
 
     /**
-     * The expiration time of the row. A zero value indicates that
-     * the row does not expire. An RFC3339 formatted datetime
-     * string.
-     *
-     **/
+     * The expiration time of the row. A zero value indicates that the row does not expire. An
+     * RFC3339 formatted datetime string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfExpiration")
     private final java.util.Date timeOfExpiration;
 
     /**
-     * The expiration time of the row. A zero value indicates that
-     * the row does not expire. An RFC3339 formatted datetime
-     * string.
+     * The expiration time of the row. A zero value indicates that the row does not expire. An
+     * RFC3339 formatted datetime string.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfExpiration() {
         return timeOfExpiration;
     }
@@ -165,6 +156,7 @@ public final class Row extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

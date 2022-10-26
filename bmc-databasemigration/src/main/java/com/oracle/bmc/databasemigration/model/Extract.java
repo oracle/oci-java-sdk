@@ -5,20 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Parameters for Extract processes.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters for Extract processes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Extract.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Extract extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"performanceProfile", "longTransDuration"})
     public Extract(ExtractPerformanceProfile performanceProfile, Integer longTransDuration) {
@@ -29,10 +29,7 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Extract performance.
-         *
-         **/
+        /** Extract performance. */
         @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
         private ExtractPerformanceProfile performanceProfile;
 
@@ -41,27 +38,28 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
          *
          * @param performanceProfile the value to set
          * @return this builder
-         **/
+         */
         public Builder performanceProfile(ExtractPerformanceProfile performanceProfile) {
             this.performanceProfile = performanceProfile;
             this.__explicitlySet__.add("performanceProfile");
             return this;
         }
         /**
-         * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
-         * If not specified, Extract will not generate a warning on long-running transactions.
-         *
-         **/
+         * Length of time (in seconds) that a transaction can be open before Extract generates a
+         * warning message that the transaction is long-running. If not specified, Extract will not
+         * generate a warning on long-running transactions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("longTransDuration")
         private Integer longTransDuration;
 
         /**
-         * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
-         * If not specified, Extract will not generate a warning on long-running transactions.
+         * Length of time (in seconds) that a transaction can be open before Extract generates a
+         * warning message that the transaction is long-running. If not specified, Extract will not
+         * generate a warning on long-running transactions.
          *
          * @param longTransDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder longTransDuration(Integer longTransDuration) {
             this.longTransDuration = longTransDuration;
             this.__explicitlySet__.add("longTransDuration");
@@ -91,9 +89,7 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,10 +98,7 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         return new Builder().copy(this);
     }
 
-    /**
-     * Extract performance.
-     *
-     **/
+    /** Extract performance. */
     @com.fasterxml.jackson.annotation.JsonProperty("performanceProfile")
     private final ExtractPerformanceProfile performanceProfile;
 
@@ -113,25 +106,26 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
      * Extract performance.
      *
      * @return the value
-     **/
+     */
     public ExtractPerformanceProfile getPerformanceProfile() {
         return performanceProfile;
     }
 
     /**
-     * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
-     * If not specified, Extract will not generate a warning on long-running transactions.
-     *
-     **/
+     * Length of time (in seconds) that a transaction can be open before Extract generates a warning
+     * message that the transaction is long-running. If not specified, Extract will not generate a
+     * warning on long-running transactions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("longTransDuration")
     private final Integer longTransDuration;
 
     /**
-     * Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running.
-     * If not specified, Extract will not generate a warning on long-running transactions.
+     * Length of time (in seconds) that a transaction can be open before Extract generates a warning
+     * message that the transaction is long-running. If not specified, Extract will not generate a
+     * warning on long-running transactions.
      *
      * @return the value
-     **/
+     */
     public Integer getLongTransDuration() {
         return longTransDuration;
     }
@@ -143,6 +137,7 @@ public final class Extract extends com.oracle.bmc.http.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

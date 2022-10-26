@@ -6,36 +6,26 @@ package com.oracle.bmc.databasemigration.requests;
 
 import com.oracle.bmc.databasemigration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateMigrationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMigrationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateMigrationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMigrationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 public class UpdateMigrationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.UpdateMigrationDetails> {
 
-    /**
-     * The OCID of the migration
-     *
-     */
+    /** The OCID of the migration */
     private String migrationId;
 
-    /**
-     * The OCID of the migration
-     *
-     */
+    /** The OCID of the migration */
     public String getMigrationId() {
         return migrationId;
     }
-    /**
-     * Migration properties.
-     *
-     */
+    /** Migration properties. */
     private com.oracle.bmc.databasemigration.model.UpdateMigrationDetails updateMigrationDetails;
 
-    /**
-     * Migration properties.
-     *
-     */
+    /** Migration properties. */
     public com.oracle.bmc.databasemigration.model.UpdateMigrationDetails
             getUpdateMigrationDetails() {
         return updateMigrationDetails;
@@ -43,35 +33,29 @@ public class UpdateMigrationRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -79,6 +63,7 @@ public class UpdateMigrationRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -91,14 +76,10 @@ public class UpdateMigrationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateMigrationRequest,
                     com.oracle.bmc.databasemigration.model.UpdateMigrationDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the migration
-         *
-         */
+        /** The OCID of the migration */
         private String migrationId = null;
 
         /**
@@ -112,10 +93,7 @@ public class UpdateMigrationRequest
             return this;
         }
 
-        /**
-         * Migration properties.
-         *
-         */
+        /** Migration properties. */
         private com.oracle.bmc.databasemigration.model.UpdateMigrationDetails
                 updateMigrationDetails = null;
 
@@ -135,7 +113,6 @@ public class UpdateMigrationRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -152,21 +129,18 @@ public class UpdateMigrationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -178,18 +152,19 @@ public class UpdateMigrationRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -201,6 +176,7 @@ public class UpdateMigrationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateMigrationRequest o) {
@@ -216,10 +192,11 @@ public class UpdateMigrationRequest
         /**
          * Build the instance of UpdateMigrationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateMigrationRequest
          */
@@ -232,6 +209,7 @@ public class UpdateMigrationRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -244,7 +222,8 @@ public class UpdateMigrationRequest
         /**
          * Build the instance of UpdateMigrationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateMigrationRequest
@@ -256,12 +235,14 @@ public class UpdateMigrationRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateMigrationRequest(migrationId, updateMigrationDetails, opcRequestId, ifMatch);
+            // new UpdateMigrationRequest(migrationId, updateMigrationDetails, opcRequestId,
+            // ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -274,6 +255,7 @@ public class UpdateMigrationRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,19 +5,20 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Commit details that need to be used for the build run.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Commit details that need to be used for the build run. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommitInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CommitInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"repositoryUrl", "repositoryBranch", "commitHash"})
     public CommitInfo(String repositoryUrl, String repositoryBranch, String commitHash) {
@@ -29,49 +30,46 @@ public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Repository URL.
-         **/
+        /** Repository URL. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
         /**
          * Repository URL.
+         *
          * @param repositoryUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-        /**
-         * Name of the repository branch.
-         **/
+        /** Name of the repository branch. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryBranch")
         private String repositoryBranch;
 
         /**
          * Name of the repository branch.
+         *
          * @param repositoryBranch the value to set
          * @return this builder
-         **/
+         */
         public Builder repositoryBranch(String repositoryBranch) {
             this.repositoryBranch = repositoryBranch;
             this.__explicitlySet__.add("repositoryBranch");
             return this;
         }
-        /**
-         * Commit hash pertinent to the repository URL and the specified branch.
-         **/
+        /** Commit hash pertinent to the repository URL and the specified branch. */
         @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
         private String commitHash;
 
         /**
          * Commit hash pertinent to the repository URL and the specified branch.
+         *
          * @param commitHash the value to set
          * @return this builder
-         **/
+         */
         public Builder commitHash(String commitHash) {
             this.commitHash = commitHash;
             this.__explicitlySet__.add("commitHash");
@@ -105,9 +103,7 @@ public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +112,41 @@ public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * Repository URL.
-     **/
+    /** Repository URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
      * Repository URL.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
-    /**
-     * Name of the repository branch.
-     **/
+    /** Name of the repository branch. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryBranch")
     private final String repositoryBranch;
 
     /**
      * Name of the repository branch.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryBranch() {
         return repositoryBranch;
     }
 
-    /**
-     * Commit hash pertinent to the repository URL and the specified branch.
-     **/
+    /** Commit hash pertinent to the repository URL and the specified branch. */
     @com.fasterxml.jackson.annotation.JsonProperty("commitHash")
     private final String commitHash;
 
     /**
      * Commit hash pertinent to the repository URL and the specified branch.
+     *
      * @return the value
-     **/
+     */
     public String getCommitHash() {
         return commitHash;
     }
@@ -165,6 +158,7 @@ public final class CommitInfo extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

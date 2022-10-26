@@ -21,15 +21,16 @@ import com.oracle.bmc.core.responses.GetSubnetResponse;
 import com.oracle.bmc.core.responses.GetVcnResponse;
 
 /**
- * This class provides several utility functions for basic interactions with the VCN service. These functions
- * may be referenced by multiple examples in order to keep example files focused on the behavior being showcased.
+ * This class provides several utility functions for basic interactions with the VCN service. These
+ * functions may be referenced by multiple examples in order to keep example files focused on the
+ * behavior being showcased.
  */
 public final class ExampleVcnHelper {
 
     /**
      * Creates a VCN and waits for it to become available to use.
      *
-     * @param vcnClient  the client used to communicate with the service
+     * @param vcnClient the client used to communicate with the service
      * @param vcnDetails CreateVcnDetails containing parameters used to create the VCN
      * @return the created VCN
      * @throws Exception if an error is thrown while waiting for VCN to become available
@@ -59,7 +60,7 @@ public final class ExampleVcnHelper {
      * Deletes a VCN and waits for it to be deleted.
      *
      * @param vcnClient the client used to communicate with the service
-     * @param vcnId     the VCN OCID to delete
+     * @param vcnId the VCN OCID to delete
      * @throws Exception if an error is thrown while waiting for the VCN to be deleted
      */
     public static void deleteVcn(VirtualNetworkClient vcnClient, String vcnId) throws Exception {
@@ -75,7 +76,7 @@ public final class ExampleVcnHelper {
     /**
      * Creates a subnet in a VCN and waits for the subnet to become available to use.
      *
-     * @param vcnClient     the client used to communicate with the service
+     * @param vcnClient the client used to communicate with the service
      * @param subnetDetails CreateSubnetDetails containing parameters used to create the subnet
      * @return the created subnet
      * @throws Exception if an error is thrown while waiting for subnet to become available
@@ -106,7 +107,7 @@ public final class ExampleVcnHelper {
      * Deletes a subnet and waits for it to be deleted.
      *
      * @param vcnClient the client used to communicate with the service
-     * @param subnetId  the subnet OCID to delete
+     * @param subnetId the subnet OCID to delete
      * @throws Exception if an error is thrown while waiting for the subnet to be deleted
      */
     public static void deleteSubnet(VirtualNetworkClient vcnClient, String subnetId)

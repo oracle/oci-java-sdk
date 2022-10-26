@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.budget.model;
 
-/**
- * The current state of the resource.
- **/
+/** The current state of the resource. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum LifecycleState {
+public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
 

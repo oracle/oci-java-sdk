@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Metric details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Metric details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HistoricalMetricSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = HistoricalMetricSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HistoricalMetricSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -45,81 +45,76 @@ public final class HistoricalMetricSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Metric name.
-         **/
+        /** Metric name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Metric name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Aggregation time interval.
-         **/
+        /** Aggregation time interval. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
         private String aggregation;
 
         /**
          * Aggregation time interval.
+         *
          * @param aggregation the value to set
          * @return this builder
-         **/
+         */
         public Builder aggregation(String aggregation) {
             this.aggregation = aggregation;
             this.__explicitlySet__.add("aggregation");
             return this;
         }
-        /**
-         * Aggregation value.
-         **/
+        /** Aggregation value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Float value;
 
         /**
          * Aggregation value.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(Float value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * The time the HistoricalMetric was created. An RFC3339 formatted datetime string.
-         **/
+        /** The time the HistoricalMetric was created. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the HistoricalMetric was created. An RFC3339 formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time the HistoricalMetric was updated. An RFC3339 formatted datetime string.
-         **/
+        /** The time the HistoricalMetric was updated. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the HistoricalMetric was updated. An RFC3339 formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -164,9 +159,7 @@ public final class HistoricalMetricSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,72 +168,67 @@ public final class HistoricalMetricSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Metric name.
-     **/
+    /** Metric name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Metric name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Aggregation time interval.
-     **/
+    /** Aggregation time interval. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
     private final String aggregation;
 
     /**
      * Aggregation time interval.
+     *
      * @return the value
-     **/
+     */
     public String getAggregation() {
         return aggregation;
     }
 
-    /**
-     * Aggregation value.
-     **/
+    /** Aggregation value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Float value;
 
     /**
      * Aggregation value.
+     *
      * @return the value
-     **/
+     */
     public Float getValue() {
         return value;
     }
 
-    /**
-     * The time the HistoricalMetric was created. An RFC3339 formatted datetime string.
-     **/
+    /** The time the HistoricalMetric was created. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the HistoricalMetric was created. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the HistoricalMetric was updated. An RFC3339 formatted datetime string.
-     **/
+    /** The time the HistoricalMetric was updated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the HistoricalMetric was updated. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -252,6 +240,7 @@ public final class HistoricalMetricSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

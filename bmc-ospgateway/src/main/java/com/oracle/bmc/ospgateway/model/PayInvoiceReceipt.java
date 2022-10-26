@@ -5,21 +5,22 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Invoice payment action response
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Invoice payment action response <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PayInvoiceReceipt.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PayInvoiceReceipt.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PayInvoiceReceipt
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"url", "headerId", "token"})
     public PayInvoiceReceipt(String url, String headerId, String token) {
@@ -31,49 +32,46 @@ public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Url of the Payment Service
-         **/
+        /** Url of the Payment Service */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * Url of the Payment Service
+         *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /**
-         * Payment header id
-         **/
+        /** Payment header id */
         @com.fasterxml.jackson.annotation.JsonProperty("headerId")
         private String headerId;
 
         /**
          * Payment header id
+         *
          * @param headerId the value to set
          * @return this builder
-         **/
+         */
         public Builder headerId(String headerId) {
             this.headerId = headerId;
             this.__explicitlySet__.add("headerId");
             return this;
         }
-        /**
-         * Token created for Payment Service
-         **/
+        /** Token created for Payment Service */
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
         /**
          * Token created for Payment Service
+         *
          * @param token the value to set
          * @return this builder
-         **/
+         */
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
@@ -106,9 +104,7 @@ public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +113,41 @@ public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Url of the Payment Service
-     **/
+    /** Url of the Payment Service */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * Url of the Payment Service
+     *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * Payment header id
-     **/
+    /** Payment header id */
     @com.fasterxml.jackson.annotation.JsonProperty("headerId")
     private final String headerId;
 
     /**
      * Payment header id
+     *
      * @return the value
-     **/
+     */
     public String getHeaderId() {
         return headerId;
     }
 
-    /**
-     * Token created for Payment Service
-     **/
+    /** Token created for Payment Service */
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
     /**
      * Token created for Payment Service
+     *
      * @return the value
-     **/
+     */
     public String getToken() {
         return token;
     }
@@ -166,6 +159,7 @@ public final class PayInvoiceReceipt extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

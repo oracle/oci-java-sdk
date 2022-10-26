@@ -5,22 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * TLS enforcement config for the ingress listener.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * TLS enforcement config for the ingress listener. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = IngressListenerTlsConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = IngressListenerTlsConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class IngressListenerTlsConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"mode", "serverCertificate", "clientValidation"})
     public IngressListenerTlsConfig(
@@ -36,24 +36,23 @@ public final class IngressListenerTlsConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DISABLED: Connection can only be plaintext.
-         * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
-         * TLS: Connection can only be TLS.
-         * MUTUAL_TLS: Connection can only be MTLS.
-         *
-         **/
+         * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either
+         * plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for
+         * the listener, mTLS is performed and the client's certificates are validated by the
+         * gateway. TLS: Connection can only be TLS. MUTUAL_TLS: Connection can only be MTLS.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
-         * DISABLED: Connection can only be plaintext.
-         * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
-         * TLS: Connection can only be TLS.
-         * MUTUAL_TLS: Connection can only be MTLS.
+         * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either
+         * plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for
+         * the listener, mTLS is performed and the client's certificates are validated by the
+         * gateway. TLS: Connection can only be TLS. MUTUAL_TLS: Connection can only be MTLS.
          *
          * @param mode the value to set
          * @return this builder
-         **/
+         */
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -106,9 +105,7 @@ public final class IngressListenerTlsConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,21 +115,20 @@ public final class IngressListenerTlsConfig
     }
 
     /**
-     * DISABLED: Connection can only be plaintext.
-     * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
-     * TLS: Connection can only be TLS.
-     * MUTUAL_TLS: Connection can only be MTLS.
-     *
-     **/
-    public enum Mode {
+     * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or
+     * TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener,
+     * mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection
+     * can only be TLS. MUTUAL_TLS: Connection can only be MTLS.
+     */
+    public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
         Disabled("DISABLED"),
         Permissive("PERMISSIVE"),
         Tls("TLS"),
         MutualTls("MUTUAL_TLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -170,23 +166,22 @@ public final class IngressListenerTlsConfig
         }
     };
     /**
-     * DISABLED: Connection can only be plaintext.
-     * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
-     * TLS: Connection can only be TLS.
-     * MUTUAL_TLS: Connection can only be MTLS.
-     *
-     **/
+     * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or
+     * TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener,
+     * mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection
+     * can only be TLS. MUTUAL_TLS: Connection can only be MTLS.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
-     * DISABLED: Connection can only be plaintext.
-     * PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway.
-     * TLS: Connection can only be TLS.
-     * MUTUAL_TLS: Connection can only be MTLS.
+     * DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or
+     * TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener,
+     * mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection
+     * can only be TLS. MUTUAL_TLS: Connection can only be MTLS.
      *
      * @return the value
-     **/
+     */
     public Mode getMode() {
         return mode;
     }
@@ -212,6 +207,7 @@ public final class IngressListenerTlsConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Projection of an object that is tagged to a term.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Projection of an object that is tagged to a term. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TermAssociatedObject.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class TermAssociatedObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = TermAssociatedObject.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class TermAssociatedObject
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "name", "uri"})
     public TermAssociatedObject(String key, String name, String uri) {
@@ -31,49 +32,46 @@ public final class TermAssociatedObject extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Immutable key used to uniquely identify the associated object.
-         **/
+        /** Immutable key used to uniquely identify the associated object. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Immutable key used to uniquely identify the associated object.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Name of the associated object.
-         **/
+        /** Name of the associated object. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the associated object.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * URI of the associated object within the data catalog API.
-         **/
+        /** URI of the associated object within the data catalog API. */
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI of the associated object within the data catalog API.
+         *
          * @param uri the value to set
          * @return this builder
-         **/
+         */
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
@@ -106,9 +104,7 @@ public final class TermAssociatedObject extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +113,41 @@ public final class TermAssociatedObject extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * Immutable key used to uniquely identify the associated object.
-     **/
+    /** Immutable key used to uniquely identify the associated object. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Immutable key used to uniquely identify the associated object.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Name of the associated object.
-     **/
+    /** Name of the associated object. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the associated object.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * URI of the associated object within the data catalog API.
-     **/
+    /** URI of the associated object within the data catalog API. */
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI of the associated object within the data catalog API.
+     *
      * @return the value
-     **/
+     */
     public String getUri() {
         return uri;
     }
@@ -166,6 +159,7 @@ public final class TermAssociatedObject extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

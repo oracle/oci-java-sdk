@@ -5,19 +5,21 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * A content access rule. An access rule specifies an action to take if a set of criteria is matched by a request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A content access rule. An access rule specifies an action to take if a set of criteria is matched
+ * by a request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AccessRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AccessRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -75,205 +77,257 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The unique name of the access rule.
-         **/
+        /** The unique name of the access rule. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The unique name of the access rule.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
-         **/
+         * The list of access rule criteria. The rule would be applied only for the requests that
+         * matched all the listed conditions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("criteria")
         private java.util.List<AccessRuleCriteria> criteria;
 
         /**
-         * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
+         * The list of access rule criteria. The rule would be applied only for the requests that
+         * matched all the listed conditions.
+         *
          * @param criteria the value to set
          * @return this builder
-         **/
+         */
         public Builder criteria(java.util.List<AccessRuleCriteria> criteria) {
             this.criteria = criteria;
             this.__explicitlySet__.add("criteria");
             return this;
         }
         /**
-         * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
-         * <p>
-         * - **ALLOW:** Takes no action, just logs the request.
-         * <p>
-         * - **DETECT:** Takes no action, but creates an alert for the request.
-         * <p>
-         * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
-         * <p>
-         * - **BYPASS:** Bypasses some or all challenges.
-         * <p>
-         * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
-         * <p>
-         * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
-         * <p>
-         * Regardless of action, no further rules are processed once a rule is matched.
-         **/
+         * The action to take when the access criteria are met for a rule. If unspecified, defaults
+         * to {@code ALLOW}.
+         *
+         * <p>- **ALLOW:** Takes no action, just logs the request.
+         *
+         * <p>- **DETECT:** Takes no action, but creates an alert for the request.
+         *
+         * <p>- **BLOCK:** Blocks the request by returning specified response code or showing error
+         * page.
+         *
+         * <p>- **BYPASS:** Bypasses some or all challenges.
+         *
+         * <p>- **REDIRECT:** Redirects the request to the specified URL. These fields are required
+         * when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
+         *
+         * <p>- **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+         *
+         * <p>Regardless of action, no further rules are processed once a rule is matched.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
-         * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
-         * <p>
-         * - **ALLOW:** Takes no action, just logs the request.
-         * <p>
-         * - **DETECT:** Takes no action, but creates an alert for the request.
-         * <p>
-         * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
-         * <p>
-         * - **BYPASS:** Bypasses some or all challenges.
-         * <p>
-         * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
-         * <p>
-         * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
-         * <p>
-         * Regardless of action, no further rules are processed once a rule is matched.
+         * The action to take when the access criteria are met for a rule. If unspecified, defaults
+         * to {@code ALLOW}.
+         *
+         * <p>- **ALLOW:** Takes no action, just logs the request.
+         *
+         * <p>- **DETECT:** Takes no action, but creates an alert for the request.
+         *
+         * <p>- **BLOCK:** Blocks the request by returning specified response code or showing error
+         * page.
+         *
+         * <p>- **BYPASS:** Bypasses some or all challenges.
+         *
+         * <p>- **REDIRECT:** Redirects the request to the specified URL. These fields are required
+         * when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
+         *
+         * <p>- **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+         *
+         * <p>Regardless of action, no further rules are processed once a rule is matched.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
-         **/
+         * The method used to block requests if {@code action} is set to {@code BLOCK} and the
+         * access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockAction")
         private BlockAction blockAction;
 
         /**
-         * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+         * The method used to block requests if {@code action} is set to {@code BLOCK} and the
+         * access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+         *
          * @param blockAction the value to set
          * @return this builder
-         **/
+         */
         public Builder blockAction(BlockAction blockAction) {
             this.blockAction = blockAction;
             this.__explicitlySet__.add("blockAction");
             return this;
         }
         /**
-         * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
-         **/
+         * The response status code to return when {@code action} is set to {@code BLOCK}, {@code
+         * blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If
+         * unspecified, defaults to {@code 403}. The list of available response codes: {@code 200},
+         * {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code
+         * 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403},
+         * {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code
+         * 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494},
+         * {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code
+         * 502}, {@code 503}, {@code 504}, {@code 507}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
         private Integer blockResponseCode;
 
         /**
-         * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
+         * The response status code to return when {@code action} is set to {@code BLOCK}, {@code
+         * blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If
+         * unspecified, defaults to {@code 403}. The list of available response codes: {@code 200},
+         * {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code
+         * 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403},
+         * {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code
+         * 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494},
+         * {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code
+         * 502}, {@code 503}, {@code 504}, {@code 507}.
+         *
          * @param blockResponseCode the value to set
          * @return this builder
-         **/
+         */
         public Builder blockResponseCode(Integer blockResponseCode) {
             this.blockResponseCode = blockResponseCode;
             this.__explicitlySet__.add("blockResponseCode");
             return this;
         }
         /**
-         * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
-         **/
+         * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+         * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+         * unspecified, defaults to 'Access to the website is blocked.'
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageMessage")
         private String blockErrorPageMessage;
 
         /**
-         * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
+         * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+         * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+         * unspecified, defaults to 'Access to the website is blocked.'
+         *
          * @param blockErrorPageMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder blockErrorPageMessage(String blockErrorPageMessage) {
             this.blockErrorPageMessage = blockErrorPageMessage;
             this.__explicitlySet__.add("blockErrorPageMessage");
             return this;
         }
         /**
-         * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
-         **/
+         * The error code to show on the error page when {@code action} is set to {@code BLOCK},
+         * {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met.
+         * If unspecified, defaults to 'Access rules'.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageCode")
         private String blockErrorPageCode;
 
         /**
-         * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
+         * The error code to show on the error page when {@code action} is set to {@code BLOCK},
+         * {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met.
+         * If unspecified, defaults to 'Access rules'.
+         *
          * @param blockErrorPageCode the value to set
          * @return this builder
-         **/
+         */
         public Builder blockErrorPageCode(String blockErrorPageCode) {
             this.blockErrorPageCode = blockErrorPageCode;
             this.__explicitlySet__.add("blockErrorPageCode");
             return this;
         }
         /**
-         * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
-         **/
+         * The description text to show on the error page when {@code action} is set to {@code
+         * BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria
+         * are met. If unspecified, defaults to 'Access blocked by website owner. Please contact
+         * support.'
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageDescription")
         private String blockErrorPageDescription;
 
         /**
-         * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+         * The description text to show on the error page when {@code action} is set to {@code
+         * BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria
+         * are met. If unspecified, defaults to 'Access blocked by website owner. Please contact
+         * support.'
+         *
          * @param blockErrorPageDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder blockErrorPageDescription(String blockErrorPageDescription) {
             this.blockErrorPageDescription = blockErrorPageDescription;
             this.__explicitlySet__.add("blockErrorPageDescription");
             return this;
         }
         /**
-         * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified or empty, all challenges are bypassed.
-         * <p>
-         * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-         * <p>
-         * - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-         * <p>
-         * - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-         * <p>
-         * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
-         **/
+         * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If
+         * unspecified or empty, all challenges are bypassed.
+         *
+         * <p>- **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+         *
+         * <p>- **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+         *
+         * <p>- **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+         *
+         * <p>- **CAPTCHA:** Bypasses CAPTCHA Challenge.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bypassChallenges")
         private java.util.List<BypassChallenges> bypassChallenges;
 
         /**
-         * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified or empty, all challenges are bypassed.
-         * <p>
-         * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-         * <p>
-         * - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-         * <p>
-         * - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-         * <p>
-         * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
+         * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If
+         * unspecified or empty, all challenges are bypassed.
+         *
+         * <p>- **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+         *
+         * <p>- **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+         *
+         * <p>- **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+         *
+         * <p>- **CAPTCHA:** Bypasses CAPTCHA Challenge.
+         *
          * @param bypassChallenges the value to set
          * @return this builder
-         **/
+         */
         public Builder bypassChallenges(java.util.List<BypassChallenges> bypassChallenges) {
             this.bypassChallenges = bypassChallenges;
             this.__explicitlySet__.add("bypassChallenges");
             return this;
         }
         /**
-         * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
-         **/
+         * The target to which the request should be redirected, represented as a URI reference.
+         * Required when {@code action} is {@code REDIRECT}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
         private String redirectUrl;
 
         /**
-         * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
+         * The target to which the request should be redirected, represented as a URI reference.
+         * Required when {@code action} is {@code REDIRECT}.
+         *
          * @param redirectUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder redirectUrl(String redirectUrl) {
             this.redirectUrl = redirectUrl;
             this.__explicitlySet__.add("redirectUrl");
@@ -281,103 +335,123 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         }
         /**
          * The response status code to return when {@code action} is set to {@code REDIRECT}.
-         * <p>
-         * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-         * <p>
-         * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-         **/
+         *
+         * <p>- **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page
+         * (numerical code - 301).
+         *
+         * <p>- **FOUND:** Used for designating the temporary movement of a page (numerical code -
+         * 302).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
         private RedirectResponseCode redirectResponseCode;
 
         /**
          * The response status code to return when {@code action} is set to {@code REDIRECT}.
-         * <p>
-         * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-         * <p>
-         * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+         *
+         * <p>- **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page
+         * (numerical code - 301).
+         *
+         * <p>- **FOUND:** Used for designating the temporary movement of a page (numerical code -
+         * 302).
+         *
          * @param redirectResponseCode the value to set
          * @return this builder
-         **/
+         */
         public Builder redirectResponseCode(RedirectResponseCode redirectResponseCode) {
             this.redirectResponseCode = redirectResponseCode;
             this.__explicitlySet__.add("redirectResponseCode");
             return this;
         }
         /**
-         * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-         **/
+         * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code
+         * SHOW_CAPTCHA} and the request is challenged.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
         private String captchaTitle;
 
         /**
-         * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code
+         * SHOW_CAPTCHA} and the request is challenged.
+         *
          * @param captchaTitle the value to set
          * @return this builder
-         **/
+         */
         public Builder captchaTitle(String captchaTitle) {
             this.captchaTitle = captchaTitle;
             this.__explicitlySet__.add("captchaTitle");
             return this;
         }
         /**
-         * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-         **/
+         * The text to show in the header when showing a CAPTCHA challenge when {@code action} is
+         * set to {@code SHOW_CAPTCHA} and the request is challenged.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
         private String captchaHeader;
 
         /**
-         * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         * The text to show in the header when showing a CAPTCHA challenge when {@code action} is
+         * set to {@code SHOW_CAPTCHA} and the request is challenged.
+         *
          * @param captchaHeader the value to set
          * @return this builder
-         **/
+         */
         public Builder captchaHeader(String captchaHeader) {
             this.captchaHeader = captchaHeader;
             this.__explicitlySet__.add("captchaHeader");
             return this;
         }
         /**
-         * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-         **/
+         * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is
+         * set to {@code SHOW_CAPTCHA} and the request is challenged.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
         private String captchaFooter;
 
         /**
-         * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is
+         * set to {@code SHOW_CAPTCHA} and the request is challenged.
+         *
          * @param captchaFooter the value to set
          * @return this builder
-         **/
+         */
         public Builder captchaFooter(String captchaFooter) {
             this.captchaFooter = captchaFooter;
             this.__explicitlySet__.add("captchaFooter");
             return this;
         }
         /**
-         * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-         **/
+         * The text to show on the label of the CAPTCHA challenge submit button when {@code action}
+         * is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
         private String captchaSubmitLabel;
 
         /**
-         * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         * The text to show on the label of the CAPTCHA challenge submit button when {@code action}
+         * is set to {@code SHOW_CAPTCHA} and the request is challenged.
+         *
          * @param captchaSubmitLabel the value to set
          * @return this builder
-         **/
+         */
         public Builder captchaSubmitLabel(String captchaSubmitLabel) {
             this.captchaSubmitLabel = captchaSubmitLabel;
             this.__explicitlySet__.add("captchaSubmitLabel");
             return this;
         }
         /**
-         * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
-         **/
+         * An object that represents an action to apply to an HTTP response headers if all rule
+         * criteria will be matched regardless of {@code action} value.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
         private java.util.List<HeaderManipulationAction> responseHeaderManipulation;
 
         /**
-         * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
+         * An object that represents an action to apply to an HTTP response headers if all rule
+         * criteria will be matched regardless of {@code action} value.
+         *
          * @param responseHeaderManipulation the value to set
          * @return this builder
-         **/
+         */
         public Builder responseHeaderManipulation(
                 java.util.List<HeaderManipulationAction> responseHeaderManipulation) {
             this.responseHeaderManipulation = responseHeaderManipulation;
@@ -467,9 +541,7 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -478,52 +550,57 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * The unique name of the access rule.
-     **/
+    /** The unique name of the access rule. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The unique name of the access rule.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
-     **/
+     * The list of access rule criteria. The rule would be applied only for the requests that
+     * matched all the listed conditions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
     private final java.util.List<AccessRuleCriteria> criteria;
 
     /**
-     * The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
+     * The list of access rule criteria. The rule would be applied only for the requests that
+     * matched all the listed conditions.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AccessRuleCriteria> getCriteria() {
         return criteria;
     }
 
     /**
-     * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
-     * <p>
-     * - **ALLOW:** Takes no action, just logs the request.
-     * <p>
-     * - **DETECT:** Takes no action, but creates an alert for the request.
-     * <p>
-     * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
-     * <p>
-     * - **BYPASS:** Bypasses some or all challenges.
-     * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
-     * <p>
-     * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
-     * <p>
-     * Regardless of action, no further rules are processed once a rule is matched.
-     **/
-    public enum Action {
+     * The action to take when the access criteria are met for a rule. If unspecified, defaults to
+     * {@code ALLOW}.
+     *
+     * <p>- **ALLOW:** Takes no action, just logs the request.
+     *
+     * <p>- **DETECT:** Takes no action, but creates an alert for the request.
+     *
+     * <p>- **BLOCK:** Blocks the request by returning specified response code or showing error
+     * page.
+     *
+     * <p>- **BYPASS:** Bypasses some or all challenges.
+     *
+     * <p>- **REDIRECT:** Redirects the request to the specified URL. These fields are required when
+     * {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
+     *
+     * <p>- **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+     *
+     * <p>Regardless of action, no further rules are processed once a rule is matched.
+     */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         Detect("DETECT"),
         Block("BLOCK"),
@@ -532,8 +609,8 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         ShowCaptcha("SHOW_CAPTCHA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -572,57 +649,65 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
-     * <p>
-     * - **ALLOW:** Takes no action, just logs the request.
-     * <p>
-     * - **DETECT:** Takes no action, but creates an alert for the request.
-     * <p>
-     * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
-     * <p>
-     * - **BYPASS:** Bypasses some or all challenges.
-     * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
-     * <p>
-     * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
-     * <p>
-     * Regardless of action, no further rules are processed once a rule is matched.
-     **/
+     * The action to take when the access criteria are met for a rule. If unspecified, defaults to
+     * {@code ALLOW}.
+     *
+     * <p>- **ALLOW:** Takes no action, just logs the request.
+     *
+     * <p>- **DETECT:** Takes no action, but creates an alert for the request.
+     *
+     * <p>- **BLOCK:** Blocks the request by returning specified response code or showing error
+     * page.
+     *
+     * <p>- **BYPASS:** Bypasses some or all challenges.
+     *
+     * <p>- **REDIRECT:** Redirects the request to the specified URL. These fields are required when
+     * {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
+     *
+     * <p>- **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+     *
+     * <p>Regardless of action, no further rules are processed once a rule is matched.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
-     * The action to take when the access criteria are met for a rule. If unspecified, defaults to {@code ALLOW}.
-     * <p>
-     * - **ALLOW:** Takes no action, just logs the request.
-     * <p>
-     * - **DETECT:** Takes no action, but creates an alert for the request.
-     * <p>
-     * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
-     * <p>
-     * - **BYPASS:** Bypasses some or all challenges.
-     * <p>
-     * - **REDIRECT:** Redirects the request to the specified URL. These fields are required when {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
-     * <p>
-     * - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
-     * <p>
-     * Regardless of action, no further rules are processed once a rule is matched.
+     * The action to take when the access criteria are met for a rule. If unspecified, defaults to
+     * {@code ALLOW}.
+     *
+     * <p>- **ALLOW:** Takes no action, just logs the request.
+     *
+     * <p>- **DETECT:** Takes no action, but creates an alert for the request.
+     *
+     * <p>- **BLOCK:** Blocks the request by returning specified response code or showing error
+     * page.
+     *
+     * <p>- **BYPASS:** Bypasses some or all challenges.
+     *
+     * <p>- **REDIRECT:** Redirects the request to the specified URL. These fields are required when
+     * {@code REDIRECT} is selected: {@code redirectUrl}, {@code redirectResponseCode}.
+     *
+     * <p>- **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+     *
+     * <p>Regardless of action, no further rules are processed once a rule is matched.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
 
     /**
-     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
-     **/
-    public enum BlockAction {
+     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access
+     * criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+     */
+    public enum BlockAction implements com.oracle.bmc.http.internal.BmcEnum {
         SetResponseCode("SET_RESPONSE_CODE"),
         ShowErrorPage("SHOW_ERROR_PAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -662,86 +747,120 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
-     **/
+     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access
+     * criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockAction")
     private final BlockAction blockAction;
 
     /**
-     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+     * The method used to block requests if {@code action} is set to {@code BLOCK} and the access
+     * criteria are met. If unspecified, defaults to {@code SET_RESPONSE_CODE}.
+     *
      * @return the value
-     **/
+     */
     public BlockAction getBlockAction() {
         return blockAction;
     }
 
     /**
-     * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
-     **/
+     * The response status code to return when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If
+     * unspecified, defaults to {@code 403}. The list of available response codes: {@code 200},
+     * {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302},
+     * {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404},
+     * {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414},
+     * {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496},
+     * {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504},
+     * {@code 507}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
     private final Integer blockResponseCode;
 
     /**
-     * The response status code to return when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If unspecified, defaults to {@code 403}. The list of available response codes: {@code 200}, {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302}, {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404}, {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414}, {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496}, {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504}, {@code 507}.
+     * The response status code to return when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SET_RESPONSE_CODE}, and the access criteria are met. If
+     * unspecified, defaults to {@code 403}. The list of available response codes: {@code 200},
+     * {@code 201}, {@code 202}, {@code 204}, {@code 206}, {@code 300}, {@code 301}, {@code 302},
+     * {@code 303}, {@code 304}, {@code 307}, {@code 400}, {@code 401}, {@code 403}, {@code 404},
+     * {@code 405}, {@code 408}, {@code 409}, {@code 411}, {@code 412}, {@code 413}, {@code 414},
+     * {@code 415}, {@code 416}, {@code 422}, {@code 444}, {@code 494}, {@code 495}, {@code 496},
+     * {@code 497}, {@code 499}, {@code 500}, {@code 501}, {@code 502}, {@code 503}, {@code 504},
+     * {@code 507}.
+     *
      * @return the value
-     **/
+     */
     public Integer getBlockResponseCode() {
         return blockResponseCode;
     }
 
     /**
-     * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
-     **/
+     * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access to the website is blocked.'
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageMessage")
     private final String blockErrorPageMessage;
 
     /**
-     * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
+     * The message to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access to the website is blocked.'
+     *
      * @return the value
-     **/
+     */
     public String getBlockErrorPageMessage() {
         return blockErrorPageMessage;
     }
 
     /**
-     * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
-     **/
+     * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access rules'.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageCode")
     private final String blockErrorPageCode;
 
     /**
-     * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access rules'.
+     * The error code to show on the error page when {@code action} is set to {@code BLOCK}, {@code
+     * blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access rules'.
+     *
      * @return the value
-     **/
+     */
     public String getBlockErrorPageCode() {
         return blockErrorPageCode;
     }
 
     /**
-     * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
-     **/
+     * The description text to show on the error page when {@code action} is set to {@code BLOCK},
+     * {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageDescription")
     private final String blockErrorPageDescription;
 
     /**
-     * The description text to show on the error page when {@code action} is set to {@code BLOCK}, {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+     * The description text to show on the error page when {@code action} is set to {@code BLOCK},
+     * {@code blockAction} is set to {@code SHOW_ERROR_PAGE}, and the access criteria are met. If
+     * unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+     *
      * @return the value
-     **/
+     */
     public String getBlockErrorPageDescription() {
         return blockErrorPageDescription;
     }
 
-    /**
-     **/
-    public enum BypassChallenges {
+    /** */
+    public enum BypassChallenges implements com.oracle.bmc.http.internal.BmcEnum {
         JsChallenge("JS_CHALLENGE"),
         DeviceFingerprintChallenge("DEVICE_FINGERPRINT_CHALLENGE"),
         HumanInteractionChallenge("HUMAN_INTERACTION_CHALLENGE"),
         Captcha("CAPTCHA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -781,63 +900,70 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     };
     /**
-     * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified or empty, all challenges are bypassed.
-     * <p>
-     * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-     * <p>
-     * - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-     * <p>
-     * - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-     * <p>
-     * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
-     **/
+     * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified
+     * or empty, all challenges are bypassed.
+     *
+     * <p>- **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+     *
+     * <p>- **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+     *
+     * <p>- **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+     *
+     * <p>- **CAPTCHA:** Bypasses CAPTCHA Challenge.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bypassChallenges")
     private final java.util.List<BypassChallenges> bypassChallenges;
 
     /**
-     * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified or empty, all challenges are bypassed.
-     * <p>
-     * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
-     * <p>
-     * - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
-     * <p>
-     * - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
-     * <p>
-     * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
+     * The list of challenges to bypass when {@code action} is set to {@code BYPASS}. If unspecified
+     * or empty, all challenges are bypassed.
+     *
+     * <p>- **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+     *
+     * <p>- **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+     *
+     * <p>- **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+     *
+     * <p>- **CAPTCHA:** Bypasses CAPTCHA Challenge.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BypassChallenges> getBypassChallenges() {
         return bypassChallenges;
     }
 
     /**
-     * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
-     **/
+     * The target to which the request should be redirected, represented as a URI reference.
+     * Required when {@code action} is {@code REDIRECT}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
     private final String redirectUrl;
 
     /**
-     * The target to which the request should be redirected, represented as a URI reference. Required when {@code action} is {@code REDIRECT}.
+     * The target to which the request should be redirected, represented as a URI reference.
+     * Required when {@code action} is {@code REDIRECT}.
+     *
      * @return the value
-     **/
+     */
     public String getRedirectUrl() {
         return redirectUrl;
     }
 
     /**
      * The response status code to return when {@code action} is set to {@code REDIRECT}.
-     * <p>
-     * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-     * <p>
-     * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-     **/
-    public enum RedirectResponseCode {
+     *
+     * <p>- **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical
+     * code - 301).
+     *
+     * <p>- **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     */
+    public enum RedirectResponseCode implements com.oracle.bmc.http.internal.BmcEnum {
         MovedPermanently("MOVED_PERMANENTLY"),
         Found("FOUND"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -878,92 +1004,110 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
     };
     /**
      * The response status code to return when {@code action} is set to {@code REDIRECT}.
-     * <p>
-     * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-     * <p>
-     * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
-     **/
+     *
+     * <p>- **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical
+     * code - 301).
+     *
+     * <p>- **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
     private final RedirectResponseCode redirectResponseCode;
 
     /**
      * The response status code to return when {@code action} is set to {@code REDIRECT}.
-     * <p>
-     * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
-     * <p>
-     * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     *
+     * <p>- **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical
+     * code - 301).
+     *
+     * <p>- **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     *
      * @return the value
-     **/
+     */
     public RedirectResponseCode getRedirectResponseCode() {
         return redirectResponseCode;
     }
 
     /**
-     * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-     **/
+     * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code
+     * SHOW_CAPTCHA} and the request is challenged.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("captchaTitle")
     private final String captchaTitle;
 
     /**
-     * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+     * The title used when showing a CAPTCHA challenge when {@code action} is set to {@code
+     * SHOW_CAPTCHA} and the request is challenged.
+     *
      * @return the value
-     **/
+     */
     public String getCaptchaTitle() {
         return captchaTitle;
     }
 
     /**
-     * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-     **/
+     * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to
+     * {@code SHOW_CAPTCHA} and the request is challenged.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("captchaHeader")
     private final String captchaHeader;
 
     /**
-     * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+     * The text to show in the header when showing a CAPTCHA challenge when {@code action} is set to
+     * {@code SHOW_CAPTCHA} and the request is challenged.
+     *
      * @return the value
-     **/
+     */
     public String getCaptchaHeader() {
         return captchaHeader;
     }
 
     /**
-     * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-     **/
+     * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to
+     * {@code SHOW_CAPTCHA} and the request is challenged.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("captchaFooter")
     private final String captchaFooter;
 
     /**
-     * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+     * The text to show in the footer when showing a CAPTCHA challenge when {@code action} is set to
+     * {@code SHOW_CAPTCHA} and the request is challenged.
+     *
      * @return the value
-     **/
+     */
     public String getCaptchaFooter() {
         return captchaFooter;
     }
 
     /**
-     * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
-     **/
+     * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is
+     * set to {@code SHOW_CAPTCHA} and the request is challenged.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("captchaSubmitLabel")
     private final String captchaSubmitLabel;
 
     /**
-     * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is set to {@code SHOW_CAPTCHA} and the request is challenged.
+     * The text to show on the label of the CAPTCHA challenge submit button when {@code action} is
+     * set to {@code SHOW_CAPTCHA} and the request is challenged.
+     *
      * @return the value
-     **/
+     */
     public String getCaptchaSubmitLabel() {
         return captchaSubmitLabel;
     }
 
     /**
-     * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
-     **/
+     * An object that represents an action to apply to an HTTP response headers if all rule criteria
+     * will be matched regardless of {@code action} value.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("responseHeaderManipulation")
     private final java.util.List<HeaderManipulationAction> responseHeaderManipulation;
 
     /**
-     * An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of {@code action} value.
+     * An object that represents an action to apply to an HTTP response headers if all rule criteria
+     * will be matched regardless of {@code action} value.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<HeaderManipulationAction> getResponseHeaderManipulation() {
         return responseHeaderManipulation;
     }
@@ -975,6 +1119,7 @@ public final class AccessRule extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

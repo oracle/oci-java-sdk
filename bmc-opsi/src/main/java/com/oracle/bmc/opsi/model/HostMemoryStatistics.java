@@ -5,26 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Contains memory statistics.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Contains memory statistics. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HostMemoryStatistics.Builder.class
-)
+        builder = HostMemoryStatistics.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "resourceName"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "resourceName")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HostMemoryStatistics extends HostResourceStatistics {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,10 +79,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
             this.__explicitlySet__.add("availableMemory");
             return this;
         }
-        /**
-         * Total number of huge pages.
-         *
-         **/
+        /** Total number of huge pages. */
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
         private Integer hugePagesTotal;
 
@@ -93,16 +88,13 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
          *
          * @param hugePagesTotal the value to set
          * @return this builder
-         **/
+         */
         public Builder hugePagesTotal(Integer hugePagesTotal) {
             this.hugePagesTotal = hugePagesTotal;
             this.__explicitlySet__.add("hugePagesTotal");
             return this;
         }
-        /**
-         * Size of huge pages in megabytes.
-         *
-         **/
+        /** Size of huge pages in megabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInMB")
         private Double hugePageSizeInMB;
 
@@ -111,16 +103,13 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
          *
          * @param hugePageSizeInMB the value to set
          * @return this builder
-         **/
+         */
         public Builder hugePageSizeInMB(Double hugePageSizeInMB) {
             this.hugePageSizeInMB = hugePageSizeInMB;
             this.__explicitlySet__.add("hugePageSizeInMB");
             return this;
         }
-        /**
-         * Total number of available huge pages.
-         *
-         **/
+        /** Total number of available huge pages. */
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
         private Integer hugePagesFree;
 
@@ -129,16 +118,13 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
          *
          * @param hugePagesFree the value to set
          * @return this builder
-         **/
+         */
         public Builder hugePagesFree(Integer hugePagesFree) {
             this.hugePagesFree = hugePagesFree;
             this.__explicitlySet__.add("hugePagesFree");
             return this;
         }
-        /**
-         * Total number of huge pages which are used or reserved.
-         *
-         **/
+        /** Total number of huge pages which are used or reserved. */
         @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
         private Integer hugePagesReserved;
 
@@ -147,7 +133,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
          *
          * @param hugePagesReserved the value to set
          * @return this builder
-         **/
+         */
         public Builder hugePagesReserved(Integer hugePagesReserved) {
             this.hugePagesReserved = hugePagesReserved;
             this.__explicitlySet__.add("hugePagesReserved");
@@ -225,9 +211,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -273,10 +257,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
         return availableMemory;
     }
 
-    /**
-     * Total number of huge pages.
-     *
-     **/
+    /** Total number of huge pages. */
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesTotal")
     private final Integer hugePagesTotal;
 
@@ -284,15 +265,12 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
      * Total number of huge pages.
      *
      * @return the value
-     **/
+     */
     public Integer getHugePagesTotal() {
         return hugePagesTotal;
     }
 
-    /**
-     * Size of huge pages in megabytes.
-     *
-     **/
+    /** Size of huge pages in megabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("hugePageSizeInMB")
     private final Double hugePageSizeInMB;
 
@@ -300,15 +278,12 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
      * Size of huge pages in megabytes.
      *
      * @return the value
-     **/
+     */
     public Double getHugePageSizeInMB() {
         return hugePageSizeInMB;
     }
 
-    /**
-     * Total number of available huge pages.
-     *
-     **/
+    /** Total number of available huge pages. */
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesFree")
     private final Integer hugePagesFree;
 
@@ -316,15 +291,12 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
      * Total number of available huge pages.
      *
      * @return the value
-     **/
+     */
     public Integer getHugePagesFree() {
         return hugePagesFree;
     }
 
-    /**
-     * Total number of huge pages which are used or reserved.
-     *
-     **/
+    /** Total number of huge pages which are used or reserved. */
     @com.fasterxml.jackson.annotation.JsonProperty("hugePagesReserved")
     private final Integer hugePagesReserved;
 
@@ -332,7 +304,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
      * Total number of huge pages which are used or reserved.
      *
      * @return the value
-     **/
+     */
     public Integer getHugePagesReserved() {
         return hugePagesReserved;
     }
@@ -351,6 +323,7 @@ public final class HostMemoryStatistics extends HostResourceStatistics {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

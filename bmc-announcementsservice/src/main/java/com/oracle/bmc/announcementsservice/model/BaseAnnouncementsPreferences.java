@@ -5,35 +5,34 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * The object that contains the announcement email preferences configured for the tenancy (root compartment).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The object that contains the announcement email preferences configured for the tenancy (root
+ * compartment). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = BaseAnnouncementsPreferences.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = BaseAnnouncementsPreferences.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AnnouncementsPreferencesSummary.class,
-        name = "AnnouncementsPreferencesSummary"
-    ),
+            value = AnnouncementsPreferencesSummary.class,
+            name = "AnnouncementsPreferencesSummary"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AnnouncementsPreferences.class,
-        name = "AnnouncementsPreferences"
-    )
+            value = AnnouncementsPreferences.class,
+            name = "AnnouncementsPreferences")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class BaseAnnouncementsPreferences
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -62,8 +61,7 @@ public class BaseAnnouncementsPreferences
     /**
      * The OCID of the compartment for which the email preferences apply. Because announcements are
      * specific to a tenancy, specify the tenancy by providing the root compartment OCID.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -72,81 +70,78 @@ public class BaseAnnouncementsPreferences
      * specific to a tenancy, specify the tenancy by providing the root compartment OCID.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The ID of the preferences.
-     **/
+    /** The ID of the preferences. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The ID of the preferences.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
-     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
-     *
-     **/
+     * A Boolean value to indicate whether the specified compartment chooses to not to receive
+     * informational announcements by email. (Manage preferences for receiving announcements by
+     * email by specifying the {@code preferenceType} attribute instead.)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUnsubscribed")
     private final Boolean isUnsubscribed;
 
     /**
-     * A Boolean value to indicate whether the specified compartment chooses to not to receive informational announcements by email.
-     * (Manage preferences for receiving announcements by email by specifying the {@code preferenceType} attribute instead.)
+     * A Boolean value to indicate whether the specified compartment chooses to not to receive
+     * informational announcements by email. (Manage preferences for receiving announcements by
+     * email by specifying the {@code preferenceType} attribute instead.)
      *
      * @return the value
-     **/
+     */
     public Boolean getIsUnsubscribed() {
         return isUnsubscribed;
     }
 
-    /**
-     * When the preferences were set initially.
-     **/
+    /** When the preferences were set initially. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * When the preferences were set initially.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * When the preferences were last updated.
-     **/
+    /** When the preferences were last updated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * When the preferences were last updated.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The string representing the user's preference regarding receiving announcements by email.
-     **/
+    /** The string representing the user's preference regarding receiving announcements by email. */
     @com.fasterxml.jackson.annotation.JsonProperty("preferenceType")
     private final BaseCreateAnnouncementsPreferencesDetails.PreferenceType preferenceType;
 
     /**
      * The string representing the user's preference regarding receiving announcements by email.
+     *
      * @return the value
-     **/
+     */
     public BaseCreateAnnouncementsPreferencesDetails.PreferenceType getPreferenceType() {
         return preferenceType;
     }
@@ -158,6 +153,7 @@ public class BaseAnnouncementsPreferences
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

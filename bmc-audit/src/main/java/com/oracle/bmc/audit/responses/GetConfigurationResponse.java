@@ -8,13 +8,12 @@ import com.oracle.bmc.audit.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * The returned Configuration instance.
-     */
+    /** The returned Configuration instance. */
     private com.oracle.bmc.audit.model.Configuration configuration;
 
     /**
      * The returned Configuration instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.audit.model.Configuration getConfiguration() {
@@ -24,34 +23,36 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "configuration"})
     private GetConfigurationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             com.oracle.bmc.audit.model.Configuration configuration) {
         super(__httpStatusCode__, headers);
         this.configuration = configuration;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetConfigurationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * The returned Configuration instance.
-         */
+        /** The returned Configuration instance. */
         private com.oracle.bmc.audit.model.Configuration configuration;
 
         /**
          * The returned Configuration instance.
+         *
          * @param configuration the value to set
          * @return this builder
          */
@@ -62,8 +63,10 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -75,8 +78,10 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetConfigurationResponse build() {
             return new GetConfigurationResponse(__httpStatusCode__, headers, configuration);
         }
@@ -84,6 +89,7 @@ public class GetConfigurationResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The source of the sensitive type.
- **/
+/** The source of the sensitive type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum SensitiveTypeSource {
+public enum SensitiveTypeSource implements com.oracle.bmc.http.internal.BmcEnum {
     Oracle("ORACLE"),
     User("USER"),
 

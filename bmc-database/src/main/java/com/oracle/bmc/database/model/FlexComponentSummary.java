@@ -5,26 +5,28 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Flex Components for a DB system. The Flex Component determines resources to allocate to the DB system -  CPU cores, memory and storage for Flex shapes.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
- * If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * The Flex Components for a DB system. The Flex Component determines resources to allocate to the
+ * DB system - CPU cores, memory and storage for Flex shapes.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FlexComponentSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class FlexComponentSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = FlexComponentSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class FlexComponentSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -46,65 +48,71 @@ public final class FlexComponentSummary extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the Flex Component used for the DB system.
-         **/
+        /** The name of the Flex Component used for the DB system. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Flex Component used for the DB system.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
-         **/
+         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex
+         * Component.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
         private Integer minimumCoreCount;
 
         /**
-         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+         * The minimum number of CPU cores that can be enabled on the DB Server for this Flex
+         * Component.
+         *
          * @param minimumCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder minimumCoreCount(Integer minimumCoreCount) {
             this.minimumCoreCount = minimumCoreCount;
             this.__explicitlySet__.add("minimumCoreCount");
             return this;
         }
         /**
-         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
-         **/
+         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex
+         * Component.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
         private Integer availableCoreCount;
 
         /**
-         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+         * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex
+         * Component.
+         *
          * @param availableCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder availableCoreCount(Integer availableCoreCount) {
             this.availableCoreCount = availableCoreCount;
             this.__explicitlySet__.add("availableCoreCount");
             return this;
         }
         /**
-         * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
-         **/
+         * The maximum storage that can be enabled on the Storage Server for this Flex Component.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availableDbStorageInGBs")
         private Integer availableDbStorageInGBs;
 
         /**
-         * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+         * The maximum storage that can be enabled on the Storage Server for this Flex Component.
+         *
          * @param availableDbStorageInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder availableDbStorageInGBs(Integer availableDbStorageInGBs) {
             this.availableDbStorageInGBs = availableDbStorageInGBs;
             this.__explicitlySet__.add("availableDbStorageInGBs");
@@ -145,9 +153,7 @@ public final class FlexComponentSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,58 +162,60 @@ public final class FlexComponentSummary extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the Flex Component used for the DB system.
-     **/
+    /** The name of the Flex Component used for the DB system. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Flex Component used for the DB system.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
     private final Integer minimumCoreCount;
 
     /**
      * The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinimumCoreCount() {
         return minimumCoreCount;
     }
 
     /**
-     * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
-     **/
+     * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex
+     * Component.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     private final Integer availableCoreCount;
 
     /**
-     * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+     * The maximum number of CPU cores that can ben enabled on the DB Server for this Flex
+     * Component.
+     *
      * @return the value
-     **/
+     */
     public Integer getAvailableCoreCount() {
         return availableCoreCount;
     }
 
-    /**
-     * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
-     **/
+    /** The maximum storage that can be enabled on the Storage Server for this Flex Component. */
     @com.fasterxml.jackson.annotation.JsonProperty("availableDbStorageInGBs")
     private final Integer availableDbStorageInGBs;
 
     /**
-     * The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+     * The maximum storage that can be enabled on the Storage Server for this Flex Component.
+     *
      * @return the value
-     **/
+     */
     public Integer getAvailableDbStorageInGBs() {
         return availableDbStorageInGBs;
     }
@@ -219,6 +227,7 @@ public final class FlexComponentSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

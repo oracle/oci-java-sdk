@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Status of the migration plan.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Status of the migration plan. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MigrationPlanStats.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MigrationPlanStats extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MigrationPlanStats.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MigrationPlanStats
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"totalEstimatedCost", "timeUpdated", "vmCount"})
     public MigrationPlanStats(
@@ -43,31 +44,31 @@ public final class MigrationPlanStats extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The time when the migration plan was calculated. An RFC3339 formatted datetime string.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when the migration plan was calculated. An RFC3339 formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The total count of VMs in migration
-         **/
+        /** The total count of VMs in migration */
         @com.fasterxml.jackson.annotation.JsonProperty("vmCount")
         private Integer vmCount;
 
         /**
          * The total count of VMs in migration
+         *
          * @param vmCount the value to set
          * @return this builder
-         **/
+         */
         public Builder vmCount(Integer vmCount) {
             this.vmCount = vmCount;
             this.__explicitlySet__.add("vmCount");
@@ -101,9 +102,7 @@ public final class MigrationPlanStats extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,30 +118,28 @@ public final class MigrationPlanStats extends com.oracle.bmc.http.internal.Expli
         return totalEstimatedCost;
     }
 
-    /**
-     * The time when the migration plan was calculated. An RFC3339 formatted datetime string.
-     **/
+    /** The time when the migration plan was calculated. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when the migration plan was calculated. An RFC3339 formatted datetime string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The total count of VMs in migration
-     **/
+    /** The total count of VMs in migration */
     @com.fasterxml.jackson.annotation.JsonProperty("vmCount")
     private final Integer vmCount;
 
     /**
      * The total count of VMs in migration
+     *
      * @return the value
-     **/
+     */
     public Integer getVmCount() {
         return vmCount;
     }
@@ -154,6 +151,7 @@ public final class MigrationPlanStats extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

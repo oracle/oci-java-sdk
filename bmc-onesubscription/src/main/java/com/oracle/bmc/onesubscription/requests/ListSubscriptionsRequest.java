@@ -6,107 +6,75 @@ package com.oracle.bmc.onesubscription.requests;
 
 import com.oracle.bmc.onesubscription.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListSubscriptionsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the root compartment.
-     */
+    /** The OCID of the root compartment. */
     private String compartmentId;
 
-    /**
-     * The OCID of the root compartment.
-     */
+    /** The OCID of the root compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The Plan Number
-     */
+    /** The Plan Number */
     private String planNumber;
 
-    /**
-     * The Plan Number
-     */
+    /** The Plan Number */
     public String getPlanNumber() {
         return planNumber;
     }
-    /**
-     * Line level Subscription Id
-     */
+    /** Line level Subscription Id */
     private String subscriptionId;
 
-    /**
-     * Line level Subscription Id
-     */
+    /** Line level Subscription Id */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /**
-     * Buyer Email Id
-     */
+    /** Buyer Email Id */
     private String buyerEmail;
 
-    /**
-     * Buyer Email Id
-     */
+    /** Buyer Email Id */
     public String getBuyerEmail() {
         return buyerEmail;
     }
-    /**
-     * Boolean value to decide whether commitment services will be shown
-     */
+    /** Boolean value to decide whether commitment services will be shown */
     private Boolean isCommitInfoRequired;
 
-    /**
-     * Boolean value to decide whether commitment services will be shown
-     */
+    /** Boolean value to decide whether commitment services will be shown */
     public Boolean getIsCommitInfoRequired() {
         return isCommitInfoRequired;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-     * <p>
-     * Example: '500'
      *
+     * <p>Example: '500'
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-     * <p>
-     * Example: '500'
      *
+     * <p>Example: '500'
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the 'opc-next-page' response header from the previous "List" call.
-     *
-     */
+    /** The value of the 'opc-next-page' response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the 'opc-next-page' response header from the previous "List" call.
-     *
-     */
+    /** The value of the 'opc-next-page' response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ('ASC') or descending ('DESC').
-     *
-     */
+    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ('ASC') or descending ('DESC').
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -139,24 +107,15 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The sort order to use, either ascending ('ASC') or descending ('DESC').
-     *
-     */
+    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The field to sort by. You can provide one sort order ('sortOrder').
-     *
-     */
+    /** The field to sort by. You can provide one sort order ('sortOrder'). */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by. You can provide one sort order ('sortOrder').
-     *
-     **/
-    public enum SortBy {
+    /** The field to sort by. You can provide one sort order ('sortOrder'). */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Ordernumber("ORDERNUMBER"),
         Timeinvoicing("TIMEINVOICING"),
         ;
@@ -189,22 +148,19 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The field to sort by. You can provide one sort order ('sortOrder').
-     *
-     */
+    /** The field to sort by. You can provide one sort order ('sortOrder'). */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -213,17 +169,15 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSubscriptionsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the root compartment.
-         */
+        /** The OCID of the root compartment. */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -232,13 +186,12 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The Plan Number
-         */
+        /** The Plan Number */
         private String planNumber = null;
 
         /**
          * The Plan Number
+         *
          * @param planNumber the value to set
          * @return this builder instance
          */
@@ -247,13 +200,12 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Line level Subscription Id
-         */
+        /** Line level Subscription Id */
         private String subscriptionId = null;
 
         /**
          * Line level Subscription Id
+         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -262,13 +214,12 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Buyer Email Id
-         */
+        /** Buyer Email Id */
         private String buyerEmail = null;
 
         /**
          * Buyer Email Id
+         *
          * @param buyerEmail the value to set
          * @return this builder instance
          */
@@ -277,13 +228,12 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Boolean value to decide whether commitment services will be shown
-         */
+        /** Boolean value to decide whether commitment services will be shown */
         private Boolean isCommitInfoRequired = null;
 
         /**
          * Boolean value to decide whether commitment services will be shown
+         *
          * @param isCommitInfoRequired the value to set
          * @return this builder instance
          */
@@ -294,16 +244,15 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         * <p>
-         * Example: '500'
          *
+         * <p>Example: '500'
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         * <p>
-         * Example: '500'
+         *
+         * <p>Example: '500'
          *
          * @param limit the value to set
          * @return this builder instance
@@ -313,10 +262,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The value of the 'opc-next-page' response header from the previous "List" call.
-         *
-         */
+        /** The value of the 'opc-next-page' response header from the previous "List" call. */
         private String page = null;
 
         /**
@@ -330,10 +276,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ('ASC') or descending ('DESC').
-         *
-         */
+        /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
         private SortOrder sortOrder = null;
 
         /**
@@ -347,10 +290,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The field to sort by. You can provide one sort order ('sortOrder').
-         *
-         */
+        /** The field to sort by. You can provide one sort order ('sortOrder'). */
         private SortBy sortBy = null;
 
         /**
@@ -365,13 +305,14 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -383,18 +324,19 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -406,6 +348,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSubscriptionsRequest o) {
@@ -427,10 +370,11 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListSubscriptionsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSubscriptionsRequest
          */
@@ -444,7 +388,8 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListSubscriptionsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSubscriptionsRequest
@@ -462,12 +407,14 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSubscriptionsRequest(compartmentId, planNumber, subscriptionId, buyerEmail, isCommitInfoRequired, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListSubscriptionsRequest(compartmentId, planNumber, subscriptionId, buyerEmail,
+            // isCommitInfoRequired, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -486,6 +433,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

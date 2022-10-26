@@ -5,29 +5,30 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A point-in-time copy of a volume that can then be used to create a new block volume
- * or recover a block volume. For more information, see
- * [Overview of Cloud Volume Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
+ * A point-in-time copy of a volume that can then be used to create a new block volume or recover a
+ * block volume. For more information, see [Overview of Cloud Volume
+ * Storage](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VolumeBackup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VolumeBackup extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -94,41 +95,41 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the compartment that contains the volume backup.
-         **/
+        /** The OCID of the compartment that contains the volume backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the volume backup.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -136,155 +137,151 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The date and time the volume backup will expire and be automatically deleted.
-         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
-         * were created automatically by a scheduled-backup policy. For manually created backups,
-         * it will be absent, signifying that there is no expiration time and the backup will
-         * last forever until manually deleted.
-         *
-         **/
+         * The date and time the volume backup will expire and be automatically deleted. Format
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be
+         * present for backups that were created automatically by a scheduled-backup policy. For
+         * manually created backups, it will be absent, signifying that there is no expiration time
+         * and the backup will last forever until manually deleted.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
         private java.util.Date expirationTime;
 
         /**
-         * The date and time the volume backup will expire and be automatically deleted.
-         * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
-         * were created automatically by a scheduled-backup policy. For manually created backups,
-         * it will be absent, signifying that there is no expiration time and the backup will
-         * last forever until manually deleted.
+         * The date and time the volume backup will expire and be automatically deleted. Format
+         * defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be
+         * present for backups that were created automatically by a scheduled-backup policy. For
+         * manually created backups, it will be absent, signifying that there is no expiration time
+         * and the backup will last forever until manually deleted.
          *
          * @param expirationTime the value to set
          * @return this builder
-         **/
+         */
         public Builder expirationTime(java.util.Date expirationTime) {
             this.expirationTime = expirationTime;
             this.__explicitlySet__.add("expirationTime");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /**
-         * The OCID of the volume backup.
-         **/
+        /** The OCID of the volume backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the volume backup.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The OCID of the Key Management key which is the master encryption key for the volume backup.
-         * For more information about the Key Management service and encryption keys, see
-         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
-         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-         *
-         **/
+         * The OCID of the Key Management key which is the master encryption key for the volume
+         * backup. For more information about the Key Management service and encryption keys, see
+         * [Overview of Key
+         * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * and [Using
+         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The OCID of the Key Management key which is the master encryption key for the volume backup.
-         * For more information about the Key Management service and encryption keys, see
-         * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
-         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         * The OCID of the Key Management key which is the master encryption key for the volume
+         * backup. For more information about the Key Management service and encryption keys, see
+         * [Overview of Key
+         * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+         * and [Using
+         * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param kmsKeyId the value to set
          * @return this builder
-         **/
+         */
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-        /**
-         * The current state of a volume backup.
-         **/
+        /** The current state of a volume backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of a volume backup.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The size of the volume, in GBs.
-         *
-         **/
+        /** The size of the volume, in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -293,36 +290,32 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param sizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
         /**
-         * The size of the volume in MBs. The value must be a multiple of 1024.
-         * This field is deprecated. Please use sizeInGBs.
-         *
-         **/
+         * The size of the volume in MBs. The value must be a multiple of 1024. This field is
+         * deprecated. Please use sizeInGBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
         /**
-         * The size of the volume in MBs. The value must be a multiple of 1024.
-         * This field is deprecated. Please use sizeInGBs.
+         * The size of the volume in MBs. The value must be a multiple of 1024. This field is
+         * deprecated. Please use sizeInGBs.
          *
          * @param sizeInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInMBs(Long sizeInMBs) {
             this.sizeInMBs = sizeInMBs;
             this.__explicitlySet__.add("sizeInMBs");
             return this;
         }
-        /**
-         * Specifies whether the backup was created manually, or via scheduled backup policy.
-         *
-         **/
+        /** Specifies whether the backup was created manually, or via scheduled backup policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
@@ -331,135 +324,132 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param sourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-        /**
-         * The OCID of the source volume backup.
-         **/
+        /** The OCID of the source volume backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeBackupId")
         private String sourceVolumeBackupId;
 
         /**
          * The OCID of the source volume backup.
+         *
          * @param sourceVolumeBackupId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceVolumeBackupId(String sourceVolumeBackupId) {
             this.sourceVolumeBackupId = sourceVolumeBackupId;
             this.__explicitlySet__.add("sourceVolumeBackupId");
             return this;
         }
         /**
-         * The date and time the volume backup was created. This is the time the actual point-in-time image
-         * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         * The date and time the volume backup was created. This is the time the actual
+         * point-in-time image of the volume data was taken. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the volume backup was created. This is the time the actual point-in-time image
-         * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the volume backup was created. This is the time the actual
+         * point-in-time image of the volume data was taken. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-         *
-         **/
+         * The date and time the request to create the volume backup was received. Format defined by
+         * [RFC3339]https://tools.ietf.org/html/rfc3339.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
         private java.util.Date timeRequestReceived;
 
         /**
-         * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
+         * The date and time the request to create the volume backup was received. Format defined by
+         * [RFC3339]https://tools.ietf.org/html/rfc3339.
          *
          * @param timeRequestReceived the value to set
          * @return this builder
-         **/
+         */
         public Builder timeRequestReceived(java.util.Date timeRequestReceived) {
             this.timeRequestReceived = timeRequestReceived;
             this.__explicitlySet__.add("timeRequestReceived");
             return this;
         }
-        /**
-         * The type of a volume backup.
-         **/
+        /** The type of a volume backup. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of a volume backup.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
-         * consumed on the volume and whether the backup is full or incremental.
-         *
-         **/
+         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on
+         * the space consumed on the volume and whether the backup is full or incremental.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
         private Long uniqueSizeInGBs;
 
         /**
-         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
-         * consumed on the volume and whether the backup is full or incremental.
+         * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on
+         * the space consumed on the volume and whether the backup is full or incremental.
          *
          * @param uniqueSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder uniqueSizeInGBs(Long uniqueSizeInGBs) {
             this.uniqueSizeInGBs = uniqueSizeInGBs;
             this.__explicitlySet__.add("uniqueSizeInGBs");
             return this;
         }
         /**
-         * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
-         * consumed on the volume and whether the backup is full or incremental.
-         * This field is deprecated. Please use uniqueSizeInGBs.
-         *
-         **/
+         * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on
+         * the space consumed on the volume and whether the backup is full or incremental. This
+         * field is deprecated. Please use uniqueSizeInGBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
         private Long uniqueSizeInMbs;
 
         /**
-         * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
-         * consumed on the volume and whether the backup is full or incremental.
-         * This field is deprecated. Please use uniqueSizeInGBs.
+         * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on
+         * the space consumed on the volume and whether the backup is full or incremental. This
+         * field is deprecated. Please use uniqueSizeInGBs.
          *
          * @param uniqueSizeInMbs the value to set
          * @return this builder
-         **/
+         */
         public Builder uniqueSizeInMbs(Long uniqueSizeInMbs) {
             this.uniqueSizeInMbs = uniqueSizeInMbs;
             this.__explicitlySet__.add("uniqueSizeInMbs");
             return this;
         }
-        /**
-         * The OCID of the volume.
-         **/
+        /** The OCID of the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
         /**
          * The OCID of the volume.
+         *
          * @param volumeId the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeId(String volumeId) {
             this.volumeId = volumeId;
             this.__explicitlySet__.add("volumeId");
@@ -560,9 +550,7 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -571,164 +559,162 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the compartment that contains the volume backup.
-     **/
+    /** The OCID of the compartment that contains the volume backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the volume backup.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The date and time the volume backup will expire and be automatically deleted.
-     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
-     * were created automatically by a scheduled-backup policy. For manually created backups,
-     * it will be absent, signifying that there is no expiration time and the backup will
+     * The date and time the volume backup will expire and be automatically deleted. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for
+     * backups that were created automatically by a scheduled-backup policy. For manually created
+     * backups, it will be absent, signifying that there is no expiration time and the backup will
      * last forever until manually deleted.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
     private final java.util.Date expirationTime;
 
     /**
-     * The date and time the volume backup will expire and be automatically deleted.
-     * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that
-     * were created automatically by a scheduled-backup policy. For manually created backups,
-     * it will be absent, signifying that there is no expiration time and the backup will
+     * The date and time the volume backup will expire and be automatically deleted. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for
+     * backups that were created automatically by a scheduled-backup policy. For manually created
+     * backups, it will be absent, signifying that there is no expiration time and the backup will
      * last forever until manually deleted.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getExpirationTime() {
         return expirationTime;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /**
-     * The OCID of the volume backup.
-     **/
+    /** The OCID of the volume backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the volume backup.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
      * The OCID of the Key Management key which is the master encryption key for the volume backup.
-     * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
-     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-     *
-     **/
+     * For more information about the Key Management service and encryption keys, see [Overview of
+     * Key
+     * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * and [Using
+     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
      * The OCID of the Key Management key which is the master encryption key for the volume backup.
-     * For more information about the Key Management service and encryption keys, see
-     * [Overview of Key Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
-     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     * For more information about the Key Management service and encryption keys, see [Overview of
+     * Key
+     * Management](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * and [Using
+     * Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
-     **/
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
-    /**
-     * The current state of a volume backup.
-     **/
-    public enum LifecycleState {
+    /** The current state of a volume backup. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -737,8 +723,8 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
         RequestReceived("REQUEST_RECEIVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -777,24 +763,20 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of a volume backup.
-     **/
+    /** The current state of a volume backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of a volume backup.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The size of the volume, in GBs.
-     *
-     **/
+    /** The size of the volume, in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
@@ -802,40 +784,36 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
      * The size of the volume, in GBs.
      *
      * @return the value
-     **/
+     */
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024.
-     * This field is deprecated. Please use sizeInGBs.
-     *
-     **/
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is
+     * deprecated. Please use sizeInGBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     private final Long sizeInMBs;
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024.
-     * This field is deprecated. Please use sizeInGBs.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is
+     * deprecated. Please use sizeInGBs.
      *
      * @return the value
-     **/
+     */
     public Long getSizeInMBs() {
         return sizeInMBs;
     }
 
-    /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy.
-     *
-     **/
-    public enum SourceType {
+    /** Specifies whether the backup was created manually, or via scheduled backup policy. */
+    public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         Manual("MANUAL"),
         Scheduled("SCHEDULED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -874,10 +852,7 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies whether the backup was created manually, or via scheduled backup policy.
-     *
-     **/
+    /** Specifies whether the backup was created manually, or via scheduled backup policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
@@ -885,69 +860,68 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      *
      * @return the value
-     **/
+     */
     public SourceType getSourceType() {
         return sourceType;
     }
 
-    /**
-     * The OCID of the source volume backup.
-     **/
+    /** The OCID of the source volume backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeBackupId")
     private final String sourceVolumeBackupId;
 
     /**
      * The OCID of the source volume backup.
+     *
      * @return the value
-     **/
+     */
     public String getSourceVolumeBackupId() {
         return sourceVolumeBackupId;
     }
 
     /**
-     * The date and time the volume backup was created. This is the time the actual point-in-time image
-     * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     * The date and time the volume backup was created. This is the time the actual point-in-time
+     * image of the volume data was taken. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the volume backup was created. This is the time the actual point-in-time image
-     * of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the volume backup was created. This is the time the actual point-in-time
+     * image of the volume data was taken. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
-     *
-     **/
+     * The date and time the request to create the volume backup was received. Format defined by
+     * [RFC3339]https://tools.ietf.org/html/rfc3339.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
     private final java.util.Date timeRequestReceived;
 
     /**
-     * The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
+     * The date and time the request to create the volume backup was received. Format defined by
+     * [RFC3339]https://tools.ietf.org/html/rfc3339.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeRequestReceived() {
         return timeRequestReceived;
     }
 
-    /**
-     * The type of a volume backup.
-     **/
-    public enum Type {
+    /** The type of a volume backup. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Incremental("INCREMENTAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -984,68 +958,64 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of a volume backup.
-     **/
+    /** The type of a volume backup. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of a volume backup.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
     /**
-     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
-     * consumed on the volume and whether the backup is full or incremental.
-     *
-     **/
+     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the
+     * space consumed on the volume and whether the backup is full or incremental.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
     private final Long uniqueSizeInGBs;
 
     /**
-     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
-     * consumed on the volume and whether the backup is full or incremental.
+     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the
+     * space consumed on the volume and whether the backup is full or incremental.
      *
      * @return the value
-     **/
+     */
     public Long getUniqueSizeInGBs() {
         return uniqueSizeInGBs;
     }
 
     /**
-     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
-     * consumed on the volume and whether the backup is full or incremental.
-     * This field is deprecated. Please use uniqueSizeInGBs.
-     *
-     **/
+     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the
+     * space consumed on the volume and whether the backup is full or incremental. This field is
+     * deprecated. Please use uniqueSizeInGBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
     private final Long uniqueSizeInMbs;
 
     /**
-     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
-     * consumed on the volume and whether the backup is full or incremental.
-     * This field is deprecated. Please use uniqueSizeInGBs.
+     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the
+     * space consumed on the volume and whether the backup is full or incremental. This field is
+     * deprecated. Please use uniqueSizeInGBs.
      *
      * @return the value
-     **/
+     */
     public Long getUniqueSizeInMbs() {
         return uniqueSizeInMbs;
     }
 
-    /**
-     * The OCID of the volume.
-     **/
+    /** The OCID of the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
      * The OCID of the volume.
+     *
      * @return the value
-     **/
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -1057,6 +1027,7 @@ public final class VolumeBackup extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

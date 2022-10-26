@@ -5,22 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the removed autoscale configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the removed autoscale configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RemoveAutoScalingConfigurationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RemoveAutoScalingConfigurationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RemoveAutoScalingConfigurationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterAdminPassword"})
     public RemoveAutoScalingConfigurationDetails(String clusterAdminPassword) {
@@ -30,17 +30,16 @@ public final class RemoveAutoScalingConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-         **/
+        /** Base-64 encoded password for the cluster (and Cloudera Manager) admin user. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -68,9 +67,7 @@ public final class RemoveAutoScalingConfigurationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +76,15 @@ public final class RemoveAutoScalingConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
-     **/
+    /** Base-64 encoded password for the cluster (and Cloudera Manager) admin user. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+     *
      * @return the value
-     **/
+     */
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -100,6 +96,7 @@ public final class RemoveAutoScalingConfigurationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -107,7 +104,7 @@ public final class RemoveAutoScalingConfigurationDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("RemoveAutoScalingConfigurationDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("clusterAdminPassword=").append(String.valueOf(this.clusterAdminPassword));
+        sb.append("clusterAdminPassword=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

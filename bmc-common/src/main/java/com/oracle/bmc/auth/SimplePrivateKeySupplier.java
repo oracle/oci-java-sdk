@@ -12,12 +12,8 @@ import java.util.function.Supplier;
 
 import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
-/**
- * Simple Supplier for the private key that handles missing files.
- */
-public class SimplePrivateKeySupplier
-        implements Supplier<InputStream>,
-                com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream> {
+/** Simple Supplier for the private key that handles missing files. */
+public class SimplePrivateKeySupplier implements Supplier<InputStream> {
 
     private final String pemFilePath;
 

@@ -5,26 +5,24 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Used for creating a new database system by cloning an existing DB system.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Used for creating a new database system by cloning an existing DB system. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LaunchDbSystemFromDbSystemDetails.Builder.class
-)
+        builder = LaunchDbSystemFromDbSystemDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "source")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -273,16 +271,19 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DB system.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
         private String sourceDbSystemId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * DB system.
+         *
          * @param sourceDbSystemId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDbSystemId(String sourceDbSystemId) {
             this.sourceDbSystemId = sourceDbSystemId;
             this.__explicitlySet__.add("sourceDbSystemId");
@@ -298,18 +299,19 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             return this;
         }
         /**
-         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-         *
-         **/
+         * The Oracle license model that applies to all the databases on the DB system. The default
+         * is LICENSE_INCLUDED.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+         * The Oracle license model that applies to all the databases on the DB system. The default
+         * is LICENSE_INCLUDED.
          *
          * @param licenseModel the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -454,9 +456,7 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -531,15 +531,18 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * system.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
     private final String sourceDbSystemId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB
+     * system.
+     *
      * @return the value
-     **/
+     */
     public String getSourceDbSystemId() {
         return sourceDbSystemId;
     }
@@ -552,10 +555,10 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
     }
 
     /**
-     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-     *
-     **/
-    public enum LicenseModel {
+     * The Oracle license model that applies to all the databases on the DB system. The default is
+     * LICENSE_INCLUDED.
+     */
+    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -588,17 +591,18 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
-     *
-     **/
+     * The Oracle license model that applies to all the databases on the DB system. The default is
+     * LICENSE_INCLUDED.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the DB system. The default is
+     * LICENSE_INCLUDED.
      *
      * @return the value
-     **/
+     */
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -610,6 +614,7 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,26 +8,20 @@ import com.oracle.bmc.dts.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     *
-     */
+    /** */
     private String opcRequestId;
 
-    /**
-     *
-     * @return the value
-     */
+    /** @return the value */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned TransferApplianceEntitlement instance.
-     */
+    /** The returned TransferApplianceEntitlement instance. */
     private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
     /**
      * The returned TransferApplianceEntitlement instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dts.model.TransferApplianceEntitlement getTransferApplianceEntitlement() {
@@ -42,7 +36,7 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
     })
     private GetTransferApplianceEntitlementResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement) {
         super(__httpStatusCode__, headers);
@@ -50,28 +44,29 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
         this.transferApplianceEntitlement = transferApplianceEntitlement;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetTransferApplianceEntitlementResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         *
-         */
+        /** */
         private String opcRequestId;
 
         /**
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -80,13 +75,12 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /**
-         * The returned TransferApplianceEntitlement instance.
-         */
+        /** The returned TransferApplianceEntitlement instance. */
         private com.oracle.bmc.dts.model.TransferApplianceEntitlement transferApplianceEntitlement;
 
         /**
          * The returned TransferApplianceEntitlement instance.
+         *
          * @param transferApplianceEntitlement the value to set
          * @return this builder
          */
@@ -99,8 +93,10 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetTransferApplianceEntitlementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -112,8 +108,10 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetTransferApplianceEntitlementResponse build() {
             return new GetTransferApplianceEntitlementResponse(
                     __httpStatusCode__, headers, opcRequestId, transferApplianceEntitlement);
@@ -122,6 +120,7 @@ public class GetTransferApplianceEntitlementResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

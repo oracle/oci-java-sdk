@@ -4,13 +4,9 @@
  */
 package com.oracle.bmc.mysql.model;
 
-/**
- * DEPRECATED -- please use HeatWave API instead.
- * Possible operation status.
- *
- **/
+/** DEPRECATED -- please use HeatWave API instead. Possible operation status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum AnalyticsClusterMemoryEstimateStatus {
+public enum AnalyticsClusterMemoryEstimateStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

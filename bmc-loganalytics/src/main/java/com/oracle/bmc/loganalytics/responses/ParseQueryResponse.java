@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * The returned ParseQueryOutput instance.
-     */
+    /** The returned ParseQueryOutput instance. */
     private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
     /**
      * The returned ParseQueryOutput instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.ParseQueryOutput getParseQueryOutput() {
@@ -44,7 +44,7 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ParseQueryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,33 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
         this.parseQueryOutput = parseQueryOutput;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ParseQueryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +88,12 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned ParseQueryOutput instance.
-         */
+        /** The returned ParseQueryOutput instance. */
         private com.oracle.bmc.loganalytics.model.ParseQueryOutput parseQueryOutput;
 
         /**
          * The returned ParseQueryOutput instance.
+         *
          * @param parseQueryOutput the value to set
          * @return this builder
          */
@@ -102,8 +105,10 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ParseQueryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +120,10 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ParseQueryResponse build() {
             return new ParseQueryResponse(
                     __httpStatusCode__, headers, opcRequestId, parseQueryOutput);
@@ -125,6 +132,7 @@ public class ParseQueryResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

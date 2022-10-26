@@ -5,26 +5,24 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Encypted credentials [indicated by the type property in CredentialStore].
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Encypted credentials [indicated by the type property in CredentialStore]. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EncryptedCredentials.Builder.class
-)
+        builder = EncryptedCredentials.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "credentialType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "credentialType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class EncryptedCredentials extends MonitoredResourceCredential {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -64,32 +62,36 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
             return this;
         }
         /**
-         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
-         **/
+         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is
+         * passed as input to Key management service decrypt API to retrieve the encrypted property
+         * value text.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
-         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+         * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is
+         * passed as input to Key management service decrypt API to retrieve the encrypted property
+         * value text.
+         *
          * @param keyId the value to set
          * @return this builder
-         **/
+         */
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
-        /**
-         * The credential properties list. Credential property values will be encrypted format.
-         **/
+        /** The credential properties list. Credential property values will be encrypted format. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<CredentialProperty> properties;
 
         /**
          * The credential properties list. Credential property values will be encrypted format.
+         *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(java.util.List<CredentialProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -138,9 +140,7 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -163,29 +163,33 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
     }
 
     /**
-     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
-     **/
+     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is
+     * passed as input to Key management service decrypt API to retrieve the encrypted property
+     * value text.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is passed as input to Key management service decrypt API to retrieve the encrypted property value text.
+     * The master key OCID and applicable only for property value type ENCRYPTION. Key OCID is
+     * passed as input to Key management service decrypt API to retrieve the encrypted property
+     * value text.
+     *
      * @return the value
-     **/
+     */
     public String getKeyId() {
         return keyId;
     }
 
-    /**
-     * The credential properties list. Credential property values will be encrypted format.
-     **/
+    /** The credential properties list. Credential property values will be encrypted format. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<CredentialProperty> properties;
 
     /**
      * The credential properties list. Credential property values will be encrypted format.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CredentialProperty> getProperties() {
         return properties;
     }
@@ -197,6 +201,7 @@ public final class EncryptedCredentials extends MonitoredResourceCredential {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

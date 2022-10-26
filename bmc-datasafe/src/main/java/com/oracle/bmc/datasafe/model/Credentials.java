@@ -5,19 +5,20 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The database credentials required for Data Safe to connect to the database.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The database credentials required for Data Safe to connect to the database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Credentials.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Credentials extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userName", "password"})
     public Credentials(String userName, String password) {
@@ -28,33 +29,31 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The database user name.
-         **/
+        /** The database user name. */
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * The database user name.
+         *
          * @param userName the value to set
          * @return this builder
-         **/
+         */
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-        /**
-         * The password of the database user.
-         **/
+        /** The password of the database user. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password of the database user.
+         *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -84,9 +83,7 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The database user name.
-     **/
+    /** The database user name. */
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * The database user name.
+     *
      * @return the value
-     **/
+     */
     public String getUserName() {
         return userName;
     }
 
-    /**
-     * The password of the database user.
-     **/
+    /** The password of the database user. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password of the database user.
+     *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
@@ -130,6 +125,7 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -138,7 +134,7 @@ public final class Credentials extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append("Credentials(");
         sb.append("super=").append(super.toString());
         sb.append("userName=").append(String.valueOf(this.userName));
-        sb.append(", password=").append(String.valueOf(this.password));
+        sb.append(", password=").append("<redacted>");
         sb.append(")");
         return sb.toString();
     }

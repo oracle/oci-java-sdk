@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status of a tablespace admin action.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The status of a tablespace admin action. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TablespaceAdminStatus.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = TablespaceAdminStatus.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TablespaceAdminStatus
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "errorCode", "errorMessage"})
     public TablespaceAdminStatus(Status status, Integer errorCode, String errorMessage) {
@@ -32,10 +32,7 @@ public final class TablespaceAdminStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The status of a tablespace admin action.
-         *
-         **/
+        /** The status of a tablespace admin action. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -44,43 +41,45 @@ public final class TablespaceAdminStatus
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
-         *
-         **/
+         * The error code that denotes failure if the tablespace admin action is not successful. The
+         * error code is "null" if the admin action is successful.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private Integer errorCode;
 
         /**
-         * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
+         * The error code that denotes failure if the tablespace admin action is not successful. The
+         * error code is "null" if the admin action is successful.
          *
          * @param errorCode the value to set
          * @return this builder
-         **/
+         */
         public Builder errorCode(Integer errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
         /**
-         * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
-         *
-         **/
+         * The error message that indicates the reason for failure if the tablespace admin action is
+         * not successful. The error message is "null" if the admin action is successful.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
+         * The error message that indicates the reason for failure if the tablespace admin action is
+         * not successful. The error message is "null" if the admin action is successful.
          *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -114,9 +113,7 @@ public final class TablespaceAdminStatus
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,17 +122,14 @@ public final class TablespaceAdminStatus
         return new Builder().copy(this);
     }
 
-    /**
-     * The status of a tablespace admin action.
-     *
-     **/
-    public enum Status {
+    /** The status of a tablespace admin action. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -173,10 +167,7 @@ public final class TablespaceAdminStatus
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of a tablespace admin action.
-     *
-     **/
+    /** The status of a tablespace admin action. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
@@ -184,39 +175,41 @@ public final class TablespaceAdminStatus
      * The status of a tablespace admin action.
      *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
     /**
-     * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
-     *
-     **/
+     * The error code that denotes failure if the tablespace admin action is not successful. The
+     * error code is "null" if the admin action is successful.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final Integer errorCode;
 
     /**
-     * The error code that denotes failure if the tablespace admin action is not successful. The error code is "null" if the admin action is successful.
+     * The error code that denotes failure if the tablespace admin action is not successful. The
+     * error code is "null" if the admin action is successful.
      *
      * @return the value
-     **/
+     */
     public Integer getErrorCode() {
         return errorCode;
     }
 
     /**
-     * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
-     *
-     **/
+     * The error message that indicates the reason for failure if the tablespace admin action is not
+     * successful. The error message is "null" if the admin action is successful.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * The error message that indicates the reason for failure if the tablespace admin action is not successful. The error message is "null" if the admin action is successful.
+     * The error message that indicates the reason for failure if the tablespace admin action is not
+     * successful. The error message is "null" if the admin action is successful.
      *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -228,6 +221,7 @@ public final class TablespaceAdminStatus
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

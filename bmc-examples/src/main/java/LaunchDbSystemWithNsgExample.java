@@ -33,26 +33,30 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This class provides a basic example of how to launch a DB system with NSG rules using the Java SDK. This will cover:
- * <p></p>
+ * This class provides a basic example of how to launch a DB system with NSG rules using the Java
+ * SDK. This will cover:
+ *
+ * <p>
+ *
  * <ul>
- *   <li>Create a VCN and subnets needed for the DB system and its related resources</li>
- *   <li>
- *     Launch a DB system with VM.Standard2.1 shape. See:
- *       <a href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a>
+ *   <li>Create a VCN and subnets needed for the DB system and its related resources
+ *   <li>Launch a DB system with VM.Standard2.1 shape. See: <a
+ *       href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a>
  *       for more information
  * </ul>
- * <p></p>
- * Resources created by this class will be removed when this example is done.
- * <p></p>
- * This class also makes assumptions on the following database parameters:
- * <p></p>
+ *
+ * <p>Resources created by this class will be removed when this example is done.
+ *
+ * <p>This class also makes assumptions on the following database parameters:
+ *
+ * <p>
+ *
  * <ul>
- *   <li>DB system shape</li>
- *   <li>Core count</li>
- *   <li>DB edition</li>
- *   <li>DB version</li>
- *   <li>CIDR block for VCN</li>
+ *   <li>DB system shape
+ *   <li>Core count
+ *   <li>DB edition
+ *   <li>DB version
+ *   <li>CIDR block for VCN
  * </ul>
  */
 public class LaunchDbSystemWithNsgExample {
@@ -77,10 +81,10 @@ public class LaunchDbSystemWithNsgExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>The OCID of the compartment which owns the DB system</li>
-     *             <li>The availability domain where the DB system will be launched</li>
-     *             </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment which owns the DB system
+     *       <li>The availability domain where the DB system will be launched
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
 
@@ -93,8 +97,10 @@ public class LaunchDbSystemWithNsgExample {
         compartmentId = args[0];
         availabilityDomain = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -212,7 +218,8 @@ public class LaunchDbSystemWithNsgExample {
         virtualNetworkClient.close();
     }
 
-    /** Method to terminate a DbSystem
+    /**
+     * Method to terminate a DbSystem
      *
      * @param dbSystemId OCID of the Dbsystvem which needs to be deleted.
      * @throws Exception

@@ -9,21 +9,29 @@ import com.oracle.bmc.dns.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Dns where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of Dns where multiple pages of data may be fetched. Two styles of
+ * iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class DnsPaginators {
@@ -34,11 +42,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the getDomainRecords operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * getDomainRecords operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<GetDomainRecordsResponse> getDomainRecordsResponseIterator(
             final GetDomainRecordsRequest request) {
@@ -84,18 +93,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses from the getDomainRecords operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record}
+     * objects contained in responses from the getDomainRecords operation. This iterable will fetch
+     * more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.Record} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.Record> getDomainRecordsRecordIterator(
             final GetDomainRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                GetDomainRecordsRequest.Builder, GetDomainRecordsRequest, GetDomainRecordsResponse,
+                GetDomainRecordsRequest.Builder,
+                GetDomainRecordsRequest,
+                GetDomainRecordsResponse,
                 com.oracle.bmc.dns.model.Record>(
                 new java.util.function.Supplier<GetDomainRecordsRequest.Builder>() {
                     @Override
@@ -146,11 +158,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the getRRSet operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the getRRSet
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<GetRRSetResponse> getRRSetResponseIterator(final GetRRSetRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -194,18 +207,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses from the getRRSet operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record}
+     * objects contained in responses from the getRRSet operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.Record} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.Record> getRRSetRecordIterator(
             final GetRRSetRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                GetRRSetRequest.Builder, GetRRSetRequest, GetRRSetResponse,
+                GetRRSetRequest.Builder,
+                GetRRSetRequest,
+                GetRRSetResponse,
                 com.oracle.bmc.dns.model.Record>(
                 new java.util.function.Supplier<GetRRSetRequest.Builder>() {
                     @Override
@@ -254,11 +270,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the getZoneRecords operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the getZoneRecords
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<GetZoneRecordsResponse> getZoneRecordsResponseIterator(
             final GetZoneRecordsRequest request) {
@@ -303,18 +320,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses from the getZoneRecords operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.Record}
+     * objects contained in responses from the getZoneRecords operation. This iterable will fetch
+     * more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.Record} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.Record} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.Record> getZoneRecordsRecordIterator(
             final GetZoneRecordsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                GetZoneRecordsRequest.Builder, GetZoneRecordsRequest, GetZoneRecordsResponse,
+                GetZoneRecordsRequest.Builder,
+                GetZoneRecordsRequest,
+                GetZoneRecordsResponse,
                 com.oracle.bmc.dns.model.Record>(
                 new java.util.function.Supplier<GetZoneRecordsRequest.Builder>() {
                     @Override
@@ -363,16 +383,19 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResolverEndpoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResolverEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResolverEndpointsResponse> listResolverEndpointsResponseIterator(
             final ListResolverEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
+                ListResolverEndpointsRequest.Builder,
+                ListResolverEndpointsRequest,
                 ListResolverEndpointsResponse>(
                 new java.util.function.Supplier<ListResolverEndpointsRequest.Builder>() {
                     @Override
@@ -415,19 +438,23 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ResolverEndpointSummary} objects
-     * contained in responses from the listResolverEndpoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.ResolverEndpointSummary} objects contained in responses from the
+     * listResolverEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ResolverEndpointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.ResolverEndpointSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.dns.model.ResolverEndpointSummary>
             listResolverEndpointsRecordIterator(final ListResolverEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResolverEndpointsRequest.Builder, ListResolverEndpointsRequest,
-                ListResolverEndpointsResponse, com.oracle.bmc.dns.model.ResolverEndpointSummary>(
+                ListResolverEndpointsRequest.Builder,
+                ListResolverEndpointsRequest,
+                ListResolverEndpointsResponse,
+                com.oracle.bmc.dns.model.ResolverEndpointSummary>(
                 new java.util.function.Supplier<ListResolverEndpointsRequest.Builder>() {
                     @Override
                     public ListResolverEndpointsRequest.Builder get() {
@@ -478,11 +505,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResolvers operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listResolvers
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResolversResponse> listResolversResponseIterator(
             final ListResolversRequest request) {
@@ -527,18 +555,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ResolverSummary} objects
-     * contained in responses from the listResolvers operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.ResolverSummary} objects contained in responses from the
+     * listResolvers operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ResolverSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.ResolverSummary} objects contained in responses received from
+     *     the service.
      */
     public Iterable<com.oracle.bmc.dns.model.ResolverSummary> listResolversRecordIterator(
             final ListResolversRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResolversRequest.Builder, ListResolversRequest, ListResolversResponse,
+                ListResolversRequest.Builder,
+                ListResolversRequest,
+                ListResolversResponse,
                 com.oracle.bmc.dns.model.ResolverSummary>(
                 new java.util.function.Supplier<ListResolversRequest.Builder>() {
                     @Override
@@ -588,16 +619,18 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSteeringPolicies operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSteeringPolicies operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSteeringPoliciesResponse> listSteeringPoliciesResponseIterator(
             final ListSteeringPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
+                ListSteeringPoliciesRequest.Builder,
+                ListSteeringPoliciesRequest,
                 ListSteeringPoliciesResponse>(
                 new java.util.function.Supplier<ListSteeringPoliciesRequest.Builder>() {
                     @Override
@@ -639,19 +672,22 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicySummary} objects
-     * contained in responses from the listSteeringPolicies operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.SteeringPolicySummary} objects contained in responses from the
+     * listSteeringPolicies operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.SteeringPolicySummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.dns.model.SteeringPolicySummary>
             listSteeringPoliciesRecordIterator(final ListSteeringPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
-                ListSteeringPoliciesResponse, com.oracle.bmc.dns.model.SteeringPolicySummary>(
+                ListSteeringPoliciesRequest.Builder,
+                ListSteeringPoliciesRequest,
+                ListSteeringPoliciesResponse,
+                com.oracle.bmc.dns.model.SteeringPolicySummary>(
                 new java.util.function.Supplier<ListSteeringPoliciesRequest.Builder>() {
                     @Override
                     public ListSteeringPoliciesRequest.Builder get() {
@@ -701,17 +737,20 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSteeringPolicyAttachments operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSteeringPolicyAttachments operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSteeringPolicyAttachmentsResponse>
             listSteeringPolicyAttachmentsResponseIterator(
                     final ListSteeringPolicyAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
+                ListSteeringPolicyAttachmentsRequest.Builder,
+                ListSteeringPolicyAttachmentsRequest,
                 ListSteeringPolicyAttachmentsResponse>(
                 new java.util.function.Supplier<ListSteeringPolicyAttachmentsRequest.Builder>() {
                     @Override
@@ -755,19 +794,22 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects
-     * contained in responses from the listSteeringPolicyAttachments operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects contained in responses from
+     * the listSteeringPolicyAttachments operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>
             listSteeringPolicyAttachmentsRecordIterator(
                     final ListSteeringPolicyAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
+                ListSteeringPolicyAttachmentsRequest.Builder,
+                ListSteeringPolicyAttachmentsRequest,
                 ListSteeringPolicyAttachmentsResponse,
                 com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>(
                 new java.util.function.Supplier<ListSteeringPolicyAttachmentsRequest.Builder>() {
@@ -822,11 +864,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTsigKeys operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTsigKeys
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTsigKeysResponse> listTsigKeysResponseIterator(
             final ListTsigKeysRequest request) {
@@ -871,18 +914,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.TsigKeySummary} objects
-     * contained in responses from the listTsigKeys operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.TsigKeySummary} objects contained in responses from the listTsigKeys
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.TsigKeySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.TsigKeySummary} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.TsigKeySummary> listTsigKeysRecordIterator(
             final ListTsigKeysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTsigKeysRequest.Builder, ListTsigKeysRequest, ListTsigKeysResponse,
+                ListTsigKeysRequest.Builder,
+                ListTsigKeysRequest,
+                ListTsigKeysResponse,
                 com.oracle.bmc.dns.model.TsigKeySummary>(
                 new java.util.function.Supplier<ListTsigKeysRequest.Builder>() {
                     @Override
@@ -932,11 +978,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listViews operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listViews
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListViewsResponse> listViewsResponseIterator(final ListViewsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -980,18 +1027,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ViewSummary} objects
-     * contained in responses from the listViews operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.ViewSummary} objects contained in responses from the listViews
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ViewSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.ViewSummary} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.ViewSummary> listViewsRecordIterator(
             final ListViewsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListViewsRequest.Builder, ListViewsRequest, ListViewsResponse,
+                ListViewsRequest.Builder,
+                ListViewsRequest,
+                ListViewsResponse,
                 com.oracle.bmc.dns.model.ViewSummary>(
                 new java.util.function.Supplier<ListViewsRequest.Builder>() {
                     @Override
@@ -1040,16 +1090,19 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listZoneTransferServers operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listZoneTransferServers operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListZoneTransferServersResponse> listZoneTransferServersResponseIterator(
             final ListZoneTransferServersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
+                ListZoneTransferServersRequest.Builder,
+                ListZoneTransferServersRequest,
                 ListZoneTransferServersResponse>(
                 new java.util.function.Supplier<ListZoneTransferServersRequest.Builder>() {
                     @Override
@@ -1092,19 +1145,23 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ZoneTransferServer} objects
-     * contained in responses from the listZoneTransferServers operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.ZoneTransferServer} objects contained in responses from the
+     * listZoneTransferServers operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ZoneTransferServer} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.ZoneTransferServer} objects contained in responses received from
+     *     the service.
      */
     public Iterable<com.oracle.bmc.dns.model.ZoneTransferServer>
             listZoneTransferServersRecordIterator(final ListZoneTransferServersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListZoneTransferServersRequest.Builder, ListZoneTransferServersRequest,
-                ListZoneTransferServersResponse, com.oracle.bmc.dns.model.ZoneTransferServer>(
+                ListZoneTransferServersRequest.Builder,
+                ListZoneTransferServersRequest,
+                ListZoneTransferServersResponse,
+                com.oracle.bmc.dns.model.ZoneTransferServer>(
                 new java.util.function.Supplier<ListZoneTransferServersRequest.Builder>() {
                     @Override
                     public ListZoneTransferServersRequest.Builder get() {
@@ -1155,11 +1212,12 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listZones operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listZones
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListZonesResponse> listZonesResponseIterator(final ListZonesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -1203,18 +1261,21 @@ public class DnsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.ZoneSummary} objects
-     * contained in responses from the listZones operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.dns.model.ZoneSummary} objects contained in responses from the listZones
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.ZoneSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.dns.model.ZoneSummary} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.dns.model.ZoneSummary> listZonesRecordIterator(
             final ListZonesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListZonesRequest.Builder, ListZonesRequest, ListZonesResponse,
+                ListZonesRequest.Builder,
+                ListZonesRequest,
+                ListZonesResponse,
                 com.oracle.bmc.dns.model.ZoneSummary>(
                 new java.util.function.Supplier<ListZonesRequest.Builder>() {
                     @Override

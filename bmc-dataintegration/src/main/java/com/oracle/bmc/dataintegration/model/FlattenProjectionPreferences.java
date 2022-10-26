@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The preferences for the flatten operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The preferences for the flatten operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FlattenProjectionPreferences.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FlattenProjectionPreferences.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FlattenProjectionPreferences
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "createArrayIndex",
@@ -42,65 +42,61 @@ public final class FlattenProjectionPreferences
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Property defining whether to create array indexes in flattened result.
-         **/
+        /** Property defining whether to create array indexes in flattened result. */
         @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
         private CreateArrayIndex createArrayIndex;
 
         /**
          * Property defining whether to create array indexes in flattened result.
+         *
          * @param createArrayIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder createArrayIndex(CreateArrayIndex createArrayIndex) {
             this.createArrayIndex = createArrayIndex;
             this.__explicitlySet__.add("createArrayIndex");
             return this;
         }
-        /**
-         * Property defining whether to retain all attributes in flattened result.
-         **/
+        /** Property defining whether to retain all attributes in flattened result. */
         @com.fasterxml.jackson.annotation.JsonProperty("retainAllAttributes")
         private RetainAllAttributes retainAllAttributes;
 
         /**
          * Property defining whether to retain all attributes in flattened result.
+         *
          * @param retainAllAttributes the value to set
          * @return this builder
-         **/
+         */
         public Builder retainAllAttributes(RetainAllAttributes retainAllAttributes) {
             this.retainAllAttributes = retainAllAttributes;
             this.__explicitlySet__.add("retainAllAttributes");
             return this;
         }
-        /**
-         * Property defining whether to ignore null values in flattened result.
-         **/
+        /** Property defining whether to ignore null values in flattened result. */
         @com.fasterxml.jackson.annotation.JsonProperty("ignoreNullValues")
         private IgnoreNullValues ignoreNullValues;
 
         /**
          * Property defining whether to ignore null values in flattened result.
+         *
          * @param ignoreNullValues the value to set
          * @return this builder
-         **/
+         */
         public Builder ignoreNullValues(IgnoreNullValues ignoreNullValues) {
             this.ignoreNullValues = ignoreNullValues;
             this.__explicitlySet__.add("ignoreNullValues");
             return this;
         }
-        /**
-         * Property defining whether to retain parent name lineage.
-         **/
+        /** Property defining whether to retain parent name lineage. */
         @com.fasterxml.jackson.annotation.JsonProperty("retainParentNameLineage")
         private RetainParentNameLineage retainParentNameLineage;
 
         /**
          * Property defining whether to retain parent name lineage.
+         *
          * @param retainParentNameLineage the value to set
          * @return this builder
-         **/
+         */
         public Builder retainParentNameLineage(RetainParentNameLineage retainParentNameLineage) {
             this.retainParentNameLineage = retainParentNameLineage;
             this.__explicitlySet__.add("retainParentNameLineage");
@@ -141,9 +137,7 @@ public final class FlattenProjectionPreferences
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,16 +146,14 @@ public final class FlattenProjectionPreferences
         return new Builder().copy(this);
     }
 
-    /**
-     * Property defining whether to create array indexes in flattened result.
-     **/
-    public enum CreateArrayIndex {
+    /** Property defining whether to create array indexes in flattened result. */
+    public enum CreateArrayIndex implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -200,30 +192,27 @@ public final class FlattenProjectionPreferences
             return UnknownEnumValue;
         }
     };
-    /**
-     * Property defining whether to create array indexes in flattened result.
-     **/
+    /** Property defining whether to create array indexes in flattened result. */
     @com.fasterxml.jackson.annotation.JsonProperty("createArrayIndex")
     private final CreateArrayIndex createArrayIndex;
 
     /**
      * Property defining whether to create array indexes in flattened result.
+     *
      * @return the value
-     **/
+     */
     public CreateArrayIndex getCreateArrayIndex() {
         return createArrayIndex;
     }
 
-    /**
-     * Property defining whether to retain all attributes in flattened result.
-     **/
-    public enum RetainAllAttributes {
+    /** Property defining whether to retain all attributes in flattened result. */
+    public enum RetainAllAttributes implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -262,30 +251,27 @@ public final class FlattenProjectionPreferences
             return UnknownEnumValue;
         }
     };
-    /**
-     * Property defining whether to retain all attributes in flattened result.
-     **/
+    /** Property defining whether to retain all attributes in flattened result. */
     @com.fasterxml.jackson.annotation.JsonProperty("retainAllAttributes")
     private final RetainAllAttributes retainAllAttributes;
 
     /**
      * Property defining whether to retain all attributes in flattened result.
+     *
      * @return the value
-     **/
+     */
     public RetainAllAttributes getRetainAllAttributes() {
         return retainAllAttributes;
     }
 
-    /**
-     * Property defining whether to ignore null values in flattened result.
-     **/
-    public enum IgnoreNullValues {
+    /** Property defining whether to ignore null values in flattened result. */
+    public enum IgnoreNullValues implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -324,30 +310,27 @@ public final class FlattenProjectionPreferences
             return UnknownEnumValue;
         }
     };
-    /**
-     * Property defining whether to ignore null values in flattened result.
-     **/
+    /** Property defining whether to ignore null values in flattened result. */
     @com.fasterxml.jackson.annotation.JsonProperty("ignoreNullValues")
     private final IgnoreNullValues ignoreNullValues;
 
     /**
      * Property defining whether to ignore null values in flattened result.
+     *
      * @return the value
-     **/
+     */
     public IgnoreNullValues getIgnoreNullValues() {
         return ignoreNullValues;
     }
 
-    /**
-     * Property defining whether to retain parent name lineage.
-     **/
-    public enum RetainParentNameLineage {
+    /** Property defining whether to retain parent name lineage. */
+    public enum RetainParentNameLineage implements com.oracle.bmc.http.internal.BmcEnum {
         Allow("ALLOW"),
         DoNotAllow("DO_NOT_ALLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -386,16 +369,15 @@ public final class FlattenProjectionPreferences
             return UnknownEnumValue;
         }
     };
-    /**
-     * Property defining whether to retain parent name lineage.
-     **/
+    /** Property defining whether to retain parent name lineage. */
     @com.fasterxml.jackson.annotation.JsonProperty("retainParentNameLineage")
     private final RetainParentNameLineage retainParentNameLineage;
 
     /**
      * Property defining whether to retain parent name lineage.
+     *
      * @return the value
-     **/
+     */
     public RetainParentNameLineage getRetainParentNameLineage() {
         return retainParentNameLineage;
     }
@@ -407,6 +389,7 @@ public final class FlattenProjectionPreferences
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

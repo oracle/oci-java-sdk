@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The current state of a sensitive column.
- **/
+/** The current state of a sensitive column. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum SensitiveColumnLifecycleState {
+public enum SensitiveColumnLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

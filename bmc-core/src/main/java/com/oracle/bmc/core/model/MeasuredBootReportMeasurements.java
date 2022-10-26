@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A list of Trusted Platform Module (TPM) Platform Configuration Register (PCR) entries. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MeasuredBootReportMeasurements.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MeasuredBootReportMeasurements.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MeasuredBootReportMeasurements
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"policy", "actual"})
     public MeasuredBootReportMeasurements(
@@ -33,33 +32,31 @@ public final class MeasuredBootReportMeasurements
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The list of expected PCR entries to use during verification.
-         **/
+        /** The list of expected PCR entries to use during verification. */
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private java.util.List<MeasuredBootEntry> policy;
 
         /**
          * The list of expected PCR entries to use during verification.
+         *
          * @param policy the value to set
          * @return this builder
-         **/
+         */
         public Builder policy(java.util.List<MeasuredBootEntry> policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
             return this;
         }
-        /**
-         * The list of actual PCR entries measured during boot.
-         **/
+        /** The list of actual PCR entries measured during boot. */
         @com.fasterxml.jackson.annotation.JsonProperty("actual")
         private java.util.List<MeasuredBootEntry> actual;
 
         /**
          * The list of actual PCR entries measured during boot.
+         *
          * @param actual the value to set
          * @return this builder
-         **/
+         */
         public Builder actual(java.util.List<MeasuredBootEntry> actual) {
             this.actual = actual;
             this.__explicitlySet__.add("actual");
@@ -90,9 +87,7 @@ public final class MeasuredBootReportMeasurements
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,30 +96,28 @@ public final class MeasuredBootReportMeasurements
         return new Builder().copy(this);
     }
 
-    /**
-     * The list of expected PCR entries to use during verification.
-     **/
+    /** The list of expected PCR entries to use during verification. */
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final java.util.List<MeasuredBootEntry> policy;
 
     /**
      * The list of expected PCR entries to use during verification.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MeasuredBootEntry> getPolicy() {
         return policy;
     }
 
-    /**
-     * The list of actual PCR entries measured during boot.
-     **/
+    /** The list of actual PCR entries measured during boot. */
     @com.fasterxml.jackson.annotation.JsonProperty("actual")
     private final java.util.List<MeasuredBootEntry> actual;
 
     /**
      * The list of actual PCR entries measured during boot.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MeasuredBootEntry> getActual() {
         return actual;
     }
@@ -136,6 +129,7 @@ public final class MeasuredBootReportMeasurements
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -11,9 +11,7 @@ import com.nimbusds.jwt.JWTClaimsSet;
 import com.nimbusds.jwt.SignedJWT;
 import com.oracle.bmc.util.internal.Validate;
 
-/**
- * JSON Web Token Claim Set.
- */
+/** JSON Web Token Claim Set. */
 public class JwtClaimsSet {
     private final JWTClaimsSet jwt;
 
@@ -43,6 +41,7 @@ public class JwtClaimsSet {
 
     /**
      * Return the JWT expiration time
+     *
      * @return expiration time
      */
     public Date getExpirationTime() {
@@ -51,6 +50,7 @@ public class JwtClaimsSet {
 
     /**
      * Return the string claim for the key.
+     *
      * @param jwk key for the claim
      * @return string claim
      * @throws ParseException if not a string
@@ -61,6 +61,7 @@ public class JwtClaimsSet {
 
     /**
      * Return the claim for the key.
+     *
      * @param jwk key for the claim
      * @return string claim
      */

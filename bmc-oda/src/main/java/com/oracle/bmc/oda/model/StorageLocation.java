@@ -5,19 +5,21 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that point to a specific object in Object Storage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties that point to a specific object in Object Storage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StorageLocation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StorageLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class StorageLocation
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "regionId",
@@ -42,81 +44,76 @@ public final class StorageLocation extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The region id.
-         **/
+        /** The region id. */
         @com.fasterxml.jackson.annotation.JsonProperty("regionId")
         private String regionId;
 
         /**
          * The region id.
+         *
          * @param regionId the value to set
          * @return this builder
-         **/
+         */
         public Builder regionId(String regionId) {
             this.regionId = regionId;
             this.__explicitlySet__.add("regionId");
             return this;
         }
-        /**
-         * The unique identifier for the compartment.
-         **/
+        /** The unique identifier for the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The unique identifier for the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The Object Storage namespace.
-         **/
+        /** The Object Storage namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * The Object Storage namespace.
+         *
          * @param namespaceName the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /**
-         * The name of the bucket.
-         **/
+        /** The name of the bucket. */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The name of the bucket.
+         *
          * @param bucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /**
-         * The name of the object.
-         **/
+        /** The name of the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The name of the object.
+         *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -161,9 +158,7 @@ public final class StorageLocation extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +167,67 @@ public final class StorageLocation extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The region id.
-     **/
+    /** The region id. */
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
     private final String regionId;
 
     /**
      * The region id.
+     *
      * @return the value
-     **/
+     */
     public String getRegionId() {
         return regionId;
     }
 
-    /**
-     * The unique identifier for the compartment.
-     **/
+    /** The unique identifier for the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The unique identifier for the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The Object Storage namespace.
-     **/
+    /** The Object Storage namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * The Object Storage namespace.
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /**
-     * The name of the bucket.
-     **/
+    /** The name of the bucket. */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The name of the bucket.
+     *
      * @return the value
-     **/
+     */
     public String getBucketName() {
         return bucketName;
     }
 
-    /**
-     * The name of the object.
-     **/
+    /** The name of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The name of the object.
+     *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -249,6 +239,7 @@ public final class StorageLocation extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

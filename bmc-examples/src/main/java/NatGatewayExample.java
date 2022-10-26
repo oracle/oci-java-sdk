@@ -48,23 +48,22 @@ import java.security.SecureRandom;
 /**
  * This class provides an example of how to use the Nat Gateway service in the Java SDK.
  *
- * Network Address Translation (NAT) Gateway allows instances in a private subnet to initiate connections to the internet
- * and receive response, but not receive inbound connections initiated from the internet. It allows an entire private
- * network to have access to the internet without assigning each host a public IPv4 address.
+ * <p>Network Address Translation (NAT) Gateway allows instances in a private subnet to initiate
+ * connections to the internet and receive response, but not receive inbound connections initiated
+ * from the internet. It allows an entire private network to have access to the internet without
+ * assigning each host a public IPv4 address.
  *
- * In order to demonstrate functionality for nat gateway, this script will also create a VCN
- * and subnet. These will be deleted at the end of the script. This script also makes some assumptions about
- * the resources it will create:
+ * <p>In order to demonstrate functionality for nat gateway, this script will also create a VCN and
+ * subnet. These will be deleted at the end of the script. This script also makes some assumptions
+ * about the resources it will create:
  *
  * <ul>
- *   <li>The VCN created by this example will have a display name of java_sdk_natgw_example_vcn</li>
- *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16</li>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Resources will be created in us-phoenix-1</li>
- * <ul>
+ *   <li>The VCN created by this example will have a display name of java_sdk_natgw_example_vcn
+ *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Resources will be created in us-phoenix-1
+ *       <ul>
  */
 public class NatGatewayExample {
 
@@ -82,10 +81,11 @@ public class NatGatewayExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of the compartment where the nat gateway and related resources will be created</li>
-     *   <li>The display name of the nat gateway</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where the nat gateway and related resources will be
+     *           created
+     *       <li>The display name of the nat gateway
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -96,8 +96,10 @@ public class NatGatewayExample {
         final String compartmentId = args[0];
         final String natGatewayDisplayName = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -110,7 +112,7 @@ public class NatGatewayExample {
         NatGateway natGateway = null;
         RouteTable routeTable = null;
         try {
-            //A VCN is required to create a nat gateway
+            // A VCN is required to create a nat gateway
             vcn = createVcn(vcnClient, compartmentId);
             System.out.println("Created VCN");
             System.out.println();
@@ -127,10 +129,10 @@ public class NatGatewayExample {
              */
             natGateway =
                     createNatGateway(vcnClient, compartmentId, natGatewayDisplayName, vcn.getId());
-            //A route rule in a route table that directs internet-bound traffic to the Nat Gateway
-            //A route table is required
+            // A route rule in a route table that directs internet-bound traffic to the Nat Gateway
+            // A route table is required
             routeTable = createRouteTable(vcnClient, compartmentId, vcn.getId(), natGateway);
-            //instances using the VCN can now access the internet
+            // instances using the VCN can now access the internet
             getNatGateway(vcnClient, natGateway.getId());
             listNatGateways(vcnClient, compartmentId);
             updateNatGateway(vcnClient, natGateway.getId(), natGatewayDisplayName);
@@ -159,16 +161,14 @@ public class NatGatewayExample {
     }
 
     /**
-     * Creates a nat gateway and waits for it to become available. We recommend using a retry token on these requests
-     * so that if you receive a timeout or server error and need to retry the request you won't run the risk of
-     * creating multiple resources.
+     * Creates a nat gateway and waits for it to become available. We recommend using a retry token
+     * on these requests so that if you receive a timeout or server error and need to retry the
+     * request you won't run the risk of creating multiple resources.
      *
      * @param vcnClient the service client to use to create the Nat Gateway
      * @param compartmentId the OCID of the compartment where the Nat Gateway will be created
      * @param vcnId the OCID of the VCN where the Nat Gateway will be created
-     *
      * @return the created nat gateway
-     *
      * @throws Exception if there is an error waiting on the nat gateway to become available to use
      */
     private static NatGateway createNatGateway(
@@ -207,7 +207,7 @@ public class NatGatewayExample {
                                         .natGatewayId(
                                                 createResponse
                                                         .getNatGateway()
-                                                        .getId()) //not sure if ".Id(create..)"
+                                                        .getId()) // not sure if ".Id(create..)"
                                         .build(),
                                 NatGateway.LifecycleState.Available)
                         .execute();
@@ -243,12 +243,12 @@ public class NatGatewayExample {
     }
 
     /**
-     * Demonstrates how to list nat gateways and using various criteria. Note that listing nat gateways is a paginated call, so we should
-     * get all pages until there is no more opcNextPage token
+     * Demonstrates how to list nat gateways and using various criteria. Note that listing nat
+     * gateways is a paginated call, so we should get all pages until there is no more opcNextPage
+     * token
      *
      * @param vcnClient the service client used to communicate with the Nat Gateway service
      * @param compartmentId the OCID of the compartment which owns the resources
-     *
      */
     private static void listNatGateways(
             final VirtualNetworkClient vcnClient, final String compartmentId) {
@@ -279,7 +279,6 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client used to communicate with the Nat Gateway service
      * @param natGateway the nat gateway to get
-     *
      * @throws Exception if there is an error waiting on the nat gateway to be retrieved
      */
     private static void getNatGateway(
@@ -304,8 +303,6 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client to use to update the VCN
      * @param natGatewayId the OCID of the Nat Gateway to be updated
-     *
-     *
      * @throws Exception if there is an error updating the Nat Gateway
      */
     private static void updateNatGateway(
@@ -335,7 +332,6 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client used to communicate with the Nat Gateway service
      * @param natGateway the nat gateway to delete
-     *
      * @throws Exception if there is an error waiting on the nat gateway to be deleted
      */
     private static void deleteNatGateway(
@@ -357,9 +353,7 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
-     *
      * @return the created VCN
-     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     private static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
@@ -393,7 +387,6 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
@@ -413,7 +406,6 @@ public class NatGatewayExample {
      * Generates a retry token that we can use as the opc-retry-token in a request.
      *
      * @param tokenLength the length of the token
-     *
      * @return A retry token
      */
     private static String getRetryToken(final int tokenLength) {
@@ -433,7 +425,6 @@ public class NatGatewayExample {
      * @param compartmentId the OCID of the compartment where the VCN will be created
      * @param vcnId the OCID of the VCN where the Route Table will be created
      * @return the created Route Table
-     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     private static RouteTable createRouteTable(
@@ -489,7 +480,6 @@ public class NatGatewayExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param routeTable the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteRouteTable(

@@ -6,21 +6,22 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * A named ordered list of routing rules that is applied to a listener.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoutingPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RoutingPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RoutingPolicy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "conditionLanguageVersion", "rules"})
     public RoutingPolicy(
@@ -37,30 +38,26 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
     public static class Builder {
         /**
          * The unique name for this list of routing rules. Avoid entering confidential information.
-         * <p>
-         * Example: {@code example_routing_policy}
          *
-         **/
+         * <p>Example: {@code example_routing_policy}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The unique name for this list of routing rules. Avoid entering confidential information.
-         * <p>
-         * Example: {@code example_routing_policy}
+         *
+         * <p>Example: {@code example_routing_policy}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The version of the language in which {@code condition} of {@code rules} are composed.
-         *
-         **/
+        /** The version of the language in which {@code condition} of {@code rules} are composed. */
         @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
         private ConditionLanguageVersion conditionLanguageVersion;
 
@@ -69,23 +66,22 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param conditionLanguageVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder conditionLanguageVersion(ConditionLanguageVersion conditionLanguageVersion) {
             this.conditionLanguageVersion = conditionLanguageVersion;
             this.__explicitlySet__.add("conditionLanguageVersion");
             return this;
         }
-        /**
-         * The ordered list of routing rules.
-         **/
+        /** The ordered list of routing rules. */
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<RoutingRule> rules;
 
         /**
          * The ordered list of routing rules.
+         *
          * @param rules the value to set
          * @return this builder
-         **/
+         */
         public Builder rules(java.util.List<RoutingRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -119,9 +115,7 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,34 +126,30 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * The unique name for this list of routing rules. Avoid entering confidential information.
-     * <p>
-     * Example: {@code example_routing_policy}
      *
-     **/
+     * <p>Example: {@code example_routing_policy}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The unique name for this list of routing rules. Avoid entering confidential information.
-     * <p>
-     * Example: {@code example_routing_policy}
+     *
+     * <p>Example: {@code example_routing_policy}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of the language in which {@code condition} of {@code rules} are composed.
-     *
-     **/
-    public enum ConditionLanguageVersion {
+    /** The version of the language in which {@code condition} of {@code rules} are composed. */
+    public enum ConditionLanguageVersion implements com.oracle.bmc.http.internal.BmcEnum {
         V1("V1"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -198,10 +188,7 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /**
-     * The version of the language in which {@code condition} of {@code rules} are composed.
-     *
-     **/
+    /** The version of the language in which {@code condition} of {@code rules} are composed. */
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguageVersion")
     private final ConditionLanguageVersion conditionLanguageVersion;
 
@@ -209,21 +196,20 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
      * The version of the language in which {@code condition} of {@code rules} are composed.
      *
      * @return the value
-     **/
+     */
     public ConditionLanguageVersion getConditionLanguageVersion() {
         return conditionLanguageVersion;
     }
 
-    /**
-     * The ordered list of routing rules.
-     **/
+    /** The ordered list of routing rules. */
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<RoutingRule> rules;
 
     /**
      * The ordered list of routing rules.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<RoutingRule> getRules() {
         return rules;
     }
@@ -235,6 +221,7 @@ public final class RoutingPolicy extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

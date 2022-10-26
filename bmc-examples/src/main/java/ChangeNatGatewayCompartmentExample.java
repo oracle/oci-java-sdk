@@ -26,20 +26,18 @@ import com.oracle.bmc.core.responses.GetVcnResponse;
 /**
  * This class provides an example of how to change the compartment of a NAT Gateway in the Java SDK.
  *
- * This sample will create the VCN where the NAT Gateway will be created, and create the NAT Gateway that
- * will be moved to a new compartment.  Cleanup of NAT gateway and VCN is performed after completion of
- * the change compartment operation.
+ * <p>This sample will create the VCN where the NAT Gateway will be created, and create the NAT
+ * Gateway that will be moved to a new compartment. Cleanup of NAT gateway and VCN is performed
+ * after completion of the change compartment operation.
  *
- * This example also makes some assumptions about the resources it will create:
- * <ul>
- *   <li>The VCN created by this example will have a display name of java_sdk_natgw_example_vcn</li>
- *   <li>The VCN will have a private IP CIDR block of 10.0.0.0/16</li>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- * <ul>
+ * <p>This example also makes some assumptions about the resources it will create:
  *
+ * <ul>
+ *   <li>The VCN created by this example will have a display name of java_sdk_natgw_example_vcn
+ *   <li>The VCN will have a private IP CIDR block of 10.0.0.0/16
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *       <ul>
  */
 public class ChangeNatGatewayCompartmentExample {
 
@@ -53,10 +51,12 @@ public class ChangeNatGatewayCompartmentExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li><SRC_COMPARTMENT_ID>The OCID of the compartment where the NAT gateway and related resources will be created</li>
-     *   <li><DEST_COMPARTMENT_ID>The OCID of the compartment where the NAT gateway will be moved to</li>
-     * </ul>
+     *     <ul>
+     *       <li><SRC_COMPARTMENT_ID>The OCID of the compartment where the NAT gateway and related
+     *           resources will be created
+     *       <li><DEST_COMPARTMENT_ID>The OCID of the compartment where the NAT gateway will be
+     *           moved to
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -70,8 +70,7 @@ public class ChangeNatGatewayCompartmentExample {
         System.out.println(
                 String.format(
                         "Performing operations to change NAT Gateway compartment from %s to %s",
-                        SRC_COMPARTMENT_ID,
-                        DEST_COMPARTMENT_ID));
+                        SRC_COMPARTMENT_ID, DEST_COMPARTMENT_ID));
         System.out.println();
         if (SRC_COMPARTMENT_ID == null
                 || SRC_COMPARTMENT_ID.trim().isEmpty()
@@ -81,8 +80,10 @@ public class ChangeNatGatewayCompartmentExample {
                     "Please provide valid src and destination compartment id");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -94,7 +95,7 @@ public class ChangeNatGatewayCompartmentExample {
         Vcn vcn = null;
         NatGateway natGateway = null;
         try {
-            //A VCN is required to create a NAT gateway
+            // A VCN is required to create a NAT gateway
             vcn = createVcn(virtualNetworkClient, SRC_COMPARTMENT_ID);
 
             /*
@@ -134,9 +135,7 @@ public class ChangeNatGatewayCompartmentExample {
      *
      * @param vcnClient the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
-     *
      * @return the created VCN
-     *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
     private static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
@@ -172,7 +171,6 @@ public class ChangeNatGatewayCompartmentExample {
      *
      * @param vcnClient the service client to use to delete the VCN
      * @param vcn the VCN to delete
-     *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
@@ -195,9 +193,7 @@ public class ChangeNatGatewayCompartmentExample {
      * @param vcnClient the service client to use to create the NAT Gateway
      * @param compartmentId the OCID of the compartment where the NAT Gateway will be created
      * @param vcnId the OCID of the VCN where the NAT Gateway will be created
-     *
      * @return the created NAT gateway
-     *
      * @throws Exception if there is an error waiting on the NAT gateway to become available to use
      */
     private static NatGateway createNatGateway(
@@ -246,7 +242,6 @@ public class ChangeNatGatewayCompartmentExample {
      *
      * @param vcnClient the service client used to communicate with the NAT Gateway service
      * @param natGateway the NAT gateway to delete
-     *
      * @throws Exception if there is an error waiting on the NAT gateway to be deleted
      */
     private static void deleteNatGateway(
@@ -269,7 +264,6 @@ public class ChangeNatGatewayCompartmentExample {
      *
      * @param vcnClient the service client used to communicate with the NAT Gateway service
      * @param natGateway the NAT gateway to get
-     *
      * @throws Exception if there is an error waiting on the NAT gateway to be retrieved
      */
     private static NatGateway getNatGateway(
@@ -286,7 +280,6 @@ public class ChangeNatGatewayCompartmentExample {
      * @param vcnClient the service client used to communicate with the NAT Gateway service
      * @param natGateway the NAT gateway to delete
      * @param destinationCompartmentId the destination compartment OCID
-     *
      * @throws Exception if there is an error changing the NAT gateway's compartment
      */
     private static void changeNatGatewayCompartment(

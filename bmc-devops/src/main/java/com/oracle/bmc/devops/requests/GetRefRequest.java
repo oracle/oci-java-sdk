@@ -6,40 +6,36 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRefExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRefRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRefExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRefRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     private String repositoryId;
 
-    /**
-     * Unique repository identifier.
-     */
+    /** Unique repository identifier. */
     public String getRepositoryId() {
         return repositoryId;
     }
-    /**
-     * A filter to return only resources that match the given reference name.
-     */
+    /** A filter to return only resources that match the given reference name. */
     private String refName;
 
-    /**
-     * A filter to return only resources that match the given reference name.
-     */
+    /** A filter to return only resources that match the given reference name. */
     public String getRefName() {
         return refName;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -47,17 +43,15 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetRefRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique repository identifier.
-         */
+        /** Unique repository identifier. */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
+         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -66,13 +60,12 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
             return this;
         }
 
-        /**
-         * A filter to return only resources that match the given reference name.
-         */
+        /** A filter to return only resources that match the given reference name. */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
+         *
          * @param refName the value to set
          * @return this builder instance
          */
@@ -82,12 +75,15 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -98,18 +94,19 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -121,6 +118,7 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetRefRequest o) {
@@ -135,10 +133,11 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetRefRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetRefRequest
          */
@@ -152,7 +151,8 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
         /**
          * Build the instance of GetRefRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetRefRequest
@@ -169,6 +169,7 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -177,6 +178,7 @@ public class GetRefRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

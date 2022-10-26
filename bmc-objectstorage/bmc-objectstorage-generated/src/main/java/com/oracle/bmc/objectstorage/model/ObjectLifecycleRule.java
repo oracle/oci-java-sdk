@@ -5,24 +5,25 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
- * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not
+ * authorized, talk to an administrator. If you are an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ObjectLifecycleRule.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ObjectLifecycleRule.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ObjectLifecycleRule
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,137 +54,133 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the lifecycle rule to be applied.
-         **/
+        /** The name of the lifecycle rule to be applied. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the lifecycle rule to be applied.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The target of the object lifecycle policy rule. The values of target can be either "objects",
-         * "multipart-uploads" or "previous-object-versions".
-         * This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS
-         * or DELETE rule for objects.
-         * This field when declared as "previous-object-versions" is used to specify ARCHIVE,
-         * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects.
-         * This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
+         * The target of the object lifecycle policy rule. The values of target can be either
+         * "objects", "multipart-uploads" or "previous-object-versions". This field when declared as
+         * "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This
+         * field when declared as "previous-object-versions" is used to specify ARCHIVE,
+         * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field
+         * when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
          * uncommitted multipart-uploads.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
         /**
-         * The target of the object lifecycle policy rule. The values of target can be either "objects",
-         * "multipart-uploads" or "previous-object-versions".
-         * This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS
-         * or DELETE rule for objects.
-         * This field when declared as "previous-object-versions" is used to specify ARCHIVE,
-         * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects.
-         * This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
+         * The target of the object lifecycle policy rule. The values of target can be either
+         * "objects", "multipart-uploads" or "previous-object-versions". This field when declared as
+         * "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This
+         * field when declared as "previous-object-versions" is used to specify ARCHIVE,
+         * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field
+         * when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
          * uncommitted multipart-uploads.
          *
          * @param target the value to set
          * @return this builder
-         **/
+         */
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
         /**
-         * The action of the object lifecycle policy rule.
-         * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-         * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
-         * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
-         * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
-         * tier are left untouched.
-         * Rules using the action 'DELETE' permanently delete objects from buckets.
-         * Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-         *
-         **/
+         * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move
+         * objects from Standard and InfrequentAccess storage tiers into the [Archive storage
+         * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into
+         * the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or
+         * in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete
+         * objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and
+         * permanently delete their parts from buckets.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
 
         /**
-         * The action of the object lifecycle policy rule.
-         * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-         * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
-         * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
-         * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
-         * tier are left untouched.
-         * Rules using the action 'DELETE' permanently delete objects from buckets.
-         * Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
+         * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move
+         * objects from Standard and InfrequentAccess storage tiers into the [Archive storage
+         * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+         * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into
+         * the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or
+         * in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete
+         * objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and
+         * permanently delete their parts from buckets.
          *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(String action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the
-         * timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-         *
-         **/
+         * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units
+         * defined by the timeUnit parameter, and is calculated in relation to each object's
+         * Last-Modified time.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
         private Long timeAmount;
 
         /**
-         * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the
-         * timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
+         * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units
+         * defined by the timeUnit parameter, and is calculated in relation to each object's
+         * Last-Modified time.
          *
          * @param timeAmount the value to set
          * @return this builder
-         **/
+         */
         public Builder timeAmount(Long timeAmount) {
             this.timeAmount = timeAmount;
             this.__explicitlySet__.add("timeAmount");
             return this;
         }
         /**
-         * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
-         * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-         *
-         **/
+         * The unit that should be used to interpret timeAmount. Days are defined as starting and
+         * ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to
+         * the next midnight UTC.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
         private TimeUnit timeUnit;
 
         /**
-         * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
-         * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+         * The unit that should be used to interpret timeAmount. Days are defined as starting and
+         * ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to
+         * the next midnight UTC.
          *
          * @param timeUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUnit(TimeUnit timeUnit) {
             this.timeUnit = timeUnit;
             this.__explicitlySet__.add("timeUnit");
             return this;
         }
-        /**
-         * A Boolean that determines whether this rule is currently enabled.
-         **/
+        /** A Boolean that determines whether this rule is currently enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A Boolean that determines whether this rule is currently enabled.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -245,9 +242,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -256,110 +251,106 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the lifecycle rule to be applied.
-     **/
+    /** The name of the lifecycle rule to be applied. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the lifecycle rule to be applied.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * The target of the object lifecycle policy rule. The values of target can be either "objects",
-     * "multipart-uploads" or "previous-object-versions".
-     * This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS
-     * or DELETE rule for objects.
-     * This field when declared as "previous-object-versions" is used to specify ARCHIVE,
-     * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects.
-     * This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
-     * uncommitted multipart-uploads.
-     *
-     **/
+     * "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is
+     * used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when
+     * declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or
+     * DELETE rule for previous versions of existing objects. This field when declared as
+     * "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted
+     * multipart-uploads.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
      * The target of the object lifecycle policy rule. The values of target can be either "objects",
-     * "multipart-uploads" or "previous-object-versions".
-     * This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS
-     * or DELETE rule for objects.
-     * This field when declared as "previous-object-versions" is used to specify ARCHIVE,
-     * INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects.
-     * This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for
-     * uncommitted multipart-uploads.
+     * "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is
+     * used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when
+     * declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or
+     * DELETE rule for previous versions of existing objects. This field when declared as
+     * "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted
+     * multipart-uploads.
      *
      * @return the value
-     **/
+     */
     public String getTarget() {
         return target;
     }
 
     /**
-     * The action of the object lifecycle policy rule.
-     * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-     * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects
+     * from Standard and InfrequentAccess storage tiers into the [Archive storage
+     * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
-     * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
-     * tier are left untouched.
-     * Rules using the action 'DELETE' permanently delete objects from buckets.
-     * Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
-     *
-     **/
+     * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in
+     * Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects
+     * from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently
+     * delete their parts from buckets.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final String action;
 
     /**
-     * The action of the object lifecycle policy rule.
-     * Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers
-     * into the [Archive storage tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+     * The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects
+     * from Standard and InfrequentAccess storage tiers into the [Archive storage
+     * tier](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
      * Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the
-     * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive
-     * tier are left untouched.
-     * Rules using the action 'DELETE' permanently delete objects from buckets.
-     * Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
+     * Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in
+     * Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects
+     * from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently
+     * delete their parts from buckets.
      *
      * @return the value
-     **/
+     */
     public String getAction() {
         return action;
     }
 
     /**
-     * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the
-     * timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-     *
-     **/
+     * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units
+     * defined by the timeUnit parameter, and is calculated in relation to each object's
+     * Last-Modified time.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeAmount")
     private final Long timeAmount;
 
     /**
-     * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the
-     * timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
+     * Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units
+     * defined by the timeUnit parameter, and is calculated in relation to each object's
+     * Last-Modified time.
      *
      * @return the value
-     **/
+     */
     public Long getTimeAmount() {
         return timeAmount;
     }
 
     /**
-     * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
-     * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-     *
-     **/
-    public enum TimeUnit {
+     * The unit that should be used to interpret timeAmount. Days are defined as starting and ending
+     * at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next
+     * midnight UTC.
+     */
+    public enum TimeUnit implements com.oracle.bmc.http.internal.BmcEnum {
         Days("DAYS"),
         Years("YEARS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -399,33 +390,33 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
-     * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
-     *
-     **/
+     * The unit that should be used to interpret timeAmount. Days are defined as starting and ending
+     * at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next
+     * midnight UTC.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUnit")
     private final TimeUnit timeUnit;
 
     /**
-     * The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC.
-     * Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
+     * The unit that should be used to interpret timeAmount. Days are defined as starting and ending
+     * at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next
+     * midnight UTC.
      *
      * @return the value
-     **/
+     */
     public TimeUnit getTimeUnit() {
         return timeUnit;
     }
 
-    /**
-     * A Boolean that determines whether this rule is currently enabled.
-     **/
+    /** A Boolean that determines whether this rule is currently enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A Boolean that determines whether this rule is currently enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -444,6 +435,7 @@ public final class ObjectLifecycleRule extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

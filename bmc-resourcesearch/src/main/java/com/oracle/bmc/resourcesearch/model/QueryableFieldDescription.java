@@ -5,22 +5,22 @@
 package com.oracle.bmc.resourcesearch.model;
 
 /**
- * An individual field that can be used as part of a query filter.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An individual field that can be used as part of a query filter. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = QueryableFieldDescription.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = QueryableFieldDescription.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class QueryableFieldDescription
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldType", "fieldName", "isArray", "objectProperties"})
     public QueryableFieldDescription(
@@ -38,45 +38,44 @@ public final class QueryableFieldDescription
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
-         *
-         **/
+         * The type of the field, which dictates what semantics and query constraints you can use
+         * when searching or querying.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
 
         /**
-         * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
+         * The type of the field, which dictates what semantics and query constraints you can use
+         * when searching or querying.
          *
          * @param fieldType the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldType(FieldType fieldType) {
             this.fieldType = fieldType;
             this.__explicitlySet__.add("fieldType");
             return this;
         }
         /**
-         * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
-         *
-         **/
+         * The name of the field to use when constructing the query. Field names are present for all
+         * types except {@code OBJECT}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
-         * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
+         * The name of the field to use when constructing the query. Field names are present for all
+         * types except {@code OBJECT}.
          *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /**
-         * Indicates that this field is actually an array of the specified field type.
-         *
-         **/
+        /** Indicates that this field is actually an array of the specified field type. */
         @com.fasterxml.jackson.annotation.JsonProperty("isArray")
         private Boolean isArray;
 
@@ -85,27 +84,26 @@ public final class QueryableFieldDescription
          *
          * @param isArray the value to set
          * @return this builder
-         **/
+         */
         public Builder isArray(Boolean isArray) {
             this.isArray = isArray;
             this.__explicitlySet__.add("isArray");
             return this;
         }
         /**
-         * If the field type is {@code OBJECT}, then this property will provide all the individual properties of the object that can
-         * be queried.
-         *
-         **/
+         * If the field type is {@code OBJECT}, then this property will provide all the individual
+         * properties of the object that can be queried.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectProperties")
         private java.util.List<QueryableFieldDescription> objectProperties;
 
         /**
-         * If the field type is {@code OBJECT}, then this property will provide all the individual properties of the object that can
-         * be queried.
+         * If the field type is {@code OBJECT}, then this property will provide all the individual
+         * properties of the object that can be queried.
          *
          * @param objectProperties the value to set
          * @return this builder
-         **/
+         */
         public Builder objectProperties(
                 java.util.List<QueryableFieldDescription> objectProperties) {
             this.objectProperties = objectProperties;
@@ -144,9 +142,7 @@ public final class QueryableFieldDescription
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,10 +152,10 @@ public final class QueryableFieldDescription
     }
 
     /**
-     * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
-     *
-     **/
-    public enum FieldType {
+     * The type of the field, which dictates what semantics and query constraints you can use when
+     * searching or querying.
+     */
+    public enum FieldType implements com.oracle.bmc.http.internal.BmcEnum {
         Identifier("IDENTIFIER"),
         String("STRING"),
         Integer("INTEGER"),
@@ -170,8 +166,8 @@ public final class QueryableFieldDescription
         Object("OBJECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -211,41 +207,40 @@ public final class QueryableFieldDescription
         }
     };
     /**
-     * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
-     *
-     **/
+     * The type of the field, which dictates what semantics and query constraints you can use when
+     * searching or querying.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     private final FieldType fieldType;
 
     /**
-     * The type of the field, which dictates what semantics and query constraints you can use when searching or querying.
+     * The type of the field, which dictates what semantics and query constraints you can use when
+     * searching or querying.
      *
      * @return the value
-     **/
+     */
     public FieldType getFieldType() {
         return fieldType;
     }
 
     /**
-     * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
-     *
-     **/
+     * The name of the field to use when constructing the query. Field names are present for all
+     * types except {@code OBJECT}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
-     * The name of the field to use when constructing the query. Field names are present for all types except {@code OBJECT}.
+     * The name of the field to use when constructing the query. Field names are present for all
+     * types except {@code OBJECT}.
      *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
-    /**
-     * Indicates that this field is actually an array of the specified field type.
-     *
-     **/
+    /** Indicates that this field is actually an array of the specified field type. */
     @com.fasterxml.jackson.annotation.JsonProperty("isArray")
     private final Boolean isArray;
 
@@ -253,25 +248,24 @@ public final class QueryableFieldDescription
      * Indicates that this field is actually an array of the specified field type.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsArray() {
         return isArray;
     }
 
     /**
-     * If the field type is {@code OBJECT}, then this property will provide all the individual properties of the object that can
-     * be queried.
-     *
-     **/
+     * If the field type is {@code OBJECT}, then this property will provide all the individual
+     * properties of the object that can be queried.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectProperties")
     private final java.util.List<QueryableFieldDescription> objectProperties;
 
     /**
-     * If the field type is {@code OBJECT}, then this property will provide all the individual properties of the object that can
-     * be queried.
+     * If the field type is {@code OBJECT}, then this property will provide all the individual
+     * properties of the object that can be queried.
      *
      * @return the value
-     **/
+     */
     public java.util.List<QueryableFieldDescription> getObjectProperties() {
         return objectProperties;
     }
@@ -283,6 +277,7 @@ public final class QueryableFieldDescription
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

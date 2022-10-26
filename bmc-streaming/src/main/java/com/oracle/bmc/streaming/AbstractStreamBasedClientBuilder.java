@@ -11,6 +11,7 @@ import com.oracle.bmc.streaming.model.StreamSummary;
 
 /**
  * A builder for a client that requires a stream.
+ *
  * @param <B> actual class of the builder
  * @param <C> client class
  */
@@ -22,6 +23,7 @@ public abstract class AbstractStreamBasedClientBuilder<
 
     /**
      * Set the stream. May be null
+     *
      * @param stream the stream to use. May be null.
      * @return this builder
      */
@@ -32,6 +34,7 @@ public abstract class AbstractStreamBasedClientBuilder<
 
     /**
      * Set the stream summary. May be null
+     *
      * @param streamSummary the stream summary to use. May be null
      * @return this builder
      */
@@ -46,7 +49,8 @@ public abstract class AbstractStreamBasedClientBuilder<
     }
 
     /**
-     * Gets the endpoint that is either provided, defined within the stream, or defined within the stream summary.
+     * Gets the endpoint that is either provided, defined within the stream, or defined within the
+     * stream summary.
      *
      * @return the endpoint
      * @throws IllegalArgumentException if more than one endpoint is defined

@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.databasemanagement;
 
-import com.oracle.bmc.databasemanagement.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for DbManagement service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for DbManagement service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class DbManagementAsyncClient implements DbManagementAsync {
-    /**
-     * Service instance for DbManagement.
-     */
+public class DbManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements DbManagementAsync {
+    /** Service instance for DbManagement. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DBMANAGEMENT")
@@ -36,268 +39,16 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DbManagementAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public DbManagementAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private DbManagementAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DbManagementAsyncClient> {
@@ -319,121 +70,26 @@ public class DbManagementAsyncClient implements DbManagementAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public DbManagementAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new DbManagementAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new DbManagementAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -441,49 +97,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             AddDataFilesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
                     handler) {
-        LOG.trace("Called async addDataFiles");
-        final AddDataFilesRequest interceptedRequest =
-                AddDataFilesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddDataFilesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+        Objects.requireNonNull(request.getAddDataFilesDetails(), "addDataFilesDetails is required");
+
+        return clientCall(request, AddDataFilesResponse::builder)
+                .logger(LOG, "addDataFiles")
+                .serviceDetails(
                         "DbManagement",
                         "AddDataFiles",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/AddDataFiles");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddDataFilesResponse>
-                transformer =
-                        AddDataFilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddDataFilesRequest, AddDataFilesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddDataFilesRequest, AddDataFilesResponse>,
-                        java.util.concurrent.Future<AddDataFilesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddDataFilesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddDataFilesRequest, AddDataFilesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/AddDataFiles")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDataFilesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("addDataFiles")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus.class,
+                        AddDataFilesResponse.Builder::tablespaceAdminStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDataFilesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -494,58 +138,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     AddManagedDatabaseToManagedDatabaseGroupRequest,
                                     AddManagedDatabaseToManagedDatabaseGroupResponse>
                             handler) {
-        LOG.trace("Called async addManagedDatabaseToManagedDatabaseGroup");
-        final AddManagedDatabaseToManagedDatabaseGroupRequest interceptedRequest =
-                AddManagedDatabaseToManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddManagedDatabaseToManagedDatabaseGroupConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getAddManagedDatabaseToManagedDatabaseGroupDetails(),
+                "addManagedDatabaseToManagedDatabaseGroupDetails is required");
+
+        return clientCall(request, AddManagedDatabaseToManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "addManagedDatabaseToManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "AddManagedDatabaseToManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/AddManagedDatabaseToManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AddManagedDatabaseToManagedDatabaseGroupResponse>
-                transformer =
-                        AddManagedDatabaseToManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AddManagedDatabaseToManagedDatabaseGroupRequest,
-                        AddManagedDatabaseToManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddManagedDatabaseToManagedDatabaseGroupRequest,
-                                AddManagedDatabaseToManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<
-                                AddManagedDatabaseToManagedDatabaseGroupResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getAddManagedDatabaseToManagedDatabaseGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddManagedDatabaseToManagedDatabaseGroupRequest,
-                    AddManagedDatabaseToManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/AddManagedDatabaseToManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddManagedDatabaseToManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("addManagedDatabase")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddManagedDatabaseToManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -553,41 +173,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             AddmTasksRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse>
                     handler) {
-        LOG.trace("Called async addmTasks");
-        final AddmTasksRequest interceptedRequest = AddmTasksConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddmTasksConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getTimeStart(), "timeStart is required");
+
+        Objects.requireNonNull(request.getTimeEnd(), "timeEnd is required");
+
+        return clientCall(request, AddmTasksResponse::builder)
+                .logger(LOG, "addmTasks")
+                .serviceDetails(
                         "DbManagement",
                         "AddmTasks",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AddmTasksCollection/AddmTasks");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddmTasksResponse>
-                transformer =
-                        AddmTasksConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<AddmTasksRequest, AddmTasksResponse>,
-                        java.util.concurrent.Future<AddmTasksResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddmTasksRequest, AddmTasksResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AddmTasksCollection/AddmTasks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(AddmTasksRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("addmTasks")
+                .appendQueryParam("timeStart", request.getTimeStart())
+                .appendQueryParam("timeEnd", request.getTimeEnd())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AddmTasksCollection.class,
+                        AddmTasksResponse.Builder::addmTasksCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddmTasksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", AddmTasksResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -596,52 +214,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>
                     handler) {
-        LOG.trace("Called async changeDatabaseParameters");
-        final ChangeDatabaseParametersRequest interceptedRequest =
-                ChangeDatabaseParametersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDatabaseParametersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDatabaseParametersDetails(),
+                "changeDatabaseParametersDetails is required");
+
+        return clientCall(request, ChangeDatabaseParametersResponse::builder)
+                .logger(LOG, "changeDatabaseParameters")
+                .serviceDetails(
                         "DbManagement",
                         "ChangeDatabaseParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeDatabaseParameters");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeDatabaseParametersResponse>
-                transformer =
-                        ChangeDatabaseParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>,
-                        java.util.concurrent.Future<ChangeDatabaseParametersResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeDatabaseParametersDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDatabaseParametersRequest, ChangeDatabaseParametersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ChangeDatabaseParameters")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDatabaseParametersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeDatabaseParameters")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
+                                .class,
+                        ChangeDatabaseParametersResponse.Builder::updateDatabaseParametersResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeDatabaseParametersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -652,59 +254,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ChangeDbManagementPrivateEndpointCompartmentRequest,
                                     ChangeDbManagementPrivateEndpointCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeDbManagementPrivateEndpointCompartment");
-        final ChangeDbManagementPrivateEndpointCompartmentRequest interceptedRequest =
-                ChangeDbManagementPrivateEndpointCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDbManagementPrivateEndpointCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDbManagementPrivateEndpointId(),
+                "dbManagementPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDbManagementPrivateEndpointCompartmentDetails(),
+                "changeDbManagementPrivateEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeDbManagementPrivateEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeDbManagementPrivateEndpointCompartment")
+                .serviceDetails(
                         "DbManagement",
                         "ChangeDbManagementPrivateEndpointCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ChangeDbManagementPrivateEndpointCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeDbManagementPrivateEndpointCompartmentResponse>
-                transformer =
-                        ChangeDbManagementPrivateEndpointCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDbManagementPrivateEndpointCompartmentRequest,
-                        ChangeDbManagementPrivateEndpointCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDbManagementPrivateEndpointCompartmentRequest,
-                                ChangeDbManagementPrivateEndpointCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeDbManagementPrivateEndpointCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeDbManagementPrivateEndpointCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDbManagementPrivateEndpointCompartmentRequest,
-                    ChangeDbManagementPrivateEndpointCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ChangeDbManagementPrivateEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDbManagementPrivateEndpointCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendPathParam(request.getDbManagementPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDbManagementPrivateEndpointCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -713,51 +292,33 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeJobCompartment");
-        final ChangeJobCompartmentRequest interceptedRequest =
-                ChangeJobCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeJobCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeJobCompartmentDetails(),
+                "changeJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeJobCompartmentResponse::builder)
+                .logger(LOG, "changeJobCompartment")
+                .serviceDetails(
                         "DbManagement",
                         "ChangeJobCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ChangeJobCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeJobCompartmentResponse>
-                transformer =
-                        ChangeJobCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeJobCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeJobCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeJobCompartmentRequest, ChangeJobCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ChangeJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeJobCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeJobCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -768,57 +329,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ChangeManagedDatabaseGroupCompartmentRequest,
                                     ChangeManagedDatabaseGroupCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeManagedDatabaseGroupCompartment");
-        final ChangeManagedDatabaseGroupCompartmentRequest interceptedRequest =
-                ChangeManagedDatabaseGroupCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeManagedDatabaseGroupCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeManagedDatabaseGroupCompartmentDetails(),
+                "changeManagedDatabaseGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeManagedDatabaseGroupCompartmentResponse::builder)
+                .logger(LOG, "changeManagedDatabaseGroupCompartment")
+                .serviceDetails(
                         "DbManagement",
                         "ChangeManagedDatabaseGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ChangeManagedDatabaseGroupCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeManagedDatabaseGroupCompartmentResponse>
-                transformer =
-                        ChangeManagedDatabaseGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeManagedDatabaseGroupCompartmentRequest,
-                        ChangeManagedDatabaseGroupCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeManagedDatabaseGroupCompartmentRequest,
-                                ChangeManagedDatabaseGroupCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeManagedDatabaseGroupCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeManagedDatabaseGroupCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeManagedDatabaseGroupCompartmentRequest,
-                    ChangeManagedDatabaseGroupCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ChangeManagedDatabaseGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeManagedDatabaseGroupCompartmentRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeManagedDatabaseGroupCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -829,55 +368,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     CreateDbManagementPrivateEndpointRequest,
                                     CreateDbManagementPrivateEndpointResponse>
                             handler) {
-        LOG.trace("Called async createDbManagementPrivateEndpoint");
-        final CreateDbManagementPrivateEndpointRequest interceptedRequest =
-                CreateDbManagementPrivateEndpointConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDbManagementPrivateEndpointConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDbManagementPrivateEndpointDetails(),
+                "createDbManagementPrivateEndpointDetails is required");
+
+        return clientCall(request, CreateDbManagementPrivateEndpointResponse::builder)
+                .logger(LOG, "createDbManagementPrivateEndpoint")
+                .serviceDetails(
                         "DbManagement",
                         "CreateDbManagementPrivateEndpoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/CreateDbManagementPrivateEndpoint");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateDbManagementPrivateEndpointResponse>
-                transformer =
-                        CreateDbManagementPrivateEndpointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDbManagementPrivateEndpointRequest,
-                        CreateDbManagementPrivateEndpointResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDbManagementPrivateEndpointRequest,
-                                CreateDbManagementPrivateEndpointResponse>,
-                        java.util.concurrent.Future<CreateDbManagementPrivateEndpointResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDbManagementPrivateEndpointDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDbManagementPrivateEndpointRequest,
-                    CreateDbManagementPrivateEndpointResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/CreateDbManagementPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDbManagementPrivateEndpointRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint.class,
+                        CreateDbManagementPrivateEndpointResponse.Builder
+                                ::dbManagementPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", CreateDbManagementPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateDbManagementPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateDbManagementPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateDbManagementPrivateEndpointResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -885,47 +408,30 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             CreateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>
                     handler) {
-        LOG.trace("Called async createJob");
-        final CreateJobRequest interceptedRequest = CreateJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateJobDetails(), "createJobDetails is required");
+
+        return clientCall(request, CreateJobResponse::builder)
+                .logger(LOG, "createJob")
+                .serviceDetails(
                         "DbManagement",
                         "CreateJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/CreateJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateJobResponse>
-                transformer =
-                        CreateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<CreateJobRequest, CreateJobResponse>,
-                        java.util.concurrent.Future<CreateJobResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateJobDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateJobRequest, CreateJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/CreateJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateJobRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Job.class,
+                        CreateJobResponse.Builder::job)
+                .handleResponseHeaderString("location", CreateJobResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateJobResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -936,53 +442,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     CreateManagedDatabaseGroupRequest,
                                     CreateManagedDatabaseGroupResponse>
                             handler) {
-        LOG.trace("Called async createManagedDatabaseGroup");
-        final CreateManagedDatabaseGroupRequest interceptedRequest =
-                CreateManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateManagedDatabaseGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateManagedDatabaseGroupDetails(),
+                "createManagedDatabaseGroupDetails is required");
+
+        return clientCall(request, CreateManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "createManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "CreateManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/CreateManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateManagedDatabaseGroupResponse>
-                transformer =
-                        CreateManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateManagedDatabaseGroupRequest, CreateManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateManagedDatabaseGroupRequest,
-                                CreateManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<CreateManagedDatabaseGroupResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateManagedDatabaseGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateManagedDatabaseGroupRequest, CreateManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/CreateManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup.class,
+                        CreateManagedDatabaseGroupResponse.Builder::managedDatabaseGroup)
+                .handleResponseHeaderString(
+                        "location", CreateManagedDatabaseGroupResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -991,50 +478,33 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateTablespaceRequest, CreateTablespaceResponse>
                     handler) {
-        LOG.trace("Called async createTablespace");
-        final CreateTablespaceRequest interceptedRequest =
-                CreateTablespaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTablespaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTablespaceDetails(), "createTablespaceDetails is required");
+
+        return clientCall(request, CreateTablespaceResponse::builder)
+                .logger(LOG, "createTablespace")
+                .serviceDetails(
                         "DbManagement",
                         "CreateTablespace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/CreateTablespace");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateTablespaceResponse>
-                transformer =
-                        CreateTablespaceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateTablespaceRequest, CreateTablespaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateTablespaceRequest, CreateTablespaceResponse>,
-                        java.util.concurrent.Future<CreateTablespaceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateTablespaceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateTablespaceRequest, CreateTablespaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/CreateTablespace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTablespaceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Tablespace.class,
+                        CreateTablespaceResponse.Builder::tablespace)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTablespaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1045,49 +515,32 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     DeleteDbManagementPrivateEndpointRequest,
                                     DeleteDbManagementPrivateEndpointResponse>
                             handler) {
-        LOG.trace("Called async deleteDbManagementPrivateEndpoint");
-        final DeleteDbManagementPrivateEndpointRequest interceptedRequest =
-                DeleteDbManagementPrivateEndpointConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDbManagementPrivateEndpointConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDbManagementPrivateEndpointId(),
+                "dbManagementPrivateEndpointId must not be blank");
+
+        return clientCall(request, DeleteDbManagementPrivateEndpointResponse::builder)
+                .logger(LOG, "deleteDbManagementPrivateEndpoint")
+                .serviceDetails(
                         "DbManagement",
                         "DeleteDbManagementPrivateEndpoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/DeleteDbManagementPrivateEndpoint");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteDbManagementPrivateEndpointResponse>
-                transformer =
-                        DeleteDbManagementPrivateEndpointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDbManagementPrivateEndpointRequest,
-                        DeleteDbManagementPrivateEndpointResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDbManagementPrivateEndpointRequest,
-                                DeleteDbManagementPrivateEndpointResponse>,
-                        java.util.concurrent.Future<DeleteDbManagementPrivateEndpointResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDbManagementPrivateEndpointRequest,
-                    DeleteDbManagementPrivateEndpointResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/DeleteDbManagementPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDbManagementPrivateEndpointRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendPathParam(request.getDbManagementPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteDbManagementPrivateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteDbManagementPrivateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1095,41 +548,26 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             DeleteJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>
                     handler) {
-        LOG.trace("Called async deleteJob");
-        final DeleteJobRequest interceptedRequest = DeleteJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, DeleteJobResponse::builder)
+                .logger(LOG, "deleteJob")
+                .serviceDetails(
                         "DbManagement",
                         "DeleteJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/DeleteJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteJobResponse>
-                transformer =
-                        DeleteJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<DeleteJobRequest, DeleteJobResponse>,
-                        java.util.concurrent.Future<DeleteJobResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteJobRequest, DeleteJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/DeleteJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteJobRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteJobResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1140,47 +578,27 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     DeleteManagedDatabaseGroupRequest,
                                     DeleteManagedDatabaseGroupResponse>
                             handler) {
-        LOG.trace("Called async deleteManagedDatabaseGroup");
-        final DeleteManagedDatabaseGroupRequest interceptedRequest =
-                DeleteManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteManagedDatabaseGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+
+        return clientCall(request, DeleteManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "deleteManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "DeleteManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/DeleteManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteManagedDatabaseGroupResponse>
-                transformer =
-                        DeleteManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteManagedDatabaseGroupRequest,
-                                DeleteManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<DeleteManagedDatabaseGroupResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteManagedDatabaseGroupRequest, DeleteManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/DeleteManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1189,47 +607,29 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>
                     handler) {
-        LOG.trace("Called async deletePreferredCredential");
-        final DeletePreferredCredentialRequest interceptedRequest =
-                DeletePreferredCredentialConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePreferredCredentialConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getCredentialName(), "credentialName must not be blank");
+
+        return clientCall(request, DeletePreferredCredentialResponse::builder)
+                .logger(LOG, "deletePreferredCredential")
+                .serviceDetails(
                         "DbManagement",
                         "DeletePreferredCredential",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/DeletePreferredCredential");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeletePreferredCredentialResponse>
-                transformer =
-                        DeletePreferredCredentialConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePreferredCredentialRequest,
-                                DeletePreferredCredentialResponse>,
-                        java.util.concurrent.Future<DeletePreferredCredentialResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePreferredCredentialRequest, DeletePreferredCredentialResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/DeletePreferredCredential")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePreferredCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("preferredCredentials")
+                .appendPathParam(request.getCredentialName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePreferredCredentialResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1238,49 +638,38 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DropTablespaceRequest, DropTablespaceResponse>
                     handler) {
-        LOG.trace("Called async dropTablespace");
-        final DropTablespaceRequest interceptedRequest =
-                DropTablespaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DropTablespaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getDropTablespaceDetails(), "dropTablespaceDetails is required");
+
+        return clientCall(request, DropTablespaceResponse::builder)
+                .logger(LOG, "dropTablespace")
+                .serviceDetails(
                         "DbManagement",
                         "DropTablespace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/DropTablespace");
-        final java.util.function.Function<javax.ws.rs.core.Response, DropTablespaceResponse>
-                transformer =
-                        DropTablespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DropTablespaceRequest, DropTablespaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DropTablespaceRequest, DropTablespaceResponse>,
-                        java.util.concurrent.Future<DropTablespaceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDropTablespaceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DropTablespaceRequest, DropTablespaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/DropTablespace")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DropTablespaceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("dropTablespace")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus.class,
+                        DropTablespaceResponse.Builder::tablespaceAdminStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", DropTablespaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1289,46 +678,31 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>
                     handler) {
-        LOG.trace("Called async generateAwrSnapshot");
-        final GenerateAwrSnapshotRequest interceptedRequest =
-                GenerateAwrSnapshotConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GenerateAwrSnapshotConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GenerateAwrSnapshotResponse::builder)
+                .logger(LOG, "generateAwrSnapshot")
+                .serviceDetails(
                         "DbManagement",
                         "GenerateAwrSnapshot",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SnapshotDetails/GenerateAwrSnapshot");
-        final java.util.function.Function<javax.ws.rs.core.Response, GenerateAwrSnapshotResponse>
-                transformer =
-                        GenerateAwrSnapshotConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>,
-                        java.util.concurrent.Future<GenerateAwrSnapshotResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GenerateAwrSnapshotRequest, GenerateAwrSnapshotResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/SnapshotDetails/GenerateAwrSnapshot")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateAwrSnapshotRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("generateAwrSnapshot")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SnapshotDetails.class,
+                        GenerateAwrSnapshotResponse.Builder::snapshotDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateAwrSnapshotResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1337,44 +711,46 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetAwrDbReportRequest, GetAwrDbReportResponse>
                     handler) {
-        LOG.trace("Called async getAwrDbReport");
-        final GetAwrDbReportRequest interceptedRequest =
-                GetAwrDbReportConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAwrDbReportConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, GetAwrDbReportResponse::builder)
+                .logger(LOG, "getAwrDbReport")
+                .serviceDetails(
                         "DbManagement",
                         "GetAwrDbReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbReport");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAwrDbReportResponse>
-                transformer =
-                        GetAwrDbReportConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetAwrDbReportRequest, GetAwrDbReportResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAwrDbReportRequest, GetAwrDbReportResponse>,
-                        java.util.concurrent.Future<GetAwrDbReportResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAwrDbReportRequest, GetAwrDbReportResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrDbReportRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbReport")
+                .appendListQueryParam(
+                        "instNums",
+                        request.getInstNums(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated)
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendEnumQueryParam("reportType", request.getReportType())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendEnumQueryParam("reportFormat", request.getReportFormat())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbReport.class,
+                        GetAwrDbReportResponse.Builder::awrDbReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrDbReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1383,45 +759,44 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>
                     handler) {
-        LOG.trace("Called async getAwrDbSqlReport");
-        final GetAwrDbSqlReportRequest interceptedRequest =
-                GetAwrDbSqlReportConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAwrDbSqlReportConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+        Objects.requireNonNull(request.getSqlId(), "sqlId is required");
+
+        return clientCall(request, GetAwrDbSqlReportResponse::builder)
+                .logger(LOG, "getAwrDbSqlReport")
+                .serviceDetails(
                         "DbManagement",
                         "GetAwrDbSqlReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbSqlReport");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAwrDbSqlReportResponse>
-                transformer =
-                        GetAwrDbSqlReportConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>,
-                        java.util.concurrent.Future<GetAwrDbSqlReportResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAwrDbSqlReportRequest, GetAwrDbSqlReportResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetAwrDbSqlReport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAwrDbSqlReportRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbSqlReport")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("sqlId", request.getSqlId())
+                .appendEnumQueryParam("reportFormat", request.getReportFormat())
+                .appendQueryParam("containerId", request.getContainerId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbSqlReport.class,
+                        GetAwrDbSqlReportResponse.Builder::awrDbSqlReport)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAwrDbSqlReportResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1430,45 +805,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>
                     handler) {
-        LOG.trace("Called async getClusterCacheMetric");
-        final GetClusterCacheMetricRequest interceptedRequest =
-                GetClusterCacheMetricConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetClusterCacheMetricConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetClusterCacheMetricResponse::builder)
+                .logger(LOG, "getClusterCacheMetric")
+                .serviceDetails(
                         "DbManagement",
                         "GetClusterCacheMetric",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ClusterCacheMetric/GetClusterCacheMetric");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetClusterCacheMetricResponse>
-                transformer =
-                        GetClusterCacheMetricConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>,
-                        java.util.concurrent.Future<GetClusterCacheMetricResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetClusterCacheMetricRequest, GetClusterCacheMetricResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ClusterCacheMetric/GetClusterCacheMetric")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetClusterCacheMetricRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("clusterCacheMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ClusterCacheMetric.class,
+                        GetClusterCacheMetricResponse.Builder::clusterCacheMetric)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetClusterCacheMetricResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1479,47 +843,41 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     GetDatabaseFleetHealthMetricsRequest,
                                     GetDatabaseFleetHealthMetricsResponse>
                             handler) {
-        LOG.trace("Called async getDatabaseFleetHealthMetrics");
-        final GetDatabaseFleetHealthMetricsRequest interceptedRequest =
-                GetDatabaseFleetHealthMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDatabaseFleetHealthMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompareBaselineTime(), "compareBaselineTime is required");
+
+        Objects.requireNonNull(request.getCompareTargetTime(), "compareTargetTime is required");
+
+        return clientCall(request, GetDatabaseFleetHealthMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetHealthMetrics")
+                .serviceDetails(
                         "DbManagement",
                         "GetDatabaseFleetHealthMetrics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHealthMetrics/GetDatabaseFleetHealthMetrics");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetDatabaseFleetHealthMetricsResponse>
-                transformer =
-                        GetDatabaseFleetHealthMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDatabaseFleetHealthMetricsRequest, GetDatabaseFleetHealthMetricsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDatabaseFleetHealthMetricsRequest,
-                                GetDatabaseFleetHealthMetricsResponse>,
-                        java.util.concurrent.Future<GetDatabaseFleetHealthMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDatabaseFleetHealthMetricsRequest, GetDatabaseFleetHealthMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHealthMetrics/GetDatabaseFleetHealthMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetHealthMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("fleetMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compareBaselineTime", request.getCompareBaselineTime())
+                .appendQueryParam("compareTargetTime", request.getCompareTargetTime())
+                .appendEnumQueryParam("compareType", request.getCompareType())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("filterByDatabaseType", request.getFilterByDatabaseType())
+                .appendQueryParam("filterByDatabaseSubType", request.getFilterByDatabaseSubType())
+                .appendQueryParam(
+                        "filterByDatabaseDeploymentType",
+                        request.getFilterByDatabaseDeploymentType())
+                .appendQueryParam("filterByDatabaseVersion", request.getFilterByDatabaseVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetHealthMetrics.class,
+                        GetDatabaseFleetHealthMetricsResponse.Builder::databaseFleetHealthMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetHealthMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1528,45 +886,33 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDatabaseHomeMetricsRequest, GetDatabaseHomeMetricsResponse>
                     handler) {
-        LOG.trace("Called async getDatabaseHomeMetrics");
-        final GetDatabaseHomeMetricsRequest interceptedRequest =
-                GetDatabaseHomeMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDatabaseHomeMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getManagedDatabaseId(), "managedDatabaseId is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDatabaseHomeMetricsResponse::builder)
+                .logger(LOG, "getDatabaseHomeMetrics")
+                .serviceDetails(
                         "DbManagement",
                         "GetDatabaseHomeMetrics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHomeMetrics/GetDatabaseHomeMetrics");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDatabaseHomeMetricsResponse>
-                transformer =
-                        GetDatabaseHomeMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDatabaseHomeMetricsRequest, GetDatabaseHomeMetricsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDatabaseHomeMetricsRequest, GetDatabaseHomeMetricsResponse>,
-                        java.util.concurrent.Future<GetDatabaseHomeMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDatabaseHomeMetricsRequest, GetDatabaseHomeMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHomeMetrics/GetDatabaseHomeMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseHomeMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseHomeMetrics")
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseHomeMetrics.class,
+                        GetDatabaseHomeMetricsResponse.Builder::databaseHomeMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseHomeMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1577,87 +923,62 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     GetDbManagementPrivateEndpointRequest,
                                     GetDbManagementPrivateEndpointResponse>
                             handler) {
-        LOG.trace("Called async getDbManagementPrivateEndpoint");
-        final GetDbManagementPrivateEndpointRequest interceptedRequest =
-                GetDbManagementPrivateEndpointConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDbManagementPrivateEndpointConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDbManagementPrivateEndpointId(),
+                "dbManagementPrivateEndpointId must not be blank");
+
+        return clientCall(request, GetDbManagementPrivateEndpointResponse::builder)
+                .logger(LOG, "getDbManagementPrivateEndpoint")
+                .serviceDetails(
                         "DbManagement",
                         "GetDbManagementPrivateEndpoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/GetDbManagementPrivateEndpoint");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetDbManagementPrivateEndpointResponse>
-                transformer =
-                        GetDbManagementPrivateEndpointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDbManagementPrivateEndpointRequest,
-                        GetDbManagementPrivateEndpointResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDbManagementPrivateEndpointRequest,
-                                GetDbManagementPrivateEndpointResponse>,
-                        java.util.concurrent.Future<GetDbManagementPrivateEndpointResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDbManagementPrivateEndpointRequest, GetDbManagementPrivateEndpointResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/GetDbManagementPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDbManagementPrivateEndpointRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendPathParam(request.getDbManagementPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint.class,
+                        GetDbManagementPrivateEndpointResponse.Builder::dbManagementPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "etag", GetDbManagementPrivateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDbManagementPrivateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetJobResponse> getJob(
             GetJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handler) {
-        LOG.trace("Called async getJob");
-        final GetJobRequest interceptedRequest = GetJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetJobResponse::builder)
+                .logger(LOG, "getJob")
+                .serviceDetails(
                         "DbManagement",
                         "GetJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/GetJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobResponse> transformer =
-                GetJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse> handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetJobRequest, GetJobResponse>,
-                        java.util.concurrent.Future<GetJobResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobRequest, GetJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/GetJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Job.class,
+                        GetJobResponse.Builder::job)
+                .handleResponseHeaderString("location", GetJobResponse.Builder::location)
+                .handleResponseHeaderString("opc-request-id", GetJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetJobResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1666,44 +987,28 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetJobExecutionRequest, GetJobExecutionResponse>
                     handler) {
-        LOG.trace("Called async getJobExecution");
-        final GetJobExecutionRequest interceptedRequest =
-                GetJobExecutionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobExecutionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobExecutionId(), "jobExecutionId must not be blank");
+
+        return clientCall(request, GetJobExecutionResponse::builder)
+                .logger(LOG, "getJobExecution")
+                .serviceDetails(
                         "DbManagement",
                         "GetJobExecution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/GetJobExecution");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobExecutionResponse>
-                transformer =
-                        GetJobExecutionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetJobExecutionRequest, GetJobExecutionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetJobExecutionRequest, GetJobExecutionResponse>,
-                        java.util.concurrent.Future<GetJobExecutionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobExecutionRequest, GetJobExecutionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/GetJobExecution")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobExecutionRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobExecutions")
+                .appendPathParam(request.getJobExecutionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobExecution.class,
+                        GetJobExecutionResponse.Builder::jobExecution)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJobExecutionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1711,41 +1016,28 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             GetJobRunRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse>
                     handler) {
-        LOG.trace("Called async getJobRun");
-        final GetJobRunRequest interceptedRequest = GetJobRunConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJobRunConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
+
+        return clientCall(request, GetJobRunResponse::builder)
+                .logger(LOG, "getJobRun")
+                .serviceDetails(
                         "DbManagement",
                         "GetJobRun",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/GetJobRun");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetJobRunResponse>
-                transformer =
-                        GetJobRunConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetJobRunRequest, GetJobRunResponse>,
-                        java.util.concurrent.Future<GetJobRunResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetJobRunRequest, GetJobRunResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/GetJobRun")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJobRunRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobRuns")
+                .appendPathParam(request.getJobRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobRun.class,
+                        GetJobRunResponse.Builder::jobRun)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJobRunResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1754,44 +1046,28 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetManagedDatabaseRequest, GetManagedDatabaseResponse>
                     handler) {
-        LOG.trace("Called async getManagedDatabase");
-        final GetManagedDatabaseRequest interceptedRequest =
-                GetManagedDatabaseConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetManagedDatabaseConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetManagedDatabaseResponse::builder)
+                .logger(LOG, "getManagedDatabase")
+                .serviceDetails(
                         "DbManagement",
                         "GetManagedDatabase",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetManagedDatabase");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetManagedDatabaseResponse>
-                transformer =
-                        GetManagedDatabaseConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetManagedDatabaseRequest, GetManagedDatabaseResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetManagedDatabaseRequest, GetManagedDatabaseResponse>,
-                        java.util.concurrent.Future<GetManagedDatabaseResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetManagedDatabaseRequest, GetManagedDatabaseResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetManagedDatabase")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetManagedDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabase.class,
+                        GetManagedDatabaseResponse.Builder::managedDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetManagedDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1800,46 +1076,30 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>
                     handler) {
-        LOG.trace("Called async getManagedDatabaseGroup");
-        final GetManagedDatabaseGroupRequest interceptedRequest =
-                GetManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetManagedDatabaseGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+
+        return clientCall(request, GetManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "getManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "GetManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/GetManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetManagedDatabaseGroupResponse>
-                transformer =
-                        GetManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<GetManagedDatabaseGroupResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetManagedDatabaseGroupRequest, GetManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/GetManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup.class,
+                        GetManagedDatabaseGroupResponse.Builder::managedDatabaseGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -1850,50 +1110,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     GetOptimizerStatisticsAdvisorExecutionRequest,
                                     GetOptimizerStatisticsAdvisorExecutionResponse>
                             handler) {
-        LOG.trace("Called async getOptimizerStatisticsAdvisorExecution");
-        final GetOptimizerStatisticsAdvisorExecutionRequest interceptedRequest =
-                GetOptimizerStatisticsAdvisorExecutionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetOptimizerStatisticsAdvisorExecutionConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getExecutionName(), "executionName must not be blank");
+        Objects.requireNonNull(request.getTaskName(), "taskName is required");
+
+        return clientCall(request, GetOptimizerStatisticsAdvisorExecutionResponse::builder)
+                .logger(LOG, "getOptimizerStatisticsAdvisorExecution")
+                .serviceDetails(
                         "DbManagement",
                         "GetOptimizerStatisticsAdvisorExecution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetOptimizerStatisticsAdvisorExecutionResponse>
-                transformer =
-                        GetOptimizerStatisticsAdvisorExecutionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetOptimizerStatisticsAdvisorExecutionRequest,
-                        GetOptimizerStatisticsAdvisorExecutionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetOptimizerStatisticsAdvisorExecutionRequest,
-                                GetOptimizerStatisticsAdvisorExecutionResponse>,
-                        java.util.concurrent.Future<GetOptimizerStatisticsAdvisorExecutionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetOptimizerStatisticsAdvisorExecutionRequest,
-                    GetOptimizerStatisticsAdvisorExecutionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecution")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOptimizerStatisticsAdvisorExecutionRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsAdvisorExecutions")
+                .appendPathParam(request.getExecutionName())
+                .appendQueryParam("taskName", request.getTaskName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.OptimizerStatisticsAdvisorExecution
+                                .class,
+                        GetOptimizerStatisticsAdvisorExecutionResponse.Builder
+                                ::optimizerStatisticsAdvisorExecution)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOptimizerStatisticsAdvisorExecutionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1904,52 +1151,38 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     GetOptimizerStatisticsAdvisorExecutionScriptRequest,
                                     GetOptimizerStatisticsAdvisorExecutionScriptResponse>
                             handler) {
-        LOG.trace("Called async getOptimizerStatisticsAdvisorExecutionScript");
-        final GetOptimizerStatisticsAdvisorExecutionScriptRequest interceptedRequest =
-                GetOptimizerStatisticsAdvisorExecutionScriptConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getExecutionName(), "executionName must not be blank");
+        Objects.requireNonNull(request.getTaskName(), "taskName is required");
+
+        return clientCall(request, GetOptimizerStatisticsAdvisorExecutionScriptResponse::builder)
+                .logger(LOG, "getOptimizerStatisticsAdvisorExecutionScript")
+                .serviceDetails(
                         "DbManagement",
                         "GetOptimizerStatisticsAdvisorExecutionScript",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecutionScript");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GetOptimizerStatisticsAdvisorExecutionScriptResponse>
-                transformer =
-                        GetOptimizerStatisticsAdvisorExecutionScriptConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetOptimizerStatisticsAdvisorExecutionScriptRequest,
-                        GetOptimizerStatisticsAdvisorExecutionScriptResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetOptimizerStatisticsAdvisorExecutionScriptRequest,
-                                GetOptimizerStatisticsAdvisorExecutionScriptResponse>,
-                        java.util.concurrent.Future<
-                                GetOptimizerStatisticsAdvisorExecutionScriptResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetOptimizerStatisticsAdvisorExecutionScriptRequest,
-                    GetOptimizerStatisticsAdvisorExecutionScriptResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsAdvisorExecutionScript")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOptimizerStatisticsAdvisorExecutionScriptRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsAdvisorExecutions")
+                .appendPathParam(request.getExecutionName())
+                .appendPathParam("script")
+                .appendQueryParam("taskName", request.getTaskName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .OptimizerStatisticsAdvisorExecutionScript.class,
+                        GetOptimizerStatisticsAdvisorExecutionScriptResponse.Builder
+                                ::optimizerStatisticsAdvisorExecutionScript)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOptimizerStatisticsAdvisorExecutionScriptResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1960,52 +1193,33 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     GetOptimizerStatisticsCollectionOperationRequest,
                                     GetOptimizerStatisticsCollectionOperationResponse>
                             handler) {
-        LOG.trace("Called async getOptimizerStatisticsCollectionOperation");
-        final GetOptimizerStatisticsCollectionOperationRequest interceptedRequest =
-                GetOptimizerStatisticsCollectionOperationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetOptimizerStatisticsCollectionOperationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetOptimizerStatisticsCollectionOperationResponse::builder)
+                .logger(LOG, "getOptimizerStatisticsCollectionOperation")
+                .serviceDetails(
                         "DbManagement",
                         "GetOptimizerStatisticsCollectionOperation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsCollectionOperation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GetOptimizerStatisticsCollectionOperationResponse>
-                transformer =
-                        GetOptimizerStatisticsCollectionOperationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetOptimizerStatisticsCollectionOperationRequest,
-                        GetOptimizerStatisticsCollectionOperationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetOptimizerStatisticsCollectionOperationRequest,
-                                GetOptimizerStatisticsCollectionOperationResponse>,
-                        java.util.concurrent.Future<
-                                GetOptimizerStatisticsCollectionOperationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetOptimizerStatisticsCollectionOperationRequest,
-                    GetOptimizerStatisticsCollectionOperationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetOptimizerStatisticsCollectionOperation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOptimizerStatisticsCollectionOperationRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsCollectionOperations")
+                .appendPathParam(request.getOptimizerStatisticsCollectionOperationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .OptimizerStatisticsCollectionOperation.class,
+                        GetOptimizerStatisticsCollectionOperationResponse.Builder
+                                ::optimizerStatisticsCollectionOperation)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOptimizerStatisticsCollectionOperationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2013,43 +1227,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             GetPdbMetricsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
                     handler) {
-        LOG.trace("Called async getPdbMetrics");
-        final GetPdbMetricsRequest interceptedRequest =
-                GetPdbMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPdbMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetPdbMetricsResponse::builder)
+                .logger(LOG, "getPdbMetrics")
+                .serviceDetails(
                         "DbManagement",
                         "GetPdbMetrics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PdbMetrics/GetPdbMetrics");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPdbMetricsResponse>
-                transformer =
-                        GetPdbMetricsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPdbMetricsRequest, GetPdbMetricsResponse>,
-                        java.util.concurrent.Future<GetPdbMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPdbMetricsRequest, GetPdbMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PdbMetrics/GetPdbMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPdbMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("pdbMetrics")
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("compareType", request.getCompareType())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PdbMetrics.class,
+                        GetPdbMetricsResponse.Builder::pdbMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPdbMetricsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2058,45 +1266,33 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPreferredCredentialRequest, GetPreferredCredentialResponse>
                     handler) {
-        LOG.trace("Called async getPreferredCredential");
-        final GetPreferredCredentialRequest interceptedRequest =
-                GetPreferredCredentialConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPreferredCredentialConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getCredentialName(), "credentialName must not be blank");
+
+        return clientCall(request, GetPreferredCredentialResponse::builder)
+                .logger(LOG, "getPreferredCredential")
+                .serviceDetails(
                         "DbManagement",
                         "GetPreferredCredential",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/GetPreferredCredential");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPreferredCredentialResponse>
-                transformer =
-                        GetPreferredCredentialConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetPreferredCredentialRequest, GetPreferredCredentialResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPreferredCredentialRequest, GetPreferredCredentialResponse>,
-                        java.util.concurrent.Future<GetPreferredCredentialResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPreferredCredentialRequest, GetPreferredCredentialResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/GetPreferredCredential")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPreferredCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("preferredCredentials")
+                .appendPathParam(request.getCredentialName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PreferredCredential.class,
+                        GetPreferredCredentialResponse.Builder::preferredCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPreferredCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetPreferredCredentialResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -2104,83 +1300,63 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             GetTablespaceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
                     handler) {
-        LOG.trace("Called async getTablespace");
-        final GetTablespaceRequest interceptedRequest =
-                GetTablespaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTablespaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+
+        return clientCall(request, GetTablespaceResponse::builder)
+                .logger(LOG, "getTablespace")
+                .serviceDetails(
                         "DbManagement",
                         "GetTablespace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/GetTablespace");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetTablespaceResponse>
-                transformer =
-                        GetTablespaceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetTablespaceRequest, GetTablespaceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTablespaceRequest, GetTablespaceResponse>,
-                        java.util.concurrent.Future<GetTablespaceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTablespaceRequest, GetTablespaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/GetTablespace")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTablespaceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Tablespace.class,
+                        GetTablespaceResponse.Builder::tablespace)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTablespaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetUserResponse> getUser(
             GetUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler) {
-        LOG.trace("Called async getUser");
-        final GetUserRequest interceptedRequest = GetUserConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUserConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, GetUserResponse::builder)
+                .logger(LOG, "getUser")
+                .serviceDetails(
                         "DbManagement",
                         "GetUser",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetUser");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
-                GetUserConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse>,
-                        java.util.concurrent.Future<GetUserResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetUserRequest, GetUserResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/GetUser")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUserRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.User.class,
+                        GetUserResponse.Builder::user)
+                .handleResponseHeaderString("opc-request-id", GetUserResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2189,43 +1365,30 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetWorkRequestRequest, GetWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "DbManagement",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/GetWorkRequest");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkRequestRequest, GetWorkRequestResponse>,
-                        java.util.concurrent.Future<GetWorkRequestResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderFloat(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
     }
 
     @Override
@@ -2236,59 +1399,42 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
                                     ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
                             handler) {
-        LOG.trace("Called async implementOptimizerStatisticsAdvisorRecommendations");
-        final ImplementOptimizerStatisticsAdvisorRecommendationsRequest interceptedRequest =
-                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.interceptRequest(
-                        request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getExecutionName(), "executionName must not be blank");
+        Objects.requireNonNull(
+                request.getImplementOptimizerStatisticsAdvisorRecommendationsDetails(),
+                "implementOptimizerStatisticsAdvisorRecommendationsDetails is required");
+
+        return clientCall(
+                        request,
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse::builder)
+                .logger(LOG, "implementOptimizerStatisticsAdvisorRecommendations")
+                .serviceDetails(
                         "DbManagement",
                         "ImplementOptimizerStatisticsAdvisorRecommendations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ImplementOptimizerStatisticsAdvisorRecommendations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
-                transformer =
-                        ImplementOptimizerStatisticsAdvisorRecommendationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
-                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
-                                ImplementOptimizerStatisticsAdvisorRecommendationsResponse>,
-                        java.util.concurrent.Future<
-                                ImplementOptimizerStatisticsAdvisorRecommendationsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getImplementOptimizerStatisticsAdvisorRecommendationsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ImplementOptimizerStatisticsAdvisorRecommendationsRequest,
-                    ImplementOptimizerStatisticsAdvisorRecommendationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ImplementOptimizerStatisticsAdvisorRecommendations")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ImplementOptimizerStatisticsAdvisorRecommendationsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsAdvisorExecutions")
+                .appendPathParam(request.getExecutionName())
+                .appendPathParam("actions")
+                .appendPathParam("implementRecommendations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Job.class,
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ImplementOptimizerStatisticsAdvisorRecommendationsResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2297,44 +1443,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAsmPropertiesRequest, ListAsmPropertiesResponse>
                     handler) {
-        LOG.trace("Called async listAsmProperties");
-        final ListAsmPropertiesRequest interceptedRequest =
-                ListAsmPropertiesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAsmPropertiesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListAsmPropertiesResponse::builder)
+                .logger(LOG, "listAsmProperties")
+                .serviceDetails(
                         "DbManagement",
                         "ListAsmProperties",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAsmProperties");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAsmPropertiesResponse>
-                transformer =
-                        ListAsmPropertiesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListAsmPropertiesRequest, ListAsmPropertiesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAsmPropertiesRequest, ListAsmPropertiesResponse>,
-                        java.util.concurrent.Future<ListAsmPropertiesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAsmPropertiesRequest, ListAsmPropertiesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAsmProperties")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAsmPropertiesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("asmProperties")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AsmPropertyCollection.class,
+                        ListAsmPropertiesResponse.Builder::asmPropertyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAsmPropertiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAsmPropertiesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2343,46 +1481,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>
                     handler) {
-        LOG.trace("Called async listAssociatedDatabases");
-        final ListAssociatedDatabasesRequest interceptedRequest =
-                ListAssociatedDatabasesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAssociatedDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDbManagementPrivateEndpointId(),
+                "dbManagementPrivateEndpointId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAssociatedDatabasesResponse::builder)
+                .logger(LOG, "listAssociatedDatabases")
+                .serviceDetails(
                         "DbManagement",
                         "ListAssociatedDatabases",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AssociatedDatabaseSummary/ListAssociatedDatabases");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAssociatedDatabasesResponse>
-                transformer =
-                        ListAssociatedDatabasesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>,
-                        java.util.concurrent.Future<ListAssociatedDatabasesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAssociatedDatabasesRequest, ListAssociatedDatabasesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/AssociatedDatabaseSummary/ListAssociatedDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAssociatedDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendPathParam(request.getDbManagementPrivateEndpointId())
+                .appendPathParam("associatedDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AssociatedDatabaseCollection.class,
+                        ListAssociatedDatabasesResponse.Builder::associatedDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAssociatedDatabasesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAssociatedDatabasesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2391,45 +1522,47 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>
                     handler) {
-        LOG.trace("Called async listAwrDbSnapshots");
-        final ListAwrDbSnapshotsRequest interceptedRequest =
-                ListAwrDbSnapshotsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAwrDbSnapshotsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, ListAwrDbSnapshotsResponse::builder)
+                .logger(LOG, "listAwrDbSnapshots")
+                .serviceDetails(
                         "DbManagement",
                         "ListAwrDbSnapshots",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbSnapshots");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAwrDbSnapshotsResponse>
-                transformer =
-                        ListAwrDbSnapshotsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>,
-                        java.util.concurrent.Future<ListAwrDbSnapshotsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAwrDbSnapshotsRequest, ListAwrDbSnapshotsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbSnapshots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrDbSnapshotsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbSnapshots")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbSnapshotCollection.class,
+                        ListAwrDbSnapshotsResponse.Builder::awrDbSnapshotCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrDbSnapshotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrDbSnapshotsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2437,43 +1570,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             ListAwrDbsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse>
                     handler) {
-        LOG.trace("Called async listAwrDbs");
-        final ListAwrDbsRequest interceptedRequest = ListAwrDbsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAwrDbsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListAwrDbsResponse::builder)
+                .logger(LOG, "listAwrDbs")
+                .serviceDetails(
                         "DbManagement",
                         "ListAwrDbs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAwrDbsResponse>
-                transformer =
-                        ListAwrDbsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListAwrDbsRequest, ListAwrDbsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAwrDbsRequest, ListAwrDbsResponse>,
-                        java.util.concurrent.Future<ListAwrDbsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAwrDbsRequest, ListAwrDbsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListAwrDbs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAwrDbsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbCollection.class,
+                        ListAwrDbsResponse.Builder::awrDbCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAwrDbsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAwrDbsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2484,47 +1613,42 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ListConsumerGroupPrivilegesRequest,
                                     ListConsumerGroupPrivilegesResponse>
                             handler) {
-        LOG.trace("Called async listConsumerGroupPrivileges");
-        final ListConsumerGroupPrivilegesRequest interceptedRequest =
-                ListConsumerGroupPrivilegesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListConsumerGroupPrivilegesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListConsumerGroupPrivilegesResponse::builder)
+                .logger(LOG, "listConsumerGroupPrivileges")
+                .serviceDetails(
                         "DbManagement",
                         "ListConsumerGroupPrivileges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListConsumerGroupPrivileges");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListConsumerGroupPrivilegesResponse>
-                transformer =
-                        ListConsumerGroupPrivilegesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListConsumerGroupPrivilegesRequest,
-                                ListConsumerGroupPrivilegesResponse>,
-                        java.util.concurrent.Future<ListConsumerGroupPrivilegesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListConsumerGroupPrivilegesRequest, ListConsumerGroupPrivilegesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListConsumerGroupPrivileges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListConsumerGroupPrivilegesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("consumerGroupPrivileges")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ConsumerGroupPrivilegeCollection
+                                .class,
+                        ListConsumerGroupPrivilegesResponse.Builder
+                                ::consumerGroupPrivilegeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListConsumerGroupPrivilegesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListConsumerGroupPrivilegesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2533,46 +1657,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDataAccessContainersRequest, ListDataAccessContainersResponse>
                     handler) {
-        LOG.trace("Called async listDataAccessContainers");
-        final ListDataAccessContainersRequest interceptedRequest =
-                ListDataAccessContainersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDataAccessContainersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListDataAccessContainersResponse::builder)
+                .logger(LOG, "listDataAccessContainers")
+                .serviceDetails(
                         "DbManagement",
                         "ListDataAccessContainers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDataAccessContainers");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDataAccessContainersResponse>
-                transformer =
-                        ListDataAccessContainersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDataAccessContainersRequest, ListDataAccessContainersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDataAccessContainersRequest, ListDataAccessContainersResponse>,
-                        java.util.concurrent.Future<ListDataAccessContainersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDataAccessContainersRequest, ListDataAccessContainersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDataAccessContainers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDataAccessContainersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("dataAccessContainers")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DataAccessContainerCollection.class,
+                        ListDataAccessContainersResponse.Builder::dataAccessContainerCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDataAccessContainersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDataAccessContainersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2581,45 +1699,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDatabaseParametersRequest, ListDatabaseParametersResponse>
                     handler) {
-        LOG.trace("Called async listDatabaseParameters");
-        final ListDatabaseParametersRequest interceptedRequest =
-                ListDatabaseParametersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDatabaseParametersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListDatabaseParametersResponse::builder)
+                .logger(LOG, "listDatabaseParameters")
+                .serviceDetails(
                         "DbManagement",
                         "ListDatabaseParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDatabaseParameters");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDatabaseParametersResponse>
-                transformer =
-                        ListDatabaseParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDatabaseParametersRequest, ListDatabaseParametersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDatabaseParametersRequest, ListDatabaseParametersResponse>,
-                        java.util.concurrent.Future<ListDatabaseParametersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDatabaseParametersRequest, ListDatabaseParametersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListDatabaseParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDatabaseParametersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("databaseParameters")
+                .appendEnumQueryParam("source", request.getSource())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("isAllowedValuesIncluded", request.getIsAllowedValuesIncluded())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseParametersCollection.class,
+                        ListDatabaseParametersResponse.Builder::databaseParametersCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDatabaseParametersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2630,49 +1737,41 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ListDbManagementPrivateEndpointsRequest,
                                     ListDbManagementPrivateEndpointsResponse>
                             handler) {
-        LOG.trace("Called async listDbManagementPrivateEndpoints");
-        final ListDbManagementPrivateEndpointsRequest interceptedRequest =
-                ListDbManagementPrivateEndpointsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDbManagementPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDbManagementPrivateEndpointsResponse::builder)
+                .logger(LOG, "listDbManagementPrivateEndpoints")
+                .serviceDetails(
                         "DbManagement",
                         "ListDbManagementPrivateEndpoints",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ListDbManagementPrivateEndpoints");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDbManagementPrivateEndpointsResponse>
-                transformer =
-                        ListDbManagementPrivateEndpointsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDbManagementPrivateEndpointsRequest,
-                        ListDbManagementPrivateEndpointsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDbManagementPrivateEndpointsRequest,
-                                ListDbManagementPrivateEndpointsResponse>,
-                        java.util.concurrent.Future<ListDbManagementPrivateEndpointsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDbManagementPrivateEndpointsRequest,
-                    ListDbManagementPrivateEndpointsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/ListDbManagementPrivateEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDbManagementPrivateEndpointsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("isCluster", request.getIsCluster())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .DbManagementPrivateEndpointCollection.class,
+                        ListDbManagementPrivateEndpointsResponse.Builder
+                                ::dbManagementPrivateEndpointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDbManagementPrivateEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDbManagementPrivateEndpointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2681,44 +1780,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListJobExecutionsRequest, ListJobExecutionsResponse>
                     handler) {
-        LOG.trace("Called async listJobExecutions");
-        final ListJobExecutionsRequest interceptedRequest =
-                ListJobExecutionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobExecutionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobExecutionsResponse::builder)
+                .logger(LOG, "listJobExecutions")
+                .serviceDetails(
                         "DbManagement",
                         "ListJobExecutions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/ListJobExecutions");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobExecutionsResponse>
-                transformer =
-                        ListJobExecutionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobExecutionsRequest, ListJobExecutionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListJobExecutionsRequest, ListJobExecutionsResponse>,
-                        java.util.concurrent.Future<ListJobExecutionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobExecutionsRequest, ListJobExecutionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecution/ListJobExecutions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobExecutionsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobExecutions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("jobId", request.getJobId())
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("status", request.getStatus())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("jobRunId", request.getJobRunId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobExecutionCollection.class,
+                        ListJobExecutionsResponse.Builder::jobExecutionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobExecutionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobExecutionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2726,43 +1821,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             ListJobRunsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
                     handler) {
-        LOG.trace("Called async listJobRuns");
-        final ListJobRunsRequest interceptedRequest =
-                ListJobRunsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobRunsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobRunsResponse::builder)
+                .logger(LOG, "listJobRuns")
+                .serviceDetails(
                         "DbManagement",
                         "ListJobRuns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/ListJobRuns");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobRunsResponse>
-                transformer =
-                        ListJobRunsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobRunsRequest, ListJobRunsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListJobRunsRequest, ListJobRunsResponse>,
-                        java.util.concurrent.Future<ListJobRunsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobRunsRequest, ListJobRunsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobRun/ListJobRuns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobRunsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobRuns")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("jobId", request.getJobId())
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("runStatus", request.getRunStatus())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobRunCollection.class,
+                        ListJobRunsResponse.Builder::jobRunCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobRunsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListJobRunsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2770,40 +1861,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             ListJobsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>
                     handler) {
-        LOG.trace("Called async listJobs");
-        final ListJobsRequest interceptedRequest = ListJobsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListJobsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListJobsResponse::builder)
+                .logger(LOG, "listJobs")
+                .serviceDetails(
                         "DbManagement",
                         "ListJobs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ListJobs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListJobsResponse> transformer =
-                ListJobsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListJobsRequest, ListJobsResponse>,
-                        java.util.concurrent.Future<ListJobsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListJobsRequest, ListJobsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/ListJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListJobsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobCollection.class,
+                        ListJobsResponse.Builder::jobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("opc-next-page", ListJobsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2812,47 +1900,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListManagedDatabaseGroupsRequest, ListManagedDatabaseGroupsResponse>
                     handler) {
-        LOG.trace("Called async listManagedDatabaseGroups");
-        final ListManagedDatabaseGroupsRequest interceptedRequest =
-                ListManagedDatabaseGroupsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListManagedDatabaseGroupsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListManagedDatabaseGroupsResponse::builder)
+                .logger(LOG, "listManagedDatabaseGroups")
+                .serviceDetails(
                         "DbManagement",
                         "ListManagedDatabaseGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ListManagedDatabaseGroups");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListManagedDatabaseGroupsResponse>
-                transformer =
-                        ListManagedDatabaseGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListManagedDatabaseGroupsRequest, ListManagedDatabaseGroupsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListManagedDatabaseGroupsRequest,
-                                ListManagedDatabaseGroupsResponse>,
-                        java.util.concurrent.Future<ListManagedDatabaseGroupsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListManagedDatabaseGroupsRequest, ListManagedDatabaseGroupsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/ListManagedDatabaseGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedDatabaseGroupsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroupCollection
+                                .class,
+                        ListManagedDatabaseGroupsResponse.Builder::managedDatabaseGroupCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListManagedDatabaseGroupsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListManagedDatabaseGroupsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2861,45 +1939,37 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListManagedDatabasesRequest, ListManagedDatabasesResponse>
                     handler) {
-        LOG.trace("Called async listManagedDatabases");
-        final ListManagedDatabasesRequest interceptedRequest =
-                ListManagedDatabasesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListManagedDatabasesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListManagedDatabasesResponse::builder)
+                .logger(LOG, "listManagedDatabases")
+                .serviceDetails(
                         "DbManagement",
                         "ListManagedDatabases",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListManagedDatabases");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListManagedDatabasesResponse>
-                transformer =
-                        ListManagedDatabasesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListManagedDatabasesRequest, ListManagedDatabasesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListManagedDatabasesRequest, ListManagedDatabasesResponse>,
-                        java.util.concurrent.Future<ListManagedDatabasesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListManagedDatabasesRequest, ListManagedDatabasesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListManagedDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListManagedDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("managementOption", request.getManagementOption())
+                .appendEnumQueryParam("deploymentType", request.getDeploymentType())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabaseCollection.class,
+                        ListManagedDatabasesResponse.Builder::managedDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListManagedDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListManagedDatabasesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2908,45 +1978,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>
                     handler) {
-        LOG.trace("Called async listObjectPrivileges");
-        final ListObjectPrivilegesRequest interceptedRequest =
-                ListObjectPrivilegesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListObjectPrivilegesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListObjectPrivilegesResponse::builder)
+                .logger(LOG, "listObjectPrivileges")
+                .serviceDetails(
                         "DbManagement",
                         "ListObjectPrivileges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListObjectPrivileges");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListObjectPrivilegesResponse>
-                transformer =
-                        ListObjectPrivilegesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>,
-                        java.util.concurrent.Future<ListObjectPrivilegesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListObjectPrivilegesRequest, ListObjectPrivilegesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListObjectPrivileges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListObjectPrivilegesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("objectPrivileges")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ObjectPrivilegeCollection.class,
+                        ListObjectPrivilegesResponse.Builder::objectPrivilegeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListObjectPrivilegesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListObjectPrivilegesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2957,51 +2022,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ListOptimizerStatisticsAdvisorExecutionsRequest,
                                     ListOptimizerStatisticsAdvisorExecutionsResponse>
                             handler) {
-        LOG.trace("Called async listOptimizerStatisticsAdvisorExecutions");
-        final ListOptimizerStatisticsAdvisorExecutionsRequest interceptedRequest =
-                ListOptimizerStatisticsAdvisorExecutionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListOptimizerStatisticsAdvisorExecutionsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListOptimizerStatisticsAdvisorExecutionsResponse::builder)
+                .logger(LOG, "listOptimizerStatisticsAdvisorExecutions")
+                .serviceDetails(
                         "DbManagement",
                         "ListOptimizerStatisticsAdvisorExecutions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsAdvisorExecutions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListOptimizerStatisticsAdvisorExecutionsResponse>
-                transformer =
-                        ListOptimizerStatisticsAdvisorExecutionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListOptimizerStatisticsAdvisorExecutionsRequest,
-                        ListOptimizerStatisticsAdvisorExecutionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListOptimizerStatisticsAdvisorExecutionsRequest,
-                                ListOptimizerStatisticsAdvisorExecutionsResponse>,
-                        java.util.concurrent.Future<
-                                ListOptimizerStatisticsAdvisorExecutionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListOptimizerStatisticsAdvisorExecutionsRequest,
-                    ListOptimizerStatisticsAdvisorExecutionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsAdvisorExecutions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOptimizerStatisticsAdvisorExecutionsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsAdvisorExecutions")
+                .appendQueryParam(
+                        "startTimeGreaterThanOrEqualTo", request.getStartTimeGreaterThanOrEqualTo())
+                .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .OptimizerStatisticsAdvisorExecutionsCollection.class,
+                        ListOptimizerStatisticsAdvisorExecutionsResponse.Builder
+                                ::optimizerStatisticsAdvisorExecutionsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOptimizerStatisticsAdvisorExecutionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3012,52 +2061,43 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ListOptimizerStatisticsCollectionAggregationsRequest,
                                     ListOptimizerStatisticsCollectionAggregationsResponse>
                             handler) {
-        LOG.trace("Called async listOptimizerStatisticsCollectionAggregations");
-        final ListOptimizerStatisticsCollectionAggregationsRequest interceptedRequest =
-                ListOptimizerStatisticsCollectionAggregationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListOptimizerStatisticsCollectionAggregationsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(request.getGroupType(), "groupType is required");
+
+        return clientCall(request, ListOptimizerStatisticsCollectionAggregationsResponse::builder)
+                .logger(LOG, "listOptimizerStatisticsCollectionAggregations")
+                .serviceDetails(
                         "DbManagement",
                         "ListOptimizerStatisticsCollectionAggregations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionAggregations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListOptimizerStatisticsCollectionAggregationsResponse>
-                transformer =
-                        ListOptimizerStatisticsCollectionAggregationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListOptimizerStatisticsCollectionAggregationsRequest,
-                        ListOptimizerStatisticsCollectionAggregationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListOptimizerStatisticsCollectionAggregationsRequest,
-                                ListOptimizerStatisticsCollectionAggregationsResponse>,
-                        java.util.concurrent.Future<
-                                ListOptimizerStatisticsCollectionAggregationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListOptimizerStatisticsCollectionAggregationsRequest,
-                    ListOptimizerStatisticsCollectionAggregationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionAggregations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOptimizerStatisticsCollectionAggregationsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsCollectionAggregations")
+                .appendQueryParam(
+                        "startTimeGreaterThanOrEqualTo", request.getStartTimeGreaterThanOrEqualTo())
+                .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
+                .appendEnumQueryParam("taskType", request.getTaskType())
+                .appendEnumQueryParam("groupType", request.getGroupType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .OptimizerStatisticsCollectionAggregationsCollection.class,
+                        ListOptimizerStatisticsCollectionAggregationsResponse.Builder
+                                ::optimizerStatisticsCollectionAggregationsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOptimizerStatisticsCollectionAggregationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOptimizerStatisticsCollectionAggregationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3068,52 +2108,44 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     ListOptimizerStatisticsCollectionOperationsRequest,
                                     ListOptimizerStatisticsCollectionOperationsResponse>
                             handler) {
-        LOG.trace("Called async listOptimizerStatisticsCollectionOperations");
-        final ListOptimizerStatisticsCollectionOperationsRequest interceptedRequest =
-                ListOptimizerStatisticsCollectionOperationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListOptimizerStatisticsCollectionOperationsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListOptimizerStatisticsCollectionOperationsResponse::builder)
+                .logger(LOG, "listOptimizerStatisticsCollectionOperations")
+                .serviceDetails(
                         "DbManagement",
                         "ListOptimizerStatisticsCollectionOperations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionOperations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListOptimizerStatisticsCollectionOperationsResponse>
-                transformer =
-                        ListOptimizerStatisticsCollectionOperationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListOptimizerStatisticsCollectionOperationsRequest,
-                        ListOptimizerStatisticsCollectionOperationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListOptimizerStatisticsCollectionOperationsRequest,
-                                ListOptimizerStatisticsCollectionOperationsResponse>,
-                        java.util.concurrent.Future<
-                                ListOptimizerStatisticsCollectionOperationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListOptimizerStatisticsCollectionOperationsRequest,
-                    ListOptimizerStatisticsCollectionOperationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListOptimizerStatisticsCollectionOperations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOptimizerStatisticsCollectionOperationsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("optimizerStatisticsCollectionOperations")
+                .appendQueryParam(
+                        "startTimeGreaterThanOrEqualTo", request.getStartTimeGreaterThanOrEqualTo())
+                .appendQueryParam("endTimeLessThanOrEqualTo", request.getEndTimeLessThanOrEqualTo())
+                .appendEnumQueryParam("taskType", request.getTaskType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("filterBy", request.getFilterBy())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model
+                                .OptimizerStatisticsCollectionOperationsCollection.class,
+                        ListOptimizerStatisticsCollectionOperationsResponse.Builder
+                                ::optimizerStatisticsCollectionOperationsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOptimizerStatisticsCollectionOperationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOptimizerStatisticsCollectionOperationsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3122,46 +2154,31 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>
                     handler) {
-        LOG.trace("Called async listPreferredCredentials");
-        final ListPreferredCredentialsRequest interceptedRequest =
-                ListPreferredCredentialsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPreferredCredentialsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListPreferredCredentialsResponse::builder)
+                .logger(LOG, "listPreferredCredentials")
+                .serviceDetails(
                         "DbManagement",
                         "ListPreferredCredentials",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/ListPreferredCredentials");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListPreferredCredentialsResponse>
-                transformer =
-                        ListPreferredCredentialsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>,
-                        java.util.concurrent.Future<ListPreferredCredentialsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPreferredCredentialsRequest, ListPreferredCredentialsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/ListPreferredCredentials")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPreferredCredentialsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("preferredCredentials")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PreferredCredentialCollection.class,
+                        ListPreferredCredentialsResponse.Builder::preferredCredentialCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPreferredCredentialsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPreferredCredentialsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3170,45 +2187,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListProxiedForUsersRequest, ListProxiedForUsersResponse>
                     handler) {
-        LOG.trace("Called async listProxiedForUsers");
-        final ListProxiedForUsersRequest interceptedRequest =
-                ListProxiedForUsersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProxiedForUsersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListProxiedForUsersResponse::builder)
+                .logger(LOG, "listProxiedForUsers")
+                .serviceDetails(
                         "DbManagement",
                         "ListProxiedForUsers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxiedForUsers");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListProxiedForUsersResponse>
-                transformer =
-                        ListProxiedForUsersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListProxiedForUsersRequest, ListProxiedForUsersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListProxiedForUsersRequest, ListProxiedForUsersResponse>,
-                        java.util.concurrent.Future<ListProxiedForUsersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListProxiedForUsersRequest, ListProxiedForUsersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxiedForUsers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProxiedForUsersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("proxiedForUsers")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ProxiedForUserCollection.class,
+                        ListProxiedForUsersResponse.Builder::proxiedForUserCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProxiedForUsersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProxiedForUsersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3217,43 +2229,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListProxyUsersRequest, ListProxyUsersResponse>
                     handler) {
-        LOG.trace("Called async listProxyUsers");
-        final ListProxyUsersRequest interceptedRequest =
-                ListProxyUsersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProxyUsersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListProxyUsersResponse::builder)
+                .logger(LOG, "listProxyUsers")
+                .serviceDetails(
                         "DbManagement",
                         "ListProxyUsers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxyUsers");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListProxyUsersResponse>
-                transformer =
-                        ListProxyUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListProxyUsersRequest, ListProxyUsersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListProxyUsersRequest, ListProxyUsersResponse>,
-                        java.util.concurrent.Future<ListProxyUsersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListProxyUsersRequest, ListProxyUsersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListProxyUsers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProxyUsersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("proxyUsers")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ProxyUserCollection.class,
+                        ListProxyUsersResponse.Builder::proxyUserCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProxyUsersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProxyUsersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3261,41 +2270,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             ListRolesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse>
                     handler) {
-        LOG.trace("Called async listRoles");
-        final ListRolesRequest interceptedRequest = ListRolesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRolesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListRolesResponse::builder)
+                .logger(LOG, "listRoles")
+                .serviceDetails(
                         "DbManagement",
                         "ListRoles",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListRoles");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListRolesResponse>
-                transformer =
-                        ListRolesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListRolesRequest, ListRolesResponse>,
-                        java.util.concurrent.Future<ListRolesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRolesRequest, ListRolesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListRoles")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRolesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("roles")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.RoleCollection.class,
+                        ListRolesResponse.Builder::roleCollection)
+                .handleResponseHeaderString("opc-next-page", ListRolesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRolesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3304,45 +2311,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
                     handler) {
-        LOG.trace("Called async listSystemPrivileges");
-        final ListSystemPrivilegesRequest interceptedRequest =
-                ListSystemPrivilegesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSystemPrivilegesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getUserName(), "userName must not be blank");
+
+        return clientCall(request, ListSystemPrivilegesResponse::builder)
+                .logger(LOG, "listSystemPrivileges")
+                .serviceDetails(
                         "DbManagement",
                         "ListSystemPrivileges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSystemPrivileges");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListSystemPrivilegesResponse>
-                transformer =
-                        ListSystemPrivilegesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>,
-                        java.util.concurrent.Future<ListSystemPrivilegesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListSystemPrivilegesRequest, ListSystemPrivilegesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListSystemPrivileges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSystemPrivilegesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendPathParam(request.getUserName())
+                .appendPathParam("systemPrivileges")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.SystemPrivilegeCollection.class,
+                        ListSystemPrivilegesResponse.Builder::systemPrivilegeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSystemPrivilegesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSystemPrivilegesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3351,45 +2353,29 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTableStatisticsRequest, ListTableStatisticsResponse>
                     handler) {
-        LOG.trace("Called async listTableStatistics");
-        final ListTableStatisticsRequest interceptedRequest =
-                ListTableStatisticsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTableStatisticsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListTableStatisticsResponse::builder)
+                .logger(LOG, "listTableStatistics")
+                .serviceDetails(
                         "DbManagement",
                         "ListTableStatistics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListTableStatistics");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTableStatisticsResponse>
-                transformer =
-                        ListTableStatisticsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListTableStatisticsRequest, ListTableStatisticsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTableStatisticsRequest, ListTableStatisticsResponse>,
-                        java.util.concurrent.Future<ListTableStatisticsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTableStatisticsRequest, ListTableStatisticsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListTableStatistics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTableStatisticsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tableStatistics")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TableStatisticsCollection.class,
+                        ListTableStatisticsResponse.Builder::tableStatisticsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTableStatisticsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3398,44 +2384,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListTablespacesRequest, ListTablespacesResponse>
                     handler) {
-        LOG.trace("Called async listTablespaces");
-        final ListTablespacesRequest interceptedRequest =
-                ListTablespacesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTablespacesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListTablespacesResponse::builder)
+                .logger(LOG, "listTablespaces")
+                .serviceDetails(
                         "DbManagement",
                         "ListTablespaces",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ListTablespaces");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListTablespacesResponse>
-                transformer =
-                        ListTablespacesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListTablespacesRequest, ListTablespacesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListTablespacesRequest, ListTablespacesResponse>,
-                        java.util.concurrent.Future<ListTablespacesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListTablespacesRequest, ListTablespacesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ListTablespaces")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTablespacesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TablespaceCollection.class,
+                        ListTablespacesResponse.Builder::tablespaceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTablespacesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTablespacesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3443,41 +2421,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             ListUsersRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>
                     handler) {
-        LOG.trace("Called async listUsers");
-        final ListUsersRequest interceptedRequest = ListUsersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListUsersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, ListUsersResponse::builder)
+                .logger(LOG, "listUsers")
+                .serviceDetails(
                         "DbManagement",
                         "ListUsers",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListUsers");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListUsersResponse>
-                transformer =
-                        ListUsersConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse>,
-                        java.util.concurrent.Future<ListUsersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListUsersRequest, ListUsersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ListUsers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListUsersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("users")
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.UserCollection.class,
+                        ListUsersResponse.Builder::userCollection)
+                .handleResponseHeaderString("opc-next-page", ListUsersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListUsersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3486,45 +2458,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "DbManagement",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestError/ListWorkRequestErrors");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestError/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.WorkRequestErrorCollection.class,
+                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3533,45 +2495,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "DbManagement",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestLogEntry/ListWorkRequestLogs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequestLogEntry/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.WorkRequestLogEntryCollection.class,
+                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3580,44 +2532,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "DbManagement",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/ListWorkRequests");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.WorkRequestCollection.class,
+                        ListWorkRequestsResponse.Builder::workRequestCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3626,49 +2570,38 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RemoveDataFileRequest, RemoveDataFileResponse>
                     handler) {
-        LOG.trace("Called async removeDataFile");
-        final RemoveDataFileRequest interceptedRequest =
-                RemoveDataFileConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveDataFileConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDataFileDetails(), "removeDataFileDetails is required");
+
+        return clientCall(request, RemoveDataFileResponse::builder)
+                .logger(LOG, "removeDataFile")
+                .serviceDetails(
                         "DbManagement",
                         "RemoveDataFile",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/RemoveDataFile");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveDataFileResponse>
-                transformer =
-                        RemoveDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<RemoveDataFileRequest, RemoveDataFileResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveDataFileRequest, RemoveDataFileResponse>,
-                        java.util.concurrent.Future<RemoveDataFileResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveDataFileDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveDataFileRequest, RemoveDataFileResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/RemoveDataFile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDataFileRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("removeDataFile")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus.class,
+                        RemoveDataFileResponse.Builder::tablespaceAdminStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDataFileResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3679,59 +2612,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
                                     RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
                             handler) {
-        LOG.trace("Called async removeManagedDatabaseFromManagedDatabaseGroup");
-        final RemoveManagedDatabaseFromManagedDatabaseGroupRequest interceptedRequest =
-                RemoveManagedDatabaseFromManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveManagedDatabaseFromManagedDatabaseGroupConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveManagedDatabaseFromManagedDatabaseGroupDetails(),
+                "removeManagedDatabaseFromManagedDatabaseGroupDetails is required");
+
+        return clientCall(request, RemoveManagedDatabaseFromManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "removeManagedDatabaseFromManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "RemoveManagedDatabaseFromManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/RemoveManagedDatabaseFromManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
-                transformer =
-                        RemoveManagedDatabaseFromManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
-                        RemoveManagedDatabaseFromManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
-                                RemoveManagedDatabaseFromManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<
-                                RemoveManagedDatabaseFromManagedDatabaseGroupResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getRemoveManagedDatabaseFromManagedDatabaseGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveManagedDatabaseFromManagedDatabaseGroupRequest,
-                    RemoveManagedDatabaseFromManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/RemoveManagedDatabaseFromManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveManagedDatabaseFromManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("removeManagedDatabase")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveManagedDatabaseFromManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3740,52 +2648,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
                     handler) {
-        LOG.trace("Called async resetDatabaseParameters");
-        final ResetDatabaseParametersRequest interceptedRequest =
-                ResetDatabaseParametersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ResetDatabaseParametersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getResetDatabaseParametersDetails(),
+                "resetDatabaseParametersDetails is required");
+
+        return clientCall(request, ResetDatabaseParametersResponse::builder)
+                .logger(LOG, "resetDatabaseParameters")
+                .serviceDetails(
                         "DbManagement",
                         "ResetDatabaseParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ResetDatabaseParameters");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ResetDatabaseParametersResponse>
-                transformer =
-                        ResetDatabaseParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>,
-                        java.util.concurrent.Future<ResetDatabaseParametersResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getResetDatabaseParametersDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ResetDatabaseParametersRequest, ResetDatabaseParametersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ResetDatabaseParameters")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResetDatabaseParametersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("resetDatabaseParameters")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.UpdateDatabaseParametersResult
+                                .class,
+                        ResetDatabaseParametersResponse.Builder::updateDatabaseParametersResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", ResetDatabaseParametersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3794,49 +2686,38 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ResizeDataFileRequest, ResizeDataFileResponse>
                     handler) {
-        LOG.trace("Called async resizeDataFile");
-        final ResizeDataFileRequest interceptedRequest =
-                ResizeDataFileConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ResizeDataFileConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getResizeDataFileDetails(), "resizeDataFileDetails is required");
+
+        return clientCall(request, ResizeDataFileResponse::builder)
+                .logger(LOG, "resizeDataFile")
+                .serviceDetails(
                         "DbManagement",
                         "ResizeDataFile",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ResizeDataFile");
-        final java.util.function.Function<javax.ws.rs.core.Response, ResizeDataFileResponse>
-                transformer =
-                        ResizeDataFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ResizeDataFileRequest, ResizeDataFileResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ResizeDataFileRequest, ResizeDataFileResponse>,
-                        java.util.concurrent.Future<ResizeDataFileResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getResizeDataFileDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ResizeDataFileRequest, ResizeDataFileResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/ResizeDataFile")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ResizeDataFileRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .appendPathParam("actions")
+                .appendPathParam("resizeDataFile")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TablespaceAdminStatus.class,
+                        ResizeDataFileResponse.Builder::tablespaceAdminStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", ResizeDataFileResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3845,50 +2726,34 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RunHistoricAddmRequest, RunHistoricAddmResponse>
                     handler) {
-        LOG.trace("Called async runHistoricAddm");
-        final RunHistoricAddmRequest interceptedRequest =
-                RunHistoricAddmConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RunHistoricAddmConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getRunHistoricAddmDetails(), "runHistoricAddmDetails is required");
+
+        return clientCall(request, RunHistoricAddmResponse::builder)
+                .logger(LOG, "runHistoricAddm")
+                .serviceDetails(
                         "DbManagement",
                         "RunHistoricAddm",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HistoricAddmResult/RunHistoricAddm");
-        final java.util.function.Function<javax.ws.rs.core.Response, RunHistoricAddmResponse>
-                transformer =
-                        RunHistoricAddmConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<RunHistoricAddmRequest, RunHistoricAddmResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RunHistoricAddmRequest, RunHistoricAddmResponse>,
-                        java.util.concurrent.Future<RunHistoricAddmResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRunHistoricAddmDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RunHistoricAddmRequest, RunHistoricAddmResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HistoricAddmResult/RunHistoricAddm")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RunHistoricAddmRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("runHistoricAddm")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.HistoricAddmResult.class,
+                        RunHistoricAddmResponse.Builder::historicAddmResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", RunHistoricAddmResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3897,47 +2762,48 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>
                     handler) {
-        LOG.trace("Called async summarizeAwrDbCpuUsages");
-        final SummarizeAwrDbCpuUsagesRequest interceptedRequest =
-                SummarizeAwrDbCpuUsagesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbCpuUsagesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, SummarizeAwrDbCpuUsagesResponse::builder)
+                .logger(LOG, "summarizeAwrDbCpuUsages")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbCpuUsages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbCpuUsages");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbCpuUsagesResponse>
-                transformer =
-                        SummarizeAwrDbCpuUsagesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbCpuUsagesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbCpuUsagesRequest, SummarizeAwrDbCpuUsagesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbCpuUsages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbCpuUsagesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbCpuUsages")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendEnumQueryParam("sessionType", request.getSessionType())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbCpuUsageCollection.class,
+                        SummarizeAwrDbCpuUsagesResponse.Builder::awrDbCpuUsageCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbCpuUsagesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbCpuUsagesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3946,46 +2812,52 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>
                     handler) {
-        LOG.trace("Called async summarizeAwrDbMetrics");
-        final SummarizeAwrDbMetricsRequest interceptedRequest =
-                SummarizeAwrDbMetricsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbMetricsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+        Objects.requireNonNull(request.getName(), "name is required");
+
+        return clientCall(request, SummarizeAwrDbMetricsResponse::builder)
+                .logger(LOG, "summarizeAwrDbMetrics")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbMetrics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbMetrics");
-        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDbMetricsResponse>
-                transformer =
-                        SummarizeAwrDbMetricsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbMetricsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbMetricsRequest, SummarizeAwrDbMetricsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbMetrics")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbMetricCollection.class,
+                        SummarizeAwrDbMetricsResponse.Builder::awrDbMetricCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbMetricsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -3996,49 +2868,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     SummarizeAwrDbParameterChangesRequest,
                                     SummarizeAwrDbParameterChangesResponse>
                             handler) {
-        LOG.trace("Called async summarizeAwrDbParameterChanges");
-        final SummarizeAwrDbParameterChangesRequest interceptedRequest =
-                SummarizeAwrDbParameterChangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbParameterChangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+        Objects.requireNonNull(request.getName(), "name is required");
+
+        return clientCall(request, SummarizeAwrDbParameterChangesResponse::builder)
+                .logger(LOG, "summarizeAwrDbParameterChanges")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbParameterChanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameterChanges");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbParameterChangesResponse>
-                transformer =
-                        SummarizeAwrDbParameterChangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbParameterChangesRequest,
-                        SummarizeAwrDbParameterChangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbParameterChangesRequest,
-                                SummarizeAwrDbParameterChangesResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbParameterChangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbParameterChangesRequest, SummarizeAwrDbParameterChangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameterChanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbParameterChangesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbParameterChanges")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbParameterChangeCollection
+                                .class,
+                        SummarizeAwrDbParameterChangesResponse.Builder
+                                ::awrDbParameterChangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAwrDbParameterChangesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeAwrDbParameterChangesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4047,47 +2923,55 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>
                     handler) {
-        LOG.trace("Called async summarizeAwrDbParameters");
-        final SummarizeAwrDbParametersRequest interceptedRequest =
-                SummarizeAwrDbParametersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbParametersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, SummarizeAwrDbParametersResponse::builder)
+                .logger(LOG, "summarizeAwrDbParameters")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameters");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbParametersResponse>
-                transformer =
-                        SummarizeAwrDbParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbParametersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbParametersRequest, SummarizeAwrDbParametersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbParametersRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbParameters")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendEnumQueryParam("valueChanged", request.getValueChanged())
+                .appendEnumQueryParam("valueDefault", request.getValueDefault())
+                .appendEnumQueryParam("valueModified", request.getValueModified())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbParameterCollection.class,
+                        SummarizeAwrDbParametersResponse.Builder::awrDbParameterCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbParametersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbParametersResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4098,48 +2982,40 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     SummarizeAwrDbSnapshotRangesRequest,
                                     SummarizeAwrDbSnapshotRangesResponse>
                             handler) {
-        LOG.trace("Called async summarizeAwrDbSnapshotRanges");
-        final SummarizeAwrDbSnapshotRangesRequest interceptedRequest =
-                SummarizeAwrDbSnapshotRangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbSnapshotRangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, SummarizeAwrDbSnapshotRangesResponse::builder)
+                .logger(LOG, "summarizeAwrDbSnapshotRanges")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbSnapshotRanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSnapshotRanges");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbSnapshotRangesResponse>
-                transformer =
-                        SummarizeAwrDbSnapshotRangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbSnapshotRangesRequest, SummarizeAwrDbSnapshotRangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbSnapshotRangesRequest,
-                                SummarizeAwrDbSnapshotRangesResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbSnapshotRangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbSnapshotRangesRequest, SummarizeAwrDbSnapshotRangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSnapshotRanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbSnapshotRangesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbSnapshotRanges")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbSnapshotRangeCollection.class,
+                        SummarizeAwrDbSnapshotRangesResponse.Builder::awrDbSnapshotRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAwrDbSnapshotRangesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbSnapshotRangesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4148,46 +3024,52 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>
                     handler) {
-        LOG.trace("Called async summarizeAwrDbSysstats");
-        final SummarizeAwrDbSysstatsRequest interceptedRequest =
-                SummarizeAwrDbSysstatsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbSysstatsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+        Objects.requireNonNull(request.getName(), "name is required");
+
+        return clientCall(request, SummarizeAwrDbSysstatsResponse::builder)
+                .logger(LOG, "summarizeAwrDbSysstats")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbSysstats",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSysstats");
-        final java.util.function.Function<javax.ws.rs.core.Response, SummarizeAwrDbSysstatsResponse>
-                transformer =
-                        SummarizeAwrDbSysstatsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbSysstatsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbSysstatsRequest, SummarizeAwrDbSysstatsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbSysstats")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbSysstatsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbSysstats")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbSysstatCollection.class,
+                        SummarizeAwrDbSysstatsResponse.Builder::awrDbSysstatCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbSysstatsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbSysstatsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4198,48 +3080,47 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     SummarizeAwrDbTopWaitEventsRequest,
                                     SummarizeAwrDbTopWaitEventsResponse>
                             handler) {
-        LOG.trace("Called async summarizeAwrDbTopWaitEvents");
-        final SummarizeAwrDbTopWaitEventsRequest interceptedRequest =
-                SummarizeAwrDbTopWaitEventsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbTopWaitEventsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, SummarizeAwrDbTopWaitEventsResponse::builder)
+                .logger(LOG, "summarizeAwrDbTopWaitEvents")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbTopWaitEvents",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbTopWaitEvents");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbTopWaitEventsResponse>
-                transformer =
-                        SummarizeAwrDbTopWaitEventsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbTopWaitEventsRequest, SummarizeAwrDbTopWaitEventsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbTopWaitEventsRequest,
-                                SummarizeAwrDbTopWaitEventsResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbTopWaitEventsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbTopWaitEventsRequest, SummarizeAwrDbTopWaitEventsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbTopWaitEvents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbTopWaitEventsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbTopWaitEvents")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendEnumQueryParam("sessionType", request.getSessionType())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("topN", request.getTopN())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbTopWaitEventCollection.class,
+                        SummarizeAwrDbTopWaitEventsResponse.Builder::awrDbTopWaitEventCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbTopWaitEventsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbTopWaitEventsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4250,49 +3131,56 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     SummarizeAwrDbWaitEventBucketsRequest,
                                     SummarizeAwrDbWaitEventBucketsResponse>
                             handler) {
-        LOG.trace("Called async summarizeAwrDbWaitEventBuckets");
-        final SummarizeAwrDbWaitEventBucketsRequest interceptedRequest =
-                SummarizeAwrDbWaitEventBucketsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbWaitEventBucketsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+        Objects.requireNonNull(request.getName(), "name is required");
+
+        return clientCall(request, SummarizeAwrDbWaitEventBucketsResponse::builder)
+                .logger(LOG, "summarizeAwrDbWaitEventBuckets")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbWaitEventBuckets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEventBuckets");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbWaitEventBucketsResponse>
-                transformer =
-                        SummarizeAwrDbWaitEventBucketsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbWaitEventBucketsRequest,
-                        SummarizeAwrDbWaitEventBucketsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbWaitEventBucketsRequest,
-                                SummarizeAwrDbWaitEventBucketsResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbWaitEventBucketsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbWaitEventBucketsRequest, SummarizeAwrDbWaitEventBucketsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEventBuckets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbWaitEventBucketsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbWaitEventBuckets")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("numBucket", request.getNumBucket())
+                .appendQueryParam("minValue", request.getMinValue())
+                .appendQueryParam("maxValue", request.getMaxValue())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbWaitEventBucketCollection
+                                .class,
+                        SummarizeAwrDbWaitEventBucketsResponse.Builder
+                                ::awrDbWaitEventBucketCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeAwrDbWaitEventBucketsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeAwrDbWaitEventBucketsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4301,47 +3189,52 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>
                     handler) {
-        LOG.trace("Called async summarizeAwrDbWaitEvents");
-        final SummarizeAwrDbWaitEventsRequest interceptedRequest =
-                SummarizeAwrDbWaitEventsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeAwrDbWaitEventsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getAwrDbId(), "awrDbId must not be blank");
+
+        return clientCall(request, SummarizeAwrDbWaitEventsResponse::builder)
+                .logger(LOG, "summarizeAwrDbWaitEvents")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeAwrDbWaitEvents",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEvents");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeAwrDbWaitEventsResponse>
-                transformer =
-                        SummarizeAwrDbWaitEventsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>,
-                        java.util.concurrent.Future<SummarizeAwrDbWaitEventsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeAwrDbWaitEventsRequest, SummarizeAwrDbWaitEventsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/SummarizeAwrDbWaitEvents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeAwrDbWaitEventsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("awrDbs")
+                .appendPathParam(request.getAwrDbId())
+                .appendPathParam("awrDbWaitEvents")
+                .appendQueryParam("instNum", request.getInstNum())
+                .appendQueryParam(
+                        "beginSnIdGreaterThanOrEqualTo", request.getBeginSnIdGreaterThanOrEqualTo())
+                .appendQueryParam("endSnIdLessThanOrEqualTo", request.getEndSnIdLessThanOrEqualTo())
+                .appendQueryParam("timeGreaterThanOrEqualTo", request.getTimeGreaterThanOrEqualTo())
+                .appendQueryParam("timeLessThanOrEqualTo", request.getTimeLessThanOrEqualTo())
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendEnumQueryParam("sessionType", request.getSessionType())
+                .appendQueryParam("containerId", request.getContainerId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.AwrDbWaitEventCollection.class,
+                        SummarizeAwrDbWaitEventsResponse.Builder::awrDbWaitEventCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeAwrDbWaitEventsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeAwrDbWaitEventsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -4352,48 +3245,42 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     SummarizeJobExecutionsStatusesRequest,
                                     SummarizeJobExecutionsStatusesResponse>
                             handler) {
-        LOG.trace("Called async summarizeJobExecutionsStatuses");
-        final SummarizeJobExecutionsStatusesRequest interceptedRequest =
-                SummarizeJobExecutionsStatusesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                SummarizeJobExecutionsStatusesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, SummarizeJobExecutionsStatusesResponse::builder)
+                .logger(LOG, "summarizeJobExecutionsStatuses")
+                .serviceDetails(
                         "DbManagement",
                         "SummarizeJobExecutionsStatuses",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecutionsStatusSummaryCollection/SummarizeJobExecutionsStatuses");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, SummarizeJobExecutionsStatusesResponse>
-                transformer =
-                        SummarizeJobExecutionsStatusesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        SummarizeJobExecutionsStatusesRequest,
-                        SummarizeJobExecutionsStatusesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                SummarizeJobExecutionsStatusesRequest,
-                                SummarizeJobExecutionsStatusesResponse>,
-                        java.util.concurrent.Future<SummarizeJobExecutionsStatusesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    SummarizeJobExecutionsStatusesRequest, SummarizeJobExecutionsStatusesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/JobExecutionsStatusSummaryCollection/SummarizeJobExecutionsStatuses")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeJobExecutionsStatusesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobExecutionsStatus")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("managedDatabaseId", request.getManagedDatabaseId())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.JobExecutionsStatusSummaryCollection
+                                .class,
+                        SummarizeJobExecutionsStatusesResponse.Builder
+                                ::jobExecutionsStatusSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeJobExecutionsStatusesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4402,51 +3289,35 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             TestPreferredCredentialRequest, TestPreferredCredentialResponse>
                     handler) {
-        LOG.trace("Called async testPreferredCredential");
-        final TestPreferredCredentialRequest interceptedRequest =
-                TestPreferredCredentialConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                TestPreferredCredentialConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getCredentialName(), "credentialName must not be blank");
+
+        return clientCall(request, TestPreferredCredentialResponse::builder)
+                .logger(LOG, "testPreferredCredential")
+                .serviceDetails(
                         "DbManagement",
                         "TestPreferredCredential",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/TestPreferredCredential");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, TestPreferredCredentialResponse>
-                transformer =
-                        TestPreferredCredentialConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        TestPreferredCredentialRequest, TestPreferredCredentialResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                TestPreferredCredentialRequest, TestPreferredCredentialResponse>,
-                        java.util.concurrent.Future<TestPreferredCredentialResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getTestPreferredCredentialDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    TestPreferredCredentialRequest, TestPreferredCredentialResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/TestPreferredCredential")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestPreferredCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("preferredCredentials")
+                .appendPathParam(request.getCredentialName())
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.TestPreferredCredentialStatus.class,
+                        TestPreferredCredentialResponse.Builder::testPreferredCredentialStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", TestPreferredCredentialResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4457,54 +3328,39 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     UpdateDbManagementPrivateEndpointRequest,
                                     UpdateDbManagementPrivateEndpointResponse>
                             handler) {
-        LOG.trace("Called async updateDbManagementPrivateEndpoint");
-        final UpdateDbManagementPrivateEndpointRequest interceptedRequest =
-                UpdateDbManagementPrivateEndpointConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDbManagementPrivateEndpointConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDbManagementPrivateEndpointId(),
+                "dbManagementPrivateEndpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDbManagementPrivateEndpointDetails(),
+                "updateDbManagementPrivateEndpointDetails is required");
+
+        return clientCall(request, UpdateDbManagementPrivateEndpointResponse::builder)
+                .logger(LOG, "updateDbManagementPrivateEndpoint")
+                .serviceDetails(
                         "DbManagement",
                         "UpdateDbManagementPrivateEndpoint",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/UpdateDbManagementPrivateEndpoint");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateDbManagementPrivateEndpointResponse>
-                transformer =
-                        UpdateDbManagementPrivateEndpointConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDbManagementPrivateEndpointRequest,
-                        UpdateDbManagementPrivateEndpointResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDbManagementPrivateEndpointRequest,
-                                UpdateDbManagementPrivateEndpointResponse>,
-                        java.util.concurrent.Future<UpdateDbManagementPrivateEndpointResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDbManagementPrivateEndpointDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDbManagementPrivateEndpointRequest,
-                    UpdateDbManagementPrivateEndpointResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DbManagementPrivateEndpoint/UpdateDbManagementPrivateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDbManagementPrivateEndpointRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("dbManagementPrivateEndpoints")
+                .appendPathParam(request.getDbManagementPrivateEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint.class,
+                        UpdateDbManagementPrivateEndpointResponse.Builder
+                                ::dbManagementPrivateEndpoint)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDbManagementPrivateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateDbManagementPrivateEndpointResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -4512,46 +3368,32 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             UpdateJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>
                     handler) {
-        LOG.trace("Called async updateJob");
-        final UpdateJobRequest interceptedRequest = UpdateJobConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateJobConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(request.getUpdateJobDetails(), "updateJobDetails is required");
+
+        return clientCall(request, UpdateJobResponse::builder)
+                .logger(LOG, "updateJob")
+                .serviceDetails(
                         "DbManagement",
                         "UpdateJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/UpdateJob");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateJobResponse>
-                transformer =
-                        UpdateJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<UpdateJobRequest, UpdateJobResponse>,
-                        java.util.concurrent.Future<UpdateJobResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateJobDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateJobRequest, UpdateJobResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Job/UpdateJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJobRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Job.class,
+                        UpdateJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateJobResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -4562,52 +3404,36 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                                     UpdateManagedDatabaseGroupRequest,
                                     UpdateManagedDatabaseGroupResponse>
                             handler) {
-        LOG.trace("Called async updateManagedDatabaseGroup");
-        final UpdateManagedDatabaseGroupRequest interceptedRequest =
-                UpdateManagedDatabaseGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateManagedDatabaseGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getManagedDatabaseGroupId(), "managedDatabaseGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateManagedDatabaseGroupDetails(),
+                "updateManagedDatabaseGroupDetails is required");
+
+        return clientCall(request, UpdateManagedDatabaseGroupResponse::builder)
+                .logger(LOG, "updateManagedDatabaseGroup")
+                .serviceDetails(
                         "DbManagement",
                         "UpdateManagedDatabaseGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/UpdateManagedDatabaseGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateManagedDatabaseGroupResponse>
-                transformer =
-                        UpdateManagedDatabaseGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateManagedDatabaseGroupRequest,
-                                UpdateManagedDatabaseGroupResponse>,
-                        java.util.concurrent.Future<UpdateManagedDatabaseGroupResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateManagedDatabaseGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateManagedDatabaseGroupRequest, UpdateManagedDatabaseGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabaseGroup/UpdateManagedDatabaseGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateManagedDatabaseGroupRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabaseGroups")
+                .appendPathParam(request.getManagedDatabaseGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup.class,
+                        UpdateManagedDatabaseGroupResponse.Builder::managedDatabaseGroup)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateManagedDatabaseGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateManagedDatabaseGroupResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -4616,52 +3442,38 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>
                     handler) {
-        LOG.trace("Called async updatePreferredCredential");
-        final UpdatePreferredCredentialRequest interceptedRequest =
-                UpdatePreferredCredentialConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePreferredCredentialConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getCredentialName(), "credentialName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePreferredCredentialDetails(),
+                "updatePreferredCredentialDetails is required");
+
+        return clientCall(request, UpdatePreferredCredentialResponse::builder)
+                .logger(LOG, "updatePreferredCredential")
+                .serviceDetails(
                         "DbManagement",
                         "UpdatePreferredCredential",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/UpdatePreferredCredential");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdatePreferredCredentialResponse>
-                transformer =
-                        UpdatePreferredCredentialConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdatePreferredCredentialRequest,
-                                UpdatePreferredCredentialResponse>,
-                        java.util.concurrent.Future<UpdatePreferredCredentialResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdatePreferredCredentialDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdatePreferredCredentialRequest, UpdatePreferredCredentialResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PreferredCredential/UpdatePreferredCredential")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePreferredCredentialRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("preferredCredentials")
+                .appendPathParam(request.getCredentialName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.PreferredCredential.class,
+                        UpdatePreferredCredentialResponse.Builder::preferredCredential)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePreferredCredentialResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdatePreferredCredentialResponse.Builder::etag)
+                .callAsync(handler);
     }
 
     @Override
@@ -4670,48 +3482,193 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateTablespaceRequest, UpdateTablespaceResponse>
                     handler) {
-        LOG.trace("Called async updateTablespace");
-        final UpdateTablespaceRequest interceptedRequest =
-                UpdateTablespaceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTablespaceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        Validate.notBlank(request.getTablespaceName(), "tablespaceName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTablespaceDetails(), "updateTablespaceDetails is required");
+
+        return clientCall(request, UpdateTablespaceResponse::builder)
+                .logger(LOG, "updateTablespace")
+                .serviceDetails(
                         "DbManagement",
                         "UpdateTablespace",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/UpdateTablespace");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateTablespaceResponse>
-                transformer =
-                        UpdateTablespaceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateTablespaceRequest, UpdateTablespaceResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/Tablespace/UpdateTablespace")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTablespaceRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("tablespaces")
+                .appendPathParam(request.getTablespaceName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.Tablespace.class,
+                        UpdateTablespaceResponse.Builder::tablespace)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTablespaceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTablespaceRequest, UpdateTablespaceResponse>,
-                        java.util.concurrent.Future<UpdateTablespaceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTablespaceDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTablespaceRequest, UpdateTablespaceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public DbManagementAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

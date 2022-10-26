@@ -35,7 +35,8 @@ abstract class ProgressTrackerFactory {
 
     private static class SingleUploadProgressTrackerFactory extends ProgressTrackerFactory {
 
-        // This progress tracker is implicitly thread safe by definition since there is only a single upload
+        // This progress tracker is implicitly thread safe by definition since there is only a
+        // single upload
         // going on (in a single upload thread).
         private final ProgressTracker progressTracker;
 
@@ -69,7 +70,8 @@ abstract class ProgressTrackerFactory {
         }
 
         /**
-         * This progress tracker is thread-safe as updates to the aggregate root progress tracker is synchronized.
+         * This progress tracker is thread-safe as updates to the aggregate root progress tracker is
+         * synchronized.
          */
         @ThreadSafe
         private class SubProgressTracker extends ProgressTracker {

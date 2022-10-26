@@ -8,27 +8,25 @@ import com.oracle.bmc.resourcemanager.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
     /**
      * Unique identifier for the request.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned TemplateCategorySummaryCollection instance.
-     */
+    /** The returned TemplateCategorySummaryCollection instance. */
     private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
             templateCategorySummaryCollection;
 
     /**
      * The returned TemplateCategorySummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
@@ -44,7 +42,7 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListTemplateCategoriesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
                     templateCategorySummaryCollection) {
@@ -53,28 +51,31 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
         this.templateCategorySummaryCollection = templateCategorySummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListTemplateCategoriesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -83,14 +84,13 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned TemplateCategorySummaryCollection instance.
-         */
+        /** The returned TemplateCategorySummaryCollection instance. */
         private com.oracle.bmc.resourcemanager.model.TemplateCategorySummaryCollection
                 templateCategorySummaryCollection;
 
         /**
          * The returned TemplateCategorySummaryCollection instance.
+         *
          * @param templateCategorySummaryCollection the value to set
          * @return this builder
          */
@@ -103,8 +103,10 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTemplateCategoriesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -116,8 +118,10 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTemplateCategoriesResponse build() {
             return new ListTemplateCategoriesResponse(
                     __httpStatusCode__, headers, opcRequestId, templateCategorySummaryCollection);
@@ -126,6 +130,7 @@ public class ListTemplateCategoriesResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

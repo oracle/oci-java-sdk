@@ -5,19 +5,20 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the issue type associated with the support ticket.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the issue type associated with the support ticket. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IssueType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IssueType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class IssueType extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"issueTypeKey", "label"})
     public IssueType(String issueTypeKey, String label) {
@@ -28,33 +29,31 @@ public final class IssueType extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier for the issue type.
-         **/
+        /** Unique identifier for the issue type. */
         @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
         private String issueTypeKey;
 
         /**
          * Unique identifier for the issue type.
+         *
          * @param issueTypeKey the value to set
          * @return this builder
-         **/
+         */
         public Builder issueTypeKey(String issueTypeKey) {
             this.issueTypeKey = issueTypeKey;
             this.__explicitlySet__.add("issueTypeKey");
             return this;
         }
-        /**
-         * The label for the issue type. For example, {@code Instance Performance}.
-         **/
+        /** The label for the issue type. For example, {@code Instance Performance}. */
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * The label for the issue type. For example, {@code Instance Performance}.
+         *
          * @param label the value to set
          * @return this builder
-         **/
+         */
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
@@ -84,9 +83,7 @@ public final class IssueType extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class IssueType extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier for the issue type.
-     **/
+    /** Unique identifier for the issue type. */
     @com.fasterxml.jackson.annotation.JsonProperty("issueTypeKey")
     private final String issueTypeKey;
 
     /**
      * Unique identifier for the issue type.
+     *
      * @return the value
-     **/
+     */
     public String getIssueTypeKey() {
         return issueTypeKey;
     }
 
-    /**
-     * The label for the issue type. For example, {@code Instance Performance}.
-     **/
+    /** The label for the issue type. For example, {@code Instance Performance}. */
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * The label for the issue type. For example, {@code Instance Performance}.
+     *
      * @return the value
-     **/
+     */
     public String getLabel() {
         return label;
     }
@@ -130,6 +125,7 @@ public final class IssueType extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

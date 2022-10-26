@@ -6,17 +6,14 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * A list of the supported infrastructure that can be used to deploy the database:
- * <p>
- * - ONPREMISE: External infrastructure on premises.
- * - BM: Bare metal infrastructure in Oracle Cloud.
- * - VM: Virtual machines in Oracle Cloud.
- * - EXADATA: Exadata infrastructure in Oracle Cloud.
- * - EXADATA_CC: Exadata Cloud@Customer infrastructure in customer's data center.
- * - AUTONOMOUS: Oracle Autonomous Cloud infrastructure
  *
- **/
+ * <p>- ONPREMISE: External infrastructure on premises. - BM: Bare metal infrastructure in Oracle
+ * Cloud. - VM: Virtual machines in Oracle Cloud. - EXADATA: Exadata infrastructure in Oracle Cloud.
+ * - EXADATA_CC: Exadata Cloud@Customer infrastructure in customer's data center. - AUTONOMOUS:
+ * Oracle Autonomous Cloud infrastructure
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DeploymentType {
+public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     Onpremise("ONPREMISE"),
     Bm("BM"),
     Vm("VM"),

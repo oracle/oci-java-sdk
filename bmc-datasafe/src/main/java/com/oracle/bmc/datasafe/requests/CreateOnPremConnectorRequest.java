@@ -6,21 +6,20 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateOnPremConnectorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateOnPremConnectorRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateOnPremConnectorExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * CreateOnPremConnectorRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class CreateOnPremConnectorRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails> {
 
-    /**
-     * The details used to create a new on-premises connector.
-     */
+    /** The details used to create a new on-premises connector. */
     private com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails createOnPremConnectorDetails;
 
-    /**
-     * The details used to create a new on-premises connector.
-     */
+    /** The details used to create a new on-premises connector. */
     public com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails
             getCreateOnPremConnectorDetails() {
         return createOnPremConnectorDetails;
@@ -28,36 +27,33 @@ public class CreateOnPremConnectorRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -70,18 +66,16 @@ public class CreateOnPremConnectorRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateOnPremConnectorRequest,
                     com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The details used to create a new on-premises connector.
-         */
+        /** The details used to create a new on-premises connector. */
         private com.oracle.bmc.datasafe.model.CreateOnPremConnectorDetails
                 createOnPremConnectorDetails = null;
 
         /**
          * The details used to create a new on-premises connector.
+         *
          * @param createOnPremConnectorDetails the value to set
          * @return this builder instance
          */
@@ -94,18 +88,19 @@ public class CreateOnPremConnectorRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -115,13 +110,12 @@ public class CreateOnPremConnectorRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -132,18 +126,19 @@ public class CreateOnPremConnectorRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -155,6 +150,7 @@ public class CreateOnPremConnectorRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateOnPremConnectorRequest o) {
@@ -169,10 +165,11 @@ public class CreateOnPremConnectorRequest
         /**
          * Build the instance of CreateOnPremConnectorRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateOnPremConnectorRequest
          */
@@ -185,6 +182,7 @@ public class CreateOnPremConnectorRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -197,7 +195,8 @@ public class CreateOnPremConnectorRequest
         /**
          * Build the instance of CreateOnPremConnectorRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateOnPremConnectorRequest
@@ -208,12 +207,14 @@ public class CreateOnPremConnectorRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateOnPremConnectorRequest(createOnPremConnectorDetails, opcRetryToken, opcRequestId);
+            // new CreateOnPremConnectorRequest(createOnPremConnectorDetails, opcRetryToken,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -225,6 +226,7 @@ public class CreateOnPremConnectorRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.bds.model;
 
-/**
- * The type of schedule.
- **/
+/** The type of schedule. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
-public enum ScheduleType {
+public enum ScheduleType implements com.oracle.bmc.http.internal.BmcEnum {
     DayBased("DAY_BASED"),
 
     /**

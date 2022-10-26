@@ -5,22 +5,23 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The results of a certificate authority (CA) search. This object contains CA summary objects and other data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The results of a certificate authority (CA) search. This object contains CA summary objects and
+ * other data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CertificateAuthorityCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CertificateAuthorityCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CertificateAuthorityCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public CertificateAuthorityCollection(java.util.List<CertificateAuthoritySummary> items) {
@@ -30,17 +31,16 @@ public final class CertificateAuthorityCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of CertificateAuthoritySummary.
-         **/
+        /** List of CertificateAuthoritySummary. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<CertificateAuthoritySummary> items;
 
         /**
          * List of CertificateAuthoritySummary.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<CertificateAuthoritySummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,9 +67,7 @@ public final class CertificateAuthorityCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +76,15 @@ public final class CertificateAuthorityCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * List of CertificateAuthoritySummary.
-     **/
+    /** List of CertificateAuthoritySummary. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<CertificateAuthoritySummary> items;
 
     /**
      * List of CertificateAuthoritySummary.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CertificateAuthoritySummary> getItems() {
         return items;
     }
@@ -99,6 +96,7 @@ public final class CertificateAuthorityCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

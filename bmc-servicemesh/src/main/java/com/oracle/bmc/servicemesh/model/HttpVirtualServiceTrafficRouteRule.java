@@ -5,25 +5,24 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Rule for routing incoming Virtual Service traffic with HTTP protocol
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Rule for routing incoming Virtual Service traffic with HTTP protocol <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HttpVirtualServiceTrafficRouteRule.Builder.class
-)
+        builder = HttpVirtualServiceTrafficRouteRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTrafficRouteRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,53 +35,50 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
             this.__explicitlySet__.add("destinations");
             return this;
         }
-        /**
-         * Route to match
-         **/
+        /** Route to match */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Route to match
+         *
          * @param path the value to set
          * @return this builder
-         **/
+         */
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /**
-         * Match type for the route
-         **/
+        /** Match type for the route */
         @com.fasterxml.jackson.annotation.JsonProperty("pathType")
         private PathType pathType;
 
         /**
          * Match type for the route
+         *
          * @param pathType the value to set
          * @return this builder
-         **/
+         */
         public Builder pathType(PathType pathType) {
             this.pathType = pathType;
             this.__explicitlySet__.add("pathType");
             return this;
         }
         /**
-         * If true, the rule will check that the content-type header has a application/grpc
-         * or one of the various application/grpc+ values.
-         *
-         **/
+         * If true, the rule will check that the content-type header has a application/grpc or one
+         * of the various application/grpc+ values.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
         private Boolean isGrpc;
 
         /**
-         * If true, the rule will check that the content-type header has a application/grpc
-         * or one of the various application/grpc+ values.
+         * If true, the rule will check that the content-type header has a application/grpc or one
+         * of the various application/grpc+ values.
          *
          * @param isGrpc the value to set
          * @return this builder
-         **/
+         */
         public Builder isGrpc(Boolean isGrpc) {
             this.isGrpc = isGrpc;
             this.__explicitlySet__.add("isGrpc");
@@ -120,9 +116,7 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,29 +137,26 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
         this.isGrpc = isGrpc;
     }
 
-    /**
-     * Route to match
-     **/
+    /** Route to match */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Route to match
+     *
      * @return the value
-     **/
+     */
     public String getPath() {
         return path;
     }
 
-    /**
-     * Match type for the route
-     **/
-    public enum PathType {
+    /** Match type for the route */
+    public enum PathType implements com.oracle.bmc.http.internal.BmcEnum {
         Prefix("PREFIX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -204,34 +195,32 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
             return UnknownEnumValue;
         }
     };
-    /**
-     * Match type for the route
-     **/
+    /** Match type for the route */
     @com.fasterxml.jackson.annotation.JsonProperty("pathType")
     private final PathType pathType;
 
     /**
      * Match type for the route
+     *
      * @return the value
-     **/
+     */
     public PathType getPathType() {
         return pathType;
     }
 
     /**
-     * If true, the rule will check that the content-type header has a application/grpc
-     * or one of the various application/grpc+ values.
-     *
-     **/
+     * If true, the rule will check that the content-type header has a application/grpc or one of
+     * the various application/grpc+ values.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isGrpc")
     private final Boolean isGrpc;
 
     /**
-     * If true, the rule will check that the content-type header has a application/grpc
-     * or one of the various application/grpc+ values.
+     * If true, the rule will check that the content-type header has a application/grpc or one of
+     * the various application/grpc+ values.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsGrpc() {
         return isGrpc;
     }
@@ -243,6 +232,7 @@ public final class HttpVirtualServiceTrafficRouteRule extends VirtualServiceTraf
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The details to create an Oracle Object Storage data asset connection.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details to create an Oracle Object Storage data asset connection. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateConnectionFromObjectStorage.Builder.class
-)
+        builder = CreateConnectionFromObjectStorage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateConnectionFromObjectStorage extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -108,65 +107,61 @@ public final class CreateConnectionFromObjectStorage extends CreateConnectionDet
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /**
-         * The credential file content from an Oracle Object Storage wallet.
-         **/
+        /** The credential file content from an Oracle Object Storage wallet. */
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
         /**
          * The credential file content from an Oracle Object Storage wallet.
+         *
          * @param credentialFileContent the value to set
          * @return this builder
-         **/
+         */
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
             return this;
         }
-        /**
-         * The OCI user OCID for the user to connect to.
-         **/
+        /** The OCI user OCID for the user to connect to. */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The OCI user OCID for the user to connect to.
+         *
          * @param userId the value to set
          * @return this builder
-         **/
+         */
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /**
-         * The fingerprint for the user.
-         **/
+        /** The fingerprint for the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("fingerPrint")
         private String fingerPrint;
 
         /**
          * The fingerprint for the user.
+         *
          * @param fingerPrint the value to set
          * @return this builder
-         **/
+         */
         public Builder fingerPrint(String fingerPrint) {
             this.fingerPrint = fingerPrint;
             this.__explicitlySet__.add("fingerPrint");
             return this;
         }
-        /**
-         * The passphrase for the connection.
-         **/
+        /** The passphrase for the connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("passPhrase")
         private String passPhrase;
 
         /**
          * The passphrase for the connection.
+         *
          * @param passPhrase the value to set
          * @return this builder
-         **/
+         */
         public Builder passPhrase(String passPhrase) {
             this.passPhrase = passPhrase;
             this.__explicitlySet__.add("passPhrase");
@@ -243,9 +238,7 @@ public final class CreateConnectionFromObjectStorage extends CreateConnectionDet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -285,58 +278,54 @@ public final class CreateConnectionFromObjectStorage extends CreateConnectionDet
         this.passPhrase = passPhrase;
     }
 
-    /**
-     * The credential file content from an Oracle Object Storage wallet.
-     **/
+    /** The credential file content from an Oracle Object Storage wallet. */
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
     /**
      * The credential file content from an Oracle Object Storage wallet.
+     *
      * @return the value
-     **/
+     */
     public String getCredentialFileContent() {
         return credentialFileContent;
     }
 
-    /**
-     * The OCI user OCID for the user to connect to.
-     **/
+    /** The OCI user OCID for the user to connect to. */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The OCI user OCID for the user to connect to.
+     *
      * @return the value
-     **/
+     */
     public String getUserId() {
         return userId;
     }
 
-    /**
-     * The fingerprint for the user.
-     **/
+    /** The fingerprint for the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("fingerPrint")
     private final String fingerPrint;
 
     /**
      * The fingerprint for the user.
+     *
      * @return the value
-     **/
+     */
     public String getFingerPrint() {
         return fingerPrint;
     }
 
-    /**
-     * The passphrase for the connection.
-     **/
+    /** The passphrase for the connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("passPhrase")
     private final String passPhrase;
 
     /**
      * The passphrase for the connection.
+     *
      * @return the value
-     **/
+     */
     public String getPassPhrase() {
         return passPhrase;
     }
@@ -348,6 +337,7 @@ public final class CreateConnectionFromObjectStorage extends CreateConnectionDet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

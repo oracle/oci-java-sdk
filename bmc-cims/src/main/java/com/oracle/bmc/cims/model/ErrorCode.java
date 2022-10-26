@@ -5,7 +5,7 @@
 package com.oracle.bmc.cims.model;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum ErrorCode {
+public enum ErrorCode implements com.oracle.bmc.http.internal.BmcEnum {
     ContentEmpty("CONTENT_EMPTY"),
     ClientException("CLIENT_EXCEPTION"),
     InvalidFormat("INVALID_FORMAT"),

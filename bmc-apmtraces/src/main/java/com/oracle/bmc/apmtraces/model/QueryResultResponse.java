@@ -5,24 +5,24 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * A response containing a collection of query rows (selected attributes and aggregations) filtered, grouped and
- * sorted by the specified criteria from the query that is run, and the associated summary describing the corresponding
- * query result metadata.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A response containing a collection of query rows (selected attributes and aggregations) filtered,
+ * grouped and sorted by the specified criteria from the query that is run, and the associated
+ * summary describing the corresponding query result metadata. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = QueryResultResponse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryResultResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = QueryResultResponse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class QueryResultResponse
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"queryResultMetadataSummary", "queryResultRows"})
     public QueryResultResponse(
@@ -46,22 +46,21 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
-         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
-         * the queried entity.
-         *
-         **/
+         * A collection of objects with each object representing an individual row of the query
+         * result set. The total number of objects returned in this collection correspond to the
+         * total number of rows returned by the actual query that is run against the queried entity.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
         private java.util.List<QueryResultRow> queryResultRows;
 
         /**
-         * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
-         * returned in this collection correspond to the total number of rows returned by the actual query that is run against
-         * the queried entity.
+         * A collection of objects with each object representing an individual row of the query
+         * result set. The total number of objects returned in this collection correspond to the
+         * total number of rows returned by the actual query that is run against the queried entity.
          *
          * @param queryResultRows the value to set
          * @return this builder
-         **/
+         */
         public Builder queryResultRows(java.util.List<QueryResultRow> queryResultRows) {
             this.queryResultRows = queryResultRows;
             this.__explicitlySet__.add("queryResultRows");
@@ -92,9 +91,7 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,21 +108,20 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
-     * returned in this collection correspond to the total number of rows returned by the actual query that is run against
-     * the queried entity.
-     *
-     **/
+     * A collection of objects with each object representing an individual row of the query result
+     * set. The total number of objects returned in this collection correspond to the total number
+     * of rows returned by the actual query that is run against the queried entity.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("queryResultRows")
     private final java.util.List<QueryResultRow> queryResultRows;
 
     /**
-     * A collection of objects with each object representing an individual row of the query result set.  The total number of objects
-     * returned in this collection correspond to the total number of rows returned by the actual query that is run against
-     * the queried entity.
+     * A collection of objects with each object representing an individual row of the query result
+     * set. The total number of objects returned in this collection correspond to the total number
+     * of rows returned by the actual query that is run against the queried entity.
      *
      * @return the value
-     **/
+     */
     public java.util.List<QueryResultRow> getQueryResultRows() {
         return queryResultRows;
     }
@@ -137,6 +133,7 @@ public final class QueryResultResponse extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

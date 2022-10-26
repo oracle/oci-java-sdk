@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Trigger specific to Bitbucket Cloud
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Trigger specific to Bitbucket Cloud <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BitbucketCloudTrigger.Builder.class
-)
+        builder = BitbucketCloudTrigger.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "triggerSource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "triggerSource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BitbucketCloudTrigger extends Trigger {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,33 +143,31 @@ public final class BitbucketCloudTrigger extends Trigger {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /**
-         * The endpoint that listens to trigger events.
-         **/
+        /** The endpoint that listens to trigger events. */
         @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
         private String triggerUrl;
 
         /**
          * The endpoint that listens to trigger events.
+         *
          * @param triggerUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder triggerUrl(String triggerUrl) {
             this.triggerUrl = triggerUrl;
             this.__explicitlySet__.add("triggerUrl");
             return this;
         }
-        /**
-         * The OCID of the connection resource used to get details for triggered events.
-         **/
+        /** The OCID of the connection resource used to get details for triggered events. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
         private String connectionId;
 
         /**
          * The OCID of the connection resource used to get details for triggered events.
+         *
          * @param connectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder connectionId(String connectionId) {
             this.connectionId = connectionId;
             this.__explicitlySet__.add("connectionId");
@@ -255,9 +252,7 @@ public final class BitbucketCloudTrigger extends Trigger {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,30 +296,28 @@ public final class BitbucketCloudTrigger extends Trigger {
         this.connectionId = connectionId;
     }
 
-    /**
-     * The endpoint that listens to trigger events.
-     **/
+    /** The endpoint that listens to trigger events. */
     @com.fasterxml.jackson.annotation.JsonProperty("triggerUrl")
     private final String triggerUrl;
 
     /**
      * The endpoint that listens to trigger events.
+     *
      * @return the value
-     **/
+     */
     public String getTriggerUrl() {
         return triggerUrl;
     }
 
-    /**
-     * The OCID of the connection resource used to get details for triggered events.
-     **/
+    /** The OCID of the connection resource used to get details for triggered events. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectionId")
     private final String connectionId;
 
     /**
      * The OCID of the connection resource used to get details for triggered events.
+     *
      * @return the value
-     **/
+     */
     public String getConnectionId() {
         return connectionId;
     }
@@ -336,6 +329,7 @@ public final class BitbucketCloudTrigger extends Trigger {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

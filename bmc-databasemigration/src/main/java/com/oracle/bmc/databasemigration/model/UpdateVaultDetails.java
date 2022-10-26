@@ -5,22 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * OCI Vault details to store migration and connection credentials secrets. An empty object would result in the removal of the stored details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * OCI Vault details to store migration and connection credentials secrets. An empty object would
+ * result in the removal of the stored details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateVaultDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = UpdateVaultDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class UpdateVaultDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "vaultId", "keyId"})
     public UpdateVaultDetails(String compartmentId, String vaultId, String keyId) {
@@ -32,10 +33,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID of the compartment where the secret containing the credentials will be created.
-         *
-         **/
+        /** OCID of the compartment where the secret containing the credentials will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -44,16 +42,13 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * OCID of the vault
-         *
-         **/
+        /** OCID of the vault */
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -62,16 +57,13 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param vaultId the value to set
          * @return this builder
-         **/
+         */
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
-        /**
-         * OCID of the vault encryption key
-         *
-         **/
+        /** OCID of the vault encryption key */
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
@@ -80,7 +72,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
          *
          * @param keyId the value to set
          * @return this builder
-         **/
+         */
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
@@ -114,9 +106,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,10 +115,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID of the compartment where the secret containing the credentials will be created.
-     *
-     **/
+    /** OCID of the compartment where the secret containing the credentials will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -136,15 +123,12 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
      * OCID of the compartment where the secret containing the credentials will be created.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * OCID of the vault
-     *
-     **/
+    /** OCID of the vault */
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
@@ -152,15 +136,12 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
      * OCID of the vault
      *
      * @return the value
-     **/
+     */
     public String getVaultId() {
         return vaultId;
     }
 
-    /**
-     * OCID of the vault encryption key
-     *
-     **/
+    /** OCID of the vault encryption key */
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
@@ -168,7 +149,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
      * OCID of the vault encryption key
      *
      * @return the value
-     **/
+     */
     public String getKeyId() {
         return keyId;
     }
@@ -180,6 +161,7 @@ public final class UpdateVaultDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

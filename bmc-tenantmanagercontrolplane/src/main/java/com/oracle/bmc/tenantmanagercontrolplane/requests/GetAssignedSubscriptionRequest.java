@@ -6,31 +6,26 @@ package com.oracle.bmc.tenantmanagercontrolplane.requests;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetAssignedSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetAssignedSubscriptionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/GetAssignedSubscriptionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetAssignedSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class GetAssignedSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * OCID of the assigned subscription.
-     */
+    /** OCID of the assigned subscription. */
     private String assignedSubscriptionId;
 
-    /**
-     * OCID of the assigned subscription.
-     */
+    /** OCID of the assigned subscription. */
     public String getAssignedSubscriptionId() {
         return assignedSubscriptionId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -38,17 +33,15 @@ public class GetAssignedSubscriptionRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetAssignedSubscriptionRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * OCID of the assigned subscription.
-         */
+        /** OCID of the assigned subscription. */
         private String assignedSubscriptionId = null;
 
         /**
          * OCID of the assigned subscription.
+         *
          * @param assignedSubscriptionId the value to set
          * @return this builder instance
          */
@@ -57,13 +50,12 @@ public class GetAssignedSubscriptionRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -74,18 +66,19 @@ public class GetAssignedSubscriptionRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -97,6 +90,7 @@ public class GetAssignedSubscriptionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetAssignedSubscriptionRequest o) {
@@ -110,10 +104,11 @@ public class GetAssignedSubscriptionRequest
         /**
          * Build the instance of GetAssignedSubscriptionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetAssignedSubscriptionRequest
          */
@@ -127,7 +122,8 @@ public class GetAssignedSubscriptionRequest
         /**
          * Build the instance of GetAssignedSubscriptionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetAssignedSubscriptionRequest
@@ -143,6 +139,7 @@ public class GetAssignedSubscriptionRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -153,6 +150,7 @@ public class GetAssignedSubscriptionRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

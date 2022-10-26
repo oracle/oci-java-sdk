@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible responder types.
- **/
+/** Possible responder types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ResponderType {
+public enum ResponderType implements com.oracle.bmc.http.internal.BmcEnum {
     Remediation("REMEDIATION"),
     Notification("NOTIFICATION"),
 

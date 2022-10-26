@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,13 +24,12 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /**
-     * The returned ExtractLogFieldResults instance.
-     */
+    /** The returned ExtractLogFieldResults instance. */
     private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
     /**
      * The returned ExtractLogFieldResults instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.ExtractLogFieldResults getExtractLogFieldResults() {
@@ -44,7 +44,7 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
     })
     private ExtractStructuredLogFieldPathsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults) {
         super(__httpStatusCode__, headers);
@@ -52,29 +52,34 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
         this.extractLogFieldResults = extractLogFieldResults;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ExtractStructuredLogFieldPathsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -84,13 +89,12 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /**
-         * The returned ExtractLogFieldResults instance.
-         */
+        /** The returned ExtractLogFieldResults instance. */
         private com.oracle.bmc.loganalytics.model.ExtractLogFieldResults extractLogFieldResults;
 
         /**
          * The returned ExtractLogFieldResults instance.
+         *
          * @param extractLogFieldResults the value to set
          * @return this builder
          */
@@ -102,8 +106,10 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ExtractStructuredLogFieldPathsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -115,8 +121,10 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ExtractStructuredLogFieldPathsResponse build() {
             return new ExtractStructuredLogFieldPathsResponse(
                     __httpStatusCode__, headers, opcRequestId, extractLogFieldResults);
@@ -125,6 +133,7 @@ public class ExtractStructuredLogFieldPathsResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

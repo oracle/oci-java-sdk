@@ -5,227 +5,178 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Generic command descriptor defining all attributes common to all querylanguage commands for parse output.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Generic command descriptor defining all attributes common to all querylanguage commands for parse
+ * output. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name",
-    defaultImpl = AbstractCommandDescriptor.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name",
+        defaultImpl = AbstractCommandDescriptor.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TopCommandDescriptor.class,
-        name = "TOP"
-    ),
+            value = TopCommandDescriptor.class,
+            name = "TOP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HighlightCommandDescriptor.class,
-        name = "HIGHLIGHT"
-    ),
+            value = HighlightCommandDescriptor.class,
+            name = "HIGHLIGHT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = StatsCommandDescriptor.class,
-        name = "STATS"
-    ),
+            value = StatsCommandDescriptor.class,
+            name = "STATS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TailCommandDescriptor.class,
-        name = "TAIL"
-    ),
+            value = TailCommandDescriptor.class,
+            name = "TAIL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DemoModeCommandDescriptor.class,
-        name = "DEMO_MODE"
-    ),
+            value = DemoModeCommandDescriptor.class,
+            name = "DEMO_MODE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = FieldSummaryCommandDescriptor.class,
-        name = "FIELD_SUMMARY"
-    ),
+            value = FieldSummaryCommandDescriptor.class,
+            name = "FIELD_SUMMARY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GeoStatsCommandDescriptor.class,
-        name = "GEO_STATS"
-    ),
+            value = GeoStatsCommandDescriptor.class,
+            name = "GEO_STATS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MapCommandDescriptor.class,
-        name = "MAP"
-    ),
+            value = MapCommandDescriptor.class,
+            name = "MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HighlightGroupsCommandDescriptor.class,
-        name = "HIGHLIGHT_GROUPS"
-    ),
+            value = HighlightGroupsCommandDescriptor.class,
+            name = "HIGHLIGHT_GROUPS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DedupCommandDescriptor.class,
-        name = "DEDUP"
-    ),
+            value = DedupCommandDescriptor.class,
+            name = "DEDUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TimeStatsCommandDescriptor.class,
-        name = "TIME_STATS"
-    ),
+            value = TimeStatsCommandDescriptor.class,
+            name = "TIME_STATS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ClusterCommandDescriptor.class,
-        name = "CLUSTER"
-    ),
+            value = ClusterCommandDescriptor.class,
+            name = "CLUSTER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DeleteCommandDescriptor.class,
-        name = "DELETE"
-    ),
+            value = DeleteCommandDescriptor.class,
+            name = "DELETE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchCommandDescriptor.class,
-        name = "SEARCH"
-    ),
+            value = SearchCommandDescriptor.class,
+            name = "SEARCH"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = BucketCommandDescriptor.class,
-        name = "BUCKET"
-    ),
+            value = BucketCommandDescriptor.class,
+            name = "BUCKET"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AddInsightsCommandDescriptor.class,
-        name = "ADD_INSIGHTS"
-    ),
+            value = AddInsightsCommandDescriptor.class,
+            name = "ADD_INSIGHTS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = LinkCommandDescriptor.class,
-        name = "LINK"
-    ),
+            value = LinkCommandDescriptor.class,
+            name = "LINK"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SortCommandDescriptor.class,
-        name = "SORT"
-    ),
+            value = SortCommandDescriptor.class,
+            name = "SORT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HighlightRowsCommandDescriptor.class,
-        name = "HIGHLIGHT_ROWS"
-    ),
+            value = HighlightRowsCommandDescriptor.class,
+            name = "HIGHLIGHT_ROWS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MacroCommandDescriptor.class,
-        name = "MACRO"
-    ),
+            value = MacroCommandDescriptor.class,
+            name = "MACRO"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EvalCommandDescriptor.class,
-        name = "EVAL"
-    ),
+            value = EvalCommandDescriptor.class,
+            name = "EVAL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RenameCommandDescriptor.class,
-        name = "RENAME"
-    ),
+            value = RenameCommandDescriptor.class,
+            name = "RENAME"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = XmlExtractCommandDescriptor.class,
-        name = "XML_EXTRACT"
-    ),
+            value = XmlExtractCommandDescriptor.class,
+            name = "XML_EXTRACT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MultiSearchCommandDescriptor.class,
-        name = "MULTI_SEARCH"
-    ),
+            value = MultiSearchCommandDescriptor.class,
+            name = "MULTI_SEARCH"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CompareCommandDescriptor.class,
-        name = "COMPARE"
-    ),
+            value = CompareCommandDescriptor.class,
+            name = "COMPARE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TimeCompareCommandDescriptor.class,
-        name = "TIME_COMPARE"
-    ),
+            value = TimeCompareCommandDescriptor.class,
+            name = "TIME_COMPARE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ModuleCommandDescriptor.class,
-        name = "MODULE"
-    ),
+            value = ModuleCommandDescriptor.class,
+            name = "MODULE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RegexCommandDescriptor.class,
-        name = "REGEX"
-    ),
+            value = RegexCommandDescriptor.class,
+            name = "REGEX"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DeltaCommandDescriptor.class,
-        name = "DELTA"
-    ),
+            value = DeltaCommandDescriptor.class,
+            name = "DELTA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = LookupCommandDescriptor.class,
-        name = "LOOKUP"
-    ),
+            value = LookupCommandDescriptor.class,
+            name = "LOOKUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = JsonExtractCommandDescriptor.class,
-        name = "JSON_EXTRACT"
-    ),
+            value = JsonExtractCommandDescriptor.class,
+            name = "JSON_EXTRACT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = EventStatsCommandDescriptor.class,
-        name = "EVENT_STATS"
-    ),
+            value = EventStatsCommandDescriptor.class,
+            name = "EVENT_STATS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = WhereCommandDescriptor.class,
-        name = "WHERE"
-    ),
+            value = WhereCommandDescriptor.class,
+            name = "WHERE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ClusterSplitCommandDescriptor.class,
-        name = "CLUSTER_SPLIT"
-    ),
+            value = ClusterSplitCommandDescriptor.class,
+            name = "CLUSTER_SPLIT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ClusterDetailsCommandDescriptor.class,
-        name = "CLUSTER_DETAILS"
-    ),
+            value = ClusterDetailsCommandDescriptor.class,
+            name = "CLUSTER_DETAILS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ClusterCompareCommandDescriptor.class,
-        name = "CLUSTER_COMPARE"
-    ),
+            value = ClusterCompareCommandDescriptor.class,
+            name = "CLUSTER_COMPARE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CommandDescriptor.class,
-        name = "COMMAND"
-    ),
+            value = CommandDescriptor.class,
+            name = "COMMAND"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DistinctCommandDescriptor.class,
-        name = "DISTINCT"
-    ),
+            value = DistinctCommandDescriptor.class,
+            name = "DISTINCT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ExtractCommandDescriptor.class,
-        name = "EXTRACT"
-    ),
+            value = ExtractCommandDescriptor.class,
+            name = "EXTRACT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = NlpCommandDescriptor.class,
-        name = "NLP"
-    ),
+            value = NlpCommandDescriptor.class,
+            name = "NLP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = BottomCommandDescriptor.class,
-        name = "BOTTOM"
-    ),
+            value = BottomCommandDescriptor.class,
+            name = "BOTTOM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = FieldsCommandDescriptor.class,
-        name = "FIELDS"
-    ),
+            value = FieldsCommandDescriptor.class,
+            name = "FIELDS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AnomalyCommandDescriptor.class,
-        name = "ANOMALY"
-    ),
+            value = AnomalyCommandDescriptor.class,
+            name = "ANOMALY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ClassifyCommandDescriptor.class,
-        name = "CLASSIFY"
-    ),
+            value = ClassifyCommandDescriptor.class,
+            name = "CLASSIFY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = LinkDetailsCommandDescriptor.class,
-        name = "LINK_DETAILS"
-    ),
+            value = LinkDetailsCommandDescriptor.class,
+            name = "LINK_DETAILS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SearchLookupCommandDescriptor.class,
-        name = "SEARCH_LOOKUP"
-    ),
+            value = SearchLookupCommandDescriptor.class,
+            name = "SEARCH_LOOKUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HeadCommandDescriptor.class,
-        name = "HEAD"
-    ),
+            value = HeadCommandDescriptor.class,
+            name = "HEAD"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateViewCommandDescriptor.class,
-        name = "CREATE_VIEW"
-    ),
+            value = CreateViewCommandDescriptor.class,
+            name = "CREATE_VIEW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TimeClusterCommandDescriptor.class,
-        name = "TIME_CLUSTER"
-    ),
+            value = TimeClusterCommandDescriptor.class,
+            name = "TIME_CLUSTER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AddFieldsCommandDescriptor.class,
-        name = "ADD_FIELDS"
-    )
+            value = AddFieldsCommandDescriptor.class,
+            name = "ADD_FIELDS")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class AbstractCommandDescriptor
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayQueryString",
@@ -253,8 +204,7 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Command fragment display string from user specified query string formatted by query builder.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayQueryString")
     private final String displayQueryString;
 
@@ -262,15 +212,14 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * Command fragment display string from user specified query string formatted by query builder.
      *
      * @return the value
-     **/
+     */
     public String getDisplayQueryString() {
         return displayQueryString;
     }
 
     /**
      * Command fragment internal string from user specified query string formatted by query builder.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("internalQueryString")
     private final String internalQueryString;
 
@@ -278,15 +227,12 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * Command fragment internal string from user specified query string formatted by query builder.
      *
      * @return the value
-     **/
+     */
     public String getInternalQueryString() {
         return internalQueryString;
     }
 
-    /**
-     * querylanguage command designation for example; reporting vs filtering
-     *
-     **/
+    /** querylanguage command designation for example; reporting vs filtering */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
@@ -294,15 +240,12 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * querylanguage command designation for example; reporting vs filtering
      *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * Fields referenced in command fragment from user specified query string.
-     *
-     **/
+    /** Fields referenced in command fragment from user specified query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("referencedFields")
     private final java.util.List<AbstractField> referencedFields;
 
@@ -310,15 +253,12 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * Fields referenced in command fragment from user specified query string.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractField> getReferencedFields() {
         return referencedFields;
     }
 
-    /**
-     * Fields declared in command fragment from user specified query string.
-     *
-     **/
+    /** Fields declared in command fragment from user specified query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("declaredFields")
     private final java.util.List<AbstractField> declaredFields;
 
@@ -326,15 +266,12 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * Fields declared in command fragment from user specified query string.
      *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractField> getDeclaredFields() {
         return declaredFields;
     }
 
-    /**
-     * Field denoting if this is a hidden command that is not shown in the query string.
-     *
-     **/
+    /** Field denoting if this is a hidden command that is not shown in the query string. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
@@ -342,7 +279,7 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
      * Field denoting if this is a hidden command that is not shown in the query string.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsHidden() {
         return isHidden;
     }
@@ -354,6 +291,7 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -416,11 +354,8 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
         return result;
     }
 
-    /**
-     * Name of querylanguage command
-     *
-     **/
-    public enum Name {
+    /** Name of querylanguage command */
+    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
         Command("COMMAND"),
         Search("SEARCH"),
         Stats("STATS"),
@@ -473,8 +408,8 @@ public class AbstractCommandDescriptor extends com.oracle.bmc.http.internal.Expl
         TimeCluster("TIME_CLUSTER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

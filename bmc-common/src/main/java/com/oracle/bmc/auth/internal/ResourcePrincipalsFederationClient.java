@@ -8,20 +8,16 @@ import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.ResponseHelper;
-import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.http.client.Method;
 import org.slf4j.Logger;
 
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.Response;
-import java.net.URI;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 
 /**
- * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
- * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
+ * This class gets a security token from the auth service by signing the request with a PKI issued
+ * leaf certificate, passing along a temporary public key that is bounded to the the security token,
+ * and the leaf certificate.
  */
 public class ResourcePrincipalsFederationClient extends AbstractFederationClient {
     private static final Logger LOG =
@@ -32,11 +28,14 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
     /**
      * Constructor of ResourcePrincipalsFederationClient.
      *
-     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal token.
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
+     *     token.
      * @param resourcePrincipalTokenPathProvider the path provider for the resource principal token
-     * @param resourcePrincipalSessionTokenEndpoint the endpoint that can provide the resource principal session token.
+     * @param resourcePrincipalSessionTokenEndpoint the endpoint that can provide the resource
+     *     principal session token.
      * @param sessionKeySupplier the session key supplier.
-     * @param instancePrincipalsAuthenticationDetailsProvider the instance principals authentication details provider.
+     * @param instancePrincipalsAuthenticationDetailsProvider the instance principals authentication
+     *     details provider.
      * @param clientConfigurator the reset client configurator.
      */
     public ResourcePrincipalsFederationClient(
@@ -62,6 +61,7 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
 
     /**
      * Gets a security token from the federation server
+     *
      * @return the security token, which is basically a JWT token string
      */
     @Override
@@ -78,50 +78,27 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
             throw new IllegalArgumentException("Public key is not present");
         }
 
-        try {
-            // Get instance principal token with Identity
-            provider.refresh();
+        // Get instance principal token with Identity
+        provider.refresh();
 
-            // Get resource principal token from the path provided by the path provider
-            restClient.setEndpoint(resourcePrincipalTokenEndpoint);
-            WebTarget target =
-                    restClient.getBaseTarget().path(resourcePrincipalTokenPathProvider.getPath());
-            Invocation.Builder ib = target.request();
-            URI requestUri = target.getUri();
+        // Get resource principal token from the path provided by the path provider
+        GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
+                prepareRptCall()
+                        .method(Method.GET)
+                        .logger(LOG, "ResourcePrincipalsFederationClient")
+                        .appendPathPart(resourcePrincipalTokenPathProvider.getPath())
+                        .callSync()
+                        .body;
 
-            Response response = makeCall(ib, requestUri);
-            ResponseHelper.throwIfNotSuccessful(response);
+        String servicePrincipalSessionToken =
+                getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
+        String resourcePrincipalToken =
+                getResourcePrincipalTokenResponse.getResourcePrincipalToken();
 
-            GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
-                    ResponseHelper.readEntity(response, GetResourcePrincipalTokenResponse.class);
-
-            String servicePrincipalSessionToken =
-                    getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
-            String resourcePrincipalToken =
-                    getResourcePrincipalTokenResponse.getResourcePrincipalToken();
-
-            // Get resource principal session token with Identity
-            restClient.setEndpoint(federationEndpoint);
-            GetResourcePrincipalSessionTokenRequest getResourcePrincipalSessionTokenRequest =
-                    new GetResourcePrincipalSessionTokenRequest(
-                            resourcePrincipalToken,
-                            servicePrincipalSessionToken,
-                            AuthUtils.base64EncodeNoChunking(publicKey));
-
-            target = restClient.getBaseTarget().path("v1").path("resourcePrincipalSessionToken");
-            ib = target.request();
-            requestUri = target.getUri();
-
-            // Make a call and get back the security token
-            response = makeCall(ib, requestUri, getResourcePrincipalSessionTokenRequest);
-            ResponseHelper.throwIfNotSuccessful(response);
-
-            X509FederationClient.SecurityToken securityToken =
-                    SECURITY_TOKEN_FN.apply(response).getItem();
-            return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
-
-        } catch (BmcException ex) {
-            throw ex;
-        }
+        return requestSessionToken(
+                new GetResourcePrincipalSessionTokenRequest(
+                        resourcePrincipalToken,
+                        servicePrincipalSessionToken,
+                        AuthUtils.base64EncodeNoChunking(publicKey)));
     }
 }

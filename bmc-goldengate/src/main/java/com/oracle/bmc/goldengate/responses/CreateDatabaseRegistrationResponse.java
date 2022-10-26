@@ -9,13 +9,14 @@ import com.oracle.bmc.goldengate.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -24,13 +25,14 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -38,10 +40,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -53,13 +52,12 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /**
-     * The returned DatabaseRegistration instance.
-     */
+    /** The returned DatabaseRegistration instance. */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
     /**
      * The returned DatabaseRegistration instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DatabaseRegistration getDatabaseRegistration() {
@@ -76,7 +74,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
     })
     private CreateDatabaseRegistrationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
@@ -88,29 +86,34 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         this.databaseRegistration = databaseRegistration;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateDatabaseRegistrationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
+         * query status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
+         * query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -121,13 +124,14 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -137,10 +141,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -154,13 +155,12 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * The returned DatabaseRegistration instance.
-         */
+        /** The returned DatabaseRegistration instance. */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
         /**
          * The returned DatabaseRegistration instance.
+         *
          * @param databaseRegistration the value to set
          * @return this builder
          */
@@ -172,8 +172,10 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDatabaseRegistrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -187,8 +189,10 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDatabaseRegistrationResponse build() {
             return new CreateDatabaseRegistrationResponse(
                     __httpStatusCode__,
@@ -202,6 +206,7 @@ public class CreateDatabaseRegistrationResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

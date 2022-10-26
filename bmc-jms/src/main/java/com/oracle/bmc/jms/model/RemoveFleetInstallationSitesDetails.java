@@ -5,22 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The list of Java installation sites to remove.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The list of Java installation sites to remove. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RemoveFleetInstallationSitesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RemoveFleetInstallationSitesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RemoveFleetInstallationSitesDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"installationSites"})
     public RemoveFleetInstallationSitesDetails(
@@ -31,17 +31,16 @@ public final class RemoveFleetInstallationSitesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The list of installation sites to remove.
-         **/
+        /** The list of installation sites to remove. */
         @com.fasterxml.jackson.annotation.JsonProperty("installationSites")
         private java.util.List<ExistingInstallationSiteId> installationSites;
 
         /**
          * The list of installation sites to remove.
+         *
          * @param installationSites the value to set
          * @return this builder
-         **/
+         */
         public Builder installationSites(
                 java.util.List<ExistingInstallationSiteId> installationSites) {
             this.installationSites = installationSites;
@@ -70,9 +69,7 @@ public final class RemoveFleetInstallationSitesDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,16 +78,15 @@ public final class RemoveFleetInstallationSitesDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The list of installation sites to remove.
-     **/
+    /** The list of installation sites to remove. */
     @com.fasterxml.jackson.annotation.JsonProperty("installationSites")
     private final java.util.List<ExistingInstallationSiteId> installationSites;
 
     /**
      * The list of installation sites to remove.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ExistingInstallationSiteId> getInstallationSites() {
         return installationSites;
     }
@@ -102,6 +98,7 @@ public final class RemoveFleetInstallationSitesDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

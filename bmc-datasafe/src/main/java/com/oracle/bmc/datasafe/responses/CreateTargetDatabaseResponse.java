@@ -9,13 +9,16 @@ import com.oracle.bmc.datasafe.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
-     *
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic
+     * Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic
+     * Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -24,13 +27,14 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
-     *
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this OCID to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this OCID to track the status of the request.
      *
      * @return the value
      */
@@ -39,13 +43,14 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -53,10 +58,7 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /**
-     * The full URI of the target database.
-     *
-     */
+    /** The full URI of the target database. */
     private String location;
 
     /**
@@ -68,13 +70,12 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         return location;
     }
 
-    /**
-     * The returned TargetDatabase instance.
-     */
+    /** The returned TargetDatabase instance. */
     private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
     /**
      * The returned TargetDatabase instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.TargetDatabase getTargetDatabase() {
@@ -92,7 +93,7 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateTargetDatabaseResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -106,29 +107,35 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         this.targetDatabase = targetDatabase;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateTargetDatabaseResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
-         *
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic
+         * Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic
+         * Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -139,13 +146,14 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
-         *
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this OCID to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with this OCID to track the status of the request.
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this OCID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -156,13 +164,14 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -172,10 +181,7 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The full URI of the target database.
-         *
-         */
+        /** The full URI of the target database. */
         private String location;
 
         /**
@@ -189,13 +195,12 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned TargetDatabase instance.
-         */
+        /** The returned TargetDatabase instance. */
         private com.oracle.bmc.datasafe.model.TargetDatabase targetDatabase;
 
         /**
          * The returned TargetDatabase instance.
+         *
          * @param targetDatabase the value to set
          * @return this builder
          */
@@ -206,8 +211,10 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateTargetDatabaseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -222,8 +229,10 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateTargetDatabaseResponse build() {
             return new CreateTargetDatabaseResponse(
                     __httpStatusCode__,
@@ -238,6 +247,7 @@ public class CreateTargetDatabaseResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

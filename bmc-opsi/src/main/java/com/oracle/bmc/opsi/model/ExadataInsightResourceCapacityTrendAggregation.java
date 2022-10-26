@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Resource Capacity samples
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Resource Capacity samples <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExadataInsightResourceCapacityTrendAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExadataInsightResourceCapacityTrendAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExadataInsightResourceCapacityTrendAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "capacity", "totalHostCapacity"})
     public ExadataInsightResourceCapacityTrendAggregation(
@@ -33,53 +33,54 @@ public final class ExadataInsightResourceCapacityTrendAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The timestamp in which the current sampling period ends in RFC 3339 format.
-         **/
+        /** The timestamp in which the current sampling period ends in RFC 3339 format. */
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
 
         /**
          * The timestamp in which the current sampling period ends in RFC 3339 format.
+         *
          * @param endTimestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-         *
-         **/
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+         * databases.
          *
          * @param capacity the value to set
          * @return this builder
-         **/
+         */
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-         *
-         **/
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
         private Double totalHostCapacity;
 
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+         * applies to CPU and does not not apply for Autonomous Databases.
          *
          * @param totalHostCapacity the value to set
          * @return this builder
-         **/
+         */
         public Builder totalHostCapacity(Double totalHostCapacity) {
             this.totalHostCapacity = totalHostCapacity;
             this.__explicitlySet__.add("totalHostCapacity");
@@ -114,9 +115,7 @@ public final class ExadataInsightResourceCapacityTrendAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,48 +124,49 @@ public final class ExadataInsightResourceCapacityTrendAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * The timestamp in which the current sampling period ends in RFC 3339 format.
-     **/
+    /** The timestamp in which the current sampling period ends in RFC 3339 format. */
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
     private final java.util.Date endTimestamp;
 
     /**
      * The timestamp in which the current sampling period ends in RFC 3339 format.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
     }
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
-     *
-     **/
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
+     * databases.
      *
      * @return the value
-     **/
+     */
     public Double getCapacity() {
         return capacity;
     }
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
-     *
-     **/
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
     private final Double totalHostCapacity;
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
+     * applies to CPU and does not not apply for Autonomous Databases.
      *
      * @return the value
-     **/
+     */
     public Double getTotalHostCapacity() {
         return totalHostCapacity;
     }
@@ -178,6 +178,7 @@ public final class ExadataInsightResourceCapacityTrendAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

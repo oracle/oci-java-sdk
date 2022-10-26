@@ -5,23 +5,22 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The details for detecting drift in a stack
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details for detecting drift in a stack <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DetectStackDriftDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DetectStackDriftDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DetectStackDriftDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceAddresses", "isProviderUpgradeRequired"})
     public DetectStackDriftDetails(
@@ -34,46 +33,52 @@ public final class DetectStackDriftDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
-         * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
-         * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
-         * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
-         *
-         **/
+         * The list of resources in the specified stack to detect drift for. Each resource is
+         * identified by a resource address, which is a string derived from the resource type and
+         * name specified in the stack's Terraform configuration plus an optional index. For
+         * example, the resource address for the fourth Compute instance with the name
+         * "test_instance" is oci_core_instance.test_instance[3]. For more details and examples of
+         * resource addresses, see the Terraform documentation at [Resource
+         * spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
         private java.util.List<String> resourceAddresses;
 
         /**
-         * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
-         * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
-         * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
-         * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+         * The list of resources in the specified stack to detect drift for. Each resource is
+         * identified by a resource address, which is a string derived from the resource type and
+         * name specified in the stack's Terraform configuration plus an optional index. For
+         * example, the resource address for the fourth Compute instance with the name
+         * "test_instance" is oci_core_instance.test_instance[3]. For more details and examples of
+         * resource addresses, see the Terraform documentation at [Resource
+         * spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
          *
          * @param resourceAddresses the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceAddresses(java.util.List<String> resourceAddresses) {
             this.resourceAddresses = resourceAddresses;
             this.__explicitlySet__.add("resourceAddresses");
             return this;
         }
         /**
-         * Specifies whether or not to upgrade provider versions.
-         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
-         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
-         *
-         **/
+         * Specifies whether or not to upgrade provider versions. Within the version constraints of
+         * your Terraform configuration, use the latest versions available from the source of
+         * Terraform providers. For more information about this option, see [Dependency Lock File
+         * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
         private Boolean isProviderUpgradeRequired;
 
         /**
-         * Specifies whether or not to upgrade provider versions.
-         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
-         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         * Specifies whether or not to upgrade provider versions. Within the version constraints of
+         * your Terraform configuration, use the latest versions available from the source of
+         * Terraform providers. For more information about this option, see [Dependency Lock File
+         * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
          *
          * @param isProviderUpgradeRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
             this.isProviderUpgradeRequired = isProviderUpgradeRequired;
             this.__explicitlySet__.add("isProviderUpgradeRequired");
@@ -105,9 +110,7 @@ public final class DetectStackDriftDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,43 +120,49 @@ public final class DetectStackDriftDetails
     }
 
     /**
-     * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
-     * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
-     * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
-     * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
-     *
-     **/
+     * The list of resources in the specified stack to detect drift for. Each resource is identified
+     * by a resource address, which is a string derived from the resource type and name specified in
+     * the stack's Terraform configuration plus an optional index. For example, the resource address
+     * for the fourth Compute instance with the name "test_instance" is
+     * oci_core_instance.test_instance[3]. For more details and examples of resource addresses, see
+     * the Terraform documentation at [Resource
+     * spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceAddresses")
     private final java.util.List<String> resourceAddresses;
 
     /**
-     * The list of resources in the specified stack to detect drift for. Each resource is identified by a resource address,
-     * which is a string derived from the resource type and name specified in the stack's Terraform configuration plus an optional index.
-     * For example, the resource address for the fourth Compute instance with the name "test_instance" is oci_core_instance.test_instance[3].
-     * For more details and examples of resource addresses, see the Terraform documentation at [Resource spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
+     * The list of resources in the specified stack to detect drift for. Each resource is identified
+     * by a resource address, which is a string derived from the resource type and name specified in
+     * the stack's Terraform configuration plus an optional index. For example, the resource address
+     * for the fourth Compute instance with the name "test_instance" is
+     * oci_core_instance.test_instance[3]. For more details and examples of resource addresses, see
+     * the Terraform documentation at [Resource
+     * spec](https://www.terraform.io/docs/internals/resource-addressing.html#examples).
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getResourceAddresses() {
         return resourceAddresses;
     }
 
     /**
-     * Specifies whether or not to upgrade provider versions.
-     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
-     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
-     *
-     **/
+     * Specifies whether or not to upgrade provider versions. Within the version constraints of your
+     * Terraform configuration, use the latest versions available from the source of Terraform
+     * providers. For more information about this option, see [Dependency Lock File
+     * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
     private final Boolean isProviderUpgradeRequired;
 
     /**
-     * Specifies whether or not to upgrade provider versions.
-     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
-     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     * Specifies whether or not to upgrade provider versions. Within the version constraints of your
+     * Terraform configuration, use the latest versions available from the source of Terraform
+     * providers. For more information about this option, see [Dependency Lock File
+     * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
      *
      * @return the value
-     **/
+     */
     public Boolean getIsProviderUpgradeRequired() {
         return isProviderUpgradeRequired;
     }
@@ -165,6 +174,7 @@ public final class DetectStackDriftDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

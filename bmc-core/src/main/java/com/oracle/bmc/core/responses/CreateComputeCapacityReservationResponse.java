@@ -8,10 +8,7 @@ import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,16 +37,17 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-     * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request. Use
+     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
-     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-     * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request. Use
+     * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -59,10 +56,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         return opcWorkRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -74,13 +68,12 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         return location;
     }
 
-    /**
-     * The returned ComputeCapacityReservation instance.
-     */
+    /** The returned ComputeCapacityReservation instance. */
     private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
     /**
      * The returned ComputeCapacityReservation instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.ComputeCapacityReservation getComputeCapacityReservation() {
@@ -98,7 +91,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
     })
     private CreateComputeCapacityReservationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -112,25 +105,26 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         this.computeCapacityReservation = computeCapacityReservation;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateComputeCapacityReservationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -145,15 +139,14 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -164,16 +157,17 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request. Use
+         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
-         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-         * Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request. Use
+         * [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -184,10 +178,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -201,13 +192,12 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /**
-         * The returned ComputeCapacityReservation instance.
-         */
+        /** The returned ComputeCapacityReservation instance. */
         private com.oracle.bmc.core.model.ComputeCapacityReservation computeCapacityReservation;
 
         /**
          * The returned ComputeCapacityReservation instance.
+         *
          * @param computeCapacityReservation the value to set
          * @return this builder
          */
@@ -219,8 +209,10 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateComputeCapacityReservationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -235,8 +227,10 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateComputeCapacityReservationResponse build() {
             return new CreateComputeCapacityReservationResponse(
                     __httpStatusCode__,
@@ -251,6 +245,7 @@ public class CreateComputeCapacityReservationResponse extends com.oracle.bmc.res
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

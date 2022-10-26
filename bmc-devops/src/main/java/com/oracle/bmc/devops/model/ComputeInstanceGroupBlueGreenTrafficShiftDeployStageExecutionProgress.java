@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Instance Group Blue-Green deployment load balancer traffic shift stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Instance Group Blue-Green deployment load balancer traffic shift stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress.Builder.class
-)
+        builder =
+                ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress
         extends DeployStageExecutionProgress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -94,17 +94,16 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
             this.__explicitlySet__.add("deployStageExecutionProgressDetails");
             return this;
         }
-        /**
-         * The OCID of the environment where traffic is going.
-         **/
+        /** The OCID of the environment where traffic is going. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentId")
         private String environmentId;
 
         /**
          * The OCID of the environment where traffic is going.
+         *
          * @param environmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder environmentId(String environmentId) {
             this.environmentId = environmentId;
             this.__explicitlySet__.add("environmentId");
@@ -163,9 +162,7 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,16 +192,15 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
         this.environmentId = environmentId;
     }
 
-    /**
-     * The OCID of the environment where traffic is going.
-     **/
+    /** The OCID of the environment where traffic is going. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentId")
     private final String environmentId;
 
     /**
      * The OCID of the environment where traffic is going.
+     *
      * @return the value
-     **/
+     */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -216,6 +212,7 @@ public final class ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecution
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

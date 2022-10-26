@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Address location.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Address location. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SubscribedServiceLocation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SubscribedServiceLocation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SubscribedServiceLocation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "address1",
@@ -52,10 +51,7 @@ public final class SubscribedServiceLocation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Address first line.
-         *
-         **/
+        /** Address first line. */
         @com.fasterxml.jackson.annotation.JsonProperty("address1")
         private String address1;
 
@@ -64,16 +60,13 @@ public final class SubscribedServiceLocation
          *
          * @param address1 the value to set
          * @return this builder
-         **/
+         */
         public Builder address1(String address1) {
             this.address1 = address1;
             this.__explicitlySet__.add("address1");
             return this;
         }
-        /**
-         * Address second line.
-         *
-         **/
+        /** Address second line. */
         @com.fasterxml.jackson.annotation.JsonProperty("address2")
         private String address2;
 
@@ -82,16 +75,13 @@ public final class SubscribedServiceLocation
          *
          * @param address2 the value to set
          * @return this builder
-         **/
+         */
         public Builder address2(String address2) {
             this.address2 = address2;
             this.__explicitlySet__.add("address2");
             return this;
         }
-        /**
-         * Postal code.
-         *
-         **/
+        /** Postal code. */
         @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
         private String postalCode;
 
@@ -100,16 +90,13 @@ public final class SubscribedServiceLocation
          *
          * @param postalCode the value to set
          * @return this builder
-         **/
+         */
         public Builder postalCode(String postalCode) {
             this.postalCode = postalCode;
             this.__explicitlySet__.add("postalCode");
             return this;
         }
-        /**
-         * City.
-         *
-         **/
+        /** City. */
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
@@ -118,16 +105,13 @@ public final class SubscribedServiceLocation
          *
          * @param city the value to set
          * @return this builder
-         **/
+         */
         public Builder city(String city) {
             this.city = city;
             this.__explicitlySet__.add("city");
             return this;
         }
-        /**
-         * Country.
-         *
-         **/
+        /** Country. */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
@@ -136,16 +120,13 @@ public final class SubscribedServiceLocation
          *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /**
-         * Region.
-         *
-         **/
+        /** Region. */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
@@ -154,16 +135,13 @@ public final class SubscribedServiceLocation
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /**
-         * Region.
-         *
-         **/
+        /** Region. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
         private Long tcaLocationId;
 
@@ -172,7 +150,7 @@ public final class SubscribedServiceLocation
          *
          * @param tcaLocationId the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaLocationId(Long tcaLocationId) {
             this.tcaLocationId = tcaLocationId;
             this.__explicitlySet__.add("tcaLocationId");
@@ -225,9 +203,7 @@ public final class SubscribedServiceLocation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -236,10 +212,7 @@ public final class SubscribedServiceLocation
         return new Builder().copy(this);
     }
 
-    /**
-     * Address first line.
-     *
-     **/
+    /** Address first line. */
     @com.fasterxml.jackson.annotation.JsonProperty("address1")
     private final String address1;
 
@@ -247,15 +220,12 @@ public final class SubscribedServiceLocation
      * Address first line.
      *
      * @return the value
-     **/
+     */
     public String getAddress1() {
         return address1;
     }
 
-    /**
-     * Address second line.
-     *
-     **/
+    /** Address second line. */
     @com.fasterxml.jackson.annotation.JsonProperty("address2")
     private final String address2;
 
@@ -263,15 +233,12 @@ public final class SubscribedServiceLocation
      * Address second line.
      *
      * @return the value
-     **/
+     */
     public String getAddress2() {
         return address2;
     }
 
-    /**
-     * Postal code.
-     *
-     **/
+    /** Postal code. */
     @com.fasterxml.jackson.annotation.JsonProperty("postalCode")
     private final String postalCode;
 
@@ -279,15 +246,12 @@ public final class SubscribedServiceLocation
      * Postal code.
      *
      * @return the value
-     **/
+     */
     public String getPostalCode() {
         return postalCode;
     }
 
-    /**
-     * City.
-     *
-     **/
+    /** City. */
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
@@ -295,15 +259,12 @@ public final class SubscribedServiceLocation
      * City.
      *
      * @return the value
-     **/
+     */
     public String getCity() {
         return city;
     }
 
-    /**
-     * Country.
-     *
-     **/
+    /** Country. */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
@@ -311,15 +272,12 @@ public final class SubscribedServiceLocation
      * Country.
      *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
 
-    /**
-     * Region.
-     *
-     **/
+    /** Region. */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
@@ -327,15 +285,12 @@ public final class SubscribedServiceLocation
      * Region.
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Region.
-     *
-     **/
+    /** Region. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaLocationId")
     private final Long tcaLocationId;
 
@@ -343,7 +298,7 @@ public final class SubscribedServiceLocation
      * Region.
      *
      * @return the value
-     **/
+     */
     public Long getTcaLocationId() {
         return tcaLocationId;
     }
@@ -355,6 +310,7 @@ public final class SubscribedServiceLocation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

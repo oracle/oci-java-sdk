@@ -5,27 +5,25 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The Fixed Number masking format uses a constant number for masking. To learn more,
- * check Fixed Number in the Data Safe documentation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Fixed Number masking format uses a constant number for masking. To learn more, check Fixed
+ * Number in the Data Safe documentation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FixedNumberFormatEntry.Builder.class
-)
+        builder = FixedNumberFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FixedNumberFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -37,17 +35,16 @@ public final class FixedNumberFormatEntry extends FormatEntry {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The constant number to be used for masking.
-         **/
+        /** The constant number to be used for masking. */
         @com.fasterxml.jackson.annotation.JsonProperty("fixedNumber")
         private java.math.BigDecimal fixedNumber;
 
         /**
          * The constant number to be used for masking.
+         *
          * @param fixedNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder fixedNumber(java.math.BigDecimal fixedNumber) {
             this.fixedNumber = fixedNumber;
             this.__explicitlySet__.add("fixedNumber");
@@ -78,9 +75,7 @@ public final class FixedNumberFormatEntry extends FormatEntry {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,16 +90,15 @@ public final class FixedNumberFormatEntry extends FormatEntry {
         this.fixedNumber = fixedNumber;
     }
 
-    /**
-     * The constant number to be used for masking.
-     **/
+    /** The constant number to be used for masking. */
     @com.fasterxml.jackson.annotation.JsonProperty("fixedNumber")
     private final java.math.BigDecimal fixedNumber;
 
     /**
      * The constant number to be used for masking.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getFixedNumber() {
         return fixedNumber;
     }
@@ -116,6 +110,7 @@ public final class FixedNumberFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

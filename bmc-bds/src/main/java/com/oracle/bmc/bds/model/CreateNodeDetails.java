@@ -5,21 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the new node.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the new node. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateNodeDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateNodeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = CreateNodeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateNodeDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "nodeType",
@@ -44,69 +45,65 @@ public final class CreateNodeDetails extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Big Data Service cluster node type.
-         **/
+        /** The Big Data Service cluster node type. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
         private Node.NodeType nodeType;
 
         /**
          * The Big Data Service cluster node type.
+         *
          * @param nodeType the value to set
          * @return this builder
-         **/
+         */
         public Builder nodeType(Node.NodeType nodeType) {
             this.nodeType = nodeType;
             this.__explicitlySet__.add("nodeType");
             return this;
         }
-        /**
-         * Shape of the node.
-         **/
+        /** Shape of the node. */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Shape of the node.
+         *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The size of block volume in GB to be attached to a given node. All the
-         * details needed for attaching the block volume are managed by service itself.
-         *
-         **/
+         * The size of block volume in GB to be attached to a given node. All the details needed for
+         * attaching the block volume are managed by service itself.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
-         * The size of block volume in GB to be attached to a given node. All the
-         * details needed for attaching the block volume are managed by service itself.
+         * The size of block volume in GB to be attached to a given node. All the details needed for
+         * attaching the block volume are managed by service itself.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-        /**
-         * The OCID of the subnet in which the node will be created.
-         **/
+        /** The OCID of the subnet in which the node will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet in which the node will be created.
+         *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -160,9 +157,7 @@ public final class CreateNodeDetails extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,62 +166,58 @@ public final class CreateNodeDetails extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The Big Data Service cluster node type.
-     **/
+    /** The Big Data Service cluster node type. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeType")
     private final Node.NodeType nodeType;
 
     /**
      * The Big Data Service cluster node type.
+     *
      * @return the value
-     **/
+     */
     public Node.NodeType getNodeType() {
         return nodeType;
     }
 
-    /**
-     * Shape of the node.
-     **/
+    /** Shape of the node. */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Shape of the node.
+     *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
 
     /**
-     * The size of block volume in GB to be attached to a given node. All the
-     * details needed for attaching the block volume are managed by service itself.
-     *
-     **/
+     * The size of block volume in GB to be attached to a given node. All the details needed for
+     * attaching the block volume are managed by service itself.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
     /**
-     * The size of block volume in GB to be attached to a given node. All the
-     * details needed for attaching the block volume are managed by service itself.
+     * The size of block volume in GB to be attached to a given node. All the details needed for
+     * attaching the block volume are managed by service itself.
      *
      * @return the value
-     **/
+     */
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
 
-    /**
-     * The OCID of the subnet in which the node will be created.
-     **/
+    /** The OCID of the subnet in which the node will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet in which the node will be created.
+     *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -245,6 +236,7 @@ public final class CreateNodeDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

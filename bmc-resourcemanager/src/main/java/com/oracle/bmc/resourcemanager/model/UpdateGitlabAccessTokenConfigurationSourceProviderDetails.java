@@ -6,26 +6,25 @@ package com.oracle.bmc.resourcemanager.model;
 
 /**
  * The details for updating a configuration source provider of the type {@code GITLAB_ACCESS_TOKEN}.
- * This type corresponds to a configuration source provider in GitLab that is authenticated with a personal access token.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * This type corresponds to a configuration source provider in GitLab that is authenticated with a
+ * personal access token. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateGitlabAccessTokenConfigurationSourceProviderDetails.Builder.class
-)
+        builder = UpdateGitlabAccessTokenConfigurationSourceProviderDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configSourceProviderType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configSourceProviderType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
         extends UpdateConfigurationSourceProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -76,37 +75,31 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The Git service endpoint.
-         * Example: {@code https://gitlab.com}
-         *
-         **/
+        /** The Git service endpoint. Example: {@code https://gitlab.com} */
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
         /**
-         * The Git service endpoint.
-         * Example: {@code https://gitlab.com}
+         * The Git service endpoint. Example: {@code https://gitlab.com}
          *
          * @param apiEndpoint the value to set
          * @return this builder
-         **/
+         */
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
             return this;
         }
-        /**
-         * The personal access token to be configured on the GitLab repository.
-         **/
+        /** The personal access token to be configured on the GitLab repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
          * The personal access token to be configured on the GitLab repository.
+         *
          * @param accessToken the value to set
          * @return this builder
-         **/
+         */
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -159,9 +152,7 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,34 +175,28 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
         this.accessToken = accessToken;
     }
 
-    /**
-     * The Git service endpoint.
-     * Example: {@code https://gitlab.com}
-     *
-     **/
+    /** The Git service endpoint. Example: {@code https://gitlab.com} */
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
     /**
-     * The Git service endpoint.
-     * Example: {@code https://gitlab.com}
+     * The Git service endpoint. Example: {@code https://gitlab.com}
      *
      * @return the value
-     **/
+     */
     public String getApiEndpoint() {
         return apiEndpoint;
     }
 
-    /**
-     * The personal access token to be configured on the GitLab repository.
-     **/
+    /** The personal access token to be configured on the GitLab repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
      * The personal access token to be configured on the GitLab repository.
+     *
      * @return the value
-     **/
+     */
     public String getAccessToken() {
         return accessToken;
     }
@@ -223,6 +208,7 @@ public final class UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

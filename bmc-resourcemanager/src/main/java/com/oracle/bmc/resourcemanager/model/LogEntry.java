@@ -5,19 +5,20 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Log entry for an operation resulting from a job's execution.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Log entry for an operation resulting from a job's execution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LogEntry extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "level", "timestamp", "message"})
     public LogEntry(Type type, Level level, java.util.Date timestamp, String message) {
@@ -30,71 +31,65 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Specifies the log type for the log entry.
-         **/
+        /** Specifies the log type for the log entry. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Specifies the log type for the log entry.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Specifies the severity level of the log entry.
-         **/
+        /** Specifies the severity level of the log entry. */
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Level level;
 
         /**
          * Specifies the severity level of the log entry.
+         *
          * @param level the value to set
          * @return this builder
-         **/
+         */
         public Builder level(Level level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
         /**
-         * The date and time of the log entry.
-         * Format is defined by RFC3339.
-         * Example: {@code 2020-01-25T21:10:29.600Z}
-         *
-         **/
+         * The date and time of the log entry. Format is defined by RFC3339. Example: {@code
+         * 2020-01-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The date and time of the log entry.
-         * Format is defined by RFC3339.
-         * Example: {@code 2020-01-25T21:10:29.600Z}
+         * The date and time of the log entry. Format is defined by RFC3339. Example: {@code
+         * 2020-01-25T21:10:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The log entry value.
-         **/
+        /** The log entry value. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * The log entry value.
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -130,9 +125,7 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,15 +134,13 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return new Builder().copy(this);
     }
 
-    /**
-     * Specifies the log type for the log entry.
-     **/
-    public enum Type {
+    /** Specifies the log type for the log entry. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         TerraformConsole("TERRAFORM_CONSOLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -186,24 +177,21 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies the log type for the log entry.
-     **/
+    /** Specifies the log type for the log entry. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Specifies the log type for the log entry.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
-    /**
-     * Specifies the severity level of the log entry.
-     **/
-    public enum Level {
+    /** Specifies the severity level of the log entry. */
+    public enum Level implements com.oracle.bmc.http.internal.BmcEnum {
         Trace("TRACE"),
         Debug("DEBUG"),
         Info("INFO"),
@@ -212,8 +200,8 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Fatal("FATAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -251,50 +239,45 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies the severity level of the log entry.
-     **/
+    /** Specifies the severity level of the log entry. */
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Level level;
 
     /**
      * Specifies the severity level of the log entry.
+     *
      * @return the value
-     **/
+     */
     public Level getLevel() {
         return level;
     }
 
     /**
-     * The date and time of the log entry.
-     * Format is defined by RFC3339.
-     * Example: {@code 2020-01-25T21:10:29.600Z}
-     *
-     **/
+     * The date and time of the log entry. Format is defined by RFC3339. Example: {@code
+     * 2020-01-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The date and time of the log entry.
-     * Format is defined by RFC3339.
-     * Example: {@code 2020-01-25T21:10:29.600Z}
+     * The date and time of the log entry. Format is defined by RFC3339. Example: {@code
+     * 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The log entry value.
-     **/
+    /** The log entry value. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * The log entry value.
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -306,6 +289,7 @@ public final class LogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

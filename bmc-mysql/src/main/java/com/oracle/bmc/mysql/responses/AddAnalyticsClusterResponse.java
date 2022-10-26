@@ -8,10 +8,7 @@ import com.oracle.bmc.mysql.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,13 +37,14 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -55,13 +52,12 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /**
-     * The returned AnalyticsCluster instance.
-     */
+    /** The returned AnalyticsCluster instance. */
     private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
     /**
      * The returned AnalyticsCluster instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mysql.model.AnalyticsCluster getAnalyticsCluster() {
@@ -78,7 +74,7 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
     })
     private AddAnalyticsClusterResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -90,25 +86,25 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         this.analyticsCluster = analyticsCluster;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<AddAnalyticsClusterResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,15 +119,14 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -142,13 +137,14 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -158,13 +154,12 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned AnalyticsCluster instance.
-         */
+        /** The returned AnalyticsCluster instance. */
         private com.oracle.bmc.mysql.model.AnalyticsCluster analyticsCluster;
 
         /**
          * The returned AnalyticsCluster instance.
+         *
          * @param analyticsCluster the value to set
          * @return this builder
          */
@@ -176,8 +171,10 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(AddAnalyticsClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -191,8 +188,10 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public AddAnalyticsClusterResponse build() {
             return new AddAnalyticsClusterResponse(
                     __httpStatusCode__,
@@ -206,6 +205,7 @@ public class AddAnalyticsClusterResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

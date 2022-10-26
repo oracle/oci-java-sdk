@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle Cloud Infrastructure resource that allows you to manage an external Oracle container database.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An Oracle Cloud Infrastructure resource that allows you to manage an external Oracle container
+ * database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExternalContainerDatabaseSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExternalContainerDatabaseSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExternalContainerDatabaseSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -89,60 +89,65 @@ public final class ExternalContainerDatabaseSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -151,140 +156,135 @@ public final class ExternalContainerDatabaseSummary
         }
         /**
          * The user-friendly name for the external database. The name does not have to be unique.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the external database. The name does not have to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure external database resource.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Oracle Cloud Infrastructure external database resource.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Additional information about the current lifecycle state.
-         **/
+        /** Additional information about the current lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /**
-         * The current state of the Oracle Cloud Infrastructure external database resource.
-         **/
+        /** The current state of the Oracle Cloud Infrastructure external database resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Oracle Cloud Infrastructure external database resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The date and time the database was created.
-         **/
+        /** The date and time the database was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the database was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The {@code DB_UNIQUE_NAME} of the external database.
-         **/
+        /** The {@code DB_UNIQUE_NAME} of the external database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * The {@code DB_UNIQUE_NAME} of the external database.
+         *
          * @param dbUniqueName the value to set
          * @return this builder
-         **/
+         */
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
         /**
-         * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-         *
-         **/
+         * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle
+         * Cloud.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
         /**
-         * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+         * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle
+         * Cloud.
          *
          * @param dbId the value to set
          * @return this builder
-         **/
+         */
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
             return this;
         }
-        /**
-         * The Oracle Database version.
-         **/
+        /** The Oracle Database version. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
         private String databaseVersion;
 
         /**
          * The Oracle Database version.
+         *
          * @param databaseVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseVersion(String databaseVersion) {
             this.databaseVersion = databaseVersion;
             this.__explicitlySet__.add("databaseVersion");
             return this;
         }
-        /**
-         * The Oracle Database edition.
-         *
-         **/
+        /** The Oracle Database edition. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
         private DatabaseEdition databaseEdition;
 
@@ -293,93 +293,88 @@ public final class ExternalContainerDatabaseSummary
          *
          * @param databaseEdition the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseEdition(DatabaseEdition databaseEdition) {
             this.databaseEdition = databaseEdition;
             this.__explicitlySet__.add("databaseEdition");
             return this;
         }
         /**
-         * The time zone of the external database.
-         * It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name,
-         * depending on how the time zone value was specified when the database was created / last altered.
-         *
-         **/
+         * The time zone of the external database. It is a time zone offset (a character type in the
+         * format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value
+         * was specified when the database was created / last altered.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone of the external database.
-         * It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name,
-         * depending on how the time zone value was specified when the database was created / last altered.
+         * The time zone of the external database. It is a time zone offset (a character type in the
+         * format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value
+         * was specified when the database was created / last altered.
          *
          * @param timeZone the value to set
          * @return this builder
-         **/
+         */
         public Builder timeZone(String timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
             return this;
         }
-        /**
-         * The character set of the external database.
-         **/
+        /** The character set of the external database. */
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
         /**
          * The character set of the external database.
+         *
          * @param characterSet the value to set
          * @return this builder
-         **/
+         */
         public Builder characterSet(String characterSet) {
             this.characterSet = characterSet;
             this.__explicitlySet__.add("characterSet");
             return this;
         }
-        /**
-         * The national character of the external database.
-         **/
+        /** The national character of the external database. */
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
         /**
          * The national character of the external database.
+         *
          * @param ncharacterSet the value to set
          * @return this builder
-         **/
+         */
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
-        /**
-         * The database packs licensed for the external Oracle Database.
-         **/
+        /** The database packs licensed for the external Oracle Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
         private String dbPacks;
 
         /**
          * The database packs licensed for the external Oracle Database.
+         *
          * @param dbPacks the value to set
          * @return this builder
-         **/
+         */
         public Builder dbPacks(String dbPacks) {
             this.dbPacks = dbPacks;
             this.__explicitlySet__.add("dbPacks");
             return this;
         }
-        /**
-         * The Oracle Database configuration
-         **/
+        /** The Oracle Database configuration */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConfiguration")
         private DatabaseConfiguration databaseConfiguration;
 
         /**
          * The Oracle Database configuration
+         *
          * @param databaseConfiguration the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseConfiguration(DatabaseConfiguration databaseConfiguration) {
             this.databaseConfiguration = databaseConfiguration;
             this.__explicitlySet__.add("databaseConfiguration");
@@ -498,9 +493,7 @@ public final class ExternalContainerDatabaseSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -510,107 +503,109 @@ public final class ExternalContainerDatabaseSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /**
-     * The user-friendly name for the external database. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the external database. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the external database. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure external database resource.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Oracle Cloud Infrastructure external database resource.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Additional information about the current lifecycle state.
-     **/
+    /** Additional information about the current lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /**
-     * The current state of the Oracle Cloud Infrastructure external database resource.
-     **/
-    public enum LifecycleState {
+    /** The current state of the Oracle Cloud Infrastructure external database resource. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         NotConnected("NOT_CONNECTED"),
         Available("AVAILABLE"),
@@ -620,8 +615,8 @@ public final class ExternalContainerDatabaseSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -660,52 +655,48 @@ public final class ExternalContainerDatabaseSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the Oracle Cloud Infrastructure external database resource.
-     **/
+    /** The current state of the Oracle Cloud Infrastructure external database resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Oracle Cloud Infrastructure external database resource.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The date and time the database was created.
-     **/
+    /** The date and time the database was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the database was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The {@code DB_UNIQUE_NAME} of the external database.
-     **/
+    /** The {@code DB_UNIQUE_NAME} of the external database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * The {@code DB_UNIQUE_NAME} of the external database.
+     *
      * @return the value
-     **/
+     */
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
     /**
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
@@ -713,38 +704,34 @@ public final class ExternalContainerDatabaseSummary
      * The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
      *
      * @return the value
-     **/
+     */
     public String getDbId() {
         return dbId;
     }
 
-    /**
-     * The Oracle Database version.
-     **/
+    /** The Oracle Database version. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
     private final String databaseVersion;
 
     /**
      * The Oracle Database version.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseVersion() {
         return databaseVersion;
     }
 
-    /**
-     * The Oracle Database edition.
-     *
-     **/
-    public enum DatabaseEdition {
+    /** The Oracle Database edition. */
+    public enum DatabaseEdition implements com.oracle.bmc.http.internal.BmcEnum {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -783,10 +770,7 @@ public final class ExternalContainerDatabaseSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The Oracle Database edition.
-     *
-     **/
+    /** The Oracle Database edition. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     private final DatabaseEdition databaseEdition;
 
@@ -794,83 +778,77 @@ public final class ExternalContainerDatabaseSummary
      * The Oracle Database edition.
      *
      * @return the value
-     **/
+     */
     public DatabaseEdition getDatabaseEdition() {
         return databaseEdition;
     }
 
     /**
-     * The time zone of the external database.
-     * It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name,
-     * depending on how the time zone value was specified when the database was created / last altered.
-     *
-     **/
+     * The time zone of the external database. It is a time zone offset (a character type in the
+     * format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was
+     * specified when the database was created / last altered.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone of the external database.
-     * It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name,
-     * depending on how the time zone value was specified when the database was created / last altered.
+     * The time zone of the external database. It is a time zone offset (a character type in the
+     * format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was
+     * specified when the database was created / last altered.
      *
      * @return the value
-     **/
+     */
     public String getTimeZone() {
         return timeZone;
     }
 
-    /**
-     * The character set of the external database.
-     **/
+    /** The character set of the external database. */
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     private final String characterSet;
 
     /**
      * The character set of the external database.
+     *
      * @return the value
-     **/
+     */
     public String getCharacterSet() {
         return characterSet;
     }
 
-    /**
-     * The national character of the external database.
-     **/
+    /** The national character of the external database. */
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
      * The national character of the external database.
+     *
      * @return the value
-     **/
+     */
     public String getNcharacterSet() {
         return ncharacterSet;
     }
 
-    /**
-     * The database packs licensed for the external Oracle Database.
-     **/
+    /** The database packs licensed for the external Oracle Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
     private final String dbPacks;
 
     /**
      * The database packs licensed for the external Oracle Database.
+     *
      * @return the value
-     **/
+     */
     public String getDbPacks() {
         return dbPacks;
     }
 
-    /**
-     * The Oracle Database configuration
-     **/
-    public enum DatabaseConfiguration {
+    /** The Oracle Database configuration */
+    public enum DatabaseConfiguration implements com.oracle.bmc.http.internal.BmcEnum {
         Rac("RAC"),
         SingleInstance("SINGLE_INSTANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -909,16 +887,15 @@ public final class ExternalContainerDatabaseSummary
             return UnknownEnumValue;
         }
     };
-    /**
-     * The Oracle Database configuration
-     **/
+    /** The Oracle Database configuration */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConfiguration")
     private final DatabaseConfiguration databaseConfiguration;
 
     /**
      * The Oracle Database configuration
+     *
      * @return the value
-     **/
+     */
     public DatabaseConfiguration getDatabaseConfiguration() {
         return databaseConfiguration;
     }
@@ -944,6 +921,7 @@ public final class ExternalContainerDatabaseSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

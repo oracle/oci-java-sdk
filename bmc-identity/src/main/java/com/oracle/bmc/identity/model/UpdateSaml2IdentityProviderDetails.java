@@ -5,25 +5,24 @@
 package com.oracle.bmc.identity.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateSaml2IdentityProviderDetails.Builder.class
-)
+        builder = UpdateSaml2IdentityProviderDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "protocol"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "protocol")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -55,29 +54,25 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
             return this;
         }
         /**
-         * The URL for retrieving the identity provider's metadata,
-         * which contains information required for federating.
-         *
-         **/
+         * The URL for retrieving the identity provider's metadata, which contains information
+         * required for federating.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
         /**
-         * The URL for retrieving the identity provider's metadata,
-         * which contains information required for federating.
+         * The URL for retrieving the identity provider's metadata, which contains information
+         * required for federating.
          *
          * @param metadataUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder metadataUrl(String metadataUrl) {
             this.metadataUrl = metadataUrl;
             this.__explicitlySet__.add("metadataUrl");
             return this;
         }
-        /**
-         * The XML that contains the information required for federating.
-         *
-         **/
+        /** The XML that contains the information required for federating. */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
@@ -86,27 +81,26 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
          *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
-         * Extra name value pairs associated with this identity provider.
-         * Example: {@code {"clientId": "app_sf3kdjf3"}}
-         *
-         **/
+         * Extra name value pairs associated with this identity provider. Example: {@code
+         * {"clientId": "app_sf3kdjf3"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
         private java.util.Map<String, String> freeformAttributes;
 
         /**
-         * Extra name value pairs associated with this identity provider.
-         * Example: {@code {"clientId": "app_sf3kdjf3"}}
+         * Extra name value pairs associated with this identity provider. Example: {@code
+         * {"clientId": "app_sf3kdjf3"}}
          *
          * @param freeformAttributes the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformAttributes(java.util.Map<String, String> freeformAttributes) {
             this.freeformAttributes = freeformAttributes;
             this.__explicitlySet__.add("freeformAttributes");
@@ -155,9 +149,7 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,27 +173,23 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
     }
 
     /**
-     * The URL for retrieving the identity provider's metadata,
-     * which contains information required for federating.
-     *
-     **/
+     * The URL for retrieving the identity provider's metadata, which contains information required
+     * for federating.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
     private final String metadataUrl;
 
     /**
-     * The URL for retrieving the identity provider's metadata,
-     * which contains information required for federating.
+     * The URL for retrieving the identity provider's metadata, which contains information required
+     * for federating.
      *
      * @return the value
-     **/
+     */
     public String getMetadataUrl() {
         return metadataUrl;
     }
 
-    /**
-     * The XML that contains the information required for federating.
-     *
-     **/
+    /** The XML that contains the information required for federating. */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
@@ -209,25 +197,24 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
      * The XML that contains the information required for federating.
      *
      * @return the value
-     **/
+     */
     public String getMetadata() {
         return metadata;
     }
 
     /**
-     * Extra name value pairs associated with this identity provider.
-     * Example: {@code {"clientId": "app_sf3kdjf3"}}
-     *
-     **/
+     * Extra name value pairs associated with this identity provider. Example: {@code {"clientId":
+     * "app_sf3kdjf3"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
     private final java.util.Map<String, String> freeformAttributes;
 
     /**
-     * Extra name value pairs associated with this identity provider.
-     * Example: {@code {"clientId": "app_sf3kdjf3"}}
+     * Extra name value pairs associated with this identity provider. Example: {@code {"clientId":
+     * "app_sf3kdjf3"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformAttributes() {
         return freeformAttributes;
     }
@@ -239,6 +226,7 @@ public final class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProv
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

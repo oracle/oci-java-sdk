@@ -6,125 +6,98 @@ package com.oracle.bmc.logging.requests;
 
 import com.oracle.bmc.logging.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListUnifiedAgentConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUnifiedAgentConfigurationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/logging/ListUnifiedAgentConfigurationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListUnifiedAgentConfigurationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 public class ListUnifiedAgentConfigurationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Compartment OCID to list resources in. See compartmentIdInSubtree
-     *      for nested compartments traversal.
-     *
+     * Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments
+     * traversal.
      */
     private String compartmentId;
 
     /**
-     * Compartment OCID to list resources in. See compartmentIdInSubtree
-     *      for nested compartments traversal.
-     *
+     * Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments
+     * traversal.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * Custom log OCID to list resources with the log as destination.
-     *
-     */
+    /** Custom log OCID to list resources with the log as destination. */
     private String logId;
 
-    /**
-     * Custom log OCID to list resources with the log as destination.
-     *
-     */
+    /** Custom log OCID to list resources with the log as destination. */
     public String getLogId() {
         return logId;
     }
-    /**
-     * Specifies whether or not nested compartments should be traversed. Defaults to false.
-     */
+    /** Specifies whether or not nested compartments should be traversed. Defaults to false. */
     private Boolean isCompartmentIdInSubtree;
 
-    /**
-     * Specifies whether or not nested compartments should be traversed. Defaults to false.
-     */
+    /** Specifies whether or not nested compartments should be traversed. Defaults to false. */
     public Boolean getIsCompartmentIdInSubtree() {
         return isCompartmentIdInSubtree;
     }
-    /**
-     * The OCID of a group or a dynamic group.
-     */
+    /** The OCID of a group or a dynamic group. */
     private String groupId;
 
-    /**
-     * The OCID of a group or a dynamic group.
-     */
+    /** The OCID of a group or a dynamic group. */
     public String getGroupId() {
         return groupId;
     }
-    /**
-     * Resource name
-     */
+    /** Resource name */
     private String displayName;
 
-    /**
-     * Resource name
-     */
+    /** Resource name */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * Lifecycle state of the log object
-     */
+    /** Lifecycle state of the log object */
     private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState;
 
-    /**
-     * Lifecycle state of the log object
-     */
+    /** Lifecycle state of the log object */
     public com.oracle.bmc.logging.model.LogLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+     * response header from the previous "List" call. For important details about how pagination
+     * works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+     * response header from the previous "List" call. For important details about how pagination
+     * works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -158,24 +131,17 @@ public class ListUnifiedAgentConfigurationsRequest
     };
 
     /**
-     * The field to sort by (one column only). Default sort order is
-     * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-     *
+     * The field to sort by (one column only). Default sort order is ascending exception of {@code
+     * timeCreated} and {@code timeLastModified} columns (descending).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, whether 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -208,24 +174,19 @@ public class ListUnifiedAgentConfigurationsRequest
         }
     };
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     *
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -234,20 +195,18 @@ public class ListUnifiedAgentConfigurationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUnifiedAgentConfigurationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Compartment OCID to list resources in. See compartmentIdInSubtree
-         *      for nested compartments traversal.
-         *
+         * Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments
+         * traversal.
          */
         private String compartmentId = null;
 
         /**
-         * Compartment OCID to list resources in. See compartmentIdInSubtree
-         *      for nested compartments traversal.
+         * Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments
+         * traversal.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -257,10 +216,7 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * Custom log OCID to list resources with the log as destination.
-         *
-         */
+        /** Custom log OCID to list resources with the log as destination. */
         private String logId = null;
 
         /**
@@ -274,13 +230,12 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * Specifies whether or not nested compartments should be traversed. Defaults to false.
-         */
+        /** Specifies whether or not nested compartments should be traversed. Defaults to false. */
         private Boolean isCompartmentIdInSubtree = null;
 
         /**
          * Specifies whether or not nested compartments should be traversed. Defaults to false.
+         *
          * @param isCompartmentIdInSubtree the value to set
          * @return this builder instance
          */
@@ -289,13 +244,12 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * The OCID of a group or a dynamic group.
-         */
+        /** The OCID of a group or a dynamic group. */
         private String groupId = null;
 
         /**
          * The OCID of a group or a dynamic group.
+         *
          * @param groupId the value to set
          * @return this builder instance
          */
@@ -304,13 +258,12 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * Resource name
-         */
+        /** Resource name */
         private String displayName = null;
 
         /**
          * Resource name
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -319,13 +272,12 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * Lifecycle state of the log object
-         */
+        /** Lifecycle state of the log object */
         private com.oracle.bmc.logging.model.LogLifecycleState lifecycleState = null;
 
         /**
          * Lifecycle state of the log object
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -335,10 +287,7 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a paginated "List" call.
-         *
-         */
+        /** The maximum number of items to return in a paginated "List" call. */
         private Integer limit = null;
 
         /**
@@ -353,15 +302,18 @@ public class ListUnifiedAgentConfigurationsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+         * response header from the previous "List" call. For important details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} or {@code opc-previous-page}
+         * response header from the previous "List" call. For important details about how pagination
+         * works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -372,15 +324,14 @@ public class ListUnifiedAgentConfigurationsRequest
         }
 
         /**
-         * The field to sort by (one column only). Default sort order is
-         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
-         *
+         * The field to sort by (one column only). Default sort order is ascending exception of
+         * {@code timeCreated} and {@code timeLastModified} columns (descending).
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by (one column only). Default sort order is
-         * ascending exception of {@code timeCreated} and {@code timeLastModified} columns (descending).
+         * The field to sort by (one column only). Default sort order is ascending exception of
+         * {@code timeCreated} and {@code timeLastModified} columns (descending).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -390,10 +341,7 @@ public class ListUnifiedAgentConfigurationsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, whether 'asc' or 'desc'.
-         *
-         */
+        /** The sort order to use, whether 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
@@ -408,15 +356,14 @@ public class ListUnifiedAgentConfigurationsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -428,18 +375,19 @@ public class ListUnifiedAgentConfigurationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -451,6 +399,7 @@ public class ListUnifiedAgentConfigurationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListUnifiedAgentConfigurationsRequest o) {
@@ -473,10 +422,11 @@ public class ListUnifiedAgentConfigurationsRequest
         /**
          * Build the instance of ListUnifiedAgentConfigurationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListUnifiedAgentConfigurationsRequest
          */
@@ -490,7 +440,8 @@ public class ListUnifiedAgentConfigurationsRequest
         /**
          * Build the instance of ListUnifiedAgentConfigurationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUnifiedAgentConfigurationsRequest
@@ -510,12 +461,15 @@ public class ListUnifiedAgentConfigurationsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListUnifiedAgentConfigurationsRequest(compartmentId, logId, isCompartmentIdInSubtree, groupId, displayName, lifecycleState, limit, page, sortBy, sortOrder, opcRequestId);
+            // new ListUnifiedAgentConfigurationsRequest(compartmentId, logId,
+            // isCompartmentIdInSubtree, groupId, displayName, lifecycleState, limit, page, sortBy,
+            // sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -535,6 +489,7 @@ public class ListUnifiedAgentConfigurationsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

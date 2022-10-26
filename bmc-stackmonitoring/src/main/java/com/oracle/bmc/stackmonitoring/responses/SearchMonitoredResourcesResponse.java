@@ -9,15 +9,14 @@ import com.oracle.bmc.stackmonitoring.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,16 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -44,10 +42,7 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /**
-     * For pagination of a list of items. The total number of items in the result.
-     *
-     */
+    /** For pagination of a list of items. The total number of items in the result. */
     private Integer opcTotalItems;
 
     /**
@@ -59,14 +54,13 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
         return opcTotalItems;
     }
 
-    /**
-     * The returned MonitoredResourceCollection instance.
-     */
+    /** The returned MonitoredResourceCollection instance. */
     private com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection
             monitoredResourceCollection;
 
     /**
      * The returned MonitoredResourceCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection
@@ -84,7 +78,7 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
     })
     private SearchMonitoredResourcesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
@@ -97,31 +91,34 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
         this.monitoredResourceCollection = monitoredResourceCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    SearchMonitoredResourcesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,17 +129,16 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -152,10 +148,7 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * For pagination of a list of items. The total number of items in the result.
-         *
-         */
+        /** For pagination of a list of items. The total number of items in the result. */
         private Integer opcTotalItems;
 
         /**
@@ -169,14 +162,13 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned MonitoredResourceCollection instance.
-         */
+        /** The returned MonitoredResourceCollection instance. */
         private com.oracle.bmc.stackmonitoring.model.MonitoredResourceCollection
                 monitoredResourceCollection;
 
         /**
          * The returned MonitoredResourceCollection instance.
+         *
          * @param monitoredResourceCollection the value to set
          * @return this builder
          */
@@ -189,8 +181,10 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(SearchMonitoredResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -204,8 +198,10 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public SearchMonitoredResourcesResponse build() {
             return new SearchMonitoredResourcesResponse(
                     __httpStatusCode__,
@@ -219,6 +215,7 @@ public class SearchMonitoredResourcesResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

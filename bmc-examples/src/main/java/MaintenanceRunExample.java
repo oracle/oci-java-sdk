@@ -16,13 +16,13 @@ import com.oracle.bmc.database.responses.GetMaintenanceRunResponse;
 import com.oracle.bmc.database.responses.ListMaintenanceRunsResponse;
 
 /**
- * Example class to show the usage of MaintenanceRun DBaaS APIs. It shows how to
- * perform get, update and list of MaintenanceRun. It will:
+ * Example class to show the usage of MaintenanceRun DBaaS APIs. It shows how to perform get, update
+ * and list of MaintenanceRun. It will:
+ *
  * <ul>
- *   <li>Get MaintenanceRun with given Id.</li>
- *   <li>Update MaintenanceRun to disabled state.</li>
- *   <li>List MaintenanceRuns in a given compartment.</li>
- * <u/>
+ *   <li>Get MaintenanceRun with given Id.
+ *   <li>Update MaintenanceRun to disabled state.
+ *   <li>List MaintenanceRuns in a given compartment. <u/>
  */
 public class MaintenanceRunExample {
 
@@ -39,8 +39,10 @@ public class MaintenanceRunExample {
         String compartmentId = args[0];
         String maintenanceRunId = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

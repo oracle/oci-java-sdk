@@ -6,19 +6,24 @@ package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackResourceDriftDetailsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListStackResourceDriftDetailsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListStackResourceDriftDetailsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListStackResourceDriftDetailsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListStackResourceDriftDetailsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the stack.
      */
     private String stackId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the stack.
      */
     public String getStackId() {
         return stackId;
@@ -26,37 +31,32 @@ public class ListStackResourceDriftDetailsRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the work request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * A filter that returns only resources that match the given drift status. The value is case-insensitive.
-     * Allowable values -
-     *   - NOT_CHECKED
-     *   - MODIFIED
-     *   - IN_SYNC
-     *   - DELETED
-     *
+     * A filter that returns only resources that match the given drift status. The value is
+     * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
      */
     private java.util.List<
                     com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -64,13 +64,8 @@ public class ListStackResourceDriftDetailsRequest
             resourceDriftStatus;
 
     /**
-     * A filter that returns only resources that match the given drift status. The value is case-insensitive.
-     * Allowable values -
-     *   - NOT_CHECKED
-     *   - MODIFIED
-     *   - IN_SYNC
-     *   - DELETED
-     *
+     * A filter that returns only resources that match the given drift status. The value is
+     * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
      */
     public java.util.List<
                     com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -79,31 +74,31 @@ public class ListStackResourceDriftDetailsRequest
         return resourceDriftStatus;
     }
     /**
-     * The number of items returned in a paginated {@code List} call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * The number of items returned in a paginated {@code List} call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * The number of items returned in a paginated {@code List} call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * The number of items returned in a paginated {@code List} call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -112,17 +107,19 @@ public class ListStackResourceDriftDetailsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListStackResourceDriftDetailsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the stack.
          */
         private String stackId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the stack.
+         *
          * @param stackId the value to set
          * @return this builder instance
          */
@@ -134,7 +131,6 @@ public class ListStackResourceDriftDetailsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -151,12 +147,15 @@ public class ListStackResourceDriftDetailsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the work request.
+         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -166,13 +165,8 @@ public class ListStackResourceDriftDetailsRequest
         }
 
         /**
-         * A filter that returns only resources that match the given drift status. The value is case-insensitive.
-         * Allowable values -
-         *   - NOT_CHECKED
-         *   - MODIFIED
-         *   - IN_SYNC
-         *   - DELETED
-         *
+         * A filter that returns only resources that match the given drift status. The value is
+         * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
          */
         private java.util.List<
                         com.oracle.bmc.resourcemanager.model.StackResourceDriftSummary
@@ -180,12 +174,8 @@ public class ListStackResourceDriftDetailsRequest
                 resourceDriftStatus = null;
 
         /**
-         * A filter that returns only resources that match the given drift status. The value is case-insensitive.
-         * Allowable values -
-         *   - NOT_CHECKED
-         *   - MODIFIED
-         *   - IN_SYNC
-         *   - DELETED
+         * A filter that returns only resources that match the given drift status. The value is
+         * case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC - DELETED
          *
          * @param resourceDriftStatus the value to set
          * @return this builder instance
@@ -200,12 +190,9 @@ public class ListStackResourceDriftDetailsRequest
         }
 
         /**
-         * Singular setter. A filter that returns only resources that match the given drift status. The value is case-insensitive.
-         * Allowable values -
-         *   - NOT_CHECKED
-         *   - MODIFIED
-         *   - IN_SYNC
-         *   - DELETED
+         * Singular setter. A filter that returns only resources that match the given drift status.
+         * The value is case-insensitive. Allowable values - - NOT_CHECKED - MODIFIED - IN_SYNC -
+         * DELETED
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -217,15 +204,16 @@ public class ListStackResourceDriftDetailsRequest
         }
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * The number of items returned in a paginated {@code List} call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -236,15 +224,16 @@ public class ListStackResourceDriftDetailsRequest
         }
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * The value of the {@code opc-next-page} response header from the preceding {@code List}
+         * call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List}
+         * call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -256,18 +245,19 @@ public class ListStackResourceDriftDetailsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -279,6 +269,7 @@ public class ListStackResourceDriftDetailsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListStackResourceDriftDetailsRequest o) {
@@ -296,10 +287,11 @@ public class ListStackResourceDriftDetailsRequest
         /**
          * Build the instance of ListStackResourceDriftDetailsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListStackResourceDriftDetailsRequest
          */
@@ -313,7 +305,8 @@ public class ListStackResourceDriftDetailsRequest
         /**
          * Build the instance of ListStackResourceDriftDetailsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListStackResourceDriftDetailsRequest
@@ -328,12 +321,14 @@ public class ListStackResourceDriftDetailsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListStackResourceDriftDetailsRequest(stackId, opcRequestId, workRequestId, resourceDriftStatus, limit, page);
+            // new ListStackResourceDriftDetailsRequest(stackId, opcRequestId, workRequestId,
+            // resourceDriftStatus, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -348,6 +343,7 @@ public class ListStackResourceDriftDetailsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,23 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Management Agent Configuration for list of include/exclude file system paths (specific to
+ * operating system). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FleetAgentOsConfiguration.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FleetAgentOsConfiguration.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FleetAgentOsConfiguration
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"includePaths", "excludePaths"})
     public FleetAgentOsConfiguration(
@@ -33,10 +33,7 @@ public final class FleetAgentOsConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * An array of file system paths (environment variables supported).
-         *
-         **/
+        /** An array of file system paths (environment variables supported). */
         @com.fasterxml.jackson.annotation.JsonProperty("includePaths")
         private java.util.List<String> includePaths;
 
@@ -45,16 +42,13 @@ public final class FleetAgentOsConfiguration
          *
          * @param includePaths the value to set
          * @return this builder
-         **/
+         */
         public Builder includePaths(java.util.List<String> includePaths) {
             this.includePaths = includePaths;
             this.__explicitlySet__.add("includePaths");
             return this;
         }
-        /**
-         * An array of file system paths (environment variables supported).
-         *
-         **/
+        /** An array of file system paths (environment variables supported). */
         @com.fasterxml.jackson.annotation.JsonProperty("excludePaths")
         private java.util.List<String> excludePaths;
 
@@ -63,7 +57,7 @@ public final class FleetAgentOsConfiguration
          *
          * @param excludePaths the value to set
          * @return this builder
-         **/
+         */
         public Builder excludePaths(java.util.List<String> excludePaths) {
             this.excludePaths = excludePaths;
             this.__explicitlySet__.add("excludePaths");
@@ -94,9 +88,7 @@ public final class FleetAgentOsConfiguration
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,10 +97,7 @@ public final class FleetAgentOsConfiguration
         return new Builder().copy(this);
     }
 
-    /**
-     * An array of file system paths (environment variables supported).
-     *
-     **/
+    /** An array of file system paths (environment variables supported). */
     @com.fasterxml.jackson.annotation.JsonProperty("includePaths")
     private final java.util.List<String> includePaths;
 
@@ -116,15 +105,12 @@ public final class FleetAgentOsConfiguration
      * An array of file system paths (environment variables supported).
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getIncludePaths() {
         return includePaths;
     }
 
-    /**
-     * An array of file system paths (environment variables supported).
-     *
-     **/
+    /** An array of file system paths (environment variables supported). */
     @com.fasterxml.jackson.annotation.JsonProperty("excludePaths")
     private final java.util.List<String> excludePaths;
 
@@ -132,7 +118,7 @@ public final class FleetAgentOsConfiguration
      * An array of file system paths (environment variables supported).
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getExcludePaths() {
         return excludePaths;
     }
@@ -144,6 +130,7 @@ public final class FleetAgentOsConfiguration
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

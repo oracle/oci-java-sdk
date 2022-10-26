@@ -5,19 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * MacroPivotField is used for the PivotField with macro expressions. It can contain the rules according to the macro pattern/attribute added and create new fields according to the PivotKeyValues
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * MacroPivotField is used for the PivotField with macro expressions. It can contain the rules
+ * according to the macro pattern/attribute added and create new fields according to the
+ * PivotKeyValues <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacroPivotField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MacroPivotField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MacroPivotField
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isUseSourceType",
@@ -43,16 +47,19 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
-         **/
+         * Specifies whether the type of macro fields is inferred from an expression or useType
+         * (false) or the source field (true).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
         private Boolean isUseSourceType;
 
         /**
-         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         * Specifies whether the type of macro fields is inferred from an expression or useType
+         * (false) or the source field (true).
+         *
          * @param isUseSourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder isUseSourceType(Boolean isUseSourceType) {
             this.isUseSourceType = isUseSourceType;
             this.__explicitlySet__.add("isUseSourceType");
@@ -86,16 +93,25 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
-         **/
+         * column name pattern can be used to generate the name structure of the generated columns.
+         * By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but
+         * we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX
+         * or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and
+         * suffix to the column name.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
         private String columnNamePattern;
 
         /**
-         * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
+         * column name pattern can be used to generate the name structure of the generated columns.
+         * By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but
+         * we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX
+         * or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and
+         * suffix to the column name.
+         *
          * @param columnNamePattern the value to set
          * @return this builder
-         **/
+         */
         public Builder columnNamePattern(String columnNamePattern) {
             this.columnNamePattern = columnNamePattern;
             this.__explicitlySet__.add("columnNamePattern");
@@ -140,9 +156,7 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,15 +166,18 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
-     **/
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false)
+     * or the source field (true).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
     private final Boolean isUseSourceType;
 
     /**
-     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false)
+     * or the source field (true).
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsUseSourceType() {
         return isUseSourceType;
     }
@@ -187,15 +204,24 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
-     **/
+     * column name pattern can be used to generate the name structure of the generated columns. By
+     * default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can
+     * change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or
+     * MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to
+     * the column name.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("columnNamePattern")
     private final String columnNamePattern;
 
     /**
-     * column name pattern can be used to generate the name structure of the generated columns. By default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to the column name.
+     * column name pattern can be used to generate the name structure of the generated columns. By
+     * default column names are of %PIVOT_KEY_VALUE% or %MACRO_INPUT%_%PIVOT_KEY_VALUE%, but we can
+     * change it something by passing something like MY_PREFIX%PIVOT_KEY_VALUE%MY_SUFFIX or
+     * MY_PREFIX%MACRO_INPUT%_%PIVOT_KEY_VALUE%MY_SUFFIX which will add custom prefix and suffix to
+     * the column name.
+     *
      * @return the value
-     **/
+     */
     public String getColumnNamePattern() {
         return columnNamePattern;
     }
@@ -207,6 +233,7 @@ public final class MacroPivotField extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

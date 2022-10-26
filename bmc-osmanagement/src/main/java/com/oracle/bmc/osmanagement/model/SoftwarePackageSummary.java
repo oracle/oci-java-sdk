@@ -5,22 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Summary information for a software package
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information for a software package <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SoftwarePackageSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SoftwarePackageSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SoftwarePackageSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -51,113 +51,106 @@ public final class SoftwarePackageSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Package name
-         **/
+        /** Package name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Package name
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Unique identifier for the package. NOTE - This is not an OCID
-         **/
+        /** Unique identifier for the package. NOTE - This is not an OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Unique identifier for the package. NOTE - This is not an OCID
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Type of the package
-         **/
+        /** Type of the package */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of the package
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Version of the package
-         **/
+        /** Version of the package */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Version of the package
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * the architecture for which this software was built
-         **/
+        /** the architecture for which this software was built */
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
         /**
          * the architecture for which this software was built
+         *
          * @param architecture the value to set
          * @return this builder
-         **/
+         */
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /**
-         * checksum of the package
-         **/
+        /** checksum of the package */
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
         /**
          * checksum of the package
+         *
          * @param checksum the value to set
          * @return this builder
-         **/
+         */
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
             return this;
         }
-        /**
-         * type of the checksum
-         **/
+        /** type of the checksum */
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private String checksumType;
 
         /**
          * type of the checksum
+         *
          * @param checksumType the value to set
          * @return this builder
-         **/
+         */
         public Builder checksumType(String checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
@@ -210,9 +203,7 @@ public final class SoftwarePackageSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,100 +212,93 @@ public final class SoftwarePackageSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Package name
-     **/
+    /** Package name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Package name
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Unique identifier for the package. NOTE - This is not an OCID
-     **/
+    /** Unique identifier for the package. NOTE - This is not an OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique identifier for the package. NOTE - This is not an OCID
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Type of the package
-     **/
+    /** Type of the package */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of the package
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Version of the package
-     **/
+    /** Version of the package */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Version of the package
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * the architecture for which this software was built
-     **/
+    /** the architecture for which this software was built */
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
     /**
      * the architecture for which this software was built
+     *
      * @return the value
-     **/
+     */
     public String getArchitecture() {
         return architecture;
     }
 
-    /**
-     * checksum of the package
-     **/
+    /** checksum of the package */
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
     /**
      * checksum of the package
+     *
      * @return the value
-     **/
+     */
     public String getChecksum() {
         return checksum;
     }
 
-    /**
-     * type of the checksum
-     **/
+    /** type of the checksum */
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final String checksumType;
 
     /**
      * type of the checksum
+     *
      * @return the value
-     **/
+     */
     public String getChecksumType() {
         return checksumType;
     }
@@ -326,6 +310,7 @@ public final class SoftwarePackageSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

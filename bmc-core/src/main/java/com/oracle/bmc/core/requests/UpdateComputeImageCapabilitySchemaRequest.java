@@ -6,50 +6,45 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateComputeImageCapabilitySchemaRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateComputeImageCapabilitySchemaRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateComputeImageCapabilitySchemaRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails> {
 
-    /**
-     * The id of the compute image capability schema or the image ocid
-     */
+    /** The id of the compute image capability schema or the image ocid */
     private String computeImageCapabilitySchemaId;
 
-    /**
-     * The id of the compute image capability schema or the image ocid
-     */
+    /** The id of the compute image capability schema or the image ocid */
     public String getComputeImageCapabilitySchemaId() {
         return computeImageCapabilitySchemaId;
     }
-    /**
-     * Updates the freeFormTags, definedTags, and display name of the image capability schema
-     */
+    /** Updates the freeFormTags, definedTags, and display name of the image capability schema */
     private com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
             updateComputeImageCapabilitySchemaDetails;
 
-    /**
-     * Updates the freeFormTags, definedTags, and display name of the image capability schema
-     */
+    /** Updates the freeFormTags, definedTags, and display name of the image capability schema */
     public com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails
             getUpdateComputeImageCapabilitySchemaDetails() {
         return updateComputeImageCapabilitySchemaDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -57,6 +52,7 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -69,17 +65,15 @@ public class UpdateComputeImageCapabilitySchemaRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateComputeImageCapabilitySchemaRequest,
                     com.oracle.bmc.core.model.UpdateComputeImageCapabilitySchemaDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The id of the compute image capability schema or the image ocid
-         */
+        /** The id of the compute image capability schema or the image ocid */
         private String computeImageCapabilitySchemaId = null;
 
         /**
          * The id of the compute image capability schema or the image ocid
+         *
          * @param computeImageCapabilitySchemaId the value to set
          * @return this builder instance
          */
@@ -96,6 +90,7 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
         /**
          * Updates the freeFormTags, definedTags, and display name of the image capability schema
+         *
          * @param updateComputeImageCapabilitySchemaDetails the value to set
          * @return this builder instance
          */
@@ -108,17 +103,18 @@ public class UpdateComputeImageCapabilitySchemaRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -130,18 +126,19 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -153,6 +150,7 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateComputeImageCapabilitySchemaRequest o) {
@@ -166,12 +164,14 @@ public class UpdateComputeImageCapabilitySchemaRequest
         }
 
         /**
-         * Build the instance of UpdateComputeImageCapabilitySchemaRequest as configured by this builder
+         * Build the instance of UpdateComputeImageCapabilitySchemaRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateComputeImageCapabilitySchemaRequest
          */
@@ -184,6 +184,7 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -195,9 +196,11 @@ public class UpdateComputeImageCapabilitySchemaRequest
         }
 
         /**
-         * Build the instance of UpdateComputeImageCapabilitySchemaRequest as configured by this builder
+         * Build the instance of UpdateComputeImageCapabilitySchemaRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateComputeImageCapabilitySchemaRequest
@@ -210,12 +213,14 @@ public class UpdateComputeImageCapabilitySchemaRequest
                     updateComputeImageCapabilitySchemaDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateComputeImageCapabilitySchemaRequest(computeImageCapabilitySchemaId, updateComputeImageCapabilitySchemaDetails, ifMatch);
+            // new UpdateComputeImageCapabilitySchemaRequest(computeImageCapabilitySchemaId,
+            // updateComputeImageCapabilitySchemaDetails, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -228,6 +233,7 @@ public class UpdateComputeImageCapabilitySchemaRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

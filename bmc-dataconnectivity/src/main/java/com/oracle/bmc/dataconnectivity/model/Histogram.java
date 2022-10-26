@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * To capture all the histograms data related to profiling.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To capture all the histograms data related to profiling. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Histogram.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Histogram extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Histogram extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ranges", "counts"})
     public Histogram(java.util.List<String> ranges, java.util.List<Integer> counts) {
@@ -28,33 +29,31 @@ public final class Histogram extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Range of values
-         **/
+        /** Range of values */
         @com.fasterxml.jackson.annotation.JsonProperty("ranges")
         private java.util.List<String> ranges;
 
         /**
          * Range of values
+         *
          * @param ranges the value to set
          * @return this builder
-         **/
+         */
         public Builder ranges(java.util.List<String> ranges) {
             this.ranges = ranges;
             this.__explicitlySet__.add("ranges");
             return this;
         }
-        /**
-         * Count of each ranges.
-         **/
+        /** Count of each ranges. */
         @com.fasterxml.jackson.annotation.JsonProperty("counts")
         private java.util.List<Integer> counts;
 
         /**
          * Count of each ranges.
+         *
          * @param counts the value to set
          * @return this builder
-         **/
+         */
         public Builder counts(java.util.List<Integer> counts) {
             this.counts = counts;
             this.__explicitlySet__.add("counts");
@@ -84,9 +83,7 @@ public final class Histogram extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class Histogram extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Range of values
-     **/
+    /** Range of values */
     @com.fasterxml.jackson.annotation.JsonProperty("ranges")
     private final java.util.List<String> ranges;
 
     /**
      * Range of values
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getRanges() {
         return ranges;
     }
 
-    /**
-     * Count of each ranges.
-     **/
+    /** Count of each ranges. */
     @com.fasterxml.jackson.annotation.JsonProperty("counts")
     private final java.util.List<Integer> counts;
 
     /**
      * Count of each ranges.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Integer> getCounts() {
         return counts;
     }
@@ -130,6 +125,7 @@ public final class Histogram extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,25 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
- * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not
+ * authorized, talk to an administrator. If you are an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateMultipartUploadDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateMultipartUploadDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateMultipartUploadDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "object",
@@ -58,182 +58,184 @@ public final class CreateMultipartUploadDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
-         * Example: test/object1.log
-         *
-         **/
+         * The name of the object to which this multi-part upload is targeted. Avoid entering
+         * confidential information. Example: test/object1.log
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
         /**
-         * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
-         * Example: test/object1.log
+         * The name of the object to which this multi-part upload is targeted. Avoid entering
+         * confidential information. Example: test/object1.log
          *
          * @param object the value to set
          * @return this builder
-         **/
+         */
         public Builder object(String object) {
             this.object = object;
             this.__explicitlySet__.add("object");
             return this;
         }
         /**
-         * The optional Content-Type header that defines the standard MIME type format of the object to upload.
-         * Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
-         * determine what to do based on the value provided. For example, you could use this header to identify and
-         * perform special operations on text only objects.
-         *
-         **/
+         * The optional Content-Type header that defines the standard MIME type format of the object
+         * to upload. Specifying values for this header has no effect on Object Storage behavior.
+         * Programs that read the object determine what to do based on the value provided. For
+         * example, you could use this header to identify and perform special operations on text
+         * only objects.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
         /**
-         * The optional Content-Type header that defines the standard MIME type format of the object to upload.
-         * Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
-         * determine what to do based on the value provided. For example, you could use this header to identify and
-         * perform special operations on text only objects.
+         * The optional Content-Type header that defines the standard MIME type format of the object
+         * to upload. Specifying values for this header has no effect on Object Storage behavior.
+         * Programs that read the object determine what to do based on the value provided. For
+         * example, you could use this header to identify and perform special operations on text
+         * only objects.
          *
          * @param contentType the value to set
          * @return this builder
-         **/
+         */
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
             return this;
         }
         /**
-         * The optional Content-Language header that defines the content language of the object to upload. Specifying
-         * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
-         * to do based on the value provided. For example, you could use this header to identify and differentiate objects
-         * based on a particular language.
-         *
-         **/
+         * The optional Content-Language header that defines the content language of the object to
+         * upload. Specifying values for this header has no effect on Object Storage behavior.
+         * Programs that read the object determine what to do based on the value provided. For
+         * example, you could use this header to identify and differentiate objects based on a
+         * particular language.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
         private String contentLanguage;
 
         /**
-         * The optional Content-Language header that defines the content language of the object to upload. Specifying
-         * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
-         * to do based on the value provided. For example, you could use this header to identify and differentiate objects
-         * based on a particular language.
+         * The optional Content-Language header that defines the content language of the object to
+         * upload. Specifying values for this header has no effect on Object Storage behavior.
+         * Programs that read the object determine what to do based on the value provided. For
+         * example, you could use this header to identify and differentiate objects based on a
+         * particular language.
          *
          * @param contentLanguage the value to set
          * @return this builder
-         **/
+         */
         public Builder contentLanguage(String contentLanguage) {
             this.contentLanguage = contentLanguage;
             this.__explicitlySet__.add("contentLanguage");
             return this;
         }
         /**
-         * The optional Content-Encoding header that defines the content encodings that were applied to the object to
-         * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
-         * object determine what to do based on the value provided. For example, you could use this header to determine
-         * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
-         * the object.
-         *
-         **/
+         * The optional Content-Encoding header that defines the content encodings that were applied
+         * to the object to upload. Specifying values for this header has no effect on Object
+         * Storage behavior. Programs that read the object determine what to do based on the value
+         * provided. For example, you could use this header to determine what decoding mechanisms
+         * need to be applied to obtain the media-type specified by the Content-Type header of the
+         * object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
         private String contentEncoding;
 
         /**
-         * The optional Content-Encoding header that defines the content encodings that were applied to the object to
-         * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
-         * object determine what to do based on the value provided. For example, you could use this header to determine
-         * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
-         * the object.
+         * The optional Content-Encoding header that defines the content encodings that were applied
+         * to the object to upload. Specifying values for this header has no effect on Object
+         * Storage behavior. Programs that read the object determine what to do based on the value
+         * provided. For example, you could use this header to determine what decoding mechanisms
+         * need to be applied to obtain the media-type specified by the Content-Type header of the
+         * object.
          *
          * @param contentEncoding the value to set
          * @return this builder
-         **/
+         */
         public Builder contentEncoding(String contentEncoding) {
             this.contentEncoding = contentEncoding;
             this.__explicitlySet__.add("contentEncoding");
             return this;
         }
         /**
-         * The optional Content-Disposition header that defines presentational information for the object to be
-         * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
-         * Storage behavior. Programs that read the object determine what to do based on the value provided.
-         * For example, you could use this header to let users download objects with custom filenames in a browser.
-         *
-         **/
+         * The optional Content-Disposition header that defines presentational information for the
+         * object to be returned in GetObject and HeadObject responses. Specifying values for this
+         * header has no effect on Object Storage behavior. Programs that read the object determine
+         * what to do based on the value provided. For example, you could use this header to let
+         * users download objects with custom filenames in a browser.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
         private String contentDisposition;
 
         /**
-         * The optional Content-Disposition header that defines presentational information for the object to be
-         * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
-         * Storage behavior. Programs that read the object determine what to do based on the value provided.
-         * For example, you could use this header to let users download objects with custom filenames in a browser.
+         * The optional Content-Disposition header that defines presentational information for the
+         * object to be returned in GetObject and HeadObject responses. Specifying values for this
+         * header has no effect on Object Storage behavior. Programs that read the object determine
+         * what to do based on the value provided. For example, you could use this header to let
+         * users download objects with custom filenames in a browser.
          *
          * @param contentDisposition the value to set
          * @return this builder
-         **/
+         */
         public Builder contentDisposition(String contentDisposition) {
             this.contentDisposition = contentDisposition;
             this.__explicitlySet__.add("contentDisposition");
             return this;
         }
         /**
-         * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
-         * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
-         * that read the object determine what to do based on the value provided.
-         * For example, you could use this header to identify objects that require caching restrictions.
-         *
-         **/
+         * The optional Cache-Control header that defines the caching behavior value to be returned
+         * in GetObject and HeadObject responses. Specifying values for this header has no effect on
+         * Object Storage behavior. Programs that read the object determine what to do based on the
+         * value provided. For example, you could use this header to identify objects that require
+         * caching restrictions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
         private String cacheControl;
 
         /**
-         * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
-         * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
-         * that read the object determine what to do based on the value provided.
-         * For example, you could use this header to identify objects that require caching restrictions.
+         * The optional Cache-Control header that defines the caching behavior value to be returned
+         * in GetObject and HeadObject responses. Specifying values for this header has no effect on
+         * Object Storage behavior. Programs that read the object determine what to do based on the
+         * value provided. For example, you could use this header to identify objects that require
+         * caching restrictions.
          *
          * @param cacheControl the value to set
          * @return this builder
-         **/
+         */
         public Builder cacheControl(String cacheControl) {
             this.cacheControl = cacheControl;
             this.__explicitlySet__.add("cacheControl");
             return this;
         }
         /**
-         * The storage tier that the object should be stored in. If not specified, the object will be stored in
-         * the same storage tier as the bucket.
-         *
-         **/
+         * The storage tier that the object should be stored in. If not specified, the object will
+         * be stored in the same storage tier as the bucket.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
         private StorageTier storageTier;
 
         /**
-         * The storage tier that the object should be stored in. If not specified, the object will be stored in
-         * the same storage tier as the bucket.
+         * The storage tier that the object should be stored in. If not specified, the object will
+         * be stored in the same storage tier as the bucket.
          *
          * @param storageTier the value to set
          * @return this builder
-         **/
+         */
         public Builder storageTier(StorageTier storageTier) {
             this.storageTier = storageTier;
             this.__explicitlySet__.add("storageTier");
             return this;
         }
         /**
-         * Arbitrary string keys and values for the user-defined metadata for the object.
-         * Keys must be in "opc-meta-*" format. Avoid entering confidential information.
-         *
-         **/
+         * Arbitrary string keys and values for the user-defined metadata for the object. Keys must
+         * be in "opc-meta-*" format. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * Arbitrary string keys and values for the user-defined metadata for the object.
-         * Keys must be in "opc-meta-*" format. Avoid entering confidential information.
+         * Arbitrary string keys and values for the user-defined metadata for the object. Keys must
+         * be in "opc-meta-*" format. Avoid entering confidential information.
          *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -290,9 +292,7 @@ public final class CreateMultipartUploadDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,167 +302,163 @@ public final class CreateMultipartUploadDetails
     }
 
     /**
-     * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
-     * Example: test/object1.log
-     *
-     **/
+     * The name of the object to which this multi-part upload is targeted. Avoid entering
+     * confidential information. Example: test/object1.log
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     private final String object;
 
     /**
-     * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
-     * Example: test/object1.log
+     * The name of the object to which this multi-part upload is targeted. Avoid entering
+     * confidential information. Example: test/object1.log
      *
      * @return the value
-     **/
+     */
     public String getObject() {
         return object;
     }
 
     /**
-     * The optional Content-Type header that defines the standard MIME type format of the object to upload.
-     * Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
-     * determine what to do based on the value provided. For example, you could use this header to identify and
-     * perform special operations on text only objects.
-     *
-     **/
+     * The optional Content-Type header that defines the standard MIME type format of the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided. For example, you could
+     * use this header to identify and perform special operations on text only objects.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final String contentType;
 
     /**
-     * The optional Content-Type header that defines the standard MIME type format of the object to upload.
-     * Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
-     * determine what to do based on the value provided. For example, you could use this header to identify and
-     * perform special operations on text only objects.
+     * The optional Content-Type header that defines the standard MIME type format of the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided. For example, you could
+     * use this header to identify and perform special operations on text only objects.
      *
      * @return the value
-     **/
+     */
     public String getContentType() {
         return contentType;
     }
 
     /**
-     * The optional Content-Language header that defines the content language of the object to upload. Specifying
-     * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
-     * to do based on the value provided. For example, you could use this header to identify and differentiate objects
-     * based on a particular language.
-     *
-     **/
+     * The optional Content-Language header that defines the content language of the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided. For example, you could
+     * use this header to identify and differentiate objects based on a particular language.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
     private final String contentLanguage;
 
     /**
-     * The optional Content-Language header that defines the content language of the object to upload. Specifying
-     * values for this header has no effect on Object Storage behavior. Programs that read the object determine what
-     * to do based on the value provided. For example, you could use this header to identify and differentiate objects
-     * based on a particular language.
+     * The optional Content-Language header that defines the content language of the object to
+     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs
+     * that read the object determine what to do based on the value provided. For example, you could
+     * use this header to identify and differentiate objects based on a particular language.
      *
      * @return the value
-     **/
+     */
     public String getContentLanguage() {
         return contentLanguage;
     }
 
     /**
-     * The optional Content-Encoding header that defines the content encodings that were applied to the object to
-     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
-     * object determine what to do based on the value provided. For example, you could use this header to determine
-     * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
-     * the object.
-     *
-     **/
+     * The optional Content-Encoding header that defines the content encodings that were applied to
+     * the object to upload. Specifying values for this header has no effect on Object Storage
+     * behavior. Programs that read the object determine what to do based on the value provided. For
+     * example, you could use this header to determine what decoding mechanisms need to be applied
+     * to obtain the media-type specified by the Content-Type header of the object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
     private final String contentEncoding;
 
     /**
-     * The optional Content-Encoding header that defines the content encodings that were applied to the object to
-     * upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
-     * object determine what to do based on the value provided. For example, you could use this header to determine
-     * what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
-     * the object.
+     * The optional Content-Encoding header that defines the content encodings that were applied to
+     * the object to upload. Specifying values for this header has no effect on Object Storage
+     * behavior. Programs that read the object determine what to do based on the value provided. For
+     * example, you could use this header to determine what decoding mechanisms need to be applied
+     * to obtain the media-type specified by the Content-Type header of the object.
      *
      * @return the value
-     **/
+     */
     public String getContentEncoding() {
         return contentEncoding;
     }
 
     /**
-     * The optional Content-Disposition header that defines presentational information for the object to be
-     * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
-     * Storage behavior. Programs that read the object determine what to do based on the value provided.
-     * For example, you could use this header to let users download objects with custom filenames in a browser.
-     *
-     **/
+     * The optional Content-Disposition header that defines presentational information for the
+     * object to be returned in GetObject and HeadObject responses. Specifying values for this
+     * header has no effect on Object Storage behavior. Programs that read the object determine what
+     * to do based on the value provided. For example, you could use this header to let users
+     * download objects with custom filenames in a browser.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
     private final String contentDisposition;
 
     /**
-     * The optional Content-Disposition header that defines presentational information for the object to be
-     * returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
-     * Storage behavior. Programs that read the object determine what to do based on the value provided.
-     * For example, you could use this header to let users download objects with custom filenames in a browser.
+     * The optional Content-Disposition header that defines presentational information for the
+     * object to be returned in GetObject and HeadObject responses. Specifying values for this
+     * header has no effect on Object Storage behavior. Programs that read the object determine what
+     * to do based on the value provided. For example, you could use this header to let users
+     * download objects with custom filenames in a browser.
      *
      * @return the value
-     **/
+     */
     public String getContentDisposition() {
         return contentDisposition;
     }
 
     /**
-     * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
-     * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
-     * that read the object determine what to do based on the value provided.
-     * For example, you could use this header to identify objects that require caching restrictions.
-     *
-     **/
+     * The optional Cache-Control header that defines the caching behavior value to be returned in
+     * GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+     * Storage behavior. Programs that read the object determine what to do based on the value
+     * provided. For example, you could use this header to identify objects that require caching
+     * restrictions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
     private final String cacheControl;
 
     /**
-     * The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
-     * HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
-     * that read the object determine what to do based on the value provided.
-     * For example, you could use this header to identify objects that require caching restrictions.
+     * The optional Cache-Control header that defines the caching behavior value to be returned in
+     * GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+     * Storage behavior. Programs that read the object determine what to do based on the value
+     * provided. For example, you could use this header to identify objects that require caching
+     * restrictions.
      *
      * @return the value
-     **/
+     */
     public String getCacheControl() {
         return cacheControl;
     }
 
     /**
-     * The storage tier that the object should be stored in. If not specified, the object will be stored in
-     * the same storage tier as the bucket.
-     *
-     **/
+     * The storage tier that the object should be stored in. If not specified, the object will be
+     * stored in the same storage tier as the bucket.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     private final StorageTier storageTier;
 
     /**
-     * The storage tier that the object should be stored in. If not specified, the object will be stored in
-     * the same storage tier as the bucket.
+     * The storage tier that the object should be stored in. If not specified, the object will be
+     * stored in the same storage tier as the bucket.
      *
      * @return the value
-     **/
+     */
     public StorageTier getStorageTier() {
         return storageTier;
     }
 
     /**
-     * Arbitrary string keys and values for the user-defined metadata for the object.
-     * Keys must be in "opc-meta-*" format. Avoid entering confidential information.
-     *
-     **/
+     * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be
+     * in "opc-meta-*" format. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * Arbitrary string keys and values for the user-defined metadata for the object.
-     * Keys must be in "opc-meta-*" format. Avoid entering confidential information.
+     * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be
+     * in "opc-meta-*" format. Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -474,6 +470,7 @@ public final class CreateMultipartUploadDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

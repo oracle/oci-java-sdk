@@ -6,32 +6,26 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferPackagesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferPackagesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferPackagesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferPackagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * ID of the Transfer Job
-     */
+    /** ID of the Transfer Job */
     private String id;
 
-    /**
-     * ID of the Transfer Job
-     */
+    /** ID of the Transfer Job */
     public String getId() {
         return id;
     }
-    /**
-     * filtering by lifecycleState
-     */
+    /** filtering by lifecycleState */
     private LifecycleState lifecycleState;
 
-    /**
-     * filtering by lifecycleState
-     **/
-    public enum LifecycleState {
+    /** filtering by lifecycleState */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Preparing("PREPARING"),
         Shipping("SHIPPING"),
         Received("RECEIVED"),
@@ -71,20 +65,14 @@ public class ListTransferPackagesRequest
         }
     };
 
-    /**
-     * filtering by lifecycleState
-     */
+    /** filtering by lifecycleState */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * filtering by displayName
-     */
+    /** filtering by displayName */
     private String displayName;
 
-    /**
-     * filtering by displayName
-     */
+    /** filtering by displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -92,17 +80,15 @@ public class ListTransferPackagesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTransferPackagesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * ID of the Transfer Job
-         */
+        /** ID of the Transfer Job */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -111,13 +97,12 @@ public class ListTransferPackagesRequest
             return this;
         }
 
-        /**
-         * filtering by lifecycleState
-         */
+        /** filtering by lifecycleState */
         private LifecycleState lifecycleState = null;
 
         /**
          * filtering by lifecycleState
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -126,13 +111,12 @@ public class ListTransferPackagesRequest
             return this;
         }
 
-        /**
-         * filtering by displayName
-         */
+        /** filtering by displayName */
         private String displayName = null;
 
         /**
          * filtering by displayName
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -143,18 +127,19 @@ public class ListTransferPackagesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -166,6 +151,7 @@ public class ListTransferPackagesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListTransferPackagesRequest o) {
@@ -180,10 +166,11 @@ public class ListTransferPackagesRequest
         /**
          * Build the instance of ListTransferPackagesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListTransferPackagesRequest
          */
@@ -197,7 +184,8 @@ public class ListTransferPackagesRequest
         /**
          * Build the instance of ListTransferPackagesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTransferPackagesRequest
@@ -214,6 +202,7 @@ public class ListTransferPackagesRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -222,6 +211,7 @@ public class ListTransferPackagesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

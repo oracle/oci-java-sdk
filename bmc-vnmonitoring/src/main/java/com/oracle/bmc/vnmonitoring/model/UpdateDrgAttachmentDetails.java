@@ -5,22 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateDrgAttachmentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateDrgAttachmentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrgAttachmentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -49,48 +49,48 @@ public final class UpdateDrgAttachmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-         * <p>
-         * The DRG route table manages traffic inside the DRG.
-         * <p>
-         * You can't remove a DRG route table from a DRG attachment, but you can reassign which
-         * DRG route table it uses.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table that is assigned to this attachment.
          *
-         **/
+         * <p>The DRG route table manages traffic inside the DRG.
+         *
+         * <p>You can't remove a DRG route table from a DRG attachment, but you can reassign which
+         * DRG route table it uses.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-         * <p>
-         * The DRG route table manages traffic inside the DRG.
-         * <p>
-         * You can't remove a DRG route table from a DRG attachment, but you can reassign which
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the DRG route table that is assigned to this attachment.
+         *
+         * <p>The DRG route table manages traffic inside the DRG.
+         *
+         * <p>You can't remove a DRG route table from a DRG attachment, but you can reassign which
          * DRG route table it uses.
          *
          * @param drgRouteTableId the value to set
          * @return this builder
-         **/
+         */
         public Builder drgRouteTableId(String drgRouteTableId) {
             this.drgRouteTableId = drgRouteTableId;
             this.__explicitlySet__.add("drgRouteTableId");
@@ -108,8 +108,7 @@ public final class UpdateDrgAttachmentDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -119,7 +118,7 @@ public final class UpdateDrgAttachmentDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -127,42 +126,42 @@ public final class UpdateDrgAttachmentDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-         * are advertised out through the attachment.
-         * If this value is null, no routes are advertised through this attachment.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the export route distribution used to specify how routes in the assigned DRG route
+         * table are advertised out through the attachment. If this value is null, no routes are
+         * advertised through this attachment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
         private String exportDrgRouteDistributionId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-         * are advertised out through the attachment.
-         * If this value is null, no routes are advertised through this attachment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the export route distribution used to specify how routes in the assigned DRG route
+         * table are advertised out through the attachment. If this value is null, no routes are
+         * advertised through this attachment.
          *
          * @param exportDrgRouteDistributionId the value to set
          * @return this builder
-         **/
+         */
         public Builder exportDrgRouteDistributionId(String exportDrgRouteDistributionId) {
             this.exportDrgRouteDistributionId = exportDrgRouteDistributionId;
             this.__explicitlySet__.add("exportDrgRouteDistributionId");
@@ -211,9 +210,7 @@ public final class UpdateDrgAttachmentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,45 +220,45 @@ public final class UpdateDrgAttachmentDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-     * <p>
-     * The DRG route table manages traffic inside the DRG.
-     * <p>
-     * You can't remove a DRG route table from a DRG attachment, but you can reassign which
-     * DRG route table it uses.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table that is assigned to this attachment.
      *
-     **/
+     * <p>The DRG route table manages traffic inside the DRG.
+     *
+     * <p>You can't remove a DRG route table from a DRG attachment, but you can reassign which DRG
+     * route table it uses.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
-     * <p>
-     * The DRG route table manages traffic inside the DRG.
-     * <p>
-     * You can't remove a DRG route table from a DRG attachment, but you can reassign which
-     * DRG route table it uses.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the DRG route table that is assigned to this attachment.
+     *
+     * <p>The DRG route table manages traffic inside the DRG.
+     *
+     * <p>You can't remove a DRG route table from a DRG attachment, but you can reassign which DRG
+     * route table it uses.
      *
      * @return the value
-     **/
+     */
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
@@ -274,57 +271,56 @@ public final class UpdateDrgAttachmentDetails
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-     * are advertised out through the attachment.
-     * If this value is null, no routes are advertised through this attachment.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * advertised out through the attachment. If this value is null, no routes are advertised
+     * through this attachment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exportDrgRouteDistributionId")
     private final String exportDrgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table
-     * are advertised out through the attachment.
-     * If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the export route distribution used to specify how routes in the assigned DRG route table are
+     * advertised out through the attachment. If this value is null, no routes are advertised
+     * through this attachment.
      *
      * @return the value
-     **/
+     */
     public String getExportDrgRouteDistributionId() {
         return exportDrgRouteDistributionId;
     }
@@ -336,6 +332,7 @@ public final class UpdateDrgAttachmentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

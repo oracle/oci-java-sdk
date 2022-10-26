@@ -5,85 +5,81 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * OCI service logging configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * OCI service logging configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OciService.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OciService extends Source {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Service generating log.
-         **/
+        /** Service generating log. */
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * Service generating log.
+         *
          * @param service the value to set
          * @return this builder
-         **/
+         */
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /**
-         * The unique identifier of the resource emitting the log.
-         **/
+        /** The unique identifier of the resource emitting the log. */
         @com.fasterxml.jackson.annotation.JsonProperty("resource")
         private String resource;
 
         /**
          * The unique identifier of the resource emitting the log.
+         *
          * @param resource the value to set
          * @return this builder
-         **/
+         */
         public Builder resource(String resource) {
             this.resource = resource;
             this.__explicitlySet__.add("resource");
             return this;
         }
-        /**
-         * Log object category.
-         **/
+        /** Log object category. */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
          * Log object category.
+         *
          * @param category the value to set
          * @return this builder
-         **/
+         */
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /**
-         * Log category parameters are stored here.
-         **/
+        /** Log category parameters are stored here. */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, String> parameters;
 
         /**
          * Log category parameters are stored here.
+         *
          * @param parameters the value to set
          * @return this builder
-         **/
+         */
         public Builder parameters(java.util.Map<String, String> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -120,9 +116,7 @@ public final class OciService extends Source {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,58 +138,54 @@ public final class OciService extends Source {
         this.parameters = parameters;
     }
 
-    /**
-     * Service generating log.
-     **/
+    /** Service generating log. */
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * Service generating log.
+     *
      * @return the value
-     **/
+     */
     public String getService() {
         return service;
     }
 
-    /**
-     * The unique identifier of the resource emitting the log.
-     **/
+    /** The unique identifier of the resource emitting the log. */
     @com.fasterxml.jackson.annotation.JsonProperty("resource")
     private final String resource;
 
     /**
      * The unique identifier of the resource emitting the log.
+     *
      * @return the value
-     **/
+     */
     public String getResource() {
         return resource;
     }
 
-    /**
-     * Log object category.
-     **/
+    /** Log object category. */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
      * Log object category.
+     *
      * @return the value
-     **/
+     */
     public String getCategory() {
         return category;
     }
 
-    /**
-     * Log category parameters are stored here.
-     **/
+    /** Log category parameters are stored here. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, String> parameters;
 
     /**
      * Log category parameters are stored here.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getParameters() {
         return parameters;
     }
@@ -207,6 +197,7 @@ public final class OciService extends Source {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

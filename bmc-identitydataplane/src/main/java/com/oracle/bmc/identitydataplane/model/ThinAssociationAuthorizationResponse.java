@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ThinAssociationAuthorizationResponse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ThinAssociationAuthorizationResponse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ThinAssociationAuthorizationResponse
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"responses", "associationResult", "decisionCacheDuration"})
     public ThinAssociationAuthorizationResponse(
@@ -35,49 +35,46 @@ public final class ThinAssociationAuthorizationResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The authorization responses.
-         **/
+        /** The authorization responses. */
         @com.fasterxml.jackson.annotation.JsonProperty("responses")
         private java.util.List<ThinAuthorizationResponse> responses;
 
         /**
          * The authorization responses.
+         *
          * @param responses the value to set
          * @return this builder
-         **/
+         */
         public Builder responses(java.util.List<ThinAuthorizationResponse> responses) {
             this.responses = responses;
             this.__explicitlySet__.add("responses");
             return this;
         }
-        /**
-         * The association verification result.
-         **/
+        /** The association verification result. */
         @com.fasterxml.jackson.annotation.JsonProperty("associationResult")
         private AssociationResult associationResult;
 
         /**
          * The association verification result.
+         *
          * @param associationResult the value to set
          * @return this builder
-         **/
+         */
         public Builder associationResult(AssociationResult associationResult) {
             this.associationResult = associationResult;
             this.__explicitlySet__.add("associationResult");
             return this;
         }
-        /**
-         * The decision cache duration.
-         **/
+        /** The decision cache duration. */
         @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
         private String decisionCacheDuration;
 
         /**
          * The decision cache duration.
+         *
          * @param decisionCacheDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder decisionCacheDuration(String decisionCacheDuration) {
             this.decisionCacheDuration = decisionCacheDuration;
             this.__explicitlySet__.add("decisionCacheDuration");
@@ -112,9 +109,7 @@ public final class ThinAssociationAuthorizationResponse
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,24 +118,21 @@ public final class ThinAssociationAuthorizationResponse
         return new Builder().copy(this);
     }
 
-    /**
-     * The authorization responses.
-     **/
+    /** The authorization responses. */
     @com.fasterxml.jackson.annotation.JsonProperty("responses")
     private final java.util.List<ThinAuthorizationResponse> responses;
 
     /**
      * The authorization responses.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ThinAuthorizationResponse> getResponses() {
         return responses;
     }
 
-    /**
-     * The association verification result.
-     **/
-    public enum AssociationResult {
+    /** The association verification result. */
+    public enum AssociationResult implements com.oracle.bmc.http.internal.BmcEnum {
         FailUnknown("FAIL_UNKNOWN"),
         FailBadRequest("FAIL_BAD_REQUEST"),
         FailMissingEndorse("FAIL_MISSING_ENDORSE"),
@@ -175,30 +167,28 @@ public final class ThinAssociationAuthorizationResponse
             throw new IllegalArgumentException("Invalid AssociationResult: " + key);
         }
     };
-    /**
-     * The association verification result.
-     **/
+    /** The association verification result. */
     @com.fasterxml.jackson.annotation.JsonProperty("associationResult")
     private final AssociationResult associationResult;
 
     /**
      * The association verification result.
+     *
      * @return the value
-     **/
+     */
     public AssociationResult getAssociationResult() {
         return associationResult;
     }
 
-    /**
-     * The decision cache duration.
-     **/
+    /** The decision cache duration. */
     @com.fasterxml.jackson.annotation.JsonProperty("decisionCacheDuration")
     private final String decisionCacheDuration;
 
     /**
      * The decision cache duration.
+     *
      * @return the value
-     **/
+     */
     public String getDecisionCacheDuration() {
         return decisionCacheDuration;
     }
@@ -210,6 +200,7 @@ public final class ThinAssociationAuthorizationResponse
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

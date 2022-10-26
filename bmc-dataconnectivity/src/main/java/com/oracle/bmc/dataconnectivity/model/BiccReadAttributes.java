@@ -5,55 +5,52 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Properties to configure reading from an Oracle Database.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties to configure reading from an Oracle Database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BiccReadAttributes.Builder.class
-)
+        builder = BiccReadAttributes.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BiccReadAttributes extends AbstractReadAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The fetch size for reading.
-         **/
+        /** The fetch size for reading. */
         @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
         private Integer fetchSize;
 
         /**
          * The fetch size for reading.
+         *
          * @param fetchSize the value to set
          * @return this builder
-         **/
+         */
         public Builder fetchSize(Integer fetchSize) {
             this.fetchSize = fetchSize;
             this.__explicitlySet__.add("fetchSize");
             return this;
         }
-        /**
-         * Extraction Strategy - FULL|INCREMENTAL
-         **/
+        /** Extraction Strategy - FULL|INCREMENTAL */
         @com.fasterxml.jackson.annotation.JsonProperty("extractStrategy")
         private ExtractStrategy extractStrategy;
 
         /**
          * Extraction Strategy - FULL|INCREMENTAL
+         *
          * @param extractStrategy the value to set
          * @return this builder
-         **/
+         */
         public Builder extractStrategy(ExtractStrategy extractStrategy) {
             this.extractStrategy = extractStrategy;
             this.__explicitlySet__.add("extractStrategy");
@@ -68,33 +65,31 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
             this.__explicitlySet__.add("externalStorage");
             return this;
         }
-        /**
-         * Date from where extract should start.
-         **/
+        /** Date from where extract should start. */
         @com.fasterxml.jackson.annotation.JsonProperty("initialExtractDate")
         private java.util.Date initialExtractDate;
 
         /**
          * Date from where extract should start.
+         *
          * @param initialExtractDate the value to set
          * @return this builder
-         **/
+         */
         public Builder initialExtractDate(java.util.Date initialExtractDate) {
             this.initialExtractDate = initialExtractDate;
             this.__explicitlySet__.add("initialExtractDate");
             return this;
         }
-        /**
-         * Date last extracted
-         **/
+        /** Date last extracted */
         @com.fasterxml.jackson.annotation.JsonProperty("lastExtractDate")
         private java.util.Date lastExtractDate;
 
         /**
          * Date last extracted
+         *
          * @param lastExtractDate the value to set
          * @return this builder
-         **/
+         */
         public Builder lastExtractDate(java.util.Date lastExtractDate) {
             this.lastExtractDate = lastExtractDate;
             this.__explicitlySet__.add("lastExtractDate");
@@ -139,9 +134,7 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,24 +158,21 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         this.lastExtractDate = lastExtractDate;
     }
 
-    /**
-     * The fetch size for reading.
-     **/
+    /** The fetch size for reading. */
     @com.fasterxml.jackson.annotation.JsonProperty("fetchSize")
     private final Integer fetchSize;
 
     /**
      * The fetch size for reading.
+     *
      * @return the value
-     **/
+     */
     public Integer getFetchSize() {
         return fetchSize;
     }
 
-    /**
-     * Extraction Strategy - FULL|INCREMENTAL
-     **/
-    public enum ExtractStrategy {
+    /** Extraction Strategy - FULL|INCREMENTAL */
+    public enum ExtractStrategy implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Incremental("INCREMENTAL"),
         ;
@@ -214,16 +204,15 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
             throw new IllegalArgumentException("Invalid ExtractStrategy: " + key);
         }
     };
-    /**
-     * Extraction Strategy - FULL|INCREMENTAL
-     **/
+    /** Extraction Strategy - FULL|INCREMENTAL */
     @com.fasterxml.jackson.annotation.JsonProperty("extractStrategy")
     private final ExtractStrategy extractStrategy;
 
     /**
      * Extraction Strategy - FULL|INCREMENTAL
+     *
      * @return the value
-     **/
+     */
     public ExtractStrategy getExtractStrategy() {
         return extractStrategy;
     }
@@ -235,30 +224,28 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
         return externalStorage;
     }
 
-    /**
-     * Date from where extract should start.
-     **/
+    /** Date from where extract should start. */
     @com.fasterxml.jackson.annotation.JsonProperty("initialExtractDate")
     private final java.util.Date initialExtractDate;
 
     /**
      * Date from where extract should start.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getInitialExtractDate() {
         return initialExtractDate;
     }
 
-    /**
-     * Date last extracted
-     **/
+    /** Date last extracted */
     @com.fasterxml.jackson.annotation.JsonProperty("lastExtractDate")
     private final java.util.Date lastExtractDate;
 
     /**
      * Date last extracted
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getLastExtractDate() {
         return lastExtractDate;
     }
@@ -270,6 +257,7 @@ public final class BiccReadAttributes extends AbstractReadAttribute {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

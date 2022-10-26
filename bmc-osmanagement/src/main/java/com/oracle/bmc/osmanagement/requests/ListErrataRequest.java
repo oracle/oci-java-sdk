@@ -6,115 +6,103 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListErrataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListErrataRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListErrataExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListErrataRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+     * The ID of the compartment in which to list resources. This parameter is optional and in some
+     * cases may have no effect.
      */
     private String compartmentId;
 
     /**
-     * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+     * The ID of the compartment in which to list resources. This parameter is optional and in some
+     * cases may have no effect.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The OCID of the erratum.
-     */
+    /** The OCID of the erratum. */
     private String erratumId;
 
-    /**
-     * The OCID of the erratum.
-     */
+    /** The OCID of the erratum. */
     public String getErratumId() {
         return erratumId;
     }
     /**
      * The assigned erratum name. It's unique and not changeable.
-     * <p>
-     * Example: {@code ELSA-2020-5804}
      *
+     * <p>Example: {@code ELSA-2020-5804}
      */
     private String advisoryName;
 
     /**
      * The assigned erratum name. It's unique and not changeable.
-     * <p>
-     * Example: {@code ELSA-2020-5804}
      *
+     * <p>Example: {@code ELSA-2020-5804}
      */
     public String getAdvisoryName() {
         return advisoryName;
     }
     /**
      * The issue date after which to list all errata, in ISO 8601 format
-     * <p>
-     * Example: 2017-07-14T02:40:00.000Z
      *
+     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeIssueDateStart;
 
     /**
      * The issue date after which to list all errata, in ISO 8601 format
-     * <p>
-     * Example: 2017-07-14T02:40:00.000Z
      *
+     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeIssueDateStart() {
         return timeIssueDateStart;
     }
     /**
      * The issue date before which to list all errata, in ISO 8601 format
-     * <p>
-     * Example: 2017-07-14T02:40:00.000Z
      *
+     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeIssueDateEnd;
 
     /**
      * The issue date before which to list all errata, in ISO 8601 format
-     * <p>
-     * Example: 2017-07-14T02:40:00.000Z
      *
+     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeIssueDateEnd() {
         return timeIssueDateEnd;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -147,23 +135,23 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
     };
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
-     *
+     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE
+     * is descending. Default order for ADVISORYNAME is ascending. If no value is specified
+     * ISSUEDATE is default.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE
+     * is descending. Default order for ADVISORYNAME is ascending. If no value is specified
+     * ISSUEDATE is default.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Issuedate("ISSUEDATE"),
         Advisoryname("ADVISORYNAME"),
         ;
@@ -197,20 +185,17 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     };
 
     /**
-     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
-     *
+     * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE
+     * is descending. Default order for ADVISORYNAME is ascending. If no value is specified
+     * ISSUEDATE is default.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -218,17 +203,19 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListErrataRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * The ID of the compartment in which to list resources. This parameter is optional and in
+         * some cases may have no effect.
          */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+         * The ID of the compartment in which to list resources. This parameter is optional and in
+         * some cases may have no effect.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -237,13 +224,12 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The OCID of the erratum.
-         */
+        /** The OCID of the erratum. */
         private String erratumId = null;
 
         /**
          * The OCID of the erratum.
+         *
          * @param erratumId the value to set
          * @return this builder instance
          */
@@ -254,16 +240,15 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * The assigned erratum name. It's unique and not changeable.
-         * <p>
-         * Example: {@code ELSA-2020-5804}
          *
+         * <p>Example: {@code ELSA-2020-5804}
          */
         private String advisoryName = null;
 
         /**
          * The assigned erratum name. It's unique and not changeable.
-         * <p>
-         * Example: {@code ELSA-2020-5804}
+         *
+         * <p>Example: {@code ELSA-2020-5804}
          *
          * @param advisoryName the value to set
          * @return this builder instance
@@ -275,16 +260,15 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * The issue date after which to list all errata, in ISO 8601 format
-         * <p>
-         * Example: 2017-07-14T02:40:00.000Z
          *
+         * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeIssueDateStart = null;
 
         /**
          * The issue date after which to list all errata, in ISO 8601 format
-         * <p>
-         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * <p>Example: 2017-07-14T02:40:00.000Z
          *
          * @param timeIssueDateStart the value to set
          * @return this builder instance
@@ -296,16 +280,15 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * The issue date before which to list all errata, in ISO 8601 format
-         * <p>
-         * Example: 2017-07-14T02:40:00.000Z
          *
+         * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeIssueDateEnd = null;
 
         /**
          * The issue date before which to list all errata, in ISO 8601 format
-         * <p>
-         * Example: 2017-07-14T02:40:00.000Z
+         *
+         * <p>Example: 2017-07-14T02:40:00.000Z
          *
          * @param timeIssueDateEnd the value to set
          * @return this builder instance
@@ -315,13 +298,12 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -331,12 +313,15 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -345,13 +330,12 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The sort order to use, either 'asc' or 'desc'.
-         */
+        /** The sort order to use, either 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -361,13 +345,16 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         }
 
         /**
-         * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
-         *
+         * The field to sort errata by. Only one sort order may be provided. Default order for
+         * ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is
+         * specified ISSUEDATE is default.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort errata by. Only one sort order may be provided. Default order for ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is specified ISSUEDATE is default.
+         * The field to sort errata by. Only one sort order may be provided. Default order for
+         * ISSUEDATE is descending. Default order for ADVISORYNAME is ascending. If no value is
+         * specified ISSUEDATE is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -377,13 +364,12 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -394,18 +380,19 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -417,6 +404,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListErrataRequest o) {
@@ -438,10 +426,11 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListErrataRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListErrataRequest
          */
@@ -455,7 +444,8 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         /**
          * Build the instance of ListErrataRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListErrataRequest
@@ -473,12 +463,14 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListErrataRequest(compartmentId, erratumId, advisoryName, timeIssueDateStart, timeIssueDateEnd, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListErrataRequest(compartmentId, erratumId, advisoryName, timeIssueDateStart,
+            // timeIssueDateEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -497,6 +489,7 @@ public class ListErrataRequest extends com.oracle.bmc.requests.BmcRequest<java.l
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

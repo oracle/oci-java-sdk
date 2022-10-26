@@ -5,21 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * An autoscale action is triggered when a performance metric exceeds a threshold.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An autoscale action is triggered when a performance metric exceeds a threshold. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MetricThresholdRule.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class MetricThresholdRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = MetricThresholdRule.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class MetricThresholdRule
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"durationInMinutes", "operator", "value"})
     public MetricThresholdRule(Integer durationInMinutes, Operator operator, Integer value) {
@@ -32,48 +33,49 @@ public final class MetricThresholdRule extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-         **/
+         * This value is the minimum period of time the metric value exceeds the threshold value
+         * before the action is triggered. The value is in minutes.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
         private Integer durationInMinutes;
 
         /**
-         * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+         * This value is the minimum period of time the metric value exceeds the threshold value
+         * before the action is triggered. The value is in minutes.
+         *
          * @param durationInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder durationInMinutes(Integer durationInMinutes) {
             this.durationInMinutes = durationInMinutes;
             this.__explicitlySet__.add("durationInMinutes");
             return this;
         }
-        /**
-         * The comparison operator to use. Options are greater than (GT) or less than (LT).
-         **/
+        /** The comparison operator to use. Options are greater than (GT) or less than (LT). */
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
          * The comparison operator to use. Options are greater than (GT) or less than (LT).
+         *
          * @param operator the value to set
          * @return this builder
-         **/
+         */
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /**
-         * Integer non-negative value. 0 < value < 100
-         **/
+        /** Integer non-negative value. 0 < value < 100 */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Integer value;
 
         /**
          * Integer non-negative value. 0 < value < 100
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(Integer value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -107,9 +109,7 @@ public final class MetricThresholdRule extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,29 +119,30 @@ public final class MetricThresholdRule extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
-     **/
+     * This value is the minimum period of time the metric value exceeds the threshold value before
+     * the action is triggered. The value is in minutes.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
     private final Integer durationInMinutes;
 
     /**
-     * This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
+     * This value is the minimum period of time the metric value exceeds the threshold value before
+     * the action is triggered. The value is in minutes.
+     *
      * @return the value
-     **/
+     */
     public Integer getDurationInMinutes() {
         return durationInMinutes;
     }
 
-    /**
-     * The comparison operator to use. Options are greater than (GT) or less than (LT).
-     **/
-    public enum Operator {
+    /** The comparison operator to use. Options are greater than (GT) or less than (LT). */
+    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
         Gt("GT"),
         Lt("LT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -180,30 +181,28 @@ public final class MetricThresholdRule extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The comparison operator to use. Options are greater than (GT) or less than (LT).
-     **/
+    /** The comparison operator to use. Options are greater than (GT) or less than (LT). */
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
      * The comparison operator to use. Options are greater than (GT) or less than (LT).
+     *
      * @return the value
-     **/
+     */
     public Operator getOperator() {
         return operator;
     }
 
-    /**
-     * Integer non-negative value. 0 < value < 100
-     **/
+    /** Integer non-negative value. 0 < value < 100 */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Integer value;
 
     /**
      * Integer non-negative value. 0 < value < 100
+     *
      * @return the value
-     **/
+     */
     public Integer getValue() {
         return value;
     }
@@ -215,6 +214,7 @@ public final class MetricThresholdRule extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

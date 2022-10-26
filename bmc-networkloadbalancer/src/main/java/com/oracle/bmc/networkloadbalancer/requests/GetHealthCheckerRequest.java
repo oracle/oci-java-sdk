@@ -6,35 +6,37 @@ package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetHealthCheckerRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetHealthCheckerExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetHealthCheckerRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
     /**
      * The name of the backend set associated with the health check policy to be retrieved.
-     * <p>
-     * Example: {@code example_backend_set}
      *
+     * <p>Example: {@code example_backend_set}
      */
     private String backendSetName;
 
     /**
      * The name of the backend set associated with the health check policy to be retrieved.
-     * <p>
-     * Example: {@code example_backend_set}
      *
+     * <p>Example: {@code example_backend_set}
      */
     public String getBackendSetName() {
         return backendSetName;
@@ -42,56 +44,50 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-     * server error without risk of rerunning that same action. Retry tokens expire after 24
-     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * server error without risk of rerunning that same action. Retry tokens expire after 24 hours
+     * but they can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-     * server error without risk of rerunning that same action. Retry tokens expire after 24
-     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * might be rejected.
-     *
+     * server error without risk of rerunning that same action. Retry tokens expire after 24 hours
+     * but they can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * The system returns the requested resource, with a 200 status, only if the resource has no etag
-     * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-     * HTTP status code {@code 304 (Not Modified)}.
-     * <p>
-     * Example: {@code example-etag}
+     * The system returns the requested resource, with a 200 status, only if the resource has no
+     * etag matching the one specified. If the condition fails for the GET and HEAD methods, then
+     * the system returns the HTTP status code {@code 304 (Not Modified)}.
      *
+     * <p>Example: {@code example-etag}
      */
     private String ifNoneMatch;
 
     /**
-     * The system returns the requested resource, with a 200 status, only if the resource has no etag
-     * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-     * HTTP status code {@code 304 (Not Modified)}.
-     * <p>
-     * Example: {@code example-etag}
+     * The system returns the requested resource, with a 200 status, only if the resource has no
+     * etag matching the one specified. If the condition fails for the GET and HEAD methods, then
+     * the system returns the HTTP status code {@code 304 (Not Modified)}.
      *
+     * <p>Example: {@code example-etag}
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
@@ -100,17 +96,19 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetHealthCheckerRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network load balancer to update.
+         *
          * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
@@ -121,16 +119,15 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * The name of the backend set associated with the health check policy to be retrieved.
-         * <p>
-         * Example: {@code example_backend_set}
          *
+         * <p>Example: {@code example_backend_set}
          */
         private String backendSetName = null;
 
         /**
          * The name of the backend set associated with the health check policy to be retrieved.
-         * <p>
-         * Example: {@code example_backend_set}
+         *
+         * <p>Example: {@code example_backend_set}
          *
          * @param backendSetName the value to set
          * @return this builder instance
@@ -143,7 +140,6 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
-         *
          */
         private String opcRequestId = null;
 
@@ -160,21 +156,20 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-         * server error without risk of rerunning that same action. Retry tokens expire after 24
-         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
-         *
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout
+         * or server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-         * server error without risk of rerunning that same action. Retry tokens expire after 24
-         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * might be rejected.
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout
+         * or server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -185,21 +180,20 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The system returns the requested resource, with a 200 status, only if the resource has no etag
-         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-         * HTTP status code {@code 304 (Not Modified)}.
-         * <p>
-         * Example: {@code example-etag}
+         * The system returns the requested resource, with a 200 status, only if the resource has no
+         * etag matching the one specified. If the condition fails for the GET and HEAD methods,
+         * then the system returns the HTTP status code {@code 304 (Not Modified)}.
          *
+         * <p>Example: {@code example-etag}
          */
         private String ifNoneMatch = null;
 
         /**
-         * The system returns the requested resource, with a 200 status, only if the resource has no etag
-         * matching the one specified. If the condition fails for the GET and HEAD methods, then the system returns the
-         * HTTP status code {@code 304 (Not Modified)}.
-         * <p>
-         * Example: {@code example-etag}
+         * The system returns the requested resource, with a 200 status, only if the resource has no
+         * etag matching the one specified. If the condition fails for the GET and HEAD methods,
+         * then the system returns the HTTP status code {@code 304 (Not Modified)}.
+         *
+         * <p>Example: {@code example-etag}
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -211,18 +205,19 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -234,6 +229,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetHealthCheckerRequest o) {
@@ -250,10 +246,11 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetHealthCheckerRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetHealthCheckerRequest
          */
@@ -267,7 +264,8 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetHealthCheckerRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetHealthCheckerRequest
@@ -280,12 +278,14 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRetryToken = opcRetryToken;
             request.ifNoneMatch = ifNoneMatch;
             return request;
-            // new GetHealthCheckerRequest(networkLoadBalancerId, backendSetName, opcRequestId, opcRetryToken, ifNoneMatch);
+            // new GetHealthCheckerRequest(networkLoadBalancerId, backendSetName, opcRequestId,
+            // opcRetryToken, ifNoneMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -299,6 +299,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

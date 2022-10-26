@@ -9,15 +9,14 @@ import com.oracle.bmc.loadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,21 +25,18 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Reflects the current version of the load balancer and the resources it contains.
-     * The value only changes when the load balancer or an associated resource is created,
-     * updated, or delete
-     * <p>
-     * For optimistic concurrency control. See {@code if-match}.
+     * Reflects the current version of the load balancer and the resources it contains. The value
+     * only changes when the load balancer or an associated resource is created, updated, or delete
      *
+     * <p>For optimistic concurrency control. See {@code if-match}.
      */
     private String eTag;
 
     /**
-     * Reflects the current version of the load balancer and the resources it contains.
-     * The value only changes when the load balancer or an associated resource is created,
-     * updated, or delete
-     * <p>
-     * For optimistic concurrency control. See {@code if-match}.
+     * Reflects the current version of the load balancer and the resources it contains. The value
+     * only changes when the load balancer or an associated resource is created, updated, or delete
+     *
+     * <p>For optimistic concurrency control. See {@code if-match}.
      *
      * @return the value
      */
@@ -48,13 +44,12 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
         return eTag;
     }
 
-    /**
-     * The returned LoadBalancerHealth instance.
-     */
+    /** The returned LoadBalancerHealth instance. */
     private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
     /**
      * The returned LoadBalancerHealth instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loadbalancer.model.LoadBalancerHealth getLoadBalancerHealth() {
@@ -70,7 +65,7 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetLoadBalancerHealthResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth) {
@@ -80,31 +75,33 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
         this.loadBalancerHealth = loadBalancerHealth;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetLoadBalancerHealthResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -115,21 +112,20 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Reflects the current version of the load balancer and the resources it contains.
-         * The value only changes when the load balancer or an associated resource is created,
-         * updated, or delete
-         * <p>
-         * For optimistic concurrency control. See {@code if-match}.
+         * Reflects the current version of the load balancer and the resources it contains. The
+         * value only changes when the load balancer or an associated resource is created, updated,
+         * or delete
          *
+         * <p>For optimistic concurrency control. See {@code if-match}.
          */
         private String eTag;
 
         /**
-         * Reflects the current version of the load balancer and the resources it contains.
-         * The value only changes when the load balancer or an associated resource is created,
-         * updated, or delete
-         * <p>
-         * For optimistic concurrency control. See {@code if-match}.
+         * Reflects the current version of the load balancer and the resources it contains. The
+         * value only changes when the load balancer or an associated resource is created, updated,
+         * or delete
+         *
+         * <p>For optimistic concurrency control. See {@code if-match}.
          *
          * @param eTag the value to set
          * @return this builder
@@ -139,13 +135,12 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned LoadBalancerHealth instance.
-         */
+        /** The returned LoadBalancerHealth instance. */
         private com.oracle.bmc.loadbalancer.model.LoadBalancerHealth loadBalancerHealth;
 
         /**
          * The returned LoadBalancerHealth instance.
+         *
          * @param loadBalancerHealth the value to set
          * @return this builder
          */
@@ -157,8 +152,10 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetLoadBalancerHealthResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -171,8 +168,10 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetLoadBalancerHealthResponse build() {
             return new GetLoadBalancerHealthResponse(
                     __httpStatusCode__, headers, opcRequestId, eTag, loadBalancerHealth);
@@ -181,6 +180,7 @@ public class GetLoadBalancerHealthResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

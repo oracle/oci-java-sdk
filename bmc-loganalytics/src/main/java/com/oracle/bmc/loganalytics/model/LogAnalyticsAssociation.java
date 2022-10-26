@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsAssociation
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsAssociation <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsAssociation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsAssociation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsAssociation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "failureMessage",
@@ -81,281 +81,256 @@ public final class LogAnalyticsAssociation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The failure message.
-         **/
+        /** The failure message. */
         @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
         private String failureMessage;
 
         /**
          * The failure message.
+         *
          * @param failureMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder failureMessage(String failureMessage) {
             this.failureMessage = failureMessage;
             this.__explicitlySet__.add("failureMessage");
             return this;
         }
-        /**
-         * The agent unique identifier.
-         **/
+        /** The agent unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The agent unique identifier.
+         *
          * @param agentId the value to set
          * @return this builder
-         **/
+         */
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /**
-         * The last attempt date.
-         **/
+        /** The last attempt date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
         private java.util.Date timeLastAttempted;
 
         /**
          * The last attempt date.
+         *
          * @param timeLastAttempted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastAttempted(java.util.Date timeLastAttempted) {
             this.timeLastAttempted = timeLastAttempted;
             this.__explicitlySet__.add("timeLastAttempted");
             return this;
         }
-        /**
-         * The number of times the association will be attempted
-         * before failing.
-         *
-         **/
+        /** The number of times the association will be attempted before failing. */
         @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
         private Long retryCount;
 
         /**
-         * The number of times the association will be attempted
-         * before failing.
+         * The number of times the association will be attempted before failing.
          *
          * @param retryCount the value to set
          * @return this builder
-         **/
+         */
         public Builder retryCount(Long retryCount) {
             this.retryCount = retryCount;
             this.__explicitlySet__.add("retryCount");
             return this;
         }
-        /**
-         * The source name.
-         **/
+        /** The source name. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The source name.
+         *
          * @param sourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /**
-         * The source display name.
-         **/
+        /** The source display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
         /**
          * The source display name.
+         *
          * @param sourceDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-        /**
-         * The source type internal name.
-         **/
+        /** The source type internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
         private String sourceTypeName;
 
         /**
          * The source type internal name.
+         *
          * @param sourceTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceTypeName(String sourceTypeName) {
             this.sourceTypeName = sourceTypeName;
             this.__explicitlySet__.add("sourceTypeName");
             return this;
         }
-        /**
-         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-         * or FAILED.
-         *
-         **/
+        /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
         private LifeCycleState lifeCycleState;
 
         /**
-         * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-         * or FAILED.
+         * The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED.
          *
          * @param lifeCycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifeCycleState(LifeCycleState lifeCycleState) {
             this.lifeCycleState = lifeCycleState;
             this.__explicitlySet__.add("lifeCycleState");
             return this;
         }
-        /**
-         * The entity unique identifier.
-         **/
+        /** The entity unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The entity unique identifier.
+         *
          * @param entityId the value to set
          * @return this builder
-         **/
+         */
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /**
-         * The entity name.
-         **/
+        /** The entity name. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * The entity name.
+         *
          * @param entityName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-        /**
-         * The entity type internal name.
-         **/
+        /** The entity type internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
         private String entityTypeName;
 
         /**
          * The entity type internal name.
+         *
          * @param entityTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityTypeName(String entityTypeName) {
             this.entityTypeName = entityTypeName;
             this.__explicitlySet__.add("entityTypeName");
             return this;
         }
-        /**
-         * The host name.
-         **/
+        /** The host name. */
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The host name.
+         *
          * @param host the value to set
          * @return this builder
-         **/
+         */
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /**
-         * The name of the entity which contains the agent.
-         **/
+        /** The name of the entity which contains the agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentEntityName")
         private String agentEntityName;
 
         /**
          * The name of the entity which contains the agent.
+         *
          * @param agentEntityName the value to set
          * @return this builder
-         **/
+         */
         public Builder agentEntityName(String agentEntityName) {
             this.agentEntityName = agentEntityName;
             this.__explicitlySet__.add("agentEntityName");
             return this;
         }
-        /**
-         * The entity type display name.
-         **/
+        /** The entity type display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
         /**
          * The entity type display name.
+         *
          * @param entityTypeDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
             return this;
         }
-        /**
-         * The log group unique identifier.
-         **/
+        /** The log group unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
          * The log group unique identifier.
+         *
          * @param logGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
-        /**
-         * The log group name.
-         **/
+        /** The log group name. */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
         private String logGroupName;
 
         /**
          * The log group name.
+         *
          * @param logGroupName the value to set
          * @return this builder
-         **/
+         */
         public Builder logGroupName(String logGroupName) {
             this.logGroupName = logGroupName;
             this.__explicitlySet__.add("logGroupName");
             return this;
         }
-        /**
-         * The log group compartment.
-         **/
+        /** The log group compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupCompartment")
         private String logGroupCompartment;
 
         /**
          * The log group compartment.
+         *
          * @param logGroupCompartment the value to set
          * @return this builder
-         **/
+         */
         public Builder logGroupCompartment(String logGroupCompartment) {
             this.logGroupCompartment = logGroupCompartment;
             this.__explicitlySet__.add("logGroupCompartment");
@@ -448,9 +423,7 @@ public final class LogAnalyticsAssociation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -459,122 +432,107 @@ public final class LogAnalyticsAssociation
         return new Builder().copy(this);
     }
 
-    /**
-     * The failure message.
-     **/
+    /** The failure message. */
     @com.fasterxml.jackson.annotation.JsonProperty("failureMessage")
     private final String failureMessage;
 
     /**
      * The failure message.
+     *
      * @return the value
-     **/
+     */
     public String getFailureMessage() {
         return failureMessage;
     }
 
-    /**
-     * The agent unique identifier.
-     **/
+    /** The agent unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The agent unique identifier.
+     *
      * @return the value
-     **/
+     */
     public String getAgentId() {
         return agentId;
     }
 
-    /**
-     * The last attempt date.
-     **/
+    /** The last attempt date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastAttempted")
     private final java.util.Date timeLastAttempted;
 
     /**
      * The last attempt date.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastAttempted() {
         return timeLastAttempted;
     }
 
-    /**
-     * The number of times the association will be attempted
-     * before failing.
-     *
-     **/
+    /** The number of times the association will be attempted before failing. */
     @com.fasterxml.jackson.annotation.JsonProperty("retryCount")
     private final Long retryCount;
 
     /**
-     * The number of times the association will be attempted
-     * before failing.
+     * The number of times the association will be attempted before failing.
      *
      * @return the value
-     **/
+     */
     public Long getRetryCount() {
         return retryCount;
     }
 
-    /**
-     * The source name.
-     **/
+    /** The source name. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The source name.
+     *
      * @return the value
-     **/
+     */
     public String getSourceName() {
         return sourceName;
     }
 
-    /**
-     * The source display name.
-     **/
+    /** The source display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
     /**
      * The source display name.
+     *
      * @return the value
-     **/
+     */
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
 
-    /**
-     * The source type internal name.
-     **/
+    /** The source type internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTypeName")
     private final String sourceTypeName;
 
     /**
      * The source type internal name.
+     *
      * @return the value
-     **/
+     */
     public String getSourceTypeName() {
         return sourceTypeName;
     }
 
-    /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED.
-     *
-     **/
-    public enum LifeCycleState {
+    /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED. */
+    public enum LifeCycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -613,146 +571,132 @@ public final class LogAnalyticsAssociation
             return UnknownEnumValue;
         }
     };
-    /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED.
-     *
-     **/
+    /** The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleState")
     private final LifeCycleState lifeCycleState;
 
     /**
-     * The lifecycle status.  Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED
-     * or FAILED.
+     * The lifecycle status. Valid values are ACCEPTED, IN_PROGRESS, SUCCEEDED or FAILED.
      *
      * @return the value
-     **/
+     */
     public LifeCycleState getLifeCycleState() {
         return lifeCycleState;
     }
 
-    /**
-     * The entity unique identifier.
-     **/
+    /** The entity unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The entity unique identifier.
+     *
      * @return the value
-     **/
+     */
     public String getEntityId() {
         return entityId;
     }
 
-    /**
-     * The entity name.
-     **/
+    /** The entity name. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * The entity name.
+     *
      * @return the value
-     **/
+     */
     public String getEntityName() {
         return entityName;
     }
 
-    /**
-     * The entity type internal name.
-     **/
+    /** The entity type internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeName")
     private final String entityTypeName;
 
     /**
      * The entity type internal name.
+     *
      * @return the value
-     **/
+     */
     public String getEntityTypeName() {
         return entityTypeName;
     }
 
-    /**
-     * The host name.
-     **/
+    /** The host name. */
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The host name.
+     *
      * @return the value
-     **/
+     */
     public String getHost() {
         return host;
     }
 
-    /**
-     * The name of the entity which contains the agent.
-     **/
+    /** The name of the entity which contains the agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentEntityName")
     private final String agentEntityName;
 
     /**
      * The name of the entity which contains the agent.
+     *
      * @return the value
-     **/
+     */
     public String getAgentEntityName() {
         return agentEntityName;
     }
 
-    /**
-     * The entity type display name.
-     **/
+    /** The entity type display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
     /**
      * The entity type display name.
+     *
      * @return the value
-     **/
+     */
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
 
-    /**
-     * The log group unique identifier.
-     **/
+    /** The log group unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
      * The log group unique identifier.
+     *
      * @return the value
-     **/
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
 
-    /**
-     * The log group name.
-     **/
+    /** The log group name. */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupName")
     private final String logGroupName;
 
     /**
      * The log group name.
+     *
      * @return the value
-     **/
+     */
     public String getLogGroupName() {
         return logGroupName;
     }
 
-    /**
-     * The log group compartment.
-     **/
+    /** The log group compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupCompartment")
     private final String logGroupCompartment;
 
     /**
      * The log group compartment.
+     *
      * @return the value
-     **/
+     */
     public String getLogGroupCompartment() {
         return logGroupCompartment;
     }
@@ -764,6 +708,7 @@ public final class LogAnalyticsAssociation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

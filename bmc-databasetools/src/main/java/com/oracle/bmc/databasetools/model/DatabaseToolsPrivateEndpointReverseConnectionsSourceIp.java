@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Source IP information for reverse connection configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Source IP information for reverse connection configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseToolsPrivateEndpointReverseConnectionsSourceIp.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseToolsPrivateEndpointReverseConnectionsSourceIp.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceIp"})
     public DatabaseToolsPrivateEndpointReverseConnectionsSourceIp(String sourceIp) {
@@ -31,20 +31,19 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
-         * traveling from the customer's VCN to the service's VCN.
-         *
-         **/
+         * The IP address in the customer's VCN to be used as the source IP for reverse connection
+         * packets traveling from the customer's VCN to the service's VCN.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIp")
         private String sourceIp;
 
         /**
-         * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
-         * traveling from the customer's VCN to the service's VCN.
+         * The IP address in the customer's VCN to be used as the source IP for reverse connection
+         * packets traveling from the customer's VCN to the service's VCN.
          *
          * @param sourceIp the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceIp(String sourceIp) {
             this.sourceIp = sourceIp;
             this.__explicitlySet__.add("sourceIp");
@@ -72,9 +71,7 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,19 +81,18 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp
     }
 
     /**
-     * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
-     * traveling from the customer's VCN to the service's VCN.
-     *
-     **/
+     * The IP address in the customer's VCN to be used as the source IP for reverse connection
+     * packets traveling from the customer's VCN to the service's VCN.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIp")
     private final String sourceIp;
 
     /**
-     * The IP address in the customer's VCN to be used as the source IP for reverse connection packets
-     * traveling from the customer's VCN to the service's VCN.
+     * The IP address in the customer's VCN to be used as the source IP for reverse connection
+     * packets traveling from the customer's VCN to the service's VCN.
      *
      * @return the value
-     **/
+     */
     public String getSourceIp() {
         return sourceIp;
     }
@@ -108,6 +104,7 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionsSourceIp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

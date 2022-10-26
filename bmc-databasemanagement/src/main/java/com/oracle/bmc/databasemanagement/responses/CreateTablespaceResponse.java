@@ -9,15 +9,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned Tablespace instance.
-     */
+    /** The returned Tablespace instance. */
     private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
     /**
      * The returned Tablespace instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.Tablespace getTablespace() {
@@ -46,7 +44,7 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateTablespaceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.Tablespace tablespace) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,33 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
         this.tablespace = tablespace;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateTablespaceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +88,12 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned Tablespace instance.
-         */
+        /** The returned Tablespace instance. */
         private com.oracle.bmc.databasemanagement.model.Tablespace tablespace;
 
         /**
          * The returned Tablespace instance.
+         *
          * @param tablespace the value to set
          * @return this builder
          */
@@ -105,8 +104,10 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateTablespaceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -118,8 +119,10 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateTablespaceResponse build() {
             return new CreateTablespaceResponse(
                     __httpStatusCode__, headers, opcRequestId, tablespace);
@@ -128,6 +131,7 @@ public class CreateTablespaceResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

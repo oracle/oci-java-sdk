@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Subscription summary
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Subscription summary <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OrganizationSubscriptionSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OrganizationSubscriptionSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OrganizationSubscriptionSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -55,10 +54,7 @@ public final class OrganizationSubscriptionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * SPM internal Subscription ID
-         *
-         **/
+        /** SPM internal Subscription ID */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -67,16 +63,13 @@ public final class OrganizationSubscriptionSummary
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * Customer friendly service name provided by PRG
-         *
-         **/
+        /** Customer friendly service name provided by PRG */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
@@ -85,16 +78,13 @@ public final class OrganizationSubscriptionSummary
          *
          * @param serviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /**
-         * Subscription Type i.e. IAAS,SAAS,PAAS
-         *
-         **/
+        /** Subscription Type i.e. IAAS,SAAS,PAAS */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
@@ -103,16 +93,13 @@ public final class OrganizationSubscriptionSummary
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Status of the plan
-         *
-         **/
+        /** Status of the plan */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
@@ -121,16 +108,13 @@ public final class OrganizationSubscriptionSummary
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Represents the date when the first service of the subscription was activated
-         *
-         **/
+        /** Represents the date when the first service of the subscription was activated */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -139,16 +123,13 @@ public final class OrganizationSubscriptionSummary
          *
          * @param timeStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /**
-         * Represents the date when the last service of the subscription ends
-         *
-         **/
+        /** Represents the date when the last service of the subscription ends */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -157,7 +138,7 @@ public final class OrganizationSubscriptionSummary
          *
          * @param timeEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
@@ -173,18 +154,19 @@ public final class OrganizationSubscriptionSummary
             return this;
         }
         /**
-         * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-         *
-         **/
+         * Total aggregate TCLV of all lines for the subscription including expired, active, and
+         * signed
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
         private String totalValue;
 
         /**
-         * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
+         * Total aggregate TCLV of all lines for the subscription including expired, active, and
+         * signed
          *
          * @param totalValue the value to set
          * @return this builder
-         **/
+         */
         public Builder totalValue(String totalValue) {
             this.totalValue = totalValue;
             this.__explicitlySet__.add("totalValue");
@@ -241,9 +223,7 @@ public final class OrganizationSubscriptionSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -252,10 +232,7 @@ public final class OrganizationSubscriptionSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * SPM internal Subscription ID
-     *
-     **/
+    /** SPM internal Subscription ID */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -263,15 +240,12 @@ public final class OrganizationSubscriptionSummary
      * SPM internal Subscription ID
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * Customer friendly service name provided by PRG
-     *
-     **/
+    /** Customer friendly service name provided by PRG */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
@@ -279,15 +253,12 @@ public final class OrganizationSubscriptionSummary
      * Customer friendly service name provided by PRG
      *
      * @return the value
-     **/
+     */
     public String getServiceName() {
         return serviceName;
     }
 
-    /**
-     * Subscription Type i.e. IAAS,SAAS,PAAS
-     *
-     **/
+    /** Subscription Type i.e. IAAS,SAAS,PAAS */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
@@ -295,15 +266,12 @@ public final class OrganizationSubscriptionSummary
      * Subscription Type i.e. IAAS,SAAS,PAAS
      *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Status of the plan
-     *
-     **/
+    /** Status of the plan */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
@@ -311,15 +279,12 @@ public final class OrganizationSubscriptionSummary
      * Status of the plan
      *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
-    /**
-     * Represents the date when the first service of the subscription was activated
-     *
-     **/
+    /** Represents the date when the first service of the subscription was activated */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -327,15 +292,12 @@ public final class OrganizationSubscriptionSummary
      * Represents the date when the first service of the subscription was activated
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /**
-     * Represents the date when the last service of the subscription ends
-     *
-     **/
+    /** Represents the date when the last service of the subscription ends */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -343,7 +305,7 @@ public final class OrganizationSubscriptionSummary
      * Represents the date when the last service of the subscription ends
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -357,8 +319,7 @@ public final class OrganizationSubscriptionSummary
 
     /**
      * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalValue")
     private final String totalValue;
 
@@ -366,7 +327,7 @@ public final class OrganizationSubscriptionSummary
      * Total aggregate TCLV of all lines for the subscription including expired, active, and signed
      *
      * @return the value
-     **/
+     */
     public String getTotalValue() {
         return totalValue;
     }
@@ -378,6 +339,7 @@ public final class OrganizationSubscriptionSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

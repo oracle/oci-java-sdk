@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Summary of the progress of a Migration Job.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the progress of a Migration Job. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MigrationJobProgressSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MigrationJobProgressSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MigrationJobProgressSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currentPhase", "currentStatus", "jobProgress"})
     public MigrationJobProgressSummary(
@@ -34,10 +33,7 @@ public final class MigrationJobProgressSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Current phase of the job.
-         *
-         **/
+        /** Current phase of the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
         private OdmsJobPhases currentPhase;
 
@@ -46,16 +42,13 @@ public final class MigrationJobProgressSummary
          *
          * @param currentPhase the value to set
          * @return this builder
-         **/
+         */
         public Builder currentPhase(OdmsJobPhases currentPhase) {
             this.currentPhase = currentPhase;
             this.__explicitlySet__.add("currentPhase");
             return this;
         }
-        /**
-         * Current status of the job.
-         *
-         **/
+        /** Current status of the job. */
         @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
         private JobPhaseStatus currentStatus;
 
@@ -64,16 +57,13 @@ public final class MigrationJobProgressSummary
          *
          * @param currentStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder currentStatus(JobPhaseStatus currentStatus) {
             this.currentStatus = currentStatus;
             this.__explicitlySet__.add("currentStatus");
             return this;
         }
-        /**
-         * Job progress percentage (0 - 100)
-         *
-         **/
+        /** Job progress percentage (0 - 100) */
         @com.fasterxml.jackson.annotation.JsonProperty("jobProgress")
         private Integer jobProgress;
 
@@ -82,7 +72,7 @@ public final class MigrationJobProgressSummary
          *
          * @param jobProgress the value to set
          * @return this builder
-         **/
+         */
         public Builder jobProgress(Integer jobProgress) {
             this.jobProgress = jobProgress;
             this.__explicitlySet__.add("jobProgress");
@@ -117,9 +107,7 @@ public final class MigrationJobProgressSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,10 +116,7 @@ public final class MigrationJobProgressSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Current phase of the job.
-     *
-     **/
+    /** Current phase of the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
     private final OdmsJobPhases currentPhase;
 
@@ -139,15 +124,12 @@ public final class MigrationJobProgressSummary
      * Current phase of the job.
      *
      * @return the value
-     **/
+     */
     public OdmsJobPhases getCurrentPhase() {
         return currentPhase;
     }
 
-    /**
-     * Current status of the job.
-     *
-     **/
+    /** Current status of the job. */
     @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
     private final JobPhaseStatus currentStatus;
 
@@ -155,15 +137,12 @@ public final class MigrationJobProgressSummary
      * Current status of the job.
      *
      * @return the value
-     **/
+     */
     public JobPhaseStatus getCurrentStatus() {
         return currentStatus;
     }
 
-    /**
-     * Job progress percentage (0 - 100)
-     *
-     **/
+    /** Job progress percentage (0 - 100) */
     @com.fasterxml.jackson.annotation.JsonProperty("jobProgress")
     private final Integer jobProgress;
 
@@ -171,7 +150,7 @@ public final class MigrationJobProgressSummary
      * Job progress percentage (0 - 100)
      *
      * @return the value
-     **/
+     */
     public Integer getJobProgress() {
         return jobProgress;
     }
@@ -183,6 +162,7 @@ public final class MigrationJobProgressSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -11,7 +11,6 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,27 +24,25 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned AuthorizeSubscriptionPaymentReceipt instance.
-     */
+    /** The returned AuthorizeSubscriptionPaymentReceipt instance. */
     private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
             authorizeSubscriptionPaymentReceipt;
 
     /**
      * The returned AuthorizeSubscriptionPaymentReceipt instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
@@ -62,7 +59,7 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
     })
     private AuthorizeSubscriptionPaymentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
@@ -73,17 +70,21 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
         this.authorizeSubscriptionPaymentReceipt = authorizeSubscriptionPaymentReceipt;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    AuthorizeSubscriptionPaymentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -91,7 +92,6 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -107,13 +107,12 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -122,14 +121,13 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /**
-         * The returned AuthorizeSubscriptionPaymentReceipt instance.
-         */
+        /** The returned AuthorizeSubscriptionPaymentReceipt instance. */
         private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentReceipt
                 authorizeSubscriptionPaymentReceipt;
 
         /**
          * The returned AuthorizeSubscriptionPaymentReceipt instance.
+         *
          * @param authorizeSubscriptionPaymentReceipt the value to set
          * @return this builder
          */
@@ -142,8 +140,10 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(AuthorizeSubscriptionPaymentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -156,8 +156,10 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public AuthorizeSubscriptionPaymentResponse build() {
             return new AuthorizeSubscriptionPaymentResponse(
                     __httpStatusCode__,
@@ -170,6 +172,7 @@ public class AuthorizeSubscriptionPaymentResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

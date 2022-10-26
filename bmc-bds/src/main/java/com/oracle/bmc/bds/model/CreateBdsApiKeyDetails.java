@@ -5,22 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * API key created on user's behalf.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * API key created on user's behalf. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateBdsApiKeyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateBdsApiKeyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateBdsApiKeyDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userId", "passphrase", "defaultRegion", "keyAlias"})
     public CreateBdsApiKeyDetails(
@@ -34,17 +34,16 @@ public final class CreateBdsApiKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the user for whom this new generated API key pair will be created.
-         **/
+        /** The OCID of the user for whom this new generated API key pair will be created. */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The OCID of the user for whom this new generated API key pair will be created.
+         *
          * @param userId the value to set
          * @return this builder
-         **/
+         */
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
@@ -52,55 +51,58 @@ public final class CreateBdsApiKeyDetails
         }
         /**
          * Base64 passphrase used to secure the private key which will be created on user behalf.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
         /**
          * Base64 passphrase used to secure the private key which will be created on user behalf.
+         *
          * @param passphrase the value to set
          * @return this builder
-         **/
+         */
         public Builder passphrase(String passphrase) {
             this.passphrase = passphrase;
             this.__explicitlySet__.add("passphrase");
             return this;
         }
         /**
-         * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/
-         * for additional information.
-         *
-         **/
+         * The name of the region to establish the Object Storage endpoint. See
+         * https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
         private String defaultRegion;
 
         /**
-         * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/
-         * for additional information.
+         * The name of the region to establish the Object Storage endpoint. See
+         * https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional
+         * information.
          *
          * @param defaultRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultRegion(String defaultRegion) {
             this.defaultRegion = defaultRegion;
             this.__explicitlySet__.add("defaultRegion");
             return this;
         }
         /**
-         * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster.
-         * Only ASCII alphanumeric characters with no spaces allowed.
-         *
-         **/
+         * User friendly identifier used to uniquely differentiate between different API keys
+         * associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no
+         * spaces allowed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
         private String keyAlias;
 
         /**
-         * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster.
-         * Only ASCII alphanumeric characters with no spaces allowed.
+         * User friendly identifier used to uniquely differentiate between different API keys
+         * associated with this Big Data Service cluster. Only ASCII alphanumeric characters with no
+         * spaces allowed.
          *
          * @param keyAlias the value to set
          * @return this builder
-         **/
+         */
         public Builder keyAlias(String keyAlias) {
             this.keyAlias = keyAlias;
             this.__explicitlySet__.add("keyAlias");
@@ -138,9 +140,7 @@ public final class CreateBdsApiKeyDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,66 +149,66 @@ public final class CreateBdsApiKeyDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the user for whom this new generated API key pair will be created.
-     **/
+    /** The OCID of the user for whom this new generated API key pair will be created. */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The OCID of the user for whom this new generated API key pair will be created.
+     *
      * @return the value
-     **/
+     */
     public String getUserId() {
         return userId;
     }
 
-    /**
-     * Base64 passphrase used to secure the private key which will be created on user behalf.
-     **/
+    /** Base64 passphrase used to secure the private key which will be created on user behalf. */
     @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     private final String passphrase;
 
     /**
      * Base64 passphrase used to secure the private key which will be created on user behalf.
+     *
      * @return the value
-     **/
+     */
     public String getPassphrase() {
         return passphrase;
     }
 
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/
-     * for additional information.
-     *
-     **/
+     * The name of the region to establish the Object Storage endpoint. See
+     * https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRegion")
     private final String defaultRegion;
 
     /**
-     * The name of the region to establish the Object Storage endpoint. See https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/
-     * for additional information.
+     * The name of the region to establish the Object Storage endpoint. See
+     * https://docs.oracle.com/en-us/iaas/api/#/en/identity/20160918/Region/ for additional
+     * information.
      *
      * @return the value
-     **/
+     */
     public String getDefaultRegion() {
         return defaultRegion;
     }
 
     /**
-     * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster.
-     * Only ASCII alphanumeric characters with no spaces allowed.
-     *
-     **/
+     * User friendly identifier used to uniquely differentiate between different API keys associated
+     * with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces
+     * allowed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyAlias")
     private final String keyAlias;
 
     /**
-     * User friendly identifier used to uniquely differentiate between different API keys associated with this Big Data Service cluster.
-     * Only ASCII alphanumeric characters with no spaces allowed.
+     * User friendly identifier used to uniquely differentiate between different API keys associated
+     * with this Big Data Service cluster. Only ASCII alphanumeric characters with no spaces
+     * allowed.
      *
      * @return the value
-     **/
+     */
     public String getKeyAlias() {
         return keyAlias;
     }
@@ -220,6 +220,7 @@ public final class CreateBdsApiKeyDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -228,7 +229,7 @@ public final class CreateBdsApiKeyDetails
         sb.append("CreateBdsApiKeyDetails(");
         sb.append("super=").append(super.toString());
         sb.append("userId=").append(String.valueOf(this.userId));
-        sb.append(", passphrase=").append(String.valueOf(this.passphrase));
+        sb.append(", passphrase=").append("<redacted>");
         sb.append(", defaultRegion=").append(String.valueOf(this.defaultRegion));
         sb.append(", keyAlias=").append(String.valueOf(this.keyAlias));
         sb.append(")");

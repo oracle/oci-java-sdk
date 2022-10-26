@@ -8,26 +8,24 @@ import com.oracle.bmc.devops.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Relative URL of the newly created resource.
-     */
+    /** Relative URL of the newly created resource. */
     private String location;
 
     /**
      * Relative URL of the newly created resource.
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -35,12 +33,15 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
+     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -48,25 +49,27 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned DeployEnvironment instance.
-     */
+    /** The returned DeployEnvironment instance. */
     private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
     /**
      * The returned DeployEnvironment instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.devops.model.DeployEnvironment getDeployEnvironment() {
@@ -84,7 +87,7 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateDeployEnvironmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -98,28 +101,31 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
         this.deployEnvironment = deployEnvironment;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateDeployEnvironmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Relative URL of the newly created resource.
-         */
+        /** Relative URL of the newly created resource. */
         private String location;
 
         /**
          * Relative URL of the newly created resource.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -128,13 +134,12 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -144,12 +149,15 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -159,12 +167,15 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -173,13 +184,12 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned DeployEnvironment instance.
-         */
+        /** The returned DeployEnvironment instance. */
         private com.oracle.bmc.devops.model.DeployEnvironment deployEnvironment;
 
         /**
          * The returned DeployEnvironment instance.
+         *
          * @param deployEnvironment the value to set
          * @return this builder
          */
@@ -191,8 +201,10 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDeployEnvironmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -207,8 +219,10 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDeployEnvironmentResponse build() {
             return new CreateDeployEnvironmentResponse(
                     __httpStatusCode__,
@@ -223,6 +237,7 @@ public class CreateDeployEnvironmentResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

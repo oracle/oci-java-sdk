@@ -5,23 +5,23 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * A list of announcements that match filter criteria, if any. Results contain both the announcements and the user-specific status of the announcements.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A list of announcements that match filter criteria, if any. Results contain both the
+ * announcements and the user-specific status of the announcements. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AnnouncementsCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AnnouncementsCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AnnouncementsCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items", "userStatuses"})
     public AnnouncementsCollection(
@@ -34,33 +34,31 @@ public final class AnnouncementsCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A collection of announcements.
-         **/
+        /** A collection of announcements. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnouncementSummary> items;
 
         /**
          * A collection of announcements.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<AnnouncementSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-        /**
-         * The user-specific status for found announcements.
-         **/
+        /** The user-specific status for found announcements. */
         @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
         private java.util.List<AnnouncementUserStatusDetails> userStatuses;
 
         /**
          * The user-specific status for found announcements.
+         *
          * @param userStatuses the value to set
          * @return this builder
-         **/
+         */
         public Builder userStatuses(java.util.List<AnnouncementUserStatusDetails> userStatuses) {
             this.userStatuses = userStatuses;
             this.__explicitlySet__.add("userStatuses");
@@ -91,9 +89,7 @@ public final class AnnouncementsCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,30 +98,28 @@ public final class AnnouncementsCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * A collection of announcements.
-     **/
+    /** A collection of announcements. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnouncementSummary> items;
 
     /**
      * A collection of announcements.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AnnouncementSummary> getItems() {
         return items;
     }
 
-    /**
-     * The user-specific status for found announcements.
-     **/
+    /** The user-specific status for found announcements. */
     @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
     private final java.util.List<AnnouncementUserStatusDetails> userStatuses;
 
     /**
      * The user-specific status for found announcements.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AnnouncementUserStatusDetails> getUserStatuses() {
         return userStatuses;
     }
@@ -137,6 +131,7 @@ public final class AnnouncementsCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

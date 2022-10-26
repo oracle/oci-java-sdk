@@ -9,13 +9,14 @@ import com.oracle.bmc.loganalytics.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
+     * request, provide the request ID.
      *
      * @return the value
      */
@@ -23,10 +24,7 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -38,14 +36,13 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /**
-     * The returned EstimatePurgeDataSizeResult instance.
-     */
+    /** The returned EstimatePurgeDataSizeResult instance. */
     private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
             estimatePurgeDataSizeResult;
 
     /**
      * The returned EstimatePurgeDataSizeResult instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
@@ -62,7 +59,7 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
     })
     private EstimatePurgeDataSizeResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
@@ -73,29 +70,33 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
         this.estimatePurgeDataSizeResult = estimatePurgeDataSizeResult;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<EstimatePurgeDataSizeResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
+         * specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -105,10 +106,7 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -122,14 +120,13 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /**
-         * The returned EstimatePurgeDataSizeResult instance.
-         */
+        /** The returned EstimatePurgeDataSizeResult instance. */
         private com.oracle.bmc.loganalytics.model.EstimatePurgeDataSizeResult
                 estimatePurgeDataSizeResult;
 
         /**
          * The returned EstimatePurgeDataSizeResult instance.
+         *
          * @param estimatePurgeDataSizeResult the value to set
          * @return this builder
          */
@@ -142,8 +139,10 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(EstimatePurgeDataSizeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -156,8 +155,10 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public EstimatePurgeDataSizeResponse build() {
             return new EstimatePurgeDataSizeResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, estimatePurgeDataSizeResult);
@@ -166,6 +167,7 @@ public class EstimatePurgeDataSizeResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

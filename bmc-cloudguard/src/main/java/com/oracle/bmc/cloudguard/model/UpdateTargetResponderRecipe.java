@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * The information to be updated in attached Target ResponderRecipe
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information to be updated in attached Target ResponderRecipe <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateTargetResponderRecipe.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateTargetResponderRecipe.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTargetResponderRecipe
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetResponderRecipeId", "responderRules"})
     public UpdateTargetResponderRecipe(
@@ -33,33 +33,31 @@ public final class UpdateTargetResponderRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Identifier for ResponderRecipe.
-         **/
+        /** Identifier for ResponderRecipe. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipeId")
         private String targetResponderRecipeId;
 
         /**
          * Identifier for ResponderRecipe.
+         *
          * @param targetResponderRecipeId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetResponderRecipeId(String targetResponderRecipeId) {
             this.targetResponderRecipeId = targetResponderRecipeId;
             this.__explicitlySet__.add("targetResponderRecipeId");
             return this;
         }
-        /**
-         * Update responder rules associated with reponder recipe in a target.
-         **/
+        /** Update responder rules associated with reponder recipe in a target. */
         @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
         private java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
         /**
          * Update responder rules associated with reponder recipe in a target.
+         *
          * @param responderRules the value to set
          * @return this builder
-         **/
+         */
         public Builder responderRules(
                 java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules) {
             this.responderRules = responderRules;
@@ -92,9 +90,7 @@ public final class UpdateTargetResponderRecipe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +99,28 @@ public final class UpdateTargetResponderRecipe
         return new Builder().copy(this);
     }
 
-    /**
-     * Identifier for ResponderRecipe.
-     **/
+    /** Identifier for ResponderRecipe. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetResponderRecipeId")
     private final String targetResponderRecipeId;
 
     /**
      * Identifier for ResponderRecipe.
+     *
      * @return the value
-     **/
+     */
     public String getTargetResponderRecipeId() {
         return targetResponderRecipeId;
     }
 
-    /**
-     * Update responder rules associated with reponder recipe in a target.
-     **/
+    /** Update responder rules associated with reponder recipe in a target. */
     @com.fasterxml.jackson.annotation.JsonProperty("responderRules")
     private final java.util.List<UpdateTargetRecipeResponderRuleDetails> responderRules;
 
     /**
      * Update responder rules associated with reponder recipe in a target.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<UpdateTargetRecipeResponderRuleDetails> getResponderRules() {
         return responderRules;
     }
@@ -138,6 +132,7 @@ public final class UpdateTargetResponderRecipe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

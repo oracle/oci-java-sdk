@@ -6,87 +6,100 @@ package com.oracle.bmc.waas.requests;
 
 import com.oracle.bmc.waas.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafBlockedRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWafBlockedRequestsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waas/ListWafBlockedRequestsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListWafBlockedRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class ListWafBlockedRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * WAAS policy.
      */
     private String waasPolicyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * WAAS policy.
      */
     public String getWaasPolicyId() {
         return waasPolicyId;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+     * A filter that limits returned events to those occurring on or after a date and time,
+     * specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the
+     * request.
      */
     private java.util.Date timeObservedGreaterThanOrEqualTo;
 
     /**
-     * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+     * A filter that limits returned events to those occurring on or after a date and time,
+     * specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the
+     * request.
      */
     public java.util.Date getTimeObservedGreaterThanOrEqualTo() {
         return timeObservedGreaterThanOrEqualTo;
     }
     /**
-     * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+     * A filter that limits returned events to those occurring before a date and time, specified in
+     * RFC 3339 format.
      */
     private java.util.Date timeObservedLessThan;
 
     /**
-     * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+     * A filter that limits returned events to those occurring before a date and time, specified in
+     * RFC 3339 format.
      */
     public java.util.Date getTimeObservedLessThan() {
         return timeObservedLessThan;
     }
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
+     * 10}.
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+     * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code
+     * 10}.
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous paginated call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous paginated call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous paginated call. */
     public String getPage() {
         return page;
     }
     /**
-     * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+     * Filter stats by the Web Application Firewall feature that triggered the block action. If
+     * unspecified, data for all WAF features will be returned.
      */
     private java.util.List<WafFeature> wafFeature;
 
     /**
-     * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
-     **/
-    public enum WafFeature {
+     * Filter stats by the Web Application Firewall feature that triggered the block action. If
+     * unspecified, data for all WAF features will be returned.
+     */
+    public enum WafFeature implements com.oracle.bmc.http.internal.BmcEnum {
         ProtectionRules("PROTECTION_RULES"),
         JsChallenge("JS_CHALLENGE"),
         AccessRules("ACCESS_RULES"),
@@ -126,7 +139,8 @@ public class ListWafBlockedRequestsRequest
     };
 
     /**
-     * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+     * Filter stats by the Web Application Firewall feature that triggered the block action. If
+     * unspecified, data for all WAF features will be returned.
      */
     public java.util.List<WafFeature> getWafFeature() {
         return wafFeature;
@@ -135,17 +149,19 @@ public class ListWafBlockedRequestsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWafBlockedRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * WAAS policy.
          */
         private String waasPolicyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the WAAS policy.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * WAAS policy.
+         *
          * @param waasPolicyId the value to set
          * @return this builder instance
          */
@@ -155,12 +171,15 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -170,12 +189,17 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+         * A filter that limits returned events to those occurring on or after a date and time,
+         * specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of
+         * the request.
          */
         private java.util.Date timeObservedGreaterThanOrEqualTo = null;
 
         /**
-         * A filter that limits returned events to those occurring on or after a date and time, specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of the request.
+         * A filter that limits returned events to those occurring on or after a date and time,
+         * specified in RFC 3339 format. If unspecified, defaults to 30 minutes before receipt of
+         * the request.
+         *
          * @param timeObservedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -186,12 +210,15 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+         * A filter that limits returned events to those occurring before a date and time, specified
+         * in RFC 3339 format.
          */
         private java.util.Date timeObservedLessThan = null;
 
         /**
-         * A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
+         * A filter that limits returned events to those occurring before a date and time, specified
+         * in RFC 3339 format.
+         *
          * @param timeObservedLessThan the value to set
          * @return this builder instance
          */
@@ -201,12 +228,15 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to
+         * {@code 10}.
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated call. If unspecified, defaults to {@code 10}.
+         * The maximum number of items to return in a paginated call. If unspecified, defaults to
+         * {@code 10}.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -222,6 +252,7 @@ public class ListWafBlockedRequestsRequest
 
         /**
          * The value of the {@code opc-next-page} response header from the previous paginated call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -231,12 +262,15 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+         * Filter stats by the Web Application Firewall feature that triggered the block action. If
+         * unspecified, data for all WAF features will be returned.
          */
         private java.util.List<WafFeature> wafFeature = null;
 
         /**
-         * Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+         * Filter stats by the Web Application Firewall feature that triggered the block action. If
+         * unspecified, data for all WAF features will be returned.
+         *
          * @param wafFeature the value to set
          * @return this builder instance
          */
@@ -246,7 +280,9 @@ public class ListWafBlockedRequestsRequest
         }
 
         /**
-         * Singular setter. Filter stats by the Web Application Firewall feature that triggered the block action. If unspecified, data for all WAF features will be returned.
+         * Singular setter. Filter stats by the Web Application Firewall feature that triggered the
+         * block action. If unspecified, data for all WAF features will be returned.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -256,18 +292,19 @@ public class ListWafBlockedRequestsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -279,6 +316,7 @@ public class ListWafBlockedRequestsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWafBlockedRequestsRequest o) {
@@ -297,10 +335,11 @@ public class ListWafBlockedRequestsRequest
         /**
          * Build the instance of ListWafBlockedRequestsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWafBlockedRequestsRequest
          */
@@ -314,7 +353,8 @@ public class ListWafBlockedRequestsRequest
         /**
          * Build the instance of ListWafBlockedRequestsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWafBlockedRequestsRequest
@@ -329,12 +369,14 @@ public class ListWafBlockedRequestsRequest
             request.page = page;
             request.wafFeature = wafFeature;
             return request;
-            // new ListWafBlockedRequestsRequest(waasPolicyId, opcRequestId, timeObservedGreaterThanOrEqualTo, timeObservedLessThan, limit, page, wafFeature);
+            // new ListWafBlockedRequestsRequest(waasPolicyId, opcRequestId,
+            // timeObservedGreaterThanOrEqualTo, timeObservedLessThan, limit, page, wafFeature);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -350,6 +392,7 @@ public class ListWafBlockedRequestsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

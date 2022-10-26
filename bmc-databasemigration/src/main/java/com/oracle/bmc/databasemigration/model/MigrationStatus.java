@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * Possible Migration status.
- *
- **/
+/** Possible Migration status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum MigrationStatus {
+public enum MigrationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Ready("READY"),
     Aborting("ABORTING"),
     Validating("VALIDATING"),

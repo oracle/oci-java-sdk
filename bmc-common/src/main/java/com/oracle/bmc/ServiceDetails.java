@@ -6,9 +6,7 @@ package com.oracle.bmc;
 
 import org.slf4j.Logger;
 
-/**
- * Class representing details of the service
- */
+/** Class representing details of the service */
 public class ServiceDetails {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ServiceDetails.class);
 

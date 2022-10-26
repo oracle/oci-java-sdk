@@ -6,65 +6,52 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateManagedInstanceGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateManagedInstanceGroupRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateManagedInstanceGroupExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateManagedInstanceGroupRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class UpdateManagedInstanceGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails> {
 
-    /**
-     * OCID for the managed instance group
-     */
+    /** OCID for the managed instance group */
     private String managedInstanceGroupId;
 
-    /**
-     * OCID for the managed instance group
-     */
+    /** OCID for the managed instance group */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
-    /**
-     * Details about a Managed Instance Group to update
-     */
+    /** Details about a Managed Instance Group to update */
     private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
             updateManagedInstanceGroupDetails;
 
-    /**
-     * Details about a Managed Instance Group to update
-     */
+    /** Details about a Managed Instance Group to update */
     public com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
             getUpdateManagedInstanceGroupDetails() {
         return updateManagedInstanceGroupDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -72,6 +59,7 @@ public class UpdateManagedInstanceGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +72,15 @@ public class UpdateManagedInstanceGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateManagedInstanceGroupRequest,
                     com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * OCID for the managed instance group
-         */
+        /** OCID for the managed instance group */
         private String managedInstanceGroupId = null;
 
         /**
          * OCID for the managed instance group
+         *
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
@@ -103,14 +89,13 @@ public class UpdateManagedInstanceGroupRequest
             return this;
         }
 
-        /**
-         * Details about a Managed Instance Group to update
-         */
+        /** Details about a Managed Instance Group to update */
         private com.oracle.bmc.osmanagement.model.UpdateManagedInstanceGroupDetails
                 updateManagedInstanceGroupDetails = null;
 
         /**
          * Details about a Managed Instance Group to update
+         *
          * @param updateManagedInstanceGroupDetails the value to set
          * @return this builder instance
          */
@@ -121,13 +106,12 @@ public class UpdateManagedInstanceGroupRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -137,21 +121,18 @@ public class UpdateManagedInstanceGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -163,18 +144,19 @@ public class UpdateManagedInstanceGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -186,6 +168,7 @@ public class UpdateManagedInstanceGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateManagedInstanceGroupRequest o) {
@@ -201,10 +184,11 @@ public class UpdateManagedInstanceGroupRequest
         /**
          * Build the instance of UpdateManagedInstanceGroupRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateManagedInstanceGroupRequest
          */
@@ -217,6 +201,7 @@ public class UpdateManagedInstanceGroupRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,7 +215,8 @@ public class UpdateManagedInstanceGroupRequest
         /**
          * Build the instance of UpdateManagedInstanceGroupRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateManagedInstanceGroupRequest
@@ -242,12 +228,14 @@ public class UpdateManagedInstanceGroupRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateManagedInstanceGroupRequest(managedInstanceGroupId, updateManagedInstanceGroupDetails, opcRequestId, ifMatch);
+            // new UpdateManagedInstanceGroupRequest(managedInstanceGroupId,
+            // updateManagedInstanceGroupDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,6 +248,7 @@ public class UpdateManagedInstanceGroupRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

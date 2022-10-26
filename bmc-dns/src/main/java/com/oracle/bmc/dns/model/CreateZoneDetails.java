@@ -6,27 +6,26 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining a new zone.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateZoneDetails.Builder.class
-)
+        builder = CreateZoneDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "migrationSource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "migrationSource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -67,29 +66,25 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             return this;
         }
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
-         * zones.
-         *
-         **/
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
+         * SECONDARY} is only supported for GLOBAL zones.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
         private ZoneType zoneType;
 
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
-         * zones.
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
+         * SECONDARY} is only supported for GLOBAL zones.
          *
          * @param zoneType the value to set
          * @return this builder
-         **/
+         */
         public Builder zoneType(ZoneType zoneType) {
             this.zoneType = zoneType;
             this.__explicitlySet__.add("zoneType");
             return this;
         }
-        /**
-         * This value will be null for zones in the global DNS.
-         *
-         **/
+        /** This value will be null for zones in the global DNS. */
         @com.fasterxml.jackson.annotation.JsonProperty("viewId")
         private String viewId;
 
@@ -98,43 +93,41 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
          *
          * @param viewId the value to set
          * @return this builder
-         **/
+         */
         public Builder viewId(String viewId) {
             this.viewId = viewId;
             this.__explicitlySet__.add("viewId");
             return this;
         }
-        /**
-         * The scope of the zone.
-         **/
+        /** The scope of the zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
          * The scope of the zone.
+         *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * External master servers for the zone. {@code externalMasters} becomes a
-         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
-         *
-         **/
+         * External master servers for the zone. {@code externalMasters} becomes a required
+         * parameter when the {@code zoneType} value is {@code SECONDARY}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
         private java.util.List<ExternalMaster> externalMasters;
 
         /**
-         * External master servers for the zone. {@code externalMasters} becomes a
-         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+         * External master servers for the zone. {@code externalMasters} becomes a required
+         * parameter when the {@code zoneType} value is {@code SECONDARY}.
          *
          * @param externalMasters the value to set
          * @return this builder
-         **/
+         */
         public Builder externalMasters(java.util.List<ExternalMaster> externalMasters) {
             this.externalMasters = externalMasters;
             this.__explicitlySet__.add("externalMasters");
@@ -191,9 +184,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -220,11 +211,10 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     }
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
-     * zones.
-     *
-     **/
-    public enum ZoneType {
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
+     * is only supported for GLOBAL zones.
+     */
+    public enum ZoneType implements com.oracle.bmc.http.internal.BmcEnum {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
         ;
@@ -257,27 +247,23 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     };
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
-     * zones.
-     *
-     **/
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
+     * is only supported for GLOBAL zones.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
     private final ZoneType zoneType;
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
-     * zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
+     * is only supported for GLOBAL zones.
      *
      * @return the value
-     **/
+     */
     public ZoneType getZoneType() {
         return zoneType;
     }
 
-    /**
-     * This value will be null for zones in the global DNS.
-     *
-     **/
+    /** This value will be null for zones in the global DNS. */
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
     private final String viewId;
 
@@ -285,39 +271,37 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
      * This value will be null for zones in the global DNS.
      *
      * @return the value
-     **/
+     */
     public String getViewId() {
         return viewId;
     }
 
-    /**
-     * The scope of the zone.
-     **/
+    /** The scope of the zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
      * The scope of the zone.
+     *
      * @return the value
-     **/
+     */
     public Scope getScope() {
         return scope;
     }
 
     /**
-     * External master servers for the zone. {@code externalMasters} becomes a
-     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
-     *
-     **/
+     * External master servers for the zone. {@code externalMasters} becomes a required parameter
+     * when the {@code zoneType} value is {@code SECONDARY}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
     private final java.util.List<ExternalMaster> externalMasters;
 
     /**
-     * External master servers for the zone. {@code externalMasters} becomes a
-     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+     * External master servers for the zone. {@code externalMasters} becomes a required parameter
+     * when the {@code zoneType} value is {@code SECONDARY}.
      *
      * @return the value
-     **/
+     */
     public java.util.List<ExternalMaster> getExternalMasters() {
         return externalMasters;
     }
@@ -329,6 +313,7 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.mediaservices.model;
 
-/**
- * Sort by field for the Media Workflow Job Fact.
- **/
+/** Sort by field for the Media Workflow Job Fact. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public enum MediaWorkflowJobFactSortBy {
+public enum MediaWorkflowJobFactSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     Key("key"),
     ;
 

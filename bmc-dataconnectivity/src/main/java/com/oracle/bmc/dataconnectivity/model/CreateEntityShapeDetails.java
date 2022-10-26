@@ -5,50 +5,45 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The data entity shape object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The data entity shape object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = CreateEntityShapeDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = CreateEntityShapeDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromDataStore.class,
-        name = "DATA_STORE_ENTITY"
-    ),
+            value = CreateEntityShapeFromDataStore.class,
+            name = "DATA_STORE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromMessage.class,
-        name = "MESSAGE_ENTITY"
-    ),
+            value = CreateEntityShapeFromMessage.class,
+            name = "MESSAGE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromTable.class,
-        name = "TABLE_ENTITY"
-    ),
+            value = CreateEntityShapeFromTable.class,
+            name = "TABLE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromSQL.class,
-        name = "SQL_ENTITY"
-    ),
+            value = CreateEntityShapeFromSQL.class,
+            name = "SQL_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromFile.class,
-        name = "FILE_ENTITY"
-    ),
+            value = CreateEntityShapeFromFile.class,
+            name = "FILE_ENTITY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateEntityShapeFromView.class,
-        name = "VIEW_ENTITY"
-    )
+            value = CreateEntityShapeFromView.class,
+            name = "VIEW_ENTITY")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class CreateEntityShapeDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -107,30 +102,28 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         this.entityProperties = entityProperties;
     }
 
-    /**
-     * The object key.
-     **/
+    /** The object key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of the object.
-     **/
+    /** The model version of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of the object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -143,43 +136,44 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on the permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on the permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
-    /**
-     * The external key of the object.
-     **/
+    /** The external key of the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("externalKey")
     private final String externalKey;
 
     /**
      * The external key of the object.
+     *
      * @return the value
-     **/
+     */
     public String getExternalKey() {
         return externalKey;
     }
@@ -191,24 +185,21 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         return shape;
     }
 
-    /**
-     * The shape ID.
-     **/
+    /** The shape ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
     private final String shapeId;
 
     /**
      * The shape ID.
+     *
      * @return the value
-     **/
+     */
     public String getShapeId() {
         return shapeId;
     }
 
-    /**
-     * The entity type.
-     **/
-    public enum EntityType {
+    /** The entity type. */
+    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
         Table("TABLE"),
         View("VIEW"),
         File("FILE"),
@@ -244,100 +235,101 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
             throw new IllegalArgumentException("Invalid EntityType: " + key);
         }
     };
-    /**
-     * The entity type.
-     **/
+    /** The entity type. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
     /**
      * The entity type.
+     *
      * @return the value
-     **/
+     */
     public EntityType getEntityType() {
         return entityType;
     }
 
-    /**
-     * Specifies other type label.
-     **/
+    /** Specifies other type label. */
     @com.fasterxml.jackson.annotation.JsonProperty("otherTypeLabel")
     private final String otherTypeLabel;
 
     /**
      * Specifies other type label.
+     *
      * @return the value
-     **/
+     */
     public String getOtherTypeLabel() {
         return otherTypeLabel;
     }
 
-    /**
-     * An array of unique keys.
-     **/
+    /** An array of unique keys. */
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueKeys")
     private final java.util.List<UniqueKey> uniqueKeys;
 
     /**
      * An array of unique keys.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<UniqueKey> getUniqueKeys() {
         return uniqueKeys;
     }
 
-    /**
-     * An array of foreign keys.
-     **/
+    /** An array of foreign keys. */
     @com.fasterxml.jackson.annotation.JsonProperty("foreignKeys")
     private final java.util.List<ForeignKey> foreignKeys;
 
     /**
      * An array of foreign keys.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ForeignKey> getForeignKeys() {
         return foreignKeys;
     }
 
-    /**
-     * The resource name.
-     **/
+    /** The resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource name.
+     *
      * @return the value
-     **/
+     */
     public String getResourceName() {
         return resourceName;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with an upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with an
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -349,16 +341,15 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         return types;
     }
 
-    /**
-     * Map<String, String> for entity properties
-     **/
+    /** Map<String, String> for entity properties */
     @com.fasterxml.jackson.annotation.JsonProperty("entityProperties")
     private final java.util.Map<String, String> entityProperties;
 
     /**
      * Map<String, String> for entity properties
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getEntityProperties() {
         return entityProperties;
     }
@@ -370,6 +361,7 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -459,10 +451,8 @@ public class CreateEntityShapeDetails extends com.oracle.bmc.http.internal.Expli
         return result;
     }
 
-    /**
-     * The data entity type.
-     **/
-    public enum ModelType {
+    /** The data entity type. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         ViewEntity("VIEW_ENTITY"),
         TableEntity("TABLE_ENTITY"),
         FileEntity("FILE_ENTITY"),

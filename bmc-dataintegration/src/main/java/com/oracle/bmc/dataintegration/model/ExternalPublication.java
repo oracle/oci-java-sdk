@@ -5,21 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The external published object contains the audit summary information and the definition of the task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The external published object contains the audit summary information and the definition of the
+ * task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExternalPublication.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExternalPublication extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ExternalPublication.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ExternalPublication
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "applicationId",
@@ -84,48 +86,53 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
-         **/
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud
+         * Infrastructure Data Flow application.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
-         * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+         * The unique OCID of the identifier that is returned after creating the Oracle Cloud
+         * Infrastructure Data Flow application.
+         *
          * @param applicationId the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
             this.__explicitlySet__.add("applicationId");
             return this;
         }
         /**
-         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
-         **/
+         * The OCID of the compartment where the application is created in the Oracle Cloud
+         * Infrastructure Data Flow Service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
         private String applicationCompartmentId;
 
         /**
-         * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+         * The OCID of the compartment where the application is created in the Oracle Cloud
+         * Infrastructure Data Flow Service.
+         *
          * @param applicationCompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder applicationCompartmentId(String applicationCompartmentId) {
             this.applicationCompartmentId = applicationCompartmentId;
             this.__explicitlySet__.add("applicationCompartmentId");
             return this;
         }
-        /**
-         * The name of the application.
-         **/
+        /** The name of the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the application.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -149,161 +156,169 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("configurationDetails");
             return this;
         }
-        /**
-         * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
-         **/
+        /** The status of the publishing action to Oracle Cloud Infrastructure Data Flow. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The error of the published object in the application.
-         **/
+        /** The error of the published object in the application. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * The error of the published object in the application.
+         *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /**
-         * The object key.
-         **/
+        /** The object key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The object type.
-         **/
+        /** The object type. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The object type.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-         **/
+         * This is a version number that is used by the service to upgrade objects if needed through
+         * releases of the service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+         * This is a version number that is used by the service to upgrade objects if needed through
+         * releases of the service.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Detailed description for the object.
-         **/
+        /** Detailed description for the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The version of the object that is used to track changes in the object instance.
-         **/
+        /** The version of the object that is used to track changes in the object instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects. Other values are reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects.
+         * Other values are reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects. Other values are reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects.
+         * Other values are reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -328,16 +343,19 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-         **/
+         * A key map. If provided, key is replaced with generated key. This structure provides
+         * mapping between user provided key and generated key.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
         private java.util.Map<String, String> keyMap;
 
         /**
-         * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+         * A key map. If provided, key is replaced with generated key. This structure provides
+         * mapping between user provided key and generated key.
+         *
          * @param keyMap the value to set
          * @return this builder
-         **/
+         */
         public Builder keyMap(java.util.Map<String, String> keyMap) {
             this.keyMap = keyMap;
             this.__explicitlySet__.add("keyMap");
@@ -434,9 +452,7 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -446,43 +462,48 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
-     **/
+     * The unique OCID of the identifier that is returned after creating the Oracle Cloud
+     * Infrastructure Data Flow application.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
-     * The unique OCID of the identifier that is returned after creating the Oracle Cloud Infrastructure Data Flow application.
+     * The unique OCID of the identifier that is returned after creating the Oracle Cloud
+     * Infrastructure Data Flow application.
+     *
      * @return the value
-     **/
+     */
     public String getApplicationId() {
         return applicationId;
     }
 
     /**
-     * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
-     **/
+     * The OCID of the compartment where the application is created in the Oracle Cloud
+     * Infrastructure Data Flow Service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCompartmentId")
     private final String applicationCompartmentId;
 
     /**
-     * The OCID of the compartment where the application is created in the Oracle Cloud Infrastructure Data Flow Service.
+     * The OCID of the compartment where the application is created in the Oracle Cloud
+     * Infrastructure Data Flow Service.
+     *
      * @return the value
-     **/
+     */
     public String getApplicationCompartmentId() {
         return applicationCompartmentId;
     }
 
-    /**
-     * The name of the application.
-     **/
+    /** The name of the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the application.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -501,17 +522,15 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
         return configurationDetails;
     }
 
-    /**
-     * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
-     **/
-    public enum Status {
+    /** The status of the publishing action to Oracle Cloud Infrastructure Data Flow. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Successful("SUCCESSFUL"),
         Failed("FAILED"),
         Publishing("PUBLISHING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -549,142 +568,148 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
-     **/
+    /** The status of the publishing action to Oracle Cloud Infrastructure Data Flow. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the publishing action to Oracle Cloud Infrastructure Data Flow.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The error of the published object in the application.
-     **/
+    /** The error of the published object in the application. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * The error of the published object in the application.
+     *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /**
-     * The object key.
-     **/
+    /** The object key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The object type.
-     **/
+    /** The object type. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The object type.
+     *
      * @return the value
-     **/
+     */
     public String getModelType() {
         return modelType;
     }
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-     **/
+     * This is a version number that is used by the service to upgrade objects if needed through
+     * releases of the service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+     * This is a version number that is used by the service to upgrade objects if needed through
+     * releases of the service.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Detailed description for the object.
-     **/
+    /** Detailed description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects. Other values are reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects.
+     * Other values are reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects. Other values are reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects.
+     * Other values are reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -704,15 +729,18 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-     **/
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     private final java.util.Map<String, String> keyMap;
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping
+     * between user provided key and generated key.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getKeyMap() {
         return keyMap;
     }
@@ -724,6 +752,7 @@ public final class ExternalPublication extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

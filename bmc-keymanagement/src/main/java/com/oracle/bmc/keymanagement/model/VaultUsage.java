@@ -5,19 +5,20 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VaultUsage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VaultUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VaultUsage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "keyCount",
@@ -40,64 +41,76 @@ public final class VaultUsage extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
-         **/
+         * The number of keys in this vault that persist on a hardware security module (HSM), across
+         * all compartments, excluding keys in a {@code DELETED} state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
         private Integer keyCount;
 
         /**
-         * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
+         * The number of keys in this vault that persist on a hardware security module (HSM), across
+         * all compartments, excluding keys in a {@code DELETED} state.
+         *
          * @param keyCount the value to set
          * @return this builder
-         **/
+         */
         public Builder keyCount(Integer keyCount) {
             this.keyCount = keyCount;
             this.__explicitlySet__.add("keyCount");
             return this;
         }
         /**
-         * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
-         **/
+         * The number of key versions in this vault that persist on a hardware security module
+         * (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
         private Integer keyVersionCount;
 
         /**
-         * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
+         * The number of key versions in this vault that persist on a hardware security module
+         * (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
+         *
          * @param keyVersionCount the value to set
          * @return this builder
-         **/
+         */
         public Builder keyVersionCount(Integer keyVersionCount) {
             this.keyVersionCount = keyVersionCount;
             this.__explicitlySet__.add("keyVersionCount");
             return this;
         }
         /**
-         * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
-         **/
+         * The number of keys in this vault that persist on the server, across all compartments,
+         * excluding keys in a {@code DELETED} state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
         private Integer softwareKeyCount;
 
         /**
-         * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
+         * The number of keys in this vault that persist on the server, across all compartments,
+         * excluding keys in a {@code DELETED} state.
+         *
          * @param softwareKeyCount the value to set
          * @return this builder
-         **/
+         */
         public Builder softwareKeyCount(Integer softwareKeyCount) {
             this.softwareKeyCount = softwareKeyCount;
             this.__explicitlySet__.add("softwareKeyCount");
             return this;
         }
         /**
-         * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
-         **/
+         * The number of key versions in this vault that persist on the server, across all
+         * compartments, excluding key versions in a {@code DELETED} state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
         private Integer softwareKeyVersionCount;
 
         /**
-         * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
+         * The number of key versions in this vault that persist on the server, across all
+         * compartments, excluding key versions in a {@code DELETED} state.
+         *
          * @param softwareKeyVersionCount the value to set
          * @return this builder
-         **/
+         */
         public Builder softwareKeyVersionCount(Integer softwareKeyVersionCount) {
             this.softwareKeyVersionCount = softwareKeyVersionCount;
             this.__explicitlySet__.add("softwareKeyVersionCount");
@@ -138,9 +151,7 @@ public final class VaultUsage extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,57 +161,69 @@ public final class VaultUsage extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
-     **/
+     * The number of keys in this vault that persist on a hardware security module (HSM), across all
+     * compartments, excluding keys in a {@code DELETED} state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyCount")
     private final Integer keyCount;
 
     /**
-     * The number of keys in this vault that persist on a hardware security module (HSM), across all compartments, excluding keys in a {@code DELETED} state.
+     * The number of keys in this vault that persist on a hardware security module (HSM), across all
+     * compartments, excluding keys in a {@code DELETED} state.
+     *
      * @return the value
-     **/
+     */
     public Integer getKeyCount() {
         return keyCount;
     }
 
     /**
-     * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
-     **/
+     * The number of key versions in this vault that persist on a hardware security module (HSM),
+     * across all compartments, excluding key versions in a {@code DELETED} state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyVersionCount")
     private final Integer keyVersionCount;
 
     /**
-     * The number of key versions in this vault that persist on a hardware security module (HSM), across all compartments, excluding key versions in a {@code DELETED} state.
+     * The number of key versions in this vault that persist on a hardware security module (HSM),
+     * across all compartments, excluding key versions in a {@code DELETED} state.
+     *
      * @return the value
-     **/
+     */
     public Integer getKeyVersionCount() {
         return keyVersionCount;
     }
 
     /**
-     * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
-     **/
+     * The number of keys in this vault that persist on the server, across all compartments,
+     * excluding keys in a {@code DELETED} state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyCount")
     private final Integer softwareKeyCount;
 
     /**
-     * The number of keys in this vault that persist on the server, across all compartments, excluding keys in a {@code DELETED} state.
+     * The number of keys in this vault that persist on the server, across all compartments,
+     * excluding keys in a {@code DELETED} state.
+     *
      * @return the value
-     **/
+     */
     public Integer getSoftwareKeyCount() {
         return softwareKeyCount;
     }
 
     /**
-     * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
-     **/
+     * The number of key versions in this vault that persist on the server, across all compartments,
+     * excluding key versions in a {@code DELETED} state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareKeyVersionCount")
     private final Integer softwareKeyVersionCount;
 
     /**
-     * The number of key versions in this vault that persist on the server, across all compartments, excluding key versions in a {@code DELETED} state.
+     * The number of key versions in this vault that persist on the server, across all compartments,
+     * excluding key versions in a {@code DELETED} state.
+     *
      * @return the value
-     **/
+     */
     public Integer getSoftwareKeyVersionCount() {
         return softwareKeyVersionCount;
     }
@@ -212,6 +235,7 @@ public final class VaultUsage extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.servicemesh;
 
-import com.oracle.bmc.servicemesh.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.servicemesh.requests.*;
 import com.oracle.bmc.servicemesh.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for ServiceMesh service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for ServiceMesh service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
-public class ServiceMeshAsyncClient implements ServiceMeshAsync {
-    /**
-     * Service instance for ServiceMesh.
-     */
+public class ServiceMeshAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements ServiceMeshAsync {
+    /** Service instance for ServiceMesh. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SERVICEMESH")
@@ -36,268 +39,16 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ServiceMeshAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public ServiceMeshAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private ServiceMeshAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ServiceMeshAsyncClient> {
@@ -319,121 +70,26 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ServiceMeshAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new ServiceMeshAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new ServiceMeshAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -444,53 +100,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeAccessPolicyCompartmentRequest,
                                     ChangeAccessPolicyCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeAccessPolicyCompartment");
-        final ChangeAccessPolicyCompartmentRequest interceptedRequest =
-                ChangeAccessPolicyCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeAccessPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getAccessPolicyId(), "accessPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAccessPolicyCompartmentDetails(),
+                "changeAccessPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeAccessPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeAccessPolicyCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeAccessPolicyCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeAccessPolicyCompartmentResponse>
-                transformer =
-                        ChangeAccessPolicyCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeAccessPolicyCompartmentRequest, ChangeAccessPolicyCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeAccessPolicyCompartmentRequest,
-                                ChangeAccessPolicyCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeAccessPolicyCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeAccessPolicyCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeAccessPolicyCompartmentRequest, ChangeAccessPolicyCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ChangeAccessPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAccessPolicyCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .appendPathParam(request.getAccessPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAccessPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAccessPolicyCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -501,55 +141,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeIngressGatewayCompartmentRequest,
                                     ChangeIngressGatewayCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeIngressGatewayCompartment");
-        final ChangeIngressGatewayCompartmentRequest interceptedRequest =
-                ChangeIngressGatewayCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeIngressGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIngressGatewayId(), "ingressGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeIngressGatewayCompartmentDetails(),
+                "changeIngressGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeIngressGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeIngressGatewayCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeIngressGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeIngressGatewayCompartmentResponse>
-                transformer =
-                        ChangeIngressGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeIngressGatewayCompartmentRequest,
-                        ChangeIngressGatewayCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeIngressGatewayCompartmentRequest,
-                                ChangeIngressGatewayCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeIngressGatewayCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeIngressGatewayCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeIngressGatewayCompartmentRequest,
-                    ChangeIngressGatewayCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ChangeIngressGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeIngressGatewayCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .appendPathParam(request.getIngressGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeIngressGatewayCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeIngressGatewayCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -560,59 +182,39 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeIngressGatewayRouteTableCompartmentRequest,
                                     ChangeIngressGatewayRouteTableCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeIngressGatewayRouteTableCompartment");
-        final ChangeIngressGatewayRouteTableCompartmentRequest interceptedRequest =
-                ChangeIngressGatewayRouteTableCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeIngressGatewayRouteTableCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getIngressGatewayRouteTableId(),
+                "ingressGatewayRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeIngressGatewayRouteTableCompartmentDetails(),
+                "changeIngressGatewayRouteTableCompartmentDetails is required");
+
+        return clientCall(request, ChangeIngressGatewayRouteTableCompartmentResponse::builder)
+                .logger(LOG, "changeIngressGatewayRouteTableCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeIngressGatewayRouteTableCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeIngressGatewayRouteTableCompartmentResponse>
-                transformer =
-                        ChangeIngressGatewayRouteTableCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeIngressGatewayRouteTableCompartmentRequest,
-                        ChangeIngressGatewayRouteTableCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeIngressGatewayRouteTableCompartmentRequest,
-                                ChangeIngressGatewayRouteTableCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeIngressGatewayRouteTableCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeIngressGatewayRouteTableCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeIngressGatewayRouteTableCompartmentRequest,
-                    ChangeIngressGatewayRouteTableCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ChangeIngressGatewayRouteTableCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeIngressGatewayRouteTableCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .appendPathParam(request.getIngressGatewayRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeIngressGatewayRouteTableCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeIngressGatewayRouteTableCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -621,51 +223,36 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeMeshCompartmentRequest, ChangeMeshCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeMeshCompartment");
-        final ChangeMeshCompartmentRequest interceptedRequest =
-                ChangeMeshCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMeshCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMeshId(), "meshId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMeshCompartmentDetails(),
+                "changeMeshCompartmentDetails is required");
+
+        return clientCall(request, ChangeMeshCompartmentResponse::builder)
+                .logger(LOG, "changeMeshCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeMeshCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeMeshCompartmentResponse>
-                transformer =
-                        ChangeMeshCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeMeshCompartmentRequest, ChangeMeshCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeMeshCompartmentRequest, ChangeMeshCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeMeshCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeMeshCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeMeshCompartmentRequest, ChangeMeshCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ChangeMeshCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMeshCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .appendPathParam(request.getMeshId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMeshCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeMeshCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -676,55 +263,38 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeVirtualDeploymentCompartmentRequest,
                                     ChangeVirtualDeploymentCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeVirtualDeploymentCompartment");
-        final ChangeVirtualDeploymentCompartmentRequest interceptedRequest =
-                ChangeVirtualDeploymentCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVirtualDeploymentCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualDeploymentId(), "virtualDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVirtualDeploymentCompartmentDetails(),
+                "changeVirtualDeploymentCompartmentDetails is required");
+
+        return clientCall(request, ChangeVirtualDeploymentCompartmentResponse::builder)
+                .logger(LOG, "changeVirtualDeploymentCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeVirtualDeploymentCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeVirtualDeploymentCompartmentResponse>
-                transformer =
-                        ChangeVirtualDeploymentCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVirtualDeploymentCompartmentRequest,
-                        ChangeVirtualDeploymentCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVirtualDeploymentCompartmentRequest,
-                                ChangeVirtualDeploymentCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVirtualDeploymentCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVirtualDeploymentCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVirtualDeploymentCompartmentRequest,
-                    ChangeVirtualDeploymentCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ChangeVirtualDeploymentCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVirtualDeploymentCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .appendPathParam(request.getVirtualDeploymentId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVirtualDeploymentCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVirtualDeploymentCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -735,55 +305,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeVirtualServiceCompartmentRequest,
                                     ChangeVirtualServiceCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeVirtualServiceCompartment");
-        final ChangeVirtualServiceCompartmentRequest interceptedRequest =
-                ChangeVirtualServiceCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVirtualServiceCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualServiceId(), "virtualServiceId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVirtualServiceCompartmentDetails(),
+                "changeVirtualServiceCompartmentDetails is required");
+
+        return clientCall(request, ChangeVirtualServiceCompartmentResponse::builder)
+                .logger(LOG, "changeVirtualServiceCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeVirtualServiceCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeVirtualServiceCompartmentResponse>
-                transformer =
-                        ChangeVirtualServiceCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVirtualServiceCompartmentRequest,
-                        ChangeVirtualServiceCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVirtualServiceCompartmentRequest,
-                                ChangeVirtualServiceCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVirtualServiceCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVirtualServiceCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVirtualServiceCompartmentRequest,
-                    ChangeVirtualServiceCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ChangeVirtualServiceCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVirtualServiceCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .appendPathParam(request.getVirtualServiceId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVirtualServiceCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVirtualServiceCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -794,59 +346,39 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ChangeVirtualServiceRouteTableCompartmentRequest,
                                     ChangeVirtualServiceRouteTableCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeVirtualServiceRouteTableCompartment");
-        final ChangeVirtualServiceRouteTableCompartmentRequest interceptedRequest =
-                ChangeVirtualServiceRouteTableCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVirtualServiceRouteTableCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualServiceRouteTableId(),
+                "virtualServiceRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVirtualServiceRouteTableCompartmentDetails(),
+                "changeVirtualServiceRouteTableCompartmentDetails is required");
+
+        return clientCall(request, ChangeVirtualServiceRouteTableCompartmentResponse::builder)
+                .logger(LOG, "changeVirtualServiceRouteTableCompartment")
+                .serviceDetails(
                         "ServiceMesh",
                         "ChangeVirtualServiceRouteTableCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeVirtualServiceRouteTableCompartmentResponse>
-                transformer =
-                        ChangeVirtualServiceRouteTableCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVirtualServiceRouteTableCompartmentRequest,
-                        ChangeVirtualServiceRouteTableCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVirtualServiceRouteTableCompartmentRequest,
-                                ChangeVirtualServiceRouteTableCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeVirtualServiceRouteTableCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeVirtualServiceRouteTableCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVirtualServiceRouteTableCompartmentRequest,
-                    ChangeVirtualServiceRouteTableCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ChangeVirtualServiceRouteTableCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVirtualServiceRouteTableCompartmentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .appendPathParam(request.getVirtualServiceRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVirtualServiceRouteTableCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVirtualServiceRouteTableCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -855,50 +387,34 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateAccessPolicyRequest, CreateAccessPolicyResponse>
                     handler) {
-        LOG.trace("Called async createAccessPolicy");
-        final CreateAccessPolicyRequest interceptedRequest =
-                CreateAccessPolicyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateAccessPolicyDetails(), "createAccessPolicyDetails is required");
+
+        return clientCall(request, CreateAccessPolicyResponse::builder)
+                .logger(LOG, "createAccessPolicy")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateAccessPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateAccessPolicyResponse>
-                transformer =
-                        CreateAccessPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateAccessPolicyRequest, CreateAccessPolicyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateAccessPolicyRequest, CreateAccessPolicyResponse>,
-                        java.util.concurrent.Future<CreateAccessPolicyResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateAccessPolicyDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateAccessPolicyRequest, CreateAccessPolicyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/CreateAccessPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAccessPolicyRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.AccessPolicy.class,
+                        CreateAccessPolicyResponse.Builder::accessPolicy)
+                .handleResponseHeaderString("etag", CreateAccessPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateAccessPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAccessPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateAccessPolicyResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -907,51 +423,36 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateIngressGatewayRequest, CreateIngressGatewayResponse>
                     handler) {
-        LOG.trace("Called async createIngressGateway");
-        final CreateIngressGatewayRequest interceptedRequest =
-                CreateIngressGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIngressGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateIngressGatewayDetails(),
+                "createIngressGatewayDetails is required");
+
+        return clientCall(request, CreateIngressGatewayResponse::builder)
+                .logger(LOG, "createIngressGateway")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateIngressGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateIngressGatewayResponse>
-                transformer =
-                        CreateIngressGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateIngressGatewayRequest, CreateIngressGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateIngressGatewayRequest, CreateIngressGatewayResponse>,
-                        java.util.concurrent.Future<CreateIngressGatewayResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateIngressGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateIngressGatewayRequest, CreateIngressGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/CreateIngressGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIngressGatewayRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGateway.class,
+                        CreateIngressGatewayResponse.Builder::ingressGateway)
+                .handleResponseHeaderString("etag", CreateIngressGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateIngressGatewayResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIngressGatewayResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateIngressGatewayResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -962,54 +463,38 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     CreateIngressGatewayRouteTableRequest,
                                     CreateIngressGatewayRouteTableResponse>
                             handler) {
-        LOG.trace("Called async createIngressGatewayRouteTable");
-        final CreateIngressGatewayRouteTableRequest interceptedRequest =
-                CreateIngressGatewayRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateIngressGatewayRouteTableDetails(),
+                "createIngressGatewayRouteTableDetails is required");
+
+        return clientCall(request, CreateIngressGatewayRouteTableResponse::builder)
+                .logger(LOG, "createIngressGatewayRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateIngressGatewayRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateIngressGatewayRouteTableResponse>
-                transformer =
-                        CreateIngressGatewayRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateIngressGatewayRouteTableRequest,
-                        CreateIngressGatewayRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateIngressGatewayRouteTableRequest,
-                                CreateIngressGatewayRouteTableResponse>,
-                        java.util.concurrent.Future<CreateIngressGatewayRouteTableResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateIngressGatewayRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateIngressGatewayRouteTableRequest, CreateIngressGatewayRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/CreateIngressGatewayRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIngressGatewayRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.class,
+                        CreateIngressGatewayRouteTableResponse.Builder::ingressGatewayRouteTable)
+                .handleResponseHeaderString(
+                        "etag", CreateIngressGatewayRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateIngressGatewayRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateIngressGatewayRouteTableResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateIngressGatewayRouteTableResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1017,48 +502,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             CreateMeshRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateMeshRequest, CreateMeshResponse>
                     handler) {
-        LOG.trace("Called async createMesh");
-        final CreateMeshRequest interceptedRequest = CreateMeshConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMeshConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateMeshDetails(), "createMeshDetails is required");
+
+        return clientCall(request, CreateMeshResponse::builder)
+                .logger(LOG, "createMesh")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateMesh",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateMeshResponse>
-                transformer =
-                        CreateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateMeshRequest, CreateMeshResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateMeshRequest, CreateMeshResponse>,
-                        java.util.concurrent.Future<CreateMeshResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateMeshDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateMeshRequest, CreateMeshResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/CreateMesh")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMeshRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.Mesh.class,
+                        CreateMeshResponse.Builder::mesh)
+                .handleResponseHeaderString("etag", CreateMeshResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateMeshResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMeshResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("location", CreateMeshResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1067,52 +536,36 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateVirtualDeploymentRequest, CreateVirtualDeploymentResponse>
                     handler) {
-        LOG.trace("Called async createVirtualDeployment");
-        final CreateVirtualDeploymentRequest interceptedRequest =
-                CreateVirtualDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateVirtualDeploymentDetails(),
+                "createVirtualDeploymentDetails is required");
+
+        return clientCall(request, CreateVirtualDeploymentResponse::builder)
+                .logger(LOG, "createVirtualDeployment")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateVirtualDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateVirtualDeploymentResponse>
-                transformer =
-                        CreateVirtualDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateVirtualDeploymentRequest, CreateVirtualDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVirtualDeploymentRequest, CreateVirtualDeploymentResponse>,
-                        java.util.concurrent.Future<CreateVirtualDeploymentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVirtualDeploymentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVirtualDeploymentRequest, CreateVirtualDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/CreateVirtualDeployment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualDeploymentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualDeployment.class,
+                        CreateVirtualDeploymentResponse.Builder::virtualDeployment)
+                .handleResponseHeaderString("etag", CreateVirtualDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVirtualDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVirtualDeploymentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateVirtualDeploymentResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1121,51 +574,36 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateVirtualServiceRequest, CreateVirtualServiceResponse>
                     handler) {
-        LOG.trace("Called async createVirtualService");
-        final CreateVirtualServiceRequest interceptedRequest =
-                CreateVirtualServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVirtualServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateVirtualServiceDetails(),
+                "createVirtualServiceDetails is required");
+
+        return clientCall(request, CreateVirtualServiceResponse::builder)
+                .logger(LOG, "createVirtualService")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateVirtualService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualServiceResponse>
-                transformer =
-                        CreateVirtualServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateVirtualServiceRequest, CreateVirtualServiceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVirtualServiceRequest, CreateVirtualServiceResponse>,
-                        java.util.concurrent.Future<CreateVirtualServiceResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVirtualServiceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVirtualServiceRequest, CreateVirtualServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/CreateVirtualService")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualServiceRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualService.class,
+                        CreateVirtualServiceResponse.Builder::virtualService)
+                .handleResponseHeaderString("etag", CreateVirtualServiceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVirtualServiceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVirtualServiceResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateVirtualServiceResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1176,54 +614,38 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     CreateVirtualServiceRouteTableRequest,
                                     CreateVirtualServiceRouteTableResponse>
                             handler) {
-        LOG.trace("Called async createVirtualServiceRouteTable");
-        final CreateVirtualServiceRouteTableRequest interceptedRequest =
-                CreateVirtualServiceRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateVirtualServiceRouteTableDetails(),
+                "createVirtualServiceRouteTableDetails is required");
+
+        return clientCall(request, CreateVirtualServiceRouteTableResponse::builder)
+                .logger(LOG, "createVirtualServiceRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "CreateVirtualServiceRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateVirtualServiceRouteTableResponse>
-                transformer =
-                        CreateVirtualServiceRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateVirtualServiceRouteTableRequest,
-                        CreateVirtualServiceRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVirtualServiceRouteTableRequest,
-                                CreateVirtualServiceRouteTableResponse>,
-                        java.util.concurrent.Future<CreateVirtualServiceRouteTableResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVirtualServiceRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVirtualServiceRouteTableRequest, CreateVirtualServiceRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/CreateVirtualServiceRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualServiceRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.class,
+                        CreateVirtualServiceRouteTableResponse.Builder::virtualServiceRouteTable)
+                .handleResponseHeaderString(
+                        "etag", CreateVirtualServiceRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateVirtualServiceRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateVirtualServiceRouteTableResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateVirtualServiceRouteTableResponse.Builder::location)
+                .callAsync(handler);
     }
 
     @Override
@@ -1232,44 +654,28 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteAccessPolicyRequest, DeleteAccessPolicyResponse>
                     handler) {
-        LOG.trace("Called async deleteAccessPolicy");
-        final DeleteAccessPolicyRequest interceptedRequest =
-                DeleteAccessPolicyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getAccessPolicyId(), "accessPolicyId must not be blank");
+
+        return clientCall(request, DeleteAccessPolicyResponse::builder)
+                .logger(LOG, "deleteAccessPolicy")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteAccessPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteAccessPolicyResponse>
-                transformer =
-                        DeleteAccessPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteAccessPolicyRequest, DeleteAccessPolicyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteAccessPolicyRequest, DeleteAccessPolicyResponse>,
-                        java.util.concurrent.Future<DeleteAccessPolicyResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteAccessPolicyRequest, DeleteAccessPolicyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/DeleteAccessPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAccessPolicyRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .appendPathParam(request.getAccessPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteAccessPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAccessPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1278,45 +684,29 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteIngressGatewayRequest, DeleteIngressGatewayResponse>
                     handler) {
-        LOG.trace("Called async deleteIngressGateway");
-        final DeleteIngressGatewayRequest interceptedRequest =
-                DeleteIngressGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIngressGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIngressGatewayId(), "ingressGatewayId must not be blank");
+
+        return clientCall(request, DeleteIngressGatewayResponse::builder)
+                .logger(LOG, "deleteIngressGateway")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteIngressGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIngressGatewayResponse>
-                transformer =
-                        DeleteIngressGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteIngressGatewayRequest, DeleteIngressGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteIngressGatewayRequest, DeleteIngressGatewayResponse>,
-                        java.util.concurrent.Future<DeleteIngressGatewayResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteIngressGatewayRequest, DeleteIngressGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/DeleteIngressGateway")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIngressGatewayRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .appendPathParam(request.getIngressGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteIngressGatewayResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIngressGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1327,48 +717,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     DeleteIngressGatewayRouteTableRequest,
                                     DeleteIngressGatewayRouteTableResponse>
                             handler) {
-        LOG.trace("Called async deleteIngressGatewayRouteTable");
-        final DeleteIngressGatewayRouteTableRequest interceptedRequest =
-                DeleteIngressGatewayRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getIngressGatewayRouteTableId(),
+                "ingressGatewayRouteTableId must not be blank");
+
+        return clientCall(request, DeleteIngressGatewayRouteTableResponse::builder)
+                .logger(LOG, "deleteIngressGatewayRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteIngressGatewayRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteIngressGatewayRouteTableResponse>
-                transformer =
-                        DeleteIngressGatewayRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteIngressGatewayRouteTableRequest,
-                        DeleteIngressGatewayRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteIngressGatewayRouteTableRequest,
-                                DeleteIngressGatewayRouteTableResponse>,
-                        java.util.concurrent.Future<DeleteIngressGatewayRouteTableResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteIngressGatewayRouteTableRequest, DeleteIngressGatewayRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/DeleteIngressGatewayRouteTable")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIngressGatewayRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .appendPathParam(request.getIngressGatewayRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteIngressGatewayRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteIngressGatewayRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1376,42 +750,28 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             DeleteMeshRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteMeshRequest, DeleteMeshResponse>
                     handler) {
-        LOG.trace("Called async deleteMesh");
-        final DeleteMeshRequest interceptedRequest = DeleteMeshConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMeshConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMeshId(), "meshId must not be blank");
+
+        return clientCall(request, DeleteMeshResponse::builder)
+                .logger(LOG, "deleteMesh")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteMesh",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMeshResponse>
-                transformer =
-                        DeleteMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteMeshRequest, DeleteMeshResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteMeshRequest, DeleteMeshResponse>,
-                        java.util.concurrent.Future<DeleteMeshResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteMeshRequest, DeleteMeshResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/DeleteMesh")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMeshRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .appendPathParam(request.getMeshId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteMeshResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMeshResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1420,46 +780,30 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteVirtualDeploymentRequest, DeleteVirtualDeploymentResponse>
                     handler) {
-        LOG.trace("Called async deleteVirtualDeployment");
-        final DeleteVirtualDeploymentRequest interceptedRequest =
-                DeleteVirtualDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualDeploymentId(), "virtualDeploymentId must not be blank");
+
+        return clientCall(request, DeleteVirtualDeploymentResponse::builder)
+                .logger(LOG, "deleteVirtualDeployment")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteVirtualDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteVirtualDeploymentResponse>
-                transformer =
-                        DeleteVirtualDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteVirtualDeploymentRequest, DeleteVirtualDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVirtualDeploymentRequest, DeleteVirtualDeploymentResponse>,
-                        java.util.concurrent.Future<DeleteVirtualDeploymentResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVirtualDeploymentRequest, DeleteVirtualDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/DeleteVirtualDeployment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualDeploymentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .appendPathParam(request.getVirtualDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVirtualDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVirtualDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1468,45 +812,29 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteVirtualServiceRequest, DeleteVirtualServiceResponse>
                     handler) {
-        LOG.trace("Called async deleteVirtualService");
-        final DeleteVirtualServiceRequest interceptedRequest =
-                DeleteVirtualServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVirtualServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualServiceId(), "virtualServiceId must not be blank");
+
+        return clientCall(request, DeleteVirtualServiceResponse::builder)
+                .logger(LOG, "deleteVirtualService")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteVirtualService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualServiceResponse>
-                transformer =
-                        DeleteVirtualServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteVirtualServiceRequest, DeleteVirtualServiceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVirtualServiceRequest, DeleteVirtualServiceResponse>,
-                        java.util.concurrent.Future<DeleteVirtualServiceResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVirtualServiceRequest, DeleteVirtualServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/DeleteVirtualService")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualServiceRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .appendPathParam(request.getVirtualServiceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVirtualServiceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVirtualServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1517,48 +845,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     DeleteVirtualServiceRouteTableRequest,
                                     DeleteVirtualServiceRouteTableResponse>
                             handler) {
-        LOG.trace("Called async deleteVirtualServiceRouteTable");
-        final DeleteVirtualServiceRouteTableRequest interceptedRequest =
-                DeleteVirtualServiceRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualServiceRouteTableId(),
+                "virtualServiceRouteTableId must not be blank");
+
+        return clientCall(request, DeleteVirtualServiceRouteTableResponse::builder)
+                .logger(LOG, "deleteVirtualServiceRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "DeleteVirtualServiceRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteVirtualServiceRouteTableResponse>
-                transformer =
-                        DeleteVirtualServiceRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteVirtualServiceRouteTableRequest,
-                        DeleteVirtualServiceRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVirtualServiceRouteTableRequest,
-                                DeleteVirtualServiceRouteTableResponse>,
-                        java.util.concurrent.Future<DeleteVirtualServiceRouteTableResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVirtualServiceRouteTableRequest, DeleteVirtualServiceRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/DeleteVirtualServiceRouteTable")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualServiceRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .appendPathParam(request.getVirtualServiceRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteVirtualServiceRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteVirtualServiceRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1567,44 +879,29 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetAccessPolicyRequest, GetAccessPolicyResponse>
                     handler) {
-        LOG.trace("Called async getAccessPolicy");
-        final GetAccessPolicyRequest interceptedRequest =
-                GetAccessPolicyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getAccessPolicyId(), "accessPolicyId must not be blank");
+
+        return clientCall(request, GetAccessPolicyResponse::builder)
+                .logger(LOG, "getAccessPolicy")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetAccessPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAccessPolicyResponse>
-                transformer =
-                        GetAccessPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetAccessPolicyRequest, GetAccessPolicyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAccessPolicyRequest, GetAccessPolicyResponse>,
-                        java.util.concurrent.Future<GetAccessPolicyResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAccessPolicyRequest, GetAccessPolicyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/GetAccessPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAccessPolicyRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .appendPathParam(request.getAccessPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.AccessPolicy.class,
+                        GetAccessPolicyResponse.Builder::accessPolicy)
+                .handleResponseHeaderString("etag", GetAccessPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAccessPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1613,44 +910,29 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetIngressGatewayRequest, GetIngressGatewayResponse>
                     handler) {
-        LOG.trace("Called async getIngressGateway");
-        final GetIngressGatewayRequest interceptedRequest =
-                GetIngressGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIngressGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIngressGatewayId(), "ingressGatewayId must not be blank");
+
+        return clientCall(request, GetIngressGatewayResponse::builder)
+                .logger(LOG, "getIngressGateway")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetIngressGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetIngressGatewayResponse>
-                transformer =
-                        GetIngressGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetIngressGatewayRequest, GetIngressGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIngressGatewayRequest, GetIngressGatewayResponse>,
-                        java.util.concurrent.Future<GetIngressGatewayResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIngressGatewayRequest, GetIngressGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/GetIngressGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIngressGatewayRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .appendPathParam(request.getIngressGatewayId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGateway.class,
+                        GetIngressGatewayResponse.Builder::ingressGateway)
+                .handleResponseHeaderString("etag", GetIngressGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIngressGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1661,87 +943,59 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     GetIngressGatewayRouteTableRequest,
                                     GetIngressGatewayRouteTableResponse>
                             handler) {
-        LOG.trace("Called async getIngressGatewayRouteTable");
-        final GetIngressGatewayRouteTableRequest interceptedRequest =
-                GetIngressGatewayRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getIngressGatewayRouteTableId(),
+                "ingressGatewayRouteTableId must not be blank");
+
+        return clientCall(request, GetIngressGatewayRouteTableResponse::builder)
+                .logger(LOG, "getIngressGatewayRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetIngressGatewayRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIngressGatewayRouteTableResponse>
-                transformer =
-                        GetIngressGatewayRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIngressGatewayRouteTableRequest, GetIngressGatewayRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIngressGatewayRouteTableRequest,
-                                GetIngressGatewayRouteTableResponse>,
-                        java.util.concurrent.Future<GetIngressGatewayRouteTableResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIngressGatewayRouteTableRequest, GetIngressGatewayRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/GetIngressGatewayRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIngressGatewayRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .appendPathParam(request.getIngressGatewayRouteTableId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGatewayRouteTable.class,
+                        GetIngressGatewayRouteTableResponse.Builder::ingressGatewayRouteTable)
+                .handleResponseHeaderString(
+                        "etag", GetIngressGatewayRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIngressGatewayRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetMeshResponse> getMesh(
             GetMeshRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetMeshRequest, GetMeshResponse> handler) {
-        LOG.trace("Called async getMesh");
-        final GetMeshRequest interceptedRequest = GetMeshConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMeshConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMeshId(), "meshId must not be blank");
+
+        return clientCall(request, GetMeshResponse::builder)
+                .logger(LOG, "getMesh")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetMesh",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetMeshResponse> transformer =
-                GetMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetMeshRequest, GetMeshResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetMeshRequest, GetMeshResponse>,
-                        java.util.concurrent.Future<GetMeshResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetMeshRequest, GetMeshResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/GetMesh")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMeshRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .appendPathParam(request.getMeshId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.Mesh.class, GetMeshResponse.Builder::mesh)
+                .handleResponseHeaderString("etag", GetMeshResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetMeshResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1750,44 +1004,25 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetProxyDetailsRequest, GetProxyDetailsResponse>
                     handler) {
-        LOG.trace("Called async getProxyDetails");
-        final GetProxyDetailsRequest interceptedRequest =
-                GetProxyDetailsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetProxyDetailsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, GetProxyDetailsResponse::builder)
+                .logger(LOG, "getProxyDetails")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetProxyDetails",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetProxyDetailsResponse>
-                transformer =
-                        GetProxyDetailsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetProxyDetailsRequest, GetProxyDetailsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetProxyDetailsRequest, GetProxyDetailsResponse>,
-                        java.util.concurrent.Future<GetProxyDetailsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetProxyDetailsRequest, GetProxyDetailsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/ProxyDetails/GetProxyDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProxyDetailsRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("proxyDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.ProxyDetails.class,
+                        GetProxyDetailsResponse.Builder::proxyDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProxyDetailsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1796,45 +1031,30 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>
                     handler) {
-        LOG.trace("Called async getVirtualDeployment");
-        final GetVirtualDeploymentRequest interceptedRequest =
-                GetVirtualDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualDeploymentId(), "virtualDeploymentId must not be blank");
+
+        return clientCall(request, GetVirtualDeploymentResponse::builder)
+                .logger(LOG, "getVirtualDeployment")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetVirtualDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVirtualDeploymentResponse>
-                transformer =
-                        GetVirtualDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>,
-                        java.util.concurrent.Future<GetVirtualDeploymentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVirtualDeploymentRequest, GetVirtualDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/GetVirtualDeployment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualDeploymentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .appendPathParam(request.getVirtualDeploymentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualDeployment.class,
+                        GetVirtualDeploymentResponse.Builder::virtualDeployment)
+                .handleResponseHeaderString("etag", GetVirtualDeploymentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1843,44 +1063,29 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVirtualServiceRequest, GetVirtualServiceResponse>
                     handler) {
-        LOG.trace("Called async getVirtualService");
-        final GetVirtualServiceRequest interceptedRequest =
-                GetVirtualServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVirtualServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualServiceId(), "virtualServiceId must not be blank");
+
+        return clientCall(request, GetVirtualServiceResponse::builder)
+                .logger(LOG, "getVirtualService")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetVirtualService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVirtualServiceResponse>
-                transformer =
-                        GetVirtualServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVirtualServiceRequest, GetVirtualServiceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVirtualServiceRequest, GetVirtualServiceResponse>,
-                        java.util.concurrent.Future<GetVirtualServiceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVirtualServiceRequest, GetVirtualServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/GetVirtualService")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualServiceRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .appendPathParam(request.getVirtualServiceId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualService.class,
+                        GetVirtualServiceResponse.Builder::virtualService)
+                .handleResponseHeaderString("etag", GetVirtualServiceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1891,47 +1096,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     GetVirtualServiceRouteTableRequest,
                                     GetVirtualServiceRouteTableResponse>
                             handler) {
-        LOG.trace("Called async getVirtualServiceRouteTable");
-        final GetVirtualServiceRouteTableRequest interceptedRequest =
-                GetVirtualServiceRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualServiceRouteTableId(),
+                "virtualServiceRouteTableId must not be blank");
+
+        return clientCall(request, GetVirtualServiceRouteTableResponse::builder)
+                .logger(LOG, "getVirtualServiceRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetVirtualServiceRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetVirtualServiceRouteTableResponse>
-                transformer =
-                        GetVirtualServiceRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetVirtualServiceRouteTableRequest, GetVirtualServiceRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVirtualServiceRouteTableRequest,
-                                GetVirtualServiceRouteTableResponse>,
-                        java.util.concurrent.Future<GetVirtualServiceRouteTableResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVirtualServiceRouteTableRequest, GetVirtualServiceRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/GetVirtualServiceRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualServiceRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .appendPathParam(request.getVirtualServiceRouteTableId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable.class,
+                        GetVirtualServiceRouteTableResponse.Builder::virtualServiceRouteTable)
+                .handleResponseHeaderString(
+                        "etag", GetVirtualServiceRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualServiceRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1940,43 +1130,30 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetWorkRequestRequest, GetWorkRequestResponse>
                     handler) {
-        LOG.trace("Called async getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "ServiceMesh",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
-                transformer =
-                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetWorkRequestRequest, GetWorkRequestResponse>,
-                        java.util.concurrent.Future<GetWorkRequestResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetWorkRequestRequest, GetWorkRequestResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callAsync(handler);
     }
 
     @Override
@@ -1985,44 +1162,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListAccessPoliciesRequest, ListAccessPoliciesResponse>
                     handler) {
-        LOG.trace("Called async listAccessPolicies");
-        final ListAccessPoliciesRequest interceptedRequest =
-                ListAccessPoliciesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAccessPoliciesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListAccessPoliciesResponse::builder)
+                .logger(LOG, "listAccessPolicies")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListAccessPolicies",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListAccessPoliciesResponse>
-                transformer =
-                        ListAccessPoliciesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAccessPoliciesRequest, ListAccessPoliciesResponse>,
-                        java.util.concurrent.Future<ListAccessPoliciesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAccessPoliciesRequest, ListAccessPoliciesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/ListAccessPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAccessPoliciesRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("meshId", request.getMeshId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.AccessPolicyCollection.class,
+                        ListAccessPoliciesResponse.Builder::accessPolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAccessPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAccessPoliciesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2033,47 +1203,39 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ListIngressGatewayRouteTablesRequest,
                                     ListIngressGatewayRouteTablesResponse>
                             handler) {
-        LOG.trace("Called async listIngressGatewayRouteTables");
-        final ListIngressGatewayRouteTablesRequest interceptedRequest =
-                ListIngressGatewayRouteTablesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIngressGatewayRouteTablesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIngressGatewayRouteTablesResponse::builder)
+                .logger(LOG, "listIngressGatewayRouteTables")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListIngressGatewayRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListIngressGatewayRouteTablesResponse>
-                transformer =
-                        ListIngressGatewayRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIngressGatewayRouteTablesRequest, ListIngressGatewayRouteTablesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIngressGatewayRouteTablesRequest,
-                                ListIngressGatewayRouteTablesResponse>,
-                        java.util.concurrent.Future<ListIngressGatewayRouteTablesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIngressGatewayRouteTablesRequest, ListIngressGatewayRouteTablesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/ListIngressGatewayRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIngressGatewayRouteTablesRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("ingressGatewayId", request.getIngressGatewayId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableCollection.class,
+                        ListIngressGatewayRouteTablesResponse.Builder
+                                ::ingressGatewayRouteTableCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIngressGatewayRouteTablesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIngressGatewayRouteTablesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2082,45 +1244,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListIngressGatewaysRequest, ListIngressGatewaysResponse>
                     handler) {
-        LOG.trace("Called async listIngressGateways");
-        final ListIngressGatewaysRequest interceptedRequest =
-                ListIngressGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIngressGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIngressGatewaysResponse::builder)
+                .logger(LOG, "listIngressGateways")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListIngressGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListIngressGatewaysResponse>
-                transformer =
-                        ListIngressGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIngressGatewaysRequest, ListIngressGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIngressGatewaysRequest, ListIngressGatewaysResponse>,
-                        java.util.concurrent.Future<ListIngressGatewaysResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIngressGatewaysRequest, ListIngressGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/ListIngressGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIngressGatewaysRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("meshId", request.getMeshId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.IngressGatewayCollection.class,
+                        ListIngressGatewaysResponse.Builder::ingressGatewayCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIngressGatewaysResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIngressGatewaysResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2128,42 +1282,36 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             ListMeshesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListMeshesRequest, ListMeshesResponse>
                     handler) {
-        LOG.trace("Called async listMeshes");
-        final ListMeshesRequest interceptedRequest = ListMeshesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMeshesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMeshesResponse::builder)
+                .logger(LOG, "listMeshes")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListMeshes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListMeshesResponse>
-                transformer =
-                        ListMeshesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListMeshesRequest, ListMeshesResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListMeshesRequest, ListMeshesResponse>,
-                        java.util.concurrent.Future<ListMeshesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListMeshesRequest, ListMeshesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/ListMeshes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMeshesRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.MeshCollection.class,
+                        ListMeshesResponse.Builder::meshCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMeshesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMeshesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2172,45 +1320,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>
                     handler) {
-        LOG.trace("Called async listVirtualDeployments");
-        final ListVirtualDeploymentsRequest interceptedRequest =
-                ListVirtualDeploymentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualDeploymentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualDeploymentsResponse::builder)
+                .logger(LOG, "listVirtualDeployments")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListVirtualDeployments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVirtualDeploymentsResponse>
-                transformer =
-                        ListVirtualDeploymentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>,
-                        java.util.concurrent.Future<ListVirtualDeploymentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualDeploymentsRequest, ListVirtualDeploymentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/ListVirtualDeployments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualDeploymentsRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("virtualServiceId", request.getVirtualServiceId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualDeploymentCollection.class,
+                        ListVirtualDeploymentsResponse.Builder::virtualDeploymentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualDeploymentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualDeploymentsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2221,47 +1361,39 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     ListVirtualServiceRouteTablesRequest,
                                     ListVirtualServiceRouteTablesResponse>
                             handler) {
-        LOG.trace("Called async listVirtualServiceRouteTables");
-        final ListVirtualServiceRouteTablesRequest interceptedRequest =
-                ListVirtualServiceRouteTablesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualServiceRouteTablesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualServiceRouteTablesResponse::builder)
+                .logger(LOG, "listVirtualServiceRouteTables")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListVirtualServiceRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListVirtualServiceRouteTablesResponse>
-                transformer =
-                        ListVirtualServiceRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualServiceRouteTablesRequest, ListVirtualServiceRouteTablesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualServiceRouteTablesRequest,
-                                ListVirtualServiceRouteTablesResponse>,
-                        java.util.concurrent.Future<ListVirtualServiceRouteTablesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualServiceRouteTablesRequest, ListVirtualServiceRouteTablesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/ListVirtualServiceRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualServiceRouteTablesRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("virtualServiceId", request.getVirtualServiceId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableCollection.class,
+                        ListVirtualServiceRouteTablesResponse.Builder
+                                ::virtualServiceRouteTableCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualServiceRouteTablesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualServiceRouteTablesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2270,45 +1402,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListVirtualServicesRequest, ListVirtualServicesResponse>
                     handler) {
-        LOG.trace("Called async listVirtualServices");
-        final ListVirtualServicesRequest interceptedRequest =
-                ListVirtualServicesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualServicesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualServicesResponse::builder)
+                .logger(LOG, "listVirtualServices")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListVirtualServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVirtualServicesResponse>
-                transformer =
-                        ListVirtualServicesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualServicesRequest, ListVirtualServicesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualServicesRequest, ListVirtualServicesResponse>,
-                        java.util.concurrent.Future<ListVirtualServicesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualServicesRequest, ListVirtualServicesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/ListVirtualServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualServicesRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("meshId", request.getMeshId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.VirtualServiceCollection.class,
+                        ListVirtualServicesResponse.Builder::virtualServiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualServicesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualServicesResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2317,45 +1441,33 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestErrors");
-        final ListWorkRequestErrorsRequest interceptedRequest =
-                ListWorkRequestErrorsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
-                transformer =
-                        ListWorkRequestErrorsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.WorkRequestErrorCollection.class,
+                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2364,45 +1476,33 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequestLogs");
-        final ListWorkRequestLogsRequest interceptedRequest =
-                ListWorkRequestLogsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
-                transformer =
-                        ListWorkRequestLogsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.WorkRequestLogEntryCollection.class,
+                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2411,44 +1511,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler) {
-        LOG.trace("Called async listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "ServiceMesh",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
-                        java.util.concurrent.Future<ListWorkRequestsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.servicemesh.model.WorkRequestCollection.class,
+                        ListWorkRequestsResponse.Builder::workRequestCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
     }
 
     @Override
@@ -2457,50 +1545,32 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>
                     handler) {
-        LOG.trace("Called async updateAccessPolicy");
-        final UpdateAccessPolicyRequest interceptedRequest =
-                UpdateAccessPolicyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAccessPolicyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getAccessPolicyId(), "accessPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAccessPolicyDetails(), "updateAccessPolicyDetails is required");
+
+        return clientCall(request, UpdateAccessPolicyResponse::builder)
+                .logger(LOG, "updateAccessPolicy")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateAccessPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateAccessPolicyResponse>
-                transformer =
-                        UpdateAccessPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>,
-                        java.util.concurrent.Future<UpdateAccessPolicyResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateAccessPolicyDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/AccessPolicy/UpdateAccessPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAccessPolicyRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("accessPolicies")
+                .appendPathParam(request.getAccessPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAccessPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAccessPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2509,51 +1579,34 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateIngressGatewayRequest, UpdateIngressGatewayResponse>
                     handler) {
-        LOG.trace("Called async updateIngressGateway");
-        final UpdateIngressGatewayRequest interceptedRequest =
-                UpdateIngressGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIngressGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIngressGatewayId(), "ingressGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIngressGatewayDetails(),
+                "updateIngressGatewayDetails is required");
+
+        return clientCall(request, UpdateIngressGatewayResponse::builder)
+                .logger(LOG, "updateIngressGateway")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateIngressGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIngressGatewayResponse>
-                transformer =
-                        UpdateIngressGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateIngressGatewayRequest, UpdateIngressGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIngressGatewayRequest, UpdateIngressGatewayResponse>,
-                        java.util.concurrent.Future<UpdateIngressGatewayResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateIngressGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIngressGatewayRequest, UpdateIngressGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGateway/UpdateIngressGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIngressGatewayRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGateways")
+                .appendPathParam(request.getIngressGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateIngressGatewayResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIngressGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2564,54 +1617,37 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     UpdateIngressGatewayRouteTableRequest,
                                     UpdateIngressGatewayRouteTableResponse>
                             handler) {
-        LOG.trace("Called async updateIngressGatewayRouteTable");
-        final UpdateIngressGatewayRouteTableRequest interceptedRequest =
-                UpdateIngressGatewayRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIngressGatewayRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getIngressGatewayRouteTableId(),
+                "ingressGatewayRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIngressGatewayRouteTableDetails(),
+                "updateIngressGatewayRouteTableDetails is required");
+
+        return clientCall(request, UpdateIngressGatewayRouteTableResponse::builder)
+                .logger(LOG, "updateIngressGatewayRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateIngressGatewayRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateIngressGatewayRouteTableResponse>
-                transformer =
-                        UpdateIngressGatewayRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateIngressGatewayRouteTableRequest,
-                        UpdateIngressGatewayRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIngressGatewayRouteTableRequest,
-                                UpdateIngressGatewayRouteTableResponse>,
-                        java.util.concurrent.Future<UpdateIngressGatewayRouteTableResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateIngressGatewayRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIngressGatewayRouteTableRequest, UpdateIngressGatewayRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/IngressGatewayRouteTable/UpdateIngressGatewayRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIngressGatewayRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("ingressGatewayRouteTables")
+                .appendPathParam(request.getIngressGatewayRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateIngressGatewayRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateIngressGatewayRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2619,48 +1655,31 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             UpdateMeshRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateMeshRequest, UpdateMeshResponse>
                     handler) {
-        LOG.trace("Called async updateMesh");
-        final UpdateMeshRequest interceptedRequest = UpdateMeshConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMeshConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getMeshId(), "meshId must not be blank");
+        Objects.requireNonNull(request.getUpdateMeshDetails(), "updateMeshDetails is required");
+
+        return clientCall(request, UpdateMeshResponse::builder)
+                .logger(LOG, "updateMesh")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateMesh",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMeshResponse>
-                transformer =
-                        UpdateMeshConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateMeshRequest, UpdateMeshResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateMeshRequest, UpdateMeshResponse>,
-                        java.util.concurrent.Future<UpdateMeshResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateMeshDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateMeshRequest, UpdateMeshResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/Mesh/UpdateMesh")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMeshRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("meshes")
+                .appendPathParam(request.getMeshId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateMeshResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMeshResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2669,52 +1688,35 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualDeploymentRequest, UpdateVirtualDeploymentResponse>
                     handler) {
-        LOG.trace("Called async updateVirtualDeployment");
-        final UpdateVirtualDeploymentRequest interceptedRequest =
-                UpdateVirtualDeploymentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVirtualDeploymentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualDeploymentId(), "virtualDeploymentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualDeploymentDetails(),
+                "updateVirtualDeploymentDetails is required");
+
+        return clientCall(request, UpdateVirtualDeploymentResponse::builder)
+                .logger(LOG, "updateVirtualDeployment")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateVirtualDeployment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateVirtualDeploymentResponse>
-                transformer =
-                        UpdateVirtualDeploymentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateVirtualDeploymentRequest, UpdateVirtualDeploymentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVirtualDeploymentRequest, UpdateVirtualDeploymentResponse>,
-                        java.util.concurrent.Future<UpdateVirtualDeploymentResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVirtualDeploymentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVirtualDeploymentRequest, UpdateVirtualDeploymentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualDeployment/UpdateVirtualDeployment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualDeploymentRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualDeployments")
+                .appendPathParam(request.getVirtualDeploymentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVirtualDeploymentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVirtualDeploymentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2723,51 +1725,34 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualServiceRequest, UpdateVirtualServiceResponse>
                     handler) {
-        LOG.trace("Called async updateVirtualService");
-        final UpdateVirtualServiceRequest interceptedRequest =
-                UpdateVirtualServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVirtualServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualServiceId(), "virtualServiceId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualServiceDetails(),
+                "updateVirtualServiceDetails is required");
+
+        return clientCall(request, UpdateVirtualServiceResponse::builder)
+                .logger(LOG, "updateVirtualService")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateVirtualService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualServiceResponse>
-                transformer =
-                        UpdateVirtualServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateVirtualServiceRequest, UpdateVirtualServiceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVirtualServiceRequest, UpdateVirtualServiceResponse>,
-                        java.util.concurrent.Future<UpdateVirtualServiceResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVirtualServiceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVirtualServiceRequest, UpdateVirtualServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualService/UpdateVirtualService")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualServiceRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServices")
+                .appendPathParam(request.getVirtualServiceId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVirtualServiceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVirtualServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2778,53 +1763,195 @@ public class ServiceMeshAsyncClient implements ServiceMeshAsync {
                                     UpdateVirtualServiceRouteTableRequest,
                                     UpdateVirtualServiceRouteTableResponse>
                             handler) {
-        LOG.trace("Called async updateVirtualServiceRouteTable");
-        final UpdateVirtualServiceRouteTableRequest interceptedRequest =
-                UpdateVirtualServiceRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVirtualServiceRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getVirtualServiceRouteTableId(),
+                "virtualServiceRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualServiceRouteTableDetails(),
+                "updateVirtualServiceRouteTableDetails is required");
+
+        return clientCall(request, UpdateVirtualServiceRouteTableResponse::builder)
+                .logger(LOG, "updateVirtualServiceRouteTable")
+                .serviceDetails(
                         "ServiceMesh",
                         "UpdateVirtualServiceRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateVirtualServiceRouteTableResponse>
-                transformer =
-                        UpdateVirtualServiceRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateVirtualServiceRouteTableRequest,
-                        UpdateVirtualServiceRouteTableResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/service-mesh/20210930/VirtualServiceRouteTable/UpdateVirtualServiceRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualServiceRouteTableRequest::builder)
+                .basePath("/20210930")
+                .appendPathParam("virtualServiceRouteTables")
+                .appendPathParam(request.getVirtualServiceRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateVirtualServiceRouteTableResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateVirtualServiceRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVirtualServiceRouteTableRequest,
-                                UpdateVirtualServiceRouteTableResponse>,
-                        java.util.concurrent.Future<UpdateVirtualServiceRouteTableResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVirtualServiceRouteTableDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVirtualServiceRouteTableRequest, UpdateVirtualServiceRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ServiceMeshAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

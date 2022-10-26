@@ -10,12 +10,12 @@ import com.oracle.bmc.waiter.DelayStrategy;
 import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
+
 import javax.annotation.Nonnull;
-import javax.ws.rs.core.Response;
 
 /**
- * A custom retrier that refreshes tokens and retries the operation in case of authentication failures. This retrier
- * will make at max 2 attempts with no delay between the retried requests.
+ * A custom retrier that refreshes tokens and retries the operation in case of authentication
+ * failures. This retrier will make at max 2 attempts with no delay between the retried requests.
  */
 public class TokenRefreshRetrier extends BmcGenericRetrier {
     private static TerminationStrategy TOKEN_REFRESH_TERMINATION_STRATEGY =
@@ -34,9 +34,7 @@ public class TokenRefreshRetrier extends BmcGenericRetrier {
                         .delayStrategy(TOKEN_REFRESH_DELAY_STRATEGY)
                         .retryCondition(
                                 e -> {
-                                    if ((e.getStatusCode()
-                                                            == Response.Status.UNAUTHORIZED
-                                                                    .getStatusCode()
+                                    if ((e.getStatusCode() == 401
                                                     || DefaultRetryCondition.isProcessingException(
                                                             e))
                                             && authenticationDetailsProvider
@@ -55,6 +53,7 @@ public class TokenRefreshRetrier extends BmcGenericRetrier {
 
     /**
      * Create a new instance.
+     *
      * @param authenticationDetailsProvider The authentication provider used by the client.
      */
     public TokenRefreshRetrier(

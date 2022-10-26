@@ -9,15 +9,14 @@ import com.oracle.bmc.ons.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +24,12 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    /**
-     * The returned Subscription instance.
-     */
+    /** The returned Subscription instance. */
     private com.oracle.bmc.ons.model.Subscription subscription;
 
     /**
      * The returned Subscription instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ons.model.Subscription getSubscription() {
@@ -46,7 +44,7 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
     })
     private ResendSubscriptionConfirmationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.ons.model.Subscription subscription) {
         super(__httpStatusCode__, headers);
@@ -54,31 +52,34 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
         this.subscription = subscription;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ResendSubscriptionConfirmationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,13 +89,12 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /**
-         * The returned Subscription instance.
-         */
+        /** The returned Subscription instance. */
         private com.oracle.bmc.ons.model.Subscription subscription;
 
         /**
          * The returned Subscription instance.
+         *
          * @param subscription the value to set
          * @return this builder
          */
@@ -105,8 +105,10 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ResendSubscriptionConfirmationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -118,8 +120,10 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ResendSubscriptionConfirmationResponse build() {
             return new ResendSubscriptionConfirmationResponse(
                     __httpStatusCode__, headers, opcRequestId, subscription);
@@ -128,6 +132,7 @@ public class ResendSubscriptionConfirmationResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

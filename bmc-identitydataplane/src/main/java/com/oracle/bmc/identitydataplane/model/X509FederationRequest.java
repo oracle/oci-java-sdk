@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = X509FederationRequest.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = X509FederationRequest.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class X509FederationRequest
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"certificate", "publicKey", "intermediateCertificates"})
     public X509FederationRequest(
@@ -33,57 +33,58 @@ public final class X509FederationRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The x509 certificate of the service instance, issued by his CA.
-         **/
+        /** The x509 certificate of the service instance, issued by his CA. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
         /**
          * The x509 certificate of the service instance, issued by his CA.
+         *
          * @param certificate the value to set
          * @return this builder
-         **/
+         */
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
             return this;
         }
         /**
-         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
-         *
-         **/
+         * A temporary public key, owned by the service. The service also owns the corresponding
+         * private key. This public key will by put inside the security token by the auth service
+         * after successful validation of the certificate.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
         /**
-         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         * A temporary public key, owned by the service. The service also owns the corresponding
+         * private key. This public key will by put inside the security token by the auth service
+         * after successful validation of the certificate.
          *
          * @param publicKey the value to set
          * @return this builder
-         **/
+         */
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
         /**
-         * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
-         * service already has the intermediate certificate(s), then this is not required.
-         *
-         **/
+         * An array of intermediate certificates to form the chain from the leaf certificate to the
+         * root CA. If auth service already has the intermediate certificate(s), then this is not
+         * required.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
         private java.util.List<String> intermediateCertificates;
 
         /**
-         * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
-         * service already has the intermediate certificate(s), then this is not required.
+         * An array of intermediate certificates to form the chain from the leaf certificate to the
+         * root CA. If auth service already has the intermediate certificate(s), then this is not
+         * required.
          *
          * @param intermediateCertificates the value to set
          * @return this builder
-         **/
+         */
         public Builder intermediateCertificates(java.util.List<String> intermediateCertificates) {
             this.intermediateCertificates = intermediateCertificates;
             this.__explicitlySet__.add("intermediateCertificates");
@@ -118,9 +119,7 @@ public final class X509FederationRequest
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,52 +128,51 @@ public final class X509FederationRequest
         return new Builder().copy(this);
     }
 
-    /**
-     * The x509 certificate of the service instance, issued by his CA.
-     **/
+    /** The x509 certificate of the service instance, issued by his CA. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
     /**
      * The x509 certificate of the service instance, issued by his CA.
+     *
      * @return the value
-     **/
+     */
     public String getCertificate() {
         return certificate;
     }
 
     /**
-     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
-     *
-     **/
+     * A temporary public key, owned by the service. The service also owns the corresponding private
+     * key. This public key will by put inside the security token by the auth service after
+     * successful validation of the certificate.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
     /**
-     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     * A temporary public key, owned by the service. The service also owns the corresponding private
+     * key. This public key will by put inside the security token by the auth service after
+     * successful validation of the certificate.
      *
      * @return the value
-     **/
+     */
     public String getPublicKey() {
         return publicKey;
     }
 
     /**
-     * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
-     * service already has the intermediate certificate(s), then this is not required.
-     *
-     **/
+     * An array of intermediate certificates to form the chain from the leaf certificate to the root
+     * CA. If auth service already has the intermediate certificate(s), then this is not required.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("intermediateCertificates")
     private final java.util.List<String> intermediateCertificates;
 
     /**
-     * An array of intermediate certificates to form the chain from the leaf certificate to the root CA. If auth
-     * service already has the intermediate certificate(s), then this is not required.
+     * An array of intermediate certificates to form the chain from the leaf certificate to the root
+     * CA. If auth service already has the intermediate certificate(s), then this is not required.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getIntermediateCertificates() {
         return intermediateCertificates;
     }
@@ -186,6 +184,7 @@ public final class X509FederationRequest
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

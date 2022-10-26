@@ -5,19 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of the audit policy provisioning conditions.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the audit policy provisioning conditions. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EnableConditions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EnableConditions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EnableConditions
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entitySelection",
@@ -39,65 +41,61 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The entity include or exclude selection.
-         **/
+        /** The entity include or exclude selection. */
         @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
         private EntitySelection entitySelection;
 
         /**
          * The entity include or exclude selection.
+         *
          * @param entitySelection the value to set
          * @return this builder
-         **/
+         */
         public Builder entitySelection(EntitySelection entitySelection) {
             this.entitySelection = entitySelection;
             this.__explicitlySet__.add("entitySelection");
             return this;
         }
-        /**
-         * The entity type that the policy must be enabled for.
-         **/
+        /** The entity type that the policy must be enabled for. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
         /**
          * The entity type that the policy must be enabled for.
+         *
          * @param entityType the value to set
          * @return this builder
-         **/
+         */
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /**
-         * The operation status that the policy must be enabled for.
-         **/
+        /** The operation status that the policy must be enabled for. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
          * The operation status that the policy must be enabled for.
+         *
          * @param operationStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /**
-         * List of users or roles that the policy must be enabled for.
-         **/
+        /** List of users or roles that the policy must be enabled for. */
         @com.fasterxml.jackson.annotation.JsonProperty("entityNames")
         private java.util.List<String> entityNames;
 
         /**
          * List of users or roles that the policy must be enabled for.
+         *
          * @param entityNames the value to set
          * @return this builder
-         **/
+         */
         public Builder entityNames(java.util.List<String> entityNames) {
             this.entityNames = entityNames;
             this.__explicitlySet__.add("entityNames");
@@ -138,9 +136,7 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,16 +145,14 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The entity include or exclude selection.
-     **/
-    public enum EntitySelection {
+    /** The entity include or exclude selection. */
+    public enum EntitySelection implements com.oracle.bmc.http.internal.BmcEnum {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -197,31 +191,28 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The entity include or exclude selection.
-     **/
+    /** The entity include or exclude selection. */
     @com.fasterxml.jackson.annotation.JsonProperty("entitySelection")
     private final EntitySelection entitySelection;
 
     /**
      * The entity include or exclude selection.
+     *
      * @return the value
-     **/
+     */
     public EntitySelection getEntitySelection() {
         return entitySelection;
     }
 
-    /**
-     * The entity type that the policy must be enabled for.
-     **/
-    public enum EntityType {
+    /** The entity type that the policy must be enabled for. */
+    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
         User("USER"),
         Role("ROLE"),
         AllUsers("ALL_USERS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -260,31 +251,28 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The entity type that the policy must be enabled for.
-     **/
+    /** The entity type that the policy must be enabled for. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
     /**
      * The entity type that the policy must be enabled for.
+     *
      * @return the value
-     **/
+     */
     public EntityType getEntityType() {
         return entityType;
     }
 
-    /**
-     * The operation status that the policy must be enabled for.
-     **/
-    public enum OperationStatus {
+    /** The operation status that the policy must be enabled for. */
+    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Success("SUCCESS"),
         Failure("FAILURE"),
         Both("BOTH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -323,30 +311,28 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * The operation status that the policy must be enabled for.
-     **/
+    /** The operation status that the policy must be enabled for. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
      * The operation status that the policy must be enabled for.
+     *
      * @return the value
-     **/
+     */
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /**
-     * List of users or roles that the policy must be enabled for.
-     **/
+    /** List of users or roles that the policy must be enabled for. */
     @com.fasterxml.jackson.annotation.JsonProperty("entityNames")
     private final java.util.List<String> entityNames;
 
     /**
      * List of users or roles that the policy must be enabled for.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getEntityNames() {
         return entityNames;
     }
@@ -358,6 +344,7 @@ public final class EnableConditions extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

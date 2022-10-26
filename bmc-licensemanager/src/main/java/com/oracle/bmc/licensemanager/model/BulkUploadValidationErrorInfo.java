@@ -5,22 +5,23 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * Detailed error information corresponding to each column for a particular supported license record that could not be uploaded.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Detailed error information corresponding to each column for a particular supported license record
+ * that could not be uploaded. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BulkUploadValidationErrorInfo.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BulkUploadValidationErrorInfo.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BulkUploadValidationErrorInfo
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rowNumber", "productName", "rowError"})
     public BulkUploadValidationErrorInfo(
@@ -33,49 +34,46 @@ public final class BulkUploadValidationErrorInfo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Refers to the license record number as provided in the bulk upload file.
-         **/
+        /** Refers to the license record number as provided in the bulk upload file. */
         @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
         private Integer rowNumber;
 
         /**
          * Refers to the license record number as provided in the bulk upload file.
+         *
          * @param rowNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder rowNumber(Integer rowNumber) {
             this.rowNumber = rowNumber;
             this.__explicitlySet__.add("rowNumber");
             return this;
         }
-        /**
-         * Product name of invalid row.
-         **/
+        /** Product name of invalid row. */
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * Product name of invalid row.
+         *
          * @param productName the value to set
          * @return this builder
-         **/
+         */
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /**
-         * Error information corresponding to each column.
-         **/
+        /** Error information corresponding to each column. */
         @com.fasterxml.jackson.annotation.JsonProperty("rowError")
         private java.util.List<BulkUploadCellInfo> rowError;
 
         /**
          * Error information corresponding to each column.
+         *
          * @param rowError the value to set
          * @return this builder
-         **/
+         */
         public Builder rowError(java.util.List<BulkUploadCellInfo> rowError) {
             this.rowError = rowError;
             this.__explicitlySet__.add("rowError");
@@ -110,9 +108,7 @@ public final class BulkUploadValidationErrorInfo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,44 +117,41 @@ public final class BulkUploadValidationErrorInfo
         return new Builder().copy(this);
     }
 
-    /**
-     * Refers to the license record number as provided in the bulk upload file.
-     **/
+    /** Refers to the license record number as provided in the bulk upload file. */
     @com.fasterxml.jackson.annotation.JsonProperty("rowNumber")
     private final Integer rowNumber;
 
     /**
      * Refers to the license record number as provided in the bulk upload file.
+     *
      * @return the value
-     **/
+     */
     public Integer getRowNumber() {
         return rowNumber;
     }
 
-    /**
-     * Product name of invalid row.
-     **/
+    /** Product name of invalid row. */
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * Product name of invalid row.
+     *
      * @return the value
-     **/
+     */
     public String getProductName() {
         return productName;
     }
 
-    /**
-     * Error information corresponding to each column.
-     **/
+    /** Error information corresponding to each column. */
     @com.fasterxml.jackson.annotation.JsonProperty("rowError")
     private final java.util.List<BulkUploadCellInfo> rowError;
 
     /**
      * Error information corresponding to each column.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<BulkUploadCellInfo> getRowError() {
         return rowError;
     }
@@ -170,6 +163,7 @@ public final class BulkUploadValidationErrorInfo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

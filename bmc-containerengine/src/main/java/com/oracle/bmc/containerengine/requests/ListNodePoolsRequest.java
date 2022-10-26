@@ -6,96 +6,78 @@ package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListNodePoolsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNodePoolsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/ListNodePoolsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListNodePoolsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     private String compartmentId;
 
-    /**
-     * The OCID of the compartment.
-     */
+    /** The OCID of the compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The OCID of the cluster.
-     */
+    /** The OCID of the cluster. */
     private String clusterId;
 
-    /**
-     * The OCID of the cluster.
-     */
+    /** The OCID of the cluster. */
     public String getClusterId() {
         return clusterId;
     }
-    /**
-     * The name to filter on.
-     */
+    /** The name to filter on. */
     private String name;
 
-    /**
-     * The name to filter on.
-     */
+    /** The name to filter on. */
     public String getName() {
         return name;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-     * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about how
+     * pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous
+     * "List" call. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The optional order in which to sort the results.
-     */
+    /** The optional order in which to sort the results. */
     private com.oracle.bmc.containerengine.model.SortOrder sortOrder;
 
-    /**
-     * The optional order in which to sort the results.
-     */
+    /** The optional order in which to sort the results. */
     public com.oracle.bmc.containerengine.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The optional field to sort the results by.
-     */
+    /** The optional field to sort the results by. */
     private SortBy sortBy;
 
-    /**
-     * The optional field to sort the results by.
-     **/
-    public enum SortBy {
+    /** The optional field to sort the results by. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Id("ID"),
         Name("NAME"),
         TimeCreated("TIME_CREATED"),
@@ -129,35 +111,33 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
     };
 
-    /**
-     * The optional field to sort the results by.
-     */
+    /** The optional field to sort the results by. */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR
+     * logic). eg. [ACTIVE, DELETING]
      */
     private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
             lifecycleState;
 
     /**
-     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+     * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR
+     * logic). eg. [ACTIVE, DELETING]
      */
     public java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
             getLifecycleState() {
@@ -167,17 +147,15 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListNodePoolsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the compartment.
-         */
+        /** The OCID of the compartment. */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -186,13 +164,12 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The OCID of the cluster.
-         */
+        /** The OCID of the cluster. */
         private String clusterId = null;
 
         /**
          * The OCID of the cluster.
+         *
          * @param clusterId the value to set
          * @return this builder instance
          */
@@ -201,13 +178,12 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The name to filter on.
-         */
+        /** The name to filter on. */
         private String name = null;
 
         /**
          * The name to filter on.
+         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -217,17 +193,18 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about
+         * how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
-         * 1 is the minimum, 1000 is the maximum. For important details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a
+         * paginated "List" call. 1 is the minimum, 1000 is the maximum. For important details about
+         * how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -238,15 +215,16 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the
+         * previous "List" call. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -256,13 +234,12 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The optional order in which to sort the results.
-         */
+        /** The optional order in which to sort the results. */
         private com.oracle.bmc.containerengine.model.SortOrder sortOrder = null;
 
         /**
          * The optional order in which to sort the results.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -271,13 +248,12 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /**
-         * The optional field to sort the results by.
-         */
+        /** The optional field to sort the results by. */
         private SortBy sortBy = null;
 
         /**
          * The optional field to sort the results by.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -287,15 +263,14 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -306,13 +281,16 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items
+         * (OR logic). eg. [ACTIVE, DELETING]
          */
         private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
                 lifecycleState = null;
 
         /**
-         * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * A list of nodepool lifecycle states on which to filter on, matching any of the list items
+         * (OR logic). eg. [ACTIVE, DELETING]
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -324,7 +302,9 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Singular setter. A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * Singular setter. A list of nodepool lifecycle states on which to filter on, matching any
+         * of the list items (OR logic). eg. [ACTIVE, DELETING]
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -334,18 +314,19 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -357,6 +338,7 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListNodePoolsRequest o) {
@@ -377,10 +359,11 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListNodePoolsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListNodePoolsRequest
          */
@@ -394,7 +377,8 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListNodePoolsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListNodePoolsRequest
@@ -411,12 +395,14 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.opcRequestId = opcRequestId;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListNodePoolsRequest(compartmentId, clusterId, name, limit, page, sortOrder, sortBy, opcRequestId, lifecycleState);
+            // new ListNodePoolsRequest(compartmentId, clusterId, name, limit, page, sortOrder,
+            // sortBy, opcRequestId, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -434,6 +420,7 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,21 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Full data catalog type definition. Fully defines a type of the data catalog. All types are statically defined
- * in the system and are immutable. It isn't possible to create new types or update existing types via the API.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Full data catalog type definition. Fully defines a type of the data catalog. All types are
+ * statically defined in the system and are immutable. It isn't possible to create new types or
+ * update existing types via the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Type.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Type extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -74,280 +75,243 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique type key that is immutable.
-         **/
+        /** Unique type key that is immutable. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique type key that is immutable.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The immutable name of the type.
-         **/
+        /** The immutable name of the type. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The immutable name of the type.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Detailed description of the type.
-         **/
+        /** Detailed description of the type. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the type.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The data catalog's OCID.
-         **/
+        /** The data catalog's OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
         /**
          * The data catalog's OCID.
+         *
          * @param catalogId the value to set
          * @return this builder
-         **/
+         */
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
         /**
-         * A map of arrays which defines the type specific properties, both required and optional. The map keys are
-         * category names and the values are arrays contiaing all property details. Every property is contained inside
-         * of a category. Most types have required properties within the "default" category.
-         * Example:
-         * {@code {
-         *    "properties": {
-         *      "default": {
-         *        "attributes:": [
-         *          {
-         *            "name": "host",
-         *            "type": "string",
-         *            "isRequired": true,
-         *            "isUpdatable": false
-         *          },
-         *          ...
-         *        ]
-         *      }
-         *    }
-         *  }}
-         *
-         **/
+         * A map of arrays which defines the type specific properties, both required and optional.
+         * The map keys are category names and the values are arrays contiaing all property details.
+         * Every property is contained inside of a category. Most types have required properties
+         * within the "default" category. Example: {@code { "properties": { "default": {
+         * "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable":
+         * false }, ... ] } } }}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.List<PropertyDefinition>> properties;
 
         /**
-         * A map of arrays which defines the type specific properties, both required and optional. The map keys are
-         * category names and the values are arrays contiaing all property details. Every property is contained inside
-         * of a category. Most types have required properties within the "default" category.
-         * Example:
-         * {@code {
-         *    "properties": {
-         *      "default": {
-         *        "attributes:": [
-         *          {
-         *            "name": "host",
-         *            "type": "string",
-         *            "isRequired": true,
-         *            "isUpdatable": false
-         *          },
-         *          ...
-         *        ]
-         *      }
-         *    }
-         *  }}
+         * A map of arrays which defines the type specific properties, both required and optional.
+         * The map keys are category names and the values are arrays contiaing all property details.
+         * Every property is contained inside of a category. Most types have required properties
+         * within the "default" category. Example: {@code { "properties": { "default": {
+         * "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable":
+         * false }, ... ] } } }}
          *
          * @param properties the value to set
          * @return this builder
-         **/
+         */
         public Builder properties(
                 java.util.Map<String, java.util.List<PropertyDefinition>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /**
-         * The current state of the type.
-         **/
+        /** The current state of the type. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the type.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Indicates whether the type is internal, making it unavailable for use by metadata elements.
-         **/
+         * Indicates whether the type is internal, making it unavailable for use by metadata
+         * elements.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isInternal")
         private Boolean isInternal;
 
         /**
-         * Indicates whether the type is internal, making it unavailable for use by metadata elements.
+         * Indicates whether the type is internal, making it unavailable for use by metadata
+         * elements.
+         *
          * @param isInternal the value to set
          * @return this builder
-         **/
+         */
         public Builder isInternal(Boolean isInternal) {
             this.isInternal = isInternal;
             this.__explicitlySet__.add("isInternal");
             return this;
         }
-        /**
-         * Indicates whether the type can be used for tagging metadata elements.
-         **/
+        /** Indicates whether the type can be used for tagging metadata elements. */
         @com.fasterxml.jackson.annotation.JsonProperty("isTag")
         private Boolean isTag;
 
         /**
          * Indicates whether the type can be used for tagging metadata elements.
+         *
          * @param isTag the value to set
          * @return this builder
-         **/
+         */
         public Builder isTag(Boolean isTag) {
             this.isTag = isTag;
             this.__explicitlySet__.add("isTag");
             return this;
         }
-        /**
-         * Indicates whether the type is approved for use as a classifying object.
-         **/
+        /** Indicates whether the type is approved for use as a classifying object. */
         @com.fasterxml.jackson.annotation.JsonProperty("isApproved")
         private Boolean isApproved;
 
         /**
          * Indicates whether the type is approved for use as a classifying object.
+         *
          * @param isApproved the value to set
          * @return this builder
-         **/
+         */
         public Builder isApproved(Boolean isApproved) {
             this.isApproved = isApproved;
             this.__explicitlySet__.add("isApproved");
             return this;
         }
-        /**
-         * Indicates the category this type belongs to. For instance, data assets, connections.
-         **/
+        /** Indicates the category this type belongs to. For instance, data assets, connections. */
         @com.fasterxml.jackson.annotation.JsonProperty("typeCategory")
         private String typeCategory;
 
         /**
          * Indicates the category this type belongs to. For instance, data assets, connections.
+         *
          * @param typeCategory the value to set
          * @return this builder
-         **/
+         */
         public Builder typeCategory(String typeCategory) {
             this.typeCategory = typeCategory;
             this.__explicitlySet__.add("typeCategory");
             return this;
         }
-        /**
-         * Mapping type equivalence in the external system.
-         **/
+        /** Mapping type equivalence in the external system. */
         @com.fasterxml.jackson.annotation.JsonProperty("externalTypeName")
         private String externalTypeName;
 
         /**
          * Mapping type equivalence in the external system.
+         *
          * @param externalTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder externalTypeName(String externalTypeName) {
             this.externalTypeName = externalTypeName;
             this.__explicitlySet__.add("externalTypeName");
             return this;
         }
-        /**
-         * URI to the type instance in the API.
-         **/
+        /** URI to the type instance in the API. */
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the type instance in the API.
+         *
          * @param uri the value to set
          * @return this builder
-         **/
+         */
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-        /**
-         * Custom properties associated with this Type.
-         **/
+        /** Custom properties associated with this Type. */
         @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
         private java.util.List<CustomPropertySummary> customProperties;
 
         /**
          * Custom properties associated with this Type.
+         *
          * @param customProperties the value to set
          * @return this builder
-         **/
+         */
         public Builder customProperties(java.util.List<CustomPropertySummary> customProperties) {
             this.customProperties = customProperties;
             this.__explicitlySet__.add("customProperties");
             return this;
         }
-        /**
-         * Unique key of the parent type.
-         **/
+        /** Unique key of the parent type. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
         private String parentTypeKey;
 
         /**
          * Unique key of the parent type.
+         *
          * @param parentTypeKey the value to set
          * @return this builder
-         **/
+         */
         public Builder parentTypeKey(String parentTypeKey) {
             this.parentTypeKey = parentTypeKey;
             this.__explicitlySet__.add("parentTypeKey");
             return this;
         }
-        /**
-         * Name of the parent type.
-         **/
+        /** Name of the parent type. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
         private String parentTypeName;
 
         /**
          * Name of the parent type.
+         *
          * @param parentTypeName the value to set
          * @return this builder
-         **/
+         */
         public Builder parentTypeName(String parentTypeName) {
             this.parentTypeName = parentTypeName;
             this.__explicitlySet__.add("parentTypeName");
@@ -432,9 +396,7 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -443,250 +405,209 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique type key that is immutable.
-     **/
+    /** Unique type key that is immutable. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique type key that is immutable.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The immutable name of the type.
-     **/
+    /** The immutable name of the type. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The immutable name of the type.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Detailed description of the type.
-     **/
+    /** Detailed description of the type. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the type.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The data catalog's OCID.
-     **/
+    /** The data catalog's OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
     /**
      * The data catalog's OCID.
+     *
      * @return the value
-     **/
+     */
     public String getCatalogId() {
         return catalogId;
     }
 
     /**
-     * A map of arrays which defines the type specific properties, both required and optional. The map keys are
-     * category names and the values are arrays contiaing all property details. Every property is contained inside
-     * of a category. Most types have required properties within the "default" category.
-     * Example:
-     * {@code {
-     *    "properties": {
-     *      "default": {
-     *        "attributes:": [
-     *          {
-     *            "name": "host",
-     *            "type": "string",
-     *            "isRequired": true,
-     *            "isUpdatable": false
-     *          },
-     *          ...
-     *        ]
-     *      }
-     *    }
-     *  }}
-     *
-     **/
+     * A map of arrays which defines the type specific properties, both required and optional. The
+     * map keys are category names and the values are arrays contiaing all property details. Every
+     * property is contained inside of a category. Most types have required properties within the
+     * "default" category. Example: {@code { "properties": { "default": { "attributes:": [ { "name":
+     * "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.List<PropertyDefinition>> properties;
 
     /**
-     * A map of arrays which defines the type specific properties, both required and optional. The map keys are
-     * category names and the values are arrays contiaing all property details. Every property is contained inside
-     * of a category. Most types have required properties within the "default" category.
-     * Example:
-     * {@code {
-     *    "properties": {
-     *      "default": {
-     *        "attributes:": [
-     *          {
-     *            "name": "host",
-     *            "type": "string",
-     *            "isRequired": true,
-     *            "isUpdatable": false
-     *          },
-     *          ...
-     *        ]
-     *      }
-     *    }
-     *  }}
+     * A map of arrays which defines the type specific properties, both required and optional. The
+     * map keys are category names and the values are arrays contiaing all property details. Every
+     * property is contained inside of a category. Most types have required properties within the
+     * "default" category. Example: {@code { "properties": { "default": { "attributes:": [ { "name":
+     * "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.List<PropertyDefinition>> getProperties() {
         return properties;
     }
 
-    /**
-     * The current state of the type.
-     **/
+    /** The current state of the type. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the type.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Indicates whether the type is internal, making it unavailable for use by metadata elements.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isInternal")
     private final Boolean isInternal;
 
     /**
      * Indicates whether the type is internal, making it unavailable for use by metadata elements.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsInternal() {
         return isInternal;
     }
 
-    /**
-     * Indicates whether the type can be used for tagging metadata elements.
-     **/
+    /** Indicates whether the type can be used for tagging metadata elements. */
     @com.fasterxml.jackson.annotation.JsonProperty("isTag")
     private final Boolean isTag;
 
     /**
      * Indicates whether the type can be used for tagging metadata elements.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsTag() {
         return isTag;
     }
 
-    /**
-     * Indicates whether the type is approved for use as a classifying object.
-     **/
+    /** Indicates whether the type is approved for use as a classifying object. */
     @com.fasterxml.jackson.annotation.JsonProperty("isApproved")
     private final Boolean isApproved;
 
     /**
      * Indicates whether the type is approved for use as a classifying object.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsApproved() {
         return isApproved;
     }
 
-    /**
-     * Indicates the category this type belongs to. For instance, data assets, connections.
-     **/
+    /** Indicates the category this type belongs to. For instance, data assets, connections. */
     @com.fasterxml.jackson.annotation.JsonProperty("typeCategory")
     private final String typeCategory;
 
     /**
      * Indicates the category this type belongs to. For instance, data assets, connections.
+     *
      * @return the value
-     **/
+     */
     public String getTypeCategory() {
         return typeCategory;
     }
 
-    /**
-     * Mapping type equivalence in the external system.
-     **/
+    /** Mapping type equivalence in the external system. */
     @com.fasterxml.jackson.annotation.JsonProperty("externalTypeName")
     private final String externalTypeName;
 
     /**
      * Mapping type equivalence in the external system.
+     *
      * @return the value
-     **/
+     */
     public String getExternalTypeName() {
         return externalTypeName;
     }
 
-    /**
-     * URI to the type instance in the API.
-     **/
+    /** URI to the type instance in the API. */
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the type instance in the API.
+     *
      * @return the value
-     **/
+     */
     public String getUri() {
         return uri;
     }
 
-    /**
-     * Custom properties associated with this Type.
-     **/
+    /** Custom properties associated with this Type. */
     @com.fasterxml.jackson.annotation.JsonProperty("customProperties")
     private final java.util.List<CustomPropertySummary> customProperties;
 
     /**
      * Custom properties associated with this Type.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<CustomPropertySummary> getCustomProperties() {
         return customProperties;
     }
 
-    /**
-     * Unique key of the parent type.
-     **/
+    /** Unique key of the parent type. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentTypeKey")
     private final String parentTypeKey;
 
     /**
      * Unique key of the parent type.
+     *
      * @return the value
-     **/
+     */
     public String getParentTypeKey() {
         return parentTypeKey;
     }
 
-    /**
-     * Name of the parent type.
-     **/
+    /** Name of the parent type. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentTypeName")
     private final String parentTypeName;
 
     /**
      * Name of the parent type.
+     *
      * @return the value
-     **/
+     */
     public String getParentTypeName() {
         return parentTypeName;
     }
@@ -698,6 +619,7 @@ public final class Type extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

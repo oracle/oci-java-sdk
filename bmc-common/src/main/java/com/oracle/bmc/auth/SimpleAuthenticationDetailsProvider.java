@@ -5,14 +5,13 @@
 package com.oracle.bmc.auth;
 
 import com.oracle.bmc.Region;
-import com.oracle.bmc.internal.GuavaUtils;
 
 import java.io.InputStream;
 import java.util.function.Supplier;
 
 /**
- * Basic implementation of {@link AuthenticationDetailsProvider} that just
- * returns configured values.
+ * Basic implementation of {@link AuthenticationDetailsProvider} that just returns configured
+ * values.
  */
 public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider {
@@ -25,22 +24,13 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
     private final char[] passphraseCharacters;
 
     /**
-     * Supplier of the input stream with the private key. Note that this stream may be read multiple times.
+     * Supplier of the input stream with the private key. Note that this stream may be read multiple
+     * times.
      */
     private final Supplier<InputStream> privateKeySupplier;
 
     private final Region region;
 
-    /**
-     * @deprecated use the constructor that does not use Guava parameters instead
-     * @param tenantId
-     * @param userId
-     * @param fingerprint
-     * @param passphraseCharacters
-     * @param privateKeySupplier
-     * @param region
-     */
-    @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
         "userId",
@@ -49,23 +39,6 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
         "privateKeySupplier",
         "region"
     })
-    SimpleAuthenticationDetailsProvider(
-            String tenantId,
-            String userId,
-            String fingerprint,
-            char[] passphraseCharacters,
-            com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream>
-                    privateKeySupplier,
-            Region region) {
-        this(
-                tenantId,
-                userId,
-                fingerprint,
-                passphraseCharacters,
-                GuavaUtils.adaptFromGuava(privateKeySupplier),
-                region);
-    }
-
     SimpleAuthenticationDetailsProvider(
             String tenantId,
             String userId,
@@ -87,6 +60,7 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
 
     /**
      * Get the input stream with the private key. Note that this stream may be read multiple times.
+     *
      * @return input stream with private key
      */
     @Override
@@ -190,18 +164,6 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
                 Supplier<InputStream> privateKeySupplier) {
             this.privateKeySupplier = privateKeySupplier;
             return this;
-        }
-
-        /**
-         * @deprecated use the method that does not use Guava parameters instead
-         * @param privateKeySupplier private key supplier
-         * @return this builder
-         */
-        @Deprecated
-        public SimpleAuthenticationDetailsProviderBuilder privateKeySupplier(
-                com.google.common /*Guava will be removed soon*/.base.Supplier<InputStream>
-                        privateKeySupplier) {
-            return privateKeySupplier(GuavaUtils.adaptFromGuava(privateKeySupplier));
         }
 
         public SimpleAuthenticationDetailsProviderBuilder region(Region region) {

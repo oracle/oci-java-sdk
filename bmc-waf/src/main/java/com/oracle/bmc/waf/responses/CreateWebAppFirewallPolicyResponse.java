@@ -8,10 +8,7 @@ import com.oracle.bmc.waf.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,13 +21,14 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -39,15 +37,14 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -55,10 +52,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -70,10 +64,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         return location;
     }
 
-    /**
-     * Content Location of the resource.
-     *
-     */
+    /** Content Location of the resource. */
     private String contentLocation;
 
     /**
@@ -85,13 +76,12 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         return contentLocation;
     }
 
-    /**
-     * The returned WebAppFirewallPolicy instance.
-     */
+    /** The returned WebAppFirewallPolicy instance. */
     private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
 
     /**
      * The returned WebAppFirewallPolicy instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.waf.model.WebAppFirewallPolicy getWebAppFirewallPolicy() {
@@ -110,7 +100,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
     })
     private CreateWebAppFirewallPolicyResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -126,25 +116,26 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         this.webAppFirewallPolicy = webAppFirewallPolicy;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateWebAppFirewallPolicyResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -159,13 +150,14 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -176,15 +168,14 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -194,10 +185,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -211,10 +199,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * Content Location of the resource.
-         *
-         */
+        /** Content Location of the resource. */
         private String contentLocation;
 
         /**
@@ -228,13 +213,12 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * The returned WebAppFirewallPolicy instance.
-         */
+        /** The returned WebAppFirewallPolicy instance. */
         private com.oracle.bmc.waf.model.WebAppFirewallPolicy webAppFirewallPolicy;
 
         /**
          * The returned WebAppFirewallPolicy instance.
+         *
          * @param webAppFirewallPolicy the value to set
          * @return this builder
          */
@@ -246,8 +230,10 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateWebAppFirewallPolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -263,8 +249,10 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateWebAppFirewallPolicyResponse build() {
             return new CreateWebAppFirewallPolicyResponse(
                     __httpStatusCode__,
@@ -280,6 +268,7 @@ public class CreateWebAppFirewallPolicyResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

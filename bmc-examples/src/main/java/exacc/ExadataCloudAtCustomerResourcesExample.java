@@ -54,17 +54,22 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class provides a basic example of CRUD(Create, read, update, delete) operations on Exadata Cloud at Customer (ExaCC) Resources: Exadata Infrastructure, VmClusterNetwork and VmCluster using the Java SDK.
- *  * <p></p>
- *  * Resources created by this class will be removed when this example is done.
- *  * <p></p>
- *  * This class also makes assumptions on the following parameters:
- *  * <p></p>
- *  * <ul>
- *  *   <li>OCID of the compartment</li>
- *  *   <li>Activation Key File path or activating Exadata Infrastructure<</li>
- *  *   <li>SSH Public key for Vm Cluster<</li>
- *  * </ul>
+ * This class provides a basic example of CRUD(Create, read, update, delete) operations on Exadata
+ * Cloud at Customer (ExaCC) Resources: Exadata Infrastructure, VmClusterNetwork and VmCluster using
+ * the Java SDK. *
+ *
+ * <p>* Resources created by this class will be removed when this example is done. *
+ *
+ * <p>* This class also makes assumptions on the following parameters: *
+ *
+ * <p>*
+ *
+ * <ul>
+ *   *
+ *   <li>OCID of the compartment *
+ *   <li>Activation Key File path or activating Exadata Infrastructure< *
+ *   <li>SSH Public key for Vm Cluster< *
+ * </ul>
  */
 public class ExadataCloudAtCustomerResourcesExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -75,10 +80,10 @@ public class ExadataCloudAtCustomerResourcesExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>The OCID of the compartment</li>
-     *             <li>Activation Key File path for activating Exadata Infrastructure</li>
-     *             </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment
+     *       <li>Activation Key File path for activating Exadata Infrastructure
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
@@ -334,7 +339,8 @@ public class ExadataCloudAtCustomerResourcesExample {
         return createVmClusterResponse.getVmCluster().getId();
     }
 
-    //Once we're done with the ExaCC Infrastructure, we can terminate it and wait for it to be terminated.
+    // Once we're done with the ExaCC Infrastructure, we can terminate it and wait for it to be
+    // terminated.
     private static void deleteExadataInfrastructure(DatabaseClient databaseClient, String ocid)
             throws Exception {
         databaseClient.deleteExadataInfrastructure(
@@ -344,7 +350,8 @@ public class ExadataCloudAtCustomerResourcesExample {
         System.out.println("Terminated ExaCC Infrastructure");
     }
 
-    //Once we're done with the Vm Cluster Network , we can terminate it and wait for it to be terminated.
+    // Once we're done with the Vm Cluster Network , we can terminate it and wait for it to be
+    // terminated.
     private static void deleteVmClusterNetwork(
             DatabaseClient databaseClient,
             String vmClusterNetworkOcid,
@@ -363,7 +370,7 @@ public class ExadataCloudAtCustomerResourcesExample {
         System.out.println("Terminated VM Cluster Network");
     }
 
-    //Once we're done with the Vm Cluster, we can terminate it and wait for it to be terminated.
+    // Once we're done with the Vm Cluster, we can terminate it and wait for it to be terminated.
     private static void deleteVmCluster(DatabaseClient databaseClient, String ocid)
             throws Exception {
 

@@ -5,21 +5,22 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Object that represents an array of messages to emit to a stream.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Object that represents an array of messages to emit to a stream. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PutMessagesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PutMessagesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PutMessagesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PutMessagesDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"messages"})
     public PutMessagesDetails(java.util.List<PutMessagesDetailsEntry> messages) {
@@ -29,17 +30,16 @@ public final class PutMessagesDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The array of messages to put into a stream.
-         **/
+        /** The array of messages to put into a stream. */
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<PutMessagesDetailsEntry> messages;
 
         /**
          * The array of messages to put into a stream.
+         *
          * @param messages the value to set
          * @return this builder
-         **/
+         */
         public Builder messages(java.util.List<PutMessagesDetailsEntry> messages) {
             this.messages = messages;
             this.__explicitlySet__.add("messages");
@@ -66,9 +66,7 @@ public final class PutMessagesDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,16 +75,15 @@ public final class PutMessagesDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The array of messages to put into a stream.
-     **/
+    /** The array of messages to put into a stream. */
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
     private final java.util.List<PutMessagesDetailsEntry> messages;
 
     /**
      * The array of messages to put into a stream.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<PutMessagesDetailsEntry> getMessages() {
         return messages;
     }
@@ -98,6 +95,7 @@ public final class PutMessagesDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

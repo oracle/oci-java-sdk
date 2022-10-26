@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.requests;
 
-/**
- * Interface implemented by requests that have a getter for contentLength
- */
+/** Interface implemented by requests that have a getter for contentLength */
 public interface HasContentLength {
     Long getContentLength();
 }

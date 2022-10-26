@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.bastion.model;
 
-/**
- * Possible bastion lifecycle states.
- **/
+/** Possible bastion lifecycle states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-public enum BastionLifecycleState {
+public enum BastionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

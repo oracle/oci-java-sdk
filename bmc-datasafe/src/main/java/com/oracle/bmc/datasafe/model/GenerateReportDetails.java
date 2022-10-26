@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for the report generation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the report generation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenerateReportDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = GenerateReportDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GenerateReportDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -54,133 +54,125 @@ public final class GenerateReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the report to be generated
-         **/
+        /** The name of the report to be generated */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the report to be generated
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Array of database target OCIDs.
-         **/
+        /** Array of database target OCIDs. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
         private java.util.List<String> targetIds;
 
         /**
          * Array of database target OCIDs.
+         *
          * @param targetIds the value to set
          * @return this builder
-         **/
+         */
         public Builder targetIds(java.util.List<String> targetIds) {
             this.targetIds = targetIds;
             this.__explicitlySet__.add("targetIds");
             return this;
         }
-        /**
-         * The description of the report to be generated
-         **/
+        /** The description of the report to be generated */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the report to be generated
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-         * into which the resource should be moved.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment into which the resource should be moved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-         * into which the resource should be moved.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment into which the resource should be moved.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Specifies the format of report to be excel or pdf
-         **/
+        /** Specifies the format of report to be excel or pdf */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
          * Specifies the format of report to be excel or pdf
+         *
          * @param mimeType the value to set
          * @return this builder
-         **/
+         */
         public Builder mimeType(MimeType mimeType) {
             this.mimeType = mimeType;
             this.__explicitlySet__.add("mimeType");
             return this;
         }
-        /**
-         * Specifies the time before which the data needs to be reported.
-         **/
+        /** Specifies the time before which the data needs to be reported. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLessThan")
         private java.util.Date timeLessThan;
 
         /**
          * Specifies the time before which the data needs to be reported.
+         *
          * @param timeLessThan the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLessThan(java.util.Date timeLessThan) {
             this.timeLessThan = timeLessThan;
             this.__explicitlySet__.add("timeLessThan");
             return this;
         }
-        /**
-         * Specifies the time after which the data needs to be reported.
-         **/
+        /** Specifies the time after which the data needs to be reported. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeGreaterThan")
         private java.util.Date timeGreaterThan;
 
         /**
          * Specifies the time after which the data needs to be reported.
+         *
          * @param timeGreaterThan the value to set
          * @return this builder
-         **/
+         */
         public Builder timeGreaterThan(java.util.Date timeGreaterThan) {
             this.timeGreaterThan = timeGreaterThan;
             this.__explicitlySet__.add("timeGreaterThan");
             return this;
         }
-        /**
-         * Specifies the limit on number of rows in report.
-         **/
+        /** Specifies the limit on number of rows in report. */
         @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
         private Integer rowLimit;
 
         /**
          * Specifies the limit on number of rows in report.
+         *
          * @param rowLimit the value to set
          * @return this builder
-         **/
+         */
         public Builder rowLimit(Integer rowLimit) {
             this.rowLimit = rowLimit;
             this.__explicitlySet__.add("rowLimit");
@@ -237,9 +229,7 @@ public final class GenerateReportDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -248,70 +238,64 @@ public final class GenerateReportDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the report to be generated
-     **/
+    /** The name of the report to be generated */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the report to be generated
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Array of database target OCIDs.
-     **/
+    /** Array of database target OCIDs. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetIds")
     private final java.util.List<String> targetIds;
 
     /**
      * Array of database target OCIDs.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargetIds() {
         return targetIds;
     }
 
-    /**
-     * The description of the report to be generated
-     **/
+    /** The description of the report to be generated */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the report to be generated
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-     * into which the resource should be moved.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment into which the resource should be moved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
-     * into which the resource should be moved.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment into which the resource should be moved.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * Specifies the format of report to be excel or pdf
-     **/
-    public enum MimeType {
+    /** Specifies the format of report to be excel or pdf */
+    public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
         ;
@@ -343,58 +327,54 @@ public final class GenerateReportDetails
             throw new IllegalArgumentException("Invalid MimeType: " + key);
         }
     };
-    /**
-     * Specifies the format of report to be excel or pdf
-     **/
+    /** Specifies the format of report to be excel or pdf */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
      * Specifies the format of report to be excel or pdf
+     *
      * @return the value
-     **/
+     */
     public MimeType getMimeType() {
         return mimeType;
     }
 
-    /**
-     * Specifies the time before which the data needs to be reported.
-     **/
+    /** Specifies the time before which the data needs to be reported. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLessThan")
     private final java.util.Date timeLessThan;
 
     /**
      * Specifies the time before which the data needs to be reported.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLessThan() {
         return timeLessThan;
     }
 
-    /**
-     * Specifies the time after which the data needs to be reported.
-     **/
+    /** Specifies the time after which the data needs to be reported. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeGreaterThan")
     private final java.util.Date timeGreaterThan;
 
     /**
      * Specifies the time after which the data needs to be reported.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeGreaterThan() {
         return timeGreaterThan;
     }
 
-    /**
-     * Specifies the limit on number of rows in report.
-     **/
+    /** Specifies the limit on number of rows in report. */
     @com.fasterxml.jackson.annotation.JsonProperty("rowLimit")
     private final Integer rowLimit;
 
     /**
      * Specifies the limit on number of rows in report.
+     *
      * @return the value
-     **/
+     */
     public Integer getRowLimit() {
         return rowLimit;
     }
@@ -406,6 +386,7 @@ public final class GenerateReportDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

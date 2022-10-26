@@ -5,22 +5,22 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * The metadata associated with the strategy parameter.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The metadata associated with the strategy parameter. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StrategyParameter.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StrategyParameter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = StrategyParameter.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class StrategyParameter
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -48,97 +48,91 @@ public final class StrategyParameter extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the strategy parameter.
-         **/
+        /** The name of the strategy parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the strategy parameter.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The type of strategy parameter.
-         **/
+        /** The type of strategy parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private StrategyParameterType type;
 
         /**
          * The type of strategy parameter.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(StrategyParameterType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Text describing the strategy parameter.
-         **/
+        /** Text describing the strategy parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Text describing the strategy parameter.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Whether this parameter is required.
-         **/
+        /** Whether this parameter is required. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
          * Whether this parameter is required.
+         *
          * @param isRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
             return this;
         }
-        /**
-         * A default value used for the strategy parameter.
-         **/
+        /** A default value used for the strategy parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Object defaultValue;
 
         /**
          * A default value used for the strategy parameter.
+         *
          * @param defaultValue the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultValue(Object defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /**
-         * The list of possible values used for these strategy parameters.
-         **/
+        /** The list of possible values used for these strategy parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
         private java.util.List<Object> possibleValues;
 
         /**
          * The list of possible values used for these strategy parameters.
+         *
          * @param possibleValues the value to set
          * @return this builder
-         **/
+         */
         public Builder possibleValues(java.util.List<Object> possibleValues) {
             this.possibleValues = possibleValues;
             this.__explicitlySet__.add("possibleValues");
@@ -187,9 +181,7 @@ public final class StrategyParameter extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,86 +190,80 @@ public final class StrategyParameter extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the strategy parameter.
-     **/
+    /** The name of the strategy parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the strategy parameter.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The type of strategy parameter.
-     **/
+    /** The type of strategy parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final StrategyParameterType type;
 
     /**
      * The type of strategy parameter.
+     *
      * @return the value
-     **/
+     */
     public StrategyParameterType getType() {
         return type;
     }
 
-    /**
-     * Text describing the strategy parameter.
-     **/
+    /** Text describing the strategy parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Text describing the strategy parameter.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Whether this parameter is required.
-     **/
+    /** Whether this parameter is required. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
      * Whether this parameter is required.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsRequired() {
         return isRequired;
     }
 
-    /**
-     * A default value used for the strategy parameter.
-     **/
+    /** A default value used for the strategy parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Object defaultValue;
 
     /**
      * A default value used for the strategy parameter.
+     *
      * @return the value
-     **/
+     */
     public Object getDefaultValue() {
         return defaultValue;
     }
 
-    /**
-     * The list of possible values used for these strategy parameters.
-     **/
+    /** The list of possible values used for these strategy parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
     private final java.util.List<Object> possibleValues;
 
     /**
      * The list of possible values used for these strategy parameters.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Object> getPossibleValues() {
         return possibleValues;
     }
@@ -289,6 +275,7 @@ public final class StrategyParameter extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

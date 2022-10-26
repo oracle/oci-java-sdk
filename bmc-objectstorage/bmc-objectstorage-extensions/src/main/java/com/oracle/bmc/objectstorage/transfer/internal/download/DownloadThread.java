@@ -11,79 +11,67 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.DownloadManager;
 
 /**
- * A {@link DownloadThread} object has two important methods, {@link #run()}
- * and {@link #read(byte[], int, int)}.
+ * A {@link DownloadThread} object has two important methods, {@link #run()} and {@link
+ * #read(byte[], int, int)}.
  *
- * {@link #run()} should be run asynchronously. It performs a request and reads
- * data into the provided buffer.
+ * <p>{@link #run()} should be run asynchronously. It performs a request and reads data into the
+ * provided buffer.
  *
- * {@link #read(byte[], int, int)} is used by another thread that wants to
- * consume the data that is being read.
+ * <p>{@link #read(byte[], int, int)} is used by another thread that wants to consume the data that
+ * is being read.
  */
 public class DownloadThread {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DownloadThread.class);
 
-    /**
-     * Used to perform the request.
-     */
+    /** Used to perform the request. */
     private final DownloadManager downloadManager;
 
-    /**
-     * The object we are getting.
-     */
+    /** The object we are getting. */
     private final GetObjectRequest getObjectRequest;
 
     /**
-     * The size of the range to be read. In the case of end-only ranges ("bytes=-99"), only the first
-     * rangeSize number of bytes will be read.
+     * The size of the range to be read. In the case of end-only ranges ("bytes=-99"), only the
+     * first rangeSize number of bytes will be read.
      */
     private final int rangeSize;
 
-    /**
-     * The buffer we read into.
-     */
+    /** The buffer we read into. */
     private final byte[] buffer;
 
-    /**
-     * Used to synchronize {@link #run()} and {@link #read(byte[], int, int).}
-     */
+    /** Used to synchronize {@link #run()} and {@link #read(byte[], int, int).} */
     private final Object lock;
 
-    /**
-     * The amount of data we have to read.
-     */
+    /** The amount of data we have to read. */
     private int objectSize;
 
     /**
-     * The next point in {@link #buffer} that we will write to. This value is
-     * incremented by {@link #run()} and {@link #lock} is notified whenever
-     * the value is incremented.
+     * The next point in {@link #buffer} that we will write to. This value is incremented by {@link
+     * #run()} and {@link #lock} is notified whenever the value is incremented.
      */
     private volatile int writeTo;
 
     /**
-     * If {@link #run()} fails this will be set to a non-null value.
-     * {@link #lock} is notified if this value is set.
+     * If {@link #run()} fails this will be set to a non-null value. {@link #lock} is notified if
+     * this value is set.
      */
     private volatile Throwable error;
 
     /**
-     * The last point in {@link #buffer} we read from. This value is only read
-     * and written by {@link #read(byte[], int, int)} while holding
-     * {@link #lock}.
+     * The last point in {@link #buffer} we read from. This value is only read and written by {@link
+     * #read(byte[], int, int)} while holding {@link #lock}.
      */
     private volatile int readFrom;
 
     /**
-     * Set this to stop the async thread from running. The read thread will
-     * exit when it sees this set.
+     * Set this to stop the async thread from running. The read thread will exit when it sees this
+     * set.
      */
     private volatile boolean cancelRequested;
 
     /**
-     * When the read thread stops because {@link #cancelRequested} is true
-     * it sets this to true and notifies {@link #lock}.
+     * When the read thread stops because {@link #cancelRequested} is true it sets this to true and
+     * notifies {@link #lock}.
      */
     private volatile boolean threadCancelled;
 
@@ -106,16 +94,14 @@ public class DownloadThread {
         this.objectSize = Integer.MAX_VALUE;
     }
 
-    /**
-     * Ask the background thread to stop running.
-     */
+    /** Ask the background thread to stop running. */
     public void requestCancel() {
         this.cancelRequested = true;
     }
 
     /**
-     * Start reading data into {@link #buffer} where it can be read by
-     * {@link #read(byte[], int, int)}.
+     * Start reading data into {@link #buffer} where it can be read by {@link #read(byte[], int,
+     * int)}.
      */
     public byte[] run() throws IOException {
         LOG.debug(
@@ -193,15 +179,14 @@ public class DownloadThread {
         return this.buffer;
     }
 
-    /**
-     * Returns true if all data has been read.
-     */
+    /** Returns true if all data has been read. */
     public boolean allDataRead() {
         return this.readFrom >= this.objectSize;
     }
 
     /**
      * Read data from {@link #buffer}. If there is no
+     *
      * @param b
      * @param off
      * @param len

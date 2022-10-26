@@ -6,65 +6,59 @@ package com.oracle.bmc.dataconnectivity.requests;
 
 import com.oracle.bmc.dataconnectivity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/UpdateRegistryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateRegistryRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataconnectivity/UpdateRegistryExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateRegistryRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 public class UpdateRegistryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataconnectivity.model.UpdateRegistryDetails> {
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     private String registryId;
 
-    /**
-     * The registry OCID.
-     */
+    /** The registry OCID. */
     public String getRegistryId() {
         return registryId;
     }
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     private com.oracle.bmc.dataconnectivity.model.UpdateRegistryDetails updateRegistryDetails;
 
-    /**
-     * The information to be updated.
-     */
+    /** The information to be updated. */
     public com.oracle.bmc.dataconnectivity.model.UpdateRegistryDetails getUpdateRegistryDetails() {
         return updateRegistryDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
+     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
+     * does not exactly match the 'etag' of the resource on the server, the request fails with the
+     * 412 response code.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
+     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
+     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
+     * does not exactly match the 'etag' of the resource on the server, the request fails with the
+     * 412 response code.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -72,6 +66,7 @@ public class UpdateRegistryRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -84,17 +79,15 @@ public class UpdateRegistryRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateRegistryRequest,
                     com.oracle.bmc.dataconnectivity.model.UpdateRegistryDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The registry OCID.
-         */
+        /** The registry OCID. */
         private String registryId = null;
 
         /**
          * The registry OCID.
+         *
          * @param registryId the value to set
          * @return this builder instance
          */
@@ -103,14 +96,13 @@ public class UpdateRegistryRequest
             return this;
         }
 
-        /**
-         * The information to be updated.
-         */
+        /** The information to be updated. */
         private com.oracle.bmc.dataconnectivity.model.UpdateRegistryDetails updateRegistryDetails =
                 null;
 
         /**
          * The information to be updated.
+         *
          * @param updateRegistryDetails the value to set
          * @return this builder instance
          */
@@ -121,17 +113,22 @@ public class UpdateRegistryRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the {@code
+         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
+         * provided and its value does not exactly match the 'etag' of the resource on the server,
+         * the request fails with the 412 response code.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
-         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
+         * response for that resource. The resource will be updated or deleted only if the {@code
+         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
+         * provided and its value does not exactly match the 'etag' of the resource on the server,
+         * the request fails with the 412 response code.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -142,17 +139,14 @@ public class UpdateRegistryRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -164,18 +158,19 @@ public class UpdateRegistryRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -187,6 +182,7 @@ public class UpdateRegistryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateRegistryRequest o) {
@@ -202,10 +198,11 @@ public class UpdateRegistryRequest
         /**
          * Build the instance of UpdateRegistryRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateRegistryRequest
          */
@@ -218,6 +215,7 @@ public class UpdateRegistryRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -230,7 +228,8 @@ public class UpdateRegistryRequest
         /**
          * Build the instance of UpdateRegistryRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateRegistryRequest
@@ -248,6 +247,7 @@ public class UpdateRegistryRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,6 +260,7 @@ public class UpdateRegistryRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

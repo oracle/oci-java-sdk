@@ -5,30 +5,28 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For use with Oracle Cloud Infrastructure FastConnect. Each
- * {@link VirtualCircuit} runs on one or
- * more cross-connects or cross-connect groups. A {@code CrossConnectMappingDetails}
- * contains the properties for an individual cross-connect or cross-connect group
- * associated with a given virtual circuit.
- * <p>
- * The details includes information about the cross-connect or
- * cross-connect group, the VLAN, and the BGP peering session.
+ * For use with Oracle Cloud Infrastructure FastConnect. Each {@link VirtualCircuit} runs on one or
+ * more cross-connects or cross-connect groups. A {@code CrossConnectMappingDetails} contains the
+ * properties for an individual cross-connect or cross-connect group associated with a given virtual
+ * circuit.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>The details includes information about the cross-connect or cross-connect group, the VLAN, and
+ * the BGP peering session. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CrossConnectMappingDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CrossConnectMappingDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CrossConnectMappingDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bgpMd5AuthKey",
@@ -69,247 +67,243 @@ public final class CrossConnectMappingDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The key for BGP MD5 authentication. Only applicable if your system
-         * requires MD5 authentication. If empty or not set (null), that
-         * means you don't use BGP MD5 authentication.
-         *
-         **/
+         * The key for BGP MD5 authentication. Only applicable if your system requires MD5
+         * authentication. If empty or not set (null), that means you don't use BGP MD5
+         * authentication.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
         private String bgpMd5AuthKey;
 
         /**
-         * The key for BGP MD5 authentication. Only applicable if your system
-         * requires MD5 authentication. If empty or not set (null), that
-         * means you don't use BGP MD5 authentication.
+         * The key for BGP MD5 authentication. Only applicable if your system requires MD5
+         * authentication. If empty or not set (null), that means you don't use BGP MD5
+         * authentication.
          *
          * @param bgpMd5AuthKey the value to set
          * @return this builder
-         **/
+         */
         public Builder bgpMd5AuthKey(String bgpMd5AuthKey) {
             this.bgpMd5AuthKey = bgpMd5AuthKey;
             this.__explicitlySet__.add("bgpMd5AuthKey");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
-         * Specified by the owner of the cross-connect or cross-connect group (the
-         * customer if the customer is colocated with Oracle, or the provider if the
-         * customer is connecting via provider).
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect or cross-connect group for this mapping. Specified by the owner of
+         * the cross-connect or cross-connect group (the customer if the customer is colocated with
+         * Oracle, or the provider if the customer is connecting via provider).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
         private String crossConnectOrCrossConnectGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
-         * Specified by the owner of the cross-connect or cross-connect group (the
-         * customer if the customer is colocated with Oracle, or the provider if the
-         * customer is connecting via provider).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect or cross-connect group for this mapping. Specified by the owner of
+         * the cross-connect or cross-connect group (the customer if the customer is colocated with
+         * Oracle, or the provider if the customer is connecting via provider).
          *
          * @param crossConnectOrCrossConnectGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder crossConnectOrCrossConnectGroupId(String crossConnectOrCrossConnectGroupId) {
             this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
             this.__explicitlySet__.add("crossConnectOrCrossConnectGroupId");
             return this;
         }
         /**
-         * The BGP IPv4 address for the router on the other end of the BGP session from
-         * Oracle. Specified by the owner of that router. If the session goes from Oracle
-         * to a customer, this is the BGP IPv4 address of the customer's edge router. If the
-         * session goes from Oracle to a provider, this is the BGP IPv4 address of the
-         * provider's edge router. Must use a /30 or /31 subnet mask.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-         * <p>
-         * Example: {@code 10.0.0.18/31}
+         * The BGP IPv4 address for the router on the other end of the BGP session from Oracle.
+         * Specified by the owner of that router. If the session goes from Oracle to a customer,
+         * this is the BGP IPv4 address of the customer's edge router. If the session goes from
+         * Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must
+         * use a /30 or /31 subnet mask.
          *
-         **/
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+         * addresses.
+         *
+         * <p>Example: {@code 10.0.0.18/31}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
         private String customerBgpPeeringIp;
 
         /**
-         * The BGP IPv4 address for the router on the other end of the BGP session from
-         * Oracle. Specified by the owner of that router. If the session goes from Oracle
-         * to a customer, this is the BGP IPv4 address of the customer's edge router. If the
-         * session goes from Oracle to a provider, this is the BGP IPv4 address of the
-         * provider's edge router. Must use a /30 or /31 subnet mask.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-         * <p>
-         * Example: {@code 10.0.0.18/31}
+         * The BGP IPv4 address for the router on the other end of the BGP session from Oracle.
+         * Specified by the owner of that router. If the session goes from Oracle to a customer,
+         * this is the BGP IPv4 address of the customer's edge router. If the session goes from
+         * Oracle to a provider, this is the BGP IPv4 address of the provider's edge router. Must
+         * use a /30 or /31 subnet mask.
+         *
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+         * addresses.
+         *
+         * <p>Example: {@code 10.0.0.18/31}
          *
          * @param customerBgpPeeringIp the value to set
          * @return this builder
-         **/
+         */
         public Builder customerBgpPeeringIp(String customerBgpPeeringIp) {
             this.customerBgpPeeringIp = customerBgpPeeringIp;
             this.__explicitlySet__.add("customerBgpPeeringIp");
             return this;
         }
         /**
-         * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31
-         * subnet mask. If the session goes from Oracle to a customer's edge router,
-         * the customer specifies this information. If the session goes from Oracle to
-         * a provider's edge router, the provider specifies this.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-         * <p>
-         * Example: {@code 10.0.0.19/31}
+         * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask.
+         * If the session goes from Oracle to a customer's edge router, the customer specifies this
+         * information. If the session goes from Oracle to a provider's edge router, the provider
+         * specifies this.
          *
-         **/
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+         * addresses.
+         *
+         * <p>Example: {@code 10.0.0.19/31}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
         private String oracleBgpPeeringIp;
 
         /**
-         * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31
-         * subnet mask. If the session goes from Oracle to a customer's edge router,
-         * the customer specifies this information. If the session goes from Oracle to
-         * a provider's edge router, the provider specifies this.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-         * <p>
-         * Example: {@code 10.0.0.19/31}
+         * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask.
+         * If the session goes from Oracle to a customer's edge router, the customer specifies this
+         * information. If the session goes from Oracle to a provider's edge router, the provider
+         * specifies this.
+         *
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+         * addresses.
+         *
+         * <p>Example: {@code 10.0.0.19/31}
          *
          * @param oracleBgpPeeringIp the value to set
          * @return this builder
-         **/
+         */
         public Builder oracleBgpPeeringIp(String oracleBgpPeeringIp) {
             this.oracleBgpPeeringIp = oracleBgpPeeringIp;
             this.__explicitlySet__.add("oracleBgpPeeringIp");
             return this;
         }
         /**
-         * The BGP IPv6 address for the router on the other end of the BGP session from
-         * Oracle. Specified by the owner of that router. If the session goes from Oracle
-         * to a customer, this is the BGP IPv6 address of the customer's edge router. If the
-         * session goes from Oracle to a provider, this is the BGP IPv6 address of the
-         * provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-         * <p>
-         * Example: {@code 2001:db8::1/64}
+         * The BGP IPv6 address for the router on the other end of the BGP session from Oracle.
+         * Specified by the owner of that router. If the session goes from Oracle to a customer,
+         * this is the BGP IPv6 address of the customer's edge router. If the session goes from
+         * Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only
+         * subnet masks from /64 up to /127 are allowed.
          *
-         **/
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+         * addresses.
+         *
+         * <p>Example: {@code 2001:db8::1/64}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIpv6")
         private String customerBgpPeeringIpv6;
 
         /**
-         * The BGP IPv6 address for the router on the other end of the BGP session from
-         * Oracle. Specified by the owner of that router. If the session goes from Oracle
-         * to a customer, this is the BGP IPv6 address of the customer's edge router. If the
-         * session goes from Oracle to a provider, this is the BGP IPv6 address of the
-         * provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-         * <p>
-         * Example: {@code 2001:db8::1/64}
+         * The BGP IPv6 address for the router on the other end of the BGP session from Oracle.
+         * Specified by the owner of that router. If the session goes from Oracle to a customer,
+         * this is the BGP IPv6 address of the customer's edge router. If the session goes from
+         * Oracle to a provider, this is the BGP IPv6 address of the provider's edge router. Only
+         * subnet masks from /64 up to /127 are allowed.
+         *
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+         * addresses.
+         *
+         * <p>Example: {@code 2001:db8::1/64}
          *
          * @param customerBgpPeeringIpv6 the value to set
          * @return this builder
-         **/
+         */
         public Builder customerBgpPeeringIpv6(String customerBgpPeeringIpv6) {
             this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
             this.__explicitlySet__.add("customerBgpPeeringIpv6");
             return this;
         }
         /**
-         * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed.
-         * If the session goes from Oracle to a customer's edge router,
-         * the customer specifies this information. If the session goes from Oracle to
-         * a provider's edge router, the provider specifies this.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-         * <p>
-         * Example: {@code 2001:db8::2/64}
+         * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to
+         * /127 are allowed. If the session goes from Oracle to a customer's edge router, the
+         * customer specifies this information. If the session goes from Oracle to a provider's edge
+         * router, the provider specifies this.
          *
-         **/
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+         * addresses.
+         *
+         * <p>Example: {@code 2001:db8::2/64}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIpv6")
         private String oracleBgpPeeringIpv6;
 
         /**
-         * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed.
-         * If the session goes from Oracle to a customer's edge router,
-         * the customer specifies this information. If the session goes from Oracle to
-         * a provider's edge router, the provider specifies this.
-         * <p>
-         * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-         * <p>
-         * Example: {@code 2001:db8::2/64}
+         * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to
+         * /127 are allowed. If the session goes from Oracle to a customer's edge router, the
+         * customer specifies this information. If the session goes from Oracle to a provider's edge
+         * router, the provider specifies this.
+         *
+         * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+         * addresses.
+         *
+         * <p>Example: {@code 2001:db8::2/64}
          *
          * @param oracleBgpPeeringIpv6 the value to set
          * @return this builder
-         **/
+         */
         public Builder oracleBgpPeeringIpv6(String oracleBgpPeeringIpv6) {
             this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
             this.__explicitlySet__.add("oracleBgpPeeringIpv6");
             return this;
         }
         /**
-         * The number of the specific VLAN (on the cross-connect or cross-connect group)
-         * that is assigned to this virtual circuit. Specified by the owner of the cross-connect
-         * or cross-connect group (the customer if the customer is colocated with Oracle, or
-         * the provider if the customer is connecting via provider).
-         * <p>
-         * Example: {@code 200}
+         * The number of the specific VLAN (on the cross-connect or cross-connect group) that is
+         * assigned to this virtual circuit. Specified by the owner of the cross-connect or
+         * cross-connect group (the customer if the customer is colocated with Oracle, or the
+         * provider if the customer is connecting via provider).
          *
-         **/
+         * <p>Example: {@code 200}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vlan")
         private Integer vlan;
 
         /**
-         * The number of the specific VLAN (on the cross-connect or cross-connect group)
-         * that is assigned to this virtual circuit. Specified by the owner of the cross-connect
-         * or cross-connect group (the customer if the customer is colocated with Oracle, or
-         * the provider if the customer is connecting via provider).
-         * <p>
-         * Example: {@code 200}
+         * The number of the specific VLAN (on the cross-connect or cross-connect group) that is
+         * assigned to this virtual circuit. Specified by the owner of the cross-connect or
+         * cross-connect group (the customer if the customer is colocated with Oracle, or the
+         * provider if the customer is connecting via provider).
+         *
+         * <p>Example: {@code 200}
          *
          * @param vlan the value to set
          * @return this builder
-         **/
+         */
         public Builder vlan(Integer vlan) {
             this.vlan = vlan;
             this.__explicitlySet__.add("vlan");
             return this;
         }
-        /**
-         * The state of the Ipv4 BGP session.
-         **/
+        /** The state of the Ipv4 BGP session. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4BgpStatus")
         private Ipv4BgpStatus ipv4BgpStatus;
 
         /**
          * The state of the Ipv4 BGP session.
+         *
          * @param ipv4BgpStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv4BgpStatus(Ipv4BgpStatus ipv4BgpStatus) {
             this.ipv4BgpStatus = ipv4BgpStatus;
             this.__explicitlySet__.add("ipv4BgpStatus");
             return this;
         }
-        /**
-         * The state of the Ipv6 BGP session.
-         **/
+        /** The state of the Ipv6 BGP session. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6BgpStatus")
         private Ipv6BgpStatus ipv6BgpStatus;
 
         /**
          * The state of the Ipv6 BGP session.
+         *
          * @param ipv6BgpStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder ipv6BgpStatus(Ipv6BgpStatus ipv6BgpStatus) {
             this.ipv6BgpStatus = ipv6BgpStatus;
             this.__explicitlySet__.add("ipv6BgpStatus");
             return this;
         }
-        /**
-         * The FastConnect device that terminates the logical connection.
-         *
-         **/
+        /** The FastConnect device that terminates the logical connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
         private String ociLogicalDeviceName;
 
@@ -318,7 +312,7 @@ public final class CrossConnectMappingDetails
          *
          * @param ociLogicalDeviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
             this.ociLogicalDeviceName = ociLogicalDeviceName;
             this.__explicitlySet__.add("ociLogicalDeviceName");
@@ -384,9 +378,7 @@ public final class CrossConnectMappingDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -396,207 +388,204 @@ public final class CrossConnectMappingDetails
     }
 
     /**
-     * The key for BGP MD5 authentication. Only applicable if your system
-     * requires MD5 authentication. If empty or not set (null), that
-     * means you don't use BGP MD5 authentication.
-     *
-     **/
+     * The key for BGP MD5 authentication. Only applicable if your system requires MD5
+     * authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
     private final String bgpMd5AuthKey;
 
     /**
-     * The key for BGP MD5 authentication. Only applicable if your system
-     * requires MD5 authentication. If empty or not set (null), that
-     * means you don't use BGP MD5 authentication.
+     * The key for BGP MD5 authentication. Only applicable if your system requires MD5
+     * authentication. If empty or not set (null), that means you don't use BGP MD5 authentication.
      *
      * @return the value
-     **/
+     */
     public String getBgpMd5AuthKey() {
         return bgpMd5AuthKey;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
-     * Specified by the owner of the cross-connect or cross-connect group (the
-     * customer if the customer is colocated with Oracle, or the provider if the
-     * customer is connecting via provider).
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect or cross-connect group for this mapping. Specified by the owner of the
+     * cross-connect or cross-connect group (the customer if the customer is colocated with Oracle,
+     * or the provider if the customer is connecting via provider).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
     private final String crossConnectOrCrossConnectGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect or cross-connect group for this mapping.
-     * Specified by the owner of the cross-connect or cross-connect group (the
-     * customer if the customer is colocated with Oracle, or the provider if the
-     * customer is connecting via provider).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect or cross-connect group for this mapping. Specified by the owner of the
+     * cross-connect or cross-connect group (the customer if the customer is colocated with Oracle,
+     * or the provider if the customer is connecting via provider).
      *
      * @return the value
-     **/
+     */
     public String getCrossConnectOrCrossConnectGroupId() {
         return crossConnectOrCrossConnectGroupId;
     }
 
     /**
-     * The BGP IPv4 address for the router on the other end of the BGP session from
-     * Oracle. Specified by the owner of that router. If the session goes from Oracle
-     * to a customer, this is the BGP IPv4 address of the customer's edge router. If the
-     * session goes from Oracle to a provider, this is the BGP IPv4 address of the
-     * provider's edge router. Must use a /30 or /31 subnet mask.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-     * <p>
-     * Example: {@code 10.0.0.18/31}
+     * The BGP IPv4 address for the router on the other end of the BGP session from Oracle.
+     * Specified by the owner of that router. If the session goes from Oracle to a customer, this is
+     * the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a
+     * provider, this is the BGP IPv4 address of the provider's edge router. Must use a /30 or /31
+     * subnet mask.
      *
-     **/
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+     * addresses.
+     *
+     * <p>Example: {@code 10.0.0.18/31}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
     private final String customerBgpPeeringIp;
 
     /**
-     * The BGP IPv4 address for the router on the other end of the BGP session from
-     * Oracle. Specified by the owner of that router. If the session goes from Oracle
-     * to a customer, this is the BGP IPv4 address of the customer's edge router. If the
-     * session goes from Oracle to a provider, this is the BGP IPv4 address of the
-     * provider's edge router. Must use a /30 or /31 subnet mask.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-     * <p>
-     * Example: {@code 10.0.0.18/31}
+     * The BGP IPv4 address for the router on the other end of the BGP session from Oracle.
+     * Specified by the owner of that router. If the session goes from Oracle to a customer, this is
+     * the BGP IPv4 address of the customer's edge router. If the session goes from Oracle to a
+     * provider, this is the BGP IPv4 address of the provider's edge router. Must use a /30 or /31
+     * subnet mask.
+     *
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+     * addresses.
+     *
+     * <p>Example: {@code 10.0.0.18/31}
      *
      * @return the value
-     **/
+     */
     public String getCustomerBgpPeeringIp() {
         return customerBgpPeeringIp;
     }
 
     /**
-     * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31
-     * subnet mask. If the session goes from Oracle to a customer's edge router,
-     * the customer specifies this information. If the session goes from Oracle to
-     * a provider's edge router, the provider specifies this.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-     * <p>
-     * Example: {@code 10.0.0.19/31}
+     * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If
+     * the session goes from Oracle to a customer's edge router, the customer specifies this
+     * information. If the session goes from Oracle to a provider's edge router, the provider
+     * specifies this.
      *
-     **/
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+     * addresses.
+     *
+     * <p>Example: {@code 10.0.0.19/31}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
     private final String oracleBgpPeeringIp;
 
     /**
-     * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31
-     * subnet mask. If the session goes from Oracle to a customer's edge router,
-     * the customer specifies this information. If the session goes from Oracle to
-     * a provider's edge router, the provider specifies this.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4 addresses.
-     * <p>
-     * Example: {@code 10.0.0.19/31}
+     * The IPv4 address for Oracle's end of the BGP session. Must use a /30 or /31 subnet mask. If
+     * the session goes from Oracle to a customer's edge router, the customer specifies this
+     * information. If the session goes from Oracle to a provider's edge router, the provider
+     * specifies this.
+     *
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv4
+     * addresses.
+     *
+     * <p>Example: {@code 10.0.0.19/31}
      *
      * @return the value
-     **/
+     */
     public String getOracleBgpPeeringIp() {
         return oracleBgpPeeringIp;
     }
 
     /**
-     * The BGP IPv6 address for the router on the other end of the BGP session from
-     * Oracle. Specified by the owner of that router. If the session goes from Oracle
-     * to a customer, this is the BGP IPv6 address of the customer's edge router. If the
-     * session goes from Oracle to a provider, this is the BGP IPv6 address of the
-     * provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-     * <p>
-     * Example: {@code 2001:db8::1/64}
+     * The BGP IPv6 address for the router on the other end of the BGP session from Oracle.
+     * Specified by the owner of that router. If the session goes from Oracle to a customer, this is
+     * the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a
+     * provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from
+     * /64 up to /127 are allowed.
      *
-     **/
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+     * addresses.
+     *
+     * <p>Example: {@code 2001:db8::1/64}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIpv6")
     private final String customerBgpPeeringIpv6;
 
     /**
-     * The BGP IPv6 address for the router on the other end of the BGP session from
-     * Oracle. Specified by the owner of that router. If the session goes from Oracle
-     * to a customer, this is the BGP IPv6 address of the customer's edge router. If the
-     * session goes from Oracle to a provider, this is the BGP IPv6 address of the
-     * provider's edge router. Only subnet masks from /64 up to /127 are allowed.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-     * <p>
-     * Example: {@code 2001:db8::1/64}
+     * The BGP IPv6 address for the router on the other end of the BGP session from Oracle.
+     * Specified by the owner of that router. If the session goes from Oracle to a customer, this is
+     * the BGP IPv6 address of the customer's edge router. If the session goes from Oracle to a
+     * provider, this is the BGP IPv6 address of the provider's edge router. Only subnet masks from
+     * /64 up to /127 are allowed.
+     *
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+     * addresses.
+     *
+     * <p>Example: {@code 2001:db8::1/64}
      *
      * @return the value
-     **/
+     */
     public String getCustomerBgpPeeringIpv6() {
         return customerBgpPeeringIpv6;
     }
 
     /**
-     * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed.
-     * If the session goes from Oracle to a customer's edge router,
-     * the customer specifies this information. If the session goes from Oracle to
-     * a provider's edge router, the provider specifies this.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-     * <p>
-     * Example: {@code 2001:db8::2/64}
+     * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127
+     * are allowed. If the session goes from Oracle to a customer's edge router, the customer
+     * specifies this information. If the session goes from Oracle to a provider's edge router, the
+     * provider specifies this.
      *
-     **/
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+     * addresses.
+     *
+     * <p>Example: {@code 2001:db8::2/64}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIpv6")
     private final String oracleBgpPeeringIpv6;
 
     /**
-     * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127 are allowed.
-     * If the session goes from Oracle to a customer's edge router,
-     * the customer specifies this information. If the session goes from Oracle to
-     * a provider's edge router, the provider specifies this.
-     * <p>
-     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
-     * <p>
-     * Example: {@code 2001:db8::2/64}
+     * The IPv6 address for Oracle's end of the BGP session. Only subnet masks from /64 up to /127
+     * are allowed. If the session goes from Oracle to a customer's edge router, the customer
+     * specifies this information. If the session goes from Oracle to a provider's edge router, the
+     * provider specifies this.
+     *
+     * <p>There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6
+     * addresses.
+     *
+     * <p>Example: {@code 2001:db8::2/64}
      *
      * @return the value
-     **/
+     */
     public String getOracleBgpPeeringIpv6() {
         return oracleBgpPeeringIpv6;
     }
 
     /**
-     * The number of the specific VLAN (on the cross-connect or cross-connect group)
-     * that is assigned to this virtual circuit. Specified by the owner of the cross-connect
-     * or cross-connect group (the customer if the customer is colocated with Oracle, or
-     * the provider if the customer is connecting via provider).
-     * <p>
-     * Example: {@code 200}
+     * The number of the specific VLAN (on the cross-connect or cross-connect group) that is
+     * assigned to this virtual circuit. Specified by the owner of the cross-connect or
+     * cross-connect group (the customer if the customer is colocated with Oracle, or the provider
+     * if the customer is connecting via provider).
      *
-     **/
+     * <p>Example: {@code 200}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vlan")
     private final Integer vlan;
 
     /**
-     * The number of the specific VLAN (on the cross-connect or cross-connect group)
-     * that is assigned to this virtual circuit. Specified by the owner of the cross-connect
-     * or cross-connect group (the customer if the customer is colocated with Oracle, or
-     * the provider if the customer is connecting via provider).
-     * <p>
-     * Example: {@code 200}
+     * The number of the specific VLAN (on the cross-connect or cross-connect group) that is
+     * assigned to this virtual circuit. Specified by the owner of the cross-connect or
+     * cross-connect group (the customer if the customer is colocated with Oracle, or the provider
+     * if the customer is connecting via provider).
+     *
+     * <p>Example: {@code 200}
      *
      * @return the value
-     **/
+     */
     public Integer getVlan() {
         return vlan;
     }
 
-    /**
-     * The state of the Ipv4 BGP session.
-     **/
-    public enum Ipv4BgpStatus {
+    /** The state of the Ipv4 BGP session. */
+    public enum Ipv4BgpStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Up("UP"),
         Down("DOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -635,30 +624,27 @@ public final class CrossConnectMappingDetails
             return UnknownEnumValue;
         }
     };
-    /**
-     * The state of the Ipv4 BGP session.
-     **/
+    /** The state of the Ipv4 BGP session. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4BgpStatus")
     private final Ipv4BgpStatus ipv4BgpStatus;
 
     /**
      * The state of the Ipv4 BGP session.
+     *
      * @return the value
-     **/
+     */
     public Ipv4BgpStatus getIpv4BgpStatus() {
         return ipv4BgpStatus;
     }
 
-    /**
-     * The state of the Ipv6 BGP session.
-     **/
-    public enum Ipv6BgpStatus {
+    /** The state of the Ipv6 BGP session. */
+    public enum Ipv6BgpStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Up("UP"),
         Down("DOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -697,24 +683,20 @@ public final class CrossConnectMappingDetails
             return UnknownEnumValue;
         }
     };
-    /**
-     * The state of the Ipv6 BGP session.
-     **/
+    /** The state of the Ipv6 BGP session. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6BgpStatus")
     private final Ipv6BgpStatus ipv6BgpStatus;
 
     /**
      * The state of the Ipv6 BGP session.
+     *
      * @return the value
-     **/
+     */
     public Ipv6BgpStatus getIpv6BgpStatus() {
         return ipv6BgpStatus;
     }
 
-    /**
-     * The FastConnect device that terminates the logical connection.
-     *
-     **/
+    /** The FastConnect device that terminates the logical connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("ociLogicalDeviceName")
     private final String ociLogicalDeviceName;
 
@@ -722,7 +704,7 @@ public final class CrossConnectMappingDetails
      * The FastConnect device that terminates the logical connection.
      *
      * @return the value
-     **/
+     */
     public String getOciLogicalDeviceName() {
         return ociLogicalDeviceName;
     }
@@ -734,6 +716,7 @@ public final class CrossConnectMappingDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

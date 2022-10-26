@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Resource profile risk score trend-line
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Resource profile risk score trend-line <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ResourceProfileRiskScoreAggregationSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ResourceProfileRiskScoreAggregationSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ResourceProfileRiskScoreAggregationSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceProfileId",
@@ -42,65 +42,61 @@ public final class ResourceProfileRiskScoreAggregationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID for the resource profile
-         **/
+        /** OCID for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
         private String resourceProfileId;
 
         /**
          * OCID for the resource profile
+         *
          * @param resourceProfileId the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceProfileId(String resourceProfileId) {
             this.resourceProfileId = resourceProfileId;
             this.__explicitlySet__.add("resourceProfileId");
             return this;
         }
-        /**
-         * Display name for the resource profile
-         **/
+        /** Display name for the resource profile */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileDisplayName")
         private String resourceProfileDisplayName;
 
         /**
          * Display name for the resource profile
+         *
          * @param resourceProfileDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceProfileDisplayName(String resourceProfileDisplayName) {
             this.resourceProfileDisplayName = resourceProfileDisplayName;
             this.__explicitlySet__.add("resourceProfileDisplayName");
             return this;
         }
-        /**
-         * Risk threshold
-         **/
+        /** Risk threshold */
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
         /**
          * Risk threshold
+         *
          * @param riskThreshold the value to set
          * @return this builder
-         **/
+         */
         public Builder riskThreshold(Integer riskThreshold) {
             this.riskThreshold = riskThreshold;
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-        /**
-         * List of ResourceRiskScoreAggregation
-         **/
+        /** List of ResourceRiskScoreAggregation */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
         /**
          * List of ResourceRiskScoreAggregation
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<ResourceRiskScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -141,9 +137,7 @@ public final class ResourceProfileRiskScoreAggregationSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,58 +146,54 @@ public final class ResourceProfileRiskScoreAggregationSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID for the resource profile
-     **/
+    /** OCID for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileId")
     private final String resourceProfileId;
 
     /**
      * OCID for the resource profile
+     *
      * @return the value
-     **/
+     */
     public String getResourceProfileId() {
         return resourceProfileId;
     }
 
-    /**
-     * Display name for the resource profile
-     **/
+    /** Display name for the resource profile */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceProfileDisplayName")
     private final String resourceProfileDisplayName;
 
     /**
      * Display name for the resource profile
+     *
      * @return the value
-     **/
+     */
     public String getResourceProfileDisplayName() {
         return resourceProfileDisplayName;
     }
 
-    /**
-     * Risk threshold
-     **/
+    /** Risk threshold */
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
     /**
      * Risk threshold
+     *
      * @return the value
-     **/
+     */
     public Integer getRiskThreshold() {
         return riskThreshold;
     }
 
-    /**
-     * List of ResourceRiskScoreAggregation
-     **/
+    /** List of ResourceRiskScoreAggregation */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
     /**
      * List of ResourceRiskScoreAggregation
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ResourceRiskScoreAggregation> getItems() {
         return items;
     }
@@ -215,6 +205,7 @@ public final class ResourceProfileRiskScoreAggregationSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

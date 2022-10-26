@@ -5,7 +5,7 @@
 package database_tools;
 
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Options;
+import com.oracle.bmc.http.client.Options;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
@@ -60,80 +60,31 @@ import java.util.zip.ZipInputStream;
 /**
  * Use Case: ADB-S with Private Endpoint
  *
- * This example creates a Database Tools Connection to a Autonomous Database (ADB-S)
- * accessible by private endpoint (PE). Note, since this connection will be against
- * a PE, a Database Tools Private Endpoint Reverse Connection is required. This
- * example serves as an academic exercise of the SDK.
+ * <p>This example creates a Database Tools Connection to a Autonomous Database (ADB-S) accessible
+ * by private endpoint (PE). Note, since this connection will be against a PE, a Database Tools
+ * Private Endpoint Reverse Connection is required. This example serves as an academic exercise of
+ * the SDK.
  *
- * Prerequisites:
- *  - An existing ADB-S with PE and network security group (i.e. ingress on 1522)
- *  - Available capacity (limits apply) to create a new Private Endpoint
- *  - An existing Vault for storage of secrets
- *  - A previously configured .oci/config file with a [DEFAULT] section
+ * <p>Prerequisites: - An existing ADB-S with PE and network security group (i.e. ingress on 1522) -
+ * Available capacity (limits apply) to create a new Private Endpoint - An existing Vault for
+ * storage of secrets - A previously configured .oci/config file with a [DEFAULT] section
  *
- * High-level Steps:
- *  1- Create required secrets in the Vault
- *  2- Create a Database Tools Private Endpoint for a Reverse Connection to the Private Endpoint of the ADB-S
- *  3- Create a Database Tools connection
- *  4- Validate the connection
+ * <p>High-level Steps: 1- Create required secrets in the Vault 2- Create a Database Tools Private
+ * Endpoint for a Reverse Connection to the Private Endpoint of the ADB-S 3- Create a Database Tools
+ * connection 4- Validate the connection
  *
- *  ... cleanup when done (delete the temporary secret, connection, and PE)
+ * <p>... cleanup when done (delete the temporary secret, connection, and PE)
  *
- *                       Client
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      V          |
- *  |              +----------------+ |
- *  |              | Database Tools | |
- *  |              |    Service     | |
- *  |              +----------------+ |
- *  |                      |          |
- *  | Database             |          |
- *  | Tools                |          |
- *  | VCN                  |          |
- *  +----------------------+----------+
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      |          |
- *  |                      V          |
- *  |                +-----------+    |
- *  |                | Database  |    |
- *  |                |  Tools    |    |
- *  |                | Private   |    |
- *  |                | Endpoint  |    |
- *  |                |  Reverse  |    |
- *  |                | Connection|    |
- *  |                +-----------+    |
- *  |                      |          |
- *  |                      V          |
- *  |                +-----------+    |
- *  |                |   ADB-S   |    |
- *  |                |  Private  |    |
- *  |                |  Endpoint |    |
- *  |                +-----------+    |
- *  |                      |          |
- *  | Customer             |          |
- *  | VCN                  |          |
- *  +----------------------+----------+
- *                         |
- *                         |
- *  +----------------------+----------+
- *  |                      |          |
- *  |                      V          |
- *  |                  ---------      |
- *  |                 /  ABD-S  \     |
- *  |                 | Private |     |
- *  |                 \ Endpoint/     |
- *  |                  ---------      |
- *  |                                 |
- *  | ADB                             |
- *  | Shared                          |
- *  | VCN                             |
- *  +---------------------------------+
+ * <p>Client | | +----------------------+----------+ | V | | +----------------+ | | | Database Tools
+ * | | | | Service | | | +----------------+ | | | | | Database | | | Tools | | | VCN | |
+ * +----------------------+----------+ | | +----------------------+----------+ | | | | V | |
+ * +-----------+ | | | Database | | | | Tools | | | | Private | | | | Endpoint | | | | Reverse | | |
+ * | Connection| | | +-----------+ | | | | | V | | +-----------+ | | | ADB-S | | | | Private | | | |
+ * Endpoint | | | +-----------+ | | | | | Customer | | | VCN | | +----------------------+----------+
+ * | | +----------------------+----------+ | | | | V | | --------- | | / ABD-S \ | | | Private | | |
+ * \ Endpoint/ | | --------- | | | | ADB | | Shared | | VCN | +---------------------------------+
  *
- *  Note: We recommend that you activate the java assertion (-ea) when running this example.
+ * <p>Note: We recommend that you activate the java assertion (-ea) when running this example.
  */
 public class DatabaseToolsADBsConnectionWithPeExample {
 
@@ -166,12 +117,13 @@ public class DatabaseToolsADBsConnectionWithPeExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of an ADB-S created following the instructions from: https://docs.oracle.com/en-us/iaas/autonomous-database-shared/doc/private-endpoints-autonomous.html</li>
-     *   <li>The OCID of a Vault created in KMS with at least one master key</li>
-     *   <li>The Name of the User in the ADB-S, like admin</li>
-     *   <li>The Password of the User in the ADB-S</li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of an ADB-S created following the instructions from:
+     *           https://docs.oracle.com/en-us/iaas/autonomous-database-shared/doc/private-endpoints-autonomous.html
+     *       <li>The OCID of a Vault created in KMS with at least one master key
+     *       <li>The Name of the User in the ADB-S, like admin
+     *       <li>The Password of the User in the ADB-S
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 4) {
@@ -188,8 +140,10 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         dbUser = args[2];
         dbPassword = args[3];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
         provider = new ConfigFileAuthenticationDetailsProvider(ConfigFileReader.parseDefault());
 
@@ -213,7 +167,8 @@ public class DatabaseToolsADBsConnectionWithPeExample {
             // 1- Create secrets (database wallet and database password) in the Vault
             createSecrets(ssoWallet);
 
-            // 2- Create a Database Tools Private Endpoint for a Reverse Connection to the Private Endpoint of the ADB-S
+            // 2- Create a Database Tools Private Endpoint for a Reverse Connection to the Private
+            // Endpoint of the ADB-S
             createPrivateEndpoint();
 
             // 3- Create a Database Tools connection
@@ -239,9 +194,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         }
     }
 
-    /**
-     * Obtain a SSO Wallet for the ADB-S.
-     */
+    /** Obtain a SSO Wallet for the ADB-S. */
     private static String getSsoWallet() {
         System.out.println(String.format("Getting Database %s info...", autonomousDatabaseId));
         GetAutonomousDatabaseResponse response =
@@ -268,8 +221,8 @@ public class DatabaseToolsADBsConnectionWithPeExample {
                                 .autonomousDatabaseId(autonomousDatabaseId)
                                 .generateAutonomousDatabaseWalletDetails(
                                         GenerateAutonomousDatabaseWalletDetails.builder()
-                                                .password(
-                                                        dbPassword) // Should use a different password
+                                                .password(dbPassword) // Should use a different
+                                                // password
                                                 .build())
                                 .build());
 
@@ -282,6 +235,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Create a secret in a Vault
+     *
      * @param name Name of the Secret
      * @param base64Secret The content of the secret as a base 64 string
      * @return the OCID of the generated secret
@@ -300,8 +254,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
             System.out.println(
                     String.format(
                             "Vault %s management endpoint is %s",
-                            vaultId,
-                            vault.getManagementEndpoint()));
+                            vaultId, vault.getManagementEndpoint()));
             KmsManagementClient kmsManagementClient =
                     KmsManagementClient.builder().vault(vault).build(provider);
             // This will only work if the key is in the same compartment as the vault
@@ -344,6 +297,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Create secrets (database wallet and database password) in the Vault
+     *
      * @param wallet wallet to Store in base65 string format
      * @throws Exception
      */
@@ -363,6 +317,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Get a specific file from a Zip file
+     *
      * @param inputStream Stream that contains the zip file.
      * @param fileName Name of the file to extract from the zip file
      * @return a ByteArrayOutputStream for the specified fileName
@@ -389,8 +344,9 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Create a Private Endpoint for a Reverse Connection. The Database Tools Private Endpoint will
-     * be created in the same compartment and subnet as the Autonomous Database.
-     * A best practice would be to use separate subnets with properly configured security lists.
+     * be created in the same compartment and subnet as the Autonomous Database. A best practice
+     * would be to use separate subnets with properly configured security lists.
+     *
      * @throws Exception
      */
     public static void createPrivateEndpoint() throws Exception {
@@ -428,8 +384,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Creating Private Endpoint %s using Work request: %s",
-                        displayName,
-                        createPrivateEndpointResponse.getOpcWorkRequestId()));
+                        displayName, createPrivateEndpointResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsPrivateEndpoint(peId, LifecycleState.Active);
@@ -451,15 +406,12 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Create a Database Tools connection with:
-     * - ADB-S Compartment
-     * - Private Endpoint for a Reverse Connection to the Private Endpoint of the ADB-S
-     * - Connection String extracted from the ADB-S
-     * - Database User
-     * - Database Password Stored in a Vault
-     * - Time generated display name
-     * - keyStore for the SSO Wallet extracted from the ADB-S and Stored in a Vault
-     * - Related Resource with a reference to the ADB-S OCID
+     * Create a Database Tools connection with: - ADB-S Compartment - Private Endpoint for a Reverse
+     * Connection to the Private Endpoint of the ADB-S - Connection String extracted from the ADB-S
+     * - Database User - Database Password Stored in a Vault - Time generated display name -
+     * keyStore for the SSO Wallet extracted from the ADB-S and Stored in a Vault - Related Resource
+     * with a reference to the ADB-S OCID
+     *
      * @throws Exception
      */
     private static void createConnection() throws Exception {
@@ -469,10 +421,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         System.out.println("Creating a database tools connection...");
         // Get the mTls low connection string
         String connectionString =
-                autonomousDatabase
-                        .getConnectionStrings()
-                        .getProfiles()
-                        .stream()
+                autonomousDatabase.getConnectionStrings().getProfiles().stream()
                         .filter(
                                 p ->
                                         p.getTlsAuthentication()
@@ -498,7 +447,8 @@ public class DatabaseToolsADBsConnectionWithPeExample {
                                                 .build())
                                 .build());
 
-        // Related Resource is optional, but will help provide additional information when querying the
+        // Related Resource is optional, but will help provide additional information when querying
+        // the
         // connection using the OCI Console, the SDKs and the CLI.
         CreateDatabaseToolsRelatedResourceDetails relatedResource =
                 CreateDatabaseToolsRelatedResourceDetails.builder()
@@ -534,8 +484,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Creating Connection %s using Work request: %s",
-                        displayName,
-                        createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
+                        displayName, createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsConnection(connectionId, LifecycleState.Active);
@@ -556,8 +505,9 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Validate a Database Tools Connection.
-     * The Validation is similar to the "Test Connection" in SQL Developer.
+     * Validate a Database Tools Connection. The Validation is similar to the "Test Connection" in
+     * SQL Developer.
+     *
      * @return true if the Connection is Valid
      */
     private static boolean validateConnection() {
@@ -583,6 +533,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Delete The database Tools Connection for the specified connectionId
+     *
      * @param connectionId The OCID of the Database Tools to delete
      * @throws Exception
      */
@@ -613,6 +564,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Delete the Database Tools Private Endpoint for the specified privateEndpointId
+     *
      * @param privateEndpointId
      * @throws Exception
      */
@@ -640,8 +592,9 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Delete a Secret in a Vault.
-     * Note that the secret is not actually deleted immediately, it is scheduled for deletion on a later date.
+     * Delete a Secret in a Vault. Note that the secret is not actually deleted immediately, it is
+     * scheduled for deletion on a later date.
+     *
      * @param secretId The OCID of the Secret to delete
      * @throws Exception
      */
@@ -675,6 +628,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
 
     /**
      * Delete secrets in a Vault.
+     *
      * @param secretIds the list of Secret OCID to delete
      * @throws Exception
      */
@@ -687,7 +641,9 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous operation.
+     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous
+     * operation.
+     *
      * @param endpointId The OCID of the database Tools Private Endpoint
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -698,8 +654,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Waiting for private endpoint %s to match state -> %s",
-                        endpointId,
-                        targetState));
+                        endpointId, targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsPrivateEndpoint(
@@ -713,8 +668,8 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Connection to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Connection to get a specific state. Required for asynchronous operation.
+     *
      * @param connectionId The OCID of the database Tools Connection
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -725,8 +680,7 @@ public class DatabaseToolsADBsConnectionWithPeExample {
         System.out.println(
                 String.format(
                         "=== Waiting for connection %s to match state -> %s",
-                        connectionId,
-                        targetState));
+                        connectionId, targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsConnection(
@@ -739,8 +693,8 @@ public class DatabaseToolsADBsConnectionWithPeExample {
     }
 
     /**
-     * Wait for a specific Secret to get a specific state. Required for
-     * asynchronous operation.
+     * Wait for a specific Secret to get a specific state. Required for asynchronous operation.
+     *
      * @param secretId The OCID of the Secret in a Vault
      * @param targetState The LifeCycle state to reach
      * @throws Exception

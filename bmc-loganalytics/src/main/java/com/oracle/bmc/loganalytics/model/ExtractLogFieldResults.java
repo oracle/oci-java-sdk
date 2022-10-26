@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * log field path values
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * log field path values <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExtractLogFieldResults.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ExtractLogFieldResults.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExtractLogFieldResults
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"paths"})
     public ExtractLogFieldResults(java.util.List<String> paths) {
@@ -30,17 +30,16 @@ public final class ExtractLogFieldResults
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The log field path values.
-         **/
+        /** The log field path values. */
         @com.fasterxml.jackson.annotation.JsonProperty("paths")
         private java.util.List<String> paths;
 
         /**
          * The log field path values.
+         *
          * @param paths the value to set
          * @return this builder
-         **/
+         */
         public Builder paths(java.util.List<String> paths) {
             this.paths = paths;
             this.__explicitlySet__.add("paths");
@@ -67,9 +66,7 @@ public final class ExtractLogFieldResults
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class ExtractLogFieldResults
         return new Builder().copy(this);
     }
 
-    /**
-     * The log field path values.
-     **/
+    /** The log field path values. */
     @com.fasterxml.jackson.annotation.JsonProperty("paths")
     private final java.util.List<String> paths;
 
     /**
      * The log field path values.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getPaths() {
         return paths;
     }
@@ -99,6 +95,7 @@ public final class ExtractLogFieldResults
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

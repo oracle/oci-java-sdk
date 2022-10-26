@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/**
- * Possible operation status.
- **/
+/** Possible operation status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum OperationStatus {
+public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Waiting("WAITING"),

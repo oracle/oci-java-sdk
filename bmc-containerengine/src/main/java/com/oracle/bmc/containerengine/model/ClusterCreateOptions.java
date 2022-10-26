@@ -5,21 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define extra options for a cluster.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The properties that define extra options for a cluster. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ClusterCreateOptions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ClusterCreateOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ClusterCreateOptions
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serviceLbSubnetIds",
@@ -47,65 +48,61 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCIDs of the subnets used for Kubernetes services load balancers.
-         **/
+        /** The OCIDs of the subnets used for Kubernetes services load balancers. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
         private java.util.List<String> serviceLbSubnetIds;
 
         /**
          * The OCIDs of the subnets used for Kubernetes services load balancers.
+         *
          * @param serviceLbSubnetIds the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceLbSubnetIds(java.util.List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             this.__explicitlySet__.add("serviceLbSubnetIds");
             return this;
         }
-        /**
-         * Network configuration for Kubernetes.
-         **/
+        /** Network configuration for Kubernetes. */
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
         private KubernetesNetworkConfig kubernetesNetworkConfig;
 
         /**
          * Network configuration for Kubernetes.
+         *
          * @param kubernetesNetworkConfig the value to set
          * @return this builder
-         **/
+         */
         public Builder kubernetesNetworkConfig(KubernetesNetworkConfig kubernetesNetworkConfig) {
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
             this.__explicitlySet__.add("kubernetesNetworkConfig");
             return this;
         }
-        /**
-         * Configurable cluster add-ons
-         **/
+        /** Configurable cluster add-ons */
         @com.fasterxml.jackson.annotation.JsonProperty("addOns")
         private AddOnOptions addOns;
 
         /**
          * Configurable cluster add-ons
+         *
          * @param addOns the value to set
          * @return this builder
-         **/
+         */
         public Builder addOns(AddOnOptions addOns) {
             this.addOns = addOns;
             this.__explicitlySet__.add("addOns");
             return this;
         }
-        /**
-         * Configurable cluster admission controllers
-         **/
+        /** Configurable cluster admission controllers */
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
 
         /**
          * Configurable cluster admission controllers
+         *
          * @param admissionControllerOptions the value to set
          * @return this builder
-         **/
+         */
         public Builder admissionControllerOptions(
                 AdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
@@ -174,9 +171,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,58 +180,54 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCIDs of the subnets used for Kubernetes services load balancers.
-     **/
+    /** The OCIDs of the subnets used for Kubernetes services load balancers. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
     private final java.util.List<String> serviceLbSubnetIds;
 
     /**
      * The OCIDs of the subnets used for Kubernetes services load balancers.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getServiceLbSubnetIds() {
         return serviceLbSubnetIds;
     }
 
-    /**
-     * Network configuration for Kubernetes.
-     **/
+    /** Network configuration for Kubernetes. */
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
     private final KubernetesNetworkConfig kubernetesNetworkConfig;
 
     /**
      * Network configuration for Kubernetes.
+     *
      * @return the value
-     **/
+     */
     public KubernetesNetworkConfig getKubernetesNetworkConfig() {
         return kubernetesNetworkConfig;
     }
 
-    /**
-     * Configurable cluster add-ons
-     **/
+    /** Configurable cluster add-ons */
     @com.fasterxml.jackson.annotation.JsonProperty("addOns")
     private final AddOnOptions addOns;
 
     /**
      * Configurable cluster add-ons
+     *
      * @return the value
-     **/
+     */
     public AddOnOptions getAddOns() {
         return addOns;
     }
 
-    /**
-     * Configurable cluster admission controllers
-     **/
+    /** Configurable cluster admission controllers */
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     private final AdmissionControllerOptions admissionControllerOptions;
 
     /**
      * Configurable cluster admission controllers
+     *
      * @return the value
-     **/
+     */
     public AdmissionControllerOptions getAdmissionControllerOptions() {
         return admissionControllerOptions;
     }
@@ -262,6 +253,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

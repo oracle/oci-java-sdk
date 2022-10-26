@@ -46,22 +46,21 @@ import com.oracle.bmc.datalabelingservice.responses.GenerateDatasetRecordsRespon
 import com.oracle.bmc.datalabelingservice.responses.SnapshotDatasetResponse;
 
 /**
- * This class provides an example of how to use Data Labeling Service to
- * generate records of a dataset and export snapshot.
- * <p>
- * The Data Labeling service queried by this example will be assigned:
- * <ul>
- * <li>an endpoint url defined by constant ENDPOINT</li>
- * <li>The configuration file used by service clients will be sourced from the
- * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
- * </ul>
- * </p>
+ * This class provides an example of how to use Data Labeling Service to generate records of a
+ * dataset and export snapshot.
  *
- * @param args Arguments to provide to the example. The following arguments are
- *             expected:
- *             <ul>
- *             <li>The first argument is the OCID of the compartment.</li>
- *             </ul>
+ * <p>The Data Labeling service queried by this example will be assigned:
+ *
+ * <ul>
+ *   <li>an endpoint url defined by constant ENDPOINT
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used.
+ * </ul>
+ *
+ * @param args Arguments to provide to the example. The following arguments are expected:
+ *     <ul>
+ *       <li>The first argument is the OCID of the compartment.
+ *     </ul>
  */
 public class DataLabelingDatasetGenerationAndSnaphotExample {
 

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.jms.model;
 
-/**
- * The field to sort applications.
- **/
+/** The field to sort applications. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ApplicationSortBy {
+public enum ApplicationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     TimeFirstSeen("timeFirstSeen"),
     TimeLastSeen("timeLastSeen"),
     DisplayName("displayName"),

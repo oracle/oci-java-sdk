@@ -5,42 +5,39 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The abstract format attribute.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The abstract format attribute. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = AbstractFormatAttribute.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = AbstractFormatAttribute.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AvroFormatAttribute.class,
-        name = "AVRO_FORMAT"
-    ),
+            value = AvroFormatAttribute.class,
+            name = "AVRO_FORMAT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = JsonFormatAttribute.class,
-        name = "JSON_FORMAT"
-    ),
+            value = JsonFormatAttribute.class,
+            name = "JSON_FORMAT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CsvFormatAttribute.class,
-        name = "CSV_FORMAT"
-    ),
+            value = CsvFormatAttribute.class,
+            name = "CSV_FORMAT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ParquetFormatAttribute.class,
-        name = "PARQUET_FORMAT"
-    )
+            value = ParquetFormatAttribute.class,
+            name = "PARQUET_FORMAT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AbstractFormatAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class AbstractFormatAttribute
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isFilePattern"})
     protected AbstractFormatAttribute(Boolean isFilePattern) {
@@ -48,16 +45,15 @@ public class AbstractFormatAttribute extends com.oracle.bmc.http.internal.Explic
         this.isFilePattern = isFilePattern;
     }
 
-    /**
-     * Defines whether a file pattern is supported.
-     **/
+    /** Defines whether a file pattern is supported. */
     @com.fasterxml.jackson.annotation.JsonProperty("isFilePattern")
     private final Boolean isFilePattern;
 
     /**
      * Defines whether a file pattern is supported.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsFilePattern() {
         return isFilePattern;
     }
@@ -69,6 +65,7 @@ public class AbstractFormatAttribute extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -106,17 +103,15 @@ public class AbstractFormatAttribute extends com.oracle.bmc.http.internal.Explic
         return result;
     }
 
-    /**
-     * The type of the format attribute.
-     **/
-    public enum ModelType {
+    /** The type of the format attribute. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         JsonFormat("JSON_FORMAT"),
         CsvFormat("CSV_FORMAT"),
         AvroFormat("AVRO_FORMAT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

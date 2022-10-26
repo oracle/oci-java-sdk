@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Create new block volumes or attach to an existing volume. Specify either createDetails or volumeId.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Create new block volumes or attach to an existing volume. Specify either createDetails or
+ * volumeId. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceConfigurationBlockVolumeDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstanceConfigurationBlockVolumeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfigurationBlockVolumeDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"attachDetails", "createDetails", "volumeId"})
     public InstanceConfigurationBlockVolumeDetails(
@@ -54,17 +54,16 @@ public final class InstanceConfigurationBlockVolumeDetails
             this.__explicitlySet__.add("createDetails");
             return this;
         }
-        /**
-         * The OCID of the volume.
-         **/
+        /** The OCID of the volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
         /**
          * The OCID of the volume.
+         *
          * @param volumeId the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeId(String volumeId) {
             this.volumeId = volumeId;
             this.__explicitlySet__.add("volumeId");
@@ -99,9 +98,7 @@ public final class InstanceConfigurationBlockVolumeDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,16 +121,15 @@ public final class InstanceConfigurationBlockVolumeDetails
         return createDetails;
     }
 
-    /**
-     * The OCID of the volume.
-     **/
+    /** The OCID of the volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     private final String volumeId;
 
     /**
      * The OCID of the volume.
+     *
      * @return the value
-     **/
+     */
     public String getVolumeId() {
         return volumeId;
     }
@@ -145,6 +141,7 @@ public final class InstanceConfigurationBlockVolumeDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

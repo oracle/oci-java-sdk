@@ -11,7 +11,6 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,13 +24,12 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned java.io.InputStream instance.
-     */
+    /** The returned java.io.InputStream instance. */
     private java.io.InputStream inputStream;
 
     /**
      * The returned java.io.InputStream instance.
+     *
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -46,7 +44,7 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateKubeconfigResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             java.io.InputStream inputStream) {
         super(__httpStatusCode__, headers);
@@ -54,17 +52,20 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
         this.inputStream = inputStream;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateKubeconfigResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -72,7 +73,6 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -88,13 +88,12 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned java.io.InputStream instance.
-         */
+        /** The returned java.io.InputStream instance. */
         private java.io.InputStream inputStream;
 
         /**
          * The returned java.io.InputStream instance.
+         *
          * @param inputStream the value to set
          * @return this builder
          */
@@ -105,8 +104,10 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateKubeconfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -118,8 +119,10 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateKubeconfigResponse build() {
             return new CreateKubeconfigResponse(
                     __httpStatusCode__, headers, opcRequestId, inputStream);
@@ -128,6 +131,7 @@ public class CreateKubeconfigResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

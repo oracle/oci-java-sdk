@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information regarding the deployment to be canceled.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information regarding the deployment to be canceled. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CancelDeploymentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CancelDeploymentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CancelDeploymentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reason"})
     public CancelDeploymentDetails(String reason) {
@@ -30,17 +30,16 @@ public final class CancelDeploymentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The reason for canceling the deployment.
-         **/
+        /** The reason for canceling the deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * The reason for canceling the deployment.
+         *
          * @param reason the value to set
          * @return this builder
-         **/
+         */
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -67,9 +66,7 @@ public final class CancelDeploymentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class CancelDeploymentDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The reason for canceling the deployment.
-     **/
+    /** The reason for canceling the deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * The reason for canceling the deployment.
+     *
      * @return the value
-     **/
+     */
     public String getReason() {
         return reason;
     }
@@ -99,6 +95,7 @@ public final class CancelDeploymentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

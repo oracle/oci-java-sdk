@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Logging query type for data source (Sighting/Insight)
- **/
+/** Logging query type for data source (Sighting/Insight) */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum LoggingQueryType {
+public enum LoggingQueryType implements com.oracle.bmc.http.internal.BmcEnum {
     Insight("INSIGHT"),
 
     /**

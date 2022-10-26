@@ -9,17 +9,14 @@ import com.oracle.bmc.healthchecks.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide
-     * the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide
-     * the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -28,21 +25,18 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if
-     * this header appears in the response, then there may be additional
-     * items still to get. Include this value as the {@code page} parameter for the
-     * subsequent GET request. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then there may be additional items still to get. Include this value as the {@code
+     * page} parameter for the subsequent GET request. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if
-     * this header appears in the response, then there may be additional
-     * items still to get. Include this value as the {@code page} parameter for the
-     * subsequent GET request. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then there may be additional items still to get. Include this value as the {@code
+     * page} parameter for the subsequent GET request. For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
      *
      * @return the value
      */
@@ -50,13 +44,12 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
-     */
+    /** A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances. */
     private java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary> items;
 
     /**
      * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>
@@ -73,7 +66,7 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
     })
     private ListHealthChecksVantagePointsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             java.util.List<com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary>
@@ -84,33 +77,34 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListHealthChecksVantagePointsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide
-         * the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide
-         * the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -121,21 +115,20 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if
-         * this header appears in the response, then there may be additional
-         * items still to get. Include this value as the {@code page} parameter for the
-         * subsequent GET request. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then there may be additional items still to get. Include this value as the
+         * {@code page} parameter for the subsequent GET request. For information about pagination,
+         * see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if
-         * this header appears in the response, then there may be additional
-         * items still to get. Include this value as the {@code page} parameter for the
-         * subsequent GET request. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then there may be additional items still to get. Include this value as the
+         * {@code page} parameter for the subsequent GET request. For information about pagination,
+         * see [List
+         * Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -153,6 +146,7 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
 
         /**
          * A list of com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -165,8 +159,10 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListHealthChecksVantagePointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -179,8 +175,10 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListHealthChecksVantagePointsResponse build() {
             return new ListHealthChecksVantagePointsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, items);
@@ -189,6 +187,7 @@ public class ListHealthChecksVantagePointsResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

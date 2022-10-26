@@ -5,28 +5,27 @@
 package com.oracle.bmc.dashboardservice.model;
 
 /**
- * Details for updating a version 1 dashboard.
- * The interpretation of the {@code config} and {@code widgets} fields depends on the runtime behavior of the Oracle Cloud Infrastructure Console.
- * The sum of the {@code config} and {@code widget} fields JSON text representation cannot exceed 200 KB.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for updating a version 1 dashboard. The interpretation of the {@code config} and {@code
+ * widgets} fields depends on the runtime behavior of the Oracle Cloud Infrastructure Console. The
+ * sum of the {@code config} and {@code widget} fields JSON text representation cannot exceed 200
+ * KB. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateV1DashboardDetails.Builder.class
-)
+        builder = UpdateV1DashboardDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "schemaVersion"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "schemaVersion")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -66,33 +65,31 @@ public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The layout and widget placement for the dashboard.
-         **/
+        /** The layout and widget placement for the dashboard. */
         @com.fasterxml.jackson.annotation.JsonProperty("config")
         private Object config;
 
         /**
          * The layout and widget placement for the dashboard.
+         *
          * @param config the value to set
          * @return this builder
-         **/
+         */
         public Builder config(Object config) {
             this.config = config;
             this.__explicitlySet__.add("config");
             return this;
         }
-        /**
-         * The basic visualization building blocks of a dashboard.
-         **/
+        /** The basic visualization building blocks of a dashboard. */
         @com.fasterxml.jackson.annotation.JsonProperty("widgets")
         private java.util.List<Object> widgets;
 
         /**
          * The basic visualization building blocks of a dashboard.
+         *
          * @param widgets the value to set
          * @return this builder
-         **/
+         */
         public Builder widgets(java.util.List<Object> widgets) {
             this.widgets = widgets;
             this.__explicitlySet__.add("widgets");
@@ -141,9 +138,7 @@ public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,30 +160,28 @@ public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
         this.widgets = widgets;
     }
 
-    /**
-     * The layout and widget placement for the dashboard.
-     **/
+    /** The layout and widget placement for the dashboard. */
     @com.fasterxml.jackson.annotation.JsonProperty("config")
     private final Object config;
 
     /**
      * The layout and widget placement for the dashboard.
+     *
      * @return the value
-     **/
+     */
     public Object getConfig() {
         return config;
     }
 
-    /**
-     * The basic visualization building blocks of a dashboard.
-     **/
+    /** The basic visualization building blocks of a dashboard. */
     @com.fasterxml.jackson.annotation.JsonProperty("widgets")
     private final java.util.List<Object> widgets;
 
     /**
      * The basic visualization building blocks of a dashboard.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Object> getWidgets() {
         return widgets;
     }
@@ -200,6 +193,7 @@ public final class UpdateV1DashboardDetails extends UpdateDashboardDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

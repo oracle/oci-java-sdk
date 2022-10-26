@@ -5,20 +5,21 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The details of the available and consumed CPU cores of the Autonomous Exadata Infrastructure instance, including consumption by database workload type.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the available and consumed CPU cores of the Autonomous Exadata Infrastructure
+ * instance, including consumption by database workload type. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OCPUs.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OCPUs extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"totalCpu", "consumedCpu", "byWorkloadType"})
     public OCPUs(Float totalCpu, Float consumedCpu, WorkloadType byWorkloadType) {
@@ -30,33 +31,31 @@ public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
-         **/
+        /** The total number of OCPUs in the Autonomous Exadata Infrastructure instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
         private Float totalCpu;
 
         /**
          * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
+         *
          * @param totalCpu the value to set
          * @return this builder
-         **/
+         */
         public Builder totalCpu(Float totalCpu) {
             this.totalCpu = totalCpu;
             this.__explicitlySet__.add("totalCpu");
             return this;
         }
-        /**
-         * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
-         **/
+        /** The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
         private Float consumedCpu;
 
         /**
          * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
+         *
          * @param consumedCpu the value to set
          * @return this builder
-         **/
+         */
         public Builder consumedCpu(Float consumedCpu) {
             this.consumedCpu = consumedCpu;
             this.__explicitlySet__.add("consumedCpu");
@@ -98,9 +97,7 @@ public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,30 +106,28 @@ public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return new Builder().copy(this);
     }
 
-    /**
-     * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
-     **/
+    /** The total number of OCPUs in the Autonomous Exadata Infrastructure instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
     private final Float totalCpu;
 
     /**
      * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
+     *
      * @return the value
-     **/
+     */
     public Float getTotalCpu() {
         return totalCpu;
     }
 
-    /**
-     * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
-     **/
+    /** The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
     private final Float consumedCpu;
 
     /**
      * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
+     *
      * @return the value
-     **/
+     */
     public Float getConsumedCpu() {
         return consumedCpu;
     }
@@ -151,6 +146,7 @@ public final class OCPUs extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

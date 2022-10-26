@@ -5,19 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The content to export.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The content to export. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportContent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExportContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ExportContent extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldNames", "parserNames", "sourceNames"})
     public ExportContent(
@@ -32,49 +33,46 @@ public final class ExportContent extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The field names.
-         **/
+        /** The field names. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
         private java.util.List<String> fieldNames;
 
         /**
          * The field names.
+         *
          * @param fieldNames the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldNames(java.util.List<String> fieldNames) {
             this.fieldNames = fieldNames;
             this.__explicitlySet__.add("fieldNames");
             return this;
         }
-        /**
-         * The parser names.
-         **/
+        /** The parser names. */
         @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
         private java.util.List<String> parserNames;
 
         /**
          * The parser names.
+         *
          * @param parserNames the value to set
          * @return this builder
-         **/
+         */
         public Builder parserNames(java.util.List<String> parserNames) {
             this.parserNames = parserNames;
             this.__explicitlySet__.add("parserNames");
             return this;
         }
-        /**
-         * The source names.
-         **/
+        /** The source names. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
         private java.util.List<String> sourceNames;
 
         /**
          * The source names.
+         *
          * @param sourceNames the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceNames(java.util.List<String> sourceNames) {
             this.sourceNames = sourceNames;
             this.__explicitlySet__.add("sourceNames");
@@ -108,9 +106,7 @@ public final class ExportContent extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +115,41 @@ public final class ExportContent extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The field names.
-     **/
+    /** The field names. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldNames")
     private final java.util.List<String> fieldNames;
 
     /**
      * The field names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getFieldNames() {
         return fieldNames;
     }
 
-    /**
-     * The parser names.
-     **/
+    /** The parser names. */
     @com.fasterxml.jackson.annotation.JsonProperty("parserNames")
     private final java.util.List<String> parserNames;
 
     /**
      * The parser names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getParserNames() {
         return parserNames;
     }
 
-    /**
-     * The source names.
-     **/
+    /** The source names. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceNames")
     private final java.util.List<String> sourceNames;
 
     /**
      * The source names.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getSourceNames() {
         return sourceNames;
     }
@@ -168,6 +161,7 @@ public final class ExportContent extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

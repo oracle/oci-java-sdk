@@ -5,24 +5,23 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * DEPRECATED -- please use HeatWave API instead.
- * Details about the Analytics Cluster properties to be updated.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * DEPRECATED -- please use HeatWave API instead. Details about the Analytics Cluster properties to
+ * be updated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateAnalyticsClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateAnalyticsClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAnalyticsClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "clusterSize"})
     public UpdateAnalyticsClusterDetails(String shapeName, Integer clusterSize) {
@@ -34,52 +33,46 @@ public final class UpdateAnalyticsClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A change to the shape of the nodes in the Analytics Cluster will
-         * result in the entire cluster being torn down and re-created with
-         * Compute instances of the new Shape. This may result in significant
-         * downtime for the analytics capability while the Analytics Cluster is
-         * re-provisioned.
-         *
-         **/
+         * A change to the shape of the nodes in the Analytics Cluster will result in the entire
+         * cluster being torn down and re-created with Compute instances of the new Shape. This may
+         * result in significant downtime for the analytics capability while the Analytics Cluster
+         * is re-provisioned.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * A change to the shape of the nodes in the Analytics Cluster will
-         * result in the entire cluster being torn down and re-created with
-         * Compute instances of the new Shape. This may result in significant
-         * downtime for the analytics capability while the Analytics Cluster is
-         * re-provisioned.
+         * A change to the shape of the nodes in the Analytics Cluster will result in the entire
+         * cluster being torn down and re-created with Compute instances of the new Shape. This may
+         * result in significant downtime for the analytics capability while the Analytics Cluster
+         * is re-provisioned.
          *
          * @param shapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
         /**
-         * A change to the number of nodes in the Analytics Cluster will result
-         * in the entire cluster being torn down and re-created with the new
-         * cluster of nodes. This may result in a significant downtime for the
-         * analytics capability while the Analytics Cluster is
+         * A change to the number of nodes in the Analytics Cluster will result in the entire
+         * cluster being torn down and re-created with the new cluster of nodes. This may result in
+         * a significant downtime for the analytics capability while the Analytics Cluster is
          * re-provisioned.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
         /**
-         * A change to the number of nodes in the Analytics Cluster will result
-         * in the entire cluster being torn down and re-created with the new
-         * cluster of nodes. This may result in a significant downtime for the
-         * analytics capability while the Analytics Cluster is
+         * A change to the number of nodes in the Analytics Cluster will result in the entire
+         * cluster being torn down and re-created with the new cluster of nodes. This may result in
+         * a significant downtime for the analytics capability while the Analytics Cluster is
          * re-provisioned.
          *
          * @param clusterSize the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
@@ -110,9 +103,7 @@ public final class UpdateAnalyticsClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,49 +113,43 @@ public final class UpdateAnalyticsClusterDetails
     }
 
     /**
-     * A change to the shape of the nodes in the Analytics Cluster will
-     * result in the entire cluster being torn down and re-created with
-     * Compute instances of the new Shape. This may result in significant
-     * downtime for the analytics capability while the Analytics Cluster is
+     * A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster
+     * being torn down and re-created with Compute instances of the new Shape. This may result in
+     * significant downtime for the analytics capability while the Analytics Cluster is
      * re-provisioned.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * A change to the shape of the nodes in the Analytics Cluster will
-     * result in the entire cluster being torn down and re-created with
-     * Compute instances of the new Shape. This may result in significant
-     * downtime for the analytics capability while the Analytics Cluster is
+     * A change to the shape of the nodes in the Analytics Cluster will result in the entire cluster
+     * being torn down and re-created with Compute instances of the new Shape. This may result in
+     * significant downtime for the analytics capability while the Analytics Cluster is
      * re-provisioned.
      *
      * @return the value
-     **/
+     */
     public String getShapeName() {
         return shapeName;
     }
 
     /**
-     * A change to the number of nodes in the Analytics Cluster will result
-     * in the entire cluster being torn down and re-created with the new
-     * cluster of nodes. This may result in a significant downtime for the
-     * analytics capability while the Analytics Cluster is
+     * A change to the number of nodes in the Analytics Cluster will result in the entire cluster
+     * being torn down and re-created with the new cluster of nodes. This may result in a
+     * significant downtime for the analytics capability while the Analytics Cluster is
      * re-provisioned.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
     /**
-     * A change to the number of nodes in the Analytics Cluster will result
-     * in the entire cluster being torn down and re-created with the new
-     * cluster of nodes. This may result in a significant downtime for the
-     * analytics capability while the Analytics Cluster is
+     * A change to the number of nodes in the Analytics Cluster will result in the entire cluster
+     * being torn down and re-created with the new cluster of nodes. This may result in a
+     * significant downtime for the analytics capability while the Analytics Cluster is
      * re-provisioned.
      *
      * @return the value
-     **/
+     */
     public Integer getClusterSize() {
         return clusterSize;
     }
@@ -176,6 +161,7 @@ public final class UpdateAnalyticsClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

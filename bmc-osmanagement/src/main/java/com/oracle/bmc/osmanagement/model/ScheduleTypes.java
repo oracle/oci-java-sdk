@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/**
- * Possible schedule types
- **/
+/** Possible schedule types */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum ScheduleTypes {
+public enum ScheduleTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Onetime("ONETIME"),
     Recurring("RECURRING"),
 

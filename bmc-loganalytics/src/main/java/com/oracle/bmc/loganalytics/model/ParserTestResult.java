@@ -5,19 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * ParserTestResult
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * ParserTestResult <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ParserTestResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ParserTestResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ParserTestResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "additionalInfo",
@@ -42,81 +44,76 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Additional information for the test result.
-         **/
+        /** Additional information for the test result. */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
         private java.util.Map<String, String> additionalInfo;
 
         /**
          * Additional information for the test result.
+         *
          * @param additionalInfo the value to set
          * @return this builder
-         **/
+         */
         public Builder additionalInfo(java.util.Map<String, String> additionalInfo) {
             this.additionalInfo = additionalInfo;
             this.__explicitlySet__.add("additionalInfo");
             return this;
         }
-        /**
-         * The test result log entries.
-         **/
+        /** The test result log entries. */
         @com.fasterxml.jackson.annotation.JsonProperty("entries")
         private java.util.List<AbstractParserTestResultLogEntry> entries;
 
         /**
          * The test result log entries.
+         *
          * @param entries the value to set
          * @return this builder
-         **/
+         */
         public Builder entries(java.util.List<AbstractParserTestResultLogEntry> entries) {
             this.entries = entries;
             this.__explicitlySet__.add("entries");
             return this;
         }
-        /**
-         * The example content.
-         **/
+        /** The example content. */
         @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
         private String exampleContent;
 
         /**
          * The example content.
+         *
          * @param exampleContent the value to set
          * @return this builder
-         **/
+         */
         public Builder exampleContent(String exampleContent) {
             this.exampleContent = exampleContent;
             this.__explicitlySet__.add("exampleContent");
             return this;
         }
-        /**
-         * The test result log lines.
-         **/
+        /** The test result log lines. */
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<AbstractParserTestResultLogLine> lines;
 
         /**
          * The test result log lines.
+         *
          * @param lines the value to set
          * @return this builder
-         **/
+         */
         public Builder lines(java.util.List<AbstractParserTestResultLogLine> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
             return this;
         }
-        /**
-         * The named capture groups.
-         **/
+        /** The named capture groups. */
         @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
         private java.util.List<String> namedCaptureGroups;
 
         /**
          * The named capture groups.
+         *
          * @param namedCaptureGroups the value to set
          * @return this builder
-         **/
+         */
         public Builder namedCaptureGroups(java.util.List<String> namedCaptureGroups) {
             this.namedCaptureGroups = namedCaptureGroups;
             this.__explicitlySet__.add("namedCaptureGroups");
@@ -161,9 +158,7 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +167,67 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Additional information for the test result.
-     **/
+    /** Additional information for the test result. */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInfo")
     private final java.util.Map<String, String> additionalInfo;
 
     /**
      * Additional information for the test result.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getAdditionalInfo() {
         return additionalInfo;
     }
 
-    /**
-     * The test result log entries.
-     **/
+    /** The test result log entries. */
     @com.fasterxml.jackson.annotation.JsonProperty("entries")
     private final java.util.List<AbstractParserTestResultLogEntry> entries;
 
     /**
      * The test result log entries.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractParserTestResultLogEntry> getEntries() {
         return entries;
     }
 
-    /**
-     * The example content.
-     **/
+    /** The example content. */
     @com.fasterxml.jackson.annotation.JsonProperty("exampleContent")
     private final String exampleContent;
 
     /**
      * The example content.
+     *
      * @return the value
-     **/
+     */
     public String getExampleContent() {
         return exampleContent;
     }
 
-    /**
-     * The test result log lines.
-     **/
+    /** The test result log lines. */
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<AbstractParserTestResultLogLine> lines;
 
     /**
      * The test result log lines.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AbstractParserTestResultLogLine> getLines() {
         return lines;
     }
 
-    /**
-     * The named capture groups.
-     **/
+    /** The named capture groups. */
     @com.fasterxml.jackson.annotation.JsonProperty("namedCaptureGroups")
     private final java.util.List<String> namedCaptureGroups;
 
     /**
      * The named capture groups.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getNamedCaptureGroups() {
         return namedCaptureGroups;
     }
@@ -249,6 +239,7 @@ public final class ParserTestResult extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

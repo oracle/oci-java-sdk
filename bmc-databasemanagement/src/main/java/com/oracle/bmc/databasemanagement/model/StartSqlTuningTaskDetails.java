@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The request to start a SQL tuning task.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request to start a SQL tuning task. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StartSqlTuningTaskDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = StartSqlTuningTaskDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class StartSqlTuningTaskDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskName",
@@ -61,32 +61,34 @@ public final class StartSqlTuningTaskDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
-         **/
+         * The name of the SQL tuning task. The name is unique per user in a database, and it is
+         * case-sensitive.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
         /**
-         * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
+         * The name of the SQL tuning task. The name is unique per user in a database, and it is
+         * case-sensitive.
+         *
          * @param taskName the value to set
          * @return this builder
-         **/
+         */
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
             return this;
         }
-        /**
-         * The description of the SQL tuning task.
-         **/
+        /** The description of the SQL tuning task. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
         private String taskDescription;
 
         /**
          * The description of the SQL tuning task.
+         *
          * @param taskDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder taskDescription(String taskDescription) {
             this.taskDescription = taskDescription;
             this.__explicitlySet__.add("taskDescription");
@@ -101,59 +103,56 @@ public final class StartSqlTuningTaskDetails
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-        /**
-         * The time limit for running the SQL tuning task.
-         **/
+        /** The time limit for running the SQL tuning task. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalTimeLimitInMinutes")
         private Integer totalTimeLimitInMinutes;
 
         /**
          * The time limit for running the SQL tuning task.
+         *
          * @param totalTimeLimitInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder totalTimeLimitInMinutes(Integer totalTimeLimitInMinutes) {
             this.totalTimeLimitInMinutes = totalTimeLimitInMinutes;
             this.__explicitlySet__.add("totalTimeLimitInMinutes");
             return this;
         }
         /**
-         * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-         * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
-         * is included.
-         *
-         **/
+         * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation is
+         * excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile
+         * recommendation is included.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
-         * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-         * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
-         * is included.
+         * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation is
+         * excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile
+         * recommendation is included.
          *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
-         * The time limit per SQL statement should not be more than the total time limit.
-         *
-         **/
+         * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE
+         * scope. The time limit per SQL statement should not be more than the total time limit.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("statementTimeLimitInMinutes")
         private Integer statementTimeLimitInMinutes;
 
         /**
-         * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
-         * The time limit per SQL statement should not be more than the total time limit.
+         * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE
+         * scope. The time limit per SQL statement should not be more than the total time limit.
          *
          * @param statementTimeLimitInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder statementTimeLimitInMinutes(Integer statementTimeLimitInMinutes) {
             this.statementTimeLimitInMinutes = statementTimeLimitInMinutes;
             this.__explicitlySet__.add("statementTimeLimitInMinutes");
@@ -169,54 +168,51 @@ public final class StartSqlTuningTaskDetails
             return this;
         }
         /**
-         * The details of the SQL statement on which tuning is performed.
-         * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
-         * or the tuple of sqlDetails/timeStarted/timeEnded.
-         *
-         **/
+         * The details of the SQL statement on which tuning is performed. To obtain the details of
+         * the SQL statement, you must provide either the sqlTuningSet or the tuple of
+         * sqlDetails/timeStarted/timeEnded.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
         private java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
 
         /**
-         * The details of the SQL statement on which tuning is performed.
-         * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
-         * or the tuple of sqlDetails/timeStarted/timeEnded.
+         * The details of the SQL statement on which tuning is performed. To obtain the details of
+         * the SQL statement, you must provide either the sqlTuningSet or the tuple of
+         * sqlDetails/timeStarted/timeEnded.
          *
          * @param sqlDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlDetails(java.util.List<SqlTuningTaskSqlDetail> sqlDetails) {
             this.sqlDetails = sqlDetails;
             this.__explicitlySet__.add("sqlDetails");
             return this;
         }
-        /**
-         * The start time of the period in which SQL statements are running.
-         **/
+        /** The start time of the period in which SQL statements are running. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The start time of the period in which SQL statements are running.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * The end time of the period in which SQL statements are running.
-         **/
+        /** The end time of the period in which SQL statements are running. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The end time of the period in which SQL statements are running.
+         *
          * @param timeEnded the value to set
          * @return this builder
-         **/
+         */
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -281,9 +277,7 @@ public final class StartSqlTuningTaskDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -293,29 +287,31 @@ public final class StartSqlTuningTaskDetails
     }
 
     /**
-     * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
-     **/
+     * The name of the SQL tuning task. The name is unique per user in a database, and it is
+     * case-sensitive.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
     /**
-     * The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
+     * The name of the SQL tuning task. The name is unique per user in a database, and it is
+     * case-sensitive.
+     *
      * @return the value
-     **/
+     */
     public String getTaskName() {
         return taskName;
     }
 
-    /**
-     * The description of the SQL tuning task.
-     **/
+    /** The description of the SQL tuning task. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskDescription")
     private final String taskDescription;
 
     /**
      * The description of the SQL tuning task.
+     *
      * @return the value
-     **/
+     */
     public String getTaskDescription() {
         return taskDescription;
     }
@@ -327,27 +323,25 @@ public final class StartSqlTuningTaskDetails
         return credentialDetails;
     }
 
-    /**
-     * The time limit for running the SQL tuning task.
-     **/
+    /** The time limit for running the SQL tuning task. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeLimitInMinutes")
     private final Integer totalTimeLimitInMinutes;
 
     /**
      * The time limit for running the SQL tuning task.
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalTimeLimitInMinutes() {
         return totalTimeLimitInMinutes;
     }
 
     /**
-     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-     * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
-     * is included.
-     *
-     **/
-    public enum Scope {
+     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation is
+     * excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile
+     * recommendation is included.
+     */
+    public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
         Limited("LIMITED"),
         Comprehensive("COMPREHENSIVE"),
         ;
@@ -380,39 +374,37 @@ public final class StartSqlTuningTaskDetails
         }
     };
     /**
-     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-     * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
-     * is included.
-     *
-     **/
+     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation is
+     * excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile
+     * recommendation is included.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
-     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-     * is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
-     * is included.
+     * The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation is
+     * excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile
+     * recommendation is included.
      *
      * @return the value
-     **/
+     */
     public Scope getScope() {
         return scope;
     }
 
     /**
-     * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
-     * The time limit per SQL statement should not be more than the total time limit.
-     *
-     **/
+     * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE
+     * scope. The time limit per SQL statement should not be more than the total time limit.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("statementTimeLimitInMinutes")
     private final Integer statementTimeLimitInMinutes;
 
     /**
-     * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
-     * The time limit per SQL statement should not be more than the total time limit.
+     * The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE
+     * scope. The time limit per SQL statement should not be more than the total time limit.
      *
      * @return the value
-     **/
+     */
     public Integer getStatementTimeLimitInMinutes() {
         return statementTimeLimitInMinutes;
     }
@@ -425,49 +417,46 @@ public final class StartSqlTuningTaskDetails
     }
 
     /**
-     * The details of the SQL statement on which tuning is performed.
-     * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
-     * or the tuple of sqlDetails/timeStarted/timeEnded.
-     *
-     **/
+     * The details of the SQL statement on which tuning is performed. To obtain the details of the
+     * SQL statement, you must provide either the sqlTuningSet or the tuple of
+     * sqlDetails/timeStarted/timeEnded.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlDetails")
     private final java.util.List<SqlTuningTaskSqlDetail> sqlDetails;
 
     /**
-     * The details of the SQL statement on which tuning is performed.
-     * To obtain the details of the SQL statement, you must provide either the sqlTuningSet
-     * or the tuple of sqlDetails/timeStarted/timeEnded.
+     * The details of the SQL statement on which tuning is performed. To obtain the details of the
+     * SQL statement, you must provide either the sqlTuningSet or the tuple of
+     * sqlDetails/timeStarted/timeEnded.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SqlTuningTaskSqlDetail> getSqlDetails() {
         return sqlDetails;
     }
 
-    /**
-     * The start time of the period in which SQL statements are running.
-     **/
+    /** The start time of the period in which SQL statements are running. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The start time of the period in which SQL statements are running.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * The end time of the period in which SQL statements are running.
-     **/
+    /** The end time of the period in which SQL statements are running. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The end time of the period in which SQL statements are running.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
@@ -479,6 +468,7 @@ public final class StartSqlTuningTaskDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

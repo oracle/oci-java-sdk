@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/**
- * Possible schedule intervals
- **/
+/** Possible schedule intervals */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum IntervalTypes {
+public enum IntervalTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Hour("HOUR"),
     Day("DAY"),
     Week("WEEK"),

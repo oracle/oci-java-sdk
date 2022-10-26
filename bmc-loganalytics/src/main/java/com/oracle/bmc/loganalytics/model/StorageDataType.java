@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/**
- * The storage data types.
- *
- **/
+/** The storage data types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum StorageDataType {
+public enum StorageDataType implements com.oracle.bmc.http.internal.BmcEnum {
     Log("LOG"),
     Lookup("LOOKUP"),
 

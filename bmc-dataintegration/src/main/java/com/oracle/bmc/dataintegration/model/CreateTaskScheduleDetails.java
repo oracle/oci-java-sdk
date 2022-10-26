@@ -5,22 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The create task details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The create task details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateTaskScheduleDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateTaskScheduleDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateTaskScheduleDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -97,32 +97,38 @@ public final class CreateTaskScheduleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-         **/
+         * Generated key that can be used in API calls to identify taskSchedule. On scenarios where
+         * reference to the taskSchedule is needed, a value can be passed in create.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify taskSchedule. On scenarios where
+         * reference to the taskSchedule is needed, a value can be passed in create.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-         **/
+         * This is a version number that is used by the service to upgrade objects if needed through
+         * releases of the service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+         * This is a version number that is used by the service to upgrade objects if needed through
+         * releases of the service.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -138,80 +144,93 @@ public final class CreateTaskScheduleDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Detailed description for the object.
-         **/
+        /** Detailed description for the object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-         **/
+         * This is used by the service for optimistic locking of the object, to prevent multiple
+         * users from simultaneously updating the object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
-         * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         * This is used by the service for optimistic locking of the object, to prevent multiple
+         * users from simultaneously updating the object.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow references across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -235,177 +254,166 @@ public final class CreateTaskScheduleDetails
             this.__explicitlySet__.add("configProviderDelegate");
             return this;
         }
-        /**
-         * Whether the task schedule is enabled.
-         **/
+        /** Whether the task schedule is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether the task schedule is enabled.
+         *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * The number of retries.
-         **/
+        /** The number of retries. */
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfRetries")
         private Integer numberOfRetries;
 
         /**
          * The number of retries.
+         *
          * @param numberOfRetries the value to set
          * @return this builder
-         **/
+         */
         public Builder numberOfRetries(Integer numberOfRetries) {
             this.numberOfRetries = numberOfRetries;
             this.__explicitlySet__.add("numberOfRetries");
             return this;
         }
-        /**
-         * The retry delay, the unit for measurement is in the property retry delay unit.
-         **/
+        /** The retry delay, the unit for measurement is in the property retry delay unit. */
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
         private Double retryDelay;
 
         /**
          * The retry delay, the unit for measurement is in the property retry delay unit.
+         *
          * @param retryDelay the value to set
          * @return this builder
-         **/
+         */
         public Builder retryDelay(Double retryDelay) {
             this.retryDelay = retryDelay;
             this.__explicitlySet__.add("retryDelay");
             return this;
         }
-        /**
-         * The unit for the retry delay.
-         **/
+        /** The unit for the retry delay. */
         @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
         private RetryDelayUnit retryDelayUnit;
 
         /**
          * The unit for the retry delay.
+         *
          * @param retryDelayUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder retryDelayUnit(RetryDelayUnit retryDelayUnit) {
             this.retryDelayUnit = retryDelayUnit;
             this.__explicitlySet__.add("retryDelayUnit");
             return this;
         }
-        /**
-         * The start time in milliseconds.
-         **/
+        /** The start time in milliseconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
         private Long startTimeMillis;
 
         /**
          * The start time in milliseconds.
+         *
          * @param startTimeMillis the value to set
          * @return this builder
-         **/
+         */
         public Builder startTimeMillis(Long startTimeMillis) {
             this.startTimeMillis = startTimeMillis;
             this.__explicitlySet__.add("startTimeMillis");
             return this;
         }
-        /**
-         * The end time in milliseconds.
-         **/
+        /** The end time in milliseconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
         private Long endTimeMillis;
 
         /**
          * The end time in milliseconds.
+         *
          * @param endTimeMillis the value to set
          * @return this builder
-         **/
+         */
         public Builder endTimeMillis(Long endTimeMillis) {
             this.endTimeMillis = endTimeMillis;
             this.__explicitlySet__.add("endTimeMillis");
             return this;
         }
-        /**
-         * Whether the same task can be executed concurrently.
-         **/
+        /** Whether the same task can be executed concurrently. */
         @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
         private Boolean isConcurrentAllowed;
 
         /**
          * Whether the same task can be executed concurrently.
+         *
          * @param isConcurrentAllowed the value to set
          * @return this builder
-         **/
+         */
         public Builder isConcurrentAllowed(Boolean isConcurrentAllowed) {
             this.isConcurrentAllowed = isConcurrentAllowed;
             this.__explicitlySet__.add("isConcurrentAllowed");
             return this;
         }
-        /**
-         * Whether the backfill is enabled.
-         **/
+        /** Whether the backfill is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackfillEnabled")
         private Boolean isBackfillEnabled;
 
         /**
          * Whether the backfill is enabled.
+         *
          * @param isBackfillEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isBackfillEnabled(Boolean isBackfillEnabled) {
             this.isBackfillEnabled = isBackfillEnabled;
             this.__explicitlySet__.add("isBackfillEnabled");
             return this;
         }
-        /**
-         * The authorization mode for the task.
-         **/
+        /** The authorization mode for the task. */
         @com.fasterxml.jackson.annotation.JsonProperty("authMode")
         private AuthMode authMode;
 
         /**
          * The authorization mode for the task.
+         *
          * @param authMode the value to set
          * @return this builder
-         **/
+         */
         public Builder authMode(AuthMode authMode) {
             this.authMode = authMode;
             this.__explicitlySet__.add("authMode");
             return this;
         }
-        /**
-         * The expected duration of the task execution.
-         **/
+        /** The expected duration of the task execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
         private Double expectedDuration;
 
         /**
          * The expected duration of the task execution.
+         *
          * @param expectedDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder expectedDuration(Double expectedDuration) {
             this.expectedDuration = expectedDuration;
             this.__explicitlySet__.add("expectedDuration");
             return this;
         }
-        /**
-         * The expected duration unit of the task execution.
-         **/
+        /** The expected duration unit of the task execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
         private ExpectedDurationUnit expectedDurationUnit;
 
         /**
          * The expected duration unit of the task execution.
+         *
          * @param expectedDurationUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder expectedDurationUnit(ExpectedDurationUnit expectedDurationUnit) {
             this.expectedDurationUnit = expectedDurationUnit;
             this.__explicitlySet__.add("expectedDurationUnit");
@@ -527,9 +535,7 @@ public final class CreateTaskScheduleDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -539,29 +545,35 @@ public final class CreateTaskScheduleDetails
     }
 
     /**
-     * Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify taskSchedule. On scenarios where
+     * reference to the taskSchedule is needed, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify taskSchedule. On scenarios where
+     * reference to the taskSchedule is needed, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
-     **/
+     * This is a version number that is used by the service to upgrade objects if needed through
+     * releases of the service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+     * This is a version number that is used by the service to upgrade objects if needed through
+     * releases of the service.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -574,71 +586,82 @@ public final class CreateTaskScheduleDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Detailed description for the object.
-     **/
+    /** Detailed description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
-     **/
+     * This is used by the service for optimistic locking of the object, to prevent multiple users
+     * from simultaneously updating the object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
-     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * This is used by the service for optimistic locking of the object, to prevent multiple users
+     * from simultaneously updating the object.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow references across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -657,52 +680,47 @@ public final class CreateTaskScheduleDetails
         return configProviderDelegate;
     }
 
-    /**
-     * Whether the task schedule is enabled.
-     **/
+    /** Whether the task schedule is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether the task schedule is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * The number of retries.
-     **/
+    /** The number of retries. */
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfRetries")
     private final Integer numberOfRetries;
 
     /**
      * The number of retries.
+     *
      * @return the value
-     **/
+     */
     public Integer getNumberOfRetries() {
         return numberOfRetries;
     }
 
-    /**
-     * The retry delay, the unit for measurement is in the property retry delay unit.
-     **/
+    /** The retry delay, the unit for measurement is in the property retry delay unit. */
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelay")
     private final Double retryDelay;
 
     /**
      * The retry delay, the unit for measurement is in the property retry delay unit.
+     *
      * @return the value
-     **/
+     */
     public Double getRetryDelay() {
         return retryDelay;
     }
 
-    /**
-     * The unit for the retry delay.
-     **/
-    public enum RetryDelayUnit {
+    /** The unit for the retry delay. */
+    public enum RetryDelayUnit implements com.oracle.bmc.http.internal.BmcEnum {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
         Hours("HOURS"),
@@ -736,80 +754,73 @@ public final class CreateTaskScheduleDetails
             throw new IllegalArgumentException("Invalid RetryDelayUnit: " + key);
         }
     };
-    /**
-     * The unit for the retry delay.
-     **/
+    /** The unit for the retry delay. */
     @com.fasterxml.jackson.annotation.JsonProperty("retryDelayUnit")
     private final RetryDelayUnit retryDelayUnit;
 
     /**
      * The unit for the retry delay.
+     *
      * @return the value
-     **/
+     */
     public RetryDelayUnit getRetryDelayUnit() {
         return retryDelayUnit;
     }
 
-    /**
-     * The start time in milliseconds.
-     **/
+    /** The start time in milliseconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeMillis")
     private final Long startTimeMillis;
 
     /**
      * The start time in milliseconds.
+     *
      * @return the value
-     **/
+     */
     public Long getStartTimeMillis() {
         return startTimeMillis;
     }
 
-    /**
-     * The end time in milliseconds.
-     **/
+    /** The end time in milliseconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeMillis")
     private final Long endTimeMillis;
 
     /**
      * The end time in milliseconds.
+     *
      * @return the value
-     **/
+     */
     public Long getEndTimeMillis() {
         return endTimeMillis;
     }
 
-    /**
-     * Whether the same task can be executed concurrently.
-     **/
+    /** Whether the same task can be executed concurrently. */
     @com.fasterxml.jackson.annotation.JsonProperty("isConcurrentAllowed")
     private final Boolean isConcurrentAllowed;
 
     /**
      * Whether the same task can be executed concurrently.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsConcurrentAllowed() {
         return isConcurrentAllowed;
     }
 
-    /**
-     * Whether the backfill is enabled.
-     **/
+    /** Whether the backfill is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackfillEnabled")
     private final Boolean isBackfillEnabled;
 
     /**
      * Whether the backfill is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsBackfillEnabled() {
         return isBackfillEnabled;
     }
 
-    /**
-     * The authorization mode for the task.
-     **/
-    public enum AuthMode {
+    /** The authorization mode for the task. */
+    public enum AuthMode implements com.oracle.bmc.http.internal.BmcEnum {
         Obo("OBO"),
         ResourcePrincipal("RESOURCE_PRINCIPAL"),
         UserCertificate("USER_CERTIFICATE"),
@@ -842,38 +853,34 @@ public final class CreateTaskScheduleDetails
             throw new IllegalArgumentException("Invalid AuthMode: " + key);
         }
     };
-    /**
-     * The authorization mode for the task.
-     **/
+    /** The authorization mode for the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("authMode")
     private final AuthMode authMode;
 
     /**
      * The authorization mode for the task.
+     *
      * @return the value
-     **/
+     */
     public AuthMode getAuthMode() {
         return authMode;
     }
 
-    /**
-     * The expected duration of the task execution.
-     **/
+    /** The expected duration of the task execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDuration")
     private final Double expectedDuration;
 
     /**
      * The expected duration of the task execution.
+     *
      * @return the value
-     **/
+     */
     public Double getExpectedDuration() {
         return expectedDuration;
     }
 
-    /**
-     * The expected duration unit of the task execution.
-     **/
-    public enum ExpectedDurationUnit {
+    /** The expected duration unit of the task execution. */
+    public enum ExpectedDurationUnit implements com.oracle.bmc.http.internal.BmcEnum {
         Seconds("SECONDS"),
         Minutes("MINUTES"),
         Hours("HOURS"),
@@ -907,16 +914,15 @@ public final class CreateTaskScheduleDetails
             throw new IllegalArgumentException("Invalid ExpectedDurationUnit: " + key);
         }
     };
-    /**
-     * The expected duration unit of the task execution.
-     **/
+    /** The expected duration unit of the task execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("expectedDurationUnit")
     private final ExpectedDurationUnit expectedDurationUnit;
 
     /**
      * The expected duration unit of the task execution.
+     *
      * @return the value
-     **/
+     */
     public ExpectedDurationUnit getExpectedDurationUnit() {
         return expectedDurationUnit;
     }
@@ -935,6 +941,7 @@ public final class CreateTaskScheduleDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

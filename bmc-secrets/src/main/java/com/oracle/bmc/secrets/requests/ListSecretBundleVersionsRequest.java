@@ -6,77 +6,70 @@ package com.oracle.bmc.secrets.requests;
 
 import com.oracle.bmc.secrets.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/ListSecretBundleVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSecretBundleVersionsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/ListSecretBundleVersionsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListSecretBundleVersionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public class ListSecretBundleVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the secret.
-     */
+    /** The OCID of the secret. */
     private String secretId;
 
-    /**
-     * The OCID of the secret.
-     */
+    /** The OCID of the secret. */
     public String getSecretId() {
         return secretId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The maximum number of items to return in a paginated "List" call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * The maximum number of items to return in a paginated "List" call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      */
     private Integer limit;
 
     /**
-     * The maximum number of items to return in a paginated "List" call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * The maximum number of items to return in a paginated "List" call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
-     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * The value of the {@code opc-next-page} response header from the previous "List" call. For
+     * information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      */
     private String page;
 
     /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
-     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-     *
+     * The value of the {@code opc-next-page} response header from the previous "List" call. For
+     * information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. You can specify only one sort order. The default
-     * order for {@code VERSION_NUMBER} is descending.
-     *
+     * The field to sort by. You can specify only one sort order. The default order for {@code
+     * VERSION_NUMBER} is descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order. The default
-     * order for {@code VERSION_NUMBER} is descending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can specify only one sort order. The default order for {@code
+     * VERSION_NUMBER} is descending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         VersionNumber("VERSION_NUMBER"),
         ;
 
@@ -109,24 +102,17 @@ public class ListSecretBundleVersionsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order. The default
-     * order for {@code VERSION_NUMBER} is descending.
-     *
+     * The field to sort by. You can specify only one sort order. The default order for {@code
+     * VERSION_NUMBER} is descending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -159,10 +145,7 @@ public class ListSecretBundleVersionsRequest
         }
     };
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -170,17 +153,15 @@ public class ListSecretBundleVersionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSecretBundleVersionsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the secret.
-         */
+        /** The OCID of the secret. */
         private String secretId = null;
 
         /**
          * The OCID of the secret.
+         *
          * @param secretId the value to set
          * @return this builder instance
          */
@@ -189,13 +170,12 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -205,15 +185,16 @@ public class ListSecretBundleVersionsRequest
         }
 
         /**
-         * The maximum number of items to return in a paginated "List" call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-         *
+         * The maximum number of items to return in a paginated "List" call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return in a paginated "List" call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * The maximum number of items to return in a paginated "List" call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -224,15 +205,16 @@ public class ListSecretBundleVersionsRequest
         }
 
         /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
-         * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
-         *
+         * The value of the {@code opc-next-page} response header from the previous "List" call. For
+         * information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call. For information about
-         * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+         * The value of the {@code opc-next-page} response header from the previous "List" call. For
+         * information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
          *
          * @param page the value to set
          * @return this builder instance
@@ -243,15 +225,14 @@ public class ListSecretBundleVersionsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order. The default
-         * order for {@code VERSION_NUMBER} is descending.
-         *
+         * The field to sort by. You can specify only one sort order. The default order for {@code
+         * VERSION_NUMBER} is descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order. The default
-         * order for {@code VERSION_NUMBER} is descending.
+         * The field to sort by. You can specify only one sort order. The default order for {@code
+         * VERSION_NUMBER} is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -261,10 +242,7 @@ public class ListSecretBundleVersionsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
         /**
@@ -280,18 +258,19 @@ public class ListSecretBundleVersionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -303,6 +282,7 @@ public class ListSecretBundleVersionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSecretBundleVersionsRequest o) {
@@ -320,10 +300,11 @@ public class ListSecretBundleVersionsRequest
         /**
          * Build the instance of ListSecretBundleVersionsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSecretBundleVersionsRequest
          */
@@ -337,7 +318,8 @@ public class ListSecretBundleVersionsRequest
         /**
          * Build the instance of ListSecretBundleVersionsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSecretBundleVersionsRequest
@@ -351,12 +333,14 @@ public class ListSecretBundleVersionsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListSecretBundleVersionsRequest(secretId, opcRequestId, limit, page, sortBy, sortOrder);
+            // new ListSecretBundleVersionsRequest(secretId, opcRequestId, limit, page, sortBy,
+            // sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -371,6 +355,7 @@ public class ListSecretBundleVersionsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

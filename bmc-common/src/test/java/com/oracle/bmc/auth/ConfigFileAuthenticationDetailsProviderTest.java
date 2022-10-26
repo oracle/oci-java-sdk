@@ -35,7 +35,7 @@ public class ConfigFileAuthenticationDetailsProviderTest {
                 mockRpBuilder =
                         PowerMockito.mock(
                                 ResourcePrincipalAuthenticationDetailsProvider
-                                                .ResourcePrincipalAuthenticationDetailsProviderBuilder
+                                        .ResourcePrincipalAuthenticationDetailsProviderBuilder
                                         .class);
         PowerMockito.when(ResourcePrincipalAuthenticationDetailsProvider.builder())
                 .thenReturn(mockRpBuilder);
@@ -69,7 +69,7 @@ public class ConfigFileAuthenticationDetailsProviderTest {
                 mockIpBuilder =
                         PowerMockito.mock(
                                 InstancePrincipalsAuthenticationDetailsProvider
-                                                .InstancePrincipalsAuthenticationDetailsProviderBuilder
+                                        .InstancePrincipalsAuthenticationDetailsProviderBuilder
                                         .class);
         PowerMockito.when(InstancePrincipalsAuthenticationDetailsProvider.builder())
                 .thenReturn(mockIpBuilder);

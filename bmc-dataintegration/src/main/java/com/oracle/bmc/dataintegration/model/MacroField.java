@@ -6,22 +6,23 @@ package com.oracle.bmc.dataintegration.model;
 
 /**
  * The type representing the macro field concept. Macro fields have an expression to define a macro.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacroField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MacroField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -106,16 +107,19 @@ public final class MacroField extends TypedObject {
             return this;
         }
         /**
-         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
-         **/
+         * Specifies whether the type of macro fields is inferred from an expression or useType
+         * (false) or the source field (true).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
         private Boolean isUseSourceType;
 
         /**
-         * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+         * Specifies whether the type of macro fields is inferred from an expression or useType
+         * (false) or the source field (true).
+         *
          * @param isUseSourceType the value to set
          * @return this builder
-         **/
+         */
         public Builder isUseSourceType(Boolean isUseSourceType) {
             this.isUseSourceType = isUseSourceType;
             this.__explicitlySet__.add("isUseSourceType");
@@ -131,16 +135,19 @@ public final class MacroField extends TypedObject {
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-         **/
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You
+         * can define your own labels and use them to categorize content.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
+         * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You
+         * can define your own labels and use them to categorize content.
+         *
          * @param labels the value to set
          * @return this builder
-         **/
+         */
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -213,9 +220,7 @@ public final class MacroField extends TypedObject {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,15 +266,18 @@ public final class MacroField extends TypedObject {
     }
 
     /**
-     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
-     **/
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false)
+     * or the source field (true).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSourceType")
     private final Boolean isUseSourceType;
 
     /**
-     * Specifies whether the type of macro fields is inferred from an expression or useType (false) or the source field (true).
+     * Specifies whether the type of macro fields is inferred from an expression or useType (false)
+     * or the source field (true).
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsUseSourceType() {
         return isUseSourceType;
     }
@@ -282,15 +290,18 @@ public final class MacroField extends TypedObject {
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
-     **/
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can
+     * define your own labels and use them to categorize content.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can define your own labels and use them to categorize content.
+     * Labels are keywords or labels that you can add to data assets, dataflows, and so on. You can
+     * define your own labels and use them to categorize content.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -302,6 +313,7 @@ public final class MacroField extends TypedObject {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

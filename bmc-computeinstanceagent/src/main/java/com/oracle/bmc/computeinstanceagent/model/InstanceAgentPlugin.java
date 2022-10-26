@@ -5,21 +5,22 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The agent plugin
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The agent plugin <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceAgentPlugin.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = InstanceAgentPlugin.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class InstanceAgentPlugin
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "status", "timeLastUpdatedUtc", "message"})
     public InstanceAgentPlugin(
@@ -33,65 +34,69 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The plugin name
-         **/
+        /** The plugin name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The plugin name
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
-         **/
+         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The
+         * plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code
+         * NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The
+         * plugin state is not recognizable by the service
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+         * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The
+         * plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code
+         * NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The
+         * plugin state is not recognizable by the service
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The last update time of the plugin in UTC
-         **/
+        /** The last update time of the plugin in UTC */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
         private java.util.Date timeLastUpdatedUtc;
 
         /**
          * The last update time of the plugin in UTC
+         *
          * @param timeLastUpdatedUtc the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastUpdatedUtc(java.util.Date timeLastUpdatedUtc) {
             this.timeLastUpdatedUtc = timeLastUpdatedUtc;
             this.__explicitlySet__.add("timeLastUpdatedUtc");
             return this;
         }
-        /**
-         * The optional message from the agent plugin
-         **/
+        /** The optional message from the agent plugin */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * The optional message from the agent plugin
+         *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -129,9 +134,7 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,32 +143,34 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The plugin name
-     **/
+    /** The plugin name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The plugin name
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
-     **/
-    public enum Status {
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin
+     * is in running state * {@code STOPPED} - The plugin is in stopped state * {@code
+     * NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin
+     * state is not recognizable by the service
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Running("RUNNING"),
         Stopped("STOPPED"),
         NotSupported("NOT_SUPPORTED"),
         Invalid("INVALID"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -204,43 +209,48 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
-     **/
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin
+     * is in running state * {@code STOPPED} - The plugin is in stopped state * {@code
+     * NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin
+     * state is not recognizable by the service
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin is in running state * {@code STOPPED} - The plugin is in stopped state * {@code NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin state is not recognizable by the service
+     * The plugin status Specified the plugin state on the instance * {@code RUNNING} - The plugin
+     * is in running state * {@code STOPPED} - The plugin is in stopped state * {@code
+     * NOT_SUPPORTED} - The plugin is not supported on this platform * {@code INVALID} - The plugin
+     * state is not recognizable by the service
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The last update time of the plugin in UTC
-     **/
+    /** The last update time of the plugin in UTC */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdatedUtc")
     private final java.util.Date timeLastUpdatedUtc;
 
     /**
      * The last update time of the plugin in UTC
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastUpdatedUtc() {
         return timeLastUpdatedUtc;
     }
 
-    /**
-     * The optional message from the agent plugin
-     **/
+    /** The optional message from the agent plugin */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * The optional message from the agent plugin
+     *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
@@ -252,6 +262,7 @@ public final class InstanceAgentPlugin extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

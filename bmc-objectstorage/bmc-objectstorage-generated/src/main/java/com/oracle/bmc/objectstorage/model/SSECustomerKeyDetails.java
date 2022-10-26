@@ -6,22 +6,22 @@ package com.oracle.bmc.objectstorage.model;
 
 /**
  * Specifies the details of the customer-provided encryption key (SSE-C) associated with an object.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SSECustomerKeyDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SSECustomerKeyDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SSECustomerKeyDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"algorithm", "key", "keySha256"})
     public SSECustomerKeyDetails(Algorithm algorithm, String key, String keySha256) {
@@ -33,10 +33,7 @@ public final class SSECustomerKeyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Specifies the encryption algorithm. The only supported value is "AES256".
-         *
-         **/
+        /** Specifies the encryption algorithm. The only supported value is "AES256". */
         @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
         private Algorithm algorithm;
 
@@ -45,45 +42,45 @@ public final class SSECustomerKeyDetails
          *
          * @param algorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder algorithm(Algorithm algorithm) {
             this.algorithm = algorithm;
             this.__explicitlySet__.add("algorithm");
             return this;
         }
         /**
-         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
-         *
-         **/
+         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the
+         * object data.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
+         * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the
+         * object data.
          *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
-         * of the encryption key.
-         *
-         **/
+         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to
+         * check the integrity of the encryption key.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keySha256")
         private String keySha256;
 
         /**
-         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
-         * of the encryption key.
+         * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to
+         * check the integrity of the encryption key.
          *
          * @param keySha256 the value to set
          * @return this builder
-         **/
+         */
         public Builder keySha256(String keySha256) {
             this.keySha256 = keySha256;
             this.__explicitlySet__.add("keySha256");
@@ -117,9 +114,7 @@ public final class SSECustomerKeyDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,11 +123,8 @@ public final class SSECustomerKeyDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Specifies the encryption algorithm. The only supported value is "AES256".
-     *
-     **/
-    public enum Algorithm {
+    /** Specifies the encryption algorithm. The only supported value is "AES256". */
+    public enum Algorithm implements com.oracle.bmc.http.internal.BmcEnum {
         Aes256("AES256"),
         ;
 
@@ -163,10 +155,7 @@ public final class SSECustomerKeyDetails
             throw new IllegalArgumentException("Invalid Algorithm: " + key);
         }
     };
-    /**
-     * Specifies the encryption algorithm. The only supported value is "AES256".
-     *
-     **/
+    /** Specifies the encryption algorithm. The only supported value is "AES256". */
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     private final Algorithm algorithm;
 
@@ -174,41 +163,41 @@ public final class SSECustomerKeyDetails
      * Specifies the encryption algorithm. The only supported value is "AES256".
      *
      * @return the value
-     **/
+     */
     public Algorithm getAlgorithm() {
         return algorithm;
     }
 
     /**
-     * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
-     *
-     **/
+     * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object
+     * data.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object data.
+     * Specifies the base64-encoded 256-bit encryption key to use to encrypt or decrypt the object
+     * data.
      *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
     /**
-     * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
-     * of the encryption key.
-     *
-     **/
+     * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check
+     * the integrity of the encryption key.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keySha256")
     private final String keySha256;
 
     /**
-     * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check the integrity
-     * of the encryption key.
+     * Specifies the base64-encoded SHA256 hash of the encryption key. This value is used to check
+     * the integrity of the encryption key.
      *
      * @return the value
-     **/
+     */
     public String getKeySha256() {
         return keySha256;
     }
@@ -220,6 +209,7 @@ public final class SSECustomerKeyDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,10 +8,7 @@ import com.oracle.bmc.mediaservices.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,15 +21,14 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +36,12 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned MediaWorkflow instance.
-     */
+    /** The returned MediaWorkflow instance. */
     private com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow;
 
     /**
      * The returned MediaWorkflow instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.mediaservices.model.MediaWorkflow getMediaWorkflow() {
@@ -62,7 +57,7 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private GetMediaWorkflowResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow) {
@@ -72,25 +67,25 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
         this.mediaWorkflow = mediaWorkflow;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetMediaWorkflowResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -105,15 +100,14 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +117,12 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned MediaWorkflow instance.
-         */
+        /** The returned MediaWorkflow instance. */
         private com.oracle.bmc.mediaservices.model.MediaWorkflow mediaWorkflow;
 
         /**
          * The returned MediaWorkflow instance.
+         *
          * @param mediaWorkflow the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetMediaWorkflowResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetMediaWorkflowResponse build() {
             return new GetMediaWorkflowResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, mediaWorkflow);
@@ -165,6 +162,7 @@ public class GetMediaWorkflowResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

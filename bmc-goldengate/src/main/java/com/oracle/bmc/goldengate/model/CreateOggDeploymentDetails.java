@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Deployment Data for creating an OggDeployment
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Deployment Data for creating an OggDeployment <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateOggDeploymentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateOggDeploymentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateOggDeploymentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deploymentName",
@@ -47,27 +46,25 @@ public final class CreateOggDeploymentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-         *
-         **/
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+         * long, must contain only alphanumeric characters and must start with a letter.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+         * long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param deploymentName the value to set
          * @return this builder
-         **/
+         */
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = deploymentName;
             this.__explicitlySet__.add("deploymentName");
             return this;
         }
-        /**
-         * The GoldenGate deployment console username.
-         *
-         **/
+        /** The GoldenGate deployment console username. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
@@ -76,34 +73,36 @@ public final class CreateOggDeploymentDetails
          *
          * @param adminUsername the value to set
          * @return this builder
-         **/
+         */
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
         /**
-         * The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-         *
-         **/
+         * The password associated with the GoldenGate deployment console username. The password
+         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
+         * numeric, and 1 special character. Special characters such as \u2018$\u2019,
+         * \u2018^\u2019, or \u2018?\u2019 are not allowed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
         /**
-         * The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
+         * The password associated with the GoldenGate deployment console username. The password
+         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
+         * numeric, and 1 special character. Special characters such as \u2018$\u2019,
+         * \u2018^\u2019, or \u2018?\u2019 are not allowed.
          *
          * @param adminPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /**
-         * A PEM-encoded SSL certificate.
-         *
-         **/
+        /** A PEM-encoded SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
@@ -112,16 +111,13 @@ public final class CreateOggDeploymentDetails
          *
          * @param certificate the value to set
          * @return this builder
-         **/
+         */
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
             return this;
         }
-        /**
-         * A PEM-encoded private key.
-         *
-         **/
+        /** A PEM-encoded private key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -130,7 +126,7 @@ public final class CreateOggDeploymentDetails
          *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
@@ -175,9 +171,7 @@ public final class CreateOggDeploymentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -187,25 +181,23 @@ public final class CreateOggDeploymentDetails
     }
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-     *
-     **/
+     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+     * long, must contain only alphanumeric characters and must start with a letter.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
+     * long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
-     **/
+     */
     public String getDeploymentName() {
         return deploymentName;
     }
 
-    /**
-     * The GoldenGate deployment console username.
-     *
-     **/
+    /** The GoldenGate deployment console username. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
@@ -213,31 +205,33 @@ public final class CreateOggDeploymentDetails
      * The GoldenGate deployment console username.
      *
      * @return the value
-     **/
+     */
     public String getAdminUsername() {
         return adminUsername;
     }
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
-     *
-     **/
+     * The password associated with the GoldenGate deployment console username. The password must be
+     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
+     * special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019
+     * are not allowed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019 are not allowed.
+     * The password associated with the GoldenGate deployment console username. The password must be
+     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
+     * special character. Special characters such as \u2018$\u2019, \u2018^\u2019, or \u2018?\u2019
+     * are not allowed.
      *
      * @return the value
-     **/
+     */
     public String getAdminPassword() {
         return adminPassword;
     }
 
-    /**
-     * A PEM-encoded SSL certificate.
-     *
-     **/
+    /** A PEM-encoded SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
@@ -245,15 +239,12 @@ public final class CreateOggDeploymentDetails
      * A PEM-encoded SSL certificate.
      *
      * @return the value
-     **/
+     */
     public String getCertificate() {
         return certificate;
     }
 
-    /**
-     * A PEM-encoded private key.
-     *
-     **/
+    /** A PEM-encoded private key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -261,7 +252,7 @@ public final class CreateOggDeploymentDetails
      * A PEM-encoded private key.
      *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
@@ -273,6 +264,7 @@ public final class CreateOggDeploymentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -282,7 +274,7 @@ public final class CreateOggDeploymentDetails
         sb.append("super=").append(super.toString());
         sb.append("deploymentName=").append(String.valueOf(this.deploymentName));
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
-        sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
+        sb.append(", adminPassword=").append("<redacted>");
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(")");

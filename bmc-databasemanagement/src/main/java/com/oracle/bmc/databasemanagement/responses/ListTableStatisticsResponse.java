@@ -9,15 +9,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /**
-     * The returned TableStatisticsCollection instance.
-     */
+    /** The returned TableStatisticsCollection instance. */
     private com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
             tableStatisticsCollection;
 
     /**
      * The returned TableStatisticsCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
@@ -48,7 +46,7 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListTableStatisticsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
                     tableStatisticsCollection) {
@@ -57,31 +55,33 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
         this.tableStatisticsCollection = tableStatisticsCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTableStatisticsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -91,14 +91,13 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned TableStatisticsCollection instance.
-         */
+        /** The returned TableStatisticsCollection instance. */
         private com.oracle.bmc.databasemanagement.model.TableStatisticsCollection
                 tableStatisticsCollection;
 
         /**
          * The returned TableStatisticsCollection instance.
+         *
          * @param tableStatisticsCollection the value to set
          * @return this builder
          */
@@ -111,8 +110,10 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTableStatisticsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -124,8 +125,10 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTableStatisticsResponse build() {
             return new ListTableStatisticsResponse(
                     __httpStatusCode__, headers, opcRequestId, tableStatisticsCollection);
@@ -134,6 +137,7 @@ public class ListTableStatisticsResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

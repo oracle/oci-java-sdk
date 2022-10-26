@@ -5,21 +5,23 @@
 package com.oracle.bmc.emwarehouse.model;
 
 /**
- * Results of a emWarehouse search. Contains boh EmWarehouseSummary items and other information, such as metadata.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Results of a emWarehouse search. Contains boh EmWarehouseSummary items and other information,
+ * such as metadata. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = EmInstancesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EmInstancesDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = EmInstancesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EmInstancesDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"emId", "targetsCount", "emHost", "emDiscovererUrl"})
     public EmInstancesDetails(
@@ -33,65 +35,61 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * operations Insights Warehouse Identifier
-         **/
+        /** operations Insights Warehouse Identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("emId")
         private String emId;
 
         /**
          * operations Insights Warehouse Identifier
+         *
          * @param emId the value to set
          * @return this builder
-         **/
+         */
         public Builder emId(String emId) {
             this.emId = emId;
             this.__explicitlySet__.add("emId");
             return this;
         }
-        /**
-         * EmInstance Target count
-         **/
+        /** EmInstance Target count */
         @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
         private Integer targetsCount;
 
         /**
          * EmInstance Target count
+         *
          * @param targetsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder targetsCount(Integer targetsCount) {
             this.targetsCount = targetsCount;
             this.__explicitlySet__.add("targetsCount");
             return this;
         }
-        /**
-         * emHost name
-         **/
+        /** emHost name */
         @com.fasterxml.jackson.annotation.JsonProperty("emHost")
         private String emHost;
 
         /**
          * emHost name
+         *
          * @param emHost the value to set
          * @return this builder
-         **/
+         */
         public Builder emHost(String emHost) {
             this.emHost = emHost;
             this.__explicitlySet__.add("emHost");
             return this;
         }
-        /**
-         * emdDiscoverer url
-         **/
+        /** emdDiscoverer url */
         @com.fasterxml.jackson.annotation.JsonProperty("emDiscovererUrl")
         private String emDiscovererUrl;
 
         /**
          * emdDiscoverer url
+         *
          * @param emDiscovererUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder emDiscovererUrl(String emDiscovererUrl) {
             this.emDiscovererUrl = emDiscovererUrl;
             this.__explicitlySet__.add("emDiscovererUrl");
@@ -129,9 +127,7 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +136,54 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * operations Insights Warehouse Identifier
-     **/
+    /** operations Insights Warehouse Identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("emId")
     private final String emId;
 
     /**
      * operations Insights Warehouse Identifier
+     *
      * @return the value
-     **/
+     */
     public String getEmId() {
         return emId;
     }
 
-    /**
-     * EmInstance Target count
-     **/
+    /** EmInstance Target count */
     @com.fasterxml.jackson.annotation.JsonProperty("targetsCount")
     private final Integer targetsCount;
 
     /**
      * EmInstance Target count
+     *
      * @return the value
-     **/
+     */
     public Integer getTargetsCount() {
         return targetsCount;
     }
 
-    /**
-     * emHost name
-     **/
+    /** emHost name */
     @com.fasterxml.jackson.annotation.JsonProperty("emHost")
     private final String emHost;
 
     /**
      * emHost name
+     *
      * @return the value
-     **/
+     */
     public String getEmHost() {
         return emHost;
     }
 
-    /**
-     * emdDiscoverer url
-     **/
+    /** emdDiscoverer url */
     @com.fasterxml.jackson.annotation.JsonProperty("emDiscovererUrl")
     private final String emDiscovererUrl;
 
     /**
      * emdDiscoverer url
+     *
      * @return the value
-     **/
+     */
     public String getEmDiscovererUrl() {
         return emDiscovererUrl;
     }
@@ -203,6 +195,7 @@ public final class EmInstancesDetails extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

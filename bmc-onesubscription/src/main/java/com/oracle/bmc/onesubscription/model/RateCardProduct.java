@@ -5,20 +5,21 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Product description
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Product description <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RateCardProduct.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RateCardProduct extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RateCardProduct
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "partNumber",
@@ -46,10 +47,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Product part numner
-         *
-         **/
+        /** Product part numner */
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
@@ -58,16 +56,13 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param partNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /**
-         * Product name
-         *
-         **/
+        /** Product name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -76,16 +71,13 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Unit of measure
-         *
-         **/
+        /** Unit of measure */
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
@@ -94,16 +86,13 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param unitOfMeasure the value to set
          * @return this builder
-         **/
+         */
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-        /**
-         * Metered service billing category
-         *
-         **/
+        /** Metered service billing category */
         @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
         private String billingCategory;
 
@@ -112,16 +101,13 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param billingCategory the value to set
          * @return this builder
-         **/
+         */
         public Builder billingCategory(String billingCategory) {
             this.billingCategory = billingCategory;
             this.__explicitlySet__.add("billingCategory");
             return this;
         }
-        /**
-         * Product category
-         *
-         **/
+        /** Product category */
         @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
         private String productCategory;
 
@@ -130,16 +116,13 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param productCategory the value to set
          * @return this builder
-         **/
+         */
         public Builder productCategory(String productCategory) {
             this.productCategory = productCategory;
             this.__explicitlySet__.add("productCategory");
             return this;
         }
-        /**
-         * Rate card part type of Product
-         *
-         **/
+        /** Rate card part type of Product */
         @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
         private String ucmRateCardPartType;
 
@@ -148,7 +131,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
          *
          * @param ucmRateCardPartType the value to set
          * @return this builder
-         **/
+         */
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
             this.ucmRateCardPartType = ucmRateCardPartType;
             this.__explicitlySet__.add("ucmRateCardPartType");
@@ -197,9 +180,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -208,10 +189,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * Product part numner
-     *
-     **/
+    /** Product part numner */
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
@@ -219,15 +197,12 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Product part numner
      *
      * @return the value
-     **/
+     */
     public String getPartNumber() {
         return partNumber;
     }
 
-    /**
-     * Product name
-     *
-     **/
+    /** Product name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -235,15 +210,12 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Product name
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Unit of measure
-     *
-     **/
+    /** Unit of measure */
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
@@ -251,15 +223,12 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Unit of measure
      *
      * @return the value
-     **/
+     */
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }
 
-    /**
-     * Metered service billing category
-     *
-     **/
+    /** Metered service billing category */
     @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
     private final String billingCategory;
 
@@ -267,15 +236,12 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Metered service billing category
      *
      * @return the value
-     **/
+     */
     public String getBillingCategory() {
         return billingCategory;
     }
 
-    /**
-     * Product category
-     *
-     **/
+    /** Product category */
     @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
     private final String productCategory;
 
@@ -283,15 +249,12 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Product category
      *
      * @return the value
-     **/
+     */
     public String getProductCategory() {
         return productCategory;
     }
 
-    /**
-     * Rate card part type of Product
-     *
-     **/
+    /** Rate card part type of Product */
     @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
     private final String ucmRateCardPartType;
 
@@ -299,7 +262,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
      * Rate card part type of Product
      *
      * @return the value
-     **/
+     */
     public String getUcmRateCardPartType() {
         return ucmRateCardPartType;
     }
@@ -311,6 +274,7 @@ public final class RateCardProduct extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

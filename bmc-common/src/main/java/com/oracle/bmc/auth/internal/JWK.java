@@ -89,7 +89,8 @@ public final class JWK {
     }
 
     /**
-     * @return the {@literal kid (key ID)} for this key. Case sensitive. Optional in spec, required in OPC.
+     * @return the {@literal kid (key ID)} for this key. Case sensitive. Optional in spec, required
+     *     in OPC.
      * @see <a href="https://tools.ietf.org/html/rfc7517#section-4.5">Key ID</a>
      */
     @JsonProperty("kid")
@@ -101,6 +102,7 @@ public final class JWK {
 
     /**
      * base64url encoded
+     *
      * @return the RSA modulus for this key. Required.
      */
     @JsonProperty("n")
@@ -110,6 +112,7 @@ public final class JWK {
 
     /**
      * base64url encoded
+     *
      * @return the RSA public exponent for this key. Required.
      */
     @JsonProperty("e")

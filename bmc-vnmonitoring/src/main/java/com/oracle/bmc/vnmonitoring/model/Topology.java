@@ -5,36 +5,34 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the representation of a virtual network topology.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Defines the representation of a virtual network topology. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type",
-    defaultImpl = Topology.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type",
+        defaultImpl = Topology.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = VcnTopology.class, name = "VCN"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = PathTopology.class, name = "PATH"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = NetworkingTopology.class,
-        name = "NETWORKING"
-    ),
+            value = NetworkingTopology.class,
+            name = "NETWORKING"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = SubnetTopology.class,
-        name = "SUBNET"
-    )
+            value = SubnetTopology.class,
+            name = "SUBNET")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class Topology extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entities", "relationships", "timeCreated"})
     protected Topology(
@@ -47,44 +45,45 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.timeCreated = timeCreated;
     }
 
-    /**
-     * Lists entities comprising the virtual network topology.
-     **/
+    /** Lists entities comprising the virtual network topology. */
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Object> entities;
 
     /**
      * Lists entities comprising the virtual network topology.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Object> getEntities() {
         return entities;
     }
 
-    /**
-     * Lists relationships between entities in the virtual network topology.
-     **/
+    /** Lists relationships between entities in the virtual network topology. */
     @com.fasterxml.jackson.annotation.JsonProperty("relationships")
     private final java.util.List<TopologyEntityRelationship> relationships;
 
     /**
      * Lists relationships between entities in the virtual network topology.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<TopologyEntityRelationship> getRelationships() {
         return relationships;
     }
 
     /**
-     * Records when the virtual network topology was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
-     **/
+     * Records when the virtual network topology was created, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Records when the virtual network topology was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
+     * Records when the virtual network topology was created, in
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) format for date and time.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -96,6 +95,7 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -139,10 +139,8 @@ public class Topology extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return result;
     }
 
-    /**
-     * Type of the topology object.
-     **/
-    public enum Type {
+    /** Type of the topology object. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Networking("NETWORKING"),
         Vcn("VCN"),
         Subnet("SUBNET"),

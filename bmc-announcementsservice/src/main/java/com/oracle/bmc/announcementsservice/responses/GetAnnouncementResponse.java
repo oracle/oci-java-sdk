@@ -9,15 +9,14 @@ import com.oracle.bmc.announcementsservice.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
         return etag;
     }
 
-    /**
-     * The returned Announcement instance.
-     */
+    /** The returned Announcement instance. */
     private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
     /**
      * The returned Announcement instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.announcementsservice.model.Announcement getAnnouncement() {
@@ -62,7 +57,7 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetAnnouncementResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.announcementsservice.model.Announcement announcement) {
@@ -72,31 +67,33 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
         this.announcement = announcement;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetAnnouncementResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +103,7 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +117,12 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned Announcement instance.
-         */
+        /** The returned Announcement instance. */
         private com.oracle.bmc.announcementsservice.model.Announcement announcement;
 
         /**
          * The returned Announcement instance.
+         *
          * @param announcement the value to set
          * @return this builder
          */
@@ -141,8 +134,10 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetAnnouncementResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +150,10 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetAnnouncementResponse build() {
             return new GetAnnouncementResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, announcement);
@@ -165,6 +162,7 @@ public class GetAnnouncementResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

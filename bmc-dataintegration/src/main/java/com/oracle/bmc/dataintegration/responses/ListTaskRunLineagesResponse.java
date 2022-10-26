@@ -9,17 +9,14 @@ import com.oracle.bmc.dataintegration.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If
-     * you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -28,17 +25,16 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response, then this
-     * is a partial list of TaskRunLineage. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of TaskRunLineages.
-     *
+     * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response,
+     * then this is a partial list of TaskRunLineage. Include this value as the {@code page}
+     * parameter in a subsequent GET request to get the next batch of TaskRunLineages.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response, then this
-     * is a partial list of TaskRunLineage. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of TaskRunLineages.
+     * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response,
+     * then this is a partial list of TaskRunLineage. Include this value as the {@code page}
+     * parameter in a subsequent GET request to get the next batch of TaskRunLineages.
      *
      * @return the value
      */
@@ -46,14 +42,13 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
         return opcNextPage;
     }
 
-    /**
-     * The returned TaskRunLineageSummaryCollection instance.
-     */
+    /** The returned TaskRunLineageSummaryCollection instance. */
     private com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
             taskRunLineageSummaryCollection;
 
     /**
      * The returned TaskRunLineageSummaryCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
@@ -70,7 +65,7 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListTaskRunLineagesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
@@ -81,33 +76,33 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
         this.taskRunLineageSummaryCollection = taskRunLineageSummaryCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTaskRunLineagesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If
-         * you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,17 +113,16 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response, then this
-         * is a partial list of TaskRunLineage. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of TaskRunLineages.
-         *
+         * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the
+         * response, then this is a partial list of TaskRunLineage. Include this value as the {@code
+         * page} parameter in a subsequent GET request to get the next batch of TaskRunLineages.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the response, then this
-         * is a partial list of TaskRunLineage. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of TaskRunLineages.
+         * For pagination of a list of {@code TaskRunLineage}s. If this header appears in the
+         * response, then this is a partial list of TaskRunLineage. Include this value as the {@code
+         * page} parameter in a subsequent GET request to get the next batch of TaskRunLineages.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -138,14 +132,13 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /**
-         * The returned TaskRunLineageSummaryCollection instance.
-         */
+        /** The returned TaskRunLineageSummaryCollection instance. */
         private com.oracle.bmc.dataintegration.model.TaskRunLineageSummaryCollection
                 taskRunLineageSummaryCollection;
 
         /**
          * The returned TaskRunLineageSummaryCollection instance.
+         *
          * @param taskRunLineageSummaryCollection the value to set
          * @return this builder
          */
@@ -158,8 +151,10 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTaskRunLineagesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -172,8 +167,10 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTaskRunLineagesResponse build() {
             return new ListTaskRunLineagesResponse(
                     __httpStatusCode__,
@@ -186,6 +183,7 @@ public class ListTaskRunLineagesResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

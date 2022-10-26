@@ -5,19 +5,21 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The query properties.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The query properties. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class QueryProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class QueryProperties
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "groupBy",
@@ -52,36 +54,44 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-         *
-         **/
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service",
+         * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName" ]
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+         * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service",
+         * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
+         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
+         * "tenantName" ]
          *
          * @param groupBy the value to set
          * @return this builder
-         **/
+         */
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
         /**
-         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-         *
-         **/
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only
+         * supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy"
+         * ]
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
         private java.util.List<Tag> groupByTag;
 
         /**
-         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+         * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only
+         * supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy"
+         * ]
          *
          * @param groupByTag the value to set
          * @return this builder
-         **/
+         */
         public Builder groupByTag(java.util.List<Tag> groupByTag) {
             this.groupByTag = groupByTag;
             this.__explicitlySet__.add("groupByTag");
@@ -96,83 +106,73 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
             this.__explicitlySet__.add("filter");
             return this;
         }
-        /**
-         * The depth level of the compartment.
-         **/
+        /** The depth level of the compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
         private java.math.BigDecimal compartmentDepth;
 
         /**
          * The depth level of the compartment.
+         *
          * @param compartmentDepth the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentDepth(java.math.BigDecimal compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             this.__explicitlySet__.add("compartmentDepth");
             return this;
         }
         /**
-         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
-         * Allowed values are:
-         *   DAILY
-         *   MONTHLY
-         *
-         **/
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+         * aggregation. Allowed values are: DAILY MONTHLY
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("granularity")
         private Granularity granularity;
 
         /**
-         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
-         * Allowed values are:
-         *   DAILY
-         *   MONTHLY
+         * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data
+         * aggregation. Allowed values are: DAILY MONTHLY
          *
          * @param granularity the value to set
          * @return this builder
-         **/
+         */
         public Builder granularity(Granularity granularity) {
             this.granularity = granularity;
             this.__explicitlySet__.add("granularity");
             return this;
         }
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
-         * Allowed values are:
-         *   USAGE
-         *   COST
-         *   USAGE_AND_COST
-         *
-         **/
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
+         * Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
-         * Allowed values are:
-         *   USAGE
-         *   COST
-         *   USAGE_AND_COST
+         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
+         * Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
          *
          * @param queryType the value to set
          * @return this builder
-         **/
+         */
         public Builder queryType(QueryType queryType) {
             this.queryType = queryType;
             this.__explicitlySet__.add("queryType");
             return this;
         }
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-         **/
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+         * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost
+         * over the query time period will be added up.
+         *
          * @param isAggregateByTime the value to set
          * @return this builder
-         **/
+         */
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = isAggregateByTime;
             this.__explicitlySet__.add("isAggregateByTime");
@@ -238,9 +238,7 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -250,33 +248,37 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-     *
-     **/
+     * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service",
+     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
+     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
+     * Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service",
+     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
+     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
 
     /**
-     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-     *
-     **/
+     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only
+     * supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("groupByTag")
     private final java.util.List<Tag> groupByTag;
 
     /**
-     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
+     * GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only
+     * supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
      *
      * @return the value
-     **/
+     */
     public java.util.List<Tag> getGroupByTag() {
         return groupByTag;
     }
@@ -288,34 +290,30 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
         return filter;
     }
 
-    /**
-     * The depth level of the compartment.
-     **/
+    /** The depth level of the compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     private final java.math.BigDecimal compartmentDepth;
 
     /**
      * The depth level of the compartment.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getCompartmentDepth() {
         return compartmentDepth;
     }
 
     /**
      * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
-     * Allowed values are:
-     *   DAILY
-     *   MONTHLY
-     *
-     **/
-    public enum Granularity {
+     * Allowed values are: DAILY MONTHLY
+     */
+    public enum Granularity implements com.oracle.bmc.http.internal.BmcEnum {
         Daily("DAILY"),
         Monthly("MONTHLY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -356,42 +354,33 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
     };
     /**
      * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
-     * Allowed values are:
-     *   DAILY
-     *   MONTHLY
-     *
-     **/
+     * Allowed values are: DAILY MONTHLY
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
     private final Granularity granularity;
 
     /**
      * The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
-     * Allowed values are:
-     *   DAILY
-     *   MONTHLY
+     * Allowed values are: DAILY MONTHLY
      *
      * @return the value
-     **/
+     */
     public Granularity getGranularity() {
         return granularity;
     }
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
-     * Allowed values are:
-     *   USAGE
-     *   COST
-     *   USAGE_AND_COST
-     *
-     **/
-    public enum QueryType {
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
+     * Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
+     */
+    public enum QueryType implements com.oracle.bmc.http.internal.BmcEnum {
         Usage("USAGE"),
         Cost("COST"),
         UsageAndCost("USAGE_AND_COST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -431,39 +420,35 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
         }
     };
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
-     * Allowed values are:
-     *   USAGE
-     *   COST
-     *   USAGE_AND_COST
-     *
-     **/
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
+     * Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
     private final QueryType queryType;
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.
-     * Allowed values are:
-     *   USAGE
-     *   COST
-     *   USAGE_AND_COST
+     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
+     * Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
      *
      * @return the value
-     **/
+     */
     public QueryType getQueryType() {
         return queryType;
     }
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-     **/
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+     * Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over
+     * the query time period will be added up.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAggregateByTime() {
         return isAggregateByTime;
     }
@@ -482,6 +467,7 @@ public final class QueryProperties extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

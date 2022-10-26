@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Problem History Definition.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Problem History Definition. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ProblemHistorySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ProblemHistorySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ProblemHistorySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,161 +60,151 @@ public final class ProblemHistorySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier for the history record
-         **/
+        /** Unique identifier for the history record */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier for the history record
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * problemId for which history is associated to.
-         **/
+        /** problemId for which history is associated to. */
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
          * problemId for which history is associated to.
+         *
          * @param problemId the value to set
          * @return this builder
-         **/
+         */
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /**
-         * Actor type who performed the operation
-         **/
+        /** Actor type who performed the operation */
         @com.fasterxml.jackson.annotation.JsonProperty("actorType")
         private ActorType actorType;
 
         /**
          * Actor type who performed the operation
+         *
          * @param actorType the value to set
          * @return this builder
-         **/
+         */
         public Builder actorType(ActorType actorType) {
             this.actorType = actorType;
             this.__explicitlySet__.add("actorType");
             return this;
         }
-        /**
-         * Resource Name who performed activity
-         **/
+        /** Resource Name who performed activity */
         @com.fasterxml.jackson.annotation.JsonProperty("actorName")
         private String actorName;
 
         /**
          * Resource Name who performed activity
+         *
          * @param actorName the value to set
          * @return this builder
-         **/
+         */
         public Builder actorName(String actorName) {
             this.actorName = actorName;
             this.__explicitlySet__.add("actorName");
             return this;
         }
-        /**
-         * Activity explanation details
-         **/
+        /** Activity explanation details */
         @com.fasterxml.jackson.annotation.JsonProperty("explanation")
         private String explanation;
 
         /**
          * Activity explanation details
+         *
          * @param explanation the value to set
          * @return this builder
-         **/
+         */
         public Builder explanation(String explanation) {
             this.explanation = explanation;
             this.__explicitlySet__.add("explanation");
             return this;
         }
-        /**
-         * Problem Lifecycle Detail Status
-         **/
+        /** Problem Lifecycle Detail Status */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private ProblemLifecycleDetail lifecycleDetail;
 
         /**
          * Problem Lifecycle Detail Status
+         *
          * @param lifecycleDetail the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetail(ProblemLifecycleDetail lifecycleDetail) {
             this.lifecycleDetail = lifecycleDetail;
             this.__explicitlySet__.add("lifecycleDetail");
             return this;
         }
-        /**
-         * Event status
-         **/
+        /** Event status */
         @com.fasterxml.jackson.annotation.JsonProperty("eventStatus")
         private EventStatus eventStatus;
 
         /**
          * Event status
+         *
          * @param eventStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder eventStatus(EventStatus eventStatus) {
             this.eventStatus = eventStatus;
             this.__explicitlySet__.add("eventStatus");
             return this;
         }
-        /**
-         * Type of the Entity
-         **/
+        /** Type of the Entity */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Type of the Entity
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * Impacted Resource Names in a comma-separated string.
-         **/
+        /** Impacted Resource Names in a comma-separated string. */
         @com.fasterxml.jackson.annotation.JsonProperty("delta")
         private String delta;
 
         /**
          * Impacted Resource Names in a comma-separated string.
+         *
          * @param delta the value to set
          * @return this builder
-         **/
+         */
         public Builder delta(String delta) {
             this.delta = delta;
             this.__explicitlySet__.add("delta");
             return this;
         }
-        /**
-         * User Defined Comments
-         **/
+        /** User Defined Comments */
         @com.fasterxml.jackson.annotation.JsonProperty("comment")
         private String comment;
 
         /**
          * User Defined Comments
+         *
          * @param comment the value to set
          * @return this builder
-         **/
+         */
         public Builder comment(String comment) {
             this.comment = comment;
             this.__explicitlySet__.add("comment");
@@ -279,9 +269,7 @@ public final class ProblemHistorySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -290,142 +278,132 @@ public final class ProblemHistorySummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier for the history record
-     **/
+    /** Unique identifier for the history record */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier for the history record
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * problemId for which history is associated to.
-     **/
+    /** problemId for which history is associated to. */
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
      * problemId for which history is associated to.
+     *
      * @return the value
-     **/
+     */
     public String getProblemId() {
         return problemId;
     }
 
-    /**
-     * Actor type who performed the operation
-     **/
+    /** Actor type who performed the operation */
     @com.fasterxml.jackson.annotation.JsonProperty("actorType")
     private final ActorType actorType;
 
     /**
      * Actor type who performed the operation
+     *
      * @return the value
-     **/
+     */
     public ActorType getActorType() {
         return actorType;
     }
 
-    /**
-     * Resource Name who performed activity
-     **/
+    /** Resource Name who performed activity */
     @com.fasterxml.jackson.annotation.JsonProperty("actorName")
     private final String actorName;
 
     /**
      * Resource Name who performed activity
+     *
      * @return the value
-     **/
+     */
     public String getActorName() {
         return actorName;
     }
 
-    /**
-     * Activity explanation details
-     **/
+    /** Activity explanation details */
     @com.fasterxml.jackson.annotation.JsonProperty("explanation")
     private final String explanation;
 
     /**
      * Activity explanation details
+     *
      * @return the value
-     **/
+     */
     public String getExplanation() {
         return explanation;
     }
 
-    /**
-     * Problem Lifecycle Detail Status
-     **/
+    /** Problem Lifecycle Detail Status */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final ProblemLifecycleDetail lifecycleDetail;
 
     /**
      * Problem Lifecycle Detail Status
+     *
      * @return the value
-     **/
+     */
     public ProblemLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
 
-    /**
-     * Event status
-     **/
+    /** Event status */
     @com.fasterxml.jackson.annotation.JsonProperty("eventStatus")
     private final EventStatus eventStatus;
 
     /**
      * Event status
+     *
      * @return the value
-     **/
+     */
     public EventStatus getEventStatus() {
         return eventStatus;
     }
 
-    /**
-     * Type of the Entity
-     **/
+    /** Type of the Entity */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Type of the Entity
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * Impacted Resource Names in a comma-separated string.
-     **/
+    /** Impacted Resource Names in a comma-separated string. */
     @com.fasterxml.jackson.annotation.JsonProperty("delta")
     private final String delta;
 
     /**
      * Impacted Resource Names in a comma-separated string.
+     *
      * @return the value
-     **/
+     */
     public String getDelta() {
         return delta;
     }
 
-    /**
-     * User Defined Comments
-     **/
+    /** User Defined Comments */
     @com.fasterxml.jackson.annotation.JsonProperty("comment")
     private final String comment;
 
     /**
      * User Defined Comments
+     *
      * @return the value
-     **/
+     */
     public String getComment() {
         return comment;
     }
@@ -437,6 +415,7 @@ public final class ProblemHistorySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Authentication type to be used for Generic REST invocation. This is deprecated.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Authentication type to be used for Generic REST invocation. This is deprecated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuthDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AuthDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "modelVersion", "parentRef", "modelType"})
     public AuthDetails(
@@ -32,32 +33,34 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
-         **/
+         * Generated key that can be used in API calls to identify data flow. On scenarios where
+         * reference to the data flow is needed, a value can be passed in create.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
+         * Generated key that can be used in API calls to identify data flow. On scenarios where
+         * reference to the data flow is needed, a value can be passed in create.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The model version of an object.
-         **/
+        /** The model version of an object. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -72,17 +75,16 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /**
-         * The authentication mode to be used for Generic REST invocation.
-         **/
+        /** The authentication mode to be used for Generic REST invocation. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private ModelType modelType;
 
         /**
          * The authentication mode to be used for Generic REST invocation.
+         *
          * @param modelType the value to set
          * @return this builder
-         **/
+         */
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
@@ -119,9 +121,7 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,29 +131,31 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
-     **/
+     * Generated key that can be used in API calls to identify data flow. On scenarios where
+     * reference to the data flow is needed, a value can be passed in create.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify data flow. On scenarios where reference to the data flow is needed, a value can be passed in create.
+     * Generated key that can be used in API calls to identify data flow. On scenarios where
+     * reference to the data flow is needed, a value can be passed in create.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The model version of an object.
-     **/
+    /** The model version of an object. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -165,16 +167,14 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
         return parentRef;
     }
 
-    /**
-     * The authentication mode to be used for Generic REST invocation.
-     **/
-    public enum ModelType {
+    /** The authentication mode to be used for Generic REST invocation. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         NoAuthDetails("NO_AUTH_DETAILS"),
         ResourcePrincipalAuthDetails("RESOURCE_PRINCIPAL_AUTH_DETAILS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -213,16 +213,15 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /**
-     * The authentication mode to be used for Generic REST invocation.
-     **/
+    /** The authentication mode to be used for Generic REST invocation. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final ModelType modelType;
 
     /**
      * The authentication mode to be used for Generic REST invocation.
+     *
      * @return the value
-     **/
+     */
     public ModelType getModelType() {
         return modelType;
     }
@@ -234,6 +233,7 @@ public final class AuthDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

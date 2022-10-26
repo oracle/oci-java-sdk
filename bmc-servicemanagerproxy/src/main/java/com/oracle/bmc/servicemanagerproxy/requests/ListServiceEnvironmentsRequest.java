@@ -6,105 +6,102 @@ package com.oracle.bmc.servicemanagerproxy.requests;
 
 import com.oracle.bmc.servicemanagerproxy.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemanagerproxy/ListServiceEnvironmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListServiceEnvironmentsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/servicemanagerproxy/ListServiceEnvironmentsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListServiceEnvironmentsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 public class ListServiceEnvironmentsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The unique identifier associated with the service environment.
-     * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
+     * <p>*Note:** Not an
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String serviceEnvironmentId;
 
     /**
      * The unique identifier associated with the service environment.
-     * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
+     * <p>*Note:** Not an
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public String getServiceEnvironmentId() {
         return serviceEnvironmentId;
     }
     /**
-     * The environment's service definition type.
-     * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
-     *
+     * The environment's service definition type. For example, "RGBUOROMS" is the service definition
+     * type for "Oracle Retail Order Management Cloud Service".
      */
     private String serviceEnvironmentType;
 
     /**
-     * The environment's service definition type.
-     * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
-     *
+     * The environment's service definition type. For example, "RGBUOROMS" is the service definition
+     * type for "Oracle Retail Order Management Cloud Service".
      */
     public String getServiceEnvironmentType() {
         return serviceEnvironmentType;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-     *
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
+     * The default is 30.
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-     *
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
+     * The default is 30.
      */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header from the previous "List" call.
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. ID is default ordered as
+     * ascending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided. ID is default ordered as
+     * ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Id("ID"),
         ;
 
@@ -137,21 +134,17 @@ public class ListServiceEnvironmentsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
-     *
+     * The field to sort by. Only one sort order may be provided. ID is default ordered as
+     * ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either {@code ASC} or {@code DESC}.
-     */
+    /** The sort order to use, either {@code ASC} or {@code DESC}. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either {@code ASC} or {@code DESC}.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either {@code ASC} or {@code DESC}. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -184,20 +177,14 @@ public class ListServiceEnvironmentsRequest
         }
     };
 
-    /**
-     * The sort order to use, either {@code ASC} or {@code DESC}.
-     */
+    /** The sort order to use, either {@code ASC} or {@code DESC}. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The display name of the resource.
-     */
+    /** The display name of the resource. */
     private String displayName;
 
-    /**
-     * The display name of the resource.
-     */
+    /** The display name of the resource. */
     public String getDisplayName() {
         return displayName;
     }
@@ -205,17 +192,19 @@ public class ListServiceEnvironmentsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListServiceEnvironmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
+         * the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for
+         * the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -226,16 +215,17 @@ public class ListServiceEnvironmentsRequest
 
         /**
          * The unique identifier associated with the service environment.
-         * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
+         * <p>*Note:** Not an
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String serviceEnvironmentId = null;
 
         /**
          * The unique identifier associated with the service environment.
-         * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
+         * <p>*Note:** Not an
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
          * @param serviceEnvironmentId the value to set
          * @return this builder instance
@@ -246,15 +236,14 @@ public class ListServiceEnvironmentsRequest
         }
 
         /**
-         * The environment's service definition type.
-         * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
-         *
+         * The environment's service definition type. For example, "RGBUOROMS" is the service
+         * definition type for "Oracle Retail Order Management Cloud Service".
          */
         private String serviceEnvironmentType = null;
 
         /**
-         * The environment's service definition type.
-         * For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
+         * The environment's service definition type. For example, "RGBUOROMS" is the service
+         * definition type for "Oracle Retail Order Management Cloud Service".
          *
          * @param serviceEnvironmentType the value to set
          * @return this builder instance
@@ -265,15 +254,14 @@ public class ListServiceEnvironmentsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
-         * please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -284,13 +272,14 @@ public class ListServiceEnvironmentsRequest
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
-         *
+         * How many records to return. Specify a value greater than zero and less than or equal to
+         * 1000. The default is 30.
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to
+         * 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -300,13 +289,12 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -316,13 +304,14 @@ public class ListServiceEnvironmentsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
-         *
+         * The field to sort by. Only one sort order may be provided. ID is default ordered as
+         * ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. ID is default ordered as ascending.
+         * The field to sort by. Only one sort order may be provided. ID is default ordered as
+         * ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -332,13 +321,12 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either {@code ASC} or {@code DESC}.
-         */
+        /** The sort order to use, either {@code ASC} or {@code DESC}. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -347,13 +335,12 @@ public class ListServiceEnvironmentsRequest
             return this;
         }
 
-        /**
-         * The display name of the resource.
-         */
+        /** The display name of the resource. */
         private String displayName = null;
 
         /**
          * The display name of the resource.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -364,18 +351,19 @@ public class ListServiceEnvironmentsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -387,6 +375,7 @@ public class ListServiceEnvironmentsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListServiceEnvironmentsRequest o) {
@@ -407,10 +396,11 @@ public class ListServiceEnvironmentsRequest
         /**
          * Build the instance of ListServiceEnvironmentsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListServiceEnvironmentsRequest
          */
@@ -424,7 +414,8 @@ public class ListServiceEnvironmentsRequest
         /**
          * Build the instance of ListServiceEnvironmentsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListServiceEnvironmentsRequest
@@ -441,12 +432,14 @@ public class ListServiceEnvironmentsRequest
             request.sortOrder = sortOrder;
             request.displayName = displayName;
             return request;
-            // new ListServiceEnvironmentsRequest(compartmentId, serviceEnvironmentId, serviceEnvironmentType, opcRequestId, limit, page, sortBy, sortOrder, displayName);
+            // new ListServiceEnvironmentsRequest(compartmentId, serviceEnvironmentId,
+            // serviceEnvironmentType, opcRequestId, limit, page, sortBy, sortOrder, displayName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -464,6 +457,7 @@ public class ListServiceEnvironmentsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

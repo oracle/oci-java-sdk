@@ -5,27 +5,27 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * An ESXi host is a node in an SDDC. At a minimum, each SDDC has 3 ESXi hosts
- * that are used to implement a functioning VMware environment.
- * <p>
- * In terms of implementation, an ESXi host is a Compute instance that
- * is configured with the chosen bundle of VMware software.
- * <p>
- * Notice that an {@code EsxiHost} object has its own OCID ({@code id}), and a separate
- * attribute for the OCID of the Compute instance ({@code computeInstanceId}).
+ * An ESXi host is a node in an SDDC. At a minimum, each SDDC has 3 ESXi hosts that are used to
+ * implement a functioning VMware environment.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>In terms of implementation, an ESXi host is a Compute instance that is configured with the
+ * chosen bundle of VMware software.
+ *
+ * <p>Notice that an {@code EsxiHost} object has its own OCID ({@code id}), and a separate attribute
+ * for the OCID of the Compute instance ({@code computeInstanceId}). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EsxiHost.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EsxiHost extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -105,18 +105,19 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -125,8 +126,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable.
          * Avoid entering confidential information.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -136,69 +136,68 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
-         * ESXi host belongs to.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * SDDC that the ESXi host belongs to.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
         private String sddcId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
-         * ESXi host belongs to.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * SDDC that the ESXi host belongs to.
          *
          * @param sddcId the value to set
          * @return this builder
-         **/
+         */
         public Builder sddcId(String sddcId) {
             this.sddcId = sddcId;
             this.__explicitlySet__.add("sddcId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
-         * contains the SDDC.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the SDDC.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
-         * contains the SDDC.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that contains the SDDC.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * In terms of implementation, an ESXi host is a Compute instance that
-         * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-         * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
-         *
-         **/
+         * In terms of implementation, an ESXi host is a Compute instance that is configured with
+         * the chosen bundle of VMware software. The {@code computeInstanceId} is the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that
+         * Compute instance.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceId")
         private String computeInstanceId;
 
         /**
-         * In terms of implementation, an ESXi host is a Compute instance that
-         * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-         * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+         * In terms of implementation, an ESXi host is a Compute instance that is configured with
+         * the chosen bundle of VMware software. The {@code computeInstanceId} is the
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that
+         * Compute instance.
          *
          * @param computeInstanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder computeInstanceId(String computeInstanceId) {
             this.computeInstanceId = computeInstanceId;
             this.__explicitlySet__.add("computeInstanceId");
@@ -207,22 +206,21 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * The date and time the ESXi host was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the ESXi host was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -231,8 +229,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * The date and time the ESXi host was updated, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -242,125 +239,121 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the ESXi host.
-         **/
+        /** The current state of the ESXi host. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * The current state of the ESXi host.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The billing option currently used by the ESXi host.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-         *
-         **/
+         * The billing option currently used by the ESXi host. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
         private Sku currentSku;
 
         /**
-         * The billing option currently used by the ESXi host.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option currently used by the ESXi host. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
          *
          * @param currentSku the value to set
          * @return this builder
-         **/
+         */
         public Builder currentSku(Sku currentSku) {
             this.currentSku = currentSku;
             this.__explicitlySet__.add("currentSku");
             return this;
         }
         /**
-         * The billing option to switch to after the current billing cycle ends.
-         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-         *
-         **/
+         * The billing option to switch to after the current billing cycle ends. If {@code nextSku}
+         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
         private Sku nextSku;
 
         /**
-         * The billing option to switch to after the current billing cycle ends.
-         * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-         * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+         * The billing option to switch to after the current billing cycle ends. If {@code nextSku}
+         * is null or empty, {@code currentSku} continues to the next billing cycle. {@link
+         * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
          *
          * @param nextSku the value to set
          * @return this builder
-         **/
+         */
         public Builder nextSku(Sku nextSku) {
             this.nextSku = nextSku;
             this.__explicitlySet__.add("nextSku");
             return this;
         }
         /**
-         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
-         * becomes the new {@code currentSKU} when the {@code contractEndDate} is reached.
-         * Example: {@code 2016-08-25T21:10:29.600Z}
-         *
-         **/
+         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku}
+         * are different, the value specified in {@code nextSku} becomes the new {@code currentSKU}
+         * when the {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
         private java.util.Date billingContractEndDate;
 
         /**
-         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
-         * becomes the new {@code currentSKU} when the {@code contractEndDate} is reached.
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku}
+         * are different, the value specified in {@code nextSku} becomes the new {@code currentSKU}
+         * when the {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param billingContractEndDate the value to set
          * @return this builder
-         **/
+         */
         public Builder billingContractEndDate(java.util.Date billingContractEndDate) {
             this.billingContractEndDate = billingContractEndDate;
             this.__explicitlySet__.add("billingContractEndDate");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that failed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
         private String failedEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that failed.
          *
          * @param failedEsxiHostId the value to set
          * @return this builder
-         **/
+         */
         public Builder failedEsxiHostId(String failedEsxiHostId) {
             this.failedEsxiHostId = failedEsxiHostId;
             this.__explicitlySet__.add("failedEsxiHostId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is created to replace the failed host.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that is created to replace the failed host.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("replacementEsxiHostId")
         private String replacementEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is created to replace the failed host.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that is created to replace the failed host.
          *
          * @param replacementEsxiHostId the value to set
          * @return this builder
-         **/
+         */
         public Builder replacementEsxiHostId(String replacementEsxiHostId) {
             this.replacementEsxiHostId = replacementEsxiHostId;
             this.__explicitlySet__.add("replacementEsxiHostId");
@@ -368,88 +361,81 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
         /**
          * The date and time when the new esxi host should start billing cycle.
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2021-07-25T21:10:29.600Z}
-         *
-         **/
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2021-07-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodEndDate")
         private java.util.Date gracePeriodEndDate;
 
         /**
          * The date and time when the new esxi host should start billing cycle.
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2021-07-25T21:10:29.600Z}
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2021-07-25T21:10:29.600Z}
          *
          * @param gracePeriodEndDate the value to set
          * @return this builder
-         **/
+         */
         public Builder gracePeriodEndDate(java.util.Date gracePeriodEndDate) {
             this.gracePeriodEndDate = gracePeriodEndDate;
             this.__explicitlySet__.add("gracePeriodEndDate");
             return this;
         }
         /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-         *
-         **/
+         * The version of VMware software that the Oracle Cloud VMware Solution installed on the
+         * ESXi hosts.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
         private String vmwareSoftwareVersion;
 
         /**
-         * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+         * The version of VMware software that the Oracle Cloud VMware Solution installed on the
+         * ESXi hosts.
          *
          * @param vmwareSoftwareVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder vmwareSoftwareVersion(String vmwareSoftwareVersion) {
             this.vmwareSoftwareVersion = vmwareSoftwareVersion;
             this.__explicitlySet__.add("vmwareSoftwareVersion");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * will be upgraded.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that will be upgraded.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
         private String nonUpgradedEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * will be upgraded.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that will be upgraded.
          *
          * @param nonUpgradedEsxiHostId the value to set
          * @return this builder
-         **/
+         */
         public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
             this.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             this.__explicitlySet__.add("nonUpgradedEsxiHostId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is newly created to upgrade the original host.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that is newly created to upgrade the original host.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("upgradedReplacementEsxiHostId")
         private String upgradedReplacementEsxiHostId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-         * is newly created to upgrade the original host.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * ESXi host that is newly created to upgrade the original host.
          *
          * @param upgradedReplacementEsxiHostId the value to set
          * @return this builder
-         **/
+         */
         public Builder upgradedReplacementEsxiHostId(String upgradedReplacementEsxiHostId) {
             this.upgradedReplacementEsxiHostId = upgradedReplacementEsxiHostId;
             this.__explicitlySet__.add("upgradedReplacementEsxiHostId");
             return this;
         }
-        /**
-         * The availability domain of the ESXi host.
-         *
-         **/
+        /** The availability domain of the ESXi host. */
         @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
         private String computeAvailabilityDomain;
 
@@ -458,36 +444,32 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param computeAvailabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             this.computeAvailabilityDomain = computeAvailabilityDomain;
             this.__explicitlySet__.add("computeAvailabilityDomain");
             return this;
         }
         /**
-         * The compute shape name of the ESXi host.
-         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-         *
-         **/
+         * The compute shape name of the ESXi host. {@link
+         * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
         private String hostShapeName;
 
         /**
-         * The compute shape name of the ESXi host.
-         * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+         * The compute shape name of the ESXi host. {@link
+         * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
          *
          * @param hostShapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostShapeName(String hostShapeName) {
             this.hostShapeName = hostShapeName;
             this.__explicitlySet__.add("hostShapeName");
             return this;
         }
-        /**
-         * The OCPU count of the ESXi host.
-         *
-         **/
+        /** The OCPU count of the ESXi host. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
         private Float hostOcpuCount;
 
@@ -496,73 +478,76 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *
          * @param hostOcpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder hostOcpuCount(Float hostOcpuCount) {
             this.hostOcpuCount = hostOcpuCount;
             this.__explicitlySet__.add("hostOcpuCount");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Capacity Reservation.
          *
          * @param capacityReservationId the value to set
          * @return this builder
-         **/
+         */
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -680,9 +665,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -692,91 +675,90 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid
+     * entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
-     * ESXi host belongs to.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * SDDC that the ESXi host belongs to.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sddcId")
     private final String sddcId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SDDC that the
-     * ESXi host belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * SDDC that the ESXi host belongs to.
      *
      * @return the value
-     **/
+     */
     public String getSddcId() {
         return sddcId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
-     * contains the SDDC.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the SDDC.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that
-     * contains the SDDC.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that contains the SDDC.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * In terms of implementation, an ESXi host is a Compute instance that
-     * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-     * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
-     *
-     **/
+     * In terms of implementation, an ESXi host is a Compute instance that is configured with the
+     * chosen bundle of VMware software. The {@code computeInstanceId} is the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that
+     * Compute instance.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeInstanceId")
     private final String computeInstanceId;
 
     /**
-     * In terms of implementation, an ESXi host is a Compute instance that
-     * is configured with the chosen bundle of VMware software. The {@code computeInstanceId}
-     * is the [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that Compute instance.
+     * In terms of implementation, an ESXi host is a Compute instance that is configured with the
+     * chosen bundle of VMware software. The {@code computeInstanceId} is the
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of that
+     * Compute instance.
      *
      * @return the value
-     **/
+     */
     public String getComputeInstanceId() {
         return computeInstanceId;
     }
@@ -784,21 +766,20 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * The date and time the ESXi host was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the ESXi host was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -806,8 +787,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * The date and time the ESXi host was updated, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -816,193 +796,182 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the ESXi host.
-     **/
+    /** The current state of the ESXi host. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * The current state of the ESXi host.
+     *
      * @return the value
-     **/
+     */
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The billing option currently used by the ESXi host.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-     *
-     **/
+     * The billing option currently used by the ESXi host. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("currentSku")
     private final Sku currentSku;
 
     /**
-     * The billing option currently used by the ESXi host.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option currently used by the ESXi host. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      * @return the value
-     **/
+     */
     public Sku getCurrentSku() {
         return currentSku;
     }
 
     /**
-     * The billing option to switch to after the current billing cycle ends.
-     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
-     *
-     **/
+     * The billing option to switch to after the current billing cycle ends. If {@code nextSku} is
+     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nextSku")
     private final Sku nextSku;
 
     /**
-     * The billing option to switch to after the current billing cycle ends.
-     * If {@code nextSku} is null or empty, {@code currentSku} continues to the next billing cycle.
-     * {@link #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
+     * The billing option to switch to after the current billing cycle ends. If {@code nextSku} is
+     * null or empty, {@code currentSku} continues to the next billing cycle. {@link
+     * #listSupportedSkus(ListSupportedSkusRequest) listSupportedSkus}.
      *
      * @return the value
-     **/
+     */
     public Sku getNextSku() {
         return nextSku;
     }
 
     /**
-     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
-     * becomes the new {@code currentSKU} when the {@code contractEndDate} is reached.
-     * Example: {@code 2016-08-25T21:10:29.600Z}
-     *
-     **/
+     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are
+     * different, the value specified in {@code nextSku} becomes the new {@code currentSKU} when the
+     * {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("billingContractEndDate")
     private final java.util.Date billingContractEndDate;
 
     /**
-     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are different, the value specified in {@code nextSku}
-     * becomes the new {@code currentSKU} when the {@code contractEndDate} is reached.
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * Current billing cycle end date. If the value in {@code currentSku} and {@code nextSku} are
+     * different, the value specified in {@code nextSku} becomes the new {@code currentSKU} when the
+     * {@code contractEndDate} is reached. Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getBillingContractEndDate() {
         return billingContractEndDate;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that failed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("failedEsxiHostId")
     private final String failedEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that failed.
      *
      * @return the value
-     **/
+     */
     public String getFailedEsxiHostId() {
         return failedEsxiHostId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is created to replace the failed host.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that is created to replace the failed host.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("replacementEsxiHostId")
     private final String replacementEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is created to replace the failed host.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that is created to replace the failed host.
      *
      * @return the value
-     **/
+     */
     public String getReplacementEsxiHostId() {
         return replacementEsxiHostId;
     }
 
     /**
      * The date and time when the new esxi host should start billing cycle.
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2021-07-25T21:10:29.600Z}
-     *
-     **/
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2021-07-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodEndDate")
     private final java.util.Date gracePeriodEndDate;
 
     /**
      * The date and time when the new esxi host should start billing cycle.
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2021-07-25T21:10:29.600Z}
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2021-07-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getGracePeriodEndDate() {
         return gracePeriodEndDate;
     }
 
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
-     *
-     **/
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi
+     * hosts.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareSoftwareVersion")
     private final String vmwareSoftwareVersion;
 
     /**
-     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * The version of VMware software that the Oracle Cloud VMware Solution installed on the ESXi
+     * hosts.
      *
      * @return the value
-     **/
+     */
     public String getVmwareSoftwareVersion() {
         return vmwareSoftwareVersion;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * will be upgraded.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that will be upgraded.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nonUpgradedEsxiHostId")
     private final String nonUpgradedEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * will be upgraded.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that will be upgraded.
      *
      * @return the value
-     **/
+     */
     public String getNonUpgradedEsxiHostId() {
         return nonUpgradedEsxiHostId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is newly created to upgrade the original host.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that is newly created to upgrade the original host.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("upgradedReplacementEsxiHostId")
     private final String upgradedReplacementEsxiHostId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the ESXi host that
-     * is newly created to upgrade the original host.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * ESXi host that is newly created to upgrade the original host.
      *
      * @return the value
-     **/
+     */
     public String getUpgradedReplacementEsxiHostId() {
         return upgradedReplacementEsxiHostId;
     }
 
-    /**
-     * The availability domain of the ESXi host.
-     *
-     **/
+    /** The availability domain of the ESXi host. */
     @com.fasterxml.jackson.annotation.JsonProperty("computeAvailabilityDomain")
     private final String computeAvailabilityDomain;
 
@@ -1010,33 +979,29 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * The availability domain of the ESXi host.
      *
      * @return the value
-     **/
+     */
     public String getComputeAvailabilityDomain() {
         return computeAvailabilityDomain;
     }
 
     /**
-     * The compute shape name of the ESXi host.
-     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
-     *
-     **/
+     * The compute shape name of the ESXi host. {@link
+     * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostShapeName")
     private final String hostShapeName;
 
     /**
-     * The compute shape name of the ESXi host.
-     * {@link #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
+     * The compute shape name of the ESXi host. {@link
+     * #listSupportedHostShapes(ListSupportedHostShapesRequest) listSupportedHostShapes}.
      *
      * @return the value
-     **/
+     */
     public String getHostShapeName() {
         return hostShapeName;
     }
 
-    /**
-     * The OCPU count of the ESXi host.
-     *
-     **/
+    /** The OCPU count of the ESXi host. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostOcpuCount")
     private final Float hostOcpuCount;
 
@@ -1044,67 +1009,70 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * The OCPU count of the ESXi host.
      *
      * @return the value
-     **/
+     */
     public Float getHostOcpuCount() {
         return hostOcpuCount;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Capacity Reservation.
      *
      * @return the value
-     **/
+     */
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1116,6 +1084,7 @@ public final class EsxiHost extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

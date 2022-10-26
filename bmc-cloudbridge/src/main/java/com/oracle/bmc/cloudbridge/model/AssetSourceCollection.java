@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Results of an asset source search. Contains asset source items.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Results of an asset source search. Contains asset source items. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AssetSourceCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AssetSourceCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AssetSourceCollection
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public AssetSourceCollection(java.util.List<AssetSourceSummary> items) {
@@ -30,17 +30,16 @@ public final class AssetSourceCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * List of asset sources.
-         **/
+        /** List of asset sources. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AssetSourceSummary> items;
 
         /**
          * List of asset sources.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<AssetSourceSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,9 +66,7 @@ public final class AssetSourceCollection
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,16 +75,15 @@ public final class AssetSourceCollection
         return new Builder().copy(this);
     }
 
-    /**
-     * List of asset sources.
-     **/
+    /** List of asset sources. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AssetSourceSummary> items;
 
     /**
      * List of asset sources.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AssetSourceSummary> getItems() {
         return items;
     }
@@ -99,6 +95,7 @@ public final class AssetSourceCollection
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,23 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information regarding how/what row reduction methods will be applied. If this property is not
+ * present or is null, then it means row reduction is not applied. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RowReductionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class RowReductionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = RowReductionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class RowReductionDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isReductionEnabled",
@@ -38,55 +40,50 @@ public final class RowReductionDetails extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A boolean value to indicate if row reduction is applied
-         **/
+        /** A boolean value to indicate if row reduction is applied */
         @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
         private Boolean isReductionEnabled;
 
         /**
          * A boolean value to indicate if row reduction is applied
+         *
          * @param isReductionEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isReductionEnabled(Boolean isReductionEnabled) {
             this.isReductionEnabled = isReductionEnabled;
             this.__explicitlySet__.add("isReductionEnabled");
             return this;
         }
-        /**
-         * A percentage to reduce data size down to on top of original data
-         **/
+        /** A percentage to reduce data size down to on top of original data */
         @com.fasterxml.jackson.annotation.JsonProperty("reductionPercentage")
         private Double reductionPercentage;
 
         /**
          * A percentage to reduce data size down to on top of original data
+         *
          * @param reductionPercentage the value to set
          * @return this builder
-         **/
+         */
         public Builder reductionPercentage(Double reductionPercentage) {
             this.reductionPercentage = reductionPercentage;
             this.__explicitlySet__.add("reductionPercentage");
             return this;
         }
         /**
-         * Method for row reduction:
-         *   * DELETE_ROW - delete rows with equal intervals
-         *   * AVERAGE_ROW - average multiple rows to one row
-         *
-         **/
+         * Method for row reduction: * DELETE_ROW - delete rows with equal intervals * AVERAGE_ROW -
+         * average multiple rows to one row
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("reductionMethod")
         private ReductionMethod reductionMethod;
 
         /**
-         * Method for row reduction:
-         *   * DELETE_ROW - delete rows with equal intervals
-         *   * AVERAGE_ROW - average multiple rows to one row
+         * Method for row reduction: * DELETE_ROW - delete rows with equal intervals * AVERAGE_ROW -
+         * average multiple rows to one row
          *
          * @param reductionMethod the value to set
          * @return this builder
-         **/
+         */
         public Builder reductionMethod(ReductionMethod reductionMethod) {
             this.reductionMethod = reductionMethod;
             this.__explicitlySet__.add("reductionMethod");
@@ -123,9 +120,7 @@ public final class RowReductionDetails extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,47 +129,43 @@ public final class RowReductionDetails extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * A boolean value to indicate if row reduction is applied
-     **/
+    /** A boolean value to indicate if row reduction is applied */
     @com.fasterxml.jackson.annotation.JsonProperty("isReductionEnabled")
     private final Boolean isReductionEnabled;
 
     /**
      * A boolean value to indicate if row reduction is applied
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsReductionEnabled() {
         return isReductionEnabled;
     }
 
-    /**
-     * A percentage to reduce data size down to on top of original data
-     **/
+    /** A percentage to reduce data size down to on top of original data */
     @com.fasterxml.jackson.annotation.JsonProperty("reductionPercentage")
     private final Double reductionPercentage;
 
     /**
      * A percentage to reduce data size down to on top of original data
+     *
      * @return the value
-     **/
+     */
     public Double getReductionPercentage() {
         return reductionPercentage;
     }
 
     /**
-     * Method for row reduction:
-     *   * DELETE_ROW - delete rows with equal intervals
-     *   * AVERAGE_ROW - average multiple rows to one row
-     *
-     **/
-    public enum ReductionMethod {
+     * Method for row reduction: * DELETE_ROW - delete rows with equal intervals * AVERAGE_ROW -
+     * average multiple rows to one row
+     */
+    public enum ReductionMethod implements com.oracle.bmc.http.internal.BmcEnum {
         DeleteRow("DELETE_ROW"),
         AverageRow("AVERAGE_ROW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -214,21 +205,18 @@ public final class RowReductionDetails extends com.oracle.bmc.http.internal.Expl
         }
     };
     /**
-     * Method for row reduction:
-     *   * DELETE_ROW - delete rows with equal intervals
-     *   * AVERAGE_ROW - average multiple rows to one row
-     *
-     **/
+     * Method for row reduction: * DELETE_ROW - delete rows with equal intervals * AVERAGE_ROW -
+     * average multiple rows to one row
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("reductionMethod")
     private final ReductionMethod reductionMethod;
 
     /**
-     * Method for row reduction:
-     *   * DELETE_ROW - delete rows with equal intervals
-     *   * AVERAGE_ROW - average multiple rows to one row
+     * Method for row reduction: * DELETE_ROW - delete rows with equal intervals * AVERAGE_ROW -
+     * average multiple rows to one row
      *
      * @return the value
-     **/
+     */
     public ReductionMethod getReductionMethod() {
         return reductionMethod;
     }
@@ -240,6 +228,7 @@ public final class RowReductionDetails extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

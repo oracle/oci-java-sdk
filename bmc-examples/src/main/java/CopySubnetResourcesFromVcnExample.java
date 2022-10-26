@@ -36,9 +36,10 @@ import com.oracle.bmc.core.responses.UpdateSubnetResponse;
 
 public class CopySubnetResourcesFromVcnExample {
     /**
-     * If the provided subnet inherited its containing VCN's default route table, DHCP options, and security list,
-     * then this example will copy those objects and attach the subnet to the newly created versions. This allows you
-     * to modify them freely without affecting your other subnets.
+     * If the provided subnet inherited its containing VCN's default route table, DHCP options, and
+     * security list, then this example will copy those objects and attach the subnet to the newly
+     * created versions. This allows you to modify them freely without affecting your other subnets.
+     *
      * @param args
      * @throws Exception
      */
@@ -49,8 +50,10 @@ public class CopySubnetResourcesFromVcnExample {
         String subnetId = "ocid1.subnet.FILL THIS IN";
         Region region = Region.US_PHOENIX_1;
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

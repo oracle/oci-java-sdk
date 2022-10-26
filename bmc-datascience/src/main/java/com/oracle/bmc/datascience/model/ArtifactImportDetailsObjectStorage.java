@@ -5,87 +5,82 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Artifact destination details for importing to destination bucket
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Artifact destination details for importing to destination bucket <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ArtifactImportDetailsObjectStorage.Builder.class
-)
+        builder = ArtifactImportDetailsObjectStorage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "artifactSourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "artifactSourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ArtifactImportDetailsObjectStorage extends ArtifactImportDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Object Storage namespace used for the request.
-         **/
+        /** The Object Storage namespace used for the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The Object Storage namespace used for the request.
+         *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /**
-         * The name of the bucket. Avoid entering confidential information.
-         **/
+        /** The name of the bucket. Avoid entering confidential information. */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
         private String destinationBucket;
 
         /**
          * The name of the bucket. Avoid entering confidential information.
+         *
          * @param destinationBucket the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationBucket(String destinationBucket) {
             this.destinationBucket = destinationBucket;
             this.__explicitlySet__.add("destinationBucket");
             return this;
         }
-        /**
-         * The name of the object resulting from the copy operation.
-         **/
+        /** The name of the object resulting from the copy operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
         private String destinationObjectName;
 
         /**
          * The name of the object resulting from the copy operation.
+         *
          * @param destinationObjectName the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationObjectName(String destinationObjectName) {
             this.destinationObjectName = destinationObjectName;
             this.__explicitlySet__.add("destinationObjectName");
             return this;
         }
-        /**
-         * Region in which OSS bucket is present
-         **/
+        /** Region in which OSS bucket is present */
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
         private String destinationRegion;
 
         /**
          * Region in which OSS bucket is present
+         *
          * @param destinationRegion the value to set
          * @return this builder
-         **/
+         */
         public Builder destinationRegion(String destinationRegion) {
             this.destinationRegion = destinationRegion;
             this.__explicitlySet__.add("destinationRegion");
@@ -126,9 +121,7 @@ public final class ArtifactImportDetailsObjectStorage extends ArtifactImportDeta
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,58 +143,54 @@ public final class ArtifactImportDetailsObjectStorage extends ArtifactImportDeta
         this.destinationRegion = destinationRegion;
     }
 
-    /**
-     * The Object Storage namespace used for the request.
-     **/
+    /** The Object Storage namespace used for the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The Object Storage namespace used for the request.
+     *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
 
-    /**
-     * The name of the bucket. Avoid entering confidential information.
-     **/
+    /** The name of the bucket. Avoid entering confidential information. */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
     private final String destinationBucket;
 
     /**
      * The name of the bucket. Avoid entering confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDestinationBucket() {
         return destinationBucket;
     }
 
-    /**
-     * The name of the object resulting from the copy operation.
-     **/
+    /** The name of the object resulting from the copy operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
     private final String destinationObjectName;
 
     /**
      * The name of the object resulting from the copy operation.
+     *
      * @return the value
-     **/
+     */
     public String getDestinationObjectName() {
         return destinationObjectName;
     }
 
-    /**
-     * Region in which OSS bucket is present
-     **/
+    /** Region in which OSS bucket is present */
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
     private final String destinationRegion;
 
     /**
      * Region in which OSS bucket is present
+     *
      * @return the value
-     **/
+     */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -213,6 +202,7 @@ public final class ArtifactImportDetailsObjectStorage extends ArtifactImportDeta
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,21 +6,22 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The request details object to implement the Optimizer Statistics Advisor task recommendations.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ImplementOptimizerStatisticsAdvisorRecommendationsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ImplementOptimizerStatisticsAdvisorRecommendationsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ImplementOptimizerStatisticsAdvisorRecommendationsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"taskName", "jobDetails"})
     public ImplementOptimizerStatisticsAdvisorRecommendationsDetails(
@@ -32,17 +33,16 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the task.
-         **/
+        /** The name of the task. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
         /**
          * The name of the task.
+         *
          * @param taskName the value to set
          * @return this builder
-         **/
+         */
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
@@ -84,9 +84,7 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,16 +93,15 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the task.
-     **/
+    /** The name of the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
     /**
      * The name of the task.
+     *
      * @return the value
-     **/
+     */
     public String getTaskName() {
         return taskName;
     }
@@ -123,6 +120,7 @@ public final class ImplementOptimizerStatisticsAdvisorRecommendationsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

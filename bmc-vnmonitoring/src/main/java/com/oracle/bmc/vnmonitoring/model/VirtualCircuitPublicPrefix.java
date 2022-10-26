@@ -5,25 +5,25 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A public IP prefix and its details. With a public virtual circuit, the customer
- * specifies the customer-owned public IP prefixes to advertise across the connection.
- * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A public IP prefix and its details. With a public virtual circuit, the customer specifies the
+ * customer-owned public IP prefixes to advertise across the connection. For more information, see
+ * [FastConnect
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VirtualCircuitPublicPrefix.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = VirtualCircuitPublicPrefix.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VirtualCircuitPublicPrefix
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cidrBlock", "verificationState"})
     public VirtualCircuitPublicPrefix(String cidrBlock, VerificationState verificationState) {
@@ -34,43 +34,41 @@ public final class VirtualCircuitPublicPrefix
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Publix IP prefix (CIDR) that the customer specified.
-         **/
+        /** Publix IP prefix (CIDR) that the customer specified. */
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
          * Publix IP prefix (CIDR) that the customer specified.
+         *
          * @param cidrBlock the value to set
          * @return this builder
-         **/
+         */
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
         /**
-         * Oracle must verify that the customer owns the public IP prefix before traffic
-         * for that prefix can flow across the virtual circuit. Verification can take a
-         * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
-         * means verification succeeded. {@code FAILED} means verification failed and traffic for
-         * this prefix will not flow across the connection.
-         *
-         **/
+         * Oracle must verify that the customer owns the public IP prefix before traffic for that
+         * prefix can flow across the virtual circuit. Verification can take a few business days.
+         * {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED} means
+         * verification succeeded. {@code FAILED} means verification failed and traffic for this
+         * prefix will not flow across the connection.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("verificationState")
         private VerificationState verificationState;
 
         /**
-         * Oracle must verify that the customer owns the public IP prefix before traffic
-         * for that prefix can flow across the virtual circuit. Verification can take a
-         * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
-         * means verification succeeded. {@code FAILED} means verification failed and traffic for
-         * this prefix will not flow across the connection.
+         * Oracle must verify that the customer owns the public IP prefix before traffic for that
+         * prefix can flow across the virtual circuit. Verification can take a few business days.
+         * {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED} means
+         * verification succeeded. {@code FAILED} means verification failed and traffic for this
+         * prefix will not flow across the connection.
          *
          * @param verificationState the value to set
          * @return this builder
-         **/
+         */
         public Builder verificationState(VerificationState verificationState) {
             this.verificationState = verificationState;
             this.__explicitlySet__.add("verificationState");
@@ -101,9 +99,7 @@ public final class VirtualCircuitPublicPrefix
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,29 +108,27 @@ public final class VirtualCircuitPublicPrefix
         return new Builder().copy(this);
     }
 
-    /**
-     * Publix IP prefix (CIDR) that the customer specified.
-     **/
+    /** Publix IP prefix (CIDR) that the customer specified. */
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
      * Publix IP prefix (CIDR) that the customer specified.
+     *
      * @return the value
-     **/
+     */
     public String getCidrBlock() {
         return cidrBlock;
     }
 
     /**
-     * Oracle must verify that the customer owns the public IP prefix before traffic
-     * for that prefix can flow across the virtual circuit. Verification can take a
-     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
-     * means verification succeeded. {@code FAILED} means verification failed and traffic for
-     * this prefix will not flow across the connection.
-     *
-     **/
-    public enum VerificationState {
+     * Oracle must verify that the customer owns the public IP prefix before traffic for that prefix
+     * can flow across the virtual circuit. Verification can take a few business days. {@code
+     * IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED} means verification
+     * succeeded. {@code FAILED} means verification failed and traffic for this prefix will not flow
+     * across the connection.
+     */
+    public enum VerificationState implements com.oracle.bmc.http.internal.BmcEnum {
         InProgress("IN_PROGRESS"),
         Completed("COMPLETED"),
         Failed("FAILED"),
@@ -168,25 +162,24 @@ public final class VirtualCircuitPublicPrefix
         }
     };
     /**
-     * Oracle must verify that the customer owns the public IP prefix before traffic
-     * for that prefix can flow across the virtual circuit. Verification can take a
-     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
-     * means verification succeeded. {@code FAILED} means verification failed and traffic for
-     * this prefix will not flow across the connection.
-     *
-     **/
+     * Oracle must verify that the customer owns the public IP prefix before traffic for that prefix
+     * can flow across the virtual circuit. Verification can take a few business days. {@code
+     * IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED} means verification
+     * succeeded. {@code FAILED} means verification failed and traffic for this prefix will not flow
+     * across the connection.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("verificationState")
     private final VerificationState verificationState;
 
     /**
-     * Oracle must verify that the customer owns the public IP prefix before traffic
-     * for that prefix can flow across the virtual circuit. Verification can take a
-     * few business days. {@code IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED}
-     * means verification succeeded. {@code FAILED} means verification failed and traffic for
-     * this prefix will not flow across the connection.
+     * Oracle must verify that the customer owns the public IP prefix before traffic for that prefix
+     * can flow across the virtual circuit. Verification can take a few business days. {@code
+     * IN_PROGRESS} means Oracle is verifying the prefix. {@code COMPLETED} means verification
+     * succeeded. {@code FAILED} means verification failed and traffic for this prefix will not flow
+     * across the connection.
      *
      * @return the value
-     **/
+     */
     public VerificationState getVerificationState() {
         return verificationState;
     }
@@ -198,6 +191,7 @@ public final class VirtualCircuitPublicPrefix
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

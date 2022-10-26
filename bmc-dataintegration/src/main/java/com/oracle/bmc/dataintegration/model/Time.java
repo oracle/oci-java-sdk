@@ -5,19 +5,20 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A model to hold time in hour:minute:second format.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A model to hold time in hour:minute:second format. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Time.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Time extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hour", "minute", "second"})
     public Time(Integer hour, Integer minute, Integer second) {
@@ -29,49 +30,46 @@ public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The hour value.
-         **/
+        /** The hour value. */
         @com.fasterxml.jackson.annotation.JsonProperty("hour")
         private Integer hour;
 
         /**
          * The hour value.
+         *
          * @param hour the value to set
          * @return this builder
-         **/
+         */
         public Builder hour(Integer hour) {
             this.hour = hour;
             this.__explicitlySet__.add("hour");
             return this;
         }
-        /**
-         * The minute value.
-         **/
+        /** The minute value. */
         @com.fasterxml.jackson.annotation.JsonProperty("minute")
         private Integer minute;
 
         /**
          * The minute value.
+         *
          * @param minute the value to set
          * @return this builder
-         **/
+         */
         public Builder minute(Integer minute) {
             this.minute = minute;
             this.__explicitlySet__.add("minute");
             return this;
         }
-        /**
-         * The second value.
-         **/
+        /** The second value. */
         @com.fasterxml.jackson.annotation.JsonProperty("second")
         private Integer second;
 
         /**
          * The second value.
+         *
          * @param second the value to set
          * @return this builder
-         **/
+         */
         public Builder second(Integer second) {
             this.second = second;
             this.__explicitlySet__.add("second");
@@ -104,9 +102,7 @@ public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +111,41 @@ public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return new Builder().copy(this);
     }
 
-    /**
-     * The hour value.
-     **/
+    /** The hour value. */
     @com.fasterxml.jackson.annotation.JsonProperty("hour")
     private final Integer hour;
 
     /**
      * The hour value.
+     *
      * @return the value
-     **/
+     */
     public Integer getHour() {
         return hour;
     }
 
-    /**
-     * The minute value.
-     **/
+    /** The minute value. */
     @com.fasterxml.jackson.annotation.JsonProperty("minute")
     private final Integer minute;
 
     /**
      * The minute value.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinute() {
         return minute;
     }
 
-    /**
-     * The second value.
-     **/
+    /** The second value. */
     @com.fasterxml.jackson.annotation.JsonProperty("second")
     private final Integer second;
 
     /**
      * The second value.
+     *
      * @return the value
-     **/
+     */
     public Integer getSecond() {
         return second;
     }
@@ -164,6 +157,7 @@ public final class Time extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -8,10 +8,7 @@ import com.oracle.bmc.governancerulescontrolplane.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,13 +21,14 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
+     * status.
      *
      * @return the value
      */
@@ -39,15 +37,14 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -55,26 +52,24 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /**
-     * The URI of the request.
-     */
+    /** The URI of the request. */
     private String location;
 
     /**
      * The URI of the request.
+     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /**
-     * The returned InclusionCriterion instance.
-     */
+    /** The returned InclusionCriterion instance. */
     private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion inclusionCriterion;
 
     /**
      * The returned InclusionCriterion instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion
@@ -93,7 +88,7 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
     })
     private CreateInclusionCriterionResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -108,25 +103,26 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
         this.inclusionCriterion = inclusionCriterion;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateInclusionCriterionResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -141,13 +137,14 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
+         * its status.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -158,15 +155,14 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -176,13 +172,12 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The URI of the request.
-         */
+        /** The URI of the request. */
         private String location;
 
         /**
          * The URI of the request.
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -191,14 +186,13 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * The returned InclusionCriterion instance.
-         */
+        /** The returned InclusionCriterion instance. */
         private com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion
                 inclusionCriterion;
 
         /**
          * The returned InclusionCriterion instance.
+         *
          * @param inclusionCriterion the value to set
          * @return this builder
          */
@@ -211,8 +205,10 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateInclusionCriterionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -227,8 +223,10 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateInclusionCriterionResponse build() {
             return new CreateInclusionCriterionResponse(
                     __httpStatusCode__,
@@ -243,6 +241,7 @@ public class CreateInclusionCriterionResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

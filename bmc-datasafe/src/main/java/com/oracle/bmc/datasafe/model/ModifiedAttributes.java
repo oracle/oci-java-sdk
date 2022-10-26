@@ -5,23 +5,24 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The attributes of a sensitive column that have been modified in the target database. It's populated only in the case
- * of MODIFIED discovery results and shows the new values of the modified attributes.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The attributes of a sensitive column that have been modified in the target database. It's
+ * populated only in the case of MODIFIED discovery results and shows the new values of the modified
+ * attributes. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModifiedAttributes.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModifiedAttributes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ModifiedAttributes.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ModifiedAttributes
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"appDefinedChildColumnKeys", "dbDefinedChildColumnKeys"})
     public ModifiedAttributes(
@@ -35,32 +36,38 @@ public final class ModifiedAttributes extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-         **/
+         * Unique keys identifying the columns that are application-level (non-dictionary) children
+         * of the sensitive column.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
         private java.util.List<String> appDefinedChildColumnKeys;
 
         /**
-         * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+         * Unique keys identifying the columns that are application-level (non-dictionary) children
+         * of the sensitive column.
+         *
          * @param appDefinedChildColumnKeys the value to set
          * @return this builder
-         **/
+         */
         public Builder appDefinedChildColumnKeys(java.util.List<String> appDefinedChildColumnKeys) {
             this.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             this.__explicitlySet__.add("appDefinedChildColumnKeys");
             return this;
         }
         /**
-         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-         **/
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children
+         * of the sensitive column.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
         private java.util.List<String> dbDefinedChildColumnKeys;
 
         /**
-         * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+         * Unique keys identifying the columns that are database-level (dictionary-defined) children
+         * of the sensitive column.
+         *
          * @param dbDefinedChildColumnKeys the value to set
          * @return this builder
-         **/
+         */
         public Builder dbDefinedChildColumnKeys(java.util.List<String> dbDefinedChildColumnKeys) {
             this.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             this.__explicitlySet__.add("dbDefinedChildColumnKeys");
@@ -92,9 +99,7 @@ public final class ModifiedAttributes extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,29 +109,35 @@ public final class ModifiedAttributes extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
-     **/
+     * Unique keys identifying the columns that are application-level (non-dictionary) children of
+     * the sensitive column.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("appDefinedChildColumnKeys")
     private final java.util.List<String> appDefinedChildColumnKeys;
 
     /**
-     * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
+     * Unique keys identifying the columns that are application-level (non-dictionary) children of
+     * the sensitive column.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAppDefinedChildColumnKeys() {
         return appDefinedChildColumnKeys;
     }
 
     /**
-     * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
-     **/
+     * Unique keys identifying the columns that are database-level (dictionary-defined) children of
+     * the sensitive column.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbDefinedChildColumnKeys")
     private final java.util.List<String> dbDefinedChildColumnKeys;
 
     /**
-     * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+     * Unique keys identifying the columns that are database-level (dictionary-defined) children of
+     * the sensitive column.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDbDefinedChildColumnKeys() {
         return dbDefinedChildColumnKeys;
     }
@@ -138,6 +149,7 @@ public final class ModifiedAttributes extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

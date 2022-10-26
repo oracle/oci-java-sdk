@@ -82,8 +82,10 @@ public class VmDataGuardExample {
 
         Region targetRegion = Region.fromRegionId(regionId);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -186,7 +188,8 @@ public class VmDataGuardExample {
                     "Completed Switchover DataGuard "
                             + getDataGuardAssociationResponse.getDataGuardAssociation());
 
-            // 4. After switch over old primary will become standby and we should be able to fail-over to it.
+            // 4. After switch over old primary will become standby and we should be able to
+            // fail-over to it.
             FailoverDataGuardAssociationRequest failOverRequest =
                     FailoverDataGuardAssociationRequest.builder()
                             .databaseId(firstDatabaseId)

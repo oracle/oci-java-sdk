@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration of Operations Insights for the external database
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration of Operations Insights for the external database <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OperationsInsightsConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OperationsInsightsConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OperationsInsightsConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationsInsightsStatus", "operationsInsightsConnectorId"})
     public OperationsInsightsConfig(
@@ -33,17 +33,16 @@ public final class OperationsInsightsConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The status of Operations Insights
-         **/
+        /** The status of Operations Insights */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
         private OperationsInsightsStatus operationsInsightsStatus;
 
         /**
          * The status of Operations Insights
+         *
          * @param operationsInsightsStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder operationsInsightsStatus(OperationsInsightsStatus operationsInsightsStatus) {
             this.operationsInsightsStatus = operationsInsightsStatus;
             this.__explicitlySet__.add("operationsInsightsStatus");
@@ -51,19 +50,22 @@ public final class OperationsInsightsConfig
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
-         *
-         **/
+         * {@link
+         * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+         * createExternalDatabaseConnectorDetails}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConnectorId")
         private String operationsInsightsConnectorId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         * {@link
+         * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+         * createExternalDatabaseConnectorDetails}.
          *
          * @param operationsInsightsConnectorId the value to set
          * @return this builder
-         **/
+         */
         public Builder operationsInsightsConnectorId(String operationsInsightsConnectorId) {
             this.operationsInsightsConnectorId = operationsInsightsConnectorId;
             this.__explicitlySet__.add("operationsInsightsConnectorId");
@@ -95,9 +97,7 @@ public final class OperationsInsightsConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,10 +106,8 @@ public final class OperationsInsightsConfig
         return new Builder().copy(this);
     }
 
-    /**
-     * The status of Operations Insights
-     **/
-    public enum OperationsInsightsStatus {
+    /** The status of Operations Insights */
+    public enum OperationsInsightsStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
         Disabling("DISABLING"),
@@ -118,8 +116,8 @@ public final class OperationsInsightsConfig
         FailedDisabling("FAILED_DISABLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -158,34 +156,34 @@ public final class OperationsInsightsConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of Operations Insights
-     **/
+    /** The status of Operations Insights */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsStatus")
     private final OperationsInsightsStatus operationsInsightsStatus;
 
     /**
      * The status of Operations Insights
+     *
      * @return the value
-     **/
+     */
     public OperationsInsightsStatus getOperationsInsightsStatus() {
         return operationsInsightsStatus;
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
-     *
-     **/
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+     * createExternalDatabaseConnectorDetails}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsConnectorId")
     private final String operationsInsightsConnectorId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+     * createExternalDatabaseConnectorDetails}.
      *
      * @return the value
-     **/
+     */
     public String getOperationsInsightsConnectorId() {
         return operationsInsightsConnectorId;
     }
@@ -197,6 +195,7 @@ public final class OperationsInsightsConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

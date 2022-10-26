@@ -6,52 +6,50 @@ package com.oracle.bmc.cims.requests;
 
 import com.oracle.bmc.cims.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetStatusRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetStatusRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The system that generated the support ticket, such as My Oracle Support.
-     */
+    /** The system that generated the support ticket, such as My Oracle Support. */
     private String source;
 
-    /**
-     * The system that generated the support ticket, such as My Oracle Support.
-     */
+    /** The system that generated the support ticket, such as My Oracle Support. */
     public String getSource() {
         return source;
     }
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     private String ocid;
 
     /**
-     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+     * Cloud Infrastructure account.
      */
     public String getOcid() {
         return ocid;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     private String homeregion;
 
-    /**
-     * The region of the tenancy.
-     */
+    /** The region of the tenancy. */
     public String getHomeregion() {
         return homeregion;
     }
@@ -59,17 +57,15 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetStatusRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The system that generated the support ticket, such as My Oracle Support.
-         */
+        /** The system that generated the support ticket, such as My Oracle Support. */
         private String source = null;
 
         /**
          * The system that generated the support ticket, such as My Oracle Support.
+         *
          * @param source the value to set
          * @return this builder instance
          */
@@ -79,12 +75,15 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
          */
         private String ocid = null;
 
         /**
-         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
+         * Cloud Infrastructure account.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -94,12 +93,15 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -108,13 +110,12 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The region of the tenancy.
-         */
+        /** The region of the tenancy. */
         private String homeregion = null;
 
         /**
          * The region of the tenancy.
+         *
          * @param homeregion the value to set
          * @return this builder instance
          */
@@ -125,18 +126,19 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -148,6 +150,7 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetStatusRequest o) {
@@ -163,10 +166,11 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetStatusRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetStatusRequest
          */
@@ -180,7 +184,8 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetStatusRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetStatusRequest
@@ -198,6 +203,7 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -210,6 +216,7 @@ public class GetStatusRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

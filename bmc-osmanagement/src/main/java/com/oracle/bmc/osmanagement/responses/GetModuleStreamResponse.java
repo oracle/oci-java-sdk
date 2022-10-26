@@ -9,15 +9,14 @@ import com.oracle.bmc.osmanagement.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request.
-     * You can use this to query the status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
+     * status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request.
-     * You can use this to query the status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
+     * status of the asynchronous operation.
      *
      * @return the value
      */
@@ -26,15 +25,14 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,13 +40,12 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /**
-     * The returned ModuleStream instance.
-     */
+    /** The returned ModuleStream instance. */
     private com.oracle.bmc.osmanagement.model.ModuleStream moduleStream;
 
     /**
      * The returned ModuleStream instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.osmanagement.model.ModuleStream getModuleStream() {
@@ -64,7 +61,7 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetModuleStreamResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId,
             com.oracle.bmc.osmanagement.model.ModuleStream moduleStream) {
@@ -74,31 +71,33 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
         this.moduleStream = moduleStream;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetModuleStreamResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request.
-         * You can use this to query the status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * the status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request.
-         * You can use this to query the status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+         * the status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -109,15 +108,14 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,13 +125,12 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned ModuleStream instance.
-         */
+        /** The returned ModuleStream instance. */
         private com.oracle.bmc.osmanagement.model.ModuleStream moduleStream;
 
         /**
          * The returned ModuleStream instance.
+         *
          * @param moduleStream the value to set
          * @return this builder
          */
@@ -144,8 +141,10 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetModuleStreamResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,8 +157,10 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetModuleStreamResponse build() {
             return new GetModuleStreamResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, moduleStream);
@@ -168,6 +169,7 @@ public class GetModuleStreamResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.osubusage.model;
 
 /**
- * Computed Usage Aggregation object
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Computed Usage Aggregation object <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ComputedUsageAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ComputedUsageAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ComputedUsageAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "quantity",
@@ -55,10 +54,7 @@ public final class ComputedUsageAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Total Quantity that was used for computation
-         *
-         **/
+        /** Total Quantity that was used for computation */
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
@@ -67,7 +63,7 @@ public final class ComputedUsageAggregation
          *
          * @param quantity the value to set
          * @return this builder
-         **/
+         */
         public Builder quantity(String quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
@@ -82,10 +78,7 @@ public final class ComputedUsageAggregation
             this.__explicitlySet__.add("product");
             return this;
         }
-        /**
-         * Data Center Attribute as sent by MQS to SPM.
-         *
-         **/
+        /** Data Center Attribute as sent by MQS to SPM. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
@@ -94,16 +87,13 @@ public final class ComputedUsageAggregation
          *
          * @param dataCenter the value to set
          * @return this builder
-         **/
+         */
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = dataCenter;
             this.__explicitlySet__.add("dataCenter");
             return this;
         }
-        /**
-         * Metered Service date , expressed in RFC 3339 timestamp format.
-         *
-         **/
+        /** Metered Service date , expressed in RFC 3339 timestamp format. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
@@ -112,16 +102,13 @@ public final class ComputedUsageAggregation
          *
          * @param timeMeteredOn the value to set
          * @return this builder
-         **/
+         */
         public Builder timeMeteredOn(java.util.Date timeMeteredOn) {
             this.timeMeteredOn = timeMeteredOn;
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /**
-         * Net Unit Price for the product in consideration.
-         *
-         **/
+        /** Net Unit Price for the product in consideration. */
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
@@ -130,16 +117,13 @@ public final class ComputedUsageAggregation
          *
          * @param netUnitPrice the value to set
          * @return this builder
-         **/
+         */
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /**
-         * Sum of Computed Line Amount unrounded
-         *
-         **/
+        /** Sum of Computed Line Amount unrounded */
         @com.fasterxml.jackson.annotation.JsonProperty("costUnrounded")
         private String costUnrounded;
 
@@ -148,16 +132,13 @@ public final class ComputedUsageAggregation
          *
          * @param costUnrounded the value to set
          * @return this builder
-         **/
+         */
         public Builder costUnrounded(String costUnrounded) {
             this.costUnrounded = costUnrounded;
             this.__explicitlySet__.add("costUnrounded");
             return this;
         }
-        /**
-         * Sum of Computed Line Amount rounded
-         *
-         **/
+        /** Sum of Computed Line Amount rounded */
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private String cost;
 
@@ -166,16 +147,13 @@ public final class ComputedUsageAggregation
          *
          * @param cost the value to set
          * @return this builder
-         **/
+         */
         public Builder cost(String cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
             return this;
         }
-        /**
-         * Usage compute type in SPM.
-         *
-         **/
+        /** Usage compute type in SPM. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -184,7 +162,7 @@ public final class ComputedUsageAggregation
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -241,9 +219,7 @@ public final class ComputedUsageAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -252,10 +228,7 @@ public final class ComputedUsageAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * Total Quantity that was used for computation
-     *
-     **/
+    /** Total Quantity that was used for computation */
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
@@ -263,7 +236,7 @@ public final class ComputedUsageAggregation
      * Total Quantity that was used for computation
      *
      * @return the value
-     **/
+     */
     public String getQuantity() {
         return quantity;
     }
@@ -275,10 +248,7 @@ public final class ComputedUsageAggregation
         return product;
     }
 
-    /**
-     * Data Center Attribute as sent by MQS to SPM.
-     *
-     **/
+    /** Data Center Attribute as sent by MQS to SPM. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
@@ -286,15 +256,12 @@ public final class ComputedUsageAggregation
      * Data Center Attribute as sent by MQS to SPM.
      *
      * @return the value
-     **/
+     */
     public String getDataCenter() {
         return dataCenter;
     }
 
-    /**
-     * Metered Service date , expressed in RFC 3339 timestamp format.
-     *
-     **/
+    /** Metered Service date , expressed in RFC 3339 timestamp format. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
@@ -302,15 +269,12 @@ public final class ComputedUsageAggregation
      * Metered Service date , expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeMeteredOn() {
         return timeMeteredOn;
     }
 
-    /**
-     * Net Unit Price for the product in consideration.
-     *
-     **/
+    /** Net Unit Price for the product in consideration. */
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
@@ -318,15 +282,12 @@ public final class ComputedUsageAggregation
      * Net Unit Price for the product in consideration.
      *
      * @return the value
-     **/
+     */
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /**
-     * Sum of Computed Line Amount unrounded
-     *
-     **/
+    /** Sum of Computed Line Amount unrounded */
     @com.fasterxml.jackson.annotation.JsonProperty("costUnrounded")
     private final String costUnrounded;
 
@@ -334,15 +295,12 @@ public final class ComputedUsageAggregation
      * Sum of Computed Line Amount unrounded
      *
      * @return the value
-     **/
+     */
     public String getCostUnrounded() {
         return costUnrounded;
     }
 
-    /**
-     * Sum of Computed Line Amount rounded
-     *
-     **/
+    /** Sum of Computed Line Amount rounded */
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final String cost;
 
@@ -350,16 +308,13 @@ public final class ComputedUsageAggregation
      * Sum of Computed Line Amount rounded
      *
      * @return the value
-     **/
+     */
     public String getCost() {
         return cost;
     }
 
-    /**
-     * Usage compute type in SPM.
-     *
-     **/
-    public enum Type {
+    /** Usage compute type in SPM. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
         Usage("USAGE"),
@@ -377,8 +332,8 @@ public final class ComputedUsageAggregation
         DelayedUsagePostTermination("DELAYED_USAGE_POST_TERMINATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -415,10 +370,7 @@ public final class ComputedUsageAggregation
             return UnknownEnumValue;
         }
     };
-    /**
-     * Usage compute type in SPM.
-     *
-     **/
+    /** Usage compute type in SPM. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -426,7 +378,7 @@ public final class ComputedUsageAggregation
      * Usage compute type in SPM.
      *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
@@ -438,6 +390,7 @@ public final class ComputedUsageAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

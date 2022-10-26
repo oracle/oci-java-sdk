@@ -9,15 +9,14 @@ import com.oracle.bmc.bds.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * request, provide this request ID.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
         return etag;
     }
 
-    /**
-     * The returned AutoScalingConfiguration instance.
-     */
+    /** The returned AutoScalingConfiguration instance. */
     private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
     /**
      * The returned AutoScalingConfiguration instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.bds.model.AutoScalingConfiguration getAutoScalingConfiguration() {
@@ -62,7 +57,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
     })
     private GetAutoScalingConfigurationResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration) {
@@ -72,31 +67,34 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
         this.autoScalingConfiguration = autoScalingConfiguration;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetAutoScalingConfigurationResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +104,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +118,12 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /**
-         * The returned AutoScalingConfiguration instance.
-         */
+        /** The returned AutoScalingConfiguration instance. */
         private com.oracle.bmc.bds.model.AutoScalingConfiguration autoScalingConfiguration;
 
         /**
          * The returned AutoScalingConfiguration instance.
+         *
          * @param autoScalingConfiguration the value to set
          * @return this builder
          */
@@ -141,8 +135,10 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetAutoScalingConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,8 +151,10 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetAutoScalingConfigurationResponse build() {
             return new GetAutoScalingConfigurationResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, autoScalingConfiguration);
@@ -165,6 +163,7 @@ public class GetAutoScalingConfigurationResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

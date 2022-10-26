@@ -5,93 +5,94 @@
 package com.oracle.bmc.vault.model;
 
 /**
- * A rule that helps enforce the expiration of a secret's contents.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A rule that helps enforce the expiration of a secret's contents. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SecretExpiryRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "ruleType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "ruleType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SecretExpiryRule extends SecretRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * A property indicating how long the secret contents will be considered valid, expressed in
-         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be
-         * updated when the secret content expires.
-         * The timer resets after you update the secret contents.
-         * The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported.
-         * For example, pass {@code P3D} to have the secret version expire every 3 days.
-         *
-         **/
+         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret
+         * needs to be updated when the secret content expires. The timer resets after you update
+         * the secret contents. The minimum value is 1 day and the maximum value is 90 days for this
+         * property. Currently, only intervals expressed in days are supported. For example, pass
+         * {@code P3D} to have the secret version expire every 3 days.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretVersionExpiryInterval")
         private String secretVersionExpiryInterval;
 
         /**
          * A property indicating how long the secret contents will be considered valid, expressed in
-         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be
-         * updated when the secret content expires.
-         * The timer resets after you update the secret contents.
-         * The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported.
-         * For example, pass {@code P3D} to have the secret version expire every 3 days.
+         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret
+         * needs to be updated when the secret content expires. The timer resets after you update
+         * the secret contents. The minimum value is 1 day and the maximum value is 90 days for this
+         * property. Currently, only intervals expressed in days are supported. For example, pass
+         * {@code P3D} to have the secret version expire every 3 days.
          *
          * @param secretVersionExpiryInterval the value to set
          * @return this builder
-         **/
+         */
         public Builder secretVersionExpiryInterval(String secretVersionExpiryInterval) {
             this.secretVersionExpiryInterval = secretVersionExpiryInterval;
             this.__explicitlySet__.add("secretVersionExpiryInterval");
             return this;
         }
         /**
-         * An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days.
-         * Example: {@code 2019-04-03T21:10:29.600Z}
-         *
-         **/
+         * An optional property indicating the absolute time when this secret will expire, expressed
+         * in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number
+         * of days from current time is 1 day and the maximum number of days from current time is
+         * 365 days. Example: {@code 2019-04-03T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfAbsoluteExpiry")
         private java.util.Date timeOfAbsoluteExpiry;
 
         /**
-         * An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days.
-         * Example: {@code 2019-04-03T21:10:29.600Z}
+         * An optional property indicating the absolute time when this secret will expire, expressed
+         * in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number
+         * of days from current time is 1 day and the maximum number of days from current time is
+         * 365 days. Example: {@code 2019-04-03T21:10:29.600Z}
          *
          * @param timeOfAbsoluteExpiry the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfAbsoluteExpiry(java.util.Date timeOfAbsoluteExpiry) {
             this.timeOfAbsoluteExpiry = timeOfAbsoluteExpiry;
             this.__explicitlySet__.add("timeOfAbsoluteExpiry");
             return this;
         }
         /**
-         * A property indicating whether to block retrieval of the secret content, on expiry. The default is false.
-         * If the secret has already expired and you would like to retrieve the secret contents,
-         * you need to edit the secret rule to disable this property, to allow reading the secret content.
-         *
-         **/
+         * A property indicating whether to block retrieval of the secret content, on expiry. The
+         * default is false. If the secret has already expired and you would like to retrieve the
+         * secret contents, you need to edit the secret rule to disable this property, to allow
+         * reading the secret content.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSecretContentRetrievalBlockedOnExpiry")
         private Boolean isSecretContentRetrievalBlockedOnExpiry;
 
         /**
-         * A property indicating whether to block retrieval of the secret content, on expiry. The default is false.
-         * If the secret has already expired and you would like to retrieve the secret contents,
-         * you need to edit the secret rule to disable this property, to allow reading the secret content.
+         * A property indicating whether to block retrieval of the secret content, on expiry. The
+         * default is false. If the secret has already expired and you would like to retrieve the
+         * secret contents, you need to edit the secret rule to disable this property, to allow
+         * reading the secret content.
          *
          * @param isSecretContentRetrievalBlockedOnExpiry the value to set
          * @return this builder
-         **/
+         */
         public Builder isSecretContentRetrievalBlockedOnExpiry(
                 Boolean isSecretContentRetrievalBlockedOnExpiry) {
             this.isSecretContentRetrievalBlockedOnExpiry = isSecretContentRetrievalBlockedOnExpiry;
@@ -130,9 +131,7 @@ public final class SecretExpiryRule extends SecretRule {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -154,66 +153,67 @@ public final class SecretExpiryRule extends SecretRule {
 
     /**
      * A property indicating how long the secret contents will be considered valid, expressed in
-     * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be
-     * updated when the secret content expires.
-     * The timer resets after you update the secret contents.
-     * The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported.
-     * For example, pass {@code P3D} to have the secret version expire every 3 days.
-     *
-     **/
+     * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to
+     * be updated when the secret content expires. The timer resets after you update the secret
+     * contents. The minimum value is 1 day and the maximum value is 90 days for this property.
+     * Currently, only intervals expressed in days are supported. For example, pass {@code P3D} to
+     * have the secret version expire every 3 days.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretVersionExpiryInterval")
     private final String secretVersionExpiryInterval;
 
     /**
      * A property indicating how long the secret contents will be considered valid, expressed in
-     * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to be
-     * updated when the secret content expires.
-     * The timer resets after you update the secret contents.
-     * The minimum value is 1 day and the maximum value is 90 days for this property. Currently, only intervals expressed in days are supported.
-     * For example, pass {@code P3D} to have the secret version expire every 3 days.
+     * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format. The secret needs to
+     * be updated when the secret content expires. The timer resets after you update the secret
+     * contents. The minimum value is 1 day and the maximum value is 90 days for this property.
+     * Currently, only intervals expressed in days are supported. For example, pass {@code P3D} to
+     * have the secret version expire every 3 days.
      *
      * @return the value
-     **/
+     */
     public String getSecretVersionExpiryInterval() {
         return secretVersionExpiryInterval;
     }
 
     /**
-     * An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days.
+     * An optional property indicating the absolute time when this secret will expire, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days
+     * from current time is 1 day and the maximum number of days from current time is 365 days.
      * Example: {@code 2019-04-03T21:10:29.600Z}
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfAbsoluteExpiry")
     private final java.util.Date timeOfAbsoluteExpiry;
 
     /**
-     * An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days.
+     * An optional property indicating the absolute time when this secret will expire, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days
+     * from current time is 1 day and the maximum number of days from current time is 365 days.
      * Example: {@code 2019-04-03T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfAbsoluteExpiry() {
         return timeOfAbsoluteExpiry;
     }
 
     /**
-     * A property indicating whether to block retrieval of the secret content, on expiry. The default is false.
-     * If the secret has already expired and you would like to retrieve the secret contents,
-     * you need to edit the secret rule to disable this property, to allow reading the secret content.
-     *
-     **/
+     * A property indicating whether to block retrieval of the secret content, on expiry. The
+     * default is false. If the secret has already expired and you would like to retrieve the secret
+     * contents, you need to edit the secret rule to disable this property, to allow reading the
+     * secret content.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSecretContentRetrievalBlockedOnExpiry")
     private final Boolean isSecretContentRetrievalBlockedOnExpiry;
 
     /**
-     * A property indicating whether to block retrieval of the secret content, on expiry. The default is false.
-     * If the secret has already expired and you would like to retrieve the secret contents,
-     * you need to edit the secret rule to disable this property, to allow reading the secret content.
+     * A property indicating whether to block retrieval of the secret content, on expiry. The
+     * default is false. If the secret has already expired and you would like to retrieve the secret
+     * contents, you need to edit the secret rule to disable this property, to allow reading the
+     * secret content.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSecretContentRetrievalBlockedOnExpiry() {
         return isSecretContentRetrievalBlockedOnExpiry;
     }
@@ -225,6 +225,7 @@ public final class SecretExpiryRule extends SecretRule {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,22 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * Operation execution result for a single input set.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Operation execution result for a single input set. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OperationExecResult.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperationExecResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = OperationExecResult.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OperationExecResult
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "executionStatus",
@@ -44,81 +45,76 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Status of the operation job for a particular set of input.
-         **/
+        /** Status of the operation job for a particular set of input. */
         @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
         private ExecutionStatus executionStatus;
 
         /**
          * Status of the operation job for a particular set of input.
+         *
          * @param executionStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder executionStatus(ExecutionStatus executionStatus) {
             this.executionStatus = executionStatus;
             this.__explicitlySet__.add("executionStatus");
             return this;
         }
-        /**
-         * Error message when the execution of operation fails.
-         **/
+        /** Error message when the execution of operation fails. */
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * Error message when the execution of operation fails.
+         *
          * @param errorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /**
-         * Metrics of operation execution job.
-         **/
+        /** Metrics of operation execution job. */
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private Object metrics;
 
         /**
          * Metrics of operation execution job.
+         *
          * @param metrics the value to set
          * @return this builder
-         **/
+         */
         public Builder metrics(Object metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
             return this;
         }
-        /**
-         * The list of emitted rows for each OUT/INOUT parameter.
-         **/
+        /** The list of emitted rows for each OUT/INOUT parameter. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
         private java.util.List<java.util.List<Object>> outputValues;
 
         /**
          * The list of emitted rows for each OUT/INOUT parameter.
+         *
          * @param outputValues the value to set
          * @return this builder
-         **/
+         */
         public Builder outputValues(java.util.List<java.util.List<Object>> outputValues) {
             this.outputValues = outputValues;
             this.__explicitlySet__.add("outputValues");
             return this;
         }
-        /**
-         * True, if the error message must be displayed in the UI.
-         **/
+        /** True, if the error message must be displayed in the UI. */
         @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
         private Boolean isWhitelistedErrorMessage;
 
         /**
          * True, if the error message must be displayed in the UI.
+         *
          * @param isWhitelistedErrorMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder isWhitelistedErrorMessage(Boolean isWhitelistedErrorMessage) {
             this.isWhitelistedErrorMessage = isWhitelistedErrorMessage;
             this.__explicitlySet__.add("isWhitelistedErrorMessage");
@@ -163,9 +159,7 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,18 +168,16 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Status of the operation job for a particular set of input.
-     **/
-    public enum ExecutionStatus {
+    /** Status of the operation job for a particular set of input. */
+    public enum ExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Failed("FAILED"),
         Success("SUCCESS"),
         Queued("QUEUED"),
         Running("RUNNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -224,72 +216,67 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of the operation job for a particular set of input.
-     **/
+    /** Status of the operation job for a particular set of input. */
     @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     private final ExecutionStatus executionStatus;
 
     /**
      * Status of the operation job for a particular set of input.
+     *
      * @return the value
-     **/
+     */
     public ExecutionStatus getExecutionStatus() {
         return executionStatus;
     }
 
-    /**
-     * Error message when the execution of operation fails.
-     **/
+    /** Error message when the execution of operation fails. */
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * Error message when the execution of operation fails.
+     *
      * @return the value
-     **/
+     */
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /**
-     * Metrics of operation execution job.
-     **/
+    /** Metrics of operation execution job. */
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final Object metrics;
 
     /**
      * Metrics of operation execution job.
+     *
      * @return the value
-     **/
+     */
     public Object getMetrics() {
         return metrics;
     }
 
-    /**
-     * The list of emitted rows for each OUT/INOUT parameter.
-     **/
+    /** The list of emitted rows for each OUT/INOUT parameter. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputValues")
     private final java.util.List<java.util.List<Object>> outputValues;
 
     /**
      * The list of emitted rows for each OUT/INOUT parameter.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<java.util.List<Object>> getOutputValues() {
         return outputValues;
     }
 
-    /**
-     * True, if the error message must be displayed in the UI.
-     **/
+    /** True, if the error message must be displayed in the UI. */
     @com.fasterxml.jackson.annotation.JsonProperty("isWhitelistedErrorMessage")
     private final Boolean isWhitelistedErrorMessage;
 
     /**
      * True, if the error message must be displayed in the UI.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsWhitelistedErrorMessage() {
         return isWhitelistedErrorMessage;
     }
@@ -301,6 +288,7 @@ public final class OperationExecResult extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

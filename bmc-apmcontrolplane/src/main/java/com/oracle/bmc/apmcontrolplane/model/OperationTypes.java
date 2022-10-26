@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmcontrolplane.model;
 
-/**
- * Possibly types of operations that the work request may process.
- **/
+/** Possibly types of operations that the work request may process. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperationTypes {
+public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     CreateApmDomain("CREATE_APM_DOMAIN"),
     UpdateApmDomain("UPDATE_APM_DOMAIN"),
     DeleteApmDomain("DELETE_APM_DOMAIN"),

@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Political location of a problem
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Political location of a problem <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PoliticalLocation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PoliticalLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = PoliticalLocation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PoliticalLocation
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"city", "state", "country"})
     public PoliticalLocation(String city, String state, String country) {
@@ -31,49 +32,46 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * City
-         **/
+        /** City */
         @com.fasterxml.jackson.annotation.JsonProperty("city")
         private String city;
 
         /**
          * City
+         *
          * @param city the value to set
          * @return this builder
-         **/
+         */
         public Builder city(String city) {
             this.city = city;
             this.__explicitlySet__.add("city");
             return this;
         }
-        /**
-         * State
-         **/
+        /** State */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
          * State
+         *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /**
-         * Country
-         **/
+        /** Country */
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * Country
+         *
          * @param country the value to set
          * @return this builder
-         **/
+         */
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
@@ -106,9 +104,7 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +113,41 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * City
-     **/
+    /** City */
     @com.fasterxml.jackson.annotation.JsonProperty("city")
     private final String city;
 
     /**
      * City
+     *
      * @return the value
-     **/
+     */
     public String getCity() {
         return city;
     }
 
-    /**
-     * State
-     **/
+    /** State */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
      * State
+     *
      * @return the value
-     **/
+     */
     public String getState() {
         return state;
     }
 
-    /**
-     * Country
-     **/
+    /** Country */
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * Country
+     *
      * @return the value
-     **/
+     */
     public String getCountry() {
         return country;
     }
@@ -166,6 +159,7 @@ public final class PoliticalLocation extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

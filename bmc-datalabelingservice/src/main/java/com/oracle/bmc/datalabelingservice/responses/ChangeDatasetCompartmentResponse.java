@@ -9,13 +9,14 @@ import com.oracle.bmc.datalabelingservice.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
-     *
+     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * the status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
+     * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query
+     * the status of the asynchronous operation.
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -48,7 +48,7 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
     })
     private ChangeDatasetCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -56,29 +56,34 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeDatasetCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
-         *
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to
+         * query the status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to query the status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for the asynchronous request. You can use this to
+         * query the status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -89,15 +94,14 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -109,8 +113,10 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeDatasetCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -122,8 +128,10 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeDatasetCompartmentResponse build() {
             return new ChangeDatasetCompartmentResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
@@ -132,6 +140,7 @@ public class ChangeDatasetCompartmentResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

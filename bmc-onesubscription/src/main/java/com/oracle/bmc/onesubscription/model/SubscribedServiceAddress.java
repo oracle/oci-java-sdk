@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Address.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Address. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SubscribedServiceAddress.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SubscribedServiceAddress.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SubscribedServiceAddress
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "location",
@@ -67,10 +66,7 @@ public final class SubscribedServiceAddress
             this.__explicitlySet__.add("location");
             return this;
         }
-        /**
-         * Address name identifier.
-         *
-         **/
+        /** Address name identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -79,16 +75,13 @@ public final class SubscribedServiceAddress
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Phone.
-         *
-         **/
+        /** Phone. */
         @com.fasterxml.jackson.annotation.JsonProperty("phone")
         private String phone;
 
@@ -97,16 +90,13 @@ public final class SubscribedServiceAddress
          *
          * @param phone the value to set
          * @return this builder
-         **/
+         */
         public Builder phone(String phone) {
             this.phone = phone;
             this.__explicitlySet__.add("phone");
             return this;
         }
-        /**
-         * Identify as the customer shipping address.
-         *
-         **/
+        /** Identify as the customer shipping address. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBillTo")
         private Boolean isBillTo;
 
@@ -115,16 +105,13 @@ public final class SubscribedServiceAddress
          *
          * @param isBillTo the value to set
          * @return this builder
-         **/
+         */
         public Builder isBillTo(Boolean isBillTo) {
             this.isBillTo = isBillTo;
             this.__explicitlySet__.add("isBillTo");
             return this;
         }
-        /**
-         * Identify as the customer invoicing address.
-         *
-         **/
+        /** Identify as the customer invoicing address. */
         @com.fasterxml.jackson.annotation.JsonProperty("isShipTo")
         private Boolean isShipTo;
 
@@ -133,16 +120,13 @@ public final class SubscribedServiceAddress
          *
          * @param isShipTo the value to set
          * @return this builder
-         **/
+         */
         public Builder isShipTo(Boolean isShipTo) {
             this.isShipTo = isShipTo;
             this.__explicitlySet__.add("isShipTo");
             return this;
         }
-        /**
-         * Bill to site use Id.
-         *
-         **/
+        /** Bill to site use Id. */
         @com.fasterxml.jackson.annotation.JsonProperty("billSiteUseId")
         private Long billSiteUseId;
 
@@ -151,16 +135,13 @@ public final class SubscribedServiceAddress
          *
          * @param billSiteUseId the value to set
          * @return this builder
-         **/
+         */
         public Builder billSiteUseId(Long billSiteUseId) {
             this.billSiteUseId = billSiteUseId;
             this.__explicitlySet__.add("billSiteUseId");
             return this;
         }
-        /**
-         * Service to site use Id.
-         *
-         **/
+        /** Service to site use Id. */
         @com.fasterxml.jackson.annotation.JsonProperty("service2SiteUseId")
         private Long service2SiteUseId;
 
@@ -169,16 +150,13 @@ public final class SubscribedServiceAddress
          *
          * @param service2SiteUseId the value to set
          * @return this builder
-         **/
+         */
         public Builder service2SiteUseId(Long service2SiteUseId) {
             this.service2SiteUseId = service2SiteUseId;
             this.__explicitlySet__.add("service2SiteUseId");
             return this;
         }
-        /**
-         * TCA customer account site Id.
-         *
-         **/
+        /** TCA customer account site Id. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAcctSiteId")
         private Long tcaCustAcctSiteId;
 
@@ -187,16 +165,13 @@ public final class SubscribedServiceAddress
          *
          * @param tcaCustAcctSiteId the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaCustAcctSiteId(Long tcaCustAcctSiteId) {
             this.tcaCustAcctSiteId = tcaCustAcctSiteId;
             this.__explicitlySet__.add("tcaCustAcctSiteId");
             return this;
         }
-        /**
-         * Party site number.
-         *
-         **/
+        /** Party site number. */
         @com.fasterxml.jackson.annotation.JsonProperty("tcaPartySiteNumber")
         private String tcaPartySiteNumber;
 
@@ -205,7 +180,7 @@ public final class SubscribedServiceAddress
          *
          * @param tcaPartySiteNumber the value to set
          * @return this builder
-         **/
+         */
         public Builder tcaPartySiteNumber(String tcaPartySiteNumber) {
             this.tcaPartySiteNumber = tcaPartySiteNumber;
             this.__explicitlySet__.add("tcaPartySiteNumber");
@@ -266,9 +241,7 @@ public final class SubscribedServiceAddress
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,10 +257,7 @@ public final class SubscribedServiceAddress
         return location;
     }
 
-    /**
-     * Address name identifier.
-     *
-     **/
+    /** Address name identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -295,15 +265,12 @@ public final class SubscribedServiceAddress
      * Address name identifier.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Phone.
-     *
-     **/
+    /** Phone. */
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
     private final String phone;
 
@@ -311,15 +278,12 @@ public final class SubscribedServiceAddress
      * Phone.
      *
      * @return the value
-     **/
+     */
     public String getPhone() {
         return phone;
     }
 
-    /**
-     * Identify as the customer shipping address.
-     *
-     **/
+    /** Identify as the customer shipping address. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBillTo")
     private final Boolean isBillTo;
 
@@ -327,15 +291,12 @@ public final class SubscribedServiceAddress
      * Identify as the customer shipping address.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsBillTo() {
         return isBillTo;
     }
 
-    /**
-     * Identify as the customer invoicing address.
-     *
-     **/
+    /** Identify as the customer invoicing address. */
     @com.fasterxml.jackson.annotation.JsonProperty("isShipTo")
     private final Boolean isShipTo;
 
@@ -343,15 +304,12 @@ public final class SubscribedServiceAddress
      * Identify as the customer invoicing address.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsShipTo() {
         return isShipTo;
     }
 
-    /**
-     * Bill to site use Id.
-     *
-     **/
+    /** Bill to site use Id. */
     @com.fasterxml.jackson.annotation.JsonProperty("billSiteUseId")
     private final Long billSiteUseId;
 
@@ -359,15 +317,12 @@ public final class SubscribedServiceAddress
      * Bill to site use Id.
      *
      * @return the value
-     **/
+     */
     public Long getBillSiteUseId() {
         return billSiteUseId;
     }
 
-    /**
-     * Service to site use Id.
-     *
-     **/
+    /** Service to site use Id. */
     @com.fasterxml.jackson.annotation.JsonProperty("service2SiteUseId")
     private final Long service2SiteUseId;
 
@@ -375,15 +330,12 @@ public final class SubscribedServiceAddress
      * Service to site use Id.
      *
      * @return the value
-     **/
+     */
     public Long getService2SiteUseId() {
         return service2SiteUseId;
     }
 
-    /**
-     * TCA customer account site Id.
-     *
-     **/
+    /** TCA customer account site Id. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaCustAcctSiteId")
     private final Long tcaCustAcctSiteId;
 
@@ -391,15 +343,12 @@ public final class SubscribedServiceAddress
      * TCA customer account site Id.
      *
      * @return the value
-     **/
+     */
     public Long getTcaCustAcctSiteId() {
         return tcaCustAcctSiteId;
     }
 
-    /**
-     * Party site number.
-     *
-     **/
+    /** Party site number. */
     @com.fasterxml.jackson.annotation.JsonProperty("tcaPartySiteNumber")
     private final String tcaPartySiteNumber;
 
@@ -407,7 +356,7 @@ public final class SubscribedServiceAddress
      * Party site number.
      *
      * @return the value
-     **/
+     */
     public String getTcaPartySiteNumber() {
         return tcaPartySiteNumber;
     }
@@ -419,6 +368,7 @@ public final class SubscribedServiceAddress
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

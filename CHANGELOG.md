@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.0.0-beta1 - 2022-10-25
+### Added
+- Support for the Disaster Recovery service
+- Support for running code interactively with session applications using statements in the Data Flow service
+- Support for language custom models and language translation in the AI Language service
+
+### Breaking Changes
+- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
+
 ## 2.46.0 - 2022-10-04
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-milan-1 region

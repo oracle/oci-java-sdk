@@ -34,8 +34,10 @@ public class UserPasswordInfoExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -48,7 +50,7 @@ public class UserPasswordInfoExample {
 
         Identity identityClient = new IdentityClient(provider);
 
-        //Create new user with email
+        // Create new user with email
         CreateUserDetails createUserDetails =
                 CreateUserDetails.builder()
                         .compartmentId(tenantId)
@@ -60,7 +62,7 @@ public class UserPasswordInfoExample {
         CreateUserResponse createUserResponse = identityClient.createUser(createUserRequest);
         String userId = createUserResponse.getUser().getId();
 
-        //Get user password info
+        // Get user password info
         GetUserUIPasswordInformationRequest uiPasswordInfoReq =
                 GetUserUIPasswordInformationRequest.builder().userId(userId).build();
         GetUserUIPasswordInformationResponse uiPasswordResponse =

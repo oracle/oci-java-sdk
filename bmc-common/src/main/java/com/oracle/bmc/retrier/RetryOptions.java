@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.retrier;
 
-/**
- * Defines the options when retrying
- */
+/** Defines the options when retrying */
 public final class RetryOptions {
 
     private int markReadLimit;
@@ -19,20 +17,19 @@ public final class RetryOptions {
     }
 
     /**
-     * Getter for mark read limit when marking the stream for retry.
-     * The mark read limit guarantees to read at least that many bytes
-     * before invalidating mark
+     * Getter for mark read limit when marking the stream for retry. The mark read limit guarantees
+     * to read at least that many bytes before invalidating mark
      */
     public int getMarkReadLimit() {
         return this.markReadLimit;
     }
 
     /**
-     * Setter for mark read limit that guarantees at least {@param value} bytes are
-     * read before invalidating mark. Ensure the mark read limit is at least the size of
-     * the stream to successfully reset the stream
+     * Setter for mark read limit that guarantees at least {@param value} bytes are read before
+     * invalidating mark. Ensure the mark read limit is at least the size of the stream to
+     * successfully reset the stream
      */
-    public synchronized void setMarkReadLimit(int value) {
+    public void setMarkReadLimit(int value) {
         if (value > 0 && value <= Integer.MAX_VALUE) {
             this.markReadLimit = value;
         }

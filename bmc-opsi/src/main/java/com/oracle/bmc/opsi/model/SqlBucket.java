@@ -5,19 +5,20 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Sql bucket type object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Sql bucket type object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlBucket.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SqlBucket extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -60,66 +61,52 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Version
-         * Example: {@code 1}
-         *
-         **/
+        /** Version Example: {@code 1} */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
 
         /**
-         * Version
-         * Example: {@code 1}
+         * Version Example: {@code 1}
          *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(Float version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * Operations Insights internal representation of the database type.
-         **/
+        /** Operations Insights internal representation of the database type. */
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private String databaseType;
 
         /**
          * Operations Insights internal representation of the database type.
+         *
          * @param databaseType the value to set
          * @return this builder
-         **/
+         */
         public Builder databaseType(String databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-        /**
-         * Collection timestamp
-         * Example: {@code "2020-03-31T00:00:00.000Z"}
-         *
-         **/
+        /** Collection timestamp Example: {@code "2020-03-31T00:00:00.000Z"} */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * Collection timestamp
-         * Example: {@code "2020-03-31T00:00:00.000Z"}
+         * Collection timestamp Example: {@code "2020-03-31T00:00:00.000Z"}
          *
          * @param timeCollected the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /**
-         * Unique SQL_ID for a SQL Statement.
-         *
-         **/
+        /** Unique SQL_ID for a SQL Statement. */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -128,143 +115,116 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-        /**
-         * Plan hash value for the SQL Execution Plan
-         **/
+        /** Plan hash value for the SQL Execution Plan */
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
         /**
          * Plan hash value for the SQL Execution Plan
+         *
          * @param planHash the value to set
          * @return this builder
-         **/
+         */
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
         /**
-         * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
-         * Example: {@code "<= 3 secs"}
-         *
-         **/
+         * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min Example:
+         * {@code "<= 3 secs"}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
         private String bucketId;
 
         /**
-         * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
-         * Example: {@code "<= 3 secs"}
+         * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min Example:
+         * {@code "<= 3 secs"}
          *
          * @param bucketId the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketId(String bucketId) {
             this.bucketId = bucketId;
             this.__explicitlySet__.add("bucketId");
             return this;
         }
-        /**
-         * Total number of executions
-         * Example: {@code 60}
-         *
-         **/
+        /** Total number of executions Example: {@code 60} */
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Integer executionsCount;
 
         /**
-         * Total number of executions
-         * Example: {@code 60}
+         * Total number of executions Example: {@code 60}
          *
          * @param executionsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder executionsCount(Integer executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
             return this;
         }
-        /**
-         * Total CPU time
-         * Example: {@code 1046}
-         *
-         **/
+        /** Total CPU time Example: {@code 1046} */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
         private Float cpuTimeInSec;
 
         /**
-         * Total CPU time
-         * Example: {@code 1046}
+         * Total CPU time Example: {@code 1046}
          *
          * @param cpuTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuTimeInSec(Float cpuTimeInSec) {
             this.cpuTimeInSec = cpuTimeInSec;
             this.__explicitlySet__.add("cpuTimeInSec");
             return this;
         }
-        /**
-         * Total IO time
-         * Example: {@code 5810}
-         *
-         **/
+        /** Total IO time Example: {@code 5810} */
         @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
         private Float ioTimeInSec;
 
         /**
-         * Total IO time
-         * Example: {@code 5810}
+         * Total IO time Example: {@code 5810}
          *
          * @param ioTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder ioTimeInSec(Float ioTimeInSec) {
             this.ioTimeInSec = ioTimeInSec;
             this.__explicitlySet__.add("ioTimeInSec");
             return this;
         }
-        /**
-         * Total other wait time
-         * Example: {@code 24061}
-         *
-         **/
+        /** Total other wait time Example: {@code 24061} */
         @com.fasterxml.jackson.annotation.JsonProperty("otherWaitTimeInSec")
         private Float otherWaitTimeInSec;
 
         /**
-         * Total other wait time
-         * Example: {@code 24061}
+         * Total other wait time Example: {@code 24061}
          *
          * @param otherWaitTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder otherWaitTimeInSec(Float otherWaitTimeInSec) {
             this.otherWaitTimeInSec = otherWaitTimeInSec;
             this.__explicitlySet__.add("otherWaitTimeInSec");
             return this;
         }
-        /**
-         * Total time
-         * Example: {@code 30917}
-         *
-         **/
+        /** Total time Example: {@code 30917} */
         @com.fasterxml.jackson.annotation.JsonProperty("totalTimeInSec")
         private Float totalTimeInSec;
 
         /**
-         * Total time
-         * Example: {@code 30917}
+         * Total time Example: {@code 30917}
          *
          * @param totalTimeInSec the value to set
          * @return this builder
-         **/
+         */
         public Builder totalTimeInSec(Float totalTimeInSec) {
             this.totalTimeInSec = totalTimeInSec;
             this.__explicitlySet__.add("totalTimeInSec");
@@ -333,9 +293,7 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,60 +302,46 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * Version
-     * Example: {@code 1}
-     *
-     **/
+    /** Version Example: {@code 1} */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Float version;
 
     /**
-     * Version
-     * Example: {@code 1}
+     * Version Example: {@code 1}
      *
      * @return the value
-     **/
+     */
     public Float getVersion() {
         return version;
     }
 
-    /**
-     * Operations Insights internal representation of the database type.
-     **/
+    /** Operations Insights internal representation of the database type. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
      * Operations Insights internal representation of the database type.
+     *
      * @return the value
-     **/
+     */
     public String getDatabaseType() {
         return databaseType;
     }
 
-    /**
-     * Collection timestamp
-     * Example: {@code "2020-03-31T00:00:00.000Z"}
-     *
-     **/
+    /** Collection timestamp Example: {@code "2020-03-31T00:00:00.000Z"} */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Collection timestamp
-     * Example: {@code "2020-03-31T00:00:00.000Z"}
+     * Collection timestamp Example: {@code "2020-03-31T00:00:00.000Z"}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
 
-    /**
-     * Unique SQL_ID for a SQL Statement.
-     *
-     **/
+    /** Unique SQL_ID for a SQL Statement. */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -405,129 +349,102 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     **/
+     */
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
 
-    /**
-     * Plan hash value for the SQL Execution Plan
-     **/
+    /** Plan hash value for the SQL Execution Plan */
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
     /**
      * Plan hash value for the SQL Execution Plan
+     *
      * @return the value
-     **/
+     */
     public Long getPlanHash() {
         return planHash;
     }
 
     /**
-     * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
-     * Example: {@code "<= 3 secs"}
-     *
-     **/
+     * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min Example: {@code
+     * "<= 3 secs"}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
     private final String bucketId;
 
     /**
-     * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min
-     * Example: {@code "<= 3 secs"}
+     * SQL Bucket ID, examples <= 3 secs, 3-10 secs, 10-60 secs, 1-5 min, > 5 min Example: {@code
+     * "<= 3 secs"}
      *
      * @return the value
-     **/
+     */
     public String getBucketId() {
         return bucketId;
     }
 
-    /**
-     * Total number of executions
-     * Example: {@code 60}
-     *
-     **/
+    /** Total number of executions Example: {@code 60} */
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Integer executionsCount;
 
     /**
-     * Total number of executions
-     * Example: {@code 60}
+     * Total number of executions Example: {@code 60}
      *
      * @return the value
-     **/
+     */
     public Integer getExecutionsCount() {
         return executionsCount;
     }
 
-    /**
-     * Total CPU time
-     * Example: {@code 1046}
-     *
-     **/
+    /** Total CPU time Example: {@code 1046} */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTimeInSec")
     private final Float cpuTimeInSec;
 
     /**
-     * Total CPU time
-     * Example: {@code 1046}
+     * Total CPU time Example: {@code 1046}
      *
      * @return the value
-     **/
+     */
     public Float getCpuTimeInSec() {
         return cpuTimeInSec;
     }
 
-    /**
-     * Total IO time
-     * Example: {@code 5810}
-     *
-     **/
+    /** Total IO time Example: {@code 5810} */
     @com.fasterxml.jackson.annotation.JsonProperty("ioTimeInSec")
     private final Float ioTimeInSec;
 
     /**
-     * Total IO time
-     * Example: {@code 5810}
+     * Total IO time Example: {@code 5810}
      *
      * @return the value
-     **/
+     */
     public Float getIoTimeInSec() {
         return ioTimeInSec;
     }
 
-    /**
-     * Total other wait time
-     * Example: {@code 24061}
-     *
-     **/
+    /** Total other wait time Example: {@code 24061} */
     @com.fasterxml.jackson.annotation.JsonProperty("otherWaitTimeInSec")
     private final Float otherWaitTimeInSec;
 
     /**
-     * Total other wait time
-     * Example: {@code 24061}
+     * Total other wait time Example: {@code 24061}
      *
      * @return the value
-     **/
+     */
     public Float getOtherWaitTimeInSec() {
         return otherWaitTimeInSec;
     }
 
-    /**
-     * Total time
-     * Example: {@code 30917}
-     *
-     **/
+    /** Total time Example: {@code 30917} */
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeInSec")
     private final Float totalTimeInSec;
 
     /**
-     * Total time
-     * Example: {@code 30917}
+     * Total time Example: {@code 30917}
      *
      * @return the value
-     **/
+     */
     public Float getTotalTimeInSec() {
         return totalTimeInSec;
     }
@@ -539,6 +456,7 @@ public final class SqlBucket extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

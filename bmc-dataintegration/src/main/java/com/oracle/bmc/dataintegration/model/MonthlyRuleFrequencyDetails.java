@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Frequency Details model for monthly frequency based on week of month and day of week.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Frequency Details model for monthly frequency based on week of month and day of week. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MonthlyRuleFrequencyDetails.Builder.class
-)
+        builder = MonthlyRuleFrequencyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,33 +34,35 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             this.__explicitlySet__.add("frequency");
             return this;
         }
-        /**
-         * This holds the week of the month in which the schedule should be triggered.
-         **/
+        /** This holds the week of the month in which the schedule should be triggered. */
         @com.fasterxml.jackson.annotation.JsonProperty("weekOfMonth")
         private WeekOfMonth weekOfMonth;
 
         /**
          * This holds the week of the month in which the schedule should be triggered.
+         *
          * @param weekOfMonth the value to set
          * @return this builder
-         **/
+         */
         public Builder weekOfMonth(WeekOfMonth weekOfMonth) {
             this.weekOfMonth = weekOfMonth;
             this.__explicitlySet__.add("weekOfMonth");
             return this;
         }
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-         **/
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
         /**
-         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+         * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can
+         * be scheduled for every month, once in two months, once in tree months etc.
+         *
          * @param interval the value to set
          * @return this builder
-         **/
+         */
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -76,17 +77,16 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             this.__explicitlySet__.add("time");
             return this;
         }
-        /**
-         * This holds the day of the week on which the schedule should be triggered.
-         **/
+        /** This holds the day of the week on which the schedule should be triggered. */
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
         /**
          * This holds the day of the week on which the schedule should be triggered.
+         *
          * @param dayOfWeek the value to set
          * @return this builder
-         **/
+         */
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
@@ -131,9 +131,7 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,10 +154,8 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         this.dayOfWeek = dayOfWeek;
     }
 
-    /**
-     * This holds the week of the month in which the schedule should be triggered.
-     **/
-    public enum WeekOfMonth {
+    /** This holds the week of the month in which the schedule should be triggered. */
+    public enum WeekOfMonth implements com.oracle.bmc.http.internal.BmcEnum {
         First("FIRST"),
         Second("SECOND"),
         Third("THIRD"),
@@ -168,8 +164,8 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         Last("LAST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -208,30 +204,32 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             return UnknownEnumValue;
         }
     };
-    /**
-     * This holds the week of the month in which the schedule should be triggered.
-     **/
+    /** This holds the week of the month in which the schedule should be triggered. */
     @com.fasterxml.jackson.annotation.JsonProperty("weekOfMonth")
     private final WeekOfMonth weekOfMonth;
 
     /**
      * This holds the week of the month in which the schedule should be triggered.
+     *
      * @return the value
-     **/
+     */
     public WeekOfMonth getWeekOfMonth() {
         return weekOfMonth;
     }
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
-     **/
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
     /**
-     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be scheduled for every month, once in two months, once in tree months etc.
+     * This hold the repeatability aspect of a schedule. i.e. in a monhtly frequency, a task can be
+     * scheduled for every month, once in two months, once in tree months etc.
+     *
      * @return the value
-     **/
+     */
     public Integer getInterval() {
         return interval;
     }
@@ -243,10 +241,8 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         return time;
     }
 
-    /**
-     * This holds the day of the week on which the schedule should be triggered.
-     **/
-    public enum DayOfWeek {
+    /** This holds the day of the week on which the schedule should be triggered. */
+    public enum DayOfWeek implements com.oracle.bmc.http.internal.BmcEnum {
         Sunday("SUNDAY"),
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
@@ -256,8 +252,8 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
         Saturday("SATURDAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -296,16 +292,15 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
             return UnknownEnumValue;
         }
     };
-    /**
-     * This holds the day of the week on which the schedule should be triggered.
-     **/
+    /** This holds the day of the week on which the schedule should be triggered. */
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
     /**
      * This holds the day of the week on which the schedule should be triggered.
+     *
      * @return the value
-     **/
+     */
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
@@ -317,6 +312,7 @@ public final class MonthlyRuleFrequencyDetails extends AbstractFrequencyDetails 
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

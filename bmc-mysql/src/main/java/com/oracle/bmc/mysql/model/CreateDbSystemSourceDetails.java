@@ -5,44 +5,39 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Parameters detailing how to provision the initial data of the system.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Parameters detailing how to provision the initial data of the system. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "sourceType",
-    defaultImpl = CreateDbSystemSourceDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "sourceType",
+        defaultImpl = CreateDbSystemSourceDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbSystemSourceFromBackupDetails.class,
-        name = "BACKUP"
-    ),
+            value = CreateDbSystemSourceFromBackupDetails.class,
+            name = "BACKUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbSystemSourceFromNoneDetails.class,
-        name = "NONE"
-    ),
+            value = CreateDbSystemSourceFromNoneDetails.class,
+            name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbSystemSourceImportFromUrlDetails.class,
-        name = "IMPORTURL"
-    ),
+            value = CreateDbSystemSourceImportFromUrlDetails.class,
+            name = "IMPORTURL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbSystemSourceFromPitrDetails.class,
-        name = "PITR"
-    )
+            value = CreateDbSystemSourceFromPitrDetails.class,
+            name = "PITR")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class CreateDbSystemSourceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected CreateDbSystemSourceDetails() {
@@ -56,6 +51,7 @@ public class CreateDbSystemSourceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -88,11 +84,8 @@ public class CreateDbSystemSourceDetails
         return result;
     }
 
-    /**
-     * The specific source identifier.
-     *
-     **/
-    public enum SourceType {
+    /** The specific source identifier. */
+    public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         Backup("BACKUP"),
         Pitr("PITR"),

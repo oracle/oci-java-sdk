@@ -5,25 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * MACS-managed OCI Compute host insight resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * MACS-managed OCI Compute host insight resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MacsManagedCloudHostInsight.Builder.class
-)
+        builder = MacsManagedCloudHostInsight.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "entitySource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "entitySource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MacsManagedCloudHostInsight extends HostInsight {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -154,88 +153,89 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Compute Instance
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("computeId")
         private String computeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Compute Instance
+         *
          * @param computeId the value to set
          * @return this builder
-         **/
+         */
         public Builder computeId(String computeId) {
             this.computeId = computeId;
             this.__explicitlySet__.add("computeId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Management Agent
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the Management Agent
+         *
          * @param managementAgentId the value to set
          * @return this builder
-         **/
+         */
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-        /**
-         * Platform name.
-         **/
+        /** Platform name. */
         @com.fasterxml.jackson.annotation.JsonProperty("platformName")
         private String platformName;
 
         /**
          * Platform name.
+         *
          * @param platformName the value to set
          * @return this builder
-         **/
+         */
         public Builder platformName(String platformName) {
             this.platformName = platformName;
             this.__explicitlySet__.add("platformName");
             return this;
         }
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-         *
-         **/
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformType platformType;
 
         /**
-         * Platform type.
-         * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-         * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+         * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+         * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+         * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
          *
          * @param platformType the value to set
          * @return this builder
-         **/
+         */
         public Builder platformType(PlatformType platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-        /**
-         * Platform version.
-         **/
+        /** Platform version. */
         @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
         private String platformVersion;
 
         /**
          * Platform version.
+         *
          * @param platformVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder platformVersion(String platformVersion) {
             this.platformVersion = platformVersion;
             this.__explicitlySet__.add("platformVersion");
@@ -336,9 +336,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -391,63 +389,66 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Compute Instance
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("computeId")
     private final String computeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Compute Instance
+     *
      * @return the value
-     **/
+     */
     public String getComputeId() {
         return computeId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Management Agent
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the Management Agent
+     *
      * @return the value
-     **/
+     */
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
-    /**
-     * Platform name.
-     **/
+    /** Platform name. */
     @com.fasterxml.jackson.annotation.JsonProperty("platformName")
     private final String platformName;
 
     /**
      * Platform name.
+     *
      * @return the value
-     **/
+     */
     public String getPlatformName() {
         return platformName;
     }
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
-    public enum PlatformType {
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
+    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
         Zlinux("ZLINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -487,37 +488,33 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
         }
     };
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
-     *
-     **/
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type.
-     * Supported platformType(s) for MACS-managed external host insight: [LINUX].
-     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported
+     * platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
      *
      * @return the value
-     **/
+     */
     public PlatformType getPlatformType() {
         return platformType;
     }
 
-    /**
-     * Platform version.
-     **/
+    /** Platform version. */
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
     /**
      * Platform version.
+     *
      * @return the value
-     **/
+     */
     public String getPlatformVersion() {
         return platformVersion;
     }
@@ -529,6 +526,7 @@ public final class MacsManagedCloudHostInsight extends HostInsight {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -10,15 +10,14 @@ import com.oracle.bmc.cloudguard.model.*;
 public class ListResourceProfileImpactedResourcesResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -27,17 +26,16 @@ public class ListResourceProfileImpactedResourcesResponse
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -45,14 +43,13 @@ public class ListResourceProfileImpactedResourcesResponse
         return opcNextPage;
     }
 
-    /**
-     * The returned ResourceProfileImpactedResourceCollection instance.
-     */
+    /** The returned ResourceProfileImpactedResourceCollection instance. */
     private com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
             resourceProfileImpactedResourceCollection;
 
     /**
      * The returned ResourceProfileImpactedResourceCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
@@ -69,7 +66,7 @@ public class ListResourceProfileImpactedResourcesResponse
     })
     private ListResourceProfileImpactedResourcesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
@@ -80,31 +77,34 @@ public class ListResourceProfileImpactedResourcesResponse
         this.resourceProfileImpactedResourceCollection = resourceProfileImpactedResourceCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListResourceProfileImpactedResourcesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -115,17 +115,16 @@ public class ListResourceProfileImpactedResourcesResponse
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -135,14 +134,13 @@ public class ListResourceProfileImpactedResourcesResponse
             return this;
         }
 
-        /**
-         * The returned ResourceProfileImpactedResourceCollection instance.
-         */
+        /** The returned ResourceProfileImpactedResourceCollection instance. */
         private com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceCollection
                 resourceProfileImpactedResourceCollection;
 
         /**
          * The returned ResourceProfileImpactedResourceCollection instance.
+         *
          * @param resourceProfileImpactedResourceCollection the value to set
          * @return this builder
          */
@@ -156,8 +154,10 @@ public class ListResourceProfileImpactedResourcesResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListResourceProfileImpactedResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -171,8 +171,10 @@ public class ListResourceProfileImpactedResourcesResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListResourceProfileImpactedResourcesResponse build() {
             return new ListResourceProfileImpactedResourcesResponse(
                     __httpStatusCode__,
@@ -185,6 +187,7 @@ public class ListResourceProfileImpactedResourcesResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

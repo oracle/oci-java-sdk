@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The stage information for submitting for approval.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The stage information for submitting for approval. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ApproveDeploymentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ApproveDeploymentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ApproveDeploymentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"deployStageId", "reason", "action"})
     public ApproveDeploymentDetails(String deployStageId, String reason, Action action) {
@@ -33,48 +33,49 @@ public final class ApproveDeploymentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * stage which is marked for approval.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * stage which is marked for approval.
+         *
          * @param deployStageId the value to set
          * @return this builder
-         **/
+         */
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
             return this;
         }
-        /**
-         * The reason for approving or rejecting the deployment.
-         **/
+        /** The reason for approving or rejecting the deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * The reason for approving or rejecting the deployment.
+         *
          * @param reason the value to set
          * @return this builder
-         **/
+         */
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-        /**
-         * The action of Approve or Reject.
-         **/
+        /** The action of Approve or Reject. */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * The action of Approve or Reject.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
@@ -108,9 +109,7 @@ public final class ApproveDeploymentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,37 +119,37 @@ public final class ApproveDeploymentDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * stage which is marked for approval.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the stage which is marked for approval.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * stage which is marked for approval.
+     *
      * @return the value
-     **/
+     */
     public String getDeployStageId() {
         return deployStageId;
     }
 
-    /**
-     * The reason for approving or rejecting the deployment.
-     **/
+    /** The reason for approving or rejecting the deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * The reason for approving or rejecting the deployment.
+     *
      * @return the value
-     **/
+     */
     public String getReason() {
         return reason;
     }
 
-    /**
-     * The action of Approve or Reject.
-     **/
-    public enum Action {
+    /** The action of Approve or Reject. */
+    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
         Approve("APPROVE"),
         Reject("REJECT"),
         ;
@@ -182,16 +181,15 @@ public final class ApproveDeploymentDetails
             throw new IllegalArgumentException("Invalid Action: " + key);
         }
     };
-    /**
-     * The action of Approve or Reject.
-     **/
+    /** The action of Approve or Reject. */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * The action of Approve or Reject.
+     *
      * @return the value
-     **/
+     */
     public Action getAction() {
         return action;
     }
@@ -203,6 +201,7 @@ public final class ApproveDeploymentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

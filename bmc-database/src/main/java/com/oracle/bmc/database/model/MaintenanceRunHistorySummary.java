@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of a maintenance run history.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of a maintenance run history. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MaintenanceRunHistorySummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MaintenanceRunHistorySummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceRunHistorySummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "maintenanceRunDetails", "dbServersHistoryDetails"})
     public MaintenanceRunHistorySummary(
@@ -35,17 +35,16 @@ public final class MaintenanceRunHistorySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the maintenance run history.
-         **/
+        /** The OCID of the maintenance run history. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the maintenance run history.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -60,17 +59,16 @@ public final class MaintenanceRunHistorySummary
             this.__explicitlySet__.add("maintenanceRunDetails");
             return this;
         }
-        /**
-         * List of database server history details.
-         **/
+        /** List of database server history details. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbServersHistoryDetails")
         private java.util.List<DbServerHistorySummary> dbServersHistoryDetails;
 
         /**
          * List of database server history details.
+         *
          * @param dbServersHistoryDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder dbServersHistoryDetails(
                 java.util.List<DbServerHistorySummary> dbServersHistoryDetails) {
             this.dbServersHistoryDetails = dbServersHistoryDetails;
@@ -106,9 +104,7 @@ public final class MaintenanceRunHistorySummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,16 +113,15 @@ public final class MaintenanceRunHistorySummary
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the maintenance run history.
-     **/
+    /** The OCID of the maintenance run history. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the maintenance run history.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
@@ -138,16 +133,15 @@ public final class MaintenanceRunHistorySummary
         return maintenanceRunDetails;
     }
 
-    /**
-     * List of database server history details.
-     **/
+    /** List of database server history details. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbServersHistoryDetails")
     private final java.util.List<DbServerHistorySummary> dbServersHistoryDetails;
 
     /**
      * List of database server history details.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<DbServerHistorySummary> getDbServersHistoryDetails() {
         return dbServersHistoryDetails;
     }
@@ -159,6 +153,7 @@ public final class MaintenanceRunHistorySummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

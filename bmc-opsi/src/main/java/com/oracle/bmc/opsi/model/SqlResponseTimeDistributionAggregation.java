@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL Response time distribution entry.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SQL Response time distribution entry. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlResponseTimeDistributionAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SqlResponseTimeDistributionAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SqlResponseTimeDistributionAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bucketId", "executionsCount"})
     public SqlResponseTimeDistributionAggregation(String bucketId, Long executionsCount) {
@@ -31,33 +31,31 @@ public final class SqlResponseTimeDistributionAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Response time bucket id
-         **/
+        /** Response time bucket id */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
         private String bucketId;
 
         /**
          * Response time bucket id
+         *
          * @param bucketId the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketId(String bucketId) {
             this.bucketId = bucketId;
             this.__explicitlySet__.add("bucketId");
             return this;
         }
-        /**
-         * Total number of SQL executions
-         **/
+        /** Total number of SQL executions */
         @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
         private Long executionsCount;
 
         /**
          * Total number of SQL executions
+         *
          * @param executionsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder executionsCount(Long executionsCount) {
             this.executionsCount = executionsCount;
             this.__explicitlySet__.add("executionsCount");
@@ -88,9 +86,7 @@ public final class SqlResponseTimeDistributionAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class SqlResponseTimeDistributionAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * Response time bucket id
-     **/
+    /** Response time bucket id */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketId")
     private final String bucketId;
 
     /**
      * Response time bucket id
+     *
      * @return the value
-     **/
+     */
     public String getBucketId() {
         return bucketId;
     }
 
-    /**
-     * Total number of SQL executions
-     **/
+    /** Total number of SQL executions */
     @com.fasterxml.jackson.annotation.JsonProperty("executionsCount")
     private final Long executionsCount;
 
     /**
      * Total number of SQL executions
+     *
      * @return the value
-     **/
+     */
     public Long getExecutionsCount() {
         return executionsCount;
     }
@@ -134,6 +128,7 @@ public final class SqlResponseTimeDistributionAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

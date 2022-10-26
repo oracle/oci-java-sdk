@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.adm.model;
 
-/**
- * Possible operation types.
- **/
+/** Possible operation types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateKnowledgeBase("CREATE_KNOWLEDGE_BASE"),
     DeleteKnowledgeBase("DELETE_KNOWLEDGE_BASE"),
     MoveKnowledgeBase("MOVE_KNOWLEDGE_BASE"),

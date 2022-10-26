@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * OPSI warehouse resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * OPSI warehouse resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OperationsInsightsWarehouse.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = OperationsInsightsWarehouse.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OperationsInsightsWarehouse
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,58 +81,56 @@ public final class OperationsInsightsWarehouse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OPSI Warehouse OCID
-         **/
+        /** OPSI Warehouse OCID */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OPSI Warehouse OCID
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
-         **/
+        /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Number of OCPUs allocated to OPSI Warehouse ADW.
-         *
-         **/
+        /** Number of OCPUs allocated to OPSI Warehouse ADW. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
         private Double cpuAllocated;
 
@@ -141,16 +139,13 @@ public final class OperationsInsightsWarehouse
          *
          * @param cpuAllocated the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuAllocated(Double cpuAllocated) {
             this.cpuAllocated = cpuAllocated;
             this.__explicitlySet__.add("cpuAllocated");
             return this;
         }
-        /**
-         * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-         *
-         **/
+        /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
         private Double cpuUsed;
 
@@ -159,16 +154,13 @@ public final class OperationsInsightsWarehouse
          *
          * @param cpuUsed the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuUsed(Double cpuUsed) {
             this.cpuUsed = cpuUsed;
             this.__explicitlySet__.add("cpuUsed");
             return this;
         }
-        /**
-         * Storage allocated to OPSI Warehouse ADW.
-         *
-         **/
+        /** Storage allocated to OPSI Warehouse ADW. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageAllocatedInGBs")
         private Double storageAllocatedInGBs;
 
@@ -177,16 +169,13 @@ public final class OperationsInsightsWarehouse
          *
          * @param storageAllocatedInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder storageAllocatedInGBs(Double storageAllocatedInGBs) {
             this.storageAllocatedInGBs = storageAllocatedInGBs;
             this.__explicitlySet__.add("storageAllocatedInGBs");
             return this;
         }
-        /**
-         * Storage by OPSI Warehouse ADW in GB.
-         *
-         **/
+        /** Storage by OPSI Warehouse ADW in GB. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
         private Double storageUsedInGBs;
 
@@ -195,75 +184,75 @@ public final class OperationsInsightsWarehouse
          *
          * @param storageUsedInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder storageUsedInGBs(Double storageUsedInGBs) {
             this.storageUsedInGBs = storageUsedInGBs;
             this.__explicitlySet__.add("storageUsedInGBs");
             return this;
         }
-        /**
-         * OCID of the dynamic group created for the warehouse
-         **/
+        /** OCID of the dynamic group created for the warehouse */
         @com.fasterxml.jackson.annotation.JsonProperty("dynamicGroupId")
         private String dynamicGroupId;
 
         /**
          * OCID of the dynamic group created for the warehouse
+         *
          * @param dynamicGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder dynamicGroupId(String dynamicGroupId) {
             this.dynamicGroupId = dynamicGroupId;
             this.__explicitlySet__.add("dynamicGroupId");
             return this;
         }
-        /**
-         * Tenancy Identifier of Operations Insights service
-         **/
+        /** Tenancy Identifier of Operations Insights service */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
         private String operationsInsightsTenancyId;
 
         /**
          * Tenancy Identifier of Operations Insights service
+         *
          * @param operationsInsightsTenancyId the value to set
          * @return this builder
-         **/
+         */
         public Builder operationsInsightsTenancyId(String operationsInsightsTenancyId) {
             this.operationsInsightsTenancyId = operationsInsightsTenancyId;
             this.__explicitlySet__.add("operationsInsightsTenancyId");
             return this;
         }
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-         **/
+         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse.
+         * An RFC3339 formatted datetime string
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
         private java.util.Date timeLastWalletRotated;
 
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse.
+         * An RFC3339 formatted datetime string
+         *
          * @param timeLastWalletRotated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastWalletRotated(java.util.Date timeLastWalletRotated) {
             this.timeLastWalletRotated = timeLastWalletRotated;
             this.__explicitlySet__.add("timeLastWalletRotated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -272,8 +261,7 @@ public final class OperationsInsightsWarehouse
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -283,7 +271,7 @@ public final class OperationsInsightsWarehouse
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -291,20 +279,19 @@ public final class OperationsInsightsWarehouse
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -312,63 +299,65 @@ public final class OperationsInsightsWarehouse
         }
         /**
          * The time at which the resource was first created. An RFC3339 formatted datetime string
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time at which the resource was first created. An RFC3339 formatted datetime string
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time at which the resource was last updated. An RFC3339 formatted datetime string
-         **/
+        /** The time at which the resource was last updated. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time at which the resource was last updated. An RFC3339 formatted datetime string
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * Possible lifecycle states
-         **/
+        /** Possible lifecycle states */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperationsInsightsWarehouseLifecycleState lifecycleState;
 
         /**
          * Possible lifecycle states
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(OperationsInsightsWarehouseLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -461,9 +450,7 @@ public final class OperationsInsightsWarehouse
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -472,52 +459,50 @@ public final class OperationsInsightsWarehouse
         return new Builder().copy(this);
     }
 
-    /**
-     * OPSI Warehouse OCID
-     **/
+    /** OPSI Warehouse OCID */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OPSI Warehouse OCID
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
-     **/
+    /** User-friedly name of Operations Insights Warehouse that does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Number of OCPUs allocated to OPSI Warehouse ADW.
-     *
-     **/
+    /** Number of OCPUs allocated to OPSI Warehouse ADW. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuAllocated")
     private final Double cpuAllocated;
 
@@ -525,15 +510,12 @@ public final class OperationsInsightsWarehouse
      * Number of OCPUs allocated to OPSI Warehouse ADW.
      *
      * @return the value
-     **/
+     */
     public Double getCpuAllocated() {
         return cpuAllocated;
     }
 
-    /**
-     * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-     *
-     **/
+    /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
     private final Double cpuUsed;
 
@@ -541,15 +523,12 @@ public final class OperationsInsightsWarehouse
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      *
      * @return the value
-     **/
+     */
     public Double getCpuUsed() {
         return cpuUsed;
     }
 
-    /**
-     * Storage allocated to OPSI Warehouse ADW.
-     *
-     **/
+    /** Storage allocated to OPSI Warehouse ADW. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageAllocatedInGBs")
     private final Double storageAllocatedInGBs;
 
@@ -557,15 +536,12 @@ public final class OperationsInsightsWarehouse
      * Storage allocated to OPSI Warehouse ADW.
      *
      * @return the value
-     **/
+     */
     public Double getStorageAllocatedInGBs() {
         return storageAllocatedInGBs;
     }
 
-    /**
-     * Storage by OPSI Warehouse ADW in GB.
-     *
-     **/
+    /** Storage by OPSI Warehouse ADW in GB. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
     private final Double storageUsedInGBs;
 
@@ -573,159 +549,157 @@ public final class OperationsInsightsWarehouse
      * Storage by OPSI Warehouse ADW in GB.
      *
      * @return the value
-     **/
+     */
     public Double getStorageUsedInGBs() {
         return storageUsedInGBs;
     }
 
-    /**
-     * OCID of the dynamic group created for the warehouse
-     **/
+    /** OCID of the dynamic group created for the warehouse */
     @com.fasterxml.jackson.annotation.JsonProperty("dynamicGroupId")
     private final String dynamicGroupId;
 
     /**
      * OCID of the dynamic group created for the warehouse
+     *
      * @return the value
-     **/
+     */
     public String getDynamicGroupId() {
         return dynamicGroupId;
     }
 
-    /**
-     * Tenancy Identifier of Operations Insights service
-     **/
+    /** Tenancy Identifier of Operations Insights service */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
     private final String operationsInsightsTenancyId;
 
     /**
      * Tenancy Identifier of Operations Insights service
+     *
      * @return the value
-     **/
+     */
     public String getOperationsInsightsTenancyId() {
         return operationsInsightsTenancyId;
     }
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
-     **/
+     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An
+     * RFC3339 formatted datetime string
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
     private final java.util.Date timeLastWalletRotated;
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An
+     * RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastWalletRotated() {
         return timeLastWalletRotated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /**
-     * The time at which the resource was first created. An RFC3339 formatted datetime string
-     **/
+    /** The time at which the resource was first created. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time at which the resource was last updated. An RFC3339 formatted datetime string
-     **/
+    /** The time at which the resource was last updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * Possible lifecycle states
-     **/
+    /** Possible lifecycle states */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperationsInsightsWarehouseLifecycleState lifecycleState;
 
     /**
      * Possible lifecycle states
+     *
      * @return the value
-     **/
+     */
     public OperationsInsightsWarehouseLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -737,6 +711,7 @@ public final class OperationsInsightsWarehouse
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

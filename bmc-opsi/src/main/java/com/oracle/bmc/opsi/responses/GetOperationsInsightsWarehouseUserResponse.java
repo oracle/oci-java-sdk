@@ -9,10 +9,7 @@ import com.oracle.bmc.opsi.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetOperationsInsightsWarehouseUserResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -25,15 +22,14 @@ public class GetOperationsInsightsWarehouseUserResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,14 +37,13 @@ public class GetOperationsInsightsWarehouseUserResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned OperationsInsightsWarehouseUser instance.
-     */
+    /** The returned OperationsInsightsWarehouseUser instance. */
     private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
             operationsInsightsWarehouseUser;
 
     /**
      * The returned OperationsInsightsWarehouseUser instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
@@ -65,7 +60,7 @@ public class GetOperationsInsightsWarehouseUserResponse
     })
     private GetOperationsInsightsWarehouseUserResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
@@ -76,25 +71,26 @@ public class GetOperationsInsightsWarehouseUserResponse
         this.operationsInsightsWarehouseUser = operationsInsightsWarehouseUser;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetOperationsInsightsWarehouseUserResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -109,15 +105,14 @@ public class GetOperationsInsightsWarehouseUserResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,14 +122,13 @@ public class GetOperationsInsightsWarehouseUserResponse
             return this;
         }
 
-        /**
-         * The returned OperationsInsightsWarehouseUser instance.
-         */
+        /** The returned OperationsInsightsWarehouseUser instance. */
         private com.oracle.bmc.opsi.model.OperationsInsightsWarehouseUser
                 operationsInsightsWarehouseUser;
 
         /**
          * The returned OperationsInsightsWarehouseUser instance.
+         *
          * @param operationsInsightsWarehouseUser the value to set
          * @return this builder
          */
@@ -147,8 +141,10 @@ public class GetOperationsInsightsWarehouseUserResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetOperationsInsightsWarehouseUserResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -161,8 +157,10 @@ public class GetOperationsInsightsWarehouseUserResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetOperationsInsightsWarehouseUserResponse build() {
             return new GetOperationsInsightsWarehouseUserResponse(
                     __httpStatusCode__,
@@ -175,6 +173,7 @@ public class GetOperationsInsightsWarehouseUserResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,20 +5,21 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Thread snapshot.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Thread snapshot. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ThreadSnapshot.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ThreadSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ThreadSnapshot
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeStamp", "threadSnapshotDetails", "stackTrace"})
     public ThreadSnapshot(
@@ -33,10 +34,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Snapshot time.
-         *
-         **/
+        /** Snapshot time. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
         private java.util.Date timeStamp;
 
@@ -45,16 +43,13 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param timeStamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStamp(java.util.Date timeStamp) {
             this.timeStamp = timeStamp;
             this.__explicitlySet__.add("timeStamp");
             return this;
         }
-        /**
-         * Snapshot details.
-         *
-         **/
+        /** Snapshot details. */
         @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshotDetails")
         private java.util.List<SnapshotDetail> threadSnapshotDetails;
 
@@ -63,16 +58,13 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param threadSnapshotDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder threadSnapshotDetails(java.util.List<SnapshotDetail> threadSnapshotDetails) {
             this.threadSnapshotDetails = threadSnapshotDetails;
             this.__explicitlySet__.add("threadSnapshotDetails");
             return this;
         }
-        /**
-         * Stack trace.
-         *
-         **/
+        /** Stack trace. */
         @com.fasterxml.jackson.annotation.JsonProperty("stackTrace")
         private java.util.List<StackTraceElement> stackTrace;
 
@@ -81,7 +73,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param stackTrace the value to set
          * @return this builder
-         **/
+         */
         public Builder stackTrace(java.util.List<StackTraceElement> stackTrace) {
             this.stackTrace = stackTrace;
             this.__explicitlySet__.add("stackTrace");
@@ -115,9 +107,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,10 +116,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Snapshot time.
-     *
-     **/
+    /** Snapshot time. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStamp")
     private final java.util.Date timeStamp;
 
@@ -137,15 +124,12 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
      * Snapshot time.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStamp() {
         return timeStamp;
     }
 
-    /**
-     * Snapshot details.
-     *
-     **/
+    /** Snapshot details. */
     @com.fasterxml.jackson.annotation.JsonProperty("threadSnapshotDetails")
     private final java.util.List<SnapshotDetail> threadSnapshotDetails;
 
@@ -153,15 +137,12 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
      * Snapshot details.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SnapshotDetail> getThreadSnapshotDetails() {
         return threadSnapshotDetails;
     }
 
-    /**
-     * Stack trace.
-     *
-     **/
+    /** Stack trace. */
     @com.fasterxml.jackson.annotation.JsonProperty("stackTrace")
     private final java.util.List<StackTraceElement> stackTrace;
 
@@ -169,7 +150,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
      * Stack trace.
      *
      * @return the value
-     **/
+     */
     public java.util.List<StackTraceElement> getStackTrace() {
         return stackTrace;
     }
@@ -181,6 +162,7 @@ public final class ThreadSnapshot extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

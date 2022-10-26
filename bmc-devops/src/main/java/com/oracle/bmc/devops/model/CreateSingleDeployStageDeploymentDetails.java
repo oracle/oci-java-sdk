@@ -5,25 +5,24 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details of a new deployment to be created that will run a single stage of the pipeline.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of a new deployment to be created that will run a single stage of the pipeline. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateSingleDeployStageDeploymentDetails.Builder.class
-)
+        builder = CreateSingleDeployStageDeploymentDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deploymentType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deploymentType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploymentDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -63,17 +62,16 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * Specifies the OCID of the stage to be redeployed.
-         **/
+        /** Specifies the OCID of the stage to be redeployed. */
         @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
         private String deployStageId;
 
         /**
          * Specifies the OCID of the stage to be redeployed.
+         *
          * @param deployStageId the value to set
          * @return this builder
-         **/
+         */
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = deployStageId;
             this.__explicitlySet__.add("deployStageId");
@@ -145,9 +143,7 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,16 +167,15 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
         this.deployArtifactOverrideArguments = deployArtifactOverrideArguments;
     }
 
-    /**
-     * Specifies the OCID of the stage to be redeployed.
-     **/
+    /** Specifies the OCID of the stage to be redeployed. */
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
     /**
      * Specifies the OCID of the stage to be redeployed.
+     *
      * @return the value
-     **/
+     */
     public String getDeployStageId() {
         return deployStageId;
     }
@@ -206,6 +201,7 @@ public final class CreateSingleDeployStageDeploymentDetails extends CreateDeploy
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

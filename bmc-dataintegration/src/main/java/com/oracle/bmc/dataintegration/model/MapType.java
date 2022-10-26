@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Map type object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Map type object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MapType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MapType extends BaseType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -78,33 +78,31 @@ public final class MapType extends BaseType {
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Seeded type
-         **/
+        /** Seeded type */
         @com.fasterxml.jackson.annotation.JsonProperty("keyElementType")
         private String keyElementType;
 
         /**
          * Seeded type
+         *
          * @param keyElementType the value to set
          * @return this builder
-         **/
+         */
         public Builder keyElementType(String keyElementType) {
             this.keyElementType = keyElementType;
             this.__explicitlySet__.add("keyElementType");
             return this;
         }
-        /**
-         * Seeded type
-         **/
+        /** Seeded type */
         @com.fasterxml.jackson.annotation.JsonProperty("valueElementType")
         private String valueElementType;
 
         /**
          * Seeded type
+         *
          * @param valueElementType the value to set
          * @return this builder
-         **/
+         */
         public Builder valueElementType(String valueElementType) {
             this.valueElementType = valueElementType;
             this.__explicitlySet__.add("valueElementType");
@@ -174,9 +172,7 @@ public final class MapType extends BaseType {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -202,30 +198,28 @@ public final class MapType extends BaseType {
         this.containsNull = containsNull;
     }
 
-    /**
-     * Seeded type
-     **/
+    /** Seeded type */
     @com.fasterxml.jackson.annotation.JsonProperty("keyElementType")
     private final String keyElementType;
 
     /**
      * Seeded type
+     *
      * @return the value
-     **/
+     */
     public String getKeyElementType() {
         return keyElementType;
     }
 
-    /**
-     * Seeded type
-     **/
+    /** Seeded type */
     @com.fasterxml.jackson.annotation.JsonProperty("valueElementType")
     private final String valueElementType;
 
     /**
      * Seeded type
+     *
      * @return the value
-     **/
+     */
     public String getValueElementType() {
         return valueElementType;
     }
@@ -244,6 +238,7 @@ public final class MapType extends BaseType {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

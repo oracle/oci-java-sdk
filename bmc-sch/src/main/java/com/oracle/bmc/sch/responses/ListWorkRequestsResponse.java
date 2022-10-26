@@ -9,15 +9,14 @@ import com.oracle.bmc.sch.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,19 +25,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For list pagination. When this header appears in the response,
-     * additional pages of results remain. For important details about
-     * how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response,
-     * additional pages of results remain. For important details about
-     * how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results
+     * remain. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -47,19 +43,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * For list pagination.  When this header appears in the response,
-     * previous pages of results exist. For important details about
-     * how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For list pagination. When this header appears in the response, previous pages of results
+     * exist. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcPrevPage;
 
     /**
-     * For list pagination.  When this header appears in the response,
-     * previous pages of results exist. For important details about
-     * how pagination works, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages of results
+     * exist. For important details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -67,13 +60,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcPrevPage;
     }
 
-    /**
-     * The returned WorkRequestCollection instance.
-     */
+    /** The returned WorkRequestCollection instance. */
     private com.oracle.bmc.sch.model.WorkRequestCollection workRequestCollection;
 
     /**
      * The returned WorkRequestCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.sch.model.WorkRequestCollection getWorkRequestCollection() {
@@ -90,7 +82,7 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListWorkRequestsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -102,31 +94,33 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         this.workRequestCollection = workRequestCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -137,19 +131,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For list pagination. When this header appears in the response,
-         * additional pages of results remain. For important details about
-         * how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response,
-         * additional pages of results remain. For important details about
-         * how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of
+         * results remain. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -160,19 +151,16 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For list pagination.  When this header appears in the response,
-         * previous pages of results exist. For important details about
-         * how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. When this header appears in the response, previous pages of results
+         * exist. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcPrevPage;
 
         /**
-         * For list pagination.  When this header appears in the response,
-         * previous pages of results exist. For important details about
-         * how pagination works, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages of results
+         * exist. For important details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -182,13 +170,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned WorkRequestCollection instance.
-         */
+        /** The returned WorkRequestCollection instance. */
         private com.oracle.bmc.sch.model.WorkRequestCollection workRequestCollection;
 
         /**
          * The returned WorkRequestCollection instance.
+         *
          * @param workRequestCollection the value to set
          * @return this builder
          */
@@ -200,8 +187,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListWorkRequestsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -215,8 +204,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListWorkRequestsResponse build() {
             return new ListWorkRequestsResponse(
                     __httpStatusCode__,
@@ -230,6 +221,7 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

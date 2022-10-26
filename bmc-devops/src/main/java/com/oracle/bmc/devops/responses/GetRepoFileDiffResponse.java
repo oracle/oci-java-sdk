@@ -8,13 +8,12 @@ import com.oracle.bmc.devops.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,25 +21,27 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned FileDiffResponse instance.
-     */
+    /** The returned FileDiffResponse instance. */
     private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
 
     /**
      * The returned FileDiffResponse instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.devops.model.FileDiffResponse getFileDiffResponse() {
@@ -56,7 +57,7 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private GetRepoFileDiffResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse) {
@@ -66,28 +67,30 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
         this.fileDiffResponse = fileDiffResponse;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetRepoFileDiffResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -97,12 +100,15 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -111,13 +117,12 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /**
-         * The returned FileDiffResponse instance.
-         */
+        /** The returned FileDiffResponse instance. */
         private com.oracle.bmc.devops.model.FileDiffResponse fileDiffResponse;
 
         /**
          * The returned FileDiffResponse instance.
+         *
          * @param fileDiffResponse the value to set
          * @return this builder
          */
@@ -129,8 +134,10 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetRepoFileDiffResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -143,8 +150,10 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetRepoFileDiffResponse build() {
             return new GetRepoFileDiffResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, fileDiffResponse);
@@ -153,6 +162,7 @@ public class GetRepoFileDiffResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

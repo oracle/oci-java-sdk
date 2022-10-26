@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.budget.model;
 
-/**
- * The reset period for the budget. The valid value is MONTHLY.
- *
- **/
+/** The reset period for the budget. The valid value is MONTHLY. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum ResetPeriod {
+public enum ResetPeriod implements com.oracle.bmc.http.internal.BmcEnum {
     Monthly("MONTHLY"),
 
     /**

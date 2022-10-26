@@ -6,64 +6,53 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RestoreObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreObjectsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RestoreObjectsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use RestoreObjectsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RestoreObjectsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.RestoreObjectsDetails> {
 
-    /**
-     * The Object Storage namespace used for the request.
-     */
+    /** The Object Storage namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Object Storage namespace used for the request.
-     */
+    /** The Object Storage namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information.
-     * Example: {@code my-new-bucket1}
-     *
+     * The name of the bucket. Avoid entering confidential information. Example: {@code
+     * my-new-bucket1}
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information.
-     * Example: {@code my-new-bucket1}
-     *
+     * The name of the bucket. Avoid entering confidential information. Example: {@code
+     * my-new-bucket1}
      */
     public String getBucketName() {
         return bucketName;
     }
-    /**
-     * Request to restore objects.
-     */
+    /** Request to restore objects. */
     private com.oracle.bmc.objectstorage.model.RestoreObjectsDetails restoreObjectsDetails;
 
-    /**
-     * Request to restore objects.
-     */
+    /** Request to restore objects. */
     public com.oracle.bmc.objectstorage.model.RestoreObjectsDetails getRestoreObjectsDetails() {
         return restoreObjectsDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcClientRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -76,17 +65,15 @@ public class RestoreObjectsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RestoreObjectsRequest,
                     com.oracle.bmc.objectstorage.model.RestoreObjectsDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Object Storage namespace used for the request.
-         */
+        /** The Object Storage namespace used for the request. */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
+         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -96,15 +83,14 @@ public class RestoreObjectsRequest
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information.
-         * Example: {@code my-new-bucket1}
-         *
+         * The name of the bucket. Avoid entering confidential information. Example: {@code
+         * my-new-bucket1}
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information.
-         * Example: {@code my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information. Example: {@code
+         * my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -114,14 +100,13 @@ public class RestoreObjectsRequest
             return this;
         }
 
-        /**
-         * Request to restore objects.
-         */
+        /** Request to restore objects. */
         private com.oracle.bmc.objectstorage.model.RestoreObjectsDetails restoreObjectsDetails =
                 null;
 
         /**
          * Request to restore objects.
+         *
          * @param restoreObjectsDetails the value to set
          * @return this builder instance
          */
@@ -131,13 +116,12 @@ public class RestoreObjectsRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -148,18 +132,19 @@ public class RestoreObjectsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -171,6 +156,7 @@ public class RestoreObjectsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(RestoreObjectsRequest o) {
@@ -186,10 +172,11 @@ public class RestoreObjectsRequest
         /**
          * Build the instance of RestoreObjectsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of RestoreObjectsRequest
          */
@@ -202,6 +189,7 @@ public class RestoreObjectsRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,7 +202,8 @@ public class RestoreObjectsRequest
         /**
          * Build the instance of RestoreObjectsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RestoreObjectsRequest
@@ -226,12 +215,14 @@ public class RestoreObjectsRequest
             request.restoreObjectsDetails = restoreObjectsDetails;
             request.opcClientRequestId = opcClientRequestId;
             return request;
-            // new RestoreObjectsRequest(namespaceName, bucketName, restoreObjectsDetails, opcClientRequestId);
+            // new RestoreObjectsRequest(namespaceName, bucketName, restoreObjectsDetails,
+            // opcClientRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,6 +235,7 @@ public class RestoreObjectsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

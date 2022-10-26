@@ -5,17 +5,14 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The type of Oracle Database installation:
- * - EXTERNAL_SIDB: Single instance external database.
- * - EXTERNAL_RAC: Oracle Real Application Clusters (Oracle RAC) external database.
- * - CLOUD_SIDB: Single instance database in Oracle Cloud.
- * - CLOUD_RAC: Oracle RAC database in Oracle Cloud.
- * - SHARED: Autonomous shared database in Oracle Cloud.
- * - DEDICATED: Autonomous dedicated database in Oracle Cloud.
- *
- **/
+ * The type of Oracle Database installation: - EXTERNAL_SIDB: Single instance external database. -
+ * EXTERNAL_RAC: Oracle Real Application Clusters (Oracle RAC) external database. - CLOUD_SIDB:
+ * Single instance database in Oracle Cloud. - CLOUD_RAC: Oracle RAC database in Oracle Cloud. -
+ * SHARED: Autonomous shared database in Oracle Cloud. - DEDICATED: Autonomous dedicated database in
+ * Oracle Cloud.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DatabaseType {
+public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
     ExternalSidb("EXTERNAL_SIDB"),
     ExternalRac("EXTERNAL_RAC"),
     CloudSidb("CLOUD_SIDB"),

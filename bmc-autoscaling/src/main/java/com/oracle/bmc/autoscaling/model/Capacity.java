@@ -5,20 +5,20 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Capacity limits for the instance pool.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Capacity limits for the instance pool. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Capacity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Capacity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"max", "min", "initial"})
     public Capacity(Integer max, Integer min, Integer initial) {
@@ -31,78 +31,75 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
-         * to increase to (scale out).
-         * <p>
-         * For a schedule-based autoscaling policy, this value is not used.
+         * For a threshold-based autoscaling policy, this value is the maximum number of instances
+         * the instance pool is allowed to increase to (scale out).
          *
-         **/
+         * <p>For a schedule-based autoscaling policy, this value is not used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
-         * to increase to (scale out).
-         * <p>
-         * For a schedule-based autoscaling policy, this value is not used.
+         * For a threshold-based autoscaling policy, this value is the maximum number of instances
+         * the instance pool is allowed to increase to (scale out).
+         *
+         * <p>For a schedule-based autoscaling policy, this value is not used.
          *
          * @param max the value to set
          * @return this builder
-         **/
+         */
         public Builder max(Integer max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
         /**
-         * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
-         * to decrease to (scale in).
-         * <p>
-         * For a schedule-based autoscaling policy, this value is not used.
+         * For a threshold-based autoscaling policy, this value is the minimum number of instances
+         * the instance pool is allowed to decrease to (scale in).
          *
-         **/
+         * <p>For a schedule-based autoscaling policy, this value is not used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
-         * to decrease to (scale in).
-         * <p>
-         * For a schedule-based autoscaling policy, this value is not used.
+         * For a threshold-based autoscaling policy, this value is the minimum number of instances
+         * the instance pool is allowed to decrease to (scale in).
+         *
+         * <p>For a schedule-based autoscaling policy, this value is not used.
          *
          * @param min the value to set
          * @return this builder
-         **/
+         */
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
         /**
-         * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
-         * immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
-         * instances is automatically adjusted from this initial number to a number that is based on the limits that
-         * you set.
-         * <p>
-         * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
-         * that's defined in the autoscaling policy.
+         * For a threshold-based autoscaling policy, this value is the initial number of instances
+         * to launch in the instance pool immediately after autoscaling is enabled. After
+         * autoscaling retrieves performance metrics, the number of instances is automatically
+         * adjusted from this initial number to a number that is based on the limits that you set.
          *
-         **/
+         * <p>For a schedule-based autoscaling policy, this value is the target pool size to scale
+         * to when executing the schedule that's defined in the autoscaling policy.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("initial")
         private Integer initial;
 
         /**
-         * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
-         * immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
-         * instances is automatically adjusted from this initial number to a number that is based on the limits that
-         * you set.
-         * <p>
-         * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
-         * that's defined in the autoscaling policy.
+         * For a threshold-based autoscaling policy, this value is the initial number of instances
+         * to launch in the instance pool immediately after autoscaling is enabled. After
+         * autoscaling retrieves performance metrics, the number of instances is automatically
+         * adjusted from this initial number to a number that is based on the limits that you set.
+         *
+         * <p>For a schedule-based autoscaling policy, this value is the target pool size to scale
+         * to when executing the schedule that's defined in the autoscaling policy.
          *
          * @param initial the value to set
          * @return this builder
-         **/
+         */
         public Builder initial(Integer initial) {
             this.initial = initial;
             this.__explicitlySet__.add("initial");
@@ -135,9 +132,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,73 +142,70 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
-     * to increase to (scale out).
-     * <p>
-     * For a schedule-based autoscaling policy, this value is not used.
+     * For a threshold-based autoscaling policy, this value is the maximum number of instances the
+     * instance pool is allowed to increase to (scale out).
      *
-     **/
+     * <p>For a schedule-based autoscaling policy, this value is not used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Integer max;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed
-     * to increase to (scale out).
-     * <p>
-     * For a schedule-based autoscaling policy, this value is not used.
+     * For a threshold-based autoscaling policy, this value is the maximum number of instances the
+     * instance pool is allowed to increase to (scale out).
+     *
+     * <p>For a schedule-based autoscaling policy, this value is not used.
      *
      * @return the value
-     **/
+     */
     public Integer getMax() {
         return max;
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
-     * to decrease to (scale in).
-     * <p>
-     * For a schedule-based autoscaling policy, this value is not used.
+     * For a threshold-based autoscaling policy, this value is the minimum number of instances the
+     * instance pool is allowed to decrease to (scale in).
      *
-     **/
+     * <p>For a schedule-based autoscaling policy, this value is not used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed
-     * to decrease to (scale in).
-     * <p>
-     * For a schedule-based autoscaling policy, this value is not used.
+     * For a threshold-based autoscaling policy, this value is the minimum number of instances the
+     * instance pool is allowed to decrease to (scale in).
+     *
+     * <p>For a schedule-based autoscaling policy, this value is not used.
      *
      * @return the value
-     **/
+     */
     public Integer getMin() {
         return min;
     }
 
     /**
-     * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
-     * immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
-     * instances is automatically adjusted from this initial number to a number that is based on the limits that
-     * you set.
-     * <p>
-     * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
-     * that's defined in the autoscaling policy.
+     * For a threshold-based autoscaling policy, this value is the initial number of instances to
+     * launch in the instance pool immediately after autoscaling is enabled. After autoscaling
+     * retrieves performance metrics, the number of instances is automatically adjusted from this
+     * initial number to a number that is based on the limits that you set.
      *
-     **/
+     * <p>For a schedule-based autoscaling policy, this value is the target pool size to scale to
+     * when executing the schedule that's defined in the autoscaling policy.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("initial")
     private final Integer initial;
 
     /**
-     * For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool
-     * immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of
-     * instances is automatically adjusted from this initial number to a number that is based on the limits that
-     * you set.
-     * <p>
-     * For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule
-     * that's defined in the autoscaling policy.
+     * For a threshold-based autoscaling policy, this value is the initial number of instances to
+     * launch in the instance pool immediately after autoscaling is enabled. After autoscaling
+     * retrieves performance metrics, the number of instances is automatically adjusted from this
+     * initial number to a number that is based on the limits that you set.
+     *
+     * <p>For a schedule-based autoscaling policy, this value is the target pool size to scale to
+     * when executing the schedule that's defined in the autoscaling policy.
      *
      * @return the value
-     **/
+     */
     public Integer getInitial() {
         return initial;
     }
@@ -225,6 +217,7 @@ public final class Capacity extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

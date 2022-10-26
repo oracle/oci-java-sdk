@@ -5,23 +5,22 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * A metric namespace for the compartment-specific list.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A metric namespace for the compartment-specific list. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MonitoringSourceSelectedNamespace.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MonitoringSourceSelectedNamespace.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MonitoringSourceSelectedNamespace
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"namespace", "metrics"})
     public MonitoringSourceSelectedNamespace(
@@ -34,22 +33,23 @@ public final class MonitoringSourceSelectedNamespace
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
-         * <p>
-         * Example: {@code oci_computeagent}
+         * The source service or application to use when querying for metric data points. Must begin
+         * with {@code oci_}.
          *
-         **/
+         * <p>Example: {@code oci_computeagent}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
-         * <p>
-         * Example: {@code oci_computeagent}
+         * The source service or application to use when querying for metric data points. Must begin
+         * with {@code oci_}.
+         *
+         * <p>Example: {@code oci_computeagent}
          *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -89,9 +89,7 @@ public final class MonitoringSourceSelectedNamespace
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,21 +99,22 @@ public final class MonitoringSourceSelectedNamespace
     }
 
     /**
-     * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
-     * <p>
-     * Example: {@code oci_computeagent}
+     * The source service or application to use when querying for metric data points. Must begin
+     * with {@code oci_}.
      *
-     **/
+     * <p>Example: {@code oci_computeagent}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The source service or application to use when querying for metric data points. Must begin with {@code oci_}.
-     * <p>
-     * Example: {@code oci_computeagent}
+     * The source service or application to use when querying for metric data points. Must begin
+     * with {@code oci_}.
+     *
+     * <p>Example: {@code oci_computeagent}
      *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -134,6 +133,7 @@ public final class MonitoringSourceSelectedNamespace
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

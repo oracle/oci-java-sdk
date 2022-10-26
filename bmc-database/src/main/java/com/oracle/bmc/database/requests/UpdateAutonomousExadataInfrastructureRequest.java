@@ -6,7 +6,10 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAutonomousExadataInfrastructureRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateAutonomousExadataInfrastructureExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * UpdateAutonomousExadataInfrastructureRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateAutonomousExadataInfrastructureRequest
@@ -14,42 +17,40 @@ public class UpdateAutonomousExadataInfrastructureRequest
                 com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails> {
 
     /**
-     * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Exadata Infrastructure
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String autonomousExadataInfrastructureId;
 
     /**
-     * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Exadata Infrastructure
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public String getAutonomousExadataInfrastructureId() {
         return autonomousExadataInfrastructureId;
     }
-    /**
-     * Request to update the properties of a Autonomous Exadata Infrastructure.
-     */
+    /** Request to update the properties of a Autonomous Exadata Infrastructure. */
     private com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
             updateAutonomousExadataInfrastructuresDetails;
 
-    /**
-     * Request to update the properties of a Autonomous Exadata Infrastructure.
-     */
+    /** Request to update the properties of a Autonomous Exadata Infrastructure. */
     public com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
             getUpdateAutonomousExadataInfrastructuresDetails() {
         return updateAutonomousExadataInfrastructuresDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -57,6 +58,7 @@ public class UpdateAutonomousExadataInfrastructureRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -69,17 +71,19 @@ public class UpdateAutonomousExadataInfrastructureRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateAutonomousExadataInfrastructureRequest,
                     com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The Autonomous Exadata Infrastructure
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String autonomousExadataInfrastructureId = null;
 
         /**
-         * The Autonomous Exadata Infrastructure  [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The Autonomous Exadata Infrastructure
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param autonomousExadataInfrastructureId the value to set
          * @return this builder instance
          */
@@ -88,14 +92,13 @@ public class UpdateAutonomousExadataInfrastructureRequest
             return this;
         }
 
-        /**
-         * Request to update the properties of a Autonomous Exadata Infrastructure.
-         */
+        /** Request to update the properties of a Autonomous Exadata Infrastructure. */
         private com.oracle.bmc.database.model.UpdateAutonomousExadataInfrastructureDetails
                 updateAutonomousExadataInfrastructuresDetails = null;
 
         /**
          * Request to update the properties of a Autonomous Exadata Infrastructure.
+         *
          * @param updateAutonomousExadataInfrastructuresDetails the value to set
          * @return this builder instance
          */
@@ -108,17 +111,18 @@ public class UpdateAutonomousExadataInfrastructureRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -130,18 +134,19 @@ public class UpdateAutonomousExadataInfrastructureRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -153,6 +158,7 @@ public class UpdateAutonomousExadataInfrastructureRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateAutonomousExadataInfrastructureRequest o) {
@@ -166,12 +172,14 @@ public class UpdateAutonomousExadataInfrastructureRequest
         }
 
         /**
-         * Build the instance of UpdateAutonomousExadataInfrastructureRequest as configured by this builder
+         * Build the instance of UpdateAutonomousExadataInfrastructureRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateAutonomousExadataInfrastructureRequest
          */
@@ -184,6 +192,7 @@ public class UpdateAutonomousExadataInfrastructureRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -195,9 +204,11 @@ public class UpdateAutonomousExadataInfrastructureRequest
         }
 
         /**
-         * Build the instance of UpdateAutonomousExadataInfrastructureRequest as configured by this builder
+         * Build the instance of UpdateAutonomousExadataInfrastructureRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateAutonomousExadataInfrastructureRequest
@@ -210,12 +221,14 @@ public class UpdateAutonomousExadataInfrastructureRequest
                     updateAutonomousExadataInfrastructuresDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateAutonomousExadataInfrastructureRequest(autonomousExadataInfrastructureId, updateAutonomousExadataInfrastructuresDetails, ifMatch);
+            // new UpdateAutonomousExadataInfrastructureRequest(autonomousExadataInfrastructureId,
+            // updateAutonomousExadataInfrastructuresDetails, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -228,6 +241,7 @@ public class UpdateAutonomousExadataInfrastructureRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

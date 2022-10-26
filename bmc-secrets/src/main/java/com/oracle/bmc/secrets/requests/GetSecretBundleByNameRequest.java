@@ -6,76 +6,67 @@ package com.oracle.bmc.secrets.requests;
 
 import com.oracle.bmc.secrets.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/GetSecretBundleByNameExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSecretBundleByNameRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/secrets/GetSecretBundleByNameExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetSecretBundleByNameRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190301")
 public class GetSecretBundleByNameRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+     * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are
+     * case-sensitive.
      */
     private String secretName;
 
     /**
-     * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+     * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are
+     * case-sensitive.
      */
     public String getSecretName() {
         return secretName;
     }
-    /**
-     * The OCID of the vault that contains the secret.
-     */
+    /** The OCID of the vault that contains the secret. */
     private String vaultId;
 
-    /**
-     * The OCID of the vault that contains the secret.
-     */
+    /** The OCID of the vault that contains the secret. */
     public String getVaultId() {
         return vaultId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The version number of the secret.
-     */
+    /** The version number of the secret. */
     private Long versionNumber;
 
-    /**
-     * The version number of the secret.
-     */
+    /** The version number of the secret. */
     public Long getVersionNumber() {
         return versionNumber;
     }
     /**
-     * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+     * The name of the secret. (This might be referred to as the name of the secret version. Names
+     * are unique across the different versions of a secret.)
      */
     private String secretVersionName;
 
     /**
-     * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+     * The name of the secret. (This might be referred to as the name of the secret version. Names
+     * are unique across the different versions of a secret.)
      */
     public String getSecretVersionName() {
         return secretVersionName;
     }
-    /**
-     * The rotation state of the secret version.
-     */
+    /** The rotation state of the secret version. */
     private Stage stage;
 
-    /**
-     * The rotation state of the secret version.
-     **/
-    public enum Stage {
+    /** The rotation state of the secret version. */
+    public enum Stage implements com.oracle.bmc.http.internal.BmcEnum {
         Current("CURRENT"),
         Pending("PENDING"),
         Latest("LATEST"),
@@ -111,9 +102,7 @@ public class GetSecretBundleByNameRequest
         }
     };
 
-    /**
-     * The rotation state of the secret version.
-     */
+    /** The rotation state of the secret version. */
     public Stage getStage() {
         return stage;
     }
@@ -121,17 +110,19 @@ public class GetSecretBundleByNameRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSecretBundleByNameRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+         * A user-friendly name for the secret. Secret names are unique within a vault. Secret names
+         * are case-sensitive.
          */
         private String secretName = null;
 
         /**
-         * A user-friendly name for the secret. Secret names are unique within a vault. Secret names are case-sensitive.
+         * A user-friendly name for the secret. Secret names are unique within a vault. Secret names
+         * are case-sensitive.
+         *
          * @param secretName the value to set
          * @return this builder instance
          */
@@ -140,13 +131,12 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
-        /**
-         * The OCID of the vault that contains the secret.
-         */
+        /** The OCID of the vault that contains the secret. */
         private String vaultId = null;
 
         /**
          * The OCID of the vault that contains the secret.
+         *
          * @param vaultId the value to set
          * @return this builder instance
          */
@@ -155,13 +145,12 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -170,13 +159,12 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
-        /**
-         * The version number of the secret.
-         */
+        /** The version number of the secret. */
         private Long versionNumber = null;
 
         /**
          * The version number of the secret.
+         *
          * @param versionNumber the value to set
          * @return this builder instance
          */
@@ -186,12 +174,15 @@ public class GetSecretBundleByNameRequest
         }
 
         /**
-         * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         * The name of the secret. (This might be referred to as the name of the secret version.
+         * Names are unique across the different versions of a secret.)
          */
         private String secretVersionName = null;
 
         /**
-         * The name of the secret. (This might be referred to as the name of the secret version. Names are unique across the different versions of a secret.)
+         * The name of the secret. (This might be referred to as the name of the secret version.
+         * Names are unique across the different versions of a secret.)
+         *
          * @param secretVersionName the value to set
          * @return this builder instance
          */
@@ -200,13 +191,12 @@ public class GetSecretBundleByNameRequest
             return this;
         }
 
-        /**
-         * The rotation state of the secret version.
-         */
+        /** The rotation state of the secret version. */
         private Stage stage = null;
 
         /**
          * The rotation state of the secret version.
+         *
          * @param stage the value to set
          * @return this builder instance
          */
@@ -217,18 +207,19 @@ public class GetSecretBundleByNameRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -240,6 +231,7 @@ public class GetSecretBundleByNameRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetSecretBundleByNameRequest o) {
@@ -257,10 +249,11 @@ public class GetSecretBundleByNameRequest
         /**
          * Build the instance of GetSecretBundleByNameRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetSecretBundleByNameRequest
          */
@@ -274,7 +267,8 @@ public class GetSecretBundleByNameRequest
         /**
          * Build the instance of GetSecretBundleByNameRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSecretBundleByNameRequest
@@ -288,12 +282,14 @@ public class GetSecretBundleByNameRequest
             request.secretVersionName = secretVersionName;
             request.stage = stage;
             return request;
-            // new GetSecretBundleByNameRequest(secretName, vaultId, opcRequestId, versionNumber, secretVersionName, stage);
+            // new GetSecretBundleByNameRequest(secretName, vaultId, opcRequestId, versionNumber,
+            // secretVersionName, stage);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -308,6 +304,7 @@ public class GetSecretBundleByNameRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,78 +5,89 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Pattern describing an http/https URL or set thereof
- * as a concatenation of optional host component and optional path component.
- * <p>
- * Key points:
- * 1. Use the specific URLs or construct the URL patterns you want to match using wildcard {@code *} and token characters {@code ./}.
- * 2. In the host component and path component don't enter consecutive wildcard {@code *} for example: {@code example.*.*.com}.
- * 3. To match the exact domain and its subdirectories add a trailing slash {@code /} to your entry.
- * 4. The firewall interprets entries that do not end in a {@code /} or {@code *} with an implicit asterisk {@code *} to their end, which further increases the potential matches.
- * 5. The Use of multiple wildcards in a single pattern can impact the performance of the firewall.
- * <p>
- * Domain/subdomains match examples:
- * 1. {@code *.example.com.*} will match {@code sub1.sub2.example.com.info.us} and {@code sub1.example.com.us} and {@code sub1.example.com/subdirectory} but not match {@code sub1.example.com}.
- * 2. {@code *.example.com} will match {@code sub1.example.com} and {@code sub1.sub2.example.com} and {@code sub1.example.com.au} but not match {@code example.com}.
- * 3. {@code *.example.com/} will match {@code sub1.sub2.example.com} and {@code sub1.example.com} but not match {@code sub1.example.com.au}.
- * 4. {@code example.com} will match {@code example.com} and {@code example.com.au} and {@code example.com.info.us} and {@code example.com/subdirectory}.
- * 5. {@code example.com/} will match {@code example.com} and {@code example.com/foo} but not {@code example.com.info.us}.
- * 6. {@code example.*.com} will match {@code example.sub1.com} and {@code example.sub1.sub2.com} and {@code example.sub1.com.au} and {@code example.sub1.com/subdirecroty}.
- * 7. {@code example.*.com/} will match {@code example.sub1.com} and {@code example.sub1.sub2.com} and {@code example.sub1.com/subdirecroty} but not match {@code example.sub1.com.au}.
- * 8. {@code example.com.*} will match {@code example.com.us} and {@code example.com.info.us} and {@code example.com.us/subdirectory} but not match {@code sub1.example.com}.
- * <p>
- * Subdirectory or path match examples:
- * 1. {@code example.com/*} will match {@code example.com/foo} and {@code example.com/bar} and any {@code example.com/subdirectory}.
- * 2. {@code example.com/foo} will match {@code example.com/foo}.
- * 3. {@code www.example.com/foo/*} will match {@code www.exampe.com/foo/subdiectory}, but not match {@code www.example.com/FOO} or {@code www.example.com/bar/subdirectory}.
- * 4. {@code *.example.com/foo/*} will match {@code sub2.sub.example.com/foo/subdirectory} but not match {@code sub1.example.com/FOO} or {@code sub1.example.com/bar/subdirectory}.
- * <p>
- * Other examples containing IP addresses in urls:
- * 1. 103.12.14.122/ will match 103.12.14.122 and 103.12.14.122/subdirectory.
- * 2. 103.12.14.122:8081/ will match 103.12.14.122:8081 and 103.12.14.122:8081/subdirectory.
- * 3. 2607:9d80:4680:3f01:0000:0000:00d0:00c0/ will match 2607:9d80:4680:3f01:0000:0000:00d0:00c0 and 2607:9d80:4680:3f01:0000:0000:00d0:00c0/subdirecroty.
- * 4. [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/ will match [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081 and [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/subdirecroty.
+ * Pattern describing an http/https URL or set thereof as a concatenation of optional host component
+ * and optional path component.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>Key points: 1. Use the specific URLs or construct the URL patterns you want to match using
+ * wildcard {@code *} and token characters {@code ./}. 2. In the host component and path component
+ * don't enter consecutive wildcard {@code *} for example: {@code example.*.*.com}. 3. To match the
+ * exact domain and its subdirectories add a trailing slash {@code /} to your entry. 4. The firewall
+ * interprets entries that do not end in a {@code /} or {@code *} with an implicit asterisk {@code
+ * *} to their end, which further increases the potential matches. 5. The Use of multiple wildcards
+ * in a single pattern can impact the performance of the firewall.
+ *
+ * <p>Domain/subdomains match examples: 1. {@code *.example.com.*} will match {@code
+ * sub1.sub2.example.com.info.us} and {@code sub1.example.com.us} and {@code
+ * sub1.example.com/subdirectory} but not match {@code sub1.example.com}. 2. {@code *.example.com}
+ * will match {@code sub1.example.com} and {@code sub1.sub2.example.com} and {@code
+ * sub1.example.com.au} but not match {@code example.com}. 3. {@code *.example.com/} will match
+ * {@code sub1.sub2.example.com} and {@code sub1.example.com} but not match {@code
+ * sub1.example.com.au}. 4. {@code example.com} will match {@code example.com} and {@code
+ * example.com.au} and {@code example.com.info.us} and {@code example.com/subdirectory}. 5. {@code
+ * example.com/} will match {@code example.com} and {@code example.com/foo} but not {@code
+ * example.com.info.us}. 6. {@code example.*.com} will match {@code example.sub1.com} and {@code
+ * example.sub1.sub2.com} and {@code example.sub1.com.au} and {@code example.sub1.com/subdirecroty}.
+ * 7. {@code example.*.com/} will match {@code example.sub1.com} and {@code example.sub1.sub2.com}
+ * and {@code example.sub1.com/subdirecroty} but not match {@code example.sub1.com.au}. 8. {@code
+ * example.com.*} will match {@code example.com.us} and {@code example.com.info.us} and {@code
+ * example.com.us/subdirectory} but not match {@code sub1.example.com}.
+ *
+ * <p>Subdirectory or path match examples: 1. {@code example.com/*} will match {@code
+ * example.com/foo} and {@code example.com/bar} and any {@code example.com/subdirectory}. 2. {@code
+ * example.com/foo} will match {@code example.com/foo}. 3. {@code www.example.com/foo/*} will match
+ * {@code www.exampe.com/foo/subdiectory}, but not match {@code www.example.com/FOO} or {@code
+ * www.example.com/bar/subdirectory}. 4. {@code *.example.com/foo/*} will match {@code
+ * sub2.sub.example.com/foo/subdirectory} but not match {@code sub1.example.com/FOO} or {@code
+ * sub1.example.com/bar/subdirectory}.
+ *
+ * <p>Other examples containing IP addresses in urls: 1. 103.12.14.122/ will match 103.12.14.122 and
+ * 103.12.14.122/subdirectory. 2. 103.12.14.122:8081/ will match 103.12.14.122:8081 and
+ * 103.12.14.122:8081/subdirectory. 3. 2607:9d80:4680:3f01:0000:0000:00d0:00c0/ will match
+ * 2607:9d80:4680:3f01:0000:0000:00d0:00c0 and 2607:9d80:4680:3f01:0000:0000:00d0:00c0/subdirecroty.
+ * 4. [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/ will match
+ * [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081 and
+ * [2607:9d80:4680:3f01:0000:0000:00d0:00c0]:8081/subdirecroty. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SimpleUrlPattern.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SimpleUrlPattern extends UrlPattern {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A string consisting of a concatenation of optional host component and optional path component.
-         * The host component may start with {@code *.} to match the case-insensitive domain and all its subdomains.
-         * The path component must start with a {@code /}, and may end with {@code *} to match all paths of which it is a case-sensitive prefix.
-         * A missing host component matches all request domains, and a missing path component matches all request paths.
-         * An empty value matches all requests.
-         *
-         **/
+         * A string consisting of a concatenation of optional host component and optional path
+         * component. The host component may start with {@code *.} to match the case-insensitive
+         * domain and all its subdomains. The path component must start with a {@code /}, and may
+         * end with {@code *} to match all paths of which it is a case-sensitive prefix. A missing
+         * host component matches all request domains, and a missing path component matches all
+         * request paths. An empty value matches all requests.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
-         * A string consisting of a concatenation of optional host component and optional path component.
-         * The host component may start with {@code *.} to match the case-insensitive domain and all its subdomains.
-         * The path component must start with a {@code /}, and may end with {@code *} to match all paths of which it is a case-sensitive prefix.
-         * A missing host component matches all request domains, and a missing path component matches all request paths.
-         * An empty value matches all requests.
+         * A string consisting of a concatenation of optional host component and optional path
+         * component. The host component may start with {@code *.} to match the case-insensitive
+         * domain and all its subdomains. The path component must start with a {@code /}, and may
+         * end with {@code *} to match all paths of which it is a case-sensitive prefix. A missing
+         * host component matches all request domains, and a missing path component matches all
+         * request paths. An empty value matches all requests.
          *
          * @param pattern the value to set
          * @return this builder
-         **/
+         */
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
@@ -103,9 +114,7 @@ public final class SimpleUrlPattern extends UrlPattern {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,25 +130,26 @@ public final class SimpleUrlPattern extends UrlPattern {
     }
 
     /**
-     * A string consisting of a concatenation of optional host component and optional path component.
-     * The host component may start with {@code *.} to match the case-insensitive domain and all its subdomains.
-     * The path component must start with a {@code /}, and may end with {@code *} to match all paths of which it is a case-sensitive prefix.
-     * A missing host component matches all request domains, and a missing path component matches all request paths.
-     * An empty value matches all requests.
-     *
-     **/
+     * A string consisting of a concatenation of optional host component and optional path
+     * component. The host component may start with {@code *.} to match the case-insensitive domain
+     * and all its subdomains. The path component must start with a {@code /}, and may end with
+     * {@code *} to match all paths of which it is a case-sensitive prefix. A missing host component
+     * matches all request domains, and a missing path component matches all request paths. An empty
+     * value matches all requests.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
-     * A string consisting of a concatenation of optional host component and optional path component.
-     * The host component may start with {@code *.} to match the case-insensitive domain and all its subdomains.
-     * The path component must start with a {@code /}, and may end with {@code *} to match all paths of which it is a case-sensitive prefix.
-     * A missing host component matches all request domains, and a missing path component matches all request paths.
-     * An empty value matches all requests.
+     * A string consisting of a concatenation of optional host component and optional path
+     * component. The host component may start with {@code *.} to match the case-insensitive domain
+     * and all its subdomains. The path component must start with a {@code /}, and may end with
+     * {@code *} to match all paths of which it is a case-sensitive prefix. A missing host component
+     * matches all request domains, and a missing path component matches all request paths. An empty
+     * value matches all requests.
      *
      * @return the value
-     **/
+     */
     public String getPattern() {
         return pattern;
     }
@@ -151,6 +161,7 @@ public final class SimpleUrlPattern extends UrlPattern {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

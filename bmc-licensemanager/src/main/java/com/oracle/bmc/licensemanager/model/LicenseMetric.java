@@ -5,19 +5,20 @@
 package com.oracle.bmc.licensemanager.model;
 
 /**
- * Overview of product license and resources usage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Overview of product license and resources usage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LicenseMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LicenseMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LicenseMetric extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "totalProductLicenseCount",
@@ -39,10 +40,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Total number of product licenses in a particular compartment.
-         *
-         **/
+        /** Total number of product licenses in a particular compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalProductLicenseCount")
         private Integer totalProductLicenseCount;
 
@@ -51,16 +49,13 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param totalProductLicenseCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalProductLicenseCount(Integer totalProductLicenseCount) {
             this.totalProductLicenseCount = totalProductLicenseCount;
             this.__explicitlySet__.add("totalProductLicenseCount");
             return this;
         }
-        /**
-         * Total number of BYOL instances in a particular compartment.
-         *
-         **/
+        /** Total number of BYOL instances in a particular compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalByolInstanceCount")
         private Integer totalByolInstanceCount;
 
@@ -69,16 +64,13 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param totalByolInstanceCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalByolInstanceCount(Integer totalByolInstanceCount) {
             this.totalByolInstanceCount = totalByolInstanceCount;
             this.__explicitlySet__.add("totalByolInstanceCount");
             return this;
         }
-        /**
-         * Total number of License Included (LI) instances in a particular compartment.
-         *
-         **/
+        /** Total number of License Included (LI) instances in a particular compartment. */
         @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseIncludedInstanceCount")
         private Integer totalLicenseIncludedInstanceCount;
 
@@ -87,7 +79,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
          *
          * @param totalLicenseIncludedInstanceCount the value to set
          * @return this builder
-         **/
+         */
         public Builder totalLicenseIncludedInstanceCount(
                 Integer totalLicenseIncludedInstanceCount) {
             this.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
@@ -95,18 +87,19 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * Total number of license records that will expire within 90 days in a particular compartment.
-         *
-         **/
+         * Total number of license records that will expire within 90 days in a particular
+         * compartment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("licenseRecordExpiringSoonCount")
         private Integer licenseRecordExpiringSoonCount;
 
         /**
-         * Total number of license records that will expire within 90 days in a particular compartment.
+         * Total number of license records that will expire within 90 days in a particular
+         * compartment.
          *
          * @param licenseRecordExpiringSoonCount the value to set
          * @return this builder
-         **/
+         */
         public Builder licenseRecordExpiringSoonCount(Integer licenseRecordExpiringSoonCount) {
             this.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
             this.__explicitlySet__.add("licenseRecordExpiringSoonCount");
@@ -148,9 +141,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,10 +150,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * Total number of product licenses in a particular compartment.
-     *
-     **/
+    /** Total number of product licenses in a particular compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalProductLicenseCount")
     private final Integer totalProductLicenseCount;
 
@@ -170,15 +158,12 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
      * Total number of product licenses in a particular compartment.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalProductLicenseCount() {
         return totalProductLicenseCount;
     }
 
-    /**
-     * Total number of BYOL instances in a particular compartment.
-     *
-     **/
+    /** Total number of BYOL instances in a particular compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalByolInstanceCount")
     private final Integer totalByolInstanceCount;
 
@@ -186,15 +171,12 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
      * Total number of BYOL instances in a particular compartment.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalByolInstanceCount() {
         return totalByolInstanceCount;
     }
 
-    /**
-     * Total number of License Included (LI) instances in a particular compartment.
-     *
-     **/
+    /** Total number of License Included (LI) instances in a particular compartment. */
     @com.fasterxml.jackson.annotation.JsonProperty("totalLicenseIncludedInstanceCount")
     private final Integer totalLicenseIncludedInstanceCount;
 
@@ -202,15 +184,14 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
      * Total number of License Included (LI) instances in a particular compartment.
      *
      * @return the value
-     **/
+     */
     public Integer getTotalLicenseIncludedInstanceCount() {
         return totalLicenseIncludedInstanceCount;
     }
 
     /**
      * Total number of license records that will expire within 90 days in a particular compartment.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("licenseRecordExpiringSoonCount")
     private final Integer licenseRecordExpiringSoonCount;
 
@@ -218,7 +199,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
      * Total number of license records that will expire within 90 days in a particular compartment.
      *
      * @return the value
-     **/
+     */
     public Integer getLicenseRecordExpiringSoonCount() {
         return licenseRecordExpiringSoonCount;
     }
@@ -230,6 +211,7 @@ public final class LicenseMetric extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

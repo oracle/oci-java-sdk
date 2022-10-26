@@ -9,21 +9,29 @@ import com.oracle.bmc.onesubscription.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of InvoiceSummary where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of InvoiceSummary where multiple pages of data may be fetched. Two styles
+ * of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class InvoiceSummaryPaginators {
@@ -34,17 +42,20 @@ public class InvoiceSummaryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listInvoicelineComputedUsages operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listInvoicelineComputedUsages operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListInvoicelineComputedUsagesResponse>
             listInvoicelineComputedUsagesResponseIterator(
                     final ListInvoicelineComputedUsagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInvoicelineComputedUsagesRequest.Builder, ListInvoicelineComputedUsagesRequest,
+                ListInvoicelineComputedUsagesRequest.Builder,
+                ListInvoicelineComputedUsagesRequest,
                 ListInvoicelineComputedUsagesResponse>(
                 new java.util.function.Supplier<ListInvoicelineComputedUsagesRequest.Builder>() {
                     @Override
@@ -88,19 +99,22 @@ public class InvoiceSummaryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary} objects
-     * contained in responses from the listInvoicelineComputedUsages operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary} objects contained in
+     * responses from the listInvoicelineComputedUsages operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary} objects contained
+     *     in responses received from the service.
      */
     public Iterable<com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary>
             listInvoicelineComputedUsagesRecordIterator(
                     final ListInvoicelineComputedUsagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInvoicelineComputedUsagesRequest.Builder, ListInvoicelineComputedUsagesRequest,
+                ListInvoicelineComputedUsagesRequest.Builder,
+                ListInvoicelineComputedUsagesRequest,
                 ListInvoicelineComputedUsagesResponse,
                 com.oracle.bmc.onesubscription.model.InvoicelineComputedUsageSummary>(
                 new java.util.function.Supplier<ListInvoicelineComputedUsagesRequest.Builder>() {
@@ -158,11 +172,12 @@ public class InvoiceSummaryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listInvoices operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInvoices
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListInvoicesResponse> listInvoicesResponseIterator(
             final ListInvoicesRequest request) {
@@ -207,18 +222,21 @@ public class InvoiceSummaryPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.onesubscription.model.InvoiceSummary} objects
-     * contained in responses from the listInvoices operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.onesubscription.model.InvoiceSummary} objects contained in responses from the
+     * listInvoices operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.onesubscription.model.InvoiceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.onesubscription.model.InvoiceSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.onesubscription.model.InvoiceSummary> listInvoicesRecordIterator(
             final ListInvoicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInvoicesRequest.Builder, ListInvoicesRequest, ListInvoicesResponse,
+                ListInvoicesRequest.Builder,
+                ListInvoicesRequest,
+                ListInvoicesResponse,
                 com.oracle.bmc.onesubscription.model.InvoiceSummary>(
                 new java.util.function.Supplier<ListInvoicesRequest.Builder>() {
                     @Override

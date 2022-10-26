@@ -5,19 +5,21 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Number of replicas of service components like Rest Proxy, CA and Console
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Number of replicas of service components like Rest Proxy, CA and Console <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplicaDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReplicaDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"proxyCount", "caCount", "consoleCount"})
     public ReplicaDetails(Integer proxyCount, Integer caCount, Integer consoleCount) {
@@ -29,49 +31,46 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Number of REST proxy replicas
-         **/
+        /** Number of REST proxy replicas */
         @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
         private Integer proxyCount;
 
         /**
          * Number of REST proxy replicas
+         *
          * @param proxyCount the value to set
          * @return this builder
-         **/
+         */
         public Builder proxyCount(Integer proxyCount) {
             this.proxyCount = proxyCount;
             this.__explicitlySet__.add("proxyCount");
             return this;
         }
-        /**
-         * Number of CA replicas
-         **/
+        /** Number of CA replicas */
         @com.fasterxml.jackson.annotation.JsonProperty("caCount")
         private Integer caCount;
 
         /**
          * Number of CA replicas
+         *
          * @param caCount the value to set
          * @return this builder
-         **/
+         */
         public Builder caCount(Integer caCount) {
             this.caCount = caCount;
             this.__explicitlySet__.add("caCount");
             return this;
         }
-        /**
-         * Number of console replicas
-         **/
+        /** Number of console replicas */
         @com.fasterxml.jackson.annotation.JsonProperty("consoleCount")
         private Integer consoleCount;
 
         /**
          * Number of console replicas
+         *
          * @param consoleCount the value to set
          * @return this builder
-         **/
+         */
         public Builder consoleCount(Integer consoleCount) {
             this.consoleCount = consoleCount;
             this.__explicitlySet__.add("consoleCount");
@@ -105,9 +104,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +113,41 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * Number of REST proxy replicas
-     **/
+    /** Number of REST proxy replicas */
     @com.fasterxml.jackson.annotation.JsonProperty("proxyCount")
     private final Integer proxyCount;
 
     /**
      * Number of REST proxy replicas
+     *
      * @return the value
-     **/
+     */
     public Integer getProxyCount() {
         return proxyCount;
     }
 
-    /**
-     * Number of CA replicas
-     **/
+    /** Number of CA replicas */
     @com.fasterxml.jackson.annotation.JsonProperty("caCount")
     private final Integer caCount;
 
     /**
      * Number of CA replicas
+     *
      * @return the value
-     **/
+     */
     public Integer getCaCount() {
         return caCount;
     }
 
-    /**
-     * Number of console replicas
-     **/
+    /** Number of console replicas */
     @com.fasterxml.jackson.annotation.JsonProperty("consoleCount")
     private final Integer consoleCount;
 
     /**
      * Number of console replicas
+     *
      * @return the value
-     **/
+     */
     public Integer getConsoleCount() {
         return consoleCount;
     }
@@ -165,6 +159,7 @@ public final class ReplicaDetails extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

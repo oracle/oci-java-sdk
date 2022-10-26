@@ -5,22 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * SDK target language details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SDK target language details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SdkLanguageTypeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SdkLanguageTypeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SdkLanguageTypeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -45,10 +45,7 @@ public final class SdkLanguageTypeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the programming language.
-         *
-         **/
+        /** Name of the programming language. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -57,16 +54,13 @@ public final class SdkLanguageTypeSummary
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Display name of the target programming language.
-         *
-         **/
+        /** Display name of the target programming language. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -75,16 +69,13 @@ public final class SdkLanguageTypeSummary
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Version string of the programming language defined in name.
-         *
-         **/
+        /** Version string of the programming language defined in name. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -93,16 +84,13 @@ public final class SdkLanguageTypeSummary
          *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * Additional details.
-         *
-         **/
+        /** Additional details. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -111,25 +99,26 @@ public final class SdkLanguageTypeSummary
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * List of optional configurations that can be used while generating SDK for the given target language.
-         *
-         **/
+         * List of optional configurations that can be used while generating SDK for the given
+         * target language.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<SdkLanguageOptionalParameters> parameters;
 
         /**
-         * List of optional configurations that can be used while generating SDK for the given target language.
+         * List of optional configurations that can be used while generating SDK for the given
+         * target language.
          *
          * @param parameters the value to set
          * @return this builder
-         **/
+         */
         public Builder parameters(java.util.List<SdkLanguageOptionalParameters> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -174,9 +163,7 @@ public final class SdkLanguageTypeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,10 +172,7 @@ public final class SdkLanguageTypeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the programming language.
-     *
-     **/
+    /** Name of the programming language. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -196,15 +180,12 @@ public final class SdkLanguageTypeSummary
      * Name of the programming language.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Display name of the target programming language.
-     *
-     **/
+    /** Display name of the target programming language. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -212,15 +193,12 @@ public final class SdkLanguageTypeSummary
      * Display name of the target programming language.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Version string of the programming language defined in name.
-     *
-     **/
+    /** Version string of the programming language defined in name. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
@@ -228,15 +206,12 @@ public final class SdkLanguageTypeSummary
      * Version string of the programming language defined in name.
      *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * Additional details.
-     *
-     **/
+    /** Additional details. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -244,23 +219,24 @@ public final class SdkLanguageTypeSummary
      * Additional details.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * List of optional configurations that can be used while generating SDK for the given target language.
-     *
-     **/
+     * List of optional configurations that can be used while generating SDK for the given target
+     * language.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<SdkLanguageOptionalParameters> parameters;
 
     /**
-     * List of optional configurations that can be used while generating SDK for the given target language.
+     * List of optional configurations that can be used while generating SDK for the given target
+     * language.
      *
      * @return the value
-     **/
+     */
     public java.util.List<SdkLanguageOptionalParameters> getParameters() {
         return parameters;
     }
@@ -272,6 +248,7 @@ public final class SdkLanguageTypeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

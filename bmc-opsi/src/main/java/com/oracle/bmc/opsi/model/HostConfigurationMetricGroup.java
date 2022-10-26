@@ -5,56 +5,48 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Base Metric Group for Host configuration metrics
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Base Metric Group for Host configuration metrics <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "metricName",
-    defaultImpl = HostConfigurationMetricGroup.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "metricName",
+        defaultImpl = HostConfigurationMetricGroup.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostResourceAllocation.class,
-        name = "HOST_RESOURCE_ALLOCATION"
-    ),
+            value = HostResourceAllocation.class,
+            name = "HOST_RESOURCE_ALLOCATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostProduct.class,
-        name = "HOST_PRODUCT"
-    ),
+            value = HostProduct.class,
+            name = "HOST_PRODUCT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostNetworkConfiguration.class,
-        name = "HOST_NETWORK_CONFIGURATION"
-    ),
+            value = HostNetworkConfiguration.class,
+            name = "HOST_NETWORK_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostEntities.class,
-        name = "HOST_ENTITIES"
-    ),
+            value = HostEntities.class,
+            name = "HOST_ENTITIES"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostMemoryConfiguration.class,
-        name = "HOST_MEMORY_CONFIGURATION"
-    ),
+            value = HostMemoryConfiguration.class,
+            name = "HOST_MEMORY_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostCpuHardwareConfiguration.class,
-        name = "HOST_CPU_HARDWARE_CONFIGURATION"
-    ),
+            value = HostCpuHardwareConfiguration.class,
+            name = "HOST_CPU_HARDWARE_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HostHardwareConfiguration.class,
-        name = "HOST_HARDWARE_CONFIGURATION"
-    )
+            value = HostHardwareConfiguration.class,
+            name = "HOST_HARDWARE_CONFIGURATION")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class HostConfigurationMetricGroup
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeCollected"})
     protected HostConfigurationMetricGroup(java.util.Date timeCollected) {
@@ -62,20 +54,15 @@ public class HostConfigurationMetricGroup
         this.timeCollected = timeCollected;
     }
 
-    /**
-     * Collection timestamp
-     * Example: {@code "2020-05-06T00:00:00.000Z"}
-     *
-     **/
+    /** Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"} */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Collection timestamp
-     * Example: {@code "2020-05-06T00:00:00.000Z"}
+     * Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
@@ -87,6 +74,7 @@ public class HostConfigurationMetricGroup
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -124,11 +112,8 @@ public class HostConfigurationMetricGroup
         return result;
     }
 
-    /**
-     * Name of the metric group
-     *
-     **/
-    public enum MetricName {
+    /** Name of the metric group */
+    public enum MetricName implements com.oracle.bmc.http.internal.BmcEnum {
         HostProduct("HOST_PRODUCT"),
         HostResourceAllocation("HOST_RESOURCE_ALLOCATION"),
         HostMemoryConfiguration("HOST_MEMORY_CONFIGURATION"),

@@ -5,43 +5,63 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The documents details for sentiment call.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * The documents details for sentiment call. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BatchDetectLanguageSentimentsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BatchDetectLanguageSentimentsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BatchDetectLanguageSentimentsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"documents"})
-    public BatchDetectLanguageSentimentsDetails(java.util.List<SentimentsDocument> documents) {
+    @java.beans.ConstructorProperties({"compartmentId", "documents"})
+    public BatchDetectLanguageSentimentsDetails(
+            String compartmentId, java.util.List<TextDocument> documents) {
         super();
+        this.compartmentId = compartmentId;
         this.documents = documents;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of Documents for detect sentiments.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that calls the API, inference will be served from pre trained model
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that calls the API, inference will be served from pre trained model
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /** List of Documents for detect sentiments. */
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
-        private java.util.List<SentimentsDocument> documents;
+        private java.util.List<TextDocument> documents;
 
         /**
          * List of Documents for detect sentiments.
+         *
          * @param documents the value to set
          * @return this builder
-         **/
-        public Builder documents(java.util.List<SentimentsDocument> documents) {
+         */
+        public Builder documents(java.util.List<TextDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
@@ -52,7 +72,7 @@ public final class BatchDetectLanguageSentimentsDetails
 
         public BatchDetectLanguageSentimentsDetails build() {
             BatchDetectLanguageSentimentsDetails model =
-                    new BatchDetectLanguageSentimentsDetails(this.documents);
+                    new BatchDetectLanguageSentimentsDetails(this.compartmentId, this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +81,9 @@ public final class BatchDetectLanguageSentimentsDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguageSentimentsDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("documents")) {
                 this.documents(model.getDocuments());
             }
@@ -68,9 +91,7 @@ public final class BatchDetectLanguageSentimentsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +101,32 @@ public final class BatchDetectLanguageSentimentsDetails
     }
 
     /**
-     * List of Documents for detect sentiments.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that calls the API, inference will be served from pre trained model
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that calls the API, inference will be served from pre trained model
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /** List of Documents for detect sentiments. */
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
-    private final java.util.List<SentimentsDocument> documents;
+    private final java.util.List<TextDocument> documents;
 
     /**
      * List of Documents for detect sentiments.
+     *
      * @return the value
-     **/
-    public java.util.List<SentimentsDocument> getDocuments() {
+     */
+    public java.util.List<TextDocument> getDocuments() {
         return documents;
     }
 
@@ -100,6 +137,7 @@ public final class BatchDetectLanguageSentimentsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -107,7 +145,8 @@ public final class BatchDetectLanguageSentimentsDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageSentimentsDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("documents=").append(String.valueOf(this.documents));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
         return sb.toString();
     }
@@ -122,13 +161,18 @@ public final class BatchDetectLanguageSentimentsDetails
         }
 
         BatchDetectLanguageSentimentsDetails other = (BatchDetectLanguageSentimentsDetails) o;
-        return java.util.Objects.equals(this.documents, other.documents) && super.equals(other);
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.documents, other.documents)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

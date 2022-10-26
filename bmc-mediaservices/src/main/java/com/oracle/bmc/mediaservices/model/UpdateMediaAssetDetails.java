@@ -5,22 +5,22 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * The information to be updated.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information to be updated. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateMediaAssetDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateMediaAssetDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMediaAssetDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -55,116 +55,113 @@ public final class UpdateMediaAssetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
-         **/
+         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
+         * information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
+         * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
+         * information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The type of the media asset.
-         **/
+        /** The type of the media asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AssetType type;
 
         /**
          * The type of the media asset.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(AssetType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * The ID of the parent asset from which this asset is derived.
-         **/
+        /** The ID of the parent asset from which this asset is derived. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentMediaAssetId")
         private String parentMediaAssetId;
 
         /**
          * The ID of the parent asset from which this asset is derived.
+         *
          * @param parentMediaAssetId the value to set
          * @return this builder
-         **/
+         */
         public Builder parentMediaAssetId(String parentMediaAssetId) {
             this.parentMediaAssetId = parentMediaAssetId;
             this.__explicitlySet__.add("parentMediaAssetId");
             return this;
         }
-        /**
-         * The ID of the senior most asset from which this asset is derived.
-         **/
+        /** The ID of the senior most asset from which this asset is derived. */
         @com.fasterxml.jackson.annotation.JsonProperty("masterMediaAssetId")
         private String masterMediaAssetId;
 
         /**
          * The ID of the senior most asset from which this asset is derived.
+         *
          * @param masterMediaAssetId the value to set
          * @return this builder
-         **/
+         */
         public Builder masterMediaAssetId(String masterMediaAssetId) {
             this.masterMediaAssetId = masterMediaAssetId;
             this.__explicitlySet__.add("masterMediaAssetId");
             return this;
         }
-        /**
-         * List of Metadata.
-         **/
+        /** List of Metadata. */
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.List<Metadata> metadata;
 
         /**
          * List of Metadata.
+         *
          * @param metadata the value to set
          * @return this builder
-         **/
+         */
         public Builder metadata(java.util.List<Metadata> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /**
-         * List of tags for the MediaAsset.
-         **/
+        /** List of tags for the MediaAsset. */
         @com.fasterxml.jackson.annotation.JsonProperty("mediaAssetTags")
         private java.util.List<MediaAssetTag> mediaAssetTags;
 
         /**
          * List of tags for the MediaAsset.
+         *
          * @param mediaAssetTags the value to set
          * @return this builder
-         **/
+         */
         public Builder mediaAssetTags(java.util.List<MediaAssetTag> mediaAssetTags) {
             this.mediaAssetTags = mediaAssetTags;
             this.__explicitlySet__.add("mediaAssetTags");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -173,8 +170,7 @@ public final class UpdateMediaAssetDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -184,7 +180,7 @@ public final class UpdateMediaAssetDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -242,9 +238,7 @@ public final class UpdateMediaAssetDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -254,121 +248,117 @@ public final class UpdateMediaAssetDetails
     }
 
     /**
-     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
-     **/
+     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
+     * information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential information.
+     * Display name for the Media Asset. Does not have to be unique. Avoid entering confidential
+     * information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The type of the media asset.
-     **/
+    /** The type of the media asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AssetType type;
 
     /**
      * The type of the media asset.
+     *
      * @return the value
-     **/
+     */
     public AssetType getType() {
         return type;
     }
 
-    /**
-     * The ID of the parent asset from which this asset is derived.
-     **/
+    /** The ID of the parent asset from which this asset is derived. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentMediaAssetId")
     private final String parentMediaAssetId;
 
     /**
      * The ID of the parent asset from which this asset is derived.
+     *
      * @return the value
-     **/
+     */
     public String getParentMediaAssetId() {
         return parentMediaAssetId;
     }
 
-    /**
-     * The ID of the senior most asset from which this asset is derived.
-     **/
+    /** The ID of the senior most asset from which this asset is derived. */
     @com.fasterxml.jackson.annotation.JsonProperty("masterMediaAssetId")
     private final String masterMediaAssetId;
 
     /**
      * The ID of the senior most asset from which this asset is derived.
+     *
      * @return the value
-     **/
+     */
     public String getMasterMediaAssetId() {
         return masterMediaAssetId;
     }
 
-    /**
-     * List of Metadata.
-     **/
+    /** List of Metadata. */
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.List<Metadata> metadata;
 
     /**
      * List of Metadata.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Metadata> getMetadata() {
         return metadata;
     }
 
-    /**
-     * List of tags for the MediaAsset.
-     **/
+    /** List of tags for the MediaAsset. */
     @com.fasterxml.jackson.annotation.JsonProperty("mediaAssetTags")
     private final java.util.List<MediaAssetTag> mediaAssetTags;
 
     /**
      * List of tags for the MediaAsset.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<MediaAssetTag> getMediaAssetTags() {
         return mediaAssetTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -380,6 +370,7 @@ public final class UpdateMediaAssetDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

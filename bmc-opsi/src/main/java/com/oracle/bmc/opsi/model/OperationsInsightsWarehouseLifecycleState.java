@@ -4,11 +4,10 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/**
- * Possible lifecycle states.
- **/
+/** Possible lifecycle states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperationsInsightsWarehouseLifecycleState {
+public enum OperationsInsightsWarehouseLifecycleState
+        implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

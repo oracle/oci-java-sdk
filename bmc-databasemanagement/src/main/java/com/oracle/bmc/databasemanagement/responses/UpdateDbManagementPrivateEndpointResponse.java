@@ -10,15 +10,14 @@ import com.oracle.bmc.databasemanagement.model.*;
 public class UpdateDbManagementPrivateEndpointResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,10 +25,7 @@ public class UpdateDbManagementPrivateEndpointResponse
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -41,14 +37,13 @@ public class UpdateDbManagementPrivateEndpointResponse
         return etag;
     }
 
-    /**
-     * The returned DbManagementPrivateEndpoint instance.
-     */
+    /** The returned DbManagementPrivateEndpoint instance. */
     private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
             dbManagementPrivateEndpoint;
 
     /**
      * The returned DbManagementPrivateEndpoint instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
@@ -65,7 +60,7 @@ public class UpdateDbManagementPrivateEndpointResponse
     })
     private UpdateDbManagementPrivateEndpointResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
@@ -76,31 +71,34 @@ public class UpdateDbManagementPrivateEndpointResponse
         this.dbManagementPrivateEndpoint = dbManagementPrivateEndpoint;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    UpdateDbManagementPrivateEndpointResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,10 +108,7 @@ public class UpdateDbManagementPrivateEndpointResponse
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -127,14 +122,13 @@ public class UpdateDbManagementPrivateEndpointResponse
             return this;
         }
 
-        /**
-         * The returned DbManagementPrivateEndpoint instance.
-         */
+        /** The returned DbManagementPrivateEndpoint instance. */
         private com.oracle.bmc.databasemanagement.model.DbManagementPrivateEndpoint
                 dbManagementPrivateEndpoint;
 
         /**
          * The returned DbManagementPrivateEndpoint instance.
+         *
          * @param dbManagementPrivateEndpoint the value to set
          * @return this builder
          */
@@ -147,8 +141,10 @@ public class UpdateDbManagementPrivateEndpointResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(UpdateDbManagementPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -161,8 +157,10 @@ public class UpdateDbManagementPrivateEndpointResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public UpdateDbManagementPrivateEndpointResponse build() {
             return new UpdateDbManagementPrivateEndpointResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, dbManagementPrivateEndpoint);
@@ -171,6 +169,7 @@ public class UpdateDbManagementPrivateEndpointResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

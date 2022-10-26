@@ -5,31 +5,34 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * A summary of properties for the specified alarm and its current evaluation status.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- * For information about endpoints and signing API requests, see
- * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
- * [SDKS and Other Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm).
+ * A summary of properties for the specified alarm and its current evaluation status. For
+ * information about alarms, see [Alarms
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <p>For information about endpoints and signing API requests, see [About the
+ * API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
+ * available SDKs and tools, see [SDKS and Other
+ * Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AlarmStatusSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AlarmStatusSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AlarmStatusSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -58,18 +61,19 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -77,21 +81,20 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The configured name of the alarm.
-         * <p>
-         * Example: {@code High CPU Utilization}
          *
-         **/
+         * <p>Example: {@code High CPU Utilization}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The configured name of the alarm.
-         * <p>
-         * Example: {@code High CPU Utilization}
+         *
+         * <p>Example: {@code High CPU Utilization}
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -99,82 +102,80 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * The configured severity of the alarm.
-         * <p>
-         * Example: {@code CRITICAL}
          *
-         **/
+         * <p>Example: {@code CRITICAL}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * The configured severity of the alarm.
-         * <p>
-         * Example: {@code CRITICAL}
+         *
+         * <p>Example: {@code CRITICAL}
          *
          * @param severity the value to set
          * @return this builder
-         **/
+         */
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
         /**
-         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
-         * Note: A three-minute lag for this value accounts for any late-arriving metrics.
-         * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm
+         * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
+         * late-arriving metrics.
          *
-         **/
+         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
         private java.util.Date timestampTriggered;
 
         /**
-         * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
-         * Note: A three-minute lag for this value accounts for any late-arriving metrics.
-         * <p>
-         * Example: {@code 2019-02-01T01:02:29.600Z}
+         * Timestamp for the transition of the alarm state. For example, the time when the alarm
+         * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
+         * late-arriving metrics.
+         *
+         * <p>Example: {@code 2019-02-01T01:02:29.600Z}
          *
          * @param timestampTriggered the value to set
          * @return this builder
-         **/
+         */
         public Builder timestampTriggered(java.util.Date timestampTriggered) {
             this.timestampTriggered = timestampTriggered;
             this.__explicitlySet__.add("timestampTriggered");
             return this;
         }
         /**
-         * The status of this alarm.
-         * Status is collective, across all metric streams in the alarm.
-         * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-         * <p>
-         * Example: {@code FIRING}
+         * The status of this alarm. Status is collective, across all metric streams in the alarm.
+         * To list alarm status for each metric stream, use {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The
+         * alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code
+         * true}.
          *
-         **/
+         * <p>Example: {@code FIRING}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status of this alarm.
-         * Status is collective, across all metric streams in the alarm.
-         * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-         * <p>
-         * Example: {@code FIRING}
+         * The status of this alarm. Status is collective, across all metric streams in the alarm.
+         * To list alarm status for each metric stream, use {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The
+         * alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code
+         * true}.
+         *
+         * <p>Example: {@code FIRING}
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The configuration details for suppressing an alarm.
-         *
-         **/
+        /** The configuration details for suppressing an alarm. */
         @com.fasterxml.jackson.annotation.JsonProperty("suppression")
         private Suppression suppression;
 
@@ -183,7 +184,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          *
          * @param suppression the value to set
          * @return this builder
-         **/
+         */
         public Builder suppression(Suppression suppression) {
             this.suppression = suppression;
             this.__explicitlySet__.add("suppression");
@@ -232,9 +233,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -244,56 +243,55 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
      * The configured name of the alarm.
-     * <p>
-     * Example: {@code High CPU Utilization}
      *
-     **/
+     * <p>Example: {@code High CPU Utilization}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The configured name of the alarm.
-     * <p>
-     * Example: {@code High CPU Utilization}
+     *
+     * <p>Example: {@code High CPU Utilization}
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The configured severity of the alarm.
-     * <p>
-     * Example: {@code CRITICAL}
      *
-     **/
-    public enum Severity {
+     * <p>Example: {@code CRITICAL}
+     */
+    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
         Critical("CRITICAL"),
         Error("ERROR"),
         Warning("WARNING"),
         Info("INFO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -334,63 +332,62 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
     };
     /**
      * The configured severity of the alarm.
-     * <p>
-     * Example: {@code CRITICAL}
      *
-     **/
+     * <p>Example: {@code CRITICAL}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * The configured severity of the alarm.
-     * <p>
-     * Example: {@code CRITICAL}
+     *
+     * <p>Example: {@code CRITICAL}
      *
      * @return the value
-     **/
+     */
     public Severity getSeverity() {
         return severity;
     }
 
     /**
-     * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
-     * Note: A three-minute lag for this value accounts for any late-arriving metrics.
-     * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Timestamp for the transition of the alarm state. For example, the time when the alarm
+     * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
+     * late-arriving metrics.
      *
-     **/
+     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timestampTriggered")
     private final java.util.Date timestampTriggered;
 
     /**
-     * Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
-     * Note: A three-minute lag for this value accounts for any late-arriving metrics.
-     * <p>
-     * Example: {@code 2019-02-01T01:02:29.600Z}
+     * Timestamp for the transition of the alarm state. For example, the time when the alarm
+     * transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any
+     * late-arriving metrics.
+     *
+     * <p>Example: {@code 2019-02-01T01:02:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestampTriggered() {
         return timestampTriggered;
     }
 
     /**
-     * The status of this alarm.
-     * Status is collective, across all metric streams in the alarm.
-     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
-     * Example: {@code FIRING}
+     * The status of this alarm. Status is collective, across all metric streams in the alarm. To
+     * list alarm status for each metric stream, use {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The alarm
+     * attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
      *
-     **/
-    public enum Status {
+     * <p>Example: {@code FIRING}
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Firing("FIRING"),
         Ok("OK"),
         Suspended("SUSPENDED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -429,35 +426,31 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * The status of this alarm.
-     * Status is collective, across all metric streams in the alarm.
-     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
-     * Example: {@code FIRING}
+     * The status of this alarm. Status is collective, across all metric streams in the alarm. To
+     * list alarm status for each metric stream, use {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The alarm
+     * attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
      *
-     **/
+     * <p>Example: {@code FIRING}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status of this alarm.
-     * Status is collective, across all metric streams in the alarm.
-     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     * The alarm attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
-     * <p>
-     * Example: {@code FIRING}
+     * The status of this alarm. Status is collective, across all metric streams in the alarm. To
+     * list alarm status for each metric stream, use {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. The alarm
+     * attribute {@code isNotificationsPerMetricDimensionEnabled} must be set to {@code true}.
+     *
+     * <p>Example: {@code FIRING}
      *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The configuration details for suppressing an alarm.
-     *
-     **/
+    /** The configuration details for suppressing an alarm. */
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
     private final Suppression suppression;
 
@@ -465,7 +458,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The configuration details for suppressing an alarm.
      *
      * @return the value
-     **/
+     */
     public Suppression getSuppression() {
         return suppression;
     }
@@ -477,6 +470,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

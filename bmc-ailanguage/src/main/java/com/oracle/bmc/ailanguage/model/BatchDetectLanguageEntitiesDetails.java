@@ -5,43 +5,85 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The documents details for entities detect call.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * The documents details for entities detect call. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BatchDetectLanguageEntitiesDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BatchDetectLanguageEntitiesDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BatchDetectLanguageEntitiesDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"documents"})
-    public BatchDetectLanguageEntitiesDetails(java.util.List<EntityDocument> documents) {
+    @java.beans.ConstructorProperties({"compartmentId", "endpointId", "documents"})
+    public BatchDetectLanguageEntitiesDetails(
+            String compartmentId, String endpointId, java.util.List<TextDocument> documents) {
         super();
+        this.compartmentId = compartmentId;
+        this.endpointId = endpointId;
         this.documents = documents;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of Documents for detect entities.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that calls the API, inference will be served from pre trained model
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment that calls the API, inference will be served from pre trained model
+         *
+         * @param compartmentId the value to set
+         * @return this builder
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+        private String endpointId;
+
+        /**
+         * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+         * provided, then inference will be served from custom model which is mapped to this
+         * Endpoint.
+         *
+         * @param endpointId the value to set
+         * @return this builder
+         */
+        public Builder endpointId(String endpointId) {
+            this.endpointId = endpointId;
+            this.__explicitlySet__.add("endpointId");
+            return this;
+        }
+        /** List of Documents for detect entities. */
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
-        private java.util.List<EntityDocument> documents;
+        private java.util.List<TextDocument> documents;
 
         /**
          * List of Documents for detect entities.
+         *
          * @param documents the value to set
          * @return this builder
-         **/
-        public Builder documents(java.util.List<EntityDocument> documents) {
+         */
+        public Builder documents(java.util.List<TextDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
@@ -52,7 +94,8 @@ public final class BatchDetectLanguageEntitiesDetails
 
         public BatchDetectLanguageEntitiesDetails build() {
             BatchDetectLanguageEntitiesDetails model =
-                    new BatchDetectLanguageEntitiesDetails(this.documents);
+                    new BatchDetectLanguageEntitiesDetails(
+                            this.compartmentId, this.endpointId, this.documents);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +104,12 @@ public final class BatchDetectLanguageEntitiesDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguageEntitiesDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("endpointId")) {
+                this.endpointId(model.getEndpointId());
+            }
             if (model.wasPropertyExplicitlySet("documents")) {
                 this.documents(model.getDocuments());
             }
@@ -68,9 +117,7 @@ public final class BatchDetectLanguageEntitiesDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +127,49 @@ public final class BatchDetectLanguageEntitiesDetails
     }
 
     /**
-     * List of Documents for detect entities.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that calls the API, inference will be served from pre trained model
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment that calls the API, inference will be served from pre trained model
+     *
+     * @return the value
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
+    private final String endpointId;
+
+    /**
+     * The endpoint which have to be used for inferencing. If endpointId and compartmentId is
+     * provided, then inference will be served from custom model which is mapped to this Endpoint.
+     *
+     * @return the value
+     */
+    public String getEndpointId() {
+        return endpointId;
+    }
+
+    /** List of Documents for detect entities. */
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
-    private final java.util.List<EntityDocument> documents;
+    private final java.util.List<TextDocument> documents;
 
     /**
      * List of Documents for detect entities.
+     *
      * @return the value
-     **/
-    public java.util.List<EntityDocument> getDocuments() {
+     */
+    public java.util.List<TextDocument> getDocuments() {
         return documents;
     }
 
@@ -100,6 +180,7 @@ public final class BatchDetectLanguageEntitiesDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -107,7 +188,9 @@ public final class BatchDetectLanguageEntitiesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguageEntitiesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("documents=").append(String.valueOf(this.documents));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
+        sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(")");
         return sb.toString();
     }
@@ -122,13 +205,20 @@ public final class BatchDetectLanguageEntitiesDetails
         }
 
         BatchDetectLanguageEntitiesDetails other = (BatchDetectLanguageEntitiesDetails) o;
-        return java.util.Objects.equals(this.documents, other.documents) && super.equals(other);
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
+                && java.util.Objects.equals(this.documents, other.documents)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

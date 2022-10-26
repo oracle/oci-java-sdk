@@ -4,28 +4,26 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.retrier.Retriers;
 
 import java.util.UUID;
 
-/**
- * Utility class that adds the opc-retry-token header to the request
- */
+/** Utility class that adds the opc-retry-token header to the request */
 public class RetryTokenUtils {
-    private static final String OPC_RETRY_TOKEN_HEADER = "opc-retry-token";
+    @InternalSdk public static final String OPC_RETRY_TOKEN_HEADER = "opc-retry-token";
 
     private RetryTokenUtils() {}
 
-    public static void addRetryToken(WrappedInvocationBuilder ib) {
+    public static void addRetryToken(HttpRequest httpRequest) {
 
         if (!Retriers.shouldSendOpcRetryToken()) {
             return;
         }
 
         final boolean isOpcRetryTokenAlreadySet =
-                ib.getHeaders()
-                        .keySet()
-                        .stream()
+                httpRequest.headers().keySet().stream()
                         .anyMatch(
                                 headerName -> headerName.equalsIgnoreCase(OPC_RETRY_TOKEN_HEADER));
 
@@ -33,7 +31,7 @@ public class RetryTokenUtils {
             return;
         }
 
-        ib.header(OPC_RETRY_TOKEN_HEADER, generateRetryToken());
+        httpRequest.header(OPC_RETRY_TOKEN_HEADER, generateRetryToken());
     }
 
     private static String generateRetryToken() {

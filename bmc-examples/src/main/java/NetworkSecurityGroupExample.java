@@ -55,25 +55,25 @@ import shared.ExampleComputeHelper;
 import shared.ExampleVcnHelper;
 
 /**
- * This class provides an example of how to manage an NetworkSecurityGroup including managing rules on it and
- * associating vnics to it.
- * <p>
- * In order to demonstrate functionality, this script will create a VCN, subnet and an instance.
+ * This class provides an example of how to manage an NetworkSecurityGroup including managing rules
+ * on it and associating vnics to it.
+ *
+ * <p>In order to demonstrate functionality, this script will create a VCN, subnet and an instance.
  * These will be deleted at the end of the script. . This script also makes some assumptions about
  * the resources it will create:
  *
  * <ul>
- * <li>The VCN created by this example will have a display name defined by constant VCN_DISPLAY_NAME</li>
- * <li>The subnet created by this example will have a display name defined by constant SUBNET_DISPLAY_NAME</li>
- * <li>The VCN will have a IPv4 CIDR block defined by constant VCN_V4_CIDR</li>
- * <li>The Subnet will have a IPv4 CIDR block defined by constant SUBNET_V4_CIDR</li>
- * <li>
- * The configuration file used by service clients will be sourced from the default
- * location (~/.oci/config) and the DEFAULT profile will be used
- * </li>
- * <li>Resources will be created in us-phoenix-1</li>
- * <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
- * <ul>
+ *   <li>The VCN created by this example will have a display name defined by constant
+ *       VCN_DISPLAY_NAME
+ *   <li>The subnet created by this example will have a display name defined by constant
+ *       SUBNET_DISPLAY_NAME
+ *   <li>The VCN will have a IPv4 CIDR block defined by constant VCN_V4_CIDR
+ *   <li>The Subnet will have a IPv4 CIDR block defined by constant SUBNET_V4_CIDR
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Resources will be created in us-phoenix-1
+ *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
+ *       <ul>
  */
 public class NetworkSecurityGroupExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -92,9 +92,9 @@ public class NetworkSecurityGroupExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *             <ul>
-     *             <li>The OCID of the compartment where a VCN will be created for tagging.</li>
-     *             </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where a VCN will be created for tagging.
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -103,8 +103,10 @@ public class NetworkSecurityGroupExample {
         }
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -195,9 +197,7 @@ public class NetworkSecurityGroupExample {
         }
     }
 
-    /**
-     * Run all the steps of the example to demonstrate NSG functionality.
-     */
+    /** Run all the steps of the example to demonstrate NSG functionality. */
     private static void runExampleSteps(Vcn vcn, String compartmentId, String vnicToUse)
             throws InterruptedException {
         NetworkSecurityGroup nsg1 = null;
@@ -332,9 +332,7 @@ public class NetworkSecurityGroupExample {
         }
     }
 
-    /**
-     * list all the vnics in the given NSG
-     */
+    /** list all the vnics in the given NSG */
     private static void listAllVnicsInNSG(NetworkSecurityGroup nsg1) {
         System.out.println("List all VNICs in the network security group");
         System.out.println(
@@ -346,9 +344,7 @@ public class NetworkSecurityGroupExample {
                         .getItems());
     }
 
-    /**
-     * Construct a UpdateSecurityRuleDetails with Stateless set to True for given rule Id
-     */
+    /** Construct a UpdateSecurityRuleDetails with Stateless set to True for given rule Id */
     private static UpdateSecurityRuleDetails createUpdateRuleDetails(SecurityRule rule) {
         return UpdateSecurityRuleDetails.builder()
                 // Specify the rule Id to update
@@ -365,9 +361,7 @@ public class NetworkSecurityGroupExample {
                 .build();
     }
 
-    /**
-     * Add rules to NSG nsg1 referencing nsg2
-     */
+    /** Add rules to NSG nsg1 referencing nsg2 */
     private static AddedNetworkSecurityGroupSecurityRules addNsgRules(
             NetworkSecurityGroup nsg, NetworkSecurityGroup targetNsg) {
         return virtualNetworkClient
@@ -382,9 +376,7 @@ public class NetworkSecurityGroupExample {
                 .getAddedNetworkSecurityGroupSecurityRules();
     }
 
-    /**
-     * Create some security rules one of which refers to the target NSG as destination
-     */
+    /** Create some security rules one of which refers to the target NSG as destination */
     private static List<AddSecurityRuleDetails> createSecurityRules(
             NetworkSecurityGroup targetNsg) {
         return Arrays.asList(
@@ -430,9 +422,7 @@ public class NetworkSecurityGroupExample {
                         .build());
     }
 
-    /**
-     * Create a NSG in the given VCN, compartment and having the provided displayName
-     */
+    /** Create a NSG in the given VCN, compartment and having the provided displayName */
     private static NetworkSecurityGroup createNsg(
             Vcn vcn, String compartmentId, String displayName) {
         printSeparator();
@@ -460,9 +450,7 @@ public class NetworkSecurityGroupExample {
         System.out.println("==================");
     }
 
-    /**
-     * delete the given nsg
-     */
+    /** delete the given nsg */
     private static void deleteNsg(NetworkSecurityGroup nsg) {
         printSeparator();
         System.out.println("Deleting network security group " + nsg.getId());
@@ -476,9 +464,7 @@ public class NetworkSecurityGroupExample {
         printSeparator();
     }
 
-    /**
-     * Returns the first availability domain in a compartment.
-     */
+    /** Returns the first availability domain in a compartment. */
     protected static String getFirstAvailabilityDomain(
             final IdentityClient identityClient, final String compartmentId) {
 

@@ -4,11 +4,10 @@
  */
 package com.oracle.bmc.mediaservices.model;
 
-/**
- * The field to sort by.
- **/
+/** The field to sort by. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public enum MediaAssetDistributionChannelAttachmentSortBy {
+public enum MediaAssetDistributionChannelAttachmentSortBy
+        implements com.oracle.bmc.http.internal.BmcEnum {
     MediaAssetId("mediaAssetId"),
     DistributionChannelId("distributionChannelId"),
     DisplayName("displayName"),

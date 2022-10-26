@@ -15,9 +15,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-import com.google.common /*Guava will be removed soon*/.net.UrlEscapers;
-
 import com.oracle.bmc.http.signing.RequestSigningFilter;
+import com.oracle.bmc.http.internal.ParamEncoder;
 
 public class RawRestCallExample {
 
@@ -28,8 +27,7 @@ public class RawRestCallExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Pre-Requirement: Allow setting of restricted headers. This is required to allow the SigningFilter
-        // to set the host header that gets computed during signing of the request.
+        // Pre-Requirement: Allow setting of restricted headers
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
 
         // 1) Create a request signing filter instance
@@ -45,7 +43,7 @@ public class RawRestCallExample {
                 client.target("https://iaas.us-phoenix-1.oraclecloud.com")
                         .path("20160918")
                         .path("instances")
-                        .path(UrlEscapers.urlPathSegmentEscaper().escape(instanceId));
+                        .path(ParamEncoder.encodePathParam(instanceId));
 
         // 4) Set the expected type and invoke the call
         Invocation.Builder ib = target.request();

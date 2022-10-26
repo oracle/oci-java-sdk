@@ -5,11 +5,11 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Possible values for the publisher category to which a publication can belong. The publisher category informs where the listing appears for use.
- *
- **/
+ * Possible values for the publisher category to which a publication can belong. The publisher
+ * category informs where the listing appears for use.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum ListingType {
+public enum ListingType implements com.oracle.bmc.http.internal.BmcEnum {
     Community("COMMUNITY"),
     Partner("PARTNER"),
     Private("PRIVATE"),

@@ -5,39 +5,37 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The filter for Bitbucket Cloud events.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The filter for Bitbucket Cloud events. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BitbucketCloudFilter.Builder.class
-)
+        builder = BitbucketCloudFilter.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "triggerSource"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "triggerSource")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BitbucketCloudFilter extends Filter {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The events, for example, PUSH, PULL_REQUEST_MERGE.
-         **/
+        /** The events, for example, PUSH, PULL_REQUEST_MERGE. */
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<Events> events;
 
         /**
          * The events, for example, PUSH, PULL_REQUEST_MERGE.
+         *
          * @param events the value to set
          * @return this builder
-         **/
+         */
         public Builder events(java.util.List<Events> events) {
             this.events = events;
             this.__explicitlySet__.add("events");
@@ -89,9 +87,7 @@ public final class BitbucketCloudFilter extends Filter {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,17 +107,16 @@ public final class BitbucketCloudFilter extends Filter {
         this.exclude = exclude;
     }
 
-    /**
-     **/
-    public enum Events {
+    /** */
+    public enum Events implements com.oracle.bmc.http.internal.BmcEnum {
         Push("PUSH"),
         PullRequestCreated("PULL_REQUEST_CREATED"),
         PullRequestUpdated("PULL_REQUEST_UPDATED"),
         PullRequestMerged("PULL_REQUEST_MERGED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -159,16 +154,15 @@ public final class BitbucketCloudFilter extends Filter {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The events, for example, PUSH, PULL_REQUEST_MERGE.
-     **/
+    /** The events, for example, PUSH, PULL_REQUEST_MERGE. */
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<Events> events;
 
     /**
      * The events, for example, PUSH, PULL_REQUEST_MERGE.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Events> getEvents() {
         return events;
     }
@@ -194,6 +188,7 @@ public final class BitbucketCloudFilter extends Filter {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

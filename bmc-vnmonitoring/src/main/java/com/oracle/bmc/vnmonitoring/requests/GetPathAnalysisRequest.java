@@ -6,71 +6,63 @@ package com.oracle.bmc.vnmonitoring.requests;
 
 import com.oracle.bmc.vnmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalysisExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPathAnalysisRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vnmonitoring/GetPathAnalysisExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPathAnalysisRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetPathAnalysisRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.vnmonitoring.model.GetPathAnalysisDetails> {
 
-    /**
-     * Details for the path analysis query.
-     */
+    /** Details for the path analysis query. */
     private com.oracle.bmc.vnmonitoring.model.GetPathAnalysisDetails getPathAnalysisDetails;
 
-    /**
-     * Details for the path analysis query.
-     */
+    /** Details for the path analysis query. */
     public com.oracle.bmc.vnmonitoring.model.GetPathAnalysisDetails getGetPathAnalysisDetails() {
         return getPathAnalysisDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-     * has been deleted and purged from the system, then a retry of the original creation request
-     * may be rejected).
-     *
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request may be rejected).
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The Cache-Control HTTP header holds directives (instructions)
-     * for caching in both requests and responses.
-     *
+     * The Cache-Control HTTP header holds directives (instructions) for caching in both requests
+     * and responses.
      */
     private String cacheControl;
 
     /**
-     * The Cache-Control HTTP header holds directives (instructions)
-     * for caching in both requests and responses.
-     *
+     * The Cache-Control HTTP header holds directives (instructions) for caching in both requests
+     * and responses.
      */
     public String getCacheControl() {
         return cacheControl;
@@ -78,6 +70,7 @@ public class GetPathAnalysisRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -90,18 +83,16 @@ public class GetPathAnalysisRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetPathAnalysisRequest,
                     com.oracle.bmc.vnmonitoring.model.GetPathAnalysisDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Details for the path analysis query.
-         */
+        /** Details for the path analysis query. */
         private com.oracle.bmc.vnmonitoring.model.GetPathAnalysisDetails getPathAnalysisDetails =
                 null;
 
         /**
          * Details for the path analysis query.
+         *
          * @param getPathAnalysisDetails the value to set
          * @return this builder instance
          */
@@ -113,20 +104,19 @@ public class GetPathAnalysisRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -137,15 +127,14 @@ public class GetPathAnalysisRequest
         }
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -156,15 +145,14 @@ public class GetPathAnalysisRequest
         }
 
         /**
-         * The Cache-Control HTTP header holds directives (instructions)
-         * for caching in both requests and responses.
-         *
+         * The Cache-Control HTTP header holds directives (instructions) for caching in both
+         * requests and responses.
          */
         private String cacheControl = null;
 
         /**
-         * The Cache-Control HTTP header holds directives (instructions)
-         * for caching in both requests and responses.
+         * The Cache-Control HTTP header holds directives (instructions) for caching in both
+         * requests and responses.
          *
          * @param cacheControl the value to set
          * @return this builder instance
@@ -176,18 +164,19 @@ public class GetPathAnalysisRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -199,6 +188,7 @@ public class GetPathAnalysisRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetPathAnalysisRequest o) {
@@ -214,10 +204,11 @@ public class GetPathAnalysisRequest
         /**
          * Build the instance of GetPathAnalysisRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetPathAnalysisRequest
          */
@@ -230,6 +221,7 @@ public class GetPathAnalysisRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -242,7 +234,8 @@ public class GetPathAnalysisRequest
         /**
          * Build the instance of GetPathAnalysisRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetPathAnalysisRequest
@@ -254,12 +247,14 @@ public class GetPathAnalysisRequest
             request.opcRequestId = opcRequestId;
             request.cacheControl = cacheControl;
             return request;
-            // new GetPathAnalysisRequest(getPathAnalysisDetails, opcRetryToken, opcRequestId, cacheControl);
+            // new GetPathAnalysisRequest(getPathAnalysisDetails, opcRetryToken, opcRequestId,
+            // cacheControl);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -272,6 +267,7 @@ public class GetPathAnalysisRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

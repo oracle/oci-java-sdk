@@ -5,22 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The configuration of Stack Monitoring for the external database.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The configuration of Stack Monitoring for the external database. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StackMonitoringConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = StackMonitoringConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class StackMonitoringConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"stackMonitoringStatus", "stackMonitoringConnectorId"})
     public StackMonitoringConfig(
@@ -32,17 +32,16 @@ public final class StackMonitoringConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The status of Stack Monitoring.
-         **/
+        /** The status of Stack Monitoring. */
         @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
         private StackMonitoringStatus stackMonitoringStatus;
 
         /**
          * The status of Stack Monitoring.
+         *
          * @param stackMonitoringStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder stackMonitoringStatus(StackMonitoringStatus stackMonitoringStatus) {
             this.stackMonitoringStatus = stackMonitoringStatus;
             this.__explicitlySet__.add("stackMonitoringStatus");
@@ -50,19 +49,22 @@ public final class StackMonitoringConfig
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
-         *
-         **/
+         * {@link
+         * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+         * createExternalDatabaseConnectorDetails}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConnectorId")
         private String stackMonitoringConnectorId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+         * {@link
+         * #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+         * createExternalDatabaseConnectorDetails}.
          *
          * @param stackMonitoringConnectorId the value to set
          * @return this builder
-         **/
+         */
         public Builder stackMonitoringConnectorId(String stackMonitoringConnectorId) {
             this.stackMonitoringConnectorId = stackMonitoringConnectorId;
             this.__explicitlySet__.add("stackMonitoringConnectorId");
@@ -94,9 +96,7 @@ public final class StackMonitoringConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,10 +105,8 @@ public final class StackMonitoringConfig
         return new Builder().copy(this);
     }
 
-    /**
-     * The status of Stack Monitoring.
-     **/
-    public enum StackMonitoringStatus {
+    /** The status of Stack Monitoring. */
+    public enum StackMonitoringStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Enabling("ENABLING"),
         Enabled("ENABLED"),
         Disabling("DISABLING"),
@@ -117,8 +115,8 @@ public final class StackMonitoringConfig
         FailedDisabling("FAILED_DISABLING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -157,34 +155,34 @@ public final class StackMonitoringConfig
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of Stack Monitoring.
-     **/
+    /** The status of Stack Monitoring. */
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringStatus")
     private final StackMonitoringStatus stackMonitoringStatus;
 
     /**
      * The status of Stack Monitoring.
+     *
      * @return the value
-     **/
+     */
     public StackMonitoringStatus getStackMonitoringStatus() {
         return stackMonitoringStatus;
     }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
-     *
-     **/
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+     * createExternalDatabaseConnectorDetails}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("stackMonitoringConnectorId")
     private final String stackMonitoringConnectorId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest) createExternalDatabaseConnectorDetails}.
+     * {@link #createExternalDatabaseConnectorDetails(CreateExternalDatabaseConnectorDetailsRequest)
+     * createExternalDatabaseConnectorDetails}.
      *
      * @return the value
-     **/
+     */
     public String getStackMonitoringConnectorId() {
         return stackMonitoringConnectorId;
     }
@@ -196,6 +194,7 @@ public final class StackMonitoringConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

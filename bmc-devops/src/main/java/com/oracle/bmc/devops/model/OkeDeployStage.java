@@ -5,23 +5,23 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Container Engine for Kubernetes(OKE) cluster deployment stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Container Engine for Kubernetes(OKE) cluster deployment stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OkeDeployStage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployStageType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployStageType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OkeDeployStage extends DeployStage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -152,33 +152,31 @@ public final class OkeDeployStage extends DeployStage {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /**
-         * Kubernetes cluster environment OCID for deployment.
-         **/
+        /** Kubernetes cluster environment OCID for deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
         private String okeClusterDeployEnvironmentId;
 
         /**
          * Kubernetes cluster environment OCID for deployment.
+         *
          * @param okeClusterDeployEnvironmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
             this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             this.__explicitlySet__.add("okeClusterDeployEnvironmentId");
             return this;
         }
-        /**
-         * List of Kubernetes manifest artifact OCIDs.
-         **/
+        /** List of Kubernetes manifest artifact OCIDs. */
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
         private java.util.List<String> kubernetesManifestDeployArtifactIds;
 
         /**
          * List of Kubernetes manifest artifact OCIDs.
+         *
          * @param kubernetesManifestDeployArtifactIds the value to set
          * @return this builder
-         **/
+         */
         public Builder kubernetesManifestDeployArtifactIds(
                 java.util.List<String> kubernetesManifestDeployArtifactIds) {
             this.kubernetesManifestDeployArtifactIds = kubernetesManifestDeployArtifactIds;
@@ -186,16 +184,19 @@ public final class OkeDeployStage extends DeployStage {
             return this;
         }
         /**
-         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-         **/
+         * Default namespace to be used for Kubernetes deployment when not specified in the
+         * manifest.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         * Default namespace to be used for Kubernetes deployment when not specified in the
+         * manifest.
+         *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -302,9 +303,7 @@ public final class OkeDeployStage extends DeployStage {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -354,44 +353,43 @@ public final class OkeDeployStage extends DeployStage {
         this.rollbackPolicy = rollbackPolicy;
     }
 
-    /**
-     * Kubernetes cluster environment OCID for deployment.
-     **/
+    /** Kubernetes cluster environment OCID for deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
     private final String okeClusterDeployEnvironmentId;
 
     /**
      * Kubernetes cluster environment OCID for deployment.
+     *
      * @return the value
-     **/
+     */
     public String getOkeClusterDeployEnvironmentId() {
         return okeClusterDeployEnvironmentId;
     }
 
-    /**
-     * List of Kubernetes manifest artifact OCIDs.
-     **/
+    /** List of Kubernetes manifest artifact OCIDs. */
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesManifestDeployArtifactIds")
     private final java.util.List<String> kubernetesManifestDeployArtifactIds;
 
     /**
      * List of Kubernetes manifest artifact OCIDs.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getKubernetesManifestDeployArtifactIds() {
         return kubernetesManifestDeployArtifactIds;
     }
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
@@ -410,6 +408,7 @@ public final class OkeDeployStage extends DeployStage {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

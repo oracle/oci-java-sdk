@@ -6,7 +6,9 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateJobArtifactExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateJobArtifactRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateJobArtifactExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateJobArtifactRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CreateJobArtifactRequest
@@ -14,75 +16,75 @@ public class CreateJobArtifactRequest
         implements com.oracle.bmc.requests.HasContentLength {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the job.
      */
     private String jobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the job.
      */
     public String getJobId() {
         return jobId;
     }
-    /**
-     * The content length of the body.
-     */
+    /** The content length of the body. */
     private Long contentLength;
 
-    /**
-     * The content length of the body.
-     */
+    /** The content length of the body. */
     public Long getContentLength() {
         return contentLength;
     }
-    /**
-     * The job artifact to upload.
-     */
+    /** The job artifact to upload. */
     private java.io.InputStream jobArtifact;
 
-    /**
-     * The job artifact to upload.
-     */
+    /** The job artifact to upload. */
     public java.io.InputStream getJobArtifact() {
         return jobArtifact;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
-     *
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, then provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
-     *
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, then provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-     *
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a
+     * resource has been deleted and purged from the system, then a retry of the original creation
+     * request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
-     * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
-     *
+     * This header is for specifying a filename during upload. It is used to identify the file type
+     * and validate if the file type is supported. Example: {@code --content-disposition
+     * "attachment; filename=hello-world.py"}
      */
     private String contentDisposition;
 
     /**
-     * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
-     * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
-     *
+     * This header is for specifying a filename during upload. It is used to identify the file type
+     * and validate if the file type is supported. Example: {@code --content-disposition
+     * "attachment; filename=hello-world.py"}
      */
     public String getContentDisposition() {
         return contentDisposition;
@@ -90,6 +92,7 @@ public class CreateJobArtifactRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -101,17 +104,19 @@ public class CreateJobArtifactRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateJobArtifactRequest, java.io.InputStream> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the job.
          */
         private String jobId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the job.
+         *
          * @param jobId the value to set
          * @return this builder instance
          */
@@ -120,13 +125,12 @@ public class CreateJobArtifactRequest
             return this;
         }
 
-        /**
-         * The content length of the body.
-         */
+        /** The content length of the body. */
         private Long contentLength = null;
 
         /**
          * The content length of the body.
+         *
          * @param contentLength the value to set
          * @return this builder instance
          */
@@ -135,13 +139,12 @@ public class CreateJobArtifactRequest
             return this;
         }
 
-        /**
-         * The job artifact to upload.
-         */
+        /** The job artifact to upload. */
         private java.io.InputStream jobArtifact = null;
 
         /**
          * The job artifact to upload.
+         *
          * @param jobArtifact the value to set
          * @return this builder instance
          */
@@ -151,13 +154,14 @@ public class CreateJobArtifactRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
-         *
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, then provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -168,13 +172,20 @@ public class CreateJobArtifactRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
+         * if a resource has been deleted and purged from the system, then a retry of the original
+         * creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -185,15 +196,16 @@ public class CreateJobArtifactRequest
         }
 
         /**
-         * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
-         * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
-         *
+         * This header is for specifying a filename during upload. It is used to identify the file
+         * type and validate if the file type is supported. Example: {@code --content-disposition
+         * "attachment; filename=hello-world.py"}
          */
         private String contentDisposition = null;
 
         /**
-         * This header is for specifying a filename during upload. It is used to identify the file type and validate if the
-         * file type is supported. Example: {@code --content-disposition "attachment; filename=hello-world.py"}
+         * This header is for specifying a filename during upload. It is used to identify the file
+         * type and validate if the file type is supported. Example: {@code --content-disposition
+         * "attachment; filename=hello-world.py"}
          *
          * @param contentDisposition the value to set
          * @return this builder instance
@@ -205,18 +217,19 @@ public class CreateJobArtifactRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -228,6 +241,7 @@ public class CreateJobArtifactRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(CreateJobArtifactRequest o) {
@@ -245,10 +259,11 @@ public class CreateJobArtifactRequest
         /**
          * Build the instance of CreateJobArtifactRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of CreateJobArtifactRequest
          */
@@ -261,6 +276,7 @@ public class CreateJobArtifactRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -273,7 +289,8 @@ public class CreateJobArtifactRequest
         /**
          * Build the instance of CreateJobArtifactRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateJobArtifactRequest
@@ -287,12 +304,14 @@ public class CreateJobArtifactRequest
             request.opcRetryToken = opcRetryToken;
             request.contentDisposition = contentDisposition;
             return request;
-            // new CreateJobArtifactRequest(jobId, contentLength, jobArtifact, opcRequestId, opcRetryToken, contentDisposition);
+            // new CreateJobArtifactRequest(jobId, contentLength, jobArtifact, opcRequestId,
+            // opcRetryToken, contentDisposition);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -307,6 +326,7 @@ public class CreateJobArtifactRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

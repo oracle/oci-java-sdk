@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/**
- * The types of operations that spawn work requests.
- **/
+/** The types of operations that spawn work requests. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateOpensearchCluster("CREATE_OPENSEARCH_CLUSTER"),
     UpdateOpensearchCluster("UPDATE_OPENSEARCH_CLUSTER"),
     DeleteOpensearchCluster("DELETE_OPENSEARCH_CLUSTER"),

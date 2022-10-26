@@ -5,22 +5,22 @@
 package com.oracle.bmc.mediaservices.model;
 
 /**
- * Attachment between MediaAsset and streaming DistributionChannel.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Attachment between MediaAsset and streaming DistributionChannel. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = MediaAssetDistributionChannelAttachment.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = MediaAssetDistributionChannelAttachment.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class MediaAssetDistributionChannelAttachment
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "distributionChannelId",
@@ -48,97 +48,95 @@ public final class MediaAssetDistributionChannelAttachment
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OCID of associated Distribution Channel.
-         **/
+        /** OCID of associated Distribution Channel. */
         @com.fasterxml.jackson.annotation.JsonProperty("distributionChannelId")
         private String distributionChannelId;
 
         /**
          * OCID of associated Distribution Channel.
+         *
          * @param distributionChannelId the value to set
          * @return this builder
-         **/
+         */
         public Builder distributionChannelId(String distributionChannelId) {
             this.distributionChannelId = distributionChannelId;
             this.__explicitlySet__.add("distributionChannelId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Version of the attachment.
-         **/
+        /** Version of the attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Long version;
 
         /**
          * Version of the attachment.
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(Long version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /**
-         * Lifecycle state of the attachment.
-         **/
+        /** Lifecycle state of the attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the attachment.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The identifier for the metadata.
-         **/
+        /** The identifier for the metadata. */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataRef")
         private String metadataRef;
 
         /**
          * The identifier for the metadata.
+         *
          * @param metadataRef the value to set
          * @return this builder
-         **/
+         */
         public Builder metadataRef(String metadataRef) {
             this.metadataRef = metadataRef;
             this.__explicitlySet__.add("metadataRef");
             return this;
         }
-        /**
-         * The ingest MediaWorkflowJob ID that created this attachment.
-         **/
+        /** The ingest MediaWorkflowJob ID that created this attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowJobId")
         private String mediaWorkflowJobId;
 
         /**
          * The ingest MediaWorkflowJob ID that created this attachment.
+         *
          * @param mediaWorkflowJobId the value to set
          * @return this builder
-         **/
+         */
         public Builder mediaWorkflowJobId(String mediaWorkflowJobId) {
             this.mediaWorkflowJobId = mediaWorkflowJobId;
             this.__explicitlySet__.add("mediaWorkflowJobId");
@@ -187,9 +185,7 @@ public final class MediaAssetDistributionChannelAttachment
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -198,60 +194,59 @@ public final class MediaAssetDistributionChannelAttachment
         return new Builder().copy(this);
     }
 
-    /**
-     * OCID of associated Distribution Channel.
-     **/
+    /** OCID of associated Distribution Channel. */
     @com.fasterxml.jackson.annotation.JsonProperty("distributionChannelId")
     private final String distributionChannelId;
 
     /**
      * OCID of associated Distribution Channel.
+     *
      * @return the value
-     **/
+     */
     public String getDistributionChannelId() {
         return distributionChannelId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Version of the attachment.
-     **/
+    /** Version of the attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Long version;
 
     /**
      * Version of the attachment.
+     *
      * @return the value
-     **/
+     */
     public Long getVersion() {
         return version;
     }
 
-    /**
-     * Lifecycle state of the attachment.
-     **/
-    public enum LifecycleState {
+    /** Lifecycle state of the attachment. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
         NeedsAttention("NEEDS_ATTENTION"),
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -290,44 +285,41 @@ public final class MediaAssetDistributionChannelAttachment
             return UnknownEnumValue;
         }
     };
-    /**
-     * Lifecycle state of the attachment.
-     **/
+    /** Lifecycle state of the attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the attachment.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The identifier for the metadata.
-     **/
+    /** The identifier for the metadata. */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRef")
     private final String metadataRef;
 
     /**
      * The identifier for the metadata.
+     *
      * @return the value
-     **/
+     */
     public String getMetadataRef() {
         return metadataRef;
     }
 
-    /**
-     * The ingest MediaWorkflowJob ID that created this attachment.
-     **/
+    /** The ingest MediaWorkflowJob ID that created this attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowJobId")
     private final String mediaWorkflowJobId;
 
     /**
      * The ingest MediaWorkflowJob ID that created this attachment.
+     *
      * @return the value
-     **/
+     */
     public String getMediaWorkflowJobId() {
         return mediaWorkflowJobId;
     }
@@ -339,6 +331,7 @@ public final class MediaAssetDistributionChannelAttachment
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

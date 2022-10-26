@@ -11,7 +11,6 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -26,13 +25,14 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * work request.
      *
      * @return the value
      */
@@ -48,7 +48,7 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
     })
     private EnableReplicationToRegionResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
@@ -56,17 +56,21 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
         this.opcWorkRequestId = opcWorkRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    EnableReplicationToRegionResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -74,7 +78,6 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -91,13 +94,14 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * work request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -109,8 +113,10 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(EnableReplicationToRegionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -122,8 +128,10 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public EnableReplicationToRegionResponse build() {
             return new EnableReplicationToRegionResponse(
                     __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
@@ -132,6 +140,7 @@ public class EnableReplicationToRegionResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

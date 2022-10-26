@@ -5,21 +5,22 @@
 package com.oracle.bmc.lockbox.model;
 
 /**
- * Summary information for an access request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary information for an access request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AccessRequestSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AccessRequestSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AccessRequestSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AccessRequestSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,172 +61,170 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique identifier (OCID) of the access request, which can't be changed after creation.
-         **/
+         * The unique identifier (OCID) of the access request, which can't be changed after
+         * creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The unique identifier (OCID) of the access request, which can't be changed after creation.
+         * The unique identifier (OCID) of the access request, which can't be changed after
+         * creation.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The unique identifier (OCID) of the lockbox box that the access request is associated with, which can't be changed after creation.
-         **/
+         * The unique identifier (OCID) of the lockbox box that the access request is associated
+         * with, which can't be changed after creation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
         private String lockboxId;
 
         /**
-         * The unique identifier (OCID) of the lockbox box that the access request is associated with, which can't be changed after creation.
+         * The unique identifier (OCID) of the lockbox box that the access request is associated
+         * with, which can't be changed after creation.
+         *
          * @param lockboxId the value to set
          * @return this builder
-         **/
+         */
         public Builder lockboxId(String lockboxId) {
             this.lockboxId = lockboxId;
             this.__explicitlySet__.add("lockboxId");
             return this;
         }
-        /**
-         * The name of the access request.
-         **/
+        /** The name of the access request. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the access request.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The rationale for requesting the access request.
-         **/
+        /** The rationale for requesting the access request. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The rationale for requesting the access request.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The unique identifier of the requestor.
-         **/
+        /** The unique identifier of the requestor. */
         @com.fasterxml.jackson.annotation.JsonProperty("requestorId")
         private String requestorId;
 
         /**
          * The unique identifier of the requestor.
+         *
          * @param requestorId the value to set
          * @return this builder
-         **/
+         */
         public Builder requestorId(String requestorId) {
             this.requestorId = requestorId;
             this.__explicitlySet__.add("requestorId");
             return this;
         }
-        /**
-         * The current state of the access request.
-         **/
+        /** The current state of the access request. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AccessRequest.LifecycleState lifecycleState;
 
         /**
          * The current state of the access request.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(AccessRequest.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The maximum amount of time operator has access to associated resources.
-         **/
+        /** The maximum amount of time operator has access to associated resources. */
         @com.fasterxml.jackson.annotation.JsonProperty("accessDuration")
         private String accessDuration;
 
         /**
          * The maximum amount of time operator has access to associated resources.
+         *
          * @param accessDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder accessDuration(String accessDuration) {
             this.accessDuration = accessDuration;
             this.__explicitlySet__.add("accessDuration");
             return this;
         }
         /**
-         * The time the access request was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
-         *
-         **/
+         * The time the access request was created. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the access request was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the access request was created. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the access request was last updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
-         *
-         **/
+         * The time the access request was last updated. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the access request was last updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the access request was last updated. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The time the access request expired. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
-         *
-         **/
+         * The time the access request expired. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
         private java.util.Date timeExpired;
 
         /**
-         * The time the access request expired. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * Example: {@code 2020-01-25T21:10:29.600Z}
+         * The time the access request expired. Format is defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeExpired the value to set
          * @return this builder
-         **/
+         */
         public Builder timeExpired(java.util.Date timeExpired) {
             this.timeExpired = timeExpired;
             this.__explicitlySet__.add("timeExpired");
@@ -290,9 +289,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -303,152 +300,148 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * The unique identifier (OCID) of the access request, which can't be changed after creation.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier (OCID) of the access request, which can't be changed after creation.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
-     * The unique identifier (OCID) of the lockbox box that the access request is associated with, which can't be changed after creation.
-     **/
+     * The unique identifier (OCID) of the lockbox box that the access request is associated with,
+     * which can't be changed after creation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lockboxId")
     private final String lockboxId;
 
     /**
-     * The unique identifier (OCID) of the lockbox box that the access request is associated with, which can't be changed after creation.
+     * The unique identifier (OCID) of the lockbox box that the access request is associated with,
+     * which can't be changed after creation.
+     *
      * @return the value
-     **/
+     */
     public String getLockboxId() {
         return lockboxId;
     }
 
-    /**
-     * The name of the access request.
-     **/
+    /** The name of the access request. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the access request.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The rationale for requesting the access request.
-     **/
+    /** The rationale for requesting the access request. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The rationale for requesting the access request.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The unique identifier of the requestor.
-     **/
+    /** The unique identifier of the requestor. */
     @com.fasterxml.jackson.annotation.JsonProperty("requestorId")
     private final String requestorId;
 
     /**
      * The unique identifier of the requestor.
+     *
      * @return the value
-     **/
+     */
     public String getRequestorId() {
         return requestorId;
     }
 
-    /**
-     * The current state of the access request.
-     **/
+    /** The current state of the access request. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AccessRequest.LifecycleState lifecycleState;
 
     /**
      * The current state of the access request.
+     *
      * @return the value
-     **/
+     */
     public AccessRequest.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The maximum amount of time operator has access to associated resources.
-     **/
+    /** The maximum amount of time operator has access to associated resources. */
     @com.fasterxml.jackson.annotation.JsonProperty("accessDuration")
     private final String accessDuration;
 
     /**
      * The maximum amount of time operator has access to associated resources.
+     *
      * @return the value
-     **/
+     */
     public String getAccessDuration() {
         return accessDuration;
     }
 
     /**
-     * The time the access request was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
-     *
-     **/
+     * The time the access request was created. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the access request was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the access request was created. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the access request was last updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
-     *
-     **/
+     * The time the access request was last updated. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the access request was last updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the access request was last updated. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The time the access request expired. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
-     *
-     **/
+     * The time the access request expired. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
     private final java.util.Date timeExpired;
 
     /**
-     * The time the access request expired. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * Example: {@code 2020-01-25T21:10:29.600Z}
+     * The time the access request expired. Format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeExpired() {
         return timeExpired;
     }
@@ -460,6 +453,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

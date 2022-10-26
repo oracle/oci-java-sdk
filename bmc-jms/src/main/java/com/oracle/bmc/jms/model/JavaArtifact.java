@@ -5,19 +5,20 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Information about a binary artifact of Java.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about a binary artifact of Java. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaArtifact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JavaArtifact extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "artifactId",
@@ -42,81 +43,80 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier for the artifact.
-         **/
+        /** Unique identifier for the artifact. */
         @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
         private Long artifactId;
 
         /**
          * Unique identifier for the artifact.
+         *
          * @param artifactId the value to set
          * @return this builder
-         **/
+         */
         public Builder artifactId(Long artifactId) {
             this.artifactId = artifactId;
             this.__explicitlySet__.add("artifactId");
             return this;
         }
         /**
-         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-         **/
+         * Description of the binary artifact. Typically includes the OS, architecture, and
+         * installer type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("artifactDescription")
         private String artifactDescription;
 
         /**
-         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+         * Description of the binary artifact. Typically includes the OS, architecture, and
+         * installer type.
+         *
          * @param artifactDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder artifactDescription(String artifactDescription) {
             this.artifactDescription = artifactDescription;
             this.__explicitlySet__.add("artifactDescription");
             return this;
         }
-        /**
-         * Product content type of this artifact.
-         **/
+        /** Product content type of this artifact. */
         @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
         private ArtifactContentType artifactContentType;
 
         /**
          * Product content type of this artifact.
+         *
          * @param artifactContentType the value to set
          * @return this builder
-         **/
+         */
         public Builder artifactContentType(ArtifactContentType artifactContentType) {
             this.artifactContentType = artifactContentType;
             this.__explicitlySet__.add("artifactContentType");
             return this;
         }
-        /**
-         * Approximate compressed file size in bytes.
-         **/
+        /** Approximate compressed file size in bytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("approximateFileSizeInBytes")
         private Long approximateFileSizeInBytes;
 
         /**
          * Approximate compressed file size in bytes.
+         *
          * @param approximateFileSizeInBytes the value to set
          * @return this builder
-         **/
+         */
         public Builder approximateFileSizeInBytes(Long approximateFileSizeInBytes) {
             this.approximateFileSizeInBytes = approximateFileSizeInBytes;
             this.__explicitlySet__.add("approximateFileSizeInBytes");
             return this;
         }
-        /**
-         * SHA256 checksum of the artifact.
-         **/
+        /** SHA256 checksum of the artifact. */
         @com.fasterxml.jackson.annotation.JsonProperty("sha256")
         private String sha256;
 
         /**
          * SHA256 checksum of the artifact.
+         *
          * @param sha256 the value to set
          * @return this builder
-         **/
+         */
         public Builder sha256(String sha256) {
             this.sha256 = sha256;
             this.__explicitlySet__.add("sha256");
@@ -161,9 +161,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -172,72 +170,71 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier for the artifact.
-     **/
+    /** Unique identifier for the artifact. */
     @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
     private final Long artifactId;
 
     /**
      * Unique identifier for the artifact.
+     *
      * @return the value
-     **/
+     */
     public Long getArtifactId() {
         return artifactId;
     }
 
     /**
-     * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
-     **/
+     * Description of the binary artifact. Typically includes the OS, architecture, and installer
+     * type.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("artifactDescription")
     private final String artifactDescription;
 
     /**
-     * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+     * Description of the binary artifact. Typically includes the OS, architecture, and installer
+     * type.
+     *
      * @return the value
-     **/
+     */
     public String getArtifactDescription() {
         return artifactDescription;
     }
 
-    /**
-     * Product content type of this artifact.
-     **/
+    /** Product content type of this artifact. */
     @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
     private final ArtifactContentType artifactContentType;
 
     /**
      * Product content type of this artifact.
+     *
      * @return the value
-     **/
+     */
     public ArtifactContentType getArtifactContentType() {
         return artifactContentType;
     }
 
-    /**
-     * Approximate compressed file size in bytes.
-     **/
+    /** Approximate compressed file size in bytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("approximateFileSizeInBytes")
     private final Long approximateFileSizeInBytes;
 
     /**
      * Approximate compressed file size in bytes.
+     *
      * @return the value
-     **/
+     */
     public Long getApproximateFileSizeInBytes() {
         return approximateFileSizeInBytes;
     }
 
-    /**
-     * SHA256 checksum of the artifact.
-     **/
+    /** SHA256 checksum of the artifact. */
     @com.fasterxml.jackson.annotation.JsonProperty("sha256")
     private final String sha256;
 
     /**
      * SHA256 checksum of the artifact.
+     *
      * @return the value
-     **/
+     */
     public String getSha256() {
         return sha256;
     }
@@ -249,6 +246,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

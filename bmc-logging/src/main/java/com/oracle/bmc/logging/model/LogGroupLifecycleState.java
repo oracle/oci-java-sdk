@@ -5,16 +5,13 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * The log group object state. The states workflow is:
- *    1. *CREATING* Log group is being created, backend service contacted.
- *    2. *ACTIVE* Log group is active.
- *    3. *UPDATING* Object configuration change requested, but the backend service has not confirmed the update.
- *    4. *INACTIVE* Log group is disabled.
- *    5. *DELETING* Log group is being deleted.
- *
- **/
+ * The log group object state. The states workflow is: 1. *CREATING* Log group is being created,
+ * backend service contacted. 2. *ACTIVE* Log group is active. 3. *UPDATING* Object configuration
+ * change requested, but the backend service has not confirmed the update. 4. *INACTIVE* Log group
+ * is disabled. 5. *DELETING* Log group is being deleted.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
-public enum LogGroupLifecycleState {
+public enum LogGroupLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Active("ACTIVE"),
     Updating("UPDATING"),

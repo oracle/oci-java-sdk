@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Metadata for defining a stage's predecessor.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Metadata for defining a stage's predecessor. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BuildPipelineStagePredecessor.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = BuildPipelineStagePredecessor.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class BuildPipelineStagePredecessor
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id"})
     public BuildPipelineStagePredecessor(String id) {
@@ -33,8 +33,7 @@ public final class BuildPipelineStagePredecessor
         /**
          * The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then
          * the ID is the pipeline's OCID.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -44,7 +43,7 @@ public final class BuildPipelineStagePredecessor
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -71,9 +70,7 @@ public final class BuildPipelineStagePredecessor
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -83,19 +80,18 @@ public final class BuildPipelineStagePredecessor
     }
 
     /**
-     * The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then
-     * the ID is the pipeline's OCID.
-     *
-     **/
+     * The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID
+     * is the pipeline's OCID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then
-     * the ID is the pipeline's OCID.
+     * The OCID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID
+     * is the pipeline's OCID.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
@@ -107,6 +103,7 @@ public final class BuildPipelineStagePredecessor
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

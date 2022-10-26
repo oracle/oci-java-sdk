@@ -5,25 +5,24 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties to update a Webhook channel.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Properties to update a Webhook channel. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateWebhookChannelDetails.Builder.class
-)
+        builder = UpdateWebhookChannelDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -64,49 +63,46 @@ public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /**
-         * The URL to send responses to.
-         **/
+        /** The URL to send responses to. */
         @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
         private String outboundUrl;
 
         /**
          * The URL to send responses to.
+         *
          * @param outboundUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder outboundUrl(String outboundUrl) {
             this.outboundUrl = outboundUrl;
             this.__explicitlySet__.add("outboundUrl");
             return this;
         }
-        /**
-         * The version for payloads.
-         **/
+        /** The version for payloads. */
         @com.fasterxml.jackson.annotation.JsonProperty("payloadVersion")
         private WebhookPayloadVersion payloadVersion;
 
         /**
          * The version for payloads.
+         *
          * @param payloadVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder payloadVersion(WebhookPayloadVersion payloadVersion) {
             this.payloadVersion = payloadVersion;
             this.__explicitlySet__.add("payloadVersion");
             return this;
         }
-        /**
-         * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         **/
+        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         *
          * @param botId the value to set
          * @return this builder
-         **/
+         */
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -160,9 +156,7 @@ public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,44 +180,41 @@ public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
         this.botId = botId;
     }
 
-    /**
-     * The URL to send responses to.
-     **/
+    /** The URL to send responses to. */
     @com.fasterxml.jackson.annotation.JsonProperty("outboundUrl")
     private final String outboundUrl;
 
     /**
      * The URL to send responses to.
+     *
      * @return the value
-     **/
+     */
     public String getOutboundUrl() {
         return outboundUrl;
     }
 
-    /**
-     * The version for payloads.
-     **/
+    /** The version for payloads. */
     @com.fasterxml.jackson.annotation.JsonProperty("payloadVersion")
     private final WebhookPayloadVersion payloadVersion;
 
     /**
      * The version for payloads.
+     *
      * @return the value
-     **/
+     */
     public WebhookPayloadVersion getPayloadVersion() {
         return payloadVersion;
     }
 
-    /**
-     * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     **/
+    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     *
      * @return the value
-     **/
+     */
     public String getBotId() {
         return botId;
     }
@@ -235,6 +226,7 @@ public final class UpdateWebhookChannelDetails extends UpdateChannelDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

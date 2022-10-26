@@ -5,12 +5,11 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Possible values for matching context returned in the response.
- * If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
- *
- **/
+ * Possible values for matching context returned in the response. If you specify HIGHLIGHTS, then
+ * the service will highlight fragments in its response. The default value is NONE.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum MatchingContextTypeEnum {
+public enum MatchingContextTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
     None("NONE"),
     Highlights("HIGHLIGHTS"),
     ;

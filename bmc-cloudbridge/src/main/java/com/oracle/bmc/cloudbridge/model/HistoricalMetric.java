@@ -5,19 +5,21 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Metric details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Metric details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HistoricalMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HistoricalMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HistoricalMetric
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "aggregation", "value"})
     public HistoricalMetric(String name, String aggregation, Float value) {
@@ -29,49 +31,46 @@ public final class HistoricalMetric extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Metric name.
-         **/
+        /** Metric name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Metric name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Aggregation time interval.
-         **/
+        /** Aggregation time interval. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
         private String aggregation;
 
         /**
          * Aggregation time interval.
+         *
          * @param aggregation the value to set
          * @return this builder
-         **/
+         */
         public Builder aggregation(String aggregation) {
             this.aggregation = aggregation;
             this.__explicitlySet__.add("aggregation");
             return this;
         }
-        /**
-         * Aggregation value.
-         **/
+        /** Aggregation value. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Float value;
 
         /**
          * Aggregation value.
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(Float value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -104,9 +103,7 @@ public final class HistoricalMetric extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +112,41 @@ public final class HistoricalMetric extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * Metric name.
-     **/
+    /** Metric name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Metric name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Aggregation time interval.
-     **/
+    /** Aggregation time interval. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
     private final String aggregation;
 
     /**
      * Aggregation time interval.
+     *
      * @return the value
-     **/
+     */
     public String getAggregation() {
         return aggregation;
     }
 
-    /**
-     * Aggregation value.
-     **/
+    /** Aggregation value. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Float value;
 
     /**
      * Aggregation value.
+     *
      * @return the value
-     **/
+     */
     public Float getValue() {
         return value;
     }
@@ -164,6 +158,7 @@ public final class HistoricalMetric extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

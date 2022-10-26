@@ -5,29 +5,31 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * A summary of properties for the specified alarm.
- * For information about alarms, see [Alarms Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- * For information about endpoints and signing API requests, see
- * [About the API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
- * [SDKS and Other Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm).
+ * A summary of properties for the specified alarm. For information about alarms, see [Alarms
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <p>For information about endpoints and signing API requests, see [About the
+ * API](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm). For information about
+ * available SDKs and tools, see [SDKS and Other
+ * Tools](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/sdks.htm). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AlarmSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AlarmSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -77,18 +79,19 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the alarm.
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -96,63 +99,62 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-         * <p>
-         * This name is sent as the title for notifications related to this alarm.
-         * <p>
-         * Example: {@code High CPU Utilization}
          *
-         **/
+         * <p>This name is sent as the title for notifications related to this alarm.
+         *
+         * <p>Example: {@code High CPU Utilization}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-         * <p>
-         * This name is sent as the title for notifications related to this alarm.
-         * <p>
-         * Example: {@code High CPU Utilization}
+         *
+         * <p>This name is sent as the title for notifications related to this alarm.
+         *
+         * <p>Example: {@code High CPU Utilization}
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the alarm.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the alarm.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
-         * being evaluated by the alarm.
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the metric being evaluated by the alarm.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
         private String metricCompartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
-         * being evaluated by the alarm.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the metric being evaluated by the alarm.
          *
          * @param metricCompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder metricCompartmentId(String metricCompartmentId) {
             this.metricCompartmentId = metricCompartmentId;
             this.__explicitlySet__.add("metricCompartmentId");
@@ -160,87 +162,93 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * The source service or application emitting the metric that is evaluated by the alarm.
-         * <p>
-         * Example: {@code oci_computeagent}
          *
-         **/
+         * <p>Example: {@code oci_computeagent}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The source service or application emitting the metric that is evaluated by the alarm.
-         * <p>
-         * Example: {@code oci_computeagent}
+         *
+         * <p>Example: {@code oci_computeagent}
          *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
-         * the Monitoring service interprets results for each returned time series as Boolean values,
-         * where zero represents false and a non-zero value represents true. A true value means that the trigger
-         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-         * rule (threshold or absence). Supported values for interval depend on the specified time range. More
-         * interval values are supported for smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-         * For available dimensions, review the metric definition for the supported service.
-         * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-         * <p>
-         * Example of threshold alarm:
-         * <p>
-         * -----
-         * <p>
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-         * <p>
-         * -----
-         * <p>
-         * Example of absence alarm:
-         * <p>
-         * -----
-         * <p>
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-         * <p>
-         * -----
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
+         * feature of the Monitoring service interprets results for each returned time series as
+         * Boolean values, where zero represents false and a non-zero value represents true. A true
+         * value means that the trigger rule condition has been met. The query must specify a
+         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
+         * for interval depend on the specified time range. More interval values are supported for
+         * smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * available dimensions, review the metric definition for the supported service. See
+         * [Supported
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          *
-         **/
+         * <p>Example of threshold alarm:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
+         * > 85
+         *
+         * <p>-----
+         *
+         * <p>Example of absence alarm:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>-----
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
-         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
-         * the Monitoring service interprets results for each returned time series as Boolean values,
-         * where zero represents false and a non-zero value represents true. A true value means that the trigger
-         * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-         * rule (threshold or absence). Supported values for interval depend on the specified time range. More
-         * interval values are supported for smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-         * For available dimensions, review the metric definition for the supported service.
-         * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-         * <p>
-         * Example of threshold alarm:
-         * <p>
-         * -----
-         * <p>
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-         * <p>
-         * -----
-         * <p>
-         * Example of absence alarm:
-         * <p>
-         * -----
-         * <p>
-         * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-         * <p>
-         * -----
+         * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms
+         * feature of the Monitoring service interprets results for each returned time series as
+         * Boolean values, where zero represents false and a non-zero value represents true. A true
+         * value means that the trigger rule condition has been met. The query must specify a
+         * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
+         * for interval depend on the specified time range. More interval values are supported for
+         * smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
+         * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL)
+         * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+         * available dimensions, review the metric definition for the supported service. See
+         * [Supported
+         * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         *
+         * <p>Example of threshold alarm:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
+         * > 85
+         *
+         * <p>-----
+         *
+         * <p>Example of absence alarm:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>-----
          *
          * @param query the value to set
          * @return this builder
-         **/
+         */
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -248,54 +256,53 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * The perceived severity of the alarm with regard to the affected system.
-         * <p>
-         * Example: {@code CRITICAL}
          *
-         **/
+         * <p>Example: {@code CRITICAL}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * The perceived severity of the alarm with regard to the affected system.
-         * <p>
-         * Example: {@code CRITICAL}
+         *
+         * <p>Example: {@code CRITICAL}
          *
          * @param severity the value to set
          * @return this builder
-         **/
+         */
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered.
-         * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-         * For example, a destination using the Notifications service is represented by a topic OCID.
-         * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
-         *
-         **/
+         * A list of destinations to which the notifications for this alarm will be delivered. Each
+         * destination is represented by an
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * related to the supported destination service. For example, a destination using the
+         * Notifications service is represented by a topic OCID. Supported destination services:
+         * Notifications Service. Limit: One destination per supported destination service.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
         /**
-         * A list of destinations to which the notifications for this alarm will be delivered.
-         * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-         * For example, a destination using the Notifications service is represented by a topic OCID.
-         * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+         * A list of destinations to which the notifications for this alarm will be delivered. Each
+         * destination is represented by an
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * related to the supported destination service. For example, a destination using the
+         * Notifications service is represented by a topic OCID. Supported destination services:
+         * Notifications Service. Limit: One destination per supported destination service.
          *
          * @param destinations the value to set
          * @return this builder
-         **/
+         */
         public Builder destinations(java.util.List<String> destinations) {
             this.destinations = destinations;
             this.__explicitlySet__.add("destinations");
             return this;
         }
-        /**
-         * The configuration details for suppressing an alarm.
-         *
-         **/
+        /** The configuration details for suppressing an alarm. */
         @com.fasterxml.jackson.annotation.JsonProperty("suppression")
         private Suppression suppression;
 
@@ -304,7 +311,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param suppression the value to set
          * @return this builder
-         **/
+         */
         public Builder suppression(Suppression suppression) {
             this.suppression = suppression;
             this.__explicitlySet__.add("suppression");
@@ -312,61 +319,58 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
          *
-         **/
+         * <p>Example: {@code true}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Whether the alarm is enabled.
-         * <p>
-         * Example: {@code true}
+         *
+         * <p>Example: {@code true}
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"Department": "Finance"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -375,21 +379,20 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * The current lifecycle state of the alarm.
-         * <p>
-         * Example: {@code DELETED}
          *
-         **/
+         * <p>Example: {@code DELETED}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Alarm.LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the alarm.
-         * <p>
-         * Example: {@code DELETED}
+         *
+         * <p>Example: {@code DELETED}
          *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(Alarm.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -466,9 +469,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -478,178 +479,181 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the alarm.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-     * <p>
-     * This name is sent as the title for notifications related to this alarm.
-     * <p>
-     * Example: {@code High CPU Utilization}
      *
-     **/
+     * <p>This name is sent as the title for notifications related to this alarm.
+     *
+     * <p>Example: {@code High CPU Utilization}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-     * <p>
-     * This name is sent as the title for notifications related to this alarm.
-     * <p>
-     * Example: {@code High CPU Utilization}
+     *
+     * <p>This name is sent as the title for notifications related to this alarm.
+     *
+     * <p>Example: {@code High CPU Utilization}
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the alarm.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the alarm.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
-     * being evaluated by the alarm.
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the metric being evaluated by the alarm.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metricCompartmentId")
     private final String metricCompartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
-     * being evaluated by the alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the metric being evaluated by the alarm.
      *
      * @return the value
-     **/
+     */
     public String getMetricCompartmentId() {
         return metricCompartmentId;
     }
 
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
-     * <p>
-     * Example: {@code oci_computeagent}
      *
-     **/
+     * <p>Example: {@code oci_computeagent}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The source service or application emitting the metric that is evaluated by the alarm.
-     * <p>
-     * Example: {@code oci_computeagent}
+     *
+     * <p>Example: {@code oci_computeagent}
      *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
-     * the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the trigger
-     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
-     * interval values are supported for smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-     * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-     * <p>
-     * Example of threshold alarm:
-     * <p>
-     * -----
-     * <p>
-     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-     * <p>
-     * -----
-     * <p>
-     * Example of absence alarm:
-     * <p>
-     * -----
-     * <p>
-     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-     * <p>
-     * -----
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
+     * of the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the
+     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
+     * and trigger rule (threshold or absence). Supported values for interval depend on the
+     * specified time range. More interval values are supported for smaller time ranges. Supported
+     * grouping functions: {@code grouping()}, {@code groupBy()}. For details about Monitoring Query
+     * Language (MQL), see [Monitoring Query Language (MQL)
+     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+     * available dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      *
-     **/
+     * <p>Example of threshold alarm:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
+     * > 85
+     *
+     * <p>-----
+     *
+     * <p>Example of absence alarm:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>-----
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
-     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of
-     * the Monitoring service interprets results for each returned time series as Boolean values,
-     * where zero represents false and a non-zero value represents true. A true value means that the trigger
-     * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-     * rule (threshold or absence). Supported values for interval depend on the specified time range. More
-     * interval values are supported for smaller time ranges. Supported grouping functions: {@code grouping()}, {@code groupBy()}.
-     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
-     * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-     * <p>
-     * Example of threshold alarm:
-     * <p>
-     * -----
-     * <p>
-     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
-     * <p>
-     * -----
-     * <p>
-     * Example of absence alarm:
-     * <p>
-     * -----
-     * <p>
-     * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
-     * <p>
-     * -----
+     * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature
+     * of the Monitoring service interprets results for each returned time series as Boolean values,
+     * where zero represents false and a non-zero value represents true. A true value means that the
+     * trigger rule condition has been met. The query must specify a metric, statistic, interval,
+     * and trigger rule (threshold or absence). Supported values for interval depend on the
+     * specified time range. More interval values are supported for smaller time ranges. Supported
+     * grouping functions: {@code grouping()}, {@code groupBy()}. For details about Monitoring Query
+     * Language (MQL), see [Monitoring Query Language (MQL)
+     * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
+     * available dimensions, review the metric definition for the supported service. See [Supported
+     * Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     *
+     * <p>Example of threshold alarm:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9)
+     * > 85
+     *
+     * <p>-----
+     *
+     * <p>Example of absence alarm:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>-----
      *
      * @return the value
-     **/
+     */
     public String getQuery() {
         return query;
     }
 
     /**
      * The perceived severity of the alarm with regard to the affected system.
-     * <p>
-     * Example: {@code CRITICAL}
      *
-     **/
-    public enum Severity {
+     * <p>Example: {@code CRITICAL}
+     */
+    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
         Critical("CRITICAL"),
         Error("ERROR"),
         Warning("WARNING"),
         Info("INFO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -690,50 +694,49 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     };
     /**
      * The perceived severity of the alarm with regard to the affected system.
-     * <p>
-     * Example: {@code CRITICAL}
      *
-     **/
+     * <p>Example: {@code CRITICAL}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * The perceived severity of the alarm with regard to the affected system.
-     * <p>
-     * Example: {@code CRITICAL}
+     *
+     * <p>Example: {@code CRITICAL}
      *
      * @return the value
-     **/
+     */
     public Severity getSeverity() {
         return severity;
     }
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered.
-     * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-     * For example, a destination using the Notifications service is represented by a topic OCID.
-     * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
-     *
-     **/
+     * A list of destinations to which the notifications for this alarm will be delivered. Each
+     * destination is represented by an
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
+     * to the supported destination service. For example, a destination using the Notifications
+     * service is represented by a topic OCID. Supported destination services: Notifications
+     * Service. Limit: One destination per supported destination service.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
-     * A list of destinations to which the notifications for this alarm will be delivered.
-     * Each destination is represented by an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related to the supported destination service.
-     * For example, a destination using the Notifications service is represented by a topic OCID.
-     * Supported destination services: Notifications Service. Limit: One destination per supported destination service.
+     * A list of destinations to which the notifications for this alarm will be delivered. Each
+     * destination is represented by an
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) related
+     * to the supported destination service. For example, a destination using the Notifications
+     * service is represented by a topic OCID. Supported destination services: Notifications
+     * Service. Limit: One destination per supported destination service.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDestinations() {
         return destinations;
     }
 
-    /**
-     * The configuration details for suppressing an alarm.
-     *
-     **/
+    /** The configuration details for suppressing an alarm. */
     @com.fasterxml.jackson.annotation.JsonProperty("suppression")
     private final Suppression suppression;
 
@@ -741,83 +744,79 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
      * The configuration details for suppressing an alarm.
      *
      * @return the value
-     **/
+     */
     public Suppression getSuppression() {
         return suppression;
     }
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
      *
-     **/
+     * <p>Example: {@code true}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether the alarm is enabled.
-     * <p>
-     * Example: {@code true}
+     *
+     * <p>Example: {@code true}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"Department": "Finance"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * The current lifecycle state of the alarm.
-     * <p>
-     * Example: {@code DELETED}
      *
-     **/
+     * <p>Example: {@code DELETED}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Alarm.LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the alarm.
-     * <p>
-     * Example: {@code DELETED}
+     *
+     * <p>Example: {@code DELETED}
      *
      * @return the value
-     **/
+     */
     public Alarm.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -829,6 +828,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

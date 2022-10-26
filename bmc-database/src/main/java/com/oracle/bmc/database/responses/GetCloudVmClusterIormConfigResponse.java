@@ -9,15 +9,14 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,26 +24,24 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned ExadataIormConfig instance.
-     */
+    /** The returned ExadataIormConfig instance. */
     private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
     /**
      * The returned ExadataIormConfig instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.database.model.ExadataIormConfig getExadataIormConfig() {
@@ -60,7 +57,7 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
     })
     private GetCloudVmClusterIormConfigResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig) {
@@ -70,31 +67,34 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
         this.exadataIormConfig = exadataIormConfig;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetCloudVmClusterIormConfigResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,13 +104,12 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,13 +118,12 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /**
-         * The returned ExadataIormConfig instance.
-         */
+        /** The returned ExadataIormConfig instance. */
         private com.oracle.bmc.database.model.ExadataIormConfig exadataIormConfig;
 
         /**
          * The returned ExadataIormConfig instance.
+         *
          * @param exadataIormConfig the value to set
          * @return this builder
          */
@@ -137,8 +135,10 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetCloudVmClusterIormConfigResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +151,10 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetCloudVmClusterIormConfigResponse build() {
             return new GetCloudVmClusterIormConfigResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, exadataIormConfig);
@@ -161,6 +163,7 @@ public class GetCloudVmClusterIormConfigResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

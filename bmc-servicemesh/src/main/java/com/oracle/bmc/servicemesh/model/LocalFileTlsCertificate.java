@@ -5,45 +5,43 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * TLS certificate from the filesystem.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * TLS certificate from the filesystem. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LocalFileTlsCertificate.Builder.class
-)
+        builder = LocalFileTlsCertificate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LocalFileTlsCertificate extends TlsCertificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the secret.
-         * For Kubernetes this is the name of the Kubernetes secret of type tls.
-         * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-         *
-         **/
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls.
+         * For other platforms the secrets must be mounted at:
+         * /etc/oci/secrets/${secretName}/tls.{key,crt}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretName")
         private String secretName;
 
         /**
-         * Name of the secret.
-         * For Kubernetes this is the name of the Kubernetes secret of type tls.
-         * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+         * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls.
+         * For other platforms the secrets must be mounted at:
+         * /etc/oci/secrets/${secretName}/tls.{key,crt}
          *
          * @param secretName the value to set
          * @return this builder
-         **/
+         */
         public Builder secretName(String secretName) {
             this.secretName = secretName;
             this.__explicitlySet__.add("secretName");
@@ -70,9 +68,7 @@ public final class LocalFileTlsCertificate extends TlsCertificate {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -88,21 +84,18 @@ public final class LocalFileTlsCertificate extends TlsCertificate {
     }
 
     /**
-     * Name of the secret.
-     * For Kubernetes this is the name of the Kubernetes secret of type tls.
-     * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
-     *
-     **/
+     * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For
+     * other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretName")
     private final String secretName;
 
     /**
-     * Name of the secret.
-     * For Kubernetes this is the name of the Kubernetes secret of type tls.
-     * For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+     * Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For
+     * other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
      *
      * @return the value
-     **/
+     */
     public String getSecretName() {
         return secretName;
     }
@@ -114,6 +107,7 @@ public final class LocalFileTlsCertificate extends TlsCertificate {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

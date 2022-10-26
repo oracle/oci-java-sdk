@@ -8,13 +8,12 @@ import com.oracle.bmc.osmanagement.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * A link to the created Software Source
-     */
+    /** A link to the created Software Source */
     private String location;
 
     /**
      * A link to the created Software Source
+     *
      * @return the value
      */
     public String getLocation() {
@@ -22,15 +21,14 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -38,10 +36,7 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -53,13 +48,12 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /**
-     * The returned SoftwareSource instance.
-     */
+    /** The returned SoftwareSource instance. */
     private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
     /**
      * The returned SoftwareSource instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.osmanagement.model.SoftwareSource getSoftwareSource() {
@@ -76,7 +70,7 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CreateSoftwareSourceResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String location,
             String opcRequestId,
             String etag,
@@ -88,28 +82,30 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         this.softwareSource = softwareSource;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateSoftwareSourceResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * A link to the created Software Source
-         */
+        /** A link to the created Software Source */
         private String location;
 
         /**
          * A link to the created Software Source
+         *
          * @param location the value to set
          * @return this builder
          */
@@ -119,15 +115,14 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -137,10 +132,7 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -154,13 +146,12 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /**
-         * The returned SoftwareSource instance.
-         */
+        /** The returned SoftwareSource instance. */
         private com.oracle.bmc.osmanagement.model.SoftwareSource softwareSource;
 
         /**
          * The returned SoftwareSource instance.
+         *
          * @param softwareSource the value to set
          * @return this builder
          */
@@ -172,8 +163,10 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateSoftwareSourceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -187,8 +180,10 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateSoftwareSourceResponse build() {
             return new CreateSoftwareSourceResponse(
                     __httpStatusCode__, headers, location, opcRequestId, etag, softwareSource);
@@ -197,6 +192,7 @@ public class CreateSoftwareSourceResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

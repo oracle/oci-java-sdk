@@ -124,10 +124,11 @@ public class MultipartUtilsTest {
     }
 
     /**
-     * Covers the use-case where we still try to make a best attempt to upload an object even though it exceeds the
-     * configured number of upload parts.  No need to check for the case where the configured max allowed number
-     * of parts is > max allowed by the service as this is covered by the validation of the content length being less
-     * than the max supported content length (see {@link #calculatePartSize_objectTooLarge_shouldThrowException()}
+     * Covers the use-case where we still try to make a best attempt to upload an object even though
+     * it exceeds the configured number of upload parts. No need to check for the case where the
+     * configured max allowed number of parts is > max allowed by the service as this is covered by
+     * the validation of the content length being less than the max supported content length (see
+     * {@link #calculatePartSize_objectTooLarge_shouldThrowException()}
      */
     @Test
     public void

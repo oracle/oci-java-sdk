@@ -5,19 +5,20 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Promotion information for a subscription.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Promotion information for a subscription. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Promotion.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Promotion extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "duration",
@@ -53,127 +54,121 @@ public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetB
     public static class Builder {
         /**
          * How long the promotion related to the subscription, if any, is valid in duration units.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private Integer duration;
 
         /**
          * How long the promotion related to the subscription, if any, is valid in duration units.
+         *
          * @param duration the value to set
          * @return this builder
-         **/
+         */
         public Builder duration(Integer duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /**
-         * Unit for the duration.
-         **/
+        /** Unit for the duration. */
         @com.fasterxml.jackson.annotation.JsonProperty("durationUnit")
         private String durationUnit;
 
         /**
          * Unit for the duration.
+         *
          * @param durationUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder durationUnit(String durationUnit) {
             this.durationUnit = durationUnit;
             this.__explicitlySet__.add("durationUnit");
             return this;
         }
-        /**
-         * Total amount of credit for the promotion related to the subscription if there is one.
-         **/
+        /** Total amount of credit for the promotion related to the subscription if there is one. */
         @com.fasterxml.jackson.annotation.JsonProperty("amount")
         private Float amount;
 
         /**
          * Total amount of credit for the promotion related to the subscription if there is one.
+         *
          * @param amount the value to set
          * @return this builder
-         **/
+         */
         public Builder amount(Float amount) {
             this.amount = amount;
             this.__explicitlySet__.add("amount");
             return this;
         }
-        /**
-         * Current status of the promotion related to the subscription if there is one.
-         **/
+        /** Current status of the promotion related to the subscription if there is one. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Current status of the promotion related to the subscription if there is one.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Whether or not customer intends to pay once the promotion is done.
-         **/
+        /** Whether or not customer intends to pay once the promotion is done. */
         @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
         private Boolean isIntentToPay;
 
         /**
          * Whether or not customer intends to pay once the promotion is done.
+         *
          * @param isIntentToPay the value to set
          * @return this builder
-         **/
+         */
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             this.__explicitlySet__.add("isIntentToPay");
             return this;
         }
-        /**
-         * Currency unit associated with the promotion.
-         **/
+        /** Currency unit associated with the promotion. */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyUnit")
         private String currencyUnit;
 
         /**
          * Currency unit associated with the promotion.
+         *
          * @param currencyUnit the value to set
          * @return this builder
-         **/
+         */
         public Builder currencyUnit(String currencyUnit) {
             this.currencyUnit = currencyUnit;
             this.__explicitlySet__.add("currencyUnit");
             return this;
         }
-        /**
-         * Date-time for when the promotion starts.
-         **/
+        /** Date-time for when the promotion starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Date-time for when the promotion starts.
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * Date-time for when the promotion ends.
-         **/
+        /** Date-time for when the promotion ends. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
         private java.util.Date timeExpired;
 
         /**
          * Date-time for when the promotion ends.
+         *
          * @param timeExpired the value to set
          * @return this builder
-         **/
+         */
         public Builder timeExpired(java.util.Date timeExpired) {
             this.timeExpired = timeExpired;
             this.__explicitlySet__.add("timeExpired");
@@ -230,9 +225,7 @@ public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetB
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -241,59 +234,54 @@ public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetB
         return new Builder().copy(this);
     }
 
-    /**
-     * How long the promotion related to the subscription, if any, is valid in duration units.
-     **/
+    /** How long the promotion related to the subscription, if any, is valid in duration units. */
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final Integer duration;
 
     /**
      * How long the promotion related to the subscription, if any, is valid in duration units.
+     *
      * @return the value
-     **/
+     */
     public Integer getDuration() {
         return duration;
     }
 
-    /**
-     * Unit for the duration.
-     **/
+    /** Unit for the duration. */
     @com.fasterxml.jackson.annotation.JsonProperty("durationUnit")
     private final String durationUnit;
 
     /**
      * Unit for the duration.
+     *
      * @return the value
-     **/
+     */
     public String getDurationUnit() {
         return durationUnit;
     }
 
-    /**
-     * Total amount of credit for the promotion related to the subscription if there is one.
-     **/
+    /** Total amount of credit for the promotion related to the subscription if there is one. */
     @com.fasterxml.jackson.annotation.JsonProperty("amount")
     private final Float amount;
 
     /**
      * Total amount of credit for the promotion related to the subscription if there is one.
+     *
      * @return the value
-     **/
+     */
     public Float getAmount() {
         return amount;
     }
 
-    /**
-     * Current status of the promotion related to the subscription if there is one.
-     **/
-    public enum Status {
+    /** Current status of the promotion related to the subscription if there is one. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Initialized("INITIALIZED"),
         Active("ACTIVE"),
         Expired("EXPIRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -331,72 +319,67 @@ public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /**
-     * Current status of the promotion related to the subscription if there is one.
-     **/
+    /** Current status of the promotion related to the subscription if there is one. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Current status of the promotion related to the subscription if there is one.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * Whether or not customer intends to pay once the promotion is done.
-     **/
+    /** Whether or not customer intends to pay once the promotion is done. */
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
     private final Boolean isIntentToPay;
 
     /**
      * Whether or not customer intends to pay once the promotion is done.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsIntentToPay() {
         return isIntentToPay;
     }
 
-    /**
-     * Currency unit associated with the promotion.
-     **/
+    /** Currency unit associated with the promotion. */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyUnit")
     private final String currencyUnit;
 
     /**
      * Currency unit associated with the promotion.
+     *
      * @return the value
-     **/
+     */
     public String getCurrencyUnit() {
         return currencyUnit;
     }
 
-    /**
-     * Date-time for when the promotion starts.
-     **/
+    /** Date-time for when the promotion starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Date-time for when the promotion starts.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * Date-time for when the promotion ends.
-     **/
+    /** Date-time for when the promotion ends. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpired")
     private final java.util.Date timeExpired;
 
     /**
      * Date-time for when the promotion ends.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeExpired() {
         return timeExpired;
     }
@@ -408,6 +391,7 @@ public final class Promotion extends com.oracle.bmc.http.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

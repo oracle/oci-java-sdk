@@ -5,19 +5,20 @@
 package com.oracle.bmc.lockbox.model;
 
 /**
- * The approver data for this approver level.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The approver data for this approver level. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApproverInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ApproverInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"approverType", "approverId"})
     public ApproverInfo(ApproverType approverType, String approverId) {
@@ -28,33 +29,31 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The approver type of this approver level.
-         **/
+        /** The approver type of this approver level. */
         @com.fasterxml.jackson.annotation.JsonProperty("approverType")
         private ApproverType approverType;
 
         /**
          * The approver type of this approver level.
+         *
          * @param approverType the value to set
          * @return this builder
-         **/
+         */
         public Builder approverType(ApproverType approverType) {
             this.approverType = approverType;
             this.__explicitlySet__.add("approverType");
             return this;
         }
-        /**
-         * The group or user ocid of the approver for this approver level.
-         **/
+        /** The group or user ocid of the approver for this approver level. */
         @com.fasterxml.jackson.annotation.JsonProperty("approverId")
         private String approverId;
 
         /**
          * The group or user ocid of the approver for this approver level.
+         *
          * @param approverId the value to set
          * @return this builder
-         **/
+         */
         public Builder approverId(String approverId) {
             this.approverId = approverId;
             this.__explicitlySet__.add("approverId");
@@ -84,9 +83,7 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +92,28 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The approver type of this approver level.
-     **/
+    /** The approver type of this approver level. */
     @com.fasterxml.jackson.annotation.JsonProperty("approverType")
     private final ApproverType approverType;
 
     /**
      * The approver type of this approver level.
+     *
      * @return the value
-     **/
+     */
     public ApproverType getApproverType() {
         return approverType;
     }
 
-    /**
-     * The group or user ocid of the approver for this approver level.
-     **/
+    /** The group or user ocid of the approver for this approver level. */
     @com.fasterxml.jackson.annotation.JsonProperty("approverId")
     private final String approverId;
 
     /**
      * The group or user ocid of the approver for this approver level.
+     *
      * @return the value
-     **/
+     */
     public String getApproverId() {
         return approverId;
     }
@@ -130,6 +125,7 @@ public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

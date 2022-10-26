@@ -5,22 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Configures the logging policies for the execution logs of an API Deployment.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Configures the logging policies for the execution logs of an API Deployment. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExecutionLogPolicy.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ExecutionLogPolicy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ExecutionLogPolicy
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "logLevel"})
     public ExecutionLogPolicy(Boolean isEnabled, LogLevel logLevel) {
@@ -33,53 +33,51 @@ public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.Expli
     public static class Builder {
         /**
          * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
-         * <p>
-         * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
-         * for an API Deployment. If there is an active log object for the API Deployment and its
-         * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
-         * OCI Object Storage log archival bucket.
-         * <p>
-         * Please note that the functionality to push to the legacy OCI Object Storage log
-         * archival bucket has been deprecated and will be removed in the future.
          *
-         **/
+         * <p>Oracle recommends using the OCI Logging service to enable, retrieve, and query
+         * execution logs for an API Deployment. If there is an active log object for the API
+         * Deployment and its category is set to 'execution' in OCI Logging service, the logs will
+         * not be uploaded to the legacy OCI Object Storage log archival bucket.
+         *
+         * <p>Please note that the functionality to push to the legacy OCI Object Storage log
+         * archival bucket has been deprecated and will be removed in the future.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
-         * <p>
-         * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
-         * for an API Deployment. If there is an active log object for the API Deployment and its
-         * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
-         * OCI Object Storage log archival bucket.
-         * <p>
-         * Please note that the functionality to push to the legacy OCI Object Storage log
+         *
+         * <p>Oracle recommends using the OCI Logging service to enable, retrieve, and query
+         * execution logs for an API Deployment. If there is an active log object for the API
+         * Deployment and its category is set to 'execution' in OCI Logging service, the logs will
+         * not be uploaded to the legacy OCI Object Storage log archival bucket.
+         *
+         * <p>Please note that the functionality to push to the legacy OCI Object Storage log
          * archival bucket has been deprecated and will be removed in the future.
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * Specifies the log level used to control logging output of execution logs.
-         * Enabling logging at a given level also enables logging at all higher levels.
-         *
-         **/
+         * Specifies the log level used to control logging output of execution logs. Enabling
+         * logging at a given level also enables logging at all higher levels.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
         private LogLevel logLevel;
 
         /**
-         * Specifies the log level used to control logging output of execution logs.
-         * Enabling logging at a given level also enables logging at all higher levels.
+         * Specifies the log level used to control logging output of execution logs. Enabling
+         * logging at a given level also enables logging at all higher levels.
          *
          * @param logLevel the value to set
          * @return this builder
-         **/
+         */
         public Builder logLevel(LogLevel logLevel) {
             this.logLevel = logLevel;
             this.__explicitlySet__.add("logLevel");
@@ -109,9 +107,7 @@ public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,49 +118,47 @@ public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
-     * <p>
-     * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
-     * for an API Deployment. If there is an active log object for the API Deployment and its
-     * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
-     * OCI Object Storage log archival bucket.
-     * <p>
-     * Please note that the functionality to push to the legacy OCI Object Storage log
-     * archival bucket has been deprecated and will be removed in the future.
      *
-     **/
+     * <p>Oracle recommends using the OCI Logging service to enable, retrieve, and query execution
+     * logs for an API Deployment. If there is an active log object for the API Deployment and its
+     * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the
+     * legacy OCI Object Storage log archival bucket.
+     *
+     * <p>Please note that the functionality to push to the legacy OCI Object Storage log archival
+     * bucket has been deprecated and will be removed in the future.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
-     * <p>
-     * Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
-     * for an API Deployment. If there is an active log object for the API Deployment and its
-     * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
-     * OCI Object Storage log archival bucket.
-     * <p>
-     * Please note that the functionality to push to the legacy OCI Object Storage log
-     * archival bucket has been deprecated and will be removed in the future.
+     *
+     * <p>Oracle recommends using the OCI Logging service to enable, retrieve, and query execution
+     * logs for an API Deployment. If there is an active log object for the API Deployment and its
+     * category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the
+     * legacy OCI Object Storage log archival bucket.
+     *
+     * <p>Please note that the functionality to push to the legacy OCI Object Storage log archival
+     * bucket has been deprecated and will be removed in the future.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Specifies the log level used to control logging output of execution logs.
-     * Enabling logging at a given level also enables logging at all higher levels.
-     *
-     **/
-    public enum LogLevel {
+     * Specifies the log level used to control logging output of execution logs. Enabling logging at
+     * a given level also enables logging at all higher levels.
+     */
+    public enum LogLevel implements com.oracle.bmc.http.internal.BmcEnum {
         Info("INFO"),
         Warn("WARN"),
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -204,19 +198,18 @@ public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.Expli
         }
     };
     /**
-     * Specifies the log level used to control logging output of execution logs.
-     * Enabling logging at a given level also enables logging at all higher levels.
-     *
-     **/
+     * Specifies the log level used to control logging output of execution logs. Enabling logging at
+     * a given level also enables logging at all higher levels.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("logLevel")
     private final LogLevel logLevel;
 
     /**
-     * Specifies the log level used to control logging output of execution logs.
-     * Enabling logging at a given level also enables logging at all higher levels.
+     * Specifies the log level used to control logging output of execution logs. Enabling logging at
+     * a given level also enables logging at all higher levels.
      *
      * @return the value
-     **/
+     */
     public LogLevel getLogLevel() {
         return logLevel;
     }
@@ -228,6 +221,7 @@ public final class ExecutionLogPolicy extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

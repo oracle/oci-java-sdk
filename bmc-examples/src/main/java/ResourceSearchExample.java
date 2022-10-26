@@ -16,22 +16,20 @@ import com.oracle.bmc.resourcesearch.responses.ListResourceTypesResponse;
 import com.oracle.bmc.resourcesearch.responses.SearchResourcesResponse;
 
 /**
- * This class provides an example on how to use resource-search in the Java SDK to:
- * 1. List searchable types.
- * 2. Get detail of searchable type.
- * 3. Search resources cross type.
+ * This class provides an example on how to use resource-search in the Java SDK to: 1. List
+ * searchable types. 2. Get detail of searchable type. 3. Search resources cross type.
  */
 public class ResourceSearchExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
 
-    /**
-     * The entry point for the example.
-     */
+    /** The entry point for the example. */
     public static void main(String[] args) throws Exception {
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

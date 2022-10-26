@@ -5,26 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage LINK command.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Command descriptor for querylanguage LINK command. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LinkCommandDescriptor.Builder.class
-)
+        builder = LinkCommandDescriptor.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "name"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "name")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,10 +79,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /**
-         * Option to return groups with a null value if specified.
-         *
-         **/
+        /** Option to return groups with a null value if specified. */
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeNulls")
         private Boolean shouldIncludeNulls;
 
@@ -93,16 +88,13 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param shouldIncludeNulls the value to set
          * @return this builder
-         **/
+         */
         public Builder shouldIncludeNulls(Boolean shouldIncludeNulls) {
             this.shouldIncludeNulls = shouldIncludeNulls;
             this.__explicitlySet__.add("shouldIncludeNulls");
             return this;
         }
-        /**
-         * Option to calculate trends of each group if specified.
-         *
-         **/
+        /** Option to calculate trends of each group if specified. */
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
         private Boolean shouldIncludeTrends;
 
@@ -111,25 +103,28 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param shouldIncludeTrends the value to set
          * @return this builder
-         **/
+         */
         public Builder shouldIncludeTrends(Boolean shouldIncludeTrends) {
             this.shouldIncludeTrends = shouldIncludeTrends;
             this.__explicitlySet__.add("shouldIncludeTrends");
             return this;
         }
         /**
-         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
-         *
-         **/
+         * Option to control the size of buckets in the histogram e.g 8hrs - each bar other than
+         * first and last should represent 8hr time span. Will be adjusted to a larger span if time
+         * range is very large.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
         /**
-         * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+         * Option to control the size of buckets in the histogram e.g 8hrs - each bar other than
+         * first and last should represent 8hr time span. Will be adjusted to a larger span if time
+         * range is very large.
          *
          * @param span the value to set
          * @return this builder
-         **/
+         */
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
@@ -190,9 +185,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -224,10 +217,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
         this.span = span;
     }
 
-    /**
-     * Option to return groups with a null value if specified.
-     *
-     **/
+    /** Option to return groups with a null value if specified. */
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeNulls")
     private final Boolean shouldIncludeNulls;
 
@@ -235,15 +225,12 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
      * Option to return groups with a null value if specified.
      *
      * @return the value
-     **/
+     */
     public Boolean getShouldIncludeNulls() {
         return shouldIncludeNulls;
     }
 
-    /**
-     * Option to calculate trends of each group if specified.
-     *
-     **/
+    /** Option to calculate trends of each group if specified. */
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeTrends")
     private final Boolean shouldIncludeTrends;
 
@@ -251,23 +238,26 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
      * Option to calculate trends of each group if specified.
      *
      * @return the value
-     **/
+     */
     public Boolean getShouldIncludeTrends() {
         return shouldIncludeTrends;
     }
 
     /**
-     * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
-     *
-     **/
+     * Option to control the size of buckets in the histogram e.g 8hrs - each bar other than first
+     * and last should represent 8hr time span. Will be adjusted to a larger span if time range is
+     * very large.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
     /**
-     * Option to control the size of buckets in the histogram e.g 8hrs  - each bar other than first and last should represent 8hr time span. Will be adjusted to a larger span if time range is very large.
+     * Option to control the size of buckets in the histogram e.g 8hrs - each bar other than first
+     * and last should represent 8hr time span. Will be adjusted to a larger span if time range is
+     * very large.
      *
      * @return the value
-     **/
+     */
     public String getSpan() {
         return span;
     }
@@ -279,6 +269,7 @@ public final class LinkCommandDescriptor extends AbstractCommandDescriptor {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

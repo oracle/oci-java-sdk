@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Sumarized information about a shape.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Sumarized information about a shape. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AvailableShapeSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AvailableShapeSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AvailableShapeSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -81,246 +81,231 @@ public final class AvailableShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Availability domain of the shape.
-         **/
+        /** Availability domain of the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * Availability domain of the shape.
+         *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * Shape name and availability domain.  Used for pagination.
-         **/
+        /** Shape name and availability domain. Used for pagination. */
         @com.fasterxml.jackson.annotation.JsonProperty("paginationToken")
         private String paginationToken;
 
         /**
-         * Shape name and availability domain.  Used for pagination.
+         * Shape name and availability domain. Used for pagination.
+         *
          * @param paginationToken the value to set
          * @return this builder
-         **/
+         */
         public Builder paginationToken(String paginationToken) {
             this.paginationToken = paginationToken;
             this.__explicitlySet__.add("paginationToken");
             return this;
         }
-        /**
-         * Minimum CPUs required.
-         **/
+        /** Minimum CPUs required. */
         @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
         private java.math.BigDecimal minTotalBaselineOcpusRequired;
 
         /**
          * Minimum CPUs required.
+         *
          * @param minTotalBaselineOcpusRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder minTotalBaselineOcpusRequired(
                 java.math.BigDecimal minTotalBaselineOcpusRequired) {
             this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
             this.__explicitlySet__.add("minTotalBaselineOcpusRequired");
             return this;
         }
-        /**
-         * Name of the shape.
-         **/
+        /** Name of the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Name of the shape.
+         *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /**
-         * Description of the processor.
-         **/
+        /** Description of the processor. */
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
         /**
          * Description of the processor.
+         *
          * @param processorDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = processorDescription;
             this.__explicitlySet__.add("processorDescription");
             return this;
         }
-        /**
-         * Number of CPUs.
-         **/
+        /** Number of CPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
         /**
          * Number of CPUs.
+         *
          * @param ocpus the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /**
-         * Amount of memory for the shape.
-         **/
+        /** Amount of memory for the shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
         /**
          * Amount of memory for the shape.
+         *
          * @param memoryInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /**
-         * Shape bandwidth.
-         **/
+        /** Shape bandwidth. */
         @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
         private Float networkingBandwidthInGbps;
 
         /**
          * Shape bandwidth.
+         *
          * @param networkingBandwidthInGbps the value to set
          * @return this builder
-         **/
+         */
         public Builder networkingBandwidthInGbps(Float networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             this.__explicitlySet__.add("networkingBandwidthInGbps");
             return this;
         }
-        /**
-         * Maximum number of virtual network interfaces that can be attached.
-         **/
+        /** Maximum number of virtual network interfaces that can be attached. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
         private Integer maxVnicAttachments;
 
         /**
          * Maximum number of virtual network interfaces that can be attached.
+         *
          * @param maxVnicAttachments the value to set
          * @return this builder
-         **/
+         */
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
             this.maxVnicAttachments = maxVnicAttachments;
             this.__explicitlySet__.add("maxVnicAttachments");
             return this;
         }
-        /**
-         * Number of GPUs.
-         **/
+        /** Number of GPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("gpus")
         private Integer gpus;
 
         /**
          * Number of GPUs.
+         *
          * @param gpus the value to set
          * @return this builder
-         **/
+         */
         public Builder gpus(Integer gpus) {
             this.gpus = gpus;
             this.__explicitlySet__.add("gpus");
             return this;
         }
-        /**
-         * Description of the GPUs.
-         **/
+        /** Description of the GPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
         private String gpuDescription;
 
         /**
          * Description of the GPUs.
+         *
          * @param gpuDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuDescription(String gpuDescription) {
             this.gpuDescription = gpuDescription;
             this.__explicitlySet__.add("gpuDescription");
             return this;
         }
-        /**
-         * Number of local disks.
-         **/
+        /** Number of local disks. */
         @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
         private Integer localDisks;
 
         /**
          * Number of local disks.
+         *
          * @param localDisks the value to set
          * @return this builder
-         **/
+         */
         public Builder localDisks(Integer localDisks) {
             this.localDisks = localDisks;
             this.__explicitlySet__.add("localDisks");
             return this;
         }
-        /**
-         * Total size of local disks for shape.
-         **/
+        /** Total size of local disks for shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
         private Float localDisksTotalSizeInGBs;
 
         /**
          * Total size of local disks for shape.
+         *
          * @param localDisksTotalSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder localDisksTotalSizeInGBs(Float localDisksTotalSizeInGBs) {
             this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
             return this;
         }
-        /**
-         * Description of local disks.
-         **/
+        /** Description of local disks. */
         @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
         private String localDiskDescription;
 
         /**
          * Description of local disks.
+         *
          * @param localDiskDescription the value to set
          * @return this builder
-         **/
+         */
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = localDiskDescription;
             this.__explicitlySet__.add("localDiskDescription");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. It
+         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. It
+         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -329,8 +314,7 @@ public final class AvailableShapeSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -340,7 +324,7 @@ public final class AvailableShapeSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -348,20 +332,19 @@ public final class AvailableShapeSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -454,9 +437,7 @@ public final class AvailableShapeSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -465,252 +446,235 @@ public final class AvailableShapeSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Availability domain of the shape.
-     **/
+    /** Availability domain of the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * Availability domain of the shape.
+     *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * Shape name and availability domain.  Used for pagination.
-     **/
+    /** Shape name and availability domain. Used for pagination. */
     @com.fasterxml.jackson.annotation.JsonProperty("paginationToken")
     private final String paginationToken;
 
     /**
-     * Shape name and availability domain.  Used for pagination.
+     * Shape name and availability domain. Used for pagination.
+     *
      * @return the value
-     **/
+     */
     public String getPaginationToken() {
         return paginationToken;
     }
 
-    /**
-     * Minimum CPUs required.
-     **/
+    /** Minimum CPUs required. */
     @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
     private final java.math.BigDecimal minTotalBaselineOcpusRequired;
 
     /**
      * Minimum CPUs required.
+     *
      * @return the value
-     **/
+     */
     public java.math.BigDecimal getMinTotalBaselineOcpusRequired() {
         return minTotalBaselineOcpusRequired;
     }
 
-    /**
-     * Name of the shape.
-     **/
+    /** Name of the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Name of the shape.
+     *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
 
-    /**
-     * Description of the processor.
-     **/
+    /** Description of the processor. */
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
     /**
      * Description of the processor.
+     *
      * @return the value
-     **/
+     */
     public String getProcessorDescription() {
         return processorDescription;
     }
 
-    /**
-     * Number of CPUs.
-     **/
+    /** Number of CPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
     /**
      * Number of CPUs.
+     *
      * @return the value
-     **/
+     */
     public Float getOcpus() {
         return ocpus;
     }
 
-    /**
-     * Amount of memory for the shape.
-     **/
+    /** Amount of memory for the shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
     /**
      * Amount of memory for the shape.
+     *
      * @return the value
-     **/
+     */
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /**
-     * Shape bandwidth.
-     **/
+    /** Shape bandwidth. */
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
     private final Float networkingBandwidthInGbps;
 
     /**
      * Shape bandwidth.
+     *
      * @return the value
-     **/
+     */
     public Float getNetworkingBandwidthInGbps() {
         return networkingBandwidthInGbps;
     }
 
-    /**
-     * Maximum number of virtual network interfaces that can be attached.
-     **/
+    /** Maximum number of virtual network interfaces that can be attached. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
     private final Integer maxVnicAttachments;
 
     /**
      * Maximum number of virtual network interfaces that can be attached.
+     *
      * @return the value
-     **/
+     */
     public Integer getMaxVnicAttachments() {
         return maxVnicAttachments;
     }
 
-    /**
-     * Number of GPUs.
-     **/
+    /** Number of GPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
     private final Integer gpus;
 
     /**
      * Number of GPUs.
+     *
      * @return the value
-     **/
+     */
     public Integer getGpus() {
         return gpus;
     }
 
-    /**
-     * Description of the GPUs.
-     **/
+    /** Description of the GPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
     private final String gpuDescription;
 
     /**
      * Description of the GPUs.
+     *
      * @return the value
-     **/
+     */
     public String getGpuDescription() {
         return gpuDescription;
     }
 
-    /**
-     * Number of local disks.
-     **/
+    /** Number of local disks. */
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
     private final Integer localDisks;
 
     /**
      * Number of local disks.
+     *
      * @return the value
-     **/
+     */
     public Integer getLocalDisks() {
         return localDisks;
     }
 
-    /**
-     * Total size of local disks for shape.
-     **/
+    /** Total size of local disks for shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
     private final Float localDisksTotalSizeInGBs;
 
     /**
      * Total size of local disks for shape.
+     *
      * @return the value
-     **/
+     */
     public Float getLocalDisksTotalSizeInGBs() {
         return localDisksTotalSizeInGBs;
     }
 
-    /**
-     * Description of local disks.
-     **/
+    /** Description of local disks. */
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
     private final String localDiskDescription;
 
     /**
      * Description of local disks.
+     *
      * @return the value
-     **/
+     */
     public String getLocalDiskDescription() {
         return localDiskDescription;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
+     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
+     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -722,6 +686,7 @@ public final class AvailableShapeSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details for one attention log entry.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details for one attention log entry. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AttentionLogSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AttentionLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AttentionLogSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AttentionLogSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "messageUrgency",
@@ -60,161 +60,151 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The urgency of the attention log.
-         **/
+        /** The urgency of the attention log. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageUrgency")
         private MessageUrgency messageUrgency;
 
         /**
          * The urgency of the attention log.
+         *
          * @param messageUrgency the value to set
          * @return this builder
-         **/
+         */
         public Builder messageUrgency(MessageUrgency messageUrgency) {
             this.messageUrgency = messageUrgency;
             this.__explicitlySet__.add("messageUrgency");
             return this;
         }
-        /**
-         * The type of attention log message.
-         **/
+        /** The type of attention log message. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageType")
         private MessageType messageType;
 
         /**
          * The type of attention log message.
+         *
          * @param messageType the value to set
          * @return this builder
-         **/
+         */
         public Builder messageType(MessageType messageType) {
             this.messageType = messageType;
             this.__explicitlySet__.add("messageType");
             return this;
         }
-        /**
-         * The contents of the attention log message.
-         **/
+        /** The contents of the attention log message. */
         @com.fasterxml.jackson.annotation.JsonProperty("messageContent")
         private String messageContent;
 
         /**
          * The contents of the attention log message.
+         *
          * @param messageContent the value to set
          * @return this builder
-         **/
+         */
         public Builder messageContent(String messageContent) {
             this.messageContent = messageContent;
             this.__explicitlySet__.add("messageContent");
             return this;
         }
-        /**
-         * The date and time the attention log was created.
-         **/
+        /** The date and time the attention log was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The date and time the attention log was created.
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /**
-         * The database scope for the attention log.
-         **/
+        /** The database scope for the attention log. */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
         /**
          * The database scope for the attention log.
+         *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-        /**
-         * The user who must act on the attention log message.
-         **/
+        /** The user who must act on the attention log message. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetUser")
         private String targetUser;
 
         /**
          * The user who must act on the attention log message.
+         *
          * @param targetUser the value to set
          * @return this builder
-         **/
+         */
         public Builder targetUser(String targetUser) {
             this.targetUser = targetUser;
             this.__explicitlySet__.add("targetUser");
             return this;
         }
-        /**
-         * The cause of the attention log.
-         **/
+        /** The cause of the attention log. */
         @com.fasterxml.jackson.annotation.JsonProperty("cause")
         private String cause;
 
         /**
          * The cause of the attention log.
+         *
          * @param cause the value to set
          * @return this builder
-         **/
+         */
         public Builder cause(String cause) {
             this.cause = cause;
             this.__explicitlySet__.add("cause");
             return this;
         }
-        /**
-         * The recommended action to handle the attention log.
-         **/
+        /** The recommended action to handle the attention log. */
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private String action;
 
         /**
          * The recommended action to handle the attention log.
+         *
          * @param action the value to set
          * @return this builder
-         **/
+         */
         public Builder action(String action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /**
-         * The supplemental details of the attention log.
-         **/
+        /** The supplemental details of the attention log. */
         @com.fasterxml.jackson.annotation.JsonProperty("supplementalDetail")
         private String supplementalDetail;
 
         /**
          * The supplemental details of the attention log.
+         *
          * @param supplementalDetail the value to set
          * @return this builder
-         **/
+         */
         public Builder supplementalDetail(String supplementalDetail) {
             this.supplementalDetail = supplementalDetail;
             this.__explicitlySet__.add("supplementalDetail");
             return this;
         }
-        /**
-         * The attention log file location.
-         **/
+        /** The attention log file location. */
         @com.fasterxml.jackson.annotation.JsonProperty("fileLocation")
         private String fileLocation;
 
         /**
          * The attention log file location.
+         *
          * @param fileLocation the value to set
          * @return this builder
-         **/
+         */
         public Builder fileLocation(String fileLocation) {
             this.fileLocation = fileLocation;
             this.__explicitlySet__.add("fileLocation");
@@ -279,9 +269,7 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -290,18 +278,16 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The urgency of the attention log.
-     **/
-    public enum MessageUrgency {
+    /** The urgency of the attention log. */
+    public enum MessageUrgency implements com.oracle.bmc.http.internal.BmcEnum {
         Immediate("IMMEDIATE"),
         Soon("SOON"),
         Deferrable("DEFERRABLE"),
         Info("INFO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -340,24 +326,21 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The urgency of the attention log.
-     **/
+    /** The urgency of the attention log. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageUrgency")
     private final MessageUrgency messageUrgency;
 
     /**
      * The urgency of the attention log.
+     *
      * @return the value
-     **/
+     */
     public MessageUrgency getMessageUrgency() {
         return messageUrgency;
     }
 
-    /**
-     * The type of attention log message.
-     **/
-    public enum MessageType {
+    /** The type of attention log message. */
+    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
         Unknown("UNKNOWN"),
         IncidentError("INCIDENT_ERROR"),
         Error("ERROR"),
@@ -366,8 +349,8 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
         Trace("TRACE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -406,128 +389,119 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of attention log message.
-     **/
+    /** The type of attention log message. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     private final MessageType messageType;
 
     /**
      * The type of attention log message.
+     *
      * @return the value
-     **/
+     */
     public MessageType getMessageType() {
         return messageType;
     }
 
-    /**
-     * The contents of the attention log message.
-     **/
+    /** The contents of the attention log message. */
     @com.fasterxml.jackson.annotation.JsonProperty("messageContent")
     private final String messageContent;
 
     /**
      * The contents of the attention log message.
+     *
      * @return the value
-     **/
+     */
     public String getMessageContent() {
         return messageContent;
     }
 
-    /**
-     * The date and time the attention log was created.
-     **/
+    /** The date and time the attention log was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The date and time the attention log was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /**
-     * The database scope for the attention log.
-     **/
+    /** The database scope for the attention log. */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
     /**
      * The database scope for the attention log.
+     *
      * @return the value
-     **/
+     */
     public String getScope() {
         return scope;
     }
 
-    /**
-     * The user who must act on the attention log message.
-     **/
+    /** The user who must act on the attention log message. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetUser")
     private final String targetUser;
 
     /**
      * The user who must act on the attention log message.
+     *
      * @return the value
-     **/
+     */
     public String getTargetUser() {
         return targetUser;
     }
 
-    /**
-     * The cause of the attention log.
-     **/
+    /** The cause of the attention log. */
     @com.fasterxml.jackson.annotation.JsonProperty("cause")
     private final String cause;
 
     /**
      * The cause of the attention log.
+     *
      * @return the value
-     **/
+     */
     public String getCause() {
         return cause;
     }
 
-    /**
-     * The recommended action to handle the attention log.
-     **/
+    /** The recommended action to handle the attention log. */
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final String action;
 
     /**
      * The recommended action to handle the attention log.
+     *
      * @return the value
-     **/
+     */
     public String getAction() {
         return action;
     }
 
-    /**
-     * The supplemental details of the attention log.
-     **/
+    /** The supplemental details of the attention log. */
     @com.fasterxml.jackson.annotation.JsonProperty("supplementalDetail")
     private final String supplementalDetail;
 
     /**
      * The supplemental details of the attention log.
+     *
      * @return the value
-     **/
+     */
     public String getSupplementalDetail() {
         return supplementalDetail;
     }
 
-    /**
-     * The attention log file location.
-     **/
+    /** The attention log file location. */
     @com.fasterxml.jackson.annotation.JsonProperty("fileLocation")
     private final String fileLocation;
 
     /**
      * The attention log file location.
+     *
      * @return the value
-     **/
+     */
     public String getFileLocation() {
         return fileLocation;
     }
@@ -539,6 +513,7 @@ public final class AttentionLogSummary extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

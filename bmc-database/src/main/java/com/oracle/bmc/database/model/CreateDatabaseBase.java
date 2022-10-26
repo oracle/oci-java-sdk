@@ -6,36 +6,34 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details for creating a database.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source",
-    defaultImpl = CreateDatabaseBase.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "source",
+        defaultImpl = CreateDatabaseBase.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateNewDatabaseDetails.class,
-        name = "NONE"
-    ),
+            value = CreateNewDatabaseDetails.class,
+            name = "NONE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDatabaseFromBackup.class,
-        name = "DB_BACKUP"
-    )
+            value = CreateDatabaseFromBackup.class,
+            name = "DB_BACKUP")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class CreateDatabaseBase extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dbHomeId", "dbVersion", "kmsKeyId", "kmsKeyVersionId"})
     protected CreateDatabaseBase(
@@ -48,59 +46,71 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     private final String dbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Database Home.
+     *
      * @return the value
-     **/
+     */
     public String getDbHomeId() {
         return dbHomeId;
     }
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
-     **/
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link
+     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
-     * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     * A valid Oracle Database version. To get a list of supported versions, use the {@link
+     * #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
+     *
      * @return the value
-     **/
+     */
     public String getDbVersion() {
         return dbVersion;
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-     **/
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * The OCID of the key container that is used as the master encryption key in database
+     * transparent data encryption (TDE) operations.
+     *
      * @return the value
-     **/
+     */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-     *
-     **/
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption
+     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
+     * key version (latest) of the Key Id is used for the operation.
      *
      * @return the value
-     **/
+     */
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
@@ -112,6 +122,7 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -159,13 +170,11 @@ public class CreateDatabaseBase extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The source of the database:
-     * Use {@code NONE} for creating a new database.
-     * Use {@code DB_BACKUP} for creating a new database by restoring from a backup.
-     * The default is {@code NONE}.
-     *
-     **/
-    public enum Source {
+     * The source of the database: Use {@code NONE} for creating a new database. Use {@code
+     * DB_BACKUP} for creating a new database by restoring from a backup. The default is {@code
+     * NONE}.
+     */
+    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         DbBackup("DB_BACKUP"),
         ;

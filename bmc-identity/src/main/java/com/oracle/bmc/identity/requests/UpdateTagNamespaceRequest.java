@@ -6,51 +6,40 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagNamespaceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTagNamespaceRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/UpdateTagNamespaceExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTagNamespaceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateTagNamespaceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.UpdateTagNamespaceDetails> {
 
-    /**
-     * The OCID of the tag namespace.
-     *
-     */
+    /** The OCID of the tag namespace. */
     private String tagNamespaceId;
 
-    /**
-     * The OCID of the tag namespace.
-     *
-     */
+    /** The OCID of the tag namespace. */
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
-    /**
-     * Request object for updating a namespace.
-     */
+    /** Request object for updating a namespace. */
     private com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails;
 
-    /**
-     * Request object for updating a namespace.
-     */
+    /** Request object for updating a namespace. */
     public com.oracle.bmc.identity.model.UpdateTagNamespaceDetails getUpdateTagNamespaceDetails() {
         return updateTagNamespaceDetails;
     }
-    /**
-     * Whether to override locks (if any exist).
-     */
+    /** Whether to override locks (if any exist). */
     private Boolean isLockOverride;
 
-    /**
-     * Whether to override locks (if any exist).
-     */
+    /** Whether to override locks (if any exist). */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -63,14 +52,10 @@ public class UpdateTagNamespaceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTagNamespaceRequest,
                     com.oracle.bmc.identity.model.UpdateTagNamespaceDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the tag namespace.
-         *
-         */
+        /** The OCID of the tag namespace. */
         private String tagNamespaceId = null;
 
         /**
@@ -84,14 +69,13 @@ public class UpdateTagNamespaceRequest
             return this;
         }
 
-        /**
-         * Request object for updating a namespace.
-         */
+        /** Request object for updating a namespace. */
         private com.oracle.bmc.identity.model.UpdateTagNamespaceDetails updateTagNamespaceDetails =
                 null;
 
         /**
          * Request object for updating a namespace.
+         *
          * @param updateTagNamespaceDetails the value to set
          * @return this builder instance
          */
@@ -101,13 +85,12 @@ public class UpdateTagNamespaceRequest
             return this;
         }
 
-        /**
-         * Whether to override locks (if any exist).
-         */
+        /** Whether to override locks (if any exist). */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
+         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -118,18 +101,19 @@ public class UpdateTagNamespaceRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -141,6 +125,7 @@ public class UpdateTagNamespaceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateTagNamespaceRequest o) {
@@ -155,10 +140,11 @@ public class UpdateTagNamespaceRequest
         /**
          * Build the instance of UpdateTagNamespaceRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateTagNamespaceRequest
          */
@@ -171,6 +157,7 @@ public class UpdateTagNamespaceRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -183,7 +170,8 @@ public class UpdateTagNamespaceRequest
         /**
          * Build the instance of UpdateTagNamespaceRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTagNamespaceRequest
@@ -194,12 +182,14 @@ public class UpdateTagNamespaceRequest
             request.updateTagNamespaceDetails = updateTagNamespaceDetails;
             request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateTagNamespaceRequest(tagNamespaceId, updateTagNamespaceDetails, isLockOverride);
+            // new UpdateTagNamespaceRequest(tagNamespaceId, updateTagNamespaceDetails,
+            // isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -211,6 +201,7 @@ public class UpdateTagNamespaceRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

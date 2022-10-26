@@ -5,53 +5,47 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Public endpoint configuration details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Public endpoint configuration details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PublicEndpointDetails.Builder.class
-)
+        builder = PublicEndpointDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "networkEndpointType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "networkEndpointType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PublicEndpointDetails extends NetworkEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
-         * An invalid IP or CIDR block will result in a 400 response.
-         *
-         **/
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5",
+         * "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
         private java.util.List<String> allowlistedHttpIps;
 
         /**
-         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
-         * An invalid IP or CIDR block will result in a 400 response.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5",
+         * "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          *
          * @param allowlistedHttpIps the value to set
          * @return this builder
-         **/
+         */
         public Builder allowlistedHttpIps(java.util.List<String> allowlistedHttpIps) {
             this.allowlistedHttpIps = allowlistedHttpIps;
             this.__explicitlySet__.add("allowlistedHttpIps");
             return this;
         }
-        /**
-         * Virtual Cloud Networks allowed to access this network endpoint.
-         *
-         **/
+        /** Virtual Cloud Networks allowed to access this network endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpVcns")
         private java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
 
@@ -60,7 +54,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
          *
          * @param allowlistedHttpVcns the value to set
          * @return this builder
-         **/
+         */
         public Builder allowlistedHttpVcns(
                 java.util.List<VirtualCloudNetwork> allowlistedHttpVcns) {
             this.allowlistedHttpVcns = allowlistedHttpVcns;
@@ -68,16 +62,19 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
             return this;
         }
         /**
-         * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-         **/
+         * The Integration service's VCN is allow-listed to allow integrations to call back into
+         * other integrations
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isIntegrationVcnAllowlisted")
         private Boolean isIntegrationVcnAllowlisted;
 
         /**
-         * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+         * The Integration service's VCN is allow-listed to allow integrations to call back into
+         * other integrations
+         *
          * @param isIntegrationVcnAllowlisted the value to set
          * @return this builder
-         **/
+         */
         public Builder isIntegrationVcnAllowlisted(Boolean isIntegrationVcnAllowlisted) {
             this.isIntegrationVcnAllowlisted = isIntegrationVcnAllowlisted;
             this.__explicitlySet__.add("isIntegrationVcnAllowlisted");
@@ -114,9 +111,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,8 +134,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
     /**
      * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
      * An invalid IP or CIDR block will result in a 400 response.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpIps")
     private final java.util.List<String> allowlistedHttpIps;
 
@@ -149,15 +143,12 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      * An invalid IP or CIDR block will result in a 400 response.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowlistedHttpIps() {
         return allowlistedHttpIps;
     }
 
-    /**
-     * Virtual Cloud Networks allowed to access this network endpoint.
-     *
-     **/
+    /** Virtual Cloud Networks allowed to access this network endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedHttpVcns")
     private final java.util.List<VirtualCloudNetwork> allowlistedHttpVcns;
 
@@ -165,21 +156,24 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
      * Virtual Cloud Networks allowed to access this network endpoint.
      *
      * @return the value
-     **/
+     */
     public java.util.List<VirtualCloudNetwork> getAllowlistedHttpVcns() {
         return allowlistedHttpVcns;
     }
 
     /**
-     * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-     **/
+     * The Integration service's VCN is allow-listed to allow integrations to call back into other
+     * integrations
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isIntegrationVcnAllowlisted")
     private final Boolean isIntegrationVcnAllowlisted;
 
     /**
-     * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
+     * The Integration service's VCN is allow-listed to allow integrations to call back into other
+     * integrations
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsIntegrationVcnAllowlisted() {
         return isIntegrationVcnAllowlisted;
     }
@@ -191,6 +185,7 @@ public final class PublicEndpointDetails extends NetworkEndpointDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

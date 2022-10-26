@@ -5,22 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Payload for updating an imported package
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Payload for updating an imported package <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateImportedPackageDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateImportedPackageDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateImportedPackageDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "currentPackageId",
@@ -43,32 +43,36 @@ public final class UpdateImportedPackageDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * ID of the new package (i.e. version) to import, replacing the old imported package. Leave null if no new package resources are required. The name of the new package must must match the name of the already-imported package.
-         **/
+         * ID of the new package (i.e. version) to import, replacing the old imported package. Leave
+         * null if no new package resources are required. The name of the new package must must
+         * match the name of the already-imported package.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("currentPackageId")
         private String currentPackageId;
 
         /**
-         * ID of the new package (i.e. version) to import, replacing the old imported package. Leave null if no new package resources are required. The name of the new package must must match the name of the already-imported package.
+         * ID of the new package (i.e. version) to import, replacing the old imported package. Leave
+         * null if no new package resources are required. The name of the new package must must
+         * match the name of the already-imported package.
+         *
          * @param currentPackageId the value to set
          * @return this builder
-         **/
+         */
         public Builder currentPackageId(String currentPackageId) {
             this.currentPackageId = currentPackageId;
             this.__explicitlySet__.add("currentPackageId");
             return this;
         }
-        /**
-         * A list of the updated parameter values to apply to this imported package.
-         **/
+        /** A list of the updated parameter values to apply to this imported package. */
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
         private java.util.Map<String, String> parameterValues;
 
         /**
          * A list of the updated parameter values to apply to this imported package.
+         *
          * @param parameterValues the value to set
          * @return this builder
-         **/
+         */
         public Builder parameterValues(java.util.Map<String, String> parameterValues) {
             this.parameterValues = parameterValues;
             this.__explicitlySet__.add("parameterValues");
@@ -77,8 +81,7 @@ public final class UpdateImportedPackageDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope.
          * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -88,27 +91,26 @@ public final class UpdateImportedPackageDetails
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
+         * {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -150,9 +152,7 @@ public final class UpdateImportedPackageDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -162,65 +162,67 @@ public final class UpdateImportedPackageDetails
     }
 
     /**
-     * ID of the new package (i.e. version) to import, replacing the old imported package. Leave null if no new package resources are required. The name of the new package must must match the name of the already-imported package.
-     **/
+     * ID of the new package (i.e. version) to import, replacing the old imported package. Leave
+     * null if no new package resources are required. The name of the new package must must match
+     * the name of the already-imported package.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("currentPackageId")
     private final String currentPackageId;
 
     /**
-     * ID of the new package (i.e. version) to import, replacing the old imported package. Leave null if no new package resources are required. The name of the new package must must match the name of the already-imported package.
+     * ID of the new package (i.e. version) to import, replacing the old imported package. Leave
+     * null if no new package resources are required. The name of the new package must must match
+     * the name of the already-imported package.
+     *
      * @return the value
-     **/
+     */
     public String getCurrentPackageId() {
         return currentPackageId;
     }
 
-    /**
-     * A list of the updated parameter values to apply to this imported package.
-     **/
+    /** A list of the updated parameter values to apply to this imported package. */
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
     private final java.util.Map<String, String> parameterValues;
 
     /**
      * A list of the updated parameter values to apply to this imported package.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getParameterValues() {
         return parameterValues;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
+     * {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -232,6 +234,7 @@ public final class UpdateImportedPackageDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

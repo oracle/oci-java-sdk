@@ -5,19 +5,21 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The details of a hostname resource associated with a load balancer.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of a hostname resource associated with a load balancer. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostnameDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HostnameDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HostnameDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "hostname"})
     public HostnameDetails(String name, String hostname) {
@@ -30,21 +32,20 @@ public final class HostnameDetails extends com.oracle.bmc.http.internal.Explicit
     public static class Builder {
         /**
          * The name of the hostname resource.
-         * <p>
-         * Example: {@code example_hostname_001}
          *
-         **/
+         * <p>Example: {@code example_hostname_001}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the hostname resource.
-         * <p>
-         * Example: {@code example_hostname_001}
+         *
+         * <p>Example: {@code example_hostname_001}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -52,23 +53,24 @@ public final class HostnameDetails extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * A virtual hostname. For more information about virtual hostname string construction, see
-         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
-         * <p>
-         * Example: {@code app.example.com}
+         * [Managing Request
+         * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
          *
-         **/
+         * <p>Example: {@code app.example.com}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * A virtual hostname. For more information about virtual hostname string construction, see
-         * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
-         * <p>
-         * Example: {@code app.example.com}
+         * [Managing Request
+         * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+         *
+         * <p>Example: {@code app.example.com}
          *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -98,9 +100,7 @@ public final class HostnameDetails extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,42 +111,42 @@ public final class HostnameDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * The name of the hostname resource.
-     * <p>
-     * Example: {@code example_hostname_001}
      *
-     **/
+     * <p>Example: {@code example_hostname_001}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the hostname resource.
-     * <p>
-     * Example: {@code example_hostname_001}
+     *
+     * <p>Example: {@code example_hostname_001}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
      * A virtual hostname. For more information about virtual hostname string construction, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
-     * <p>
-     * Example: {@code app.example.com}
+     * [Managing Request
+     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
      *
-     **/
+     * <p>Example: {@code app.example.com}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * A virtual hostname. For more information about virtual hostname string construction, see
-     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
-     * <p>
-     * Example: {@code app.example.com}
+     * [Managing Request
+     * Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     *
+     * <p>Example: {@code app.example.com}
      *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
@@ -158,6 +158,7 @@ public final class HostnameDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

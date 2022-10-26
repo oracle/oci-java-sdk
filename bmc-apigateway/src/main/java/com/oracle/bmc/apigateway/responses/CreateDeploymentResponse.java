@@ -8,10 +8,7 @@ import com.oracle.bmc.apigateway.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,19 +21,14 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
-     *
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      *
      * @return the value
      */
@@ -45,17 +37,14 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      *
      * @return the value
      */
@@ -63,10 +52,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -78,13 +64,12 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         return location;
     }
 
-    /**
-     * The returned Deployment instance.
-     */
+    /** The returned Deployment instance. */
     private com.oracle.bmc.apigateway.model.Deployment deployment;
 
     /**
      * The returned Deployment instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apigateway.model.Deployment getDeployment() {
@@ -102,7 +87,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateDeploymentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -116,25 +101,25 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         this.deployment = deployment;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateDeploymentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -149,19 +134,14 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
-         *
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -172,17 +152,14 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -192,10 +169,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -209,13 +183,12 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned Deployment instance.
-         */
+        /** The returned Deployment instance. */
         private com.oracle.bmc.apigateway.model.Deployment deployment;
 
         /**
          * The returned Deployment instance.
+         *
          * @param deployment the value to set
          * @return this builder
          */
@@ -226,8 +199,10 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDeploymentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -242,8 +217,10 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDeploymentResponse build() {
             return new CreateDeploymentResponse(
                     __httpStatusCode__,
@@ -258,6 +235,7 @@ public class CreateDeploymentResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,21 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The tenancy-level agent AutoUpgradable configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The tenancy-level agent AutoUpgradable configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutoUpgradableConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class AutoUpgradableConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = AutoUpgradableConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class AutoUpgradableConfig
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isAgentAutoUpgradable"})
     public AutoUpgradableConfig(Boolean isAgentAutoUpgradable) {
@@ -30,16 +31,19 @@ public final class AutoUpgradableConfig extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
-         **/
+         * true if the agents can be upgraded automatically; false if they must be upgraded
+         * manually.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
         private Boolean isAgentAutoUpgradable;
 
         /**
-         * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+         * true if the agents can be upgraded automatically; false if they must be upgraded
+         * manually.
+         *
          * @param isAgentAutoUpgradable the value to set
          * @return this builder
-         **/
+         */
         public Builder isAgentAutoUpgradable(Boolean isAgentAutoUpgradable) {
             this.isAgentAutoUpgradable = isAgentAutoUpgradable;
             this.__explicitlySet__.add("isAgentAutoUpgradable");
@@ -66,9 +70,7 @@ public final class AutoUpgradableConfig extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,14 +81,15 @@ public final class AutoUpgradableConfig extends com.oracle.bmc.http.internal.Exp
 
     /**
      * true if the agents can be upgraded automatically; false if they must be upgraded manually.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAgentAutoUpgradable")
     private final Boolean isAgentAutoUpgradable;
 
     /**
      * true if the agents can be upgraded automatically; false if they must be upgraded manually.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsAgentAutoUpgradable() {
         return isAgentAutoUpgradable;
     }
@@ -98,6 +101,7 @@ public final class AutoUpgradableConfig extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

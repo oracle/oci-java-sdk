@@ -6,25 +6,24 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining an attachment between a steering policy and a domain.
- * <p>
  *
- * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>**Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateSteeringPolicyAttachmentDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateSteeringPolicyAttachmentDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateSteeringPolicyAttachmentDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"steeringPolicyId", "zoneId", "domainName", "displayName"})
     public CreateSteeringPolicyAttachmentDetails(
@@ -38,71 +37,65 @@ public final class CreateSteeringPolicyAttachmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the attached steering policy.
-         **/
+        /** The OCID of the attached steering policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
         private String steeringPolicyId;
 
         /**
          * The OCID of the attached steering policy.
+         *
          * @param steeringPolicyId the value to set
          * @return this builder
-         **/
+         */
         public Builder steeringPolicyId(String steeringPolicyId) {
             this.steeringPolicyId = steeringPolicyId;
             this.__explicitlySet__.add("steeringPolicyId");
             return this;
         }
-        /**
-         * The OCID of the attached zone.
-         **/
+        /** The OCID of the attached zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
         private String zoneId;
 
         /**
          * The OCID of the attached zone.
+         *
          * @param zoneId the value to set
          * @return this builder
-         **/
+         */
         public Builder zoneId(String zoneId) {
             this.zoneId = zoneId;
             this.__explicitlySet__.add("zoneId");
             return this;
         }
-        /**
-         * The attached domain within the attached zone.
-         **/
+        /** The attached domain within the attached zone. */
         @com.fasterxml.jackson.annotation.JsonProperty("domainName")
         private String domainName;
 
         /**
          * The attached domain within the attached zone.
+         *
          * @param domainName the value to set
          * @return this builder
-         **/
+         */
         public Builder domainName(String domainName) {
             this.domainName = domainName;
             this.__explicitlySet__.add("domainName");
             return this;
         }
         /**
-         * A user-friendly name for the steering policy attachment.
-         * Does not have to be unique and can be changed.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name for the steering policy attachment. Does not have to be unique and
+         * can be changed. Avoid entering confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the steering policy attachment.
-         * Does not have to be unique and can be changed.
-         * Avoid entering confidential information.
+         * A user-friendly name for the steering policy attachment. Does not have to be unique and
+         * can be changed. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -140,9 +133,7 @@ public final class CreateSteeringPolicyAttachmentDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,64 +142,58 @@ public final class CreateSteeringPolicyAttachmentDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the attached steering policy.
-     **/
+    /** The OCID of the attached steering policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("steeringPolicyId")
     private final String steeringPolicyId;
 
     /**
      * The OCID of the attached steering policy.
+     *
      * @return the value
-     **/
+     */
     public String getSteeringPolicyId() {
         return steeringPolicyId;
     }
 
-    /**
-     * The OCID of the attached zone.
-     **/
+    /** The OCID of the attached zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("zoneId")
     private final String zoneId;
 
     /**
      * The OCID of the attached zone.
+     *
      * @return the value
-     **/
+     */
     public String getZoneId() {
         return zoneId;
     }
 
-    /**
-     * The attached domain within the attached zone.
-     **/
+    /** The attached domain within the attached zone. */
     @com.fasterxml.jackson.annotation.JsonProperty("domainName")
     private final String domainName;
 
     /**
      * The attached domain within the attached zone.
+     *
      * @return the value
-     **/
+     */
     public String getDomainName() {
         return domainName;
     }
 
     /**
-     * A user-friendly name for the steering policy attachment.
-     * Does not have to be unique and can be changed.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name for the steering policy attachment. Does not have to be unique and can
+     * be changed. Avoid entering confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the steering policy attachment.
-     * Does not have to be unique and can be changed.
-     * Avoid entering confidential information.
+     * A user-friendly name for the steering policy attachment. Does not have to be unique and can
+     * be changed. Avoid entering confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -220,6 +205,7 @@ public final class CreateSteeringPolicyAttachmentDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

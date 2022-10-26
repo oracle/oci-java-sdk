@@ -5,24 +5,26 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Represents an attachment between a VNIC and an instance. For more information, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
+ * Represents an attachment between a VNIC and an instance. For more information, see [Virtual
+ * Network Interface Cards
+ * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VnicAttachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VnicAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VnicAttachment
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -70,240 +72,228 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
     public static class Builder {
         /**
          * The availability domain of the instance.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
          *
-         **/
+         * <p>Example: {@code Uocm:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of the instance.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The OCID of the compartment the VNIC attachment is in, which is the same
-         * compartment the instance is in.
-         *
-         **/
+         * The OCID of the compartment the VNIC attachment is in, which is the same compartment the
+         * instance is in.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment the VNIC attachment is in, which is the same
-         * compartment the instance is in.
+         * The OCID of the compartment the VNIC attachment is in, which is the same compartment the
+         * instance is in.
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the VNIC attachment.
-         **/
+        /** The OCID of the VNIC attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the VNIC attachment.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the instance.
-         **/
+        /** The OCID of the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         /**
          * The OCID of the instance.
+         *
          * @param instanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceId(String instanceId) {
             this.instanceId = instanceId;
             this.__explicitlySet__.add("instanceId");
             return this;
         }
-        /**
-         * The current state of the VNIC attachment.
-         **/
+        /** The current state of the VNIC attachment. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the VNIC attachment.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Which physical network interface card (NIC) the VNIC uses.
-         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
-         * you add a secondary VNIC to one of these instances, you can specify which NIC
-         * the VNIC will use. For more information, see
-         * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-         *
-         **/
+         * Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance
+         * shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of
+         * these instances, you can specify which NIC the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards
+         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
         private Integer nicIndex;
 
         /**
-         * Which physical network interface card (NIC) the VNIC uses.
-         * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
-         * you add a secondary VNIC to one of these instances, you can specify which NIC
-         * the VNIC will use. For more information, see
-         * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+         * Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance
+         * shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of
+         * these instances, you can specify which NIC the VNIC will use. For more information, see
+         * [Virtual Network Interface Cards
+         * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
          *
          * @param nicIndex the value to set
          * @return this builder
-         **/
+         */
         public Builder nicIndex(Integer nicIndex) {
             this.nicIndex = nicIndex;
             this.__explicitlySet__.add("nicIndex");
             return this;
         }
-        /**
-         * The OCID of the subnet to create the VNIC in.
-         **/
+        /** The OCID of the subnet to create the VNIC in. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet to create the VNIC in.
+         *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
-         * of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
-         * See {@link Vlan}.
-         * <p>
-         * An error is returned if the instance already has a VNIC attached to it from this VLAN.
+         * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a
+         * subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See {@link
+         * Vlan}.
          *
-         **/
+         * <p>An error is returned if the instance already has a VNIC attached to it from this VLAN.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
         private String vlanId;
 
         /**
-         * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
-         * of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
-         * See {@link Vlan}.
-         * <p>
-         * An error is returned if the instance already has a VNIC attached to it from this VLAN.
+         * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a
+         * subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See {@link
+         * Vlan}.
+         *
+         * <p>An error is returned if the instance already has a VNIC attached to it from this VLAN.
          *
          * @param vlanId the value to set
          * @return this builder
-         **/
+         */
         public Builder vlanId(String vlanId) {
             this.vlanId = vlanId;
             this.__explicitlySet__.add("vlanId");
             return this;
         }
         /**
-         * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the VNIC attachment was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the VNIC attachment was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-         * attachment process is complete.
-         * <p>
-         * However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
-         * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN.
-         * See {@link Vlan}.
-         * <p>
-         * Example: {@code 0}
+         * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process
+         * is complete.
          *
-         **/
+         * <p>However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+         * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the
+         * VLAN. See {@link Vlan}.
+         *
+         * <p>Example: {@code 0}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
         private Integer vlanTag;
 
         /**
-         * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-         * attachment process is complete.
-         * <p>
-         * However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
-         * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN.
-         * See {@link Vlan}.
-         * <p>
-         * Example: {@code 0}
+         * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process
+         * is complete.
+         *
+         * <p>However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+         * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the
+         * VLAN. See {@link Vlan}.
+         *
+         * <p>Example: {@code 0}
          *
          * @param vlanTag the value to set
          * @return this builder
-         **/
+         */
         public Builder vlanTag(Integer vlanTag) {
             this.vlanTag = vlanTag;
             this.__explicitlySet__.add("vlanTag");
             return this;
         }
-        /**
-         * The OCID of the VNIC. Available after the attachment process is complete.
-         *
-         **/
+        /** The OCID of the VNIC. Available after the attachment process is complete. */
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
@@ -312,7 +302,7 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
          *
          * @param vnicId the value to set
          * @return this builder
-         **/
+         */
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
@@ -385,9 +375,7 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -398,100 +386,93 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * The availability domain of the instance.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of the instance.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The OCID of the compartment the VNIC attachment is in, which is the same
-     * compartment the instance is in.
-     *
-     **/
+     * The OCID of the compartment the VNIC attachment is in, which is the same compartment the
+     * instance is in.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment the VNIC attachment is in, which is the same
-     * compartment the instance is in.
+     * The OCID of the compartment the VNIC attachment is in, which is the same compartment the
+     * instance is in.
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the VNIC attachment.
-     **/
+    /** The OCID of the VNIC attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the VNIC attachment.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the instance.
-     **/
+    /** The OCID of the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     private final String instanceId;
 
     /**
      * The OCID of the instance.
+     *
      * @return the value
-     **/
+     */
     public String getInstanceId() {
         return instanceId;
     }
 
-    /**
-     * The current state of the VNIC attachment.
-     **/
-    public enum LifecycleState {
+    /** The current state of the VNIC attachment. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Attaching("ATTACHING"),
         Attached("ATTACHED"),
         Detaching("DETACHING"),
         Detached("DETACHED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -530,136 +511,127 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the VNIC attachment.
-     **/
+    /** The current state of the VNIC attachment. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the VNIC attachment.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Which physical network interface card (NIC) the VNIC uses.
-     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
-     * you add a secondary VNIC to one of these instances, you can specify which NIC
-     * the VNIC will use. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-     *
-     **/
+     * Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes
+     * have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these
+     * instances, you can specify which NIC the VNIC will use. For more information, see [Virtual
+     * Network Interface Cards
+     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
     private final Integer nicIndex;
 
     /**
-     * Which physical network interface card (NIC) the VNIC uses.
-     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
-     * you add a secondary VNIC to one of these instances, you can specify which NIC
-     * the VNIC will use. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * Which physical network interface card (NIC) the VNIC uses. Certain bare metal instance shapes
+     * have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these
+     * instances, you can specify which NIC the VNIC will use. For more information, see [Virtual
+     * Network Interface Cards
+     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @return the value
-     **/
+     */
     public Integer getNicIndex() {
         return nicIndex;
     }
 
-    /**
-     * The OCID of the subnet to create the VNIC in.
-     **/
+    /** The OCID of the subnet to create the VNIC in. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet to create the VNIC in.
+     *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
-     * of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
-     * See {@link Vlan}.
-     * <p>
-     * An error is returned if the instance already has a VNIC attached to it from this VLAN.
+     * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet)
+     * is possible only if you are an Oracle Cloud VMware Solution customer. See {@link Vlan}.
      *
-     **/
+     * <p>An error is returned if the instance already has a VNIC attached to it from this VLAN.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanId")
     private final String vlanId;
 
     /**
-     * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
-     * of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
-     * See {@link Vlan}.
-     * <p>
-     * An error is returned if the instance already has a VNIC attached to it from this VLAN.
+     * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet)
+     * is possible only if you are an Oracle Cloud VMware Solution customer. See {@link Vlan}.
+     *
+     * <p>An error is returned if the instance already has a VNIC attached to it from this VLAN.
      *
      * @return the value
-     **/
+     */
     public String getVlanId() {
         return vlanId;
     }
 
     /**
-     * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the VNIC attachment was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the VNIC attachment was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-     * attachment process is complete.
-     * <p>
-     * However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
-     * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN.
-     * See {@link Vlan}.
-     * <p>
-     * Example: {@code 0}
+     * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is
+     * complete.
      *
-     **/
+     * <p>However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution, the
+     * {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN. See
+     * {@link Vlan}.
+     *
+     * <p>Example: {@code 0}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
     private final Integer vlanTag;
 
     /**
-     * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
-     * attachment process is complete.
-     * <p>
-     * However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
-     * the {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN.
-     * See {@link Vlan}.
-     * <p>
-     * Example: {@code 0}
+     * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is
+     * complete.
+     *
+     * <p>However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution, the
+     * {@code vlanTag} value is instead the value of the {@code vlanTag} attribute for the VLAN. See
+     * {@link Vlan}.
+     *
+     * <p>Example: {@code 0}
      *
      * @return the value
-     **/
+     */
     public Integer getVlanTag() {
         return vlanTag;
     }
 
-    /**
-     * The OCID of the VNIC. Available after the attachment process is complete.
-     *
-     **/
+    /** The OCID of the VNIC. Available after the attachment process is complete. */
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
@@ -667,7 +639,7 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
      * The OCID of the VNIC. Available after the attachment process is complete.
      *
      * @return the value
-     **/
+     */
     public String getVnicId() {
         return vnicId;
     }
@@ -679,6 +651,7 @@ public final class VnicAttachment extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

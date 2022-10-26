@@ -9,9 +9,12 @@ import com.oracle.bmc.auth.ResourcePrincipalAuthenticationDetailsProvider;
 import java.util.Map;
 
 /**
- * A {@link javax.security.auth.spi.LoginModule} that will use Resource Principals to fill the {@link javax.security.auth.Subject} credentials.
- * An intent parameter has to be specified - this service specific and is documented on a per-service basis.
- * <pre>{@code com.oracle.bmc.auth.sasl.ResourcePrincipalsLoginModule required intent="<intent>";}</pre>
+ * A {@link javax.security.auth.spi.LoginModule} that will use Resource Principals to fill the
+ * {@link javax.security.auth.Subject} credentials. An intent parameter has to be specified - this
+ * service specific and is documented on a per-service basis.
+ *
+ * <pre>{@code com.oracle.bmc.auth.sasl.ResourcePrincipalsLoginModule required intent="<intent>";}
+ * </pre>
  */
 public class ResourcePrincipalsLoginModule extends OciLoginModule {
     @Override

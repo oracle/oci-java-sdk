@@ -6,232 +6,180 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobExecutionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJobExecutionsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListJobExecutionsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJobExecutionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     private String catalogId;
 
-    /**
-     * Unique catalog identifier.
-     */
+    /** Unique catalog identifier. */
     public String getCatalogId() {
         return catalogId;
     }
-    /**
-     * Unique job key.
-     */
+    /** Unique job key. */
     private String jobKey;
 
-    /**
-     * Unique job key.
-     */
+    /** Unique job key. */
     public String getJobKey() {
         return jobKey;
     }
-    /**
-     * Job execution lifecycle state.
-     */
+    /** Job execution lifecycle state. */
     private com.oracle.bmc.datacatalog.model.JobExecutionState lifecycleState;
 
-    /**
-     * Job execution lifecycle state.
-     */
+    /** Job execution lifecycle state. */
     public com.oracle.bmc.datacatalog.model.JobExecutionState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * formatted datetime string.
      */
     private java.util.Date timeCreated;
 
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * formatted datetime string.
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * formatted datetime string.
      */
     private java.util.Date timeUpdated;
 
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+     * formatted datetime string.
      */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
-    /**
-     * OCID of the user who created the resource.
-     */
+    /** OCID of the user who created the resource. */
     private String createdById;
 
-    /**
-     * OCID of the user who created the resource.
-     */
+    /** OCID of the user who created the resource. */
     public String getCreatedById() {
         return createdById;
     }
-    /**
-     * OCID of the user who updated the resource.
-     */
+    /** OCID of the user who updated the resource. */
     private String updatedById;
 
-    /**
-     * OCID of the user who updated the resource.
-     */
+    /** OCID of the user who updated the resource. */
     public String getUpdatedById() {
         return updatedById;
     }
-    /**
-     * Job type.
-     */
+    /** Job type. */
     private com.oracle.bmc.datacatalog.model.JobType jobType;
 
-    /**
-     * Job type.
-     */
+    /** Job type. */
     public com.oracle.bmc.datacatalog.model.JobType getJobType() {
         return jobType;
     }
-    /**
-     * Sub-type of this job execution.
-     */
+    /** Sub-type of this job execution. */
     private String subType;
 
-    /**
-     * Sub-type of this job execution.
-     */
+    /** Sub-type of this job execution. */
     public String getSubType() {
         return subType;
     }
-    /**
-     * The unique key of the parent execution or null if this job execution has no parent.
-     */
+    /** The unique key of the parent execution or null if this job execution has no parent. */
     private String parentKey;
 
-    /**
-     * The unique key of the parent execution or null if this job execution has no parent.
-     */
+    /** The unique key of the parent execution or null if this job execution has no parent. */
     public String getParentKey() {
         return parentKey;
     }
     /**
-     * Time that the job execution was started or in the case of a future time, the time when the job will start.
-     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Time that the job execution was started or in the case of a future time, the time when the
+     * job will start. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeStart;
 
     /**
-     * Time that the job execution was started or in the case of a future time, the time when the job will start.
-     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Time that the job execution was started or in the case of a future time, the time when the
+     * job will start. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * Time that the job execution ended or null if the job is still running or hasn't run yet.
-     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Time that the job execution ended or null if the job is still running or hasn't run yet. An
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeEnd;
 
     /**
-     * Time that the job execution ended or null if the job is still running or hasn't run yet.
-     * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Time that the job execution ended or null if the job is still running or hasn't run yet. An
+     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
     /**
-     * Error code returned from the job execution or null if job is still running or didn't return an error.
-     *
+     * Error code returned from the job execution or null if job is still running or didn't return
+     * an error.
      */
     private String errorCode;
 
     /**
-     * Error code returned from the job execution or null if job is still running or didn't return an error.
-     *
+     * Error code returned from the job execution or null if job is still running or didn't return
+     * an error.
      */
     public String getErrorCode() {
         return errorCode;
     }
     /**
-     * Error message returned from the job execution or null if job is still running or didn't return an error.
-     *
+     * Error message returned from the job execution or null if job is still running or didn't
+     * return an error.
      */
     private String errorMessage;
 
     /**
-     * Error message returned from the job execution or null if job is still running or didn't return an error.
-     *
+     * Error message returned from the job execution or null if job is still running or didn't
+     * return an error.
      */
     public String getErrorMessage() {
         return errorMessage;
     }
-    /**
-     * Process identifier related to the job execution.
-     */
+    /** Process identifier related to the job execution. */
     private String processKey;
 
-    /**
-     * Process identifier related to the job execution.
-     */
+    /** Process identifier related to the job execution. */
     public String getProcessKey() {
         return processKey;
     }
-    /**
-     * The a URL of the job for accessing this resource and its status.
-     */
+    /** The a URL of the job for accessing this resource and its status. */
     private String externalUrl;
 
-    /**
-     * The a URL of the job for accessing this resource and its status.
-     */
+    /** The a URL of the job for accessing this resource and its status. */
     public String getExternalUrl() {
         return externalUrl;
     }
-    /**
-     * Event that triggered the execution of this job or null.
-     */
+    /** Event that triggered the execution of this job or null. */
     private String eventKey;
 
-    /**
-     * Event that triggered the execution of this job or null.
-     */
+    /** Event that triggered the execution of this job or null. */
     public String getEventKey() {
         return eventKey;
     }
-    /**
-     * Unique entity key.
-     */
+    /** Unique entity key. */
     private String dataEntityKey;
 
-    /**
-     * Unique entity key.
-     */
+    /** Unique entity key. */
     public String getDataEntityKey() {
         return dataEntityKey;
     }
-    /**
-     * Specifies the fields to return in a job execution summary response.
-     *
-     */
+    /** Specifies the fields to return in a job execution summary response. */
     private java.util.List<Fields> fields;
 
-    /**
-     * Specifies the fields to return in a job execution summary response.
-     *
-     **/
-    public enum Fields {
+    /** Specifies the fields to return in a job execution summary response. */
+    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
         Key("key"),
         JobKey("jobKey"),
         JobType("jobType"),
@@ -272,24 +220,21 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * Specifies the fields to return in a job execution summary response.
-     *
-     */
+    /** Specifies the fields to return in a job execution summary response. */
     public java.util.List<Fields> getFields() {
         return fields;
     }
     /**
-     * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
-     *
+     * The field to sort by. Only one sort order may be provided; the default is descending. Use
+     * sortOrder query param to specify order.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided; the default is descending. Use
+     * sortOrder query param to specify order.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         ;
 
@@ -322,21 +267,17 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
-     *
+     * The field to sort by. Only one sort order may be provided; the default is descending. Use
+     * sortOrder query param to specify order.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either 'asc' or 'desc'. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -369,42 +310,34 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /**
-     * The sort order to use, either 'asc' or 'desc'.
-     */
+    /** The sort order to use, either 'asc' or 'desc'. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -412,17 +345,15 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListJobExecutionsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Unique catalog identifier.
-         */
+        /** Unique catalog identifier. */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
+         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -431,13 +362,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Unique job key.
-         */
+        /** Unique job key. */
         private String jobKey = null;
 
         /**
          * Unique job key.
+         *
          * @param jobKey the value to set
          * @return this builder instance
          */
@@ -446,13 +376,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Job execution lifecycle state.
-         */
+        /** Job execution lifecycle state. */
         private com.oracle.bmc.datacatalog.model.JobExecutionState lifecycleState = null;
 
         /**
          * Job execution lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -463,12 +392,15 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * formatted datetime string.
          */
         private java.util.Date timeCreated = null;
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * formatted datetime string.
+         *
          * @param timeCreated the value to set
          * @return this builder instance
          */
@@ -478,12 +410,15 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * formatted datetime string.
          */
         private java.util.Date timeUpdated = null;
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
+         * formatted datetime string.
+         *
          * @param timeUpdated the value to set
          * @return this builder instance
          */
@@ -492,13 +427,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * OCID of the user who created the resource.
-         */
+        /** OCID of the user who created the resource. */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
+         *
          * @param createdById the value to set
          * @return this builder instance
          */
@@ -507,13 +441,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * OCID of the user who updated the resource.
-         */
+        /** OCID of the user who updated the resource. */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
+         *
          * @param updatedById the value to set
          * @return this builder instance
          */
@@ -522,13 +455,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Job type.
-         */
+        /** Job type. */
         private com.oracle.bmc.datacatalog.model.JobType jobType = null;
 
         /**
          * Job type.
+         *
          * @param jobType the value to set
          * @return this builder instance
          */
@@ -537,13 +469,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Sub-type of this job execution.
-         */
+        /** Sub-type of this job execution. */
         private String subType = null;
 
         /**
          * Sub-type of this job execution.
+         *
          * @param subType the value to set
          * @return this builder instance
          */
@@ -552,13 +483,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The unique key of the parent execution or null if this job execution has no parent.
-         */
+        /** The unique key of the parent execution or null if this job execution has no parent. */
         private String parentKey = null;
 
         /**
          * The unique key of the parent execution or null if this job execution has no parent.
+         *
          * @param parentKey the value to set
          * @return this builder instance
          */
@@ -568,15 +498,16 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Time that the job execution was started or in the case of a future time, the time when the job will start.
-         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         *
+         * Time that the job execution was started or in the case of a future time, the time when
+         * the job will start. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime
+         * string.
          */
         private java.util.Date timeStart = null;
 
         /**
-         * Time that the job execution was started or in the case of a future time, the time when the job will start.
-         * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         * Time that the job execution was started or in the case of a future time, the time when
+         * the job will start. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime
+         * string.
          *
          * @param timeStart the value to set
          * @return this builder instance
@@ -589,7 +520,6 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Time that the job execution ended or null if the job is still running or hasn't run yet.
          * An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         *
          */
         private java.util.Date timeEnd = null;
 
@@ -606,13 +536,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Error code returned from the job execution or null if job is still running or didn't return an error.
-         *
+         * Error code returned from the job execution or null if job is still running or didn't
+         * return an error.
          */
         private String errorCode = null;
 
         /**
-         * Error code returned from the job execution or null if job is still running or didn't return an error.
+         * Error code returned from the job execution or null if job is still running or didn't
+         * return an error.
          *
          * @param errorCode the value to set
          * @return this builder instance
@@ -623,13 +554,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Error message returned from the job execution or null if job is still running or didn't return an error.
-         *
+         * Error message returned from the job execution or null if job is still running or didn't
+         * return an error.
          */
         private String errorMessage = null;
 
         /**
-         * Error message returned from the job execution or null if job is still running or didn't return an error.
+         * Error message returned from the job execution or null if job is still running or didn't
+         * return an error.
          *
          * @param errorMessage the value to set
          * @return this builder instance
@@ -639,13 +571,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Process identifier related to the job execution.
-         */
+        /** Process identifier related to the job execution. */
         private String processKey = null;
 
         /**
          * Process identifier related to the job execution.
+         *
          * @param processKey the value to set
          * @return this builder instance
          */
@@ -654,13 +585,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The a URL of the job for accessing this resource and its status.
-         */
+        /** The a URL of the job for accessing this resource and its status. */
         private String externalUrl = null;
 
         /**
          * The a URL of the job for accessing this resource and its status.
+         *
          * @param externalUrl the value to set
          * @return this builder instance
          */
@@ -669,13 +599,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Event that triggered the execution of this job or null.
-         */
+        /** Event that triggered the execution of this job or null. */
         private String eventKey = null;
 
         /**
          * Event that triggered the execution of this job or null.
+         *
          * @param eventKey the value to set
          * @return this builder instance
          */
@@ -684,13 +613,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Unique entity key.
-         */
+        /** Unique entity key. */
         private String dataEntityKey = null;
 
         /**
          * Unique entity key.
+         *
          * @param dataEntityKey the value to set
          * @return this builder instance
          */
@@ -699,10 +627,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * Specifies the fields to return in a job execution summary response.
-         *
-         */
+        /** Specifies the fields to return in a job execution summary response. */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -727,13 +652,14 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
-         *
+         * The field to sort by. Only one sort order may be provided; the default is descending. Use
+         * sortOrder query param to specify order.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided; the default is descending. Use sortOrder query param to specify order.
+         * The field to sort by. Only one sort order may be provided; the default is descending. Use
+         * sortOrder query param to specify order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -743,13 +669,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The sort order to use, either 'asc' or 'desc'.
-         */
+        /** The sort order to use, either 'asc' or 'desc'. */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -758,13 +683,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -774,12 +698,15 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -788,13 +715,12 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -805,18 +731,19 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -828,6 +755,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListJobExecutionsRequest o) {
@@ -863,10 +791,11 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListJobExecutionsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListJobExecutionsRequest
          */
@@ -880,7 +809,8 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListJobExecutionsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJobExecutionsRequest
@@ -912,12 +842,16 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJobExecutionsRequest(catalogId, jobKey, lifecycleState, timeCreated, timeUpdated, createdById, updatedById, jobType, subType, parentKey, timeStart, timeEnd, errorCode, errorMessage, processKey, externalUrl, eventKey, dataEntityKey, fields, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListJobExecutionsRequest(catalogId, jobKey, lifecycleState, timeCreated,
+            // timeUpdated, createdById, updatedById, jobType, subType, parentKey, timeStart,
+            // timeEnd, errorCode, errorMessage, processKey, externalUrl, eventKey, dataEntityKey,
+            // fields, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -950,6 +884,7 @@ public class ListJobExecutionsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

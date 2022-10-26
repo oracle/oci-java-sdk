@@ -6,52 +6,40 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWarningsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWarningsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListWarningsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWarningsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     private String namespaceName;
 
-    /**
-     * The Logging Analytics namespace used for the request.
-     *
-     */
+    /** The Logging Analytics namespace used for the request. */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     private String compartmentId;
 
-    /**
-     * The ID of the compartment in which to list resources.
-     */
+    /** The ID of the compartment in which to list resources. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The warning state used for filtering.  A value of SUPPRESSED will return only
-     * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
-     * warnings, and a value of ALL will return all warnings regardless of their
-     * suppression state.  Default is UNSUPPRESSED.
-     *
+     * The warning state used for filtering. A value of SUPPRESSED will return only suppressed
+     * warnings, a value of UNSUPPRESSED will return only unsuppressed warnings, and a value of ALL
+     * will return all warnings regardless of their suppression state. Default is UNSUPPRESSED.
      */
     private WarningState warningState;
 
     /**
-     * The warning state used for filtering.  A value of SUPPRESSED will return only
-     * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
-     * warnings, and a value of ALL will return all warnings regardless of their
-     * suppression state.  Default is UNSUPPRESSED.
-     *
-     **/
-    public enum WarningState {
+     * The warning state used for filtering. A value of SUPPRESSED will return only suppressed
+     * warnings, a value of UNSUPPRESSED will return only unsuppressed warnings, and a value of ALL
+     * will return all warnings regardless of their suppression state. Default is UNSUPPRESSED.
+     */
+    public enum WarningState implements com.oracle.bmc.http.internal.BmcEnum {
         All("ALL"),
         Suppressed("SUPPRESSED"),
         Unsuppressed("UNSUPPRESSED"),
@@ -86,165 +74,127 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * The warning state used for filtering.  A value of SUPPRESSED will return only
-     * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
-     * warnings, and a value of ALL will return all warnings regardless of their
-     * suppression state.  Default is UNSUPPRESSED.
-     *
+     * The warning state used for filtering. A value of SUPPRESSED will return only suppressed
+     * warnings, a value of UNSUPPRESSED will return only unsuppressed warnings, and a value of ALL
+     * will return all warnings regardless of their suppression state. Default is UNSUPPRESSED.
      */
     public WarningState getWarningState() {
         return warningState;
     }
-    /**
-     * The source name.
-     */
+    /** The source name. */
     private String sourceName;
 
-    /**
-     * The source name.
-     */
+    /** The source name. */
     public String getSourceName() {
         return sourceName;
     }
     /**
-     * The source pattern used for filtering.  Only warnings associated with a source with the
+     * The source pattern used for filtering. Only warnings associated with a source with the
      * specified pattern will be returned.
-     *
      */
     private String sourcePattern;
 
     /**
-     * The source pattern used for filtering.  Only warnings associated with a source with the
+     * The source pattern used for filtering. Only warnings associated with a source with the
      * specified pattern will be returned.
-     *
      */
     public String getSourcePattern() {
         return sourcePattern;
     }
-    /**
-     * warning message query parameter
-     */
+    /** warning message query parameter */
     private String warningMessage;
 
-    /**
-     * warning message query parameter
-     */
+    /** warning message query parameter */
     public String getWarningMessage() {
         return warningMessage;
     }
     /**
-     * The entity name used for filtering.  Only warnings associated with an entity with the
+     * The entity name used for filtering. Only warnings associated with an entity with the
      * specified name will be returned.
-     *
      */
     private String entityName;
 
     /**
-     * The entity name used for filtering.  Only warnings associated with an entity with the
+     * The entity name used for filtering. Only warnings associated with an entity with the
      * specified name will be returned.
-     *
      */
     public String getEntityName() {
         return entityName;
     }
     /**
-     * The entity type used for filtering.  Only associations on an entity with the
-     * specified type will be returned.
-     *
+     * The entity type used for filtering. Only associations on an entity with the specified type
+     * will be returned.
      */
     private String entityType;
 
     /**
-     * The entity type used for filtering.  Only associations on an entity with the
-     * specified type will be returned.
-     *
+     * The entity type used for filtering. Only associations on an entity with the specified type
+     * will be returned.
      */
     public String getEntityType() {
         return entityType;
     }
-    /**
-     * The warning type query parameter.
-     */
+    /** The warning type query parameter. */
     private String warningType;
 
-    /**
-     * The warning type query parameter.
-     */
+    /** The warning type query parameter. */
     public String getWarningType() {
         return warningType;
     }
     /**
-     * A flag indicating whether to filter warnings based on source display name or on warning level.
-     * A value of true will filter based on warning level (rule, source, or pattern), while a
+     * A flag indicating whether to filter warnings based on source display name or on warning
+     * level. A value of true will filter based on warning level (rule, source, or pattern), while a
      * value of false will filter based on source display name.
-     *
      */
     private Boolean isNoSource;
 
     /**
-     * A flag indicating whether to filter warnings based on source display name or on warning level.
-     * A value of true will filter based on warning level (rule, source, or pattern), while a
+     * A flag indicating whether to filter warnings based on source display name or on warning
+     * level. A value of true will filter based on warning level (rule, source, or pattern), while a
      * value of false will filter based on source display name.
-     *
      */
     public Boolean getIsNoSource() {
         return isNoSource;
     }
-    /**
-     * The warning start date query parameter.
-     */
+    /** The warning start date query parameter. */
     private String startTime;
 
-    /**
-     * The warning start date query parameter.
-     */
+    /** The warning start date query parameter. */
     public String getStartTime() {
         return startTime;
     }
-    /**
-     * The warning end date query parameter.
-     */
+    /** The warning end date query parameter. */
     private String endTime;
 
-    /**
-     * The warning end date query parameter.
-     */
+    /** The warning end date query parameter. */
     public String getEndTime() {
         return endTime;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     **/
-    public enum SortOrder {
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -277,22 +227,15 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     *
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * The attribute used to sort the returned warnings
-     */
+    /** The attribute used to sort the returned warnings */
     private SortBy sortBy;
 
-    /**
-     * The attribute used to sort the returned warnings
-     **/
-    public enum SortBy {
+    /** The attribute used to sort the returned warnings */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         EntityType("EntityType"),
         SourceName("SourceName"),
         PatternText("PatternText"),
@@ -331,20 +274,14 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /**
-     * The attribute used to sort the returned warnings
-     */
+    /** The attribute used to sort the returned warnings */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -352,14 +289,10 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWarningsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The Logging Analytics namespace used for the request.
-         *
-         */
+        /** The Logging Analytics namespace used for the request. */
         private String namespaceName = null;
 
         /**
@@ -373,13 +306,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The ID of the compartment in which to list resources.
-         */
+        /** The ID of the compartment in which to list resources. */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -389,19 +321,18 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The warning state used for filtering.  A value of SUPPRESSED will return only
-         * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
-         * warnings, and a value of ALL will return all warnings regardless of their
-         * suppression state.  Default is UNSUPPRESSED.
-         *
+         * The warning state used for filtering. A value of SUPPRESSED will return only suppressed
+         * warnings, a value of UNSUPPRESSED will return only unsuppressed warnings, and a value of
+         * ALL will return all warnings regardless of their suppression state. Default is
+         * UNSUPPRESSED.
          */
         private WarningState warningState = null;
 
         /**
-         * The warning state used for filtering.  A value of SUPPRESSED will return only
-         * suppressed warnings, a value of UNSUPPRESSED will return only unsuppressed
-         * warnings, and a value of ALL will return all warnings regardless of their
-         * suppression state.  Default is UNSUPPRESSED.
+         * The warning state used for filtering. A value of SUPPRESSED will return only suppressed
+         * warnings, a value of UNSUPPRESSED will return only unsuppressed warnings, and a value of
+         * ALL will return all warnings regardless of their suppression state. Default is
+         * UNSUPPRESSED.
          *
          * @param warningState the value to set
          * @return this builder instance
@@ -411,13 +342,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The source name.
-         */
+        /** The source name. */
         private String sourceName = null;
 
         /**
          * The source name.
+         *
          * @param sourceName the value to set
          * @return this builder instance
          */
@@ -427,14 +357,13 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The source pattern used for filtering.  Only warnings associated with a source with the
+         * The source pattern used for filtering. Only warnings associated with a source with the
          * specified pattern will be returned.
-         *
          */
         private String sourcePattern = null;
 
         /**
-         * The source pattern used for filtering.  Only warnings associated with a source with the
+         * The source pattern used for filtering. Only warnings associated with a source with the
          * specified pattern will be returned.
          *
          * @param sourcePattern the value to set
@@ -445,13 +374,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * warning message query parameter
-         */
+        /** warning message query parameter */
         private String warningMessage = null;
 
         /**
          * warning message query parameter
+         *
          * @param warningMessage the value to set
          * @return this builder instance
          */
@@ -461,14 +389,13 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The entity name used for filtering.  Only warnings associated with an entity with the
+         * The entity name used for filtering. Only warnings associated with an entity with the
          * specified name will be returned.
-         *
          */
         private String entityName = null;
 
         /**
-         * The entity name used for filtering.  Only warnings associated with an entity with the
+         * The entity name used for filtering. Only warnings associated with an entity with the
          * specified name will be returned.
          *
          * @param entityName the value to set
@@ -480,15 +407,14 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The entity type used for filtering.  Only associations on an entity with the
-         * specified type will be returned.
-         *
+         * The entity type used for filtering. Only associations on an entity with the specified
+         * type will be returned.
          */
         private String entityType = null;
 
         /**
-         * The entity type used for filtering.  Only associations on an entity with the
-         * specified type will be returned.
+         * The entity type used for filtering. Only associations on an entity with the specified
+         * type will be returned.
          *
          * @param entityType the value to set
          * @return this builder instance
@@ -498,13 +424,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The warning type query parameter.
-         */
+        /** The warning type query parameter. */
         private String warningType = null;
 
         /**
          * The warning type query parameter.
+         *
          * @param warningType the value to set
          * @return this builder instance
          */
@@ -514,17 +439,16 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A flag indicating whether to filter warnings based on source display name or on warning level.
-         * A value of true will filter based on warning level (rule, source, or pattern), while a
-         * value of false will filter based on source display name.
-         *
+         * A flag indicating whether to filter warnings based on source display name or on warning
+         * level. A value of true will filter based on warning level (rule, source, or pattern),
+         * while a value of false will filter based on source display name.
          */
         private Boolean isNoSource = null;
 
         /**
-         * A flag indicating whether to filter warnings based on source display name or on warning level.
-         * A value of true will filter based on warning level (rule, source, or pattern), while a
-         * value of false will filter based on source display name.
+         * A flag indicating whether to filter warnings based on source display name or on warning
+         * level. A value of true will filter based on warning level (rule, source, or pattern),
+         * while a value of false will filter based on source display name.
          *
          * @param isNoSource the value to set
          * @return this builder instance
@@ -534,13 +458,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The warning start date query parameter.
-         */
+        /** The warning start date query parameter. */
         private String startTime = null;
 
         /**
          * The warning start date query parameter.
+         *
          * @param startTime the value to set
          * @return this builder instance
          */
@@ -549,13 +472,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The warning end date query parameter.
-         */
+        /** The warning end date query parameter. */
         private String endTime = null;
 
         /**
          * The warning end date query parameter.
+         *
          * @param endTime the value to set
          * @return this builder instance
          */
@@ -564,13 +486,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -580,12 +501,15 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -594,10 +518,7 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
         /**
@@ -611,13 +532,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The attribute used to sort the returned warnings
-         */
+        /** The attribute used to sort the returned warnings */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned warnings
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -626,13 +546,12 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -643,18 +562,19 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -666,6 +586,7 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWarningsRequest o) {
@@ -694,10 +615,11 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListWarningsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWarningsRequest
          */
@@ -711,7 +633,8 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListWarningsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWarningsRequest
@@ -736,12 +659,15 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListWarningsRequest(namespaceName, compartmentId, warningState, sourceName, sourcePattern, warningMessage, entityName, entityType, warningType, isNoSource, startTime, endTime, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListWarningsRequest(namespaceName, compartmentId, warningState, sourceName,
+            // sourcePattern, warningMessage, entityName, entityType, warningType, isNoSource,
+            // startTime, endTime, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -767,6 +693,7 @@ public class ListWarningsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

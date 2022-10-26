@@ -5,35 +5,33 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies a failure policy for a compute instance group rolling deployment stage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies a failure policy for a compute instance group rolling deployment stage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "policyType",
-    defaultImpl = ComputeInstanceGroupFailurePolicy.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "policyType",
+        defaultImpl = ComputeInstanceGroupFailurePolicy.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupFailurePolicyByPercentage.class,
-        name = "COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_PERCENTAGE"
-    ),
+            value = ComputeInstanceGroupFailurePolicyByPercentage.class,
+            name = "COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_PERCENTAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ComputeInstanceGroupFailurePolicyByCount.class,
-        name = "COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_COUNT"
-    )
+            value = ComputeInstanceGroupFailurePolicyByCount.class,
+            name = "COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_COUNT")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class ComputeInstanceGroupFailurePolicy
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected ComputeInstanceGroupFailurePolicy() {
@@ -47,6 +45,7 @@ public class ComputeInstanceGroupFailurePolicy
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,17 +78,15 @@ public class ComputeInstanceGroupFailurePolicy
         return result;
     }
 
-    /**
-     * Specifies if the failure instance size is given by absolute number or by percentage.
-     **/
-    public enum PolicyType {
+    /** Specifies if the failure instance size is given by absolute number or by percentage. */
+    public enum PolicyType implements com.oracle.bmc.http.internal.BmcEnum {
         ComputeInstanceGroupFailurePolicyByCount("COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_COUNT"),
         ComputeInstanceGroupFailurePolicyByPercentage(
                 "COMPUTE_INSTANCE_GROUP_FAILURE_POLICY_BY_PERCENTAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -5,23 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The Derive entity object
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Derive entity object <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DerivedEntity.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DerivedEntity extends DataEntity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -33,33 +33,31 @@ public final class DerivedEntity extends DataEntity {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /**
-         * The object key.
-         **/
+        /** The object key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * The object's model version.
-         **/
+        /** The object's model version. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
+         *
          * @param modelVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -75,32 +73,36 @@ public final class DerivedEntity extends DataEntity {
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-         **/
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * Free form text without any restriction on permitted characters. Name can have letters,
+         * numbers, and special characters. The value is editable and is restricted to 1000
+         * characters.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The version of the object that is used to track changes in the object instance.
-         **/
+        /** The version of the object that is used to track changes in the object instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
+         *
          * @param objectVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
@@ -115,65 +117,69 @@ public final class DerivedEntity extends DataEntity {
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /**
-         * The shape ID.
-         **/
+        /** The shape ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
         private String shapeId;
 
         /**
          * The shape ID.
+         *
          * @param shapeId the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeId(String shapeId) {
             this.shapeId = shapeId;
             this.__explicitlySet__.add("shapeId");
             return this;
         }
-        /**
-         * The resource name.
-         **/
+        /** The resource name. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The resource name.
+         *
          * @param resourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
-         **/
+         * The status of an object that can be set to value 1 for shallow reference across objects,
+         * other values reserved.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
+         * The status of an object that can be set to value 1 for shallow reference across objects,
+         * other values reserved.
+         *
          * @param objectStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-         **/
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with
+         * upper case letter or underscore. The value can be modified.
+         *
          * @param identifier the value to set
          * @return this builder
-         **/
+         */
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
@@ -188,17 +194,16 @@ public final class DerivedEntity extends DataEntity {
             this.__explicitlySet__.add("refDataObject");
             return this;
         }
-        /**
-         * Determines whether entity is treated as source or target
-         **/
+        /** Determines whether entity is treated as source or target */
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private Mode mode;
 
         /**
          * Determines whether entity is treated as source or target
+         *
          * @param mode the value to set
          * @return this builder
-         **/
+         */
         public Builder mode(Mode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
@@ -206,15 +211,16 @@ public final class DerivedEntity extends DataEntity {
         }
         /**
          * Property-bag (key-value pairs where key is Shape Field resource name and value is object)
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("derivedProperties")
         private java.util.Map<String, Object> derivedProperties;
 
         /**
          * Property-bag (key-value pairs where key is Shape Field resource name and value is object)
+         *
          * @param derivedProperties the value to set
          * @return this builder
-         **/
+         */
         public Builder derivedProperties(java.util.Map<String, Object> derivedProperties) {
             this.derivedProperties = derivedProperties;
             this.__explicitlySet__.add("derivedProperties");
@@ -295,9 +301,7 @@ public final class DerivedEntity extends DataEntity {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -338,30 +342,28 @@ public final class DerivedEntity extends DataEntity {
         this.derivedProperties = derivedProperties;
     }
 
-    /**
-     * The object key.
-     **/
+    /** The object key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * The object's model version.
-     **/
+    /** The object's model version. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
+     *
      * @return the value
-     **/
+     */
     public String getModelVersion() {
         return modelVersion;
     }
@@ -374,29 +376,31 @@ public final class DerivedEntity extends DataEntity {
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     **/
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * Free form text without any restriction on permitted characters. Name can have letters,
+     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of the object that is used to track changes in the object instance.
-     **/
+    /** The version of the object that is used to track changes in the object instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectVersion() {
         return objectVersion;
     }
@@ -408,58 +412,62 @@ public final class DerivedEntity extends DataEntity {
         return shape;
     }
 
-    /**
-     * The shape ID.
-     **/
+    /** The shape ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeId")
     private final String shapeId;
 
     /**
      * The shape ID.
+     *
      * @return the value
-     **/
+     */
     public String getShapeId() {
         return shapeId;
     }
 
-    /**
-     * The resource name.
-     **/
+    /** The resource name. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource name.
+     *
      * @return the value
-     **/
+     */
     public String getResourceName() {
         return resourceName;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
-     **/
+     * The status of an object that can be set to value 1 for shallow reference across objects,
+     * other values reserved.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow reference across objects, other values reserved.
+     * The status of an object that can be set to value 1 for shallow reference across objects,
+     * other values reserved.
+     *
      * @return the value
-     **/
+     */
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-     **/
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with
+     * upper case letter or underscore. The value can be modified.
+     *
      * @return the value
-     **/
+     */
     public String getIdentifier() {
         return identifier;
     }
@@ -471,16 +479,14 @@ public final class DerivedEntity extends DataEntity {
         return refDataObject;
     }
 
-    /**
-     * Determines whether entity is treated as source or target
-     **/
-    public enum Mode {
+    /** Determines whether entity is treated as source or target */
+    public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
         In("IN"),
         Out("OUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -517,30 +523,28 @@ public final class DerivedEntity extends DataEntity {
             return UnknownEnumValue;
         }
     };
-    /**
-     * Determines whether entity is treated as source or target
-     **/
+    /** Determines whether entity is treated as source or target */
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final Mode mode;
 
     /**
      * Determines whether entity is treated as source or target
+     *
      * @return the value
-     **/
+     */
     public Mode getMode() {
         return mode;
     }
 
-    /**
-     * Property-bag (key-value pairs where key is Shape Field resource name and value is object)
-     **/
+    /** Property-bag (key-value pairs where key is Shape Field resource name and value is object) */
     @com.fasterxml.jackson.annotation.JsonProperty("derivedProperties")
     private final java.util.Map<String, Object> derivedProperties;
 
     /**
      * Property-bag (key-value pairs where key is Shape Field resource name and value is object)
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getDerivedProperties() {
         return derivedProperties;
     }
@@ -552,6 +556,7 @@ public final class DerivedEntity extends DataEntity {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

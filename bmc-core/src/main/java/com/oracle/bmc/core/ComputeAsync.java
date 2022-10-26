@@ -8,50 +8,49 @@ import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
 /**
- * Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
- * compute instances, and block storage volumes. For more information, see the console
- * documentation for the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * Use the Core Services API to manage resources such as virtual cloud networks (VCNs), compute
+ * instances, and block storage volumes. For more information, see the console documentation for the
+ * [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
  * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
  * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
- *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface ComputeAsync extends AutoCloseable {
 
-    /**
-     * Rebuilds the client from scratch.
-     * Useful to refresh certificates.
-     */
+    /** Rebuilds the client from scratch. Useful to refresh certificates. */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
+     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /**
-     * Gets the set endpoint for REST call (ex, https://www.example.com)
-     */
+    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
+     *
+     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
+     * endpoint. If the service is not available in this region, however, an
+     * IllegalArgumentException will be raised.
+     *
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     *
+     * <p>Note, this will first try to map the region ID to a known Region and call {@link
+     * #setRegion(Region) setRegion}.
+     *
+     * <p>If no known Region could be determined, it will create an endpoint based on the default
+     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
+     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
@@ -61,10 +60,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AcceptShieldedIntegrityPolicyResponse>
             acceptShieldedIntegrityPolicy(
@@ -79,10 +78,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AddImageShapeCompatibilityEntryResponse>
             addImageShapeCompatibilityEntry(
@@ -95,13 +94,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Attaches the specified boot volume to the specified instance.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AttachBootVolumeResponse> attachBootVolume(
             AttachBootVolumeRequest request,
@@ -109,17 +107,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a secondary VNIC and attaches it to the specified instance.
-     * For more information about secondary VNICs, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-     *
+     * Creates a secondary VNIC and attaches it to the specified instance. For more information
+     * about secondary VNICs, see [Virtual Network Interface Cards
+     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AttachVnicResponse> attachVnic(
             AttachVnicRequest request,
@@ -128,13 +125,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Attaches the specified storage volume to the specified instance.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<AttachVolumeResponse> attachVolume(
             AttachVolumeRequest request,
@@ -142,31 +138,26 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Captures the most recent serial console data (up to a megabyte) for the
-     * specified instance.
-     * <p>
-     * The `CaptureConsoleHistory` operation works with the other console history operations
-     * as described below.
-     * <p>
-     * 1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the
-     * most recent console history. This call returns a `ConsoleHistory`
-     * object. The object will have a state of REQUESTED.
-     * 2. Wait for the capture operation to succeed by polling `GetConsoleHistory` with
-     * the identifier of the console history metadata. The state of the
-     * `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and
-     * then SUCCEEDED (or FAILED).
-     * 3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
-     * metadata).
-     * 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
-     * and the console history data.
+     * Captures the most recent serial console data (up to a megabyte) for the specified instance.
      *
+     * <p>The `CaptureConsoleHistory` operation works with the other console history operations as
+     * described below.
+     *
+     * <p>1. Use `CaptureConsoleHistory` to request the capture of up to a megabyte of the most
+     * recent console history. This call returns a `ConsoleHistory` object. The object will have a
+     * state of REQUESTED. 2. Wait for the capture operation to succeed by polling
+     * `GetConsoleHistory` with the identifier of the console history metadata. The state of the
+     * `ConsoleHistory` object will go from REQUESTED to GETTING-HISTORY and then SUCCEEDED (or
+     * FAILED). 3. Use `GetConsoleHistoryContent` to get the actual console history data (not the
+     * metadata). 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
+     * and the console history data.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CaptureConsoleHistoryResponse> captureConsoleHistory(
             CaptureConsoleHistoryRequest request,
@@ -176,16 +167,15 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Moves a compute capacity reservation into a different compartment. For information about
-     * moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeComputeCapacityReservationCompartmentResponse>
             changeComputeCapacityReservationCompartment(
@@ -197,16 +187,16 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see
-     *         [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * For information about moving resources between compartments, see [Moving Resources to a
+     * Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeComputeImageCapabilitySchemaCompartmentResponse>
             changeComputeImageCapabilitySchemaCompartment(
@@ -221,10 +211,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDedicatedVmHostCompartmentResponse>
             changeDedicatedVmHostCompartment(
@@ -235,17 +225,16 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves an image into a different compartment within the same tenancy. For information about moving
-     * resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
+     * Moves an image into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeImageCompartmentResponse> changeImageCompartment(
             ChangeImageCompartmentRequest request,
@@ -255,19 +244,18 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Moves an instance into a different compartment within the same tenancy. For information about
-     * moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     * <p>
-     * When you move an instance to a different compartment, associated resources such as boot volumes and VNICs
-     * are not moved.
+     * moving resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
+     * <p>When you move an instance to a different compartment, associated resources such as boot
+     * volumes and VNICs are not moved.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ChangeInstanceCompartmentResponse> changeInstanceCompartment(
             ChangeInstanceCompartmentRequest request,
@@ -276,15 +264,15 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
-     *
+     * Create a subscription for listing resource version for a compartment. It will take some time
+     * to propagate to all regions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateAppCatalogSubscriptionResponse> createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request,
@@ -294,19 +282,18 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new compute capacity reservation in the specified compartment and availability domain.
-     * Compute capacity reservations let you reserve instances in a compartment.
-     * When you launch an instance using this reservation, you are assured that you have enough space for your instance,
-     * and you won't get out of capacity errors.
-     * For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
-     *
+     * Creates a new compute capacity reservation in the specified compartment and availability
+     * domain. Compute capacity reservations let you reserve instances in a compartment. When you
+     * launch an instance using this reservation, you are assured that you have enough space for
+     * your instance, and you won't get out of capacity errors. For more information, see [Reserved
+     * Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateComputeCapacityReservationResponse>
             createComputeCapacityReservation(
@@ -319,13 +306,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates compute image capability schema.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateComputeImageCapabilitySchemaResponse>
             createComputeImageCapabilitySchema(
@@ -336,18 +322,18 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
-     * Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
-     * that are a single tenant and not shared with other customers.
-     * For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
-     *
+     * Creates a new dedicated virtual machine host in the specified compartment and the specified
+     * availability domain. Dedicated virtual machine hosts enable you to run your Compute virtual
+     * machine (VM) instances on dedicated servers that are a single tenant and not shared with
+     * other customers. For more information, see [Dedicated Virtual Machine
+     * Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateDedicatedVmHostResponse> createDedicatedVmHost(
             CreateDedicatedVmHostRequest request,
@@ -356,56 +342,63 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
-     * <p>
-     * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
-     * the OCID of the compartment containing that instance. For more information about images,
-     * see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-     * <p>
-     * When importing an exported image from Object Storage, you specify the source information
-     * in {@link #imageSourceDetails(ImageSourceDetailsRequest, Consumer, Consumer) imageSourceDetails}.
-     * <p>
-     * When importing an image based on the namespace, bucket name, and object name,
-     * use {@link #imageSourceViaObjectStorageTupleDetails(ImageSourceViaObjectStorageTupleDetailsRequest, Consumer, Consumer) imageSourceViaObjectStorageTupleDetails}.
-     * <p>
-     * When importing an image based on the Object Storage URL, use
-     * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest, Consumer, Consumer) imageSourceViaObjectStorageUriDetails}.
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
-     * for constructing URLs for image import/export.
-     * <p>
-     * For more information about importing exported images, see
-     * [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
-     * <p>
-     * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
-     * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest, Consumer, Consumer) updateImage}.
-     * Avoid entering confidential information.
+     * Creates a boot disk image for the specified instance or imports an exported image from the
+     * Oracle Cloud Infrastructure Object Storage service.
      *
+     * <p>When creating a new image, you must provide the OCID of the instance you want to use as
+     * the basis for the image, and the OCID of the compartment containing that instance. For more
+     * information about images, see [Managing Custom
+     * Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     *
+     * <p>When importing an exported image from Object Storage, you specify the source information
+     * in {@link #imageSourceDetails(ImageSourceDetailsRequest, Consumer, Consumer)
+     * imageSourceDetails}.
+     *
+     * <p>When importing an image based on the namespace, bucket name, and object name, use {@link
+     * #imageSourceViaObjectStorageTupleDetails(ImageSourceViaObjectStorageTupleDetailsRequest,
+     * Consumer, Consumer) imageSourceViaObjectStorageTupleDetails}.
+     *
+     * <p>When importing an image based on the Object Storage URL, use {@link
+     * #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest,
+     * Consumer, Consumer) imageSourceViaObjectStorageUriDetails}. See [Object Storage
+     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
+     * and [Using Pre-Authenticated
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * for constructing URLs for image import/export.
+     *
+     * <p>For more information about importing exported images, see [Image
+     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     *
+     * <p>You may optionally specify a *display name* for the image, which is simply a friendly name
+     * or description. It does not have to be unique, and you can change it. See {@link
+     * #updateImage(UpdateImageRequest, Consumer, Consumer) updateImage}. Avoid entering
+     * confidential information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateImageResponse> createImage(
             CreateImageRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse> handler);
 
     /**
-     * Creates a new console connection to the specified instance.
-     * After the console connection has been created and is available,
-     * you connect to the console using SSH.
-     * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * Creates a new console connection to the specified instance. After the console connection has
+     * been created and is available, you connect to the console using SSH.
      *
+     * <p>For more information about instance console connections, see [Troubleshooting Instances
+     * Using Instance Console
+     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<CreateInstanceConsoleConnectionResponse>
             createInstanceConsoleConnection(
@@ -420,10 +413,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAppCatalogSubscriptionResponse> deleteAppCatalogSubscription(
             DeleteAppCatalogSubscriptionRequest request,
@@ -437,10 +430,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteComputeCapacityReservationResponse>
             deleteComputeCapacityReservation(
@@ -453,13 +446,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Deletes the specified Compute Image Capability Schema
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteComputeImageCapabilitySchemaResponse>
             deleteComputeImageCapabilitySchema(
@@ -472,13 +464,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Deletes the specified console history metadata and the console history data.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteConsoleHistoryResponse> deleteConsoleHistory(
             DeleteConsoleHistoryRequest request,
@@ -488,17 +479,16 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Deletes the specified dedicated virtual machine host.
-     * <p>
-     * If any VM instances are assigned to the dedicated virtual machine host,
-     * the delete operation will fail and the service will return a 409 response code.
      *
+     * <p>If any VM instances are assigned to the dedicated virtual machine host, the delete
+     * operation will fail and the service will return a 409 response code.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDedicatedVmHostResponse> deleteDedicatedVmHost(
             DeleteDedicatedVmHostRequest request,
@@ -511,10 +501,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteImageResponse> deleteImage(
             DeleteImageRequest request,
@@ -525,10 +515,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DeleteInstanceConsoleConnectionResponse>
             deleteInstanceConsoleConnection(
@@ -539,18 +529,18 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Detaches a boot volume from an instance. You must specify the OCID of the boot volume attachment.
-     * <p>
-     * This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
-     * until the attachment is completely removed.
+     * Detaches a boot volume from an instance. You must specify the OCID of the boot volume
+     * attachment.
      *
+     * <p>This is an asynchronous operation. The attachment's `lifecycleState` will change to
+     * DETACHING temporarily until the attachment is completely removed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DetachBootVolumeResponse> detachBootVolume(
             DetachBootVolumeRequest request,
@@ -558,42 +548,38 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Detaches and deletes the specified secondary VNIC.
-     * This operation cannot be used on the instance's primary VNIC.
-     * When you terminate an instance, all attached VNICs (primary
-     * and secondary) are automatically detached and deleted.
-     * <p>
-     **Important:** If the VNIC has a
-     * {@link PrivateIp} that is the
-     * [target of a route rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
-     * deleting the VNIC causes that route rule to blackhole and the traffic
-     * will be dropped.
+     * Detaches and deletes the specified secondary VNIC. This operation cannot be used on the
+     * instance's primary VNIC. When you terminate an instance, all attached VNICs (primary and
+     * secondary) are automatically detached and deleted.
      *
+     * <p>*Important:** If the VNIC has a {@link PrivateIp} that is the [target of a route
+     * rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * deleting the VNIC causes that route rule to blackhole and the traffic will be dropped.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DetachVnicResponse> detachVnic(
             DetachVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse> handler);
 
     /**
-     * Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
-     * <p>
-     * This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
-     * until the attachment is completely removed.
+     * Detaches a storage volume from an instance. You must specify the OCID of the volume
+     * attachment.
      *
+     * <p>This is an asynchronous operation. The attachment's `lifecycleState` will change to
+     * DETACHING temporarily until the attachment is completely removed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<DetachVolumeResponse> detachVolume(
             DetachVolumeRequest request,
@@ -601,24 +587,29 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
-     * or the namespace, bucket name, and object name when specifying the location to export to.
-     * <p>
-     * For more information about exporting images, see [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
-     * <p>
-     * To perform an image export, you need write access to the Object Storage bucket for the image,
-     * see [Let Users Write Objects to Object Storage Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
-     * <p>
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
-     * for constructing URLs for image import/export.
+     * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You
+     * can use the Object Storage URL, or the namespace, bucket name, and object name when
+     * specifying the location to export to.
      *
+     * <p>For more information about exporting images, see [Image
+     * Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     *
+     * <p>To perform an image export, you need write access to the Object Storage bucket for the
+     * image, see [Let Users Write Objects to Object Storage
+     * Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     *
+     * <p>See [Object Storage
+     * URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs)
+     * and [Using Pre-Authenticated
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * for constructing URLs for image import/export.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ExportImageResponse> exportImage(
             ExportImageRequest request,
@@ -629,10 +620,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAppCatalogListingResponse> getAppCatalogListing(
             GetAppCatalogListingRequest request,
@@ -645,10 +636,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAppCatalogListingAgreementsResponse>
             getAppCatalogListingAgreements(
@@ -663,10 +654,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetAppCatalogListingResourceVersionResponse>
             getAppCatalogListingResourceVersion(
@@ -681,10 +672,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetBootVolumeAttachmentResponse> getBootVolumeAttachment(
             GetBootVolumeAttachmentRequest request,
@@ -697,10 +688,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetComputeCapacityReservationResponse>
             getComputeCapacityReservation(
@@ -715,10 +706,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetComputeGlobalImageCapabilitySchemaResponse>
             getComputeGlobalImageCapabilitySchema(
@@ -733,10 +724,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetComputeGlobalImageCapabilitySchemaVersionResponse>
             getComputeGlobalImageCapabilitySchemaVersion(
@@ -749,13 +740,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Gets the specified Compute Image Capability Schema
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetComputeImageCapabilitySchemaResponse>
             getComputeImageCapabilitySchema(
@@ -766,17 +756,16 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Shows the metadata for the specified console history.
-     * See {@link #captureConsoleHistory(CaptureConsoleHistoryRequest, Consumer, Consumer) captureConsoleHistory}
-     * for details about using the console history operations.
-     *
+     * Shows the metadata for the specified console history. See {@link
+     * #captureConsoleHistory(CaptureConsoleHistoryRequest, Consumer, Consumer)
+     * captureConsoleHistory} for details about using the console history operations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetConsoleHistoryResponse> getConsoleHistory(
             GetConsoleHistoryRequest request,
@@ -785,17 +774,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the actual console history data (not the metadata).
-     * See {@link #captureConsoleHistory(CaptureConsoleHistoryRequest, Consumer, Consumer) captureConsoleHistory}
-     * for details about using the console history operations.
-     *
+     * Gets the actual console history data (not the metadata). See {@link
+     * #captureConsoleHistory(CaptureConsoleHistoryRequest, Consumer, Consumer)
+     * captureConsoleHistory} for details about using the console history operations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetConsoleHistoryContentResponse> getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request,
@@ -808,10 +796,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetDedicatedVmHostResponse> getDedicatedVmHost(
             GetDedicatedVmHostRequest request,
@@ -824,10 +812,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetImageResponse> getImage(
             GetImageRequest request,
@@ -838,10 +826,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetImageShapeCompatibilityEntryResponse>
             getImageShapeCompatibilityEntry(
@@ -856,10 +844,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetInstanceResponse> getInstance(
             GetInstanceRequest request,
@@ -870,10 +858,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetInstanceConsoleConnectionResponse> getInstanceConsoleConnection(
             GetInstanceConsoleConnectionRequest request,
@@ -887,10 +875,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetInstanceMaintenanceRebootResponse> getInstanceMaintenanceReboot(
             GetInstanceMaintenanceRebootRequest request,
@@ -904,10 +892,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetMeasuredBootReportResponse> getMeasuredBootReport(
             GetMeasuredBootReportRequest request,
@@ -918,13 +906,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Gets the information for the specified VNIC attachment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVnicAttachmentResponse> getVnicAttachment(
             GetVnicAttachmentRequest request,
@@ -937,10 +924,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetVolumeAttachmentResponse> getVolumeAttachment(
             GetVolumeAttachmentRequest request,
@@ -949,16 +936,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
-     * For certain operating systems, users will be forced to change the initial credentials.
-     *
+     * Gets the generated credentials for the instance. Only works for instances that require a
+     * password to log in, such as Windows. For certain operating systems, users will be forced to
+     * change the initial credentials.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<GetWindowsInstanceInitialCredentialsResponse>
             getWindowsInstanceInitialCredentials(
@@ -970,53 +957,55 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Performs one of the following power actions on the specified instance:
-     * <p>
-     * - **START** - Powers on the instance.
-     * <p>
-     * - **STOP** - Powers off the instance.
-     * <p>
-     * - **RESET** - Powers off the instance and then powers it back on.
-     * <p>
-     * - **SOFTSTOP** - Gracefully shuts down the instance by sending a shutdown command to the operating system.
-     * After waiting 15 minutes for the OS to shut down, the instance is powered off.
-     * If the applications that run on the instance take more than 15 minutes to shut down, they could be improperly stopped, resulting
-     * in data corruption. To avoid this, manually shut down the instance using the commands available in the OS before you softstop the
-     * instance.
-     * <p>
-     * - **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the operating system.
-     * After waiting 15 minutes for the OS to shut down, the instance is powered off and
-     * then powered back on.
+     *
+     * <p>- **START** - Powers on the instance.
+     *
+     * <p>- **STOP** - Powers off the instance.
+     *
+     * <p>- **RESET** - Powers off the instance and then powers it back on.
+     *
+     * <p>- **SOFTSTOP** - Gracefully shuts down the instance by sending a shutdown command to the
+     * operating system. After waiting 15 minutes for the OS to shut down, the instance is powered
+     * off. If the applications that run on the instance take more than 15 minutes to shut down,
+     * they could be improperly stopped, resulting in data corruption. To avoid this, manually shut
+     * down the instance using the commands available in the OS before you softstop the instance.
+     *
+     * <p>- **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the
+     * operating system. After waiting 15 minutes for the OS to shut down, the instance is powered
+     * off and then powered back on.
+     *
+     * <p>- **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Caution: Sending a diagnostic
+     * interrupt to a live system can cause data corruption or system failure.** Sends a diagnostic
+     * interrupt that causes the instance's OS to crash and then reboot. Before you send a
+     * diagnostic interrupt, you must configure the instance to generate a crash dump file when it
+     * crashes. The crash dump captures information about the state of the OS at the time of the
+     * crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more
+     * information, see [Sending a Diagnostic
+     * Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
+     *
      * <p>
      *
-     * - **SENDDIAGNOSTICINTERRUPT** - For advanced users. **Caution: Sending a diagnostic interrupt to a live system can
-     * cause data corruption or system failure.** Sends a diagnostic interrupt that causes the instance's
-     * OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
-     * crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
-     * the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
-     * [Sending a Diagnostic Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
-     * <p>
+     * <p>- **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
+     * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and
+     * networking settings are configured correctly, and try other [troubleshooting
+     * steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
+     * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual
+     * machine (VM) instances only. For more information, see [Performing a Diagnostic
+     * Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      *
-     * <p>
-     * - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
-     * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and networking settings are configured
-     * correctly, and try other [troubleshooting steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
-     * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual machine (VM) instances only.
-     * For more information, see [Performing a Diagnostic Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
-     * <p>
+     * <p>- **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers
+     * it back on.
      *
-     * - **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers it back on.
-     * <p>
-     *
-     * For more information about managing instance lifecycle states, see
-     * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
-     *
+     * <p>For more information about managing instance lifecycle states, see [Stopping and Starting
+     * an
+     * Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<InstanceActionResponse> instanceAction(
             InstanceActionRequest request,
@@ -1025,52 +1014,55 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
-     * For general information about instances, see
-     * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
-     * <p>
-     * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-     * <p>
-     * For information about availability domains, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-     * To get a list of availability domains, use the `ListAvailabilityDomains` operation
-     * in the Identity and Access Management Service API.
-     * <p>
-     * All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
-     * unique ID called an Oracle Cloud Identifier (OCID).
-     * When you create a resource, you can find its OCID in the response. You can
-     * also retrieve a resource's OCID by using a List API operation
-     * on that resource type, or by viewing the resource in the Console.
-     * <p>
-     * To launch an instance using an image or a boot volume use the `sourceDetails` parameter in {@link LaunchInstanceDetails}.
-     * <p>
-     * When you launch an instance, it is automatically attached to a virtual
-     * network interface card (VNIC), called the *primary VNIC*. The VNIC
-     * has a private IP address from the subnet's CIDR. You can either assign a
-     * private IP address of your choice or let Oracle automatically assign one.
-     * You can choose whether the instance has a public IP address. To retrieve the
-     * addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments}
-     * operation to get the VNIC ID for the instance, and then call
-     * {@link #getVnic(GetVnicRequest, Consumer, Consumer) getVnic} with the VNIC ID.
-     * <p>
-     * You can later add secondary VNICs to an instance. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-     * <p>
-     * To launch an instance from a Marketplace image listing, you must provide the image ID of the
-     * listing resource version that you want, but you also must subscribe to the listing before you try
-     * to launch the instance. To subscribe to the listing, use the {@link #getAppCatalogListingAgreements(GetAppCatalogListingAgreementsRequest, Consumer, Consumer) getAppCatalogListingAgreements}
-     * operation to get the signature for the terms of use agreement for the desired listing resource version.
-     * Then, call {@link #createAppCatalogSubscription(CreateAppCatalogSubscriptionRequest, Consumer, Consumer) createAppCatalogSubscription}
-     * with the signature. To get the image ID for the LaunchInstance operation, call
-     * {@link #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer, Consumer) getAppCatalogListingResourceVersion}.
+     * For general information about instances, see [Overview of the Compute
+     * Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      *
+     * <p>For information about access control and compartments, see [Overview of the IAM
+     * Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     *
+     * <p>For information about availability domains, see [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm). To get a
+     * list of availability domains, use the `ListAvailabilityDomains` operation in the Identity and
+     * Access Management Service API.
+     *
+     * <p>All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
+     * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find
+     * its OCID in the response. You can also retrieve a resource's OCID by using a List API
+     * operation on that resource type, or by viewing the resource in the Console.
+     *
+     * <p>To launch an instance using an image or a boot volume use the `sourceDetails` parameter in
+     * {@link LaunchInstanceDetails}.
+     *
+     * <p>When you launch an instance, it is automatically attached to a virtual network interface
+     * card (VNIC), called the *primary VNIC*. The VNIC has a private IP address from the subnet's
+     * CIDR. You can either assign a private IP address of your choice or let Oracle automatically
+     * assign one. You can choose whether the instance has a public IP address. To retrieve the
+     * addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer,
+     * Consumer) listVnicAttachments} operation to get the VNIC ID for the instance, and then call
+     * {@link #getVnic(GetVnicRequest, Consumer, Consumer) getVnic} with the VNIC ID.
+     *
+     * <p>You can later add secondary VNICs to an instance. For more information, see [Virtual
+     * Network Interface Cards
+     * (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     *
+     * <p>To launch an instance from a Marketplace image listing, you must provide the image ID of
+     * the listing resource version that you want, but you also must subscribe to the listing before
+     * you try to launch the instance. To subscribe to the listing, use the {@link
+     * #getAppCatalogListingAgreements(GetAppCatalogListingAgreementsRequest, Consumer, Consumer)
+     * getAppCatalogListingAgreements} operation to get the signature for the terms of use agreement
+     * for the desired listing resource version. Then, call {@link
+     * #createAppCatalogSubscription(CreateAppCatalogSubscriptionRequest, Consumer, Consumer)
+     * createAppCatalogSubscription} with the signature. To get the image ID for the LaunchInstance
+     * operation, call {@link
+     * #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer,
+     * Consumer) getAppCatalogListingResourceVersion}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<LaunchInstanceResponse> launchInstance(
             LaunchInstanceRequest request,
@@ -1082,10 +1074,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAppCatalogListingResourceVersionsResponse>
             listAppCatalogListingResourceVersions(
@@ -1100,10 +1092,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAppCatalogListingsResponse> listAppCatalogListings(
             ListAppCatalogListingsRequest request,
@@ -1116,10 +1108,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListAppCatalogSubscriptionsResponse> listAppCatalogSubscriptions(
             ListAppCatalogSubscriptionsRequest request,
@@ -1128,16 +1120,15 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the boot volume attachments in the specified compartment. You can filter the
-     * list by specifying an instance OCID, boot volume OCID, or both.
-     *
+     * Lists the boot volume attachments in the specified compartment. You can filter the list by
+     * specifying an instance OCID, boot volume OCID, or both.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListBootVolumeAttachmentsResponse> listBootVolumeAttachments(
             ListBootVolumeAttachmentsRequest request,
@@ -1148,13 +1139,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists the shapes that can be reserved within the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeCapacityReservationInstanceShapesResponse>
             listComputeCapacityReservationInstanceShapes(
@@ -1165,15 +1155,15 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the instances launched under a capacity reservation. You can filter results by specifying criteria.
-     *
+     * Lists the instances launched under a capacity reservation. You can filter results by
+     * specifying criteria.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeCapacityReservationInstancesResponse>
             listComputeCapacityReservationInstances(
@@ -1185,17 +1175,16 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists the compute capacity reservations that match the specified criteria and compartment.
-     * <p>
-     * You can limit the list by specifying a compute capacity reservation display name
-     * (the list will include all the identically-named compute capacity reservations in the compartment).
      *
+     * <p>You can limit the list by specifying a compute capacity reservation display name (the list
+     * will include all the identically-named compute capacity reservations in the compartment).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeCapacityReservationsResponse>
             listComputeCapacityReservations(
@@ -1208,13 +1197,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists Compute Global Image Capability Schema versions in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemaVersionsResponse>
             listComputeGlobalImageCapabilitySchemaVersions(
@@ -1227,13 +1215,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists Compute Global Image Capability Schema in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeGlobalImageCapabilitySchemasResponse>
             listComputeGlobalImageCapabilitySchemas(
@@ -1244,15 +1231,15 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
-     *
+     * Lists Compute Image Capability Schema in the specified compartment. You can also query by a
+     * specific imageId.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListComputeImageCapabilitySchemasResponse>
             listComputeImageCapabilitySchemas(
@@ -1265,13 +1252,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists the console history metadata for the specified compartment or instance.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListConsoleHistoriesResponse> listConsoleHistories(
             ListConsoleHistoriesRequest request,
@@ -1280,16 +1266,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
-     * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
-     *
+     * Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual
+     * machine host within the specified compartment. You can filter the list by compatibility with
+     * a specific dedicated virtual machine host shape.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDedicatedVmHostInstanceShapesResponse>
             listDedicatedVmHostInstanceShapes(
@@ -1300,15 +1286,15 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
-     *
+     * Returns the list of instances on the dedicated virtual machine hosts that match the specified
+     * criteria.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDedicatedVmHostInstancesResponse> listDedicatedVmHostInstances(
             ListDedicatedVmHostInstancesRequest request,
@@ -1318,15 +1304,15 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
-     *
+     * Lists the shapes that can be used to launch a dedicated virtual machine host within the
+     * specified compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDedicatedVmHostShapesResponse> listDedicatedVmHostShapes(
             ListDedicatedVmHostShapesRequest request,
@@ -1335,18 +1321,19 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
-     * <p>
-     * You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
-     * dedicated virtual machine hosts in the compartment.
+     * Returns the list of dedicated virtual machine hosts that match the specified criteria in the
+     * specified compartment.
      *
+     * <p>You can limit the list by specifying a dedicated virtual machine host display name. The
+     * list will include all the identically-named dedicated virtual machine hosts in the
+     * compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListDedicatedVmHostsResponse> listDedicatedVmHosts(
             ListDedicatedVmHostsRequest request,
@@ -1359,10 +1346,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListImageShapeCompatibilityEntriesResponse>
             listImageShapeCompatibilityEntries(
@@ -1373,25 +1360,25 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists a subset of images available in the specified compartment, including
-     * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
-     * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
-     * The list of platform images includes the three most recently published versions
-     * of each major distribution.
-     * <p>
-     * The list of images returned is ordered to first show the recent platform images,
-     * then all of the custom images.
-     * <p>
-     **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
-     * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
+     * Lists a subset of images available in the specified compartment, including [platform
+     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and [custom
+     * images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * The list of platform images includes the three most recently published versions of each major
+     * distribution.
      *
+     * <p>The list of images returned is ordered to first show the recent platform images, then all
+     * of the custom images.
+     *
+     * <p>*Caution:** Platform images are refreshed regularly. When new images are released, older
+     * versions are replaced. The image OCIDs remain available, but when the platform image is
+     * replaced, the image OCIDs are no longer returned as part of the platform image list.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListImagesResponse> listImages(
             ListImagesRequest request,
@@ -1399,16 +1386,17 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Lists the console connections for the specified compartment or instance.
-     * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
+     * <p>For more information about instance console connections, see [Troubleshooting Instances
+     * Using Instance Console
+     * Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListInstanceConsoleConnectionsResponse>
             listInstanceConsoleConnections(
@@ -1419,14 +1407,15 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
+     * Gets a list of all the devices for given instance. You can optionally filter results by
+     * device availability.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListInstanceDevicesResponse> listInstanceDevices(
             ListInstanceDevicesRequest request,
@@ -1435,17 +1424,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the instances in the specified compartment and the specified availability domain.
-     * You can filter the results by specifying an instance name (the list will include all the identically-named
-     * instances in the compartment).
-     *
+     * Lists the instances in the specified compartment and the specified availability domain. You
+     * can filter the results by specifying an instance name (the list will include all the
+     * identically-named instances in the compartment).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListInstancesResponse> listInstances(
             ListInstancesRequest request,
@@ -1453,33 +1441,31 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the shapes that can be used to launch an instance within the specified compartment. You can
-     * filter the list by compatibility with a specific image.
-     *
+     * Lists the shapes that can be used to launch an instance within the specified compartment. You
+     * can filter the list by compatibility with a specific image.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListShapesResponse> listShapes(
             ListShapesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handler);
 
     /**
-     * Lists the VNIC attachments in the specified compartment. A VNIC attachment
-     * resides in the same compartment as the attached instance. The list can be
-     * filtered by instance, VNIC, or availability domain.
-     *
+     * Lists the VNIC attachments in the specified compartment. A VNIC attachment resides in the
+     * same compartment as the attached instance. The list can be filtered by instance, VNIC, or
+     * availability domain.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVnicAttachmentsResponse> listVnicAttachments(
             ListVnicAttachmentsRequest request,
@@ -1488,19 +1474,18 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the volume attachments in the specified compartment. You can filter the
-     * list by specifying an instance OCID, volume OCID, or both.
-     * <p>
-     * Currently, the only supported volume attachment type are {@link IScsiVolumeAttachment} and
-     * {@link ParavirtualizedVolumeAttachment}.
+     * Lists the volume attachments in the specified compartment. You can filter the list by
+     * specifying an instance OCID, volume OCID, or both.
      *
+     * <p>Currently, the only supported volume attachment type are {@link IScsiVolumeAttachment} and
+     * {@link ParavirtualizedVolumeAttachment}.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<ListVolumeAttachmentsResponse> listVolumeAttachments(
             ListVolumeAttachmentsRequest request,
@@ -1513,10 +1498,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<RemoveImageShapeCompatibilityEntryResponse>
             removeImageShapeCompatibilityEntry(
@@ -1530,19 +1515,19 @@ public interface ComputeAsync extends AutoCloseable {
      * Terminates the specified instance. Any attached VNICs and volumes are automatically detached
      * when the instance terminates.
      *
-     * To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
-     * To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
-     * <p>
-     * This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
-     * until the instance is completely removed.
+     * <p>To preserve the boot volume associated with the instance, specify `true` for
+     * `PreserveBootVolumeQueryParam`. To delete the boot volume when the instance is deleted,
+     * specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
      *
+     * <p>This is an asynchronous operation. The instance's `lifecycleState` will change to
+     * TERMINATING temporarily until the instance is completely removed.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<TerminateInstanceResponse> terminateInstance(
             TerminateInstanceRequest request,
@@ -1551,17 +1536,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified capacity reservation and its associated capacity configurations.
-     * Fields that are not provided in the request will not be updated. Capacity configurations that are not included will be deleted.
-     * Avoid entering confidential information.
-     *
+     * Updates the specified capacity reservation and its associated capacity configurations. Fields
+     * that are not provided in the request will not be updated. Capacity configurations that are
+     * not included will be deleted. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateComputeCapacityReservationResponse>
             updateComputeCapacityReservation(
@@ -1574,13 +1558,12 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Updates the specified Compute Image Capability Schema
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateComputeImageCapabilitySchemaResponse>
             updateComputeImageCapabilitySchema(
@@ -1595,10 +1578,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
             UpdateConsoleHistoryRequest request,
@@ -1607,16 +1590,15 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine host.
-     * If an attribute value is not included, it will not be updated.
-     *
+     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated
+     * virtual machine host. If an attribute value is not included, it will not be updated.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDedicatedVmHostResponse> updateDedicatedVmHost(
             UpdateDedicatedVmHostRequest request,
@@ -1627,34 +1609,32 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Updates the display name of the image. Avoid entering confidential information.
      *
-     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateImageResponse> updateImage(
             UpdateImageRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse> handler);
 
     /**
-     * Updates certain fields on the specified instance. Fields that are not provided in the
-     * request will not be updated. Avoid entering confidential information.
-     * <p>
-     * Changes to metadata fields will be reflected in the instance metadata service (this may take
-     * up to a minute).
-     * <p>
-     * The OCID of the instance remains the same.
+     * Updates certain fields on the specified instance. Fields that are not provided in the request
+     * will not be updated. Avoid entering confidential information.
      *
+     * <p>Changes to metadata fields will be reflected in the instance metadata service (this may
+     * take up to a minute).
+     *
+     * <p>The OCID of the instance remains the same.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateInstanceResponse> updateInstance(
             UpdateInstanceRequest request,
@@ -1666,10 +1646,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateInstanceConsoleConnectionResponse>
             updateInstanceConsoleConnection(
@@ -1684,10 +1664,10 @@ public interface ComputeAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was
-     *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like java.io.InputStream) may not be able to be read in
-     *         both places as the underlying stream may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
      */
     java.util.concurrent.Future<UpdateVolumeAttachmentResponse> updateVolumeAttachment(
             UpdateVolumeAttachmentRequest request,

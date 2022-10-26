@@ -6,121 +6,113 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListPackagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPackagesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/ListPackagesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPackagesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * List only the information for this Digital Assistant instance.
-     */
+    /** List only the information for this Digital Assistant instance. */
     private String odaInstanceId;
 
-    /**
-     * List only the information for this Digital Assistant instance.
-     */
+    /** List only the information for this Digital Assistant instance. */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
     /**
-     * Resource type identifier. Used to limit query results to the items which are applicable to the given type.
+     * Resource type identifier. Used to limit query results to the items which are applicable to
+     * the given type.
      */
     private String resourceType;
 
     /**
-     * Resource type identifier. Used to limit query results to the items which are applicable to the given type.
+     * Resource type identifier. Used to limit query results to the items which are applicable to
+     * the given type.
      */
     public String getResourceType() {
         return resourceType;
     }
     /**
-     * List only the information for the package with this name. Package names are unique to a publisher and may not change.
-     * <p>
-     * Example: {@code My Package}
+     * List only the information for the package with this name. Package names are unique to a
+     * publisher and may not change.
      *
+     * <p>Example: {@code My Package}
      */
     private String name;
 
     /**
-     * List only the information for the package with this name. Package names are unique to a publisher and may not change.
-     * <p>
-     * Example: {@code My Package}
+     * List only the information for the package with this name. Package names are unique to a
+     * publisher and may not change.
      *
+     * <p>Example: {@code My Package}
      */
     public String getName() {
         return name;
     }
     /**
-     * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
-     * <p>
-     * Example: {@code My new resource}
+     * List only the information for the Digital Assistant instance with this user-friendly name.
+     * These names don't have to be unique and may change.
      *
+     * <p>Example: {@code My new resource}
      */
     private String displayName;
 
     /**
-     * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
-     * <p>
-     * Example: {@code My new resource}
+     * List only the information for the Digital Assistant instance with this user-friendly name.
+     * These names don't have to be unique and may change.
      *
+     * <p>Example: {@code My new resource}
      */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * Should we return only the latest version of a package (instead of all versions)?
-     */
+    /** Should we return only the latest version of a package (instead of all versions)? */
     private Boolean isLatestSkillOnly;
 
-    /**
-     * Should we return only the latest version of a package (instead of all versions)?
-     */
+    /** Should we return only the latest version of a package (instead of all versions)? */
     public Boolean getIsLatestSkillOnly() {
         return isLatestSkillOnly;
     }
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page at which to start retrieving results.
-     * <p>
-     * You get this value from the {@code opc-next-page} header in a previous list request.
-     * To retireve the first page, omit this query parameter.
-     * <p>
-     * Example: {@code MToxMA==}
      *
+     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
+     * retireve the first page, omit this query parameter.
+     *
+     * <p>Example: {@code MToxMA==}
      */
     private String page;
 
     /**
      * The page at which to start retrieving results.
-     * <p>
-     * You get this value from the {@code opc-next-page} header in a previous list request.
-     * To retireve the first page, omit this query parameter.
-     * <p>
-     * Example: {@code MToxMA==}
      *
+     * <p>You get this value from the {@code opc-next-page} header in a previous list request. To
+     * retireve the first page, omit this query parameter.
+     *
+     * <p>Example: {@code MToxMA==}
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
      */
     private SortOrder sortOrder;
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
-     **/
-    public enum SortOrder {
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
+     */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -154,26 +146,29 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+     * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+     * (descending).
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
-     * <p>
-     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * TIMECREATED}.
      *
+     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
+     * for {@code DISPLAYNAME} is ascending.
      */
     private SortBy sortBy;
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
-     * <p>
-     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * TIMECREATED}.
      *
-     **/
-    public enum SortBy {
+     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
+     * for {@code DISPLAYNAME} is ascending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -207,21 +202,24 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     };
 
     /**
-     * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
-     * <p>
-     * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+     * Sort on this field. You can specify one sort order only. The default sort field is {@code
+     * TIMECREATED}.
      *
+     * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort order
+     * for {@code DISPLAYNAME} is ascending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response header.
+     * The client request ID for tracing. This value is included in the opc-request-id response
+     * header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -230,17 +228,15 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPackagesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * List only the information for this Digital Assistant instance.
-         */
+        /** List only the information for this Digital Assistant instance. */
         private String odaInstanceId = null;
 
         /**
          * List only the information for this Digital Assistant instance.
+         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -250,12 +246,15 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Resource type identifier. Used to limit query results to the items which are applicable to the given type.
+         * Resource type identifier. Used to limit query results to the items which are applicable
+         * to the given type.
          */
         private String resourceType = null;
 
         /**
-         * Resource type identifier. Used to limit query results to the items which are applicable to the given type.
+         * Resource type identifier. Used to limit query results to the items which are applicable
+         * to the given type.
+         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -265,17 +264,18 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * List only the information for the package with this name. Package names are unique to a publisher and may not change.
-         * <p>
-         * Example: {@code My Package}
+         * List only the information for the package with this name. Package names are unique to a
+         * publisher and may not change.
          *
+         * <p>Example: {@code My Package}
          */
         private String name = null;
 
         /**
-         * List only the information for the package with this name. Package names are unique to a publisher and may not change.
-         * <p>
-         * Example: {@code My Package}
+         * List only the information for the package with this name. Package names are unique to a
+         * publisher and may not change.
+         *
+         * <p>Example: {@code My Package}
          *
          * @param name the value to set
          * @return this builder instance
@@ -286,17 +286,18 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
-         * <p>
-         * Example: {@code My new resource}
+         * List only the information for the Digital Assistant instance with this user-friendly
+         * name. These names don't have to be unique and may change.
          *
+         * <p>Example: {@code My new resource}
          */
         private String displayName = null;
 
         /**
-         * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.
-         * <p>
-         * Example: {@code My new resource}
+         * List only the information for the Digital Assistant instance with this user-friendly
+         * name. These names don't have to be unique and may change.
+         *
+         * <p>Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -306,13 +307,12 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * Should we return only the latest version of a package (instead of all versions)?
-         */
+        /** Should we return only the latest version of a package (instead of all versions)? */
         private Boolean isLatestSkillOnly = null;
 
         /**
          * Should we return only the latest version of a package (instead of all versions)?
+         *
          * @param isLatestSkillOnly the value to set
          * @return this builder instance
          */
@@ -321,13 +321,12 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return per page.
-         */
+        /** The maximum number of items to return per page. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -338,22 +337,21 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The page at which to start retrieving results.
-         * <p>
-         * You get this value from the {@code opc-next-page} header in a previous list request.
-         * To retireve the first page, omit this query parameter.
-         * <p>
-         * Example: {@code MToxMA==}
          *
+         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
+         * To retireve the first page, omit this query parameter.
+         *
+         * <p>Example: {@code MToxMA==}
          */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         * <p>
-         * You get this value from the {@code opc-next-page} header in a previous list request.
+         *
+         * <p>You get this value from the {@code opc-next-page} header in a previous list request.
          * To retireve the first page, omit this query parameter.
-         * <p>
-         * Example: {@code MToxMA==}
+         *
+         * <p>Example: {@code MToxMA==}
          *
          * @param page the value to set
          * @return this builder instance
@@ -364,12 +362,15 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+         * (descending).
          */
         private SortOrder sortOrder = null;
 
         /**
-         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC} (descending).
+         * Sort the results in this order, use either {@code ASC} (ascending) or {@code DESC}
+         * (descending).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -379,17 +380,20 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
-         * <p>
-         * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code
+         * TIMECREATED}.
          *
+         * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort
+         * order for {@code DISPLAYNAME} is ascending.
          */
         private SortBy sortBy = null;
 
         /**
-         * Sort on this field. You can specify one sort order only. The default sort field is {@code TIMECREATED}.
-         * <p>
-         * The default sort order for {@code TIMECREATED} is descending, and the default sort order for {@code DISPLAYNAME} is ascending.
+         * Sort on this field. You can specify one sort order only. The default sort field is {@code
+         * TIMECREATED}.
+         *
+         * <p>The default sort order for {@code TIMECREATED} is descending, and the default sort
+         * order for {@code DISPLAYNAME} is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -400,12 +404,15 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response header.
+         * The client request ID for tracing. This value is included in the opc-request-id response
+         * header.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -416,18 +423,19 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -439,6 +447,7 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListPackagesRequest o) {
@@ -460,10 +469,11 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListPackagesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListPackagesRequest
          */
@@ -477,7 +487,8 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListPackagesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPackagesRequest
@@ -495,12 +506,14 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPackagesRequest(odaInstanceId, resourceType, name, displayName, isLatestSkillOnly, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPackagesRequest(odaInstanceId, resourceType, name, displayName,
+            // isLatestSkillOnly, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -519,6 +532,7 @@ public class ListPackagesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

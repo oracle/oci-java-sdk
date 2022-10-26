@@ -9,10 +9,7 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetAppCatalogListingResourceVersionResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -25,15 +22,14 @@ public class GetAppCatalogListingResourceVersionResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,14 +37,13 @@ public class GetAppCatalogListingResourceVersionResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned AppCatalogListingResourceVersion instance.
-     */
+    /** The returned AppCatalogListingResourceVersion instance. */
     private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
             appCatalogListingResourceVersion;
 
     /**
      * The returned AppCatalogListingResourceVersion instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.core.model.AppCatalogListingResourceVersion
@@ -65,7 +60,7 @@ public class GetAppCatalogListingResourceVersionResponse
     })
     private GetAppCatalogListingResourceVersionResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.core.model.AppCatalogListingResourceVersion
@@ -76,25 +71,26 @@ public class GetAppCatalogListingResourceVersionResponse
         this.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetAppCatalogListingResourceVersionResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -109,15 +105,14 @@ public class GetAppCatalogListingResourceVersionResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,14 +122,13 @@ public class GetAppCatalogListingResourceVersionResponse
             return this;
         }
 
-        /**
-         * The returned AppCatalogListingResourceVersion instance.
-         */
+        /** The returned AppCatalogListingResourceVersion instance. */
         private com.oracle.bmc.core.model.AppCatalogListingResourceVersion
                 appCatalogListingResourceVersion;
 
         /**
          * The returned AppCatalogListingResourceVersion instance.
+         *
          * @param appCatalogListingResourceVersion the value to set
          * @return this builder
          */
@@ -147,8 +141,10 @@ public class GetAppCatalogListingResourceVersionResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetAppCatalogListingResourceVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -161,8 +157,10 @@ public class GetAppCatalogListingResourceVersionResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetAppCatalogListingResourceVersionResponse build() {
             return new GetAppCatalogListingResourceVersionResponse(
                     __httpStatusCode__,
@@ -175,6 +173,7 @@ public class GetAppCatalogListingResourceVersionResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

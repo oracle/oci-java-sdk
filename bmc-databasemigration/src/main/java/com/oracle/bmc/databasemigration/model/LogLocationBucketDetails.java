@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details to access log file in the specified Object Storage bucket, if any.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to access log file in the specified Object Storage bucket, if any. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogLocationBucketDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogLocationBucketDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogLocationBucketDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bucketName", "namespace", "objectName"})
     public LogLocationBucketDetails(String bucketName, String namespace, String objectName) {
@@ -33,10 +32,7 @@ public final class LogLocationBucketDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the bucket containing the log file.
-         *
-         **/
+        /** Name of the bucket containing the log file. */
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
@@ -45,16 +41,13 @@ public final class LogLocationBucketDetails
          *
          * @param bucketName the value to set
          * @return this builder
-         **/
+         */
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /**
-         * Object Storage namespace.
-         *
-         **/
+        /** Object Storage namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
@@ -63,16 +56,13 @@ public final class LogLocationBucketDetails
          *
          * @param namespace the value to set
          * @return this builder
-         **/
+         */
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /**
-         * Log object name.
-         *
-         **/
+        /** Log object name. */
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
@@ -81,7 +71,7 @@ public final class LogLocationBucketDetails
          *
          * @param objectName the value to set
          * @return this builder
-         **/
+         */
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -115,9 +105,7 @@ public final class LogLocationBucketDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,10 +114,7 @@ public final class LogLocationBucketDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the bucket containing the log file.
-     *
-     **/
+    /** Name of the bucket containing the log file. */
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
@@ -137,15 +122,12 @@ public final class LogLocationBucketDetails
      * Name of the bucket containing the log file.
      *
      * @return the value
-     **/
+     */
     public String getBucketName() {
         return bucketName;
     }
 
-    /**
-     * Object Storage namespace.
-     *
-     **/
+    /** Object Storage namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
@@ -153,15 +135,12 @@ public final class LogLocationBucketDetails
      * Object Storage namespace.
      *
      * @return the value
-     **/
+     */
     public String getNamespace() {
         return namespace;
     }
 
-    /**
-     * Log object name.
-     *
-     **/
+    /** Log object name. */
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
@@ -169,7 +148,7 @@ public final class LogLocationBucketDetails
      * Log object name.
      *
      * @return the value
-     **/
+     */
     public String getObjectName() {
         return objectName;
     }
@@ -181,6 +160,7 @@ public final class LogLocationBucketDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

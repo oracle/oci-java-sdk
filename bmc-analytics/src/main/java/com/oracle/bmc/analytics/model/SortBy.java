@@ -5,12 +5,11 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * The field to sort by (one column only). Default sort order is
- * ascending exception of {@code timeCreated} column (descending).
- *
- **/
+ * The field to sort by (one column only). Default sort order is ascending exception of {@code
+ * timeCreated} column (descending).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum SortBy {
+public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
     CapacityType("capacityType"),
     CapacityValue("capacityValue"),
     FeatureSet("featureSet"),

@@ -8,10 +8,7 @@ import com.oracle.bmc.goldengate.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,13 +21,14 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please include the request ID.
      *
      * @return the value
      */
@@ -38,13 +36,12 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /**
-     * The returned Deployment instance.
-     */
+    /** The returned Deployment instance. */
     private com.oracle.bmc.goldengate.model.Deployment deployment;
 
     /**
      * The returned Deployment instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.Deployment getDeployment() {
@@ -60,7 +57,7 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private GetDeploymentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.Deployment deployment) {
@@ -70,25 +67,25 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
         this.deployment = deployment;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetDeploymentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -103,13 +100,14 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +117,12 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /**
-         * The returned Deployment instance.
-         */
+        /** The returned Deployment instance. */
         private com.oracle.bmc.goldengate.model.Deployment deployment;
 
         /**
          * The returned Deployment instance.
+         *
          * @param deployment the value to set
          * @return this builder
          */
@@ -136,8 +133,10 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetDeploymentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,8 +149,10 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetDeploymentResponse build() {
             return new GetDeploymentResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, deployment);
@@ -160,6 +161,7 @@ public class GetDeploymentResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

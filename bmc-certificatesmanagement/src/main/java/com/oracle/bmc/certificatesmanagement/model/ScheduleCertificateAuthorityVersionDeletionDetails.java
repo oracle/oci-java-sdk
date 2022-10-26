@@ -5,22 +5,23 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details of the request to schedule the deletion of the specified certificate authority (CA) version.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details of the request to schedule the deletion of the specified certificate authority (CA)
+ * version. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ScheduleCertificateAuthorityVersionDeletionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ScheduleCertificateAuthorityVersionDeletionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ScheduleCertificateAuthorityVersionDeletionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeOfDeletion"})
     public ScheduleCertificateAuthorityVersionDeletionDetails(java.util.Date timeOfDeletion) {
@@ -31,20 +32,21 @@ public final class ScheduleCertificateAuthorityVersionDeletionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2019-04-03T21:10:29.600Z}
-         *
-         **/
+         * An optional property indicating when to delete the CA version, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
         private java.util.Date timeOfDeletion;
 
         /**
-         * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         * Example: {@code 2019-04-03T21:10:29.600Z}
+         * An optional property indicating when to delete the CA version, expressed in [RFC
+         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+         * 2019-04-03T21:10:29.600Z}
          *
          * @param timeOfDeletion the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfDeletion(java.util.Date timeOfDeletion) {
             this.timeOfDeletion = timeOfDeletion;
             this.__explicitlySet__.add("timeOfDeletion");
@@ -72,9 +74,7 @@ public final class ScheduleCertificateAuthorityVersionDeletionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,19 +84,20 @@ public final class ScheduleCertificateAuthorityVersionDeletionDetails
     }
 
     /**
-     * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2019-04-03T21:10:29.600Z}
-     *
-     **/
+     * An optional property indicating when to delete the CA version, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     private final java.util.Date timeOfDeletion;
 
     /**
-     * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2019-04-03T21:10:29.600Z}
+     * An optional property indicating when to delete the CA version, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfDeletion() {
         return timeOfDeletion;
     }
@@ -108,6 +109,7 @@ public final class ScheduleCertificateAuthorityVersionDeletionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

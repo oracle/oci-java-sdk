@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/**
- * The status of the preferred credential. Indicates whether the status is 'SET' or 'NOT_SET'.
- **/
+/** The status of the preferred credential. Indicates whether the status is 'SET' or 'NOT_SET'. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum PreferredCredentialStatus {
+public enum PreferredCredentialStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Set("SET"),
     NotSet("NOT_SET"),
 

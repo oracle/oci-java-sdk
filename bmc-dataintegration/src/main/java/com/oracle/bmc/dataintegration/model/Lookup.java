@@ -5,23 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about the lookup operator. The lookup operator has two input links, a primary input, and a lookup source input. It has an output link, fields of the lookup input are appended to the primary input and projected as the output fields.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the lookup operator. The lookup operator has two input links, a primary
+ * input, and a lookup source input. It has an output link, fields of the lookup input are appended
+ * to the primary input and projected as the output fields. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Lookup.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Lookup extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -142,48 +144,59 @@ public final class Lookup extends Operator {
             return this;
         }
         /**
-         * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
-         **/
+         * For the rows for which lookup condition does not satisfy, if set to true - do not return
+         * those rows of primary Input source and if set to false - create a row with primary input
+         * fields values and lookup field values as NULL.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSkipNoMatch")
         private Boolean isSkipNoMatch;
 
         /**
-         * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
+         * For the rows for which lookup condition does not satisfy, if set to true - do not return
+         * those rows of primary Input source and if set to false - create a row with primary input
+         * fields values and lookup field values as NULL.
+         *
          * @param isSkipNoMatch the value to set
          * @return this builder
-         **/
+         */
         public Builder isSkipNoMatch(Boolean isSkipNoMatch) {
             this.isSkipNoMatch = isSkipNoMatch;
             this.__explicitlySet__.add("isSkipNoMatch");
             return this;
         }
         /**
-         * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
-         **/
+         * if there are multiple records found in the lookup input what action should be performed.
+         * The default value for this field is RETURN_ANY.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("multiMatchStrategy")
         private MultiMatchStrategy multiMatchStrategy;
 
         /**
-         * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
+         * if there are multiple records found in the lookup input what action should be performed.
+         * The default value for this field is RETURN_ANY.
+         *
          * @param multiMatchStrategy the value to set
          * @return this builder
-         **/
+         */
         public Builder multiMatchStrategy(MultiMatchStrategy multiMatchStrategy) {
             this.multiMatchStrategy = multiMatchStrategy;
             this.__explicitlySet__.add("multiMatchStrategy");
             return this;
         }
         /**
-         * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
-         **/
+         * this map is used for replacing NULL values in the record. Key is the column name and
+         * value is the NULL replacement.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nullFillValues")
         private java.util.Map<String, Object> nullFillValues;
 
         /**
-         * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
+         * this map is used for replacing NULL values in the record. Key is the column name and
+         * value is the NULL replacement.
+         *
          * @param nullFillValues the value to set
          * @return this builder
-         **/
+         */
         public Builder nullFillValues(java.util.Map<String, Object> nullFillValues) {
             this.nullFillValues = nullFillValues;
             this.__explicitlySet__.add("nullFillValues");
@@ -272,9 +285,7 @@ public final class Lookup extends Operator {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -328,23 +339,29 @@ public final class Lookup extends Operator {
     }
 
     /**
-     * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
-     **/
+     * For the rows for which lookup condition does not satisfy, if set to true - do not return
+     * those rows of primary Input source and if set to false - create a row with primary input
+     * fields values and lookup field values as NULL.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSkipNoMatch")
     private final Boolean isSkipNoMatch;
 
     /**
-     * For the rows for which lookup condition does not satisfy, if set to true - do not return those rows of primary Input source and if set to false - create a row with primary input fields values and lookup field values as NULL.
+     * For the rows for which lookup condition does not satisfy, if set to true - do not return
+     * those rows of primary Input source and if set to false - create a row with primary input
+     * fields values and lookup field values as NULL.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSkipNoMatch() {
         return isSkipNoMatch;
     }
 
     /**
-     * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
-     **/
-    public enum MultiMatchStrategy {
+     * if there are multiple records found in the lookup input what action should be performed. The
+     * default value for this field is RETURN_ANY.
+     */
+    public enum MultiMatchStrategy implements com.oracle.bmc.http.internal.BmcEnum {
         ReturnAny("RETURN_ANY"),
         ReturnFirst("RETURN_FIRST"),
         ReturnLast("RETURN_LAST"),
@@ -352,8 +369,8 @@ public final class Lookup extends Operator {
         ReturnError("RETURN_ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -393,29 +410,35 @@ public final class Lookup extends Operator {
         }
     };
     /**
-     * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
-     **/
+     * if there are multiple records found in the lookup input what action should be performed. The
+     * default value for this field is RETURN_ANY.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("multiMatchStrategy")
     private final MultiMatchStrategy multiMatchStrategy;
 
     /**
-     * if there are multiple records found in the lookup input what action should be performed. The default value for this field is RETURN_ANY.
+     * if there are multiple records found in the lookup input what action should be performed. The
+     * default value for this field is RETURN_ANY.
+     *
      * @return the value
-     **/
+     */
     public MultiMatchStrategy getMultiMatchStrategy() {
         return multiMatchStrategy;
     }
 
     /**
-     * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
-     **/
+     * this map is used for replacing NULL values in the record. Key is the column name and value is
+     * the NULL replacement.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nullFillValues")
     private final java.util.Map<String, Object> nullFillValues;
 
     /**
-     * this map is used for replacing NULL values in the record. Key is the column name and value is the NULL replacement.
+     * this map is used for replacing NULL values in the record. Key is the column name and value is
+     * the NULL replacement.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Object> getNullFillValues() {
         return nullFillValues;
     }
@@ -427,6 +450,7 @@ public final class Lookup extends Operator {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -11,7 +11,6 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -26,17 +25,16 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For list pagination. If this header appears in the response, then this
-     * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of invoices.
-     *
+     * For list pagination. If this header appears in the response, then this is a partial list of
+     * invoices. Include this value as the {@code page} parameter in a subsequent GET request to get
+     * the next batch of invoices.
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. If this header appears in the response, then this
-     * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-     * GET request to get the next batch of invoices.
+     * For list pagination. If this header appears in the response, then this is a partial list of
+     * invoices. Include this value as the {@code page} parameter in a subsequent GET request to get
+     * the next batch of invoices.
      *
      * @return the value
      */
@@ -44,26 +42,24 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcNextPage;
     }
 
-    /**
-     * The total number of items that match the query.
-     */
+    /** The total number of items that match the query. */
     private Integer opcTotalItems;
 
     /**
      * The total number of items that match the query.
+     *
      * @return the value
      */
     public Integer getOpcTotalItems() {
         return opcTotalItems;
     }
 
-    /**
-     * The returned InvoiceCollection instance.
-     */
+    /** The returned InvoiceCollection instance. */
     private com.oracle.bmc.ospgateway.model.InvoiceCollection invoiceCollection;
 
     /**
      * The returned InvoiceCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.ospgateway.model.InvoiceCollection getInvoiceCollection() {
@@ -80,7 +76,7 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListInvoicesResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
@@ -92,17 +88,20 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
         this.invoiceCollection = invoiceCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListInvoicesResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -110,7 +109,6 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -127,17 +125,16 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For list pagination. If this header appears in the response, then this
-         * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of invoices.
-         *
+         * For list pagination. If this header appears in the response, then this is a partial list
+         * of invoices. Include this value as the {@code page} parameter in a subsequent GET request
+         * to get the next batch of invoices.
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. If this header appears in the response, then this
-         * is a partial list of invoices. Include this value as the {@code page} parameter in a subsequent
-         * GET request to get the next batch of invoices.
+         * For list pagination. If this header appears in the response, then this is a partial list
+         * of invoices. Include this value as the {@code page} parameter in a subsequent GET request
+         * to get the next batch of invoices.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -147,13 +144,12 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The total number of items that match the query.
-         */
+        /** The total number of items that match the query. */
         private Integer opcTotalItems;
 
         /**
          * The total number of items that match the query.
+         *
          * @param opcTotalItems the value to set
          * @return this builder
          */
@@ -162,13 +158,12 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned InvoiceCollection instance.
-         */
+        /** The returned InvoiceCollection instance. */
         private com.oracle.bmc.ospgateway.model.InvoiceCollection invoiceCollection;
 
         /**
          * The returned InvoiceCollection instance.
+         *
          * @param invoiceCollection the value to set
          * @return this builder
          */
@@ -180,8 +175,10 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListInvoicesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -195,8 +192,10 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListInvoicesResponse build() {
             return new ListInvoicesResponse(
                     __httpStatusCode__,
@@ -210,6 +209,7 @@ public class ListInvoicesResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

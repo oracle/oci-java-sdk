@@ -5,14 +5,12 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The table statistics collection status, which can be divided into the following categories:
- * - NO_STATS: Table objects with no statistics.
- * - STALE: Table objects with statistics that aren't up-to-date.
- * - NOT_STALE: Table objects with fresh or latest stats.
- *
- **/
+ * The table statistics collection status, which can be divided into the following categories: -
+ * NO_STATS: Table objects with no statistics. - STALE: Table objects with statistics that aren't
+ * up-to-date. - NOT_STALE: Table objects with fresh or latest stats.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum TableStatisticsStatusCategory {
+public enum TableStatisticsStatusCategory implements com.oracle.bmc.http.internal.BmcEnum {
     NoStats("NO_STATS"),
     Stale("STALE"),
     NotStale("NOT_STALE"),

@@ -5,21 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * source summary
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * source summary <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LabelSourceSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LabelSourceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = LabelSourceSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LabelSourceSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceDisplayName",
@@ -50,113 +51,106 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The source display name.
-         **/
+        /** The source display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
         /**
          * The source display name.
+         *
          * @param sourceDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-        /**
-         * The source internal name.
-         **/
+        /** The source internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The source internal name.
+         *
          * @param sourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /**
-         * The source unique identifier.
-         **/
+        /** The source unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
         /**
          * The source unique identifier.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /**
-         * The label operator.
-         **/
+        /** The label operator. */
         @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
         private String labelOperatorName;
 
         /**
          * The label operator.
+         *
          * @param labelOperatorName the value to set
          * @return this builder
-         **/
+         */
         public Builder labelOperatorName(String labelOperatorName) {
             this.labelOperatorName = labelOperatorName;
             this.__explicitlySet__.add("labelOperatorName");
             return this;
         }
-        /**
-         * The label condition.
-         **/
+        /** The label condition. */
         @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
         private String labelCondition;
 
         /**
          * The label condition.
+         *
          * @param labelCondition the value to set
          * @return this builder
-         **/
+         */
         public Builder labelCondition(String labelCondition) {
             this.labelCondition = labelCondition;
             this.__explicitlySet__.add("labelCondition");
             return this;
         }
-        /**
-         * The label field display name.
-         **/
+        /** The label field display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
         private String labelFieldDisplayname;
 
         /**
          * The label field display name.
+         *
          * @param labelFieldDisplayname the value to set
          * @return this builder
-         **/
+         */
         public Builder labelFieldDisplayname(String labelFieldDisplayname) {
             this.labelFieldDisplayname = labelFieldDisplayname;
             this.__explicitlySet__.add("labelFieldDisplayname");
             return this;
         }
-        /**
-         * The label field name.
-         **/
+        /** The label field name. */
         @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
         private String labelFieldName;
 
         /**
          * The label field name.
+         *
          * @param labelFieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder labelFieldName(String labelFieldName) {
             this.labelFieldName = labelFieldName;
             this.__explicitlySet__.add("labelFieldName");
@@ -209,9 +203,7 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -220,100 +212,93 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The source display name.
-     **/
+    /** The source display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
     /**
      * The source display name.
+     *
      * @return the value
-     **/
+     */
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
 
-    /**
-     * The source internal name.
-     **/
+    /** The source internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The source internal name.
+     *
      * @return the value
-     **/
+     */
     public String getSourceName() {
         return sourceName;
     }
 
-    /**
-     * The source unique identifier.
-     **/
+    /** The source unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
     /**
      * The source unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getSourceId() {
         return sourceId;
     }
 
-    /**
-     * The label operator.
-     **/
+    /** The label operator. */
     @com.fasterxml.jackson.annotation.JsonProperty("labelOperatorName")
     private final String labelOperatorName;
 
     /**
      * The label operator.
+     *
      * @return the value
-     **/
+     */
     public String getLabelOperatorName() {
         return labelOperatorName;
     }
 
-    /**
-     * The label condition.
-     **/
+    /** The label condition. */
     @com.fasterxml.jackson.annotation.JsonProperty("labelCondition")
     private final String labelCondition;
 
     /**
      * The label condition.
+     *
      * @return the value
-     **/
+     */
     public String getLabelCondition() {
         return labelCondition;
     }
 
-    /**
-     * The label field display name.
-     **/
+    /** The label field display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldDisplayname")
     private final String labelFieldDisplayname;
 
     /**
      * The label field display name.
+     *
      * @return the value
-     **/
+     */
     public String getLabelFieldDisplayname() {
         return labelFieldDisplayname;
     }
 
-    /**
-     * The label field name.
-     **/
+    /** The label field name. */
     @com.fasterxml.jackson.annotation.JsonProperty("labelFieldName")
     private final String labelFieldName;
 
     /**
      * The label field name.
+     *
      * @return the value
-     **/
+     */
     public String getLabelFieldName() {
         return labelFieldName;
     }
@@ -325,6 +310,7 @@ public final class LabelSourceSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

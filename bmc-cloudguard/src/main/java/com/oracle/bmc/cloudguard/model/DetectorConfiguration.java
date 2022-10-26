@@ -5,22 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * A single configuration applied to a detector
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A single configuration applied to a detector <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DetectorConfiguration.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DetectorConfiguration.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DetectorConfiguration
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"configKey", "name", "value", "dataType", "values"})
     public DetectorConfiguration(
@@ -39,81 +39,76 @@ public final class DetectorConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique name of the configuration
-         **/
+        /** Unique name of the configuration */
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
          * Unique name of the configuration
+         *
          * @param configKey the value to set
          * @return this builder
-         **/
+         */
         public Builder configKey(String configKey) {
             this.configKey = configKey;
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /**
-         * configuration name
-         **/
+        /** configuration name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * configuration name
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * configuration value
-         **/
+        /** configuration value */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * configuration value
+         *
          * @param value the value to set
          * @return this builder
-         **/
+         */
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /**
-         * configuration data type
-         **/
+        /** configuration data type */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * configuration data type
+         *
          * @param dataType the value to set
          * @return this builder
-         **/
+         */
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /**
-         * List of configuration values
-         **/
+        /** List of configuration values */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<ConfigValue> values;
 
         /**
          * List of configuration values
+         *
          * @param values the value to set
          * @return this builder
-         **/
+         */
         public Builder values(java.util.List<ConfigValue> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -154,9 +149,7 @@ public final class DetectorConfiguration
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,72 +158,67 @@ public final class DetectorConfiguration
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique name of the configuration
-     **/
+    /** Unique name of the configuration */
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
      * Unique name of the configuration
+     *
      * @return the value
-     **/
+     */
     public String getConfigKey() {
         return configKey;
     }
 
-    /**
-     * configuration name
-     **/
+    /** configuration name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * configuration name
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * configuration value
-     **/
+    /** configuration value */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * configuration value
+     *
      * @return the value
-     **/
+     */
     public String getValue() {
         return value;
     }
 
-    /**
-     * configuration data type
-     **/
+    /** configuration data type */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * configuration data type
+     *
      * @return the value
-     **/
+     */
     public String getDataType() {
         return dataType;
     }
 
-    /**
-     * List of configuration values
-     **/
+    /** List of configuration values */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<ConfigValue> values;
 
     /**
      * List of configuration values
+     *
      * @return the value
-     **/
+     */
     public java.util.List<ConfigValue> getValues() {
         return values;
     }
@@ -242,6 +230,7 @@ public final class DetectorConfiguration
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

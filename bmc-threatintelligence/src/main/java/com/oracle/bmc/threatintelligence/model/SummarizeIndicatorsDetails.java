@@ -5,22 +5,22 @@
 package com.oracle.bmc.threatintelligence.model;
 
 /**
- * Query parameters to filter indicators
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Query parameters to filter indicators <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SummarizeIndicatorsDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SummarizeIndicatorsDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeIndicatorsDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "indicatorType",
@@ -75,244 +75,229 @@ public final class SummarizeIndicatorsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The type of indicator this is
-         **/
+        /** The type of indicator this is */
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorType")
         private IndicatorType indicatorType;
 
         /**
          * The type of indicator this is
+         *
          * @param indicatorType the value to set
          * @return this builder
-         **/
+         */
         public Builder indicatorType(IndicatorType indicatorType) {
             this.indicatorType = indicatorType;
             this.__explicitlySet__.add("indicatorType");
             return this;
         }
-        /**
-         * The value for the type of indicator this is
-         **/
+        /** The value for the type of indicator this is */
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorValue")
         private String indicatorValue;
 
         /**
          * The value for the type of indicator this is
+         *
          * @param indicatorValue the value to set
          * @return this builder
-         **/
+         */
         public Builder indicatorValue(String indicatorValue) {
             this.indicatorValue = indicatorValue;
             this.__explicitlySet__.add("indicatorValue");
             return this;
         }
-        /**
-         * The threat type of entites to be returned.
-         **/
+        /** The threat type of entites to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
         private java.util.List<String> threatTypes;
 
         /**
          * The threat type of entites to be returned.
+         *
          * @param threatTypes the value to set
          * @return this builder
-         **/
+         */
         public Builder threatTypes(java.util.List<String> threatTypes) {
             this.threatTypes = threatTypes;
             this.__explicitlySet__.add("threatTypes");
             return this;
         }
-        /**
-         * The minimum level of confidence to return
-         **/
+        /** The minimum level of confidence to return */
         @com.fasterxml.jackson.annotation.JsonProperty("confidenceGreaterThanOrEqualTo")
         private Integer confidenceGreaterThanOrEqualTo;
 
         /**
          * The minimum level of confidence to return
+         *
          * @param confidenceGreaterThanOrEqualTo the value to set
          * @return this builder
-         **/
+         */
         public Builder confidenceGreaterThanOrEqualTo(Integer confidenceGreaterThanOrEqualTo) {
             this.confidenceGreaterThanOrEqualTo = confidenceGreaterThanOrEqualTo;
             this.__explicitlySet__.add("confidenceGreaterThanOrEqualTo");
             return this;
         }
-        /**
-         * The oldest update time of entities to be returned.
-         **/
+        /** The oldest update time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedGreaterThanOrEqualTo")
         private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
         /**
          * The oldest update time of entities to be returned.
+         *
          * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdatedGreaterThanOrEqualTo(
                 java.util.Date timeUpdatedGreaterThanOrEqualTo) {
             this.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
             this.__explicitlySet__.add("timeUpdatedGreaterThanOrEqualTo");
             return this;
         }
-        /**
-         * The newest update time of entities to be returned.
-         **/
+        /** The newest update time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedLessThan")
         private java.util.Date timeUpdatedLessThan;
 
         /**
          * The newest update time of entities to be returned.
+         *
          * @param timeUpdatedLessThan the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdatedLessThan(java.util.Date timeUpdatedLessThan) {
             this.timeUpdatedLessThan = timeUpdatedLessThan;
             this.__explicitlySet__.add("timeUpdatedLessThan");
             return this;
         }
-        /**
-         * The oldest last seen time of entities to be returned.
-         **/
+        /** The oldest last seen time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeenGreaterThanOrEqualTo")
         private java.util.Date timeLastSeenGreaterThanOrEqualTo;
 
         /**
          * The oldest last seen time of entities to be returned.
+         *
          * @param timeLastSeenGreaterThanOrEqualTo the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSeenGreaterThanOrEqualTo(
                 java.util.Date timeLastSeenGreaterThanOrEqualTo) {
             this.timeLastSeenGreaterThanOrEqualTo = timeLastSeenGreaterThanOrEqualTo;
             this.__explicitlySet__.add("timeLastSeenGreaterThanOrEqualTo");
             return this;
         }
-        /**
-         * The newest last seen time of entities to be returned.
-         **/
+        /** The newest last seen time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeenLessThan")
         private java.util.Date timeLastSeenLessThan;
 
         /**
          * The newest last seen time of entities to be returned.
+         *
          * @param timeLastSeenLessThan the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSeenLessThan(java.util.Date timeLastSeenLessThan) {
             this.timeLastSeenLessThan = timeLastSeenLessThan;
             this.__explicitlySet__.add("timeLastSeenLessThan");
             return this;
         }
-        /**
-         * The oldest creation time of entities to be returned.
-         **/
+        /** The oldest creation time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedGreaterThanOrEqualTo")
         private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
         /**
          * The oldest creation time of entities to be returned.
+         *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreatedGreaterThanOrEqualTo(
                 java.util.Date timeCreatedGreaterThanOrEqualTo) {
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             this.__explicitlySet__.add("timeCreatedGreaterThanOrEqualTo");
             return this;
         }
-        /**
-         * The newest creation time of entities to be returned.
-         **/
+        /** The newest creation time of entities to be returned. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedLessThan")
         private java.util.Date timeCreatedLessThan;
 
         /**
          * The newest creation time of entities to be returned.
+         *
          * @param timeCreatedLessThan the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreatedLessThan(java.util.Date timeCreatedLessThan) {
             this.timeCreatedLessThan = timeCreatedLessThan;
             this.__explicitlySet__.add("timeCreatedLessThan");
             return this;
         }
-        /**
-         * Filter to include indicators that have been seen by the provided source.
-         **/
+        /** Filter to include indicators that have been seen by the provided source. */
         @com.fasterxml.jackson.annotation.JsonProperty("indicatorSeenBy")
         private String indicatorSeenBy;
 
         /**
          * Filter to include indicators that have been seen by the provided source.
+         *
          * @param indicatorSeenBy the value to set
          * @return this builder
-         **/
+         */
         public Builder indicatorSeenBy(String indicatorSeenBy) {
             this.indicatorSeenBy = indicatorSeenBy;
             this.__explicitlySet__.add("indicatorSeenBy");
             return this;
         }
-        /**
-         * Filter to include indicators associated with the provided malware.
-         **/
+        /** Filter to include indicators associated with the provided malware. */
         @com.fasterxml.jackson.annotation.JsonProperty("malware")
         private String malware;
 
         /**
          * Filter to include indicators associated with the provided malware.
+         *
          * @param malware the value to set
          * @return this builder
-         **/
+         */
         public Builder malware(String malware) {
             this.malware = malware;
             this.__explicitlySet__.add("malware");
             return this;
         }
-        /**
-         * Filter to included indicators associated with the provided threat actor.
-         **/
+        /** Filter to included indicators associated with the provided threat actor. */
         @com.fasterxml.jackson.annotation.JsonProperty("threatActor")
         private String threatActor;
 
         /**
          * Filter to included indicators associated with the provided threat actor.
+         *
          * @param threatActor the value to set
          * @return this builder
-         **/
+         */
         public Builder threatActor(String threatActor) {
             this.threatActor = threatActor;
             this.__explicitlySet__.add("threatActor");
             return this;
         }
-        /**
-         * The sort order to use, either 'ASC' or 'DESC'.
-         **/
+        /** The sort order to use, either 'ASC' or 'DESC'. */
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
+         *
          * @param sortOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
-        /**
-         * The field to sort by. Only one field to sort by may be provided
-         **/
+        /** The field to sort by. Only one field to sort by may be provided */
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
         /**
          * The field to sort by. Only one field to sort by may be provided
+         *
          * @param sortBy the value to set
          * @return this builder
-         **/
+         */
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
@@ -397,9 +382,7 @@ public final class SummarizeIndicatorsDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -408,206 +391,190 @@ public final class SummarizeIndicatorsDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The type of indicator this is
-     **/
+    /** The type of indicator this is */
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorType")
     private final IndicatorType indicatorType;
 
     /**
      * The type of indicator this is
+     *
      * @return the value
-     **/
+     */
     public IndicatorType getIndicatorType() {
         return indicatorType;
     }
 
-    /**
-     * The value for the type of indicator this is
-     **/
+    /** The value for the type of indicator this is */
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorValue")
     private final String indicatorValue;
 
     /**
      * The value for the type of indicator this is
+     *
      * @return the value
-     **/
+     */
     public String getIndicatorValue() {
         return indicatorValue;
     }
 
-    /**
-     * The threat type of entites to be returned.
-     **/
+    /** The threat type of entites to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("threatTypes")
     private final java.util.List<String> threatTypes;
 
     /**
      * The threat type of entites to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getThreatTypes() {
         return threatTypes;
     }
 
-    /**
-     * The minimum level of confidence to return
-     **/
+    /** The minimum level of confidence to return */
     @com.fasterxml.jackson.annotation.JsonProperty("confidenceGreaterThanOrEqualTo")
     private final Integer confidenceGreaterThanOrEqualTo;
 
     /**
      * The minimum level of confidence to return
+     *
      * @return the value
-     **/
+     */
     public Integer getConfidenceGreaterThanOrEqualTo() {
         return confidenceGreaterThanOrEqualTo;
     }
 
-    /**
-     * The oldest update time of entities to be returned.
-     **/
+    /** The oldest update time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedGreaterThanOrEqualTo")
     private final java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
     /**
      * The oldest update time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
 
-    /**
-     * The newest update time of entities to be returned.
-     **/
+    /** The newest update time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdatedLessThan")
     private final java.util.Date timeUpdatedLessThan;
 
     /**
      * The newest update time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
 
-    /**
-     * The oldest last seen time of entities to be returned.
-     **/
+    /** The oldest last seen time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeenGreaterThanOrEqualTo")
     private final java.util.Date timeLastSeenGreaterThanOrEqualTo;
 
     /**
      * The oldest last seen time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSeenGreaterThanOrEqualTo() {
         return timeLastSeenGreaterThanOrEqualTo;
     }
 
-    /**
-     * The newest last seen time of entities to be returned.
-     **/
+    /** The newest last seen time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeenLessThan")
     private final java.util.Date timeLastSeenLessThan;
 
     /**
      * The newest last seen time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSeenLessThan() {
         return timeLastSeenLessThan;
     }
 
-    /**
-     * The oldest creation time of entities to be returned.
-     **/
+    /** The oldest creation time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedGreaterThanOrEqualTo")
     private final java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
      * The oldest creation time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
 
-    /**
-     * The newest creation time of entities to be returned.
-     **/
+    /** The newest creation time of entities to be returned. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedLessThan")
     private final java.util.Date timeCreatedLessThan;
 
     /**
      * The newest creation time of entities to be returned.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
 
-    /**
-     * Filter to include indicators that have been seen by the provided source.
-     **/
+    /** Filter to include indicators that have been seen by the provided source. */
     @com.fasterxml.jackson.annotation.JsonProperty("indicatorSeenBy")
     private final String indicatorSeenBy;
 
     /**
      * Filter to include indicators that have been seen by the provided source.
+     *
      * @return the value
-     **/
+     */
     public String getIndicatorSeenBy() {
         return indicatorSeenBy;
     }
 
-    /**
-     * Filter to include indicators associated with the provided malware.
-     **/
+    /** Filter to include indicators associated with the provided malware. */
     @com.fasterxml.jackson.annotation.JsonProperty("malware")
     private final String malware;
 
     /**
      * Filter to include indicators associated with the provided malware.
+     *
      * @return the value
-     **/
+     */
     public String getMalware() {
         return malware;
     }
 
-    /**
-     * Filter to included indicators associated with the provided threat actor.
-     **/
+    /** Filter to included indicators associated with the provided threat actor. */
     @com.fasterxml.jackson.annotation.JsonProperty("threatActor")
     private final String threatActor;
 
     /**
      * Filter to included indicators associated with the provided threat actor.
+     *
      * @return the value
-     **/
+     */
     public String getThreatActor() {
         return threatActor;
     }
 
-    /**
-     * The sort order to use, either 'ASC' or 'DESC'.
-     **/
+    /** The sort order to use, either 'ASC' or 'DESC'. */
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
      * The sort order to use, either 'ASC' or 'DESC'.
+     *
      * @return the value
-     **/
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
 
-    /**
-     * The field to sort by. Only one field to sort by may be provided
-     **/
-    public enum SortBy {
+    /** The field to sort by. Only one field to sort by may be provided */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Confidence("CONFIDENCE"),
         Timecreated("TIMECREATED"),
         Timeupdated("TIMEUPDATED"),
@@ -641,16 +608,15 @@ public final class SummarizeIndicatorsDetails
             throw new IllegalArgumentException("Invalid SortBy: " + key);
         }
     };
-    /**
-     * The field to sort by. Only one field to sort by may be provided
-     **/
+    /** The field to sort by. Only one field to sort by may be provided */
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
     /**
      * The field to sort by. Only one field to sort by may be provided
+     *
      * @return the value
-     **/
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -662,6 +628,7 @@ public final class SummarizeIndicatorsDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

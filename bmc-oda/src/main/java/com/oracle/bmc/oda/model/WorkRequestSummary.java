@@ -5,21 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * A description of the work request's status.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A description of the work request's status. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WorkRequestSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class WorkRequestSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = WorkRequestSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -47,97 +48,91 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The identifier of the work request.
-         **/
+        /** The identifier of the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The identifier of the work request.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The identifier of the compartment that contains the work request.
-         **/
+        /** The identifier of the compartment that contains the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The identifier of the compartment that contains the work request.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The identifier of the Digital Assistant instance to which this work request pertains.
-         **/
+        /** The identifier of the Digital Assistant instance to which this work request pertains. */
         @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
         private String odaInstanceId;
 
         /**
          * The identifier of the Digital Assistant instance to which this work request pertains.
+         *
          * @param odaInstanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder odaInstanceId(String odaInstanceId) {
             this.odaInstanceId = odaInstanceId;
             this.__explicitlySet__.add("odaInstanceId");
             return this;
         }
-        /**
-         * The type of the operation that's associated with the work request.
-         **/
+        /** The type of the operation that's associated with the work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
         private RequestAction requestAction;
 
         /**
          * The type of the operation that's associated with the work request.
+         *
          * @param requestAction the value to set
          * @return this builder
-         **/
+         */
         public Builder requestAction(RequestAction requestAction) {
             this.requestAction = requestAction;
             this.__explicitlySet__.add("requestAction");
             return this;
         }
-        /**
-         * The status of current work request.
-         **/
+        /** The status of current work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of current work request.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * The resources that this work request affects.
-         **/
+        /** The resources that this work request affects. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
          * The resources that this work request affects.
+         *
          * @param resources the value to set
          * @return this builder
-         **/
+         */
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
@@ -186,9 +181,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,52 +190,47 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The identifier of the work request.
-     **/
+    /** The identifier of the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The identifier of the work request.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The identifier of the compartment that contains the work request.
-     **/
+    /** The identifier of the compartment that contains the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The identifier of the compartment that contains the work request.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The identifier of the Digital Assistant instance to which this work request pertains.
-     **/
+    /** The identifier of the Digital Assistant instance to which this work request pertains. */
     @com.fasterxml.jackson.annotation.JsonProperty("odaInstanceId")
     private final String odaInstanceId;
 
     /**
      * The identifier of the Digital Assistant instance to which this work request pertains.
+     *
      * @return the value
-     **/
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
 
-    /**
-     * The type of the operation that's associated with the work request.
-     **/
-    public enum RequestAction {
+    /** The type of the operation that's associated with the work request. */
+    public enum RequestAction implements com.oracle.bmc.http.internal.BmcEnum {
         CreateOdaInstance("CREATE_ODA_INSTANCE"),
         UpgradeOdaInstance("UPGRADE_ODA_INSTANCE"),
         DeleteOdaInstance("DELETE_ODA_INSTANCE"),
@@ -276,8 +264,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         ExportDigitalAssistant("EXPORT_DIGITAL_ASSISTANT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -316,24 +304,21 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The type of the operation that's associated with the work request.
-     **/
+    /** The type of the operation that's associated with the work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
     private final RequestAction requestAction;
 
     /**
      * The type of the operation that's associated with the work request.
+     *
      * @return the value
-     **/
+     */
     public RequestAction getRequestAction() {
         return requestAction;
     }
 
-    /**
-     * The status of current work request.
-     **/
-    public enum Status {
+    /** The status of current work request. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Succeeded("SUCCEEDED"),
@@ -342,8 +327,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -381,30 +366,28 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The status of current work request.
-     **/
+    /** The status of current work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of current work request.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * The resources that this work request affects.
-     **/
+    /** The resources that this work request affects. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
      * The resources that this work request affects.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
@@ -416,6 +399,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,24 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The endpoint details for a private endpoint.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The endpoint details for a private endpoint. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DpEndpointFromPrivateDetails.Builder.class
-)
+        builder = DpEndpointFromPrivateDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -107,113 +106,106 @@ public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
             this.__explicitlySet__.add("dataAssets");
             return this;
         }
-        /**
-         * The endpoint ID provided by control plane.
-         **/
+        /** The endpoint ID provided by control plane. */
         @com.fasterxml.jackson.annotation.JsonProperty("dcmsEndpointId")
         private String dcmsEndpointId;
 
         /**
          * The endpoint ID provided by control plane.
+         *
          * @param dcmsEndpointId the value to set
          * @return this builder
-         **/
+         */
         public Builder dcmsEndpointId(String dcmsEndpointId) {
             this.dcmsEndpointId = dcmsEndpointId;
             this.__explicitlySet__.add("dcmsEndpointId");
             return this;
         }
-        /**
-         * The OCID of the private endpoint resource.
-         **/
+        /** The OCID of the private endpoint resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("peId")
         private String peId;
 
         /**
          * The OCID of the private endpoint resource.
+         *
          * @param peId the value to set
          * @return this builder
-         **/
+         */
         public Builder peId(String peId) {
             this.peId = peId;
             this.__explicitlySet__.add("peId");
             return this;
         }
-        /**
-         * The compartmentId of the private endpoint resource.
-         **/
+        /** The compartmentId of the private endpoint resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartmentId of the private endpoint resource.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The IP address of DNS proxy.
-         **/
+        /** The IP address of DNS proxy. */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
         private String dnsProxyIp;
 
         /**
          * The IP address of DNS proxy.
+         *
          * @param dnsProxyIp the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsProxyIp(String dnsProxyIp) {
             this.dnsProxyIp = dnsProxyIp;
             this.__explicitlySet__.add("dnsProxyIp");
             return this;
         }
-        /**
-         * The OCID of the private endpoint resource.
-         **/
+        /** The OCID of the private endpoint resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
         private String privateEndpointIp;
 
         /**
          * The OCID of the private endpoint resource.
+         *
          * @param privateEndpointIp the value to set
          * @return this builder
-         **/
+         */
         public Builder privateEndpointIp(String privateEndpointIp) {
             this.privateEndpointIp = privateEndpointIp;
             this.__explicitlySet__.add("privateEndpointIp");
             return this;
         }
-        /**
-         * Array of DNS zones to be used during the private endpoint resolution.
-         **/
+        /** Array of DNS zones to be used during the private endpoint resolution. */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
         private java.util.List<String> dnsZones;
 
         /**
          * Array of DNS zones to be used during the private endpoint resolution.
+         *
          * @param dnsZones the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsZones(java.util.List<String> dnsZones) {
             this.dnsZones = dnsZones;
             this.__explicitlySet__.add("dnsZones");
             return this;
         }
-        /**
-         * Specifies the private endpoint state.
-         **/
+        /** Specifies the private endpoint state. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
         /**
          * Specifies the private endpoint state.
+         *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -302,9 +294,7 @@ public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -350,94 +340,86 @@ public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
         this.state = state;
     }
 
-    /**
-     * The endpoint ID provided by control plane.
-     **/
+    /** The endpoint ID provided by control plane. */
     @com.fasterxml.jackson.annotation.JsonProperty("dcmsEndpointId")
     private final String dcmsEndpointId;
 
     /**
      * The endpoint ID provided by control plane.
+     *
      * @return the value
-     **/
+     */
     public String getDcmsEndpointId() {
         return dcmsEndpointId;
     }
 
-    /**
-     * The OCID of the private endpoint resource.
-     **/
+    /** The OCID of the private endpoint resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("peId")
     private final String peId;
 
     /**
      * The OCID of the private endpoint resource.
+     *
      * @return the value
-     **/
+     */
     public String getPeId() {
         return peId;
     }
 
-    /**
-     * The compartmentId of the private endpoint resource.
-     **/
+    /** The compartmentId of the private endpoint resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartmentId of the private endpoint resource.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The IP address of DNS proxy.
-     **/
+    /** The IP address of DNS proxy. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsProxyIp")
     private final String dnsProxyIp;
 
     /**
      * The IP address of DNS proxy.
+     *
      * @return the value
-     **/
+     */
     public String getDnsProxyIp() {
         return dnsProxyIp;
     }
 
-    /**
-     * The OCID of the private endpoint resource.
-     **/
+    /** The OCID of the private endpoint resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
 
     /**
      * The OCID of the private endpoint resource.
+     *
      * @return the value
-     **/
+     */
     public String getPrivateEndpointIp() {
         return privateEndpointIp;
     }
 
-    /**
-     * Array of DNS zones to be used during the private endpoint resolution.
-     **/
+    /** Array of DNS zones to be used during the private endpoint resolution. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZones")
     private final java.util.List<String> dnsZones;
 
     /**
      * Array of DNS zones to be used during the private endpoint resolution.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getDnsZones() {
         return dnsZones;
     }
 
-    /**
-     * Specifies the private endpoint state.
-     **/
-    public enum State {
+    /** Specifies the private endpoint state. */
+    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         ;
@@ -469,16 +451,15 @@ public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
             throw new IllegalArgumentException("Invalid State: " + key);
         }
     };
-    /**
-     * Specifies the private endpoint state.
-     **/
+    /** Specifies the private endpoint state. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
     /**
      * Specifies the private endpoint state.
+     *
      * @return the value
-     **/
+     */
     public State getState() {
         return state;
     }
@@ -490,6 +471,7 @@ public final class DpEndpointFromPrivateDetails extends DpEndpointDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

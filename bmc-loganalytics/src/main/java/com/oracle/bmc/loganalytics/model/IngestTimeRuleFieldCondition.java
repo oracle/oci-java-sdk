@@ -5,87 +5,82 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The field condition(s) to evaluate for an ingest time rule.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The field condition(s) to evaluate for an ingest time rule. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = IngestTimeRuleFieldCondition.Builder.class
-)
+        builder = IngestTimeRuleFieldCondition.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "kind"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "kind")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class IngestTimeRuleFieldCondition extends IngestTimeRuleCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The field name to be evaluated.
-         **/
+        /** The field name to be evaluated. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * The field name to be evaluated.
+         *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /**
-         * The operator to be used for evaluating the field.
-         **/
+        /** The operator to be used for evaluating the field. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldOperator")
         private FieldOperator fieldOperator;
 
         /**
          * The operator to be used for evaluating the field.
+         *
          * @param fieldOperator the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldOperator(FieldOperator fieldOperator) {
             this.fieldOperator = fieldOperator;
             this.__explicitlySet__.add("fieldOperator");
             return this;
         }
-        /**
-         * The field value to be evaluated.
-         **/
+        /** The field value to be evaluated. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValue")
         private String fieldValue;
 
         /**
          * The field value to be evaluated.
+         *
          * @param fieldValue the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldValue(String fieldValue) {
             this.fieldValue = fieldValue;
             this.__explicitlySet__.add("fieldValue");
             return this;
         }
-        /**
-         * Optional additional condition(s) to be evaluated.
-         **/
+        /** Optional additional condition(s) to be evaluated. */
         @com.fasterxml.jackson.annotation.JsonProperty("additionalConditions")
         private java.util.List<IngestTimeRuleAdditionalFieldCondition> additionalConditions;
 
         /**
          * Optional additional condition(s) to be evaluated.
+         *
          * @param additionalConditions the value to set
          * @return this builder
-         **/
+         */
         public Builder additionalConditions(
                 java.util.List<IngestTimeRuleAdditionalFieldCondition> additionalConditions) {
             this.additionalConditions = additionalConditions;
@@ -127,9 +122,7 @@ public final class IngestTimeRuleFieldCondition extends IngestTimeRuleCondition 
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,29 +144,26 @@ public final class IngestTimeRuleFieldCondition extends IngestTimeRuleCondition 
         this.additionalConditions = additionalConditions;
     }
 
-    /**
-     * The field name to be evaluated.
-     **/
+    /** The field name to be evaluated. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * The field name to be evaluated.
+     *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
-    /**
-     * The operator to be used for evaluating the field.
-     **/
-    public enum FieldOperator {
+    /** The operator to be used for evaluating the field. */
+    public enum FieldOperator implements com.oracle.bmc.http.internal.BmcEnum {
         Equal("EQUAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -212,44 +202,41 @@ public final class IngestTimeRuleFieldCondition extends IngestTimeRuleCondition 
             return UnknownEnumValue;
         }
     };
-    /**
-     * The operator to be used for evaluating the field.
-     **/
+    /** The operator to be used for evaluating the field. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldOperator")
     private final FieldOperator fieldOperator;
 
     /**
      * The operator to be used for evaluating the field.
+     *
      * @return the value
-     **/
+     */
     public FieldOperator getFieldOperator() {
         return fieldOperator;
     }
 
-    /**
-     * The field value to be evaluated.
-     **/
+    /** The field value to be evaluated. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValue")
     private final String fieldValue;
 
     /**
      * The field value to be evaluated.
+     *
      * @return the value
-     **/
+     */
     public String getFieldValue() {
         return fieldValue;
     }
 
-    /**
-     * Optional additional condition(s) to be evaluated.
-     **/
+    /** Optional additional condition(s) to be evaluated. */
     @com.fasterxml.jackson.annotation.JsonProperty("additionalConditions")
     private final java.util.List<IngestTimeRuleAdditionalFieldCondition> additionalConditions;
 
     /**
      * Optional additional condition(s) to be evaluated.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<IngestTimeRuleAdditionalFieldCondition> getAdditionalConditions() {
         return additionalConditions;
     }
@@ -261,6 +248,7 @@ public final class IngestTimeRuleFieldCondition extends IngestTimeRuleCondition 
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.dashboardservice.model;
 
-/**
- * Sort orders.
- **/
+/** Sort orders. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
-public enum SortOrder {
+public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
     Asc("ASC"),
     Desc("DESC"),
     ;

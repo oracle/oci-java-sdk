@@ -8,13 +8,12 @@ import com.oracle.bmc.filestorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ChangeMountTargetCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * Unique Oracle-assigned identifier for the request.
-     */
+    /** Unique Oracle-assigned identifier for the request. */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -24,34 +23,37 @@ public class ChangeMountTargetCompartmentResponse extends com.oracle.bmc.respons
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeMountTargetCompartmentResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ChangeMountTargetCompartmentResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * Unique Oracle-assigned identifier for the request.
-         */
+        /** Unique Oracle-assigned identifier for the request. */
         private String opcRequestId;
 
         /**
          * Unique Oracle-assigned identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -62,8 +64,10 @@ public class ChangeMountTargetCompartmentResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ChangeMountTargetCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -74,8 +78,10 @@ public class ChangeMountTargetCompartmentResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ChangeMountTargetCompartmentResponse build() {
             return new ChangeMountTargetCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId);
@@ -84,6 +90,7 @@ public class ChangeMountTargetCompartmentResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

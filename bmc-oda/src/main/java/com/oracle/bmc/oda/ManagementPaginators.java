@@ -9,21 +9,29 @@ import com.oracle.bmc.oda.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Management where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of Management where multiple pages of data may be fetched. Two styles of
+ * iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ManagementPaginators {
@@ -34,17 +42,20 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAuthenticationProviders operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAuthenticationProviders operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAuthenticationProvidersResponse>
             listAuthenticationProvidersResponseIterator(
                     final ListAuthenticationProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuthenticationProvidersRequest.Builder, ListAuthenticationProvidersRequest,
+                ListAuthenticationProvidersRequest.Builder,
+                ListAuthenticationProvidersRequest,
                 ListAuthenticationProvidersResponse>(
                 new java.util.function.Supplier<ListAuthenticationProvidersRequest.Builder>() {
                     @Override
@@ -87,19 +98,22 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.AuthenticationProviderSummary} objects
-     * contained in responses from the listAuthenticationProviders operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.AuthenticationProviderSummary} objects contained in responses from
+     * the listAuthenticationProviders operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.AuthenticationProviderSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.AuthenticationProviderSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.oda.model.AuthenticationProviderSummary>
             listAuthenticationProvidersRecordIterator(
                     final ListAuthenticationProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuthenticationProvidersRequest.Builder, ListAuthenticationProvidersRequest,
+                ListAuthenticationProvidersRequest.Builder,
+                ListAuthenticationProvidersRequest,
                 ListAuthenticationProvidersResponse,
                 com.oracle.bmc.oda.model.AuthenticationProviderSummary>(
                 new java.util.function.Supplier<ListAuthenticationProvidersRequest.Builder>() {
@@ -152,11 +166,12 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listChannels operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listChannels
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListChannelsResponse> listChannelsResponseIterator(
             final ListChannelsRequest request) {
@@ -201,18 +216,21 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.ChannelSummary} objects
-     * contained in responses from the listChannels operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.ChannelSummary} objects contained in responses from the listChannels
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.ChannelSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.ChannelSummary} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.oda.model.ChannelSummary> listChannelsRecordIterator(
             final ListChannelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListChannelsRequest.Builder, ListChannelsRequest, ListChannelsResponse,
+                ListChannelsRequest.Builder,
+                ListChannelsRequest,
+                ListChannelsResponse,
                 com.oracle.bmc.oda.model.ChannelSummary>(
                 new java.util.function.Supplier<ListChannelsRequest.Builder>() {
                     @Override
@@ -262,18 +280,21 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDigitalAssistantParameters operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDigitalAssistantParameters operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDigitalAssistantParametersResponse>
             listDigitalAssistantParametersResponseIterator(
                     final ListDigitalAssistantParametersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDigitalAssistantParametersRequest.Builder,
-                ListDigitalAssistantParametersRequest, ListDigitalAssistantParametersResponse>(
+                ListDigitalAssistantParametersRequest,
+                ListDigitalAssistantParametersResponse>(
                 new java.util.function.Supplier<ListDigitalAssistantParametersRequest.Builder>() {
                     @Override
                     public ListDigitalAssistantParametersRequest.Builder get() {
@@ -316,20 +337,23 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.DigitalAssistantParameterSummary} objects
-     * contained in responses from the listDigitalAssistantParameters operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.DigitalAssistantParameterSummary} objects contained in responses
+     * from the listDigitalAssistantParameters operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.DigitalAssistantParameterSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.DigitalAssistantParameterSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.oda.model.DigitalAssistantParameterSummary>
             listDigitalAssistantParametersRecordIterator(
                     final ListDigitalAssistantParametersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDigitalAssistantParametersRequest.Builder,
-                ListDigitalAssistantParametersRequest, ListDigitalAssistantParametersResponse,
+                ListDigitalAssistantParametersRequest,
+                ListDigitalAssistantParametersResponse,
                 com.oracle.bmc.oda.model.DigitalAssistantParameterSummary>(
                 new java.util.function.Supplier<ListDigitalAssistantParametersRequest.Builder>() {
                     @Override
@@ -383,16 +407,19 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDigitalAssistants operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDigitalAssistants operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDigitalAssistantsResponse> listDigitalAssistantsResponseIterator(
             final ListDigitalAssistantsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDigitalAssistantsRequest.Builder, ListDigitalAssistantsRequest,
+                ListDigitalAssistantsRequest.Builder,
+                ListDigitalAssistantsRequest,
                 ListDigitalAssistantsResponse>(
                 new java.util.function.Supplier<ListDigitalAssistantsRequest.Builder>() {
                     @Override
@@ -435,19 +462,23 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.DigitalAssistantSummary} objects
-     * contained in responses from the listDigitalAssistants operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.DigitalAssistantSummary} objects contained in responses from the
+     * listDigitalAssistants operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.DigitalAssistantSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.DigitalAssistantSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.oda.model.DigitalAssistantSummary>
             listDigitalAssistantsRecordIterator(final ListDigitalAssistantsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDigitalAssistantsRequest.Builder, ListDigitalAssistantsRequest,
-                ListDigitalAssistantsResponse, com.oracle.bmc.oda.model.DigitalAssistantSummary>(
+                ListDigitalAssistantsRequest.Builder,
+                ListDigitalAssistantsRequest,
+                ListDigitalAssistantsResponse,
+                com.oracle.bmc.oda.model.DigitalAssistantSummary>(
                 new java.util.function.Supplier<ListDigitalAssistantsRequest.Builder>() {
                     @Override
                     public ListDigitalAssistantsRequest.Builder get() {
@@ -498,16 +529,18 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSkillParameters operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSkillParameters operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSkillParametersResponse> listSkillParametersResponseIterator(
             final ListSkillParametersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSkillParametersRequest.Builder, ListSkillParametersRequest,
+                ListSkillParametersRequest.Builder,
+                ListSkillParametersRequest,
                 ListSkillParametersResponse>(
                 new java.util.function.Supplier<ListSkillParametersRequest.Builder>() {
                     @Override
@@ -549,19 +582,22 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.SkillParameterSummary} objects
-     * contained in responses from the listSkillParameters operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.SkillParameterSummary} objects contained in responses from the
+     * listSkillParameters operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.SkillParameterSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.SkillParameterSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.oda.model.SkillParameterSummary>
             listSkillParametersRecordIterator(final ListSkillParametersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSkillParametersRequest.Builder, ListSkillParametersRequest,
-                ListSkillParametersResponse, com.oracle.bmc.oda.model.SkillParameterSummary>(
+                ListSkillParametersRequest.Builder,
+                ListSkillParametersRequest,
+                ListSkillParametersResponse,
+                com.oracle.bmc.oda.model.SkillParameterSummary>(
                 new java.util.function.Supplier<ListSkillParametersRequest.Builder>() {
                     @Override
                     public ListSkillParametersRequest.Builder get() {
@@ -611,11 +647,12 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSkills operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSkills
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSkillsResponse> listSkillsResponseIterator(
             final ListSkillsRequest request) {
@@ -660,18 +697,21 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.SkillSummary} objects
-     * contained in responses from the listSkills operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.SkillSummary} objects contained in responses from the listSkills
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.SkillSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.SkillSummary} objects contained in responses received from the
+     *     service.
      */
     public Iterable<com.oracle.bmc.oda.model.SkillSummary> listSkillsRecordIterator(
             final ListSkillsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSkillsRequest.Builder, ListSkillsRequest, ListSkillsResponse,
+                ListSkillsRequest.Builder,
+                ListSkillsRequest,
+                ListSkillsResponse,
                 com.oracle.bmc.oda.model.SkillSummary>(
                 new java.util.function.Supplier<ListSkillsRequest.Builder>() {
                     @Override
@@ -721,11 +761,12 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTranslators operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTranslators operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTranslatorsResponse> listTranslatorsResponseIterator(
             final ListTranslatorsRequest request) {
@@ -770,18 +811,21 @@ public class ManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.oda.model.TranslatorSummary} objects
-     * contained in responses from the listTranslators operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.oda.model.TranslatorSummary} objects contained in responses from the
+     * listTranslators operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.oda.model.TranslatorSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.oda.model.TranslatorSummary} objects contained in responses received from
+     *     the service.
      */
     public Iterable<com.oracle.bmc.oda.model.TranslatorSummary> listTranslatorsRecordIterator(
             final ListTranslatorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTranslatorsRequest.Builder, ListTranslatorsRequest, ListTranslatorsResponse,
+                ListTranslatorsRequest.Builder,
+                ListTranslatorsRequest,
+                ListTranslatorsResponse,
                 com.oracle.bmc.oda.model.TranslatorSummary>(
                 new java.util.function.Supplier<ListTranslatorsRequest.Builder>() {
                     @Override

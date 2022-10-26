@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Update Migration resource parameters.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Update Migration resource parameters. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateMigrationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateMigrationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMigrationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -79,10 +78,7 @@ public final class UpdateMigrationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Migration type.
-         *
-         **/
+        /** Migration type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MigrationTypes type;
 
@@ -91,16 +87,13 @@ public final class UpdateMigrationDetails
          *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(MigrationTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Migration Display Name
-         *
-         **/
+        /** Migration Display Name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -109,16 +102,13 @@ public final class UpdateMigrationDetails
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The OCID of the registered ODMS Agent.
-         *
-         **/
+        /** The OCID of the registered ODMS Agent. */
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
@@ -127,16 +117,13 @@ public final class UpdateMigrationDetails
          *
          * @param agentId the value to set
          * @return this builder
-         **/
+         */
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /**
-         * The OCID of the Source Database Connection.
-         *
-         **/
+        /** The OCID of the Source Database Connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
         private String sourceDatabaseConnectionId;
 
@@ -145,7 +132,7 @@ public final class UpdateMigrationDetails
          *
          * @param sourceDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             this.sourceDatabaseConnectionId = sourceDatabaseConnectionId;
             this.__explicitlySet__.add("sourceDatabaseConnectionId");
@@ -153,31 +140,27 @@ public final class UpdateMigrationDetails
         }
         /**
          * The OCID of the Source Container Database Connection. Only used for Online migrations.
-         * Only Connections of type Non-Autonomous can be used as source container databases.
-         * An empty value would remove the stored Connection ID.
-         *
-         **/
+         * Only Connections of type Non-Autonomous can be used as source container databases. An
+         * empty value would remove the stored Connection ID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
         /**
          * The OCID of the Source Container Database Connection. Only used for Online migrations.
-         * Only Connections of type Non-Autonomous can be used as source container databases.
-         * An empty value would remove the stored Connection ID.
+         * Only Connections of type Non-Autonomous can be used as source container databases. An
+         * empty value would remove the stored Connection ID.
          *
          * @param sourceContainerDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceContainerDatabaseConnectionId(
                 String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
             this.__explicitlySet__.add("sourceContainerDatabaseConnectionId");
             return this;
         }
-        /**
-         * The OCID of the Target Database Connection.
-         *
-         **/
+        /** The OCID of the Target Database Connection. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
         private String targetDatabaseConnectionId;
 
@@ -186,7 +169,7 @@ public final class UpdateMigrationDetails
          *
          * @param targetDatabaseConnectionId the value to set
          * @return this builder
-         **/
+         */
         public Builder targetDatabaseConnectionId(String targetDatabaseConnectionId) {
             this.targetDatabaseConnectionId = targetDatabaseConnectionId;
             this.__explicitlySet__.add("targetDatabaseConnectionId");
@@ -230,40 +213,42 @@ public final class UpdateMigrationDetails
             return this;
         }
         /**
-         * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
-         * If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
-         *
-         **/
+         * Database objects to exclude from migration, cannot be specified alongside
+         * 'includeObjects'. If specified, the list will be replaced entirely. Empty list will
+         * remove stored excludeObjects details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
         private java.util.List<DatabaseObject> excludeObjects;
 
         /**
-         * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
-         * If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
+         * Database objects to exclude from migration, cannot be specified alongside
+         * 'includeObjects'. If specified, the list will be replaced entirely. Empty list will
+         * remove stored excludeObjects details.
          *
          * @param excludeObjects the value to set
          * @return this builder
-         **/
+         */
         public Builder excludeObjects(java.util.List<DatabaseObject> excludeObjects) {
             this.excludeObjects = excludeObjects;
             this.__explicitlySet__.add("excludeObjects");
             return this;
         }
         /**
-         * Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
-         * If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
-         *
-         **/
+         * Database objects to include from migration, cannot be specified alongside
+         * 'excludeObjects'. If specified, the list will be replaced entirely. Empty list will
+         * remove stored includeObjects details.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
         private java.util.List<DatabaseObject> includeObjects;
 
         /**
-         * Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
-         * If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
+         * Database objects to include from migration, cannot be specified alongside
+         * 'excludeObjects'. If specified, the list will be replaced entirely. Empty list will
+         * remove stored includeObjects details.
          *
          * @param includeObjects the value to set
          * @return this builder
-         **/
+         */
         public Builder includeObjects(java.util.List<DatabaseObject> includeObjects) {
             this.includeObjects = includeObjects;
             this.__explicitlySet__.add("includeObjects");
@@ -288,20 +273,19 @@ public final class UpdateMigrationDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -310,8 +294,7 @@ public final class UpdateMigrationDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -321,7 +304,7 @@ public final class UpdateMigrationDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -412,9 +395,7 @@ public final class UpdateMigrationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -423,10 +404,7 @@ public final class UpdateMigrationDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Migration type.
-     *
-     **/
+    /** Migration type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MigrationTypes type;
 
@@ -434,15 +412,12 @@ public final class UpdateMigrationDetails
      * Migration type.
      *
      * @return the value
-     **/
+     */
     public MigrationTypes getType() {
         return type;
     }
 
-    /**
-     * Migration Display Name
-     *
-     **/
+    /** Migration Display Name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -450,15 +425,12 @@ public final class UpdateMigrationDetails
      * Migration Display Name
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The OCID of the registered ODMS Agent.
-     *
-     **/
+    /** The OCID of the registered ODMS Agent. */
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
@@ -466,15 +438,12 @@ public final class UpdateMigrationDetails
      * The OCID of the registered ODMS Agent.
      *
      * @return the value
-     **/
+     */
     public String getAgentId() {
         return agentId;
     }
 
-    /**
-     * The OCID of the Source Database Connection.
-     *
-     **/
+    /** The OCID of the Source Database Connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
     private final String sourceDatabaseConnectionId;
 
@@ -482,35 +451,31 @@ public final class UpdateMigrationDetails
      * The OCID of the Source Database Connection.
      *
      * @return the value
-     **/
+     */
     public String getSourceDatabaseConnectionId() {
         return sourceDatabaseConnectionId;
     }
 
     /**
-     * The OCID of the Source Container Database Connection. Only used for Online migrations.
-     * Only Connections of type Non-Autonomous can be used as source container databases.
-     * An empty value would remove the stored Connection ID.
-     *
-     **/
+     * The OCID of the Source Container Database Connection. Only used for Online migrations. Only
+     * Connections of type Non-Autonomous can be used as source container databases. An empty value
+     * would remove the stored Connection ID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
     /**
-     * The OCID of the Source Container Database Connection. Only used for Online migrations.
-     * Only Connections of type Non-Autonomous can be used as source container databases.
-     * An empty value would remove the stored Connection ID.
+     * The OCID of the Source Container Database Connection. Only used for Online migrations. Only
+     * Connections of type Non-Autonomous can be used as source container databases. An empty value
+     * would remove the stored Connection ID.
      *
      * @return the value
-     **/
+     */
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
     }
 
-    /**
-     * The OCID of the Target Database Connection.
-     *
-     **/
+    /** The OCID of the Target Database Connection. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
     private final String targetDatabaseConnectionId;
 
@@ -518,7 +483,7 @@ public final class UpdateMigrationDetails
      * The OCID of the Target Database Connection.
      *
      * @return the value
-     **/
+     */
     public String getTargetDatabaseConnectionId() {
         return targetDatabaseConnectionId;
     }
@@ -553,36 +518,38 @@ public final class UpdateMigrationDetails
 
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
-     * If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
-     *
-     **/
+     * If specified, the list will be replaced entirely. Empty list will remove stored
+     * excludeObjects details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
     private final java.util.List<DatabaseObject> excludeObjects;
 
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
-     * If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
+     * If specified, the list will be replaced entirely. Empty list will remove stored
+     * excludeObjects details.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DatabaseObject> getExcludeObjects() {
         return excludeObjects;
     }
 
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
-     * If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
-     *
-     **/
+     * If specified, the list will be replaced entirely. Empty list will remove stored
+     * includeObjects details.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
     private final java.util.List<DatabaseObject> includeObjects;
 
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
-     * If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
+     * If specified, the list will be replaced entirely. Empty list will remove stored
+     * includeObjects details.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DatabaseObject> getIncludeObjects() {
         return includeObjects;
     }
@@ -602,37 +569,35 @@ public final class UpdateMigrationDetails
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -644,6 +609,7 @@ public final class UpdateMigrationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

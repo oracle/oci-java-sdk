@@ -5,35 +5,33 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The information about the data operation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the data operation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = AbstractDataOperationConfig.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = AbstractDataOperationConfig.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = WriteOperationConfig.class,
-        name = "WRITE_OPERATION_CONFIG"
-    ),
+            value = WriteOperationConfig.class,
+            name = "WRITE_OPERATION_CONFIG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ReadOperationConfig.class,
-        name = "READ_OPERATION_CONFIG"
-    )
+            value = ReadOperationConfig.class,
+            name = "READ_OPERATION_CONFIG")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class AbstractDataOperationConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"derivedAttributes"})
     protected AbstractDataOperationConfig(java.util.Map<String, String> derivedAttributes) {
@@ -41,16 +39,15 @@ public class AbstractDataOperationConfig
         this.derivedAttributes = derivedAttributes;
     }
 
-    /**
-     * this map is used for passing BIP report/REST parameter values.
-     **/
+    /** this map is used for passing BIP report/REST parameter values. */
     @com.fasterxml.jackson.annotation.JsonProperty("derivedAttributes")
     private final java.util.Map<String, String> derivedAttributes;
 
     /**
      * this map is used for passing BIP report/REST parameter values.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getDerivedAttributes() {
         return derivedAttributes;
     }
@@ -62,6 +59,7 @@ public class AbstractDataOperationConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -99,10 +97,8 @@ public class AbstractDataOperationConfig
         return result;
     }
 
-    /**
-     * The type of data operation.
-     **/
-    public enum ModelType {
+    /** The type of data operation. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         ReadOperationConfig("READ_OPERATION_CONFIG"),
         WriteOperationConfig("WRITE_OPERATION_CONFIG"),
         ;

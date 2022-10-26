@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Supported Datatypes.
- **/
+/** Supported Datatypes. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum Datatypes {
+public enum Datatypes implements com.oracle.bmc.http.internal.BmcEnum {
     Long("LONG"),
     Double("DOUBLE"),
     Integer("INTEGER"),

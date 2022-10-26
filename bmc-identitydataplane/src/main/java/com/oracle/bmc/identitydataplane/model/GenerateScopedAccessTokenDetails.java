@@ -5,22 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenerateScopedAccessTokenDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = GenerateScopedAccessTokenDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GenerateScopedAccessTokenDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scope", "publicKey"})
     public GenerateScopedAccessTokenDetails(String scope, String publicKey) {
@@ -31,10 +31,7 @@ public final class GenerateScopedAccessTokenDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Scope definition for the scoped access token
-         *
-         **/
+        /** Scope definition for the scoped access token */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
@@ -43,27 +40,28 @@ public final class GenerateScopedAccessTokenDetails
          *
          * @param scope the value to set
          * @return this builder
-         **/
+         */
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
-         *
-         **/
+         * A temporary public key, owned by the service. The service also owns the corresponding
+         * private key. This public key will by put inside the security token by the auth service
+         * after successful validation of the certificate.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
         /**
-         * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-         * key will by put inside the security token by the auth service after successful validation of the certificate.
+         * A temporary public key, owned by the service. The service also owns the corresponding
+         * private key. This public key will by put inside the security token by the auth service
+         * after successful validation of the certificate.
          *
          * @param publicKey the value to set
          * @return this builder
-         **/
+         */
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
@@ -94,9 +92,7 @@ public final class GenerateScopedAccessTokenDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,10 +101,7 @@ public final class GenerateScopedAccessTokenDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * Scope definition for the scoped access token
-     *
-     **/
+    /** Scope definition for the scoped access token */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
@@ -116,25 +109,26 @@ public final class GenerateScopedAccessTokenDetails
      * Scope definition for the scoped access token
      *
      * @return the value
-     **/
+     */
     public String getScope() {
         return scope;
     }
 
     /**
-     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
-     *
-     **/
+     * A temporary public key, owned by the service. The service also owns the corresponding private
+     * key. This public key will by put inside the security token by the auth service after
+     * successful validation of the certificate.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
     /**
-     * A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-     * key will by put inside the security token by the auth service after successful validation of the certificate.
+     * A temporary public key, owned by the service. The service also owns the corresponding private
+     * key. This public key will by put inside the security token by the auth service after
+     * successful validation of the certificate.
      *
      * @return the value
-     **/
+     */
     public String getPublicKey() {
         return publicKey;
     }
@@ -146,6 +140,7 @@ public final class GenerateScopedAccessTokenDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

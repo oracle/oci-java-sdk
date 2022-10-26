@@ -9,21 +9,29 @@ import com.oracle.bmc.cloudguard.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of CloudGuard where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of CloudGuard where multiple pages of data may be fetched. Two styles of
+ * iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class CloudGuardPaginators {
@@ -34,16 +42,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listConditionMetadataTypes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listConditionMetadataTypes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListConditionMetadataTypesResponse> listConditionMetadataTypesResponseIterator(
             final ListConditionMetadataTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListConditionMetadataTypesRequest.Builder, ListConditionMetadataTypesRequest,
+                ListConditionMetadataTypesRequest.Builder,
+                ListConditionMetadataTypesRequest,
                 ListConditionMetadataTypesResponse>(
                 new java.util.function.Supplier<ListConditionMetadataTypesRequest.Builder>() {
                     @Override
@@ -86,19 +97,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary} objects
-     * contained in responses from the listConditionMetadataTypes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary} objects contained in responses
+     * from the listConditionMetadataTypes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary>
             listConditionMetadataTypesRecordIterator(
                     final ListConditionMetadataTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListConditionMetadataTypesRequest.Builder, ListConditionMetadataTypesRequest,
+                ListConditionMetadataTypesRequest.Builder,
+                ListConditionMetadataTypesRequest,
                 ListConditionMetadataTypesResponse,
                 com.oracle.bmc.cloudguard.model.ConditionMetadataTypeSummary>(
                 new java.util.function.Supplier<ListConditionMetadataTypesRequest.Builder>() {
@@ -153,16 +167,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDataMaskRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataMaskRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDataMaskRulesResponse> listDataMaskRulesResponseIterator(
             final ListDataMaskRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDataMaskRulesRequest.Builder, ListDataMaskRulesRequest,
+                ListDataMaskRulesRequest.Builder,
+                ListDataMaskRulesRequest,
                 ListDataMaskRulesResponse>(
                 new java.util.function.Supplier<ListDataMaskRulesRequest.Builder>() {
                     @Override
@@ -204,19 +220,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects
-     * contained in responses from the listDataMaskRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects contained in responses from the
+     * listDataMaskRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DataMaskRuleSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>
             listDataMaskRulesRecordIterator(final ListDataMaskRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataMaskRulesRequest.Builder, ListDataMaskRulesRequest,
-                ListDataMaskRulesResponse, com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>(
+                ListDataMaskRulesRequest.Builder,
+                ListDataMaskRulesRequest,
+                ListDataMaskRulesResponse,
+                com.oracle.bmc.cloudguard.model.DataMaskRuleSummary>(
                 new java.util.function.Supplier<ListDataMaskRulesRequest.Builder>() {
                     @Override
                     public ListDataMaskRulesRequest.Builder get() {
@@ -266,16 +285,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDataSourceEvents operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataSourceEvents operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDataSourceEventsResponse> listDataSourceEventsResponseIterator(
             final ListDataSourceEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDataSourceEventsRequest.Builder, ListDataSourceEventsRequest,
+                ListDataSourceEventsRequest.Builder,
+                ListDataSourceEventsRequest,
                 ListDataSourceEventsResponse>(
                 new java.util.function.Supplier<ListDataSourceEventsRequest.Builder>() {
                     @Override
@@ -317,18 +338,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DataSourceEventSummary} objects
-     * contained in responses from the listDataSourceEvents operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DataSourceEventSummary} objects contained in responses from
+     * the listDataSourceEvents operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DataSourceEventSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DataSourceEventSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DataSourceEventSummary>
             listDataSourceEventsRecordIterator(final ListDataSourceEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataSourceEventsRequest.Builder, ListDataSourceEventsRequest,
+                ListDataSourceEventsRequest.Builder,
+                ListDataSourceEventsRequest,
                 ListDataSourceEventsResponse,
                 com.oracle.bmc.cloudguard.model.DataSourceEventSummary>(
                 new java.util.function.Supplier<ListDataSourceEventsRequest.Builder>() {
@@ -380,11 +404,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDataSources operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDataSources operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDataSourcesResponse> listDataSourcesResponseIterator(
             final ListDataSourcesRequest request) {
@@ -429,18 +454,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DataSourceSummary} objects
-     * contained in responses from the listDataSources operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DataSourceSummary} objects contained in responses from the
+     * listDataSources operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DataSourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DataSourceSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DataSourceSummary>
             listDataSourcesRecordIterator(final ListDataSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataSourcesRequest.Builder, ListDataSourcesRequest, ListDataSourcesResponse,
+                ListDataSourcesRequest.Builder,
+                ListDataSourcesRequest,
+                ListDataSourcesResponse,
                 com.oracle.bmc.cloudguard.model.DataSourceSummary>(
                 new java.util.function.Supplier<ListDataSourcesRequest.Builder>() {
                     @Override
@@ -490,18 +518,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDetectorRecipeDetectorRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDetectorRecipeDetectorRules operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDetectorRecipeDetectorRulesResponse>
             listDetectorRecipeDetectorRulesResponseIterator(
                     final ListDetectorRecipeDetectorRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDetectorRecipeDetectorRulesRequest.Builder,
-                ListDetectorRecipeDetectorRulesRequest, ListDetectorRecipeDetectorRulesResponse>(
+                ListDetectorRecipeDetectorRulesRequest,
+                ListDetectorRecipeDetectorRulesResponse>(
                 new java.util.function.Supplier<ListDetectorRecipeDetectorRulesRequest.Builder>() {
                     @Override
                     public ListDetectorRecipeDetectorRulesRequest.Builder get() {
@@ -544,20 +575,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary} objects
-     * contained in responses from the listDetectorRecipeDetectorRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary} objects contained in
+     * responses from the listDetectorRecipeDetectorRules operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary>
             listDetectorRecipeDetectorRulesRecordIterator(
                     final ListDetectorRecipeDetectorRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDetectorRecipeDetectorRulesRequest.Builder,
-                ListDetectorRecipeDetectorRulesRequest, ListDetectorRecipeDetectorRulesResponse,
+                ListDetectorRecipeDetectorRulesRequest,
+                ListDetectorRecipeDetectorRulesResponse,
                 com.oracle.bmc.cloudguard.model.DetectorRecipeDetectorRuleSummary>(
                 new java.util.function.Supplier<ListDetectorRecipeDetectorRulesRequest.Builder>() {
                     @Override
@@ -614,16 +648,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDetectorRecipes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDetectorRecipes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDetectorRecipesResponse> listDetectorRecipesResponseIterator(
             final ListDetectorRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDetectorRecipesRequest.Builder, ListDetectorRecipesRequest,
+                ListDetectorRecipesRequest.Builder,
+                ListDetectorRecipesRequest,
                 ListDetectorRecipesResponse>(
                 new java.util.function.Supplier<ListDetectorRecipesRequest.Builder>() {
                     @Override
@@ -665,19 +701,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRecipeSummary} objects
-     * contained in responses from the listDetectorRecipes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DetectorRecipeSummary} objects contained in responses from
+     * the listDetectorRecipes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRecipeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DetectorRecipeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DetectorRecipeSummary>
             listDetectorRecipesRecordIterator(final ListDetectorRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDetectorRecipesRequest.Builder, ListDetectorRecipesRequest,
-                ListDetectorRecipesResponse, com.oracle.bmc.cloudguard.model.DetectorRecipeSummary>(
+                ListDetectorRecipesRequest.Builder,
+                ListDetectorRecipesRequest,
+                ListDetectorRecipesResponse,
+                com.oracle.bmc.cloudguard.model.DetectorRecipeSummary>(
                 new java.util.function.Supplier<ListDetectorRecipesRequest.Builder>() {
                     @Override
                     public ListDetectorRecipesRequest.Builder get() {
@@ -727,16 +767,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDetectorRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDetectorRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDetectorRulesResponse> listDetectorRulesResponseIterator(
             final ListDetectorRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDetectorRulesRequest.Builder, ListDetectorRulesRequest,
+                ListDetectorRulesRequest.Builder,
+                ListDetectorRulesRequest,
                 ListDetectorRulesResponse>(
                 new java.util.function.Supplier<ListDetectorRulesRequest.Builder>() {
                     @Override
@@ -778,19 +820,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRuleSummary} objects
-     * contained in responses from the listDetectorRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DetectorRuleSummary} objects contained in responses from the
+     * listDetectorRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DetectorRuleSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DetectorRuleSummary>
             listDetectorRulesRecordIterator(final ListDetectorRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDetectorRulesRequest.Builder, ListDetectorRulesRequest,
-                ListDetectorRulesResponse, com.oracle.bmc.cloudguard.model.DetectorRuleSummary>(
+                ListDetectorRulesRequest.Builder,
+                ListDetectorRulesRequest,
+                ListDetectorRulesResponse,
+                com.oracle.bmc.cloudguard.model.DetectorRuleSummary>(
                 new java.util.function.Supplier<ListDetectorRulesRequest.Builder>() {
                     @Override
                     public ListDetectorRulesRequest.Builder get() {
@@ -840,11 +885,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDetectors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDetectors
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListDetectorsResponse> listDetectorsResponseIterator(
             final ListDetectorsRequest request) {
@@ -889,18 +935,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorSummary} objects
-     * contained in responses from the listDetectors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.DetectorSummary} objects contained in responses from the
+     * listDetectors operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.DetectorSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.DetectorSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.DetectorSummary> listDetectorsRecordIterator(
             final ListDetectorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDetectorsRequest.Builder, ListDetectorsRequest, ListDetectorsResponse,
+                ListDetectorsRequest.Builder,
+                ListDetectorsRequest,
+                ListDetectorsResponse,
                 com.oracle.bmc.cloudguard.model.DetectorSummary>(
                 new java.util.function.Supplier<ListDetectorsRequest.Builder>() {
                     @Override
@@ -950,16 +999,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listImpactedResources operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listImpactedResources operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListImpactedResourcesResponse> listImpactedResourcesResponseIterator(
             final ListImpactedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListImpactedResourcesRequest.Builder, ListImpactedResourcesRequest,
+                ListImpactedResourcesRequest.Builder,
+                ListImpactedResourcesRequest,
                 ListImpactedResourcesResponse>(
                 new java.util.function.Supplier<ListImpactedResourcesRequest.Builder>() {
                     @Override
@@ -1002,18 +1054,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ImpactedResourceSummary} objects
-     * contained in responses from the listImpactedResources operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ImpactedResourceSummary} objects contained in responses from
+     * the listImpactedResources operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ImpactedResourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ImpactedResourceSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ImpactedResourceSummary>
             listImpactedResourcesRecordIterator(final ListImpactedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListImpactedResourcesRequest.Builder, ListImpactedResourcesRequest,
+                ListImpactedResourcesRequest.Builder,
+                ListImpactedResourcesRequest,
                 ListImpactedResourcesResponse,
                 com.oracle.bmc.cloudguard.model.ImpactedResourceSummary>(
                 new java.util.function.Supplier<ListImpactedResourcesRequest.Builder>() {
@@ -1066,16 +1121,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listManagedListTypes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listManagedListTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListManagedListTypesResponse> listManagedListTypesResponseIterator(
             final ListManagedListTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListManagedListTypesRequest.Builder, ListManagedListTypesRequest,
+                ListManagedListTypesRequest.Builder,
+                ListManagedListTypesRequest,
                 ListManagedListTypesResponse>(
                 new java.util.function.Supplier<ListManagedListTypesRequest.Builder>() {
                     @Override
@@ -1117,18 +1174,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ManagedListTypeSummary} objects
-     * contained in responses from the listManagedListTypes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ManagedListTypeSummary} objects contained in responses from
+     * the listManagedListTypes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ManagedListTypeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ManagedListTypeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ManagedListTypeSummary>
             listManagedListTypesRecordIterator(final ListManagedListTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedListTypesRequest.Builder, ListManagedListTypesRequest,
+                ListManagedListTypesRequest.Builder,
+                ListManagedListTypesRequest,
                 ListManagedListTypesResponse,
                 com.oracle.bmc.cloudguard.model.ManagedListTypeSummary>(
                 new java.util.function.Supplier<ListManagedListTypesRequest.Builder>() {
@@ -1180,11 +1240,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listManagedLists operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listManagedLists operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListManagedListsResponse> listManagedListsResponseIterator(
             final ListManagedListsRequest request) {
@@ -1230,18 +1291,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ManagedListSummary} objects
-     * contained in responses from the listManagedLists operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ManagedListSummary} objects contained in responses from the
+     * listManagedLists operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ManagedListSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ManagedListSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ManagedListSummary>
             listManagedListsRecordIterator(final ListManagedListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedListsRequest.Builder, ListManagedListsRequest, ListManagedListsResponse,
+                ListManagedListsRequest.Builder,
+                ListManagedListsRequest,
+                ListManagedListsResponse,
                 com.oracle.bmc.cloudguard.model.ManagedListSummary>(
                 new java.util.function.Supplier<ListManagedListsRequest.Builder>() {
                     @Override
@@ -1292,11 +1356,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPolicies
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListPoliciesResponse> listPoliciesResponseIterator(
             final ListPoliciesRequest request) {
@@ -1341,18 +1406,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.PolicySummary} objects
-     * contained in responses from the listPolicies operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.PolicySummary} objects contained in responses from the
+     * listPolicies operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.PolicySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.PolicySummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.PolicySummary> listPoliciesRecordIterator(
             final ListPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPoliciesRequest.Builder, ListPoliciesRequest, ListPoliciesResponse,
+                ListPoliciesRequest.Builder,
+                ListPoliciesRequest,
+                ListPoliciesResponse,
                 com.oracle.bmc.cloudguard.model.PolicySummary>(
                 new java.util.function.Supplier<ListPoliciesRequest.Builder>() {
                     @Override
@@ -1402,16 +1470,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProblemEndpoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listProblemEndpoints operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListProblemEndpointsResponse> listProblemEndpointsResponseIterator(
             final ListProblemEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProblemEndpointsRequest.Builder, ListProblemEndpointsRequest,
+                ListProblemEndpointsRequest.Builder,
+                ListProblemEndpointsRequest,
                 ListProblemEndpointsResponse>(
                 new java.util.function.Supplier<ListProblemEndpointsRequest.Builder>() {
                     @Override
@@ -1453,18 +1523,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects
-     * contained in responses from the listProblemEndpoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects contained in responses from
+     * the listProblemEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ProblemEndpointSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>
             listProblemEndpointsRecordIterator(final ListProblemEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProblemEndpointsRequest.Builder, ListProblemEndpointsRequest,
+                ListProblemEndpointsRequest.Builder,
+                ListProblemEndpointsRequest,
                 ListProblemEndpointsResponse,
                 com.oracle.bmc.cloudguard.model.ProblemEndpointSummary>(
                 new java.util.function.Supplier<ListProblemEndpointsRequest.Builder>() {
@@ -1516,16 +1589,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProblemEntities operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listProblemEntities operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListProblemEntitiesResponse> listProblemEntitiesResponseIterator(
             final ListProblemEntitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProblemEntitiesRequest.Builder, ListProblemEntitiesRequest,
+                ListProblemEntitiesRequest.Builder,
+                ListProblemEntitiesRequest,
                 ListProblemEntitiesResponse>(
                 new java.util.function.Supplier<ListProblemEntitiesRequest.Builder>() {
                     @Override
@@ -1567,19 +1642,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEntitySummary} objects
-     * contained in responses from the listProblemEntities operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ProblemEntitySummary} objects contained in responses from the
+     * listProblemEntities operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemEntitySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ProblemEntitySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ProblemEntitySummary>
             listProblemEntitiesRecordIterator(final ListProblemEntitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProblemEntitiesRequest.Builder, ListProblemEntitiesRequest,
-                ListProblemEntitiesResponse, com.oracle.bmc.cloudguard.model.ProblemEntitySummary>(
+                ListProblemEntitiesRequest.Builder,
+                ListProblemEntitiesRequest,
+                ListProblemEntitiesResponse,
+                com.oracle.bmc.cloudguard.model.ProblemEntitySummary>(
                 new java.util.function.Supplier<ListProblemEntitiesRequest.Builder>() {
                     @Override
                     public ListProblemEntitiesRequest.Builder get() {
@@ -1629,16 +1707,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProblemHistories operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listProblemHistories operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListProblemHistoriesResponse> listProblemHistoriesResponseIterator(
             final ListProblemHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProblemHistoriesRequest.Builder, ListProblemHistoriesRequest,
+                ListProblemHistoriesRequest.Builder,
+                ListProblemHistoriesRequest,
                 ListProblemHistoriesResponse>(
                 new java.util.function.Supplier<ListProblemHistoriesRequest.Builder>() {
                     @Override
@@ -1680,18 +1760,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemHistorySummary} objects
-     * contained in responses from the listProblemHistories operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ProblemHistorySummary} objects contained in responses from
+     * the listProblemHistories operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemHistorySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ProblemHistorySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ProblemHistorySummary>
             listProblemHistoriesRecordIterator(final ListProblemHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProblemHistoriesRequest.Builder, ListProblemHistoriesRequest,
+                ListProblemHistoriesRequest.Builder,
+                ListProblemHistoriesRequest,
                 ListProblemHistoriesResponse,
                 com.oracle.bmc.cloudguard.model.ProblemHistorySummary>(
                 new java.util.function.Supplier<ListProblemHistoriesRequest.Builder>() {
@@ -1743,11 +1826,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProblems operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProblems
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListProblemsResponse> listProblemsResponseIterator(
             final ListProblemsRequest request) {
@@ -1792,18 +1876,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemSummary} objects
-     * contained in responses from the listProblems operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ProblemSummary} objects contained in responses from the
+     * listProblems operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ProblemSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ProblemSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ProblemSummary> listProblemsRecordIterator(
             final ListProblemsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProblemsRequest.Builder, ListProblemsRequest, ListProblemsResponse,
+                ListProblemsRequest.Builder,
+                ListProblemsRequest,
+                ListProblemsResponse,
                 com.oracle.bmc.cloudguard.model.ProblemSummary>(
                 new java.util.function.Supplier<ListProblemsRequest.Builder>() {
                     @Override
@@ -1853,16 +1940,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listRecommendations operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listRecommendations operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListRecommendationsResponse> listRecommendationsResponseIterator(
             final ListRecommendationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListRecommendationsRequest.Builder, ListRecommendationsRequest,
+                ListRecommendationsRequest.Builder,
+                ListRecommendationsRequest,
                 ListRecommendationsResponse>(
                 new java.util.function.Supplier<ListRecommendationsRequest.Builder>() {
                     @Override
@@ -1904,19 +1993,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.RecommendationSummary} objects
-     * contained in responses from the listRecommendations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.RecommendationSummary} objects contained in responses from
+     * the listRecommendations operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.RecommendationSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.RecommendationSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.RecommendationSummary>
             listRecommendationsRecordIterator(final ListRecommendationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRecommendationsRequest.Builder, ListRecommendationsRequest,
-                ListRecommendationsResponse, com.oracle.bmc.cloudguard.model.RecommendationSummary>(
+                ListRecommendationsRequest.Builder,
+                ListRecommendationsRequest,
+                ListRecommendationsResponse,
+                com.oracle.bmc.cloudguard.model.RecommendationSummary>(
                 new java.util.function.Supplier<ListRecommendationsRequest.Builder>() {
                     @Override
                     public ListRecommendationsRequest.Builder get() {
@@ -1966,17 +2059,20 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResourceProfileEndpoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResourceProfileEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResourceProfileEndpointsResponse>
             listResourceProfileEndpointsResponseIterator(
                     final ListResourceProfileEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResourceProfileEndpointsRequest.Builder, ListResourceProfileEndpointsRequest,
+                ListResourceProfileEndpointsRequest.Builder,
+                ListResourceProfileEndpointsRequest,
                 ListResourceProfileEndpointsResponse>(
                 new java.util.function.Supplier<ListResourceProfileEndpointsRequest.Builder>() {
                     @Override
@@ -2020,19 +2116,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects
-     * contained in responses from the listResourceProfileEndpoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects contained in
+     * responses from the listResourceProfileEndpoints operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>
             listResourceProfileEndpointsRecordIterator(
                     final ListResourceProfileEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResourceProfileEndpointsRequest.Builder, ListResourceProfileEndpointsRequest,
+                ListResourceProfileEndpointsRequest.Builder,
+                ListResourceProfileEndpointsRequest,
                 ListResourceProfileEndpointsResponse,
                 com.oracle.bmc.cloudguard.model.ResourceProfileEndpointSummary>(
                 new java.util.function.Supplier<ListResourceProfileEndpointsRequest.Builder>() {
@@ -2088,11 +2187,13 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResourceProfileImpactedResources operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResourceProfileImpactedResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResourceProfileImpactedResourcesResponse>
             listResourceProfileImpactedResourcesResponseIterator(
@@ -2145,13 +2246,15 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects
-     * contained in responses from the listResourceProfileImpactedResources operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects contained in
+     * responses from the listResourceProfileImpactedResources operation. This iterable will fetch
+     * more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary} objects contained
+     *     in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileImpactedResourceSummary>
             listResourceProfileImpactedResourcesRecordIterator(
@@ -2218,16 +2321,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResourceProfiles operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResourceProfiles operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResourceProfilesResponse> listResourceProfilesResponseIterator(
             final ListResourceProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResourceProfilesRequest.Builder, ListResourceProfilesRequest,
+                ListResourceProfilesRequest.Builder,
+                ListResourceProfilesRequest,
                 ListResourceProfilesResponse>(
                 new java.util.function.Supplier<ListResourceProfilesRequest.Builder>() {
                     @Override
@@ -2269,18 +2374,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects
-     * contained in responses from the listResourceProfiles operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects contained in responses from
+     * the listResourceProfiles operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResourceProfileSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResourceProfileSummary>
             listResourceProfilesRecordIterator(final ListResourceProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResourceProfilesRequest.Builder, ListResourceProfilesRequest,
+                ListResourceProfilesRequest.Builder,
+                ListResourceProfilesRequest,
                 ListResourceProfilesResponse,
                 com.oracle.bmc.cloudguard.model.ResourceProfileSummary>(
                 new java.util.function.Supplier<ListResourceProfilesRequest.Builder>() {
@@ -2332,16 +2440,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResourceTypes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResourceTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResourceTypesResponse> listResourceTypesResponseIterator(
             final ListResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResourceTypesRequest.Builder, ListResourceTypesRequest,
+                ListResourceTypesRequest.Builder,
+                ListResourceTypesRequest,
                 ListResourceTypesResponse>(
                 new java.util.function.Supplier<ListResourceTypesRequest.Builder>() {
                     @Override
@@ -2383,19 +2493,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceTypeSummary} objects
-     * contained in responses from the listResourceTypes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResourceTypeSummary} objects contained in responses from the
+     * listResourceTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResourceTypeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResourceTypeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResourceTypeSummary>
             listResourceTypesRecordIterator(final ListResourceTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResourceTypesRequest.Builder, ListResourceTypesRequest,
-                ListResourceTypesResponse, com.oracle.bmc.cloudguard.model.ResourceTypeSummary>(
+                ListResourceTypesRequest.Builder,
+                ListResourceTypesRequest,
+                ListResourceTypesResponse,
+                com.oracle.bmc.cloudguard.model.ResourceTypeSummary>(
                 new java.util.function.Supplier<ListResourceTypesRequest.Builder>() {
                     @Override
                     public ListResourceTypesRequest.Builder get() {
@@ -2445,16 +2558,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResponderActivities operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResponderActivities operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResponderActivitiesResponse> listResponderActivitiesResponseIterator(
             final ListResponderActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResponderActivitiesRequest.Builder, ListResponderActivitiesRequest,
+                ListResponderActivitiesRequest.Builder,
+                ListResponderActivitiesRequest,
                 ListResponderActivitiesResponse>(
                 new java.util.function.Supplier<ListResponderActivitiesRequest.Builder>() {
                     @Override
@@ -2497,18 +2613,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderActivitySummary} objects
-     * contained in responses from the listResponderActivities operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResponderActivitySummary} objects contained in responses from
+     * the listResponderActivities operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderActivitySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResponderActivitySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResponderActivitySummary>
             listResponderActivitiesRecordIterator(final ListResponderActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResponderActivitiesRequest.Builder, ListResponderActivitiesRequest,
+                ListResponderActivitiesRequest.Builder,
+                ListResponderActivitiesRequest,
                 ListResponderActivitiesResponse,
                 com.oracle.bmc.cloudguard.model.ResponderActivitySummary>(
                 new java.util.function.Supplier<ListResponderActivitiesRequest.Builder>() {
@@ -2562,16 +2681,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResponderExecutions operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResponderExecutions operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResponderExecutionsResponse> listResponderExecutionsResponseIterator(
             final ListResponderExecutionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResponderExecutionsRequest.Builder, ListResponderExecutionsRequest,
+                ListResponderExecutionsRequest.Builder,
+                ListResponderExecutionsRequest,
                 ListResponderExecutionsResponse>(
                 new java.util.function.Supplier<ListResponderExecutionsRequest.Builder>() {
                     @Override
@@ -2614,18 +2736,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderExecutionSummary} objects
-     * contained in responses from the listResponderExecutions operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResponderExecutionSummary} objects contained in responses
+     * from the listResponderExecutions operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderExecutionSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResponderExecutionSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResponderExecutionSummary>
             listResponderExecutionsRecordIterator(final ListResponderExecutionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResponderExecutionsRequest.Builder, ListResponderExecutionsRequest,
+                ListResponderExecutionsRequest.Builder,
+                ListResponderExecutionsRequest,
                 ListResponderExecutionsResponse,
                 com.oracle.bmc.cloudguard.model.ResponderExecutionSummary>(
                 new java.util.function.Supplier<ListResponderExecutionsRequest.Builder>() {
@@ -2679,11 +2804,13 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResponderRecipeResponderRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResponderRecipeResponderRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResponderRecipeResponderRulesResponse>
             listResponderRecipeResponderRulesResponseIterator(
@@ -2736,20 +2863,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary} objects
-     * contained in responses from the listResponderRecipeResponderRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary} objects contained in
+     * responses from the listResponderRecipeResponderRules operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary>
             listResponderRecipeResponderRulesRecordIterator(
                     final ListResponderRecipeResponderRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListResponderRecipeResponderRulesRequest.Builder,
-                ListResponderRecipeResponderRulesRequest, ListResponderRecipeResponderRulesResponse,
+                ListResponderRecipeResponderRulesRequest,
+                ListResponderRecipeResponderRulesResponse,
                 com.oracle.bmc.cloudguard.model.ResponderRecipeResponderRuleSummary>(
                 new java.util.function.Supplier<
                         ListResponderRecipeResponderRulesRequest.Builder>() {
@@ -2808,16 +2938,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResponderRecipes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResponderRecipes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResponderRecipesResponse> listResponderRecipesResponseIterator(
             final ListResponderRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResponderRecipesRequest.Builder, ListResponderRecipesRequest,
+                ListResponderRecipesRequest.Builder,
+                ListResponderRecipesRequest,
                 ListResponderRecipesResponse>(
                 new java.util.function.Supplier<ListResponderRecipesRequest.Builder>() {
                     @Override
@@ -2859,18 +2991,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRecipeSummary} objects
-     * contained in responses from the listResponderRecipes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResponderRecipeSummary} objects contained in responses from
+     * the listResponderRecipes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRecipeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResponderRecipeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResponderRecipeSummary>
             listResponderRecipesRecordIterator(final ListResponderRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResponderRecipesRequest.Builder, ListResponderRecipesRequest,
+                ListResponderRecipesRequest.Builder,
+                ListResponderRecipesRequest,
                 ListResponderRecipesResponse,
                 com.oracle.bmc.cloudguard.model.ResponderRecipeSummary>(
                 new java.util.function.Supplier<ListResponderRecipesRequest.Builder>() {
@@ -2922,16 +3057,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listResponderRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listResponderRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListResponderRulesResponse> listResponderRulesResponseIterator(
             final ListResponderRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListResponderRulesRequest.Builder, ListResponderRulesRequest,
+                ListResponderRulesRequest.Builder,
+                ListResponderRulesRequest,
                 ListResponderRulesResponse>(
                 new java.util.function.Supplier<ListResponderRulesRequest.Builder>() {
                     @Override
@@ -2973,19 +3110,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRuleSummary} objects
-     * contained in responses from the listResponderRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.ResponderRuleSummary} objects contained in responses from the
+     * listResponderRules operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.ResponderRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.ResponderRuleSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.ResponderRuleSummary>
             listResponderRulesRecordIterator(final ListResponderRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListResponderRulesRequest.Builder, ListResponderRulesRequest,
-                ListResponderRulesResponse, com.oracle.bmc.cloudguard.model.ResponderRuleSummary>(
+                ListResponderRulesRequest.Builder,
+                ListResponderRulesRequest,
+                ListResponderRulesResponse,
+                com.oracle.bmc.cloudguard.model.ResponderRuleSummary>(
                 new java.util.function.Supplier<ListResponderRulesRequest.Builder>() {
                     @Override
                     public ListResponderRulesRequest.Builder get() {
@@ -3035,16 +3175,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicies operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSecurityPolicies operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSecurityPoliciesResponse> listSecurityPoliciesResponseIterator(
             final ListSecurityPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
+                ListSecurityPoliciesRequest.Builder,
+                ListSecurityPoliciesRequest,
                 ListSecurityPoliciesResponse>(
                 new java.util.function.Supplier<ListSecurityPoliciesRequest.Builder>() {
                     @Override
@@ -3086,18 +3228,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects
-     * contained in responses from the listSecurityPolicies operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects contained in responses from
+     * the listSecurityPolicies operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SecurityPolicySummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SecurityPolicySummary>
             listSecurityPoliciesRecordIterator(final ListSecurityPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
+                ListSecurityPoliciesRequest.Builder,
+                ListSecurityPoliciesRequest,
                 ListSecurityPoliciesResponse,
                 com.oracle.bmc.cloudguard.model.SecurityPolicySummary>(
                 new java.util.function.Supplier<ListSecurityPoliciesRequest.Builder>() {
@@ -3149,16 +3294,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSecurityRecipes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSecurityRecipes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSecurityRecipesResponse> listSecurityRecipesResponseIterator(
             final ListSecurityRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityRecipesRequest.Builder, ListSecurityRecipesRequest,
+                ListSecurityRecipesRequest.Builder,
+                ListSecurityRecipesRequest,
                 ListSecurityRecipesResponse>(
                 new java.util.function.Supplier<ListSecurityRecipesRequest.Builder>() {
                     @Override
@@ -3200,19 +3347,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects
-     * contained in responses from the listSecurityRecipes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects contained in responses from
+     * the listSecurityRecipes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SecurityRecipeSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>
             listSecurityRecipesRecordIterator(final ListSecurityRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityRecipesRequest.Builder, ListSecurityRecipesRequest,
-                ListSecurityRecipesResponse, com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>(
+                ListSecurityRecipesRequest.Builder,
+                ListSecurityRecipesRequest,
+                ListSecurityRecipesResponse,
+                com.oracle.bmc.cloudguard.model.SecurityRecipeSummary>(
                 new java.util.function.Supplier<ListSecurityRecipesRequest.Builder>() {
                     @Override
                     public ListSecurityRecipesRequest.Builder get() {
@@ -3262,16 +3413,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSecurityZones operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSecurityZones operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSecurityZonesResponse> listSecurityZonesResponseIterator(
             final ListSecurityZonesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityZonesRequest.Builder, ListSecurityZonesRequest,
+                ListSecurityZonesRequest.Builder,
+                ListSecurityZonesRequest,
                 ListSecurityZonesResponse>(
                 new java.util.function.Supplier<ListSecurityZonesRequest.Builder>() {
                     @Override
@@ -3313,19 +3466,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects
-     * contained in responses from the listSecurityZones operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects contained in responses from the
+     * listSecurityZones operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SecurityZoneSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SecurityZoneSummary>
             listSecurityZonesRecordIterator(final ListSecurityZonesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityZonesRequest.Builder, ListSecurityZonesRequest,
-                ListSecurityZonesResponse, com.oracle.bmc.cloudguard.model.SecurityZoneSummary>(
+                ListSecurityZonesRequest.Builder,
+                ListSecurityZonesRequest,
+                ListSecurityZonesResponse,
+                com.oracle.bmc.cloudguard.model.SecurityZoneSummary>(
                 new java.util.function.Supplier<ListSecurityZonesRequest.Builder>() {
                     @Override
                     public ListSecurityZonesRequest.Builder get() {
@@ -3375,16 +3531,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSightingEndpoints operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSightingEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSightingEndpointsResponse> listSightingEndpointsResponseIterator(
             final ListSightingEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSightingEndpointsRequest.Builder, ListSightingEndpointsRequest,
+                ListSightingEndpointsRequest.Builder,
+                ListSightingEndpointsRequest,
                 ListSightingEndpointsResponse>(
                 new java.util.function.Supplier<ListSightingEndpointsRequest.Builder>() {
                     @Override
@@ -3427,18 +3586,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects
-     * contained in responses from the listSightingEndpoints operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects contained in responses from
+     * the listSightingEndpoints operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SightingEndpointSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SightingEndpointSummary>
             listSightingEndpointsRecordIterator(final ListSightingEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSightingEndpointsRequest.Builder, ListSightingEndpointsRequest,
+                ListSightingEndpointsRequest.Builder,
+                ListSightingEndpointsRequest,
                 ListSightingEndpointsResponse,
                 com.oracle.bmc.cloudguard.model.SightingEndpointSummary>(
                 new java.util.function.Supplier<ListSightingEndpointsRequest.Builder>() {
@@ -3491,17 +3653,20 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSightingImpactedResources operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSightingImpactedResources operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSightingImpactedResourcesResponse>
             listSightingImpactedResourcesResponseIterator(
                     final ListSightingImpactedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSightingImpactedResourcesRequest.Builder, ListSightingImpactedResourcesRequest,
+                ListSightingImpactedResourcesRequest.Builder,
+                ListSightingImpactedResourcesRequest,
                 ListSightingImpactedResourcesResponse>(
                 new java.util.function.Supplier<ListSightingImpactedResourcesRequest.Builder>() {
                     @Override
@@ -3545,19 +3710,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects
-     * contained in responses from the listSightingImpactedResources operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects contained in
+     * responses from the listSightingImpactedResources operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary>
             listSightingImpactedResourcesRecordIterator(
                     final ListSightingImpactedResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSightingImpactedResourcesRequest.Builder, ListSightingImpactedResourcesRequest,
+                ListSightingImpactedResourcesRequest.Builder,
+                ListSightingImpactedResourcesRequest,
                 ListSightingImpactedResourcesResponse,
                 com.oracle.bmc.cloudguard.model.SightingImpactedResourceSummary>(
                 new java.util.function.Supplier<ListSightingImpactedResourcesRequest.Builder>() {
@@ -3614,11 +3782,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSightings operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSightings
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSightingsResponse> listSightingsResponseIterator(
             final ListSightingsRequest request) {
@@ -3663,18 +3832,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.SightingSummary} objects
-     * contained in responses from the listSightings operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.SightingSummary} objects contained in responses from the
+     * listSightings operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.SightingSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.SightingSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.SightingSummary> listSightingsRecordIterator(
             final ListSightingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSightingsRequest.Builder, ListSightingsRequest, ListSightingsResponse,
+                ListSightingsRequest.Builder,
+                ListSightingsRequest,
+                ListSightingsResponse,
                 com.oracle.bmc.cloudguard.model.SightingSummary>(
                 new java.util.function.Supplier<ListSightingsRequest.Builder>() {
                     @Override
@@ -3724,11 +3896,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTactics operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTactics
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTacticsResponse> listTacticsResponseIterator(
             final ListTacticsRequest request) {
@@ -3773,18 +3946,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TacticSummary} objects
-     * contained in responses from the listTactics operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TacticSummary} objects contained in responses from the
+     * listTactics operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TacticSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TacticSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TacticSummary> listTacticsRecordIterator(
             final ListTacticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTacticsRequest.Builder, ListTacticsRequest, ListTacticsResponse,
+                ListTacticsRequest.Builder,
+                ListTacticsRequest,
+                ListTacticsResponse,
                 com.oracle.bmc.cloudguard.model.TacticSummary>(
                 new java.util.function.Supplier<ListTacticsRequest.Builder>() {
                     @Override
@@ -3834,11 +4010,13 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargetDetectorRecipeDetectorRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTargetDetectorRecipeDetectorRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTargetDetectorRecipeDetectorRulesResponse>
             listTargetDetectorRecipeDetectorRulesResponseIterator(
@@ -3891,13 +4069,15 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleSummary} objects
-     * contained in responses from the listTargetDetectorRecipeDetectorRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleSummary} objects contained in
+     * responses from the listTargetDetectorRecipeDetectorRules operation. This iterable will fetch
+     * more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleSummary} objects
+     *     contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TargetDetectorRecipeDetectorRuleSummary>
             listTargetDetectorRecipeDetectorRulesRecordIterator(
@@ -3964,16 +4144,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargetDetectorRecipes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTargetDetectorRecipes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTargetDetectorRecipesResponse> listTargetDetectorRecipesResponseIterator(
             final ListTargetDetectorRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTargetDetectorRecipesRequest.Builder, ListTargetDetectorRecipesRequest,
+                ListTargetDetectorRecipesRequest.Builder,
+                ListTargetDetectorRecipesRequest,
                 ListTargetDetectorRecipesResponse>(
                 new java.util.function.Supplier<ListTargetDetectorRecipesRequest.Builder>() {
                     @Override
@@ -4016,19 +4199,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary} objects
-     * contained in responses from the listTargetDetectorRecipes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary} objects contained in responses
+     * from the listTargetDetectorRecipes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary>
             listTargetDetectorRecipesRecordIterator(
                     final ListTargetDetectorRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTargetDetectorRecipesRequest.Builder, ListTargetDetectorRecipesRequest,
+                ListTargetDetectorRecipesRequest.Builder,
+                ListTargetDetectorRecipesRequest,
                 ListTargetDetectorRecipesResponse,
                 com.oracle.bmc.cloudguard.model.TargetDetectorRecipeSummary>(
                 new java.util.function.Supplier<ListTargetDetectorRecipesRequest.Builder>() {
@@ -4083,11 +4269,13 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargetResponderRecipeResponderRules operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTargetResponderRecipeResponderRules operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTargetResponderRecipeResponderRulesResponse>
             listTargetResponderRecipeResponderRulesResponseIterator(
@@ -4141,13 +4329,15 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleSummary} objects
-     * contained in responses from the listTargetResponderRecipeResponderRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleSummary} objects contained
+     * in responses from the listTargetResponderRecipeResponderRules operation. This iterable will
+     * fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleSummary} objects
+     *     contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TargetResponderRecipeResponderRuleSummary>
             listTargetResponderRecipeResponderRulesRecordIterator(
@@ -4216,16 +4406,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargetResponderRecipes operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listTargetResponderRecipes operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTargetResponderRecipesResponse> listTargetResponderRecipesResponseIterator(
             final ListTargetResponderRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTargetResponderRecipesRequest.Builder, ListTargetResponderRecipesRequest,
+                ListTargetResponderRecipesRequest.Builder,
+                ListTargetResponderRecipesRequest,
                 ListTargetResponderRecipesResponse>(
                 new java.util.function.Supplier<ListTargetResponderRecipesRequest.Builder>() {
                     @Override
@@ -4268,19 +4461,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary} objects
-     * contained in responses from the listTargetResponderRecipes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary} objects contained in responses
+     * from the listTargetResponderRecipes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary>
             listTargetResponderRecipesRecordIterator(
                     final ListTargetResponderRecipesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTargetResponderRecipesRequest.Builder, ListTargetResponderRecipesRequest,
+                ListTargetResponderRecipesRequest.Builder,
+                ListTargetResponderRecipesRequest,
                 ListTargetResponderRecipesResponse,
                 com.oracle.bmc.cloudguard.model.TargetResponderRecipeSummary>(
                 new java.util.function.Supplier<ListTargetResponderRecipesRequest.Builder>() {
@@ -4335,11 +4531,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargets operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTargets
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTargetsResponse> listTargetsResponseIterator(
             final ListTargetsRequest request) {
@@ -4384,18 +4581,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TargetSummary} objects
-     * contained in responses from the listTargets operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TargetSummary} objects contained in responses from the
+     * listTargets operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TargetSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TargetSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TargetSummary> listTargetsRecordIterator(
             final ListTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTargetsRequest.Builder, ListTargetsRequest, ListTargetsResponse,
+                ListTargetsRequest.Builder,
+                ListTargetsRequest,
+                ListTargetsResponse,
                 com.oracle.bmc.cloudguard.model.TargetSummary>(
                 new java.util.function.Supplier<ListTargetsRequest.Builder>() {
                     @Override
@@ -4445,11 +4645,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTechniques operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTechniques
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListTechniquesResponse> listTechniquesResponseIterator(
             final ListTechniquesRequest request) {
@@ -4494,18 +4695,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.TechniqueSummary} objects
-     * contained in responses from the listTechniques operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.TechniqueSummary} objects contained in responses from the
+     * listTechniques operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.TechniqueSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.TechniqueSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.TechniqueSummary> listTechniquesRecordIterator(
             final ListTechniquesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTechniquesRequest.Builder, ListTechniquesRequest, ListTechniquesResponse,
+                ListTechniquesRequest.Builder,
+                ListTechniquesRequest,
+                ListTechniquesResponse,
                 com.oracle.bmc.cloudguard.model.TechniqueSummary>(
                 new java.util.function.Supplier<ListTechniquesRequest.Builder>() {
                     @Override
@@ -4555,16 +4759,19 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -4607,19 +4814,23 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestError} objects
-     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.WorkRequestError} objects contained in responses from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestError} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.WorkRequestError} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse, com.oracle.bmc.cloudguard.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse,
+                com.oracle.bmc.cloudguard.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -4670,16 +4881,18 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -4721,19 +4934,22 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestLogEntry} objects
-     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.WorkRequestLogEntry} objects contained in responses from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestLogEntry} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.WorkRequestLogEntry} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse, com.oracle.bmc.cloudguard.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse,
+                com.oracle.bmc.cloudguard.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -4783,11 +4999,12 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -4833,18 +5050,21 @@ public class CloudGuardPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestSummary} objects
-     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.cloudguard.model.WorkRequestSummary} objects contained in responses from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudguard.model.WorkRequestSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.cloudguard.model.WorkRequestSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.cloudguard.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder,
+                ListWorkRequestsRequest,
+                ListWorkRequestsResponse,
                 com.oracle.bmc.cloudguard.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

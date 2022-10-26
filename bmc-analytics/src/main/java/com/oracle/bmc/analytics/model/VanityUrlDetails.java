@@ -5,20 +5,21 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Vanity url configuration details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Vanity url configuration details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VanityUrlDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VanityUrlDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VanityUrlDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "description", "urls", "hosts", "publicCertificate"})
     public VanityUrlDetails(
@@ -37,10 +38,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The vanity url unique identifier key.
-         *
-         **/
+        /** The vanity url unique identifier key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -49,16 +47,13 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /**
-         * Description of the vanity url.
-         *
-         **/
+        /** Description of the vanity url. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -67,16 +62,13 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * List of urls supported by this vanity URL definition (max of 3).
-         *
-         **/
+        /** List of urls supported by this vanity URL definition (max of 3). */
         @com.fasterxml.jackson.annotation.JsonProperty("urls")
         private java.util.List<String> urls;
 
@@ -85,16 +77,13 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param urls the value to set
          * @return this builder
-         **/
+         */
         public Builder urls(java.util.List<String> urls) {
             this.urls = urls;
             this.__explicitlySet__.add("urls");
             return this;
         }
-        /**
-         * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-         *
-         **/
+        /** List of fully qualified hostnames supported by this vanity URL definition (max of 3). */
         @com.fasterxml.jackson.annotation.JsonProperty("hosts")
         private java.util.List<String> hosts;
 
@@ -103,16 +92,13 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param hosts the value to set
          * @return this builder
-         **/
+         */
         public Builder hosts(java.util.List<String> hosts) {
             this.hosts = hosts;
             this.__explicitlySet__.add("hosts");
             return this;
         }
-        /**
-         * PEM certificate for HTTPS connections.
-         *
-         **/
+        /** PEM certificate for HTTPS connections. */
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
@@ -121,7 +107,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
          *
          * @param publicCertificate the value to set
          * @return this builder
-         **/
+         */
         public Builder publicCertificate(String publicCertificate) {
             this.publicCertificate = publicCertificate;
             this.__explicitlySet__.add("publicCertificate");
@@ -166,9 +152,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,10 +161,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The vanity url unique identifier key.
-     *
-     **/
+    /** The vanity url unique identifier key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -188,15 +169,12 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
      * The vanity url unique identifier key.
      *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
-    /**
-     * Description of the vanity url.
-     *
-     **/
+    /** Description of the vanity url. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -204,15 +182,12 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
      * Description of the vanity url.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * List of urls supported by this vanity URL definition (max of 3).
-     *
-     **/
+    /** List of urls supported by this vanity URL definition (max of 3). */
     @com.fasterxml.jackson.annotation.JsonProperty("urls")
     private final java.util.List<String> urls;
 
@@ -220,15 +195,12 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
      * List of urls supported by this vanity URL definition (max of 3).
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getUrls() {
         return urls;
     }
 
-    /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
-     *
-     **/
+    /** List of fully qualified hostnames supported by this vanity URL definition (max of 3). */
     @com.fasterxml.jackson.annotation.JsonProperty("hosts")
     private final java.util.List<String> hosts;
 
@@ -236,15 +208,12 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
      * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getHosts() {
         return hosts;
     }
 
-    /**
-     * PEM certificate for HTTPS connections.
-     *
-     **/
+    /** PEM certificate for HTTPS connections. */
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     private final String publicCertificate;
 
@@ -252,7 +221,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
      * PEM certificate for HTTPS connections.
      *
      * @return the value
-     **/
+     */
     public String getPublicCertificate() {
         return publicCertificate;
     }
@@ -264,6 +233,7 @@ public final class VanityUrlDetails extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,22 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * The dimensions to summarize record information for a given dataset.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The dimensions to summarize record information for a given dataset. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RecordAggregationDimensions.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RecordAggregationDimensions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RecordAggregationDimensions
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isLabeled", "annotationLabelContains"})
     public RecordAggregationDimensions(Boolean isLabeled, String annotationLabelContains) {
@@ -31,33 +31,31 @@ public final class RecordAggregationDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Whether or not the record has been labeled and has associated annotations.
-         **/
+        /** Whether or not the record has been labeled and has associated annotations. */
         @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
         private Boolean isLabeled;
 
         /**
          * Whether or not the record has been labeled and has associated annotations.
+         *
          * @param isLabeled the value to set
          * @return this builder
-         **/
+         */
         public Builder isLabeled(Boolean isLabeled) {
             this.isLabeled = isLabeled;
             this.__explicitlySet__.add("isLabeled");
             return this;
         }
-        /**
-         * Whether or not the annotation contains a label.
-         **/
+        /** Whether or not the annotation contains a label. */
         @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
         private String annotationLabelContains;
 
         /**
          * Whether or not the annotation contains a label.
+         *
          * @param annotationLabelContains the value to set
          * @return this builder
-         **/
+         */
         public Builder annotationLabelContains(String annotationLabelContains) {
             this.annotationLabelContains = annotationLabelContains;
             this.__explicitlySet__.add("annotationLabelContains");
@@ -88,9 +86,7 @@ public final class RecordAggregationDimensions
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,30 +95,28 @@ public final class RecordAggregationDimensions
         return new Builder().copy(this);
     }
 
-    /**
-     * Whether or not the record has been labeled and has associated annotations.
-     **/
+    /** Whether or not the record has been labeled and has associated annotations. */
     @com.fasterxml.jackson.annotation.JsonProperty("isLabeled")
     private final Boolean isLabeled;
 
     /**
      * Whether or not the record has been labeled and has associated annotations.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsLabeled() {
         return isLabeled;
     }
 
-    /**
-     * Whether or not the annotation contains a label.
-     **/
+    /** Whether or not the annotation contains a label. */
     @com.fasterxml.jackson.annotation.JsonProperty("annotationLabelContains")
     private final String annotationLabelContains;
 
     /**
      * Whether or not the annotation contains a label.
+     *
      * @return the value
-     **/
+     */
     public String getAnnotationLabelContains() {
         return annotationLabelContains;
     }
@@ -134,6 +128,7 @@ public final class RecordAggregationDimensions
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

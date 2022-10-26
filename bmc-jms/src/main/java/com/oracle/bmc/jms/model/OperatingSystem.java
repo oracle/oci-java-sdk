@@ -5,20 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Operating System of the platform on which the Java Runtime was reported.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Operating System of the platform on which the Java Runtime was reported. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OperatingSystem.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class OperatingSystem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class OperatingSystem
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "family",
@@ -43,33 +44,31 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The operating system type, such as Windows or Linux
-         **/
+        /** The operating system type, such as Windows or Linux */
         @com.fasterxml.jackson.annotation.JsonProperty("family")
         private OsFamily family;
 
         /**
          * The operating system type, such as Windows or Linux
+         *
          * @param family the value to set
          * @return this builder
-         **/
+         */
         public Builder family(OsFamily family) {
             this.family = family;
             this.__explicitlySet__.add("family");
             return this;
         }
-        /**
-         * The name of the operating system as provided by the Java system property os.name.
-         **/
+        /** The name of the operating system as provided by the Java system property os.name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the operating system as provided by the Java system property os.name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -77,15 +76,16 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * The version of the operating system as provided by the Java system property os.version.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the operating system as provided by the Java system property os.version.
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -93,31 +93,31 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * The architecture of the operating system as provided by the Java system property os.arch.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
         /**
          * The architecture of the operating system as provided by the Java system property os.arch.
+         *
          * @param architecture the value to set
          * @return this builder
-         **/
+         */
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /**
-         * Number of instances running the operating system
-         **/
+        /** Number of instances running the operating system */
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
         private Integer managedInstanceCount;
 
         /**
          * Number of instances running the operating system
+         *
          * @param managedInstanceCount the value to set
          * @return this builder
-         **/
+         */
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = managedInstanceCount;
             this.__explicitlySet__.add("managedInstanceCount");
@@ -162,9 +162,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,72 +171,67 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * The operating system type, such as Windows or Linux
-     **/
+    /** The operating system type, such as Windows or Linux */
     @com.fasterxml.jackson.annotation.JsonProperty("family")
     private final OsFamily family;
 
     /**
      * The operating system type, such as Windows or Linux
+     *
      * @return the value
-     **/
+     */
     public OsFamily getFamily() {
         return family;
     }
 
-    /**
-     * The name of the operating system as provided by the Java system property os.name.
-     **/
+    /** The name of the operating system as provided by the Java system property os.name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the operating system as provided by the Java system property os.name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The version of the operating system as provided by the Java system property os.version.
-     **/
+    /** The version of the operating system as provided by the Java system property os.version. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the operating system as provided by the Java system property os.version.
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
-    /**
-     * The architecture of the operating system as provided by the Java system property os.arch.
-     **/
+    /** The architecture of the operating system as provided by the Java system property os.arch. */
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
     /**
      * The architecture of the operating system as provided by the Java system property os.arch.
+     *
      * @return the value
-     **/
+     */
     public String getArchitecture() {
         return architecture;
     }
 
-    /**
-     * Number of instances running the operating system
-     **/
+    /** Number of instances running the operating system */
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
     private final Integer managedInstanceCount;
 
     /**
      * Number of instances running the operating system
+     *
      * @return the value
-     **/
+     */
     public Integer getManagedInstanceCount() {
         return managedInstanceCount;
     }
@@ -250,6 +243,7 @@ public final class OperatingSystem extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

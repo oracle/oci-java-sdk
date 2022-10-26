@@ -5,35 +5,33 @@
 package com.oracle.bmc.certificates.model;
 
 /**
- * The contents of the certificate, properties of the certificate (and certificate version), and user-provided contextual metadata for the certificate.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The contents of the certificate, properties of the certificate (and certificate version), and
+ * user-provided contextual metadata for the certificate. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "certificateBundleType",
-    defaultImpl = CertificateBundle.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "certificateBundleType",
+        defaultImpl = CertificateBundle.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CertificateBundlePublicOnly.class,
-        name = "CERTIFICATE_CONTENT_PUBLIC_ONLY"
-    ),
+            value = CertificateBundlePublicOnly.class,
+            name = "CERTIFICATE_CONTENT_PUBLIC_ONLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CertificateBundleWithPrivateKey.class,
-        name = "CERTIFICATE_CONTENT_WITH_PRIVATE_KEY"
-    )
+            value = CertificateBundleWithPrivateKey.class,
+            name = "CERTIFICATE_CONTENT_WITH_PRIVATE_KEY")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class CertificateBundle extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateId",
@@ -74,44 +72,41 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
         this.revocationStatus = revocationStatus;
     }
 
-    /**
-     * The OCID of the certificate.
-     **/
+    /** The OCID of the certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * The OCID of the certificate.
+     *
      * @return the value
-     **/
+     */
     public String getCertificateId() {
         return certificateId;
     }
 
-    /**
-     * The name of the certificate.
-     **/
+    /** The name of the certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     private final String certificateName;
 
     /**
      * The name of the certificate.
+     *
      * @return the value
-     **/
+     */
     public String getCertificateName() {
         return certificateName;
     }
 
-    /**
-     * The version number of the certificate.
-     **/
+    /** The version number of the certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("versionNumber")
     private final Long versionNumber;
 
     /**
      * The version number of the certificate.
+     *
      * @return the value
-     **/
+     */
     public Long getVersionNumber() {
         return versionNumber;
     }
@@ -119,8 +114,7 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
     /**
      * A unique certificate identifier used in certificate revocation tracking, formatted as octets.
      * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     private final String serialNumber;
 
@@ -129,53 +123,52 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
      * Example: {@code 03 AC FC FA CC B3 CB 02 B8 F8 DE F5 85 E7 7B FF}
      *
      * @return the value
-     **/
+     */
     public String getSerialNumber() {
         return serialNumber;
     }
 
-    /**
-     * The certificate in PEM format.
-     **/
+    /** The certificate in PEM format. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificatePem")
     private final String certificatePem;
 
     /**
      * The certificate in PEM format.
+     *
      * @return the value
-     **/
+     */
     public String getCertificatePem() {
         return certificatePem;
     }
 
-    /**
-     * The certificate chain (in PEM format) for the certificate bundle.
-     **/
+    /** The certificate chain (in PEM format) for the certificate bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("certChainPem")
     private final String certChainPem;
 
     /**
      * The certificate chain (in PEM format) for the certificate bundle.
+     *
      * @return the value
-     **/
+     */
     public String getCertChainPem() {
         return certChainPem;
     }
 
     /**
-     * An optional property indicating when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2019-04-03T21:10:29.600Z}
-     *
-     **/
+     * An optional property indicating when the certificate version was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * An optional property indicating when the certificate version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     * Example: {@code 2019-04-03T21:10:29.600Z}
+     * An optional property indicating when the certificate version was created, expressed in [RFC
+     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
+     * 2019-04-03T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -187,30 +180,28 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
         return validity;
     }
 
-    /**
-     * The name of the certificate version.
-     **/
+    /** The name of the certificate version. */
     @com.fasterxml.jackson.annotation.JsonProperty("versionName")
     private final String versionName;
 
     /**
      * The name of the certificate version.
+     *
      * @return the value
-     **/
+     */
     public String getVersionName() {
         return versionName;
     }
 
-    /**
-     * A list of rotation states for the certificate bundle.
-     **/
+    /** A list of rotation states for the certificate bundle. */
     @com.fasterxml.jackson.annotation.JsonProperty("stages")
     private final java.util.List<VersionStage> stages;
 
     /**
      * A list of rotation states for the certificate bundle.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<VersionStage> getStages() {
         return stages;
     }
@@ -229,6 +220,7 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -306,14 +298,14 @@ public class CertificateBundle extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * The type of certificate bundle, which indicates whether the private key fields are included.
-     **/
-    public enum CertificateBundleType {
+     */
+    public enum CertificateBundleType implements com.oracle.bmc.http.internal.BmcEnum {
         CertificateContentPublicOnly("CERTIFICATE_CONTENT_PUBLIC_ONLY"),
         CertificateContentWithPrivateKey("CERTIFICATE_CONTENT_WITH_PRIVATE_KEY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

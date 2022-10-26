@@ -5,42 +5,41 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Terminates the preemptible instance when it is interrupted for eviction.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Terminates the preemptible instance when it is interrupted for eviction. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = TerminatePreemptionAction.Builder.class
-)
+        builder = TerminatePreemptionAction.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class TerminatePreemptionAction extends PreemptionAction {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
-         *
-         **/
+         * Whether to preserve the boot volume that was used to launch the preemptible instance when
+         * the instance is terminated. By default, it is false if not specified.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("preserveBootVolume")
         private Boolean preserveBootVolume;
 
         /**
-         * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+         * Whether to preserve the boot volume that was used to launch the preemptible instance when
+         * the instance is terminated. By default, it is false if not specified.
          *
          * @param preserveBootVolume the value to set
          * @return this builder
-         **/
+         */
         public Builder preserveBootVolume(Boolean preserveBootVolume) {
             this.preserveBootVolume = preserveBootVolume;
             this.__explicitlySet__.add("preserveBootVolume");
@@ -68,9 +67,7 @@ public final class TerminatePreemptionAction extends PreemptionAction {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -86,17 +83,18 @@ public final class TerminatePreemptionAction extends PreemptionAction {
     }
 
     /**
-     * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
-     *
-     **/
+     * Whether to preserve the boot volume that was used to launch the preemptible instance when the
+     * instance is terminated. By default, it is false if not specified.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("preserveBootVolume")
     private final Boolean preserveBootVolume;
 
     /**
-     * Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+     * Whether to preserve the boot volume that was used to launch the preemptible instance when the
+     * instance is terminated. By default, it is false if not specified.
      *
      * @return the value
-     **/
+     */
     public Boolean getPreserveBootVolume() {
         return preserveBootVolume;
     }
@@ -108,6 +106,7 @@ public final class TerminatePreemptionAction extends PreemptionAction {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

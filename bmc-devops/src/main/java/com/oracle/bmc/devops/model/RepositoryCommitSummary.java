@@ -5,22 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Commit summary with commit information.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Commit summary with commit information. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = RepositoryCommitSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = RepositoryCommitSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class RepositoryCommitSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "commitId",
@@ -63,177 +63,180 @@ public final class RepositoryCommitSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Commit hash pointed to by reference name.
-         **/
+        /** Commit hash pointed to by reference name. */
         @com.fasterxml.jackson.annotation.JsonProperty("commitId")
         private String commitId;
 
         /**
          * Commit hash pointed to by reference name.
+         *
          * @param commitId the value to set
          * @return this builder
-         **/
+         */
         public Builder commitId(String commitId) {
             this.commitId = commitId;
             this.__explicitlySet__.add("commitId");
             return this;
         }
-        /**
-         * The commit message.
-         **/
+        /** The commit message. */
         @com.fasterxml.jackson.annotation.JsonProperty("commitMessage")
         private String commitMessage;
 
         /**
          * The commit message.
+         *
          * @param commitMessage the value to set
          * @return this builder
-         **/
+         */
         public Builder commitMessage(String commitMessage) {
             this.commitMessage = commitMessage;
             this.__explicitlySet__.add("commitMessage");
             return this;
         }
-        /**
-         * Name of the author of the repository.
-         **/
+        /** Name of the author of the repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorName")
         private String authorName;
 
         /**
          * Name of the author of the repository.
+         *
          * @param authorName the value to set
          * @return this builder
-         **/
+         */
         public Builder authorName(String authorName) {
             this.authorName = authorName;
             this.__explicitlySet__.add("authorName");
             return this;
         }
-        /**
-         * Email of the author of the repository.
-         **/
+        /** Email of the author of the repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
         private String authorEmail;
 
         /**
          * Email of the author of the repository.
+         *
          * @param authorEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder authorEmail(String authorEmail) {
             this.authorEmail = authorEmail;
             this.__explicitlySet__.add("authorEmail");
             return this;
         }
-        /**
-         * Name of who creates the commit.
-         **/
+        /** Name of who creates the commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("committerName")
         private String committerName;
 
         /**
          * Name of who creates the commit.
+         *
          * @param committerName the value to set
          * @return this builder
-         **/
+         */
         public Builder committerName(String committerName) {
             this.committerName = committerName;
             this.__explicitlySet__.add("committerName");
             return this;
         }
-        /**
-         * Email of who creates the commit.
-         **/
+        /** Email of who creates the commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("committerEmail")
         private String committerEmail;
 
         /**
          * Email of who creates the commit.
+         *
          * @param committerEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder committerEmail(String committerEmail) {
             this.committerEmail = committerEmail;
             this.__explicitlySet__.add("committerEmail");
             return this;
         }
-        /**
-         * An array of parent commit IDs of created commit.
-         **/
+        /** An array of parent commit IDs of created commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
         private java.util.List<String> parentCommitIds;
 
         /**
          * An array of parent commit IDs of created commit.
+         *
          * @param parentCommitIds the value to set
          * @return this builder
-         **/
+         */
         public Builder parentCommitIds(java.util.List<String> parentCommitIds) {
             this.parentCommitIds = parentCommitIds;
             this.__explicitlySet__.add("parentCommitIds");
             return this;
         }
-        /**
-         * The time to create the commit.
-         **/
+        /** The time to create the commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time to create the commit.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * Tree information for the specified commit.
-         **/
+        /** Tree information for the specified commit. */
         @com.fasterxml.jackson.annotation.JsonProperty("treeId")
         private String treeId;
 
         /**
          * Tree information for the specified commit.
+         *
          * @param treeId the value to set
          * @return this builder
-         **/
+         */
         public Builder treeId(String treeId) {
             this.treeId = treeId;
             this.__explicitlySet__.add("treeId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. See [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"bar-key": "value"}}
+         *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -303,9 +306,7 @@ public final class RepositoryCommitSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,156 +315,159 @@ public final class RepositoryCommitSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Commit hash pointed to by reference name.
-     **/
+    /** Commit hash pointed to by reference name. */
     @com.fasterxml.jackson.annotation.JsonProperty("commitId")
     private final String commitId;
 
     /**
      * Commit hash pointed to by reference name.
+     *
      * @return the value
-     **/
+     */
     public String getCommitId() {
         return commitId;
     }
 
-    /**
-     * The commit message.
-     **/
+    /** The commit message. */
     @com.fasterxml.jackson.annotation.JsonProperty("commitMessage")
     private final String commitMessage;
 
     /**
      * The commit message.
+     *
      * @return the value
-     **/
+     */
     public String getCommitMessage() {
         return commitMessage;
     }
 
-    /**
-     * Name of the author of the repository.
-     **/
+    /** Name of the author of the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorName")
     private final String authorName;
 
     /**
      * Name of the author of the repository.
+     *
      * @return the value
-     **/
+     */
     public String getAuthorName() {
         return authorName;
     }
 
-    /**
-     * Email of the author of the repository.
-     **/
+    /** Email of the author of the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("authorEmail")
     private final String authorEmail;
 
     /**
      * Email of the author of the repository.
+     *
      * @return the value
-     **/
+     */
     public String getAuthorEmail() {
         return authorEmail;
     }
 
-    /**
-     * Name of who creates the commit.
-     **/
+    /** Name of who creates the commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("committerName")
     private final String committerName;
 
     /**
      * Name of who creates the commit.
+     *
      * @return the value
-     **/
+     */
     public String getCommitterName() {
         return committerName;
     }
 
-    /**
-     * Email of who creates the commit.
-     **/
+    /** Email of who creates the commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("committerEmail")
     private final String committerEmail;
 
     /**
      * Email of who creates the commit.
+     *
      * @return the value
-     **/
+     */
     public String getCommitterEmail() {
         return committerEmail;
     }
 
-    /**
-     * An array of parent commit IDs of created commit.
-     **/
+    /** An array of parent commit IDs of created commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("parentCommitIds")
     private final java.util.List<String> parentCommitIds;
 
     /**
      * An array of parent commit IDs of created commit.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getParentCommitIds() {
         return parentCommitIds;
     }
 
-    /**
-     * The time to create the commit.
-     **/
+    /** The time to create the commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time to create the commit.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * Tree information for the specified commit.
-     **/
+    /** Tree information for the specified commit. */
     @com.fasterxml.jackson.annotation.JsonProperty("treeId")
     private final String treeId;
 
     /**
      * Tree information for the specified commit.
+     *
      * @return the value
-     **/
+     */
     public String getTreeId() {
         return treeId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. See [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"bar-key": "value"}}
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -475,6 +479,7 @@ public final class RepositoryCommitSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

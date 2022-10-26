@@ -8,10 +8,7 @@ import com.oracle.bmc.apigateway.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -24,17 +21,14 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request
-     * id.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request id.
      *
      * @return the value
      */
@@ -43,19 +37,14 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
-     *
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      */
     private String opcWorkRequestId;
 
     /**
-     * The OCID of the work request. Use
-     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-     * this id to track the status
-     * of the request.
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+     * getWorkRequest} with this id to track the status of the request.
      *
      * @return the value
      */
@@ -63,10 +52,7 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         return opcWorkRequestId;
     }
 
-    /**
-     * Location of the resource.
-     *
-     */
+    /** Location of the resource. */
     private String location;
 
     /**
@@ -78,13 +64,12 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         return location;
     }
 
-    /**
-     * The returned Certificate instance.
-     */
+    /** The returned Certificate instance. */
     private com.oracle.bmc.apigateway.model.Certificate certificate;
 
     /**
      * The returned Certificate instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.apigateway.model.Certificate getCertificate() {
@@ -102,7 +87,7 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreateCertificateResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -116,25 +101,25 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         this.certificate = certificate;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateCertificateResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -149,17 +134,14 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request
-         * id.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -170,19 +152,14 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
-         *
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          */
         private String opcWorkRequestId;
 
         /**
-         * The OCID of the work request. Use
-         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
-         * this id to track the status
-         * of the request.
+         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
+         * getWorkRequest} with this id to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -192,10 +169,7 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * Location of the resource.
-         *
-         */
+        /** Location of the resource. */
         private String location;
 
         /**
@@ -209,13 +183,12 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /**
-         * The returned Certificate instance.
-         */
+        /** The returned Certificate instance. */
         private com.oracle.bmc.apigateway.model.Certificate certificate;
 
         /**
          * The returned Certificate instance.
+         *
          * @param certificate the value to set
          * @return this builder
          */
@@ -226,8 +199,10 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateCertificateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -242,8 +217,10 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateCertificateResponse build() {
             return new CreateCertificateResponse(
                     __httpStatusCode__,
@@ -258,6 +235,7 @@ public class CreateCertificateResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

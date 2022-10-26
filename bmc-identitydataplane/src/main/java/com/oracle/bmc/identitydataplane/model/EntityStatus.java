@@ -5,19 +5,20 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class EntityStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class EntityStatus extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "inactiveBitMask"})
     public EntityStatus(String status, Long inactiveBitMask) {
@@ -28,45 +29,35 @@ public final class EntityStatus extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The entity status.
-         **/
+        /** The entity status. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The entity status.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * A bit mask showing the reason why the entity is inactive:
-         * - bit 0: ACTIVE
-         * - bit 1: SUSPENDED
-         * - bit 2: DISABLED
-         * - bit 3: BLOCKED
-         * - bit 4: LOCKED
-         *
-         **/
+         * A bit mask showing the reason why the entity is inactive: - bit 0: ACTIVE - bit 1:
+         * SUSPENDED - bit 2: DISABLED - bit 3: BLOCKED - bit 4: LOCKED
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveBitMask")
         private Long inactiveBitMask;
 
         /**
-         * A bit mask showing the reason why the entity is inactive:
-         * - bit 0: ACTIVE
-         * - bit 1: SUSPENDED
-         * - bit 2: DISABLED
-         * - bit 3: BLOCKED
-         * - bit 4: LOCKED
+         * A bit mask showing the reason why the entity is inactive: - bit 0: ACTIVE - bit 1:
+         * SUSPENDED - bit 2: DISABLED - bit 3: BLOCKED - bit 4: LOCKED
          *
          * @param inactiveBitMask the value to set
          * @return this builder
-         **/
+         */
         public Builder inactiveBitMask(Long inactiveBitMask) {
             this.inactiveBitMask = inactiveBitMask;
             this.__explicitlySet__.add("inactiveBitMask");
@@ -96,9 +87,7 @@ public final class EntityStatus extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,42 +96,32 @@ public final class EntityStatus extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * The entity status.
-     **/
+    /** The entity status. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The entity status.
+     *
      * @return the value
-     **/
+     */
     public String getStatus() {
         return status;
     }
 
     /**
-     * A bit mask showing the reason why the entity is inactive:
-     * - bit 0: ACTIVE
-     * - bit 1: SUSPENDED
-     * - bit 2: DISABLED
-     * - bit 3: BLOCKED
-     * - bit 4: LOCKED
-     *
-     **/
+     * A bit mask showing the reason why the entity is inactive: - bit 0: ACTIVE - bit 1: SUSPENDED
+     * - bit 2: DISABLED - bit 3: BLOCKED - bit 4: LOCKED
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveBitMask")
     private final Long inactiveBitMask;
 
     /**
-     * A bit mask showing the reason why the entity is inactive:
-     * - bit 0: ACTIVE
-     * - bit 1: SUSPENDED
-     * - bit 2: DISABLED
-     * - bit 3: BLOCKED
-     * - bit 4: LOCKED
+     * A bit mask showing the reason why the entity is inactive: - bit 0: ACTIVE - bit 1: SUSPENDED
+     * - bit 2: DISABLED - bit 3: BLOCKED - bit 4: LOCKED
      *
      * @return the value
-     **/
+     */
     public Long getInactiveBitMask() {
         return inactiveBitMask;
     }
@@ -154,6 +133,7 @@ public final class EntityStatus extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

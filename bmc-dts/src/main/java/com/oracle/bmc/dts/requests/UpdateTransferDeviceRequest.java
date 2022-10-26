@@ -6,57 +6,45 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferDeviceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTransferDeviceRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/UpdateTransferDeviceExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTransferDeviceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class UpdateTransferDeviceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.UpdateTransferDeviceDetails> {
 
-    /**
-     * ID of the Transfer Job
-     */
+    /** ID of the Transfer Job */
     private String id;
 
-    /**
-     * ID of the Transfer Job
-     */
+    /** ID of the Transfer Job */
     public String getId() {
         return id;
     }
-    /**
-     * Label of the Transfer Device
-     */
+    /** Label of the Transfer Device */
     private String transferDeviceLabel;
 
-    /**
-     * Label of the Transfer Device
-     */
+    /** Label of the Transfer Device */
     public String getTransferDeviceLabel() {
         return transferDeviceLabel;
     }
-    /**
-     * fields to update
-     */
+    /** fields to update */
     private com.oracle.bmc.dts.model.UpdateTransferDeviceDetails updateTransferDeviceDetails;
 
-    /**
-     * fields to update
-     */
+    /** fields to update */
     public com.oracle.bmc.dts.model.UpdateTransferDeviceDetails getUpdateTransferDeviceDetails() {
         return updateTransferDeviceDetails;
     }
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the
-     * object's tag matches the tag specified in the request.
-     *
+     * The entity tag to match. Optional, if set, the update will be successful only if the object's
+     * tag matches the tag specified in the request.
      */
     private String ifMatch;
 
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the
-     * object's tag matches the tag specified in the request.
-     *
+     * The entity tag to match. Optional, if set, the update will be successful only if the object's
+     * tag matches the tag specified in the request.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -64,6 +52,7 @@ public class UpdateTransferDeviceRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -76,17 +65,15 @@ public class UpdateTransferDeviceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTransferDeviceRequest,
                     com.oracle.bmc.dts.model.UpdateTransferDeviceDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * ID of the Transfer Job
-         */
+        /** ID of the Transfer Job */
         private String id = null;
 
         /**
          * ID of the Transfer Job
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -95,13 +82,12 @@ public class UpdateTransferDeviceRequest
             return this;
         }
 
-        /**
-         * Label of the Transfer Device
-         */
+        /** Label of the Transfer Device */
         private String transferDeviceLabel = null;
 
         /**
          * Label of the Transfer Device
+         *
          * @param transferDeviceLabel the value to set
          * @return this builder instance
          */
@@ -110,14 +96,13 @@ public class UpdateTransferDeviceRequest
             return this;
         }
 
-        /**
-         * fields to update
-         */
+        /** fields to update */
         private com.oracle.bmc.dts.model.UpdateTransferDeviceDetails updateTransferDeviceDetails =
                 null;
 
         /**
          * fields to update
+         *
          * @param updateTransferDeviceDetails the value to set
          * @return this builder instance
          */
@@ -130,7 +115,6 @@ public class UpdateTransferDeviceRequest
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
-         *
          */
         private String ifMatch = null;
 
@@ -148,18 +132,19 @@ public class UpdateTransferDeviceRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -171,6 +156,7 @@ public class UpdateTransferDeviceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateTransferDeviceRequest o) {
@@ -186,10 +172,11 @@ public class UpdateTransferDeviceRequest
         /**
          * Build the instance of UpdateTransferDeviceRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateTransferDeviceRequest
          */
@@ -202,6 +189,7 @@ public class UpdateTransferDeviceRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,7 +202,8 @@ public class UpdateTransferDeviceRequest
         /**
          * Build the instance of UpdateTransferDeviceRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTransferDeviceRequest
@@ -226,12 +215,14 @@ public class UpdateTransferDeviceRequest
             request.updateTransferDeviceDetails = updateTransferDeviceDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateTransferDeviceRequest(id, transferDeviceLabel, updateTransferDeviceDetails, ifMatch);
+            // new UpdateTransferDeviceRequest(id, transferDeviceLabel, updateTransferDeviceDetails,
+            // ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,6 +235,7 @@ public class UpdateTransferDeviceRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

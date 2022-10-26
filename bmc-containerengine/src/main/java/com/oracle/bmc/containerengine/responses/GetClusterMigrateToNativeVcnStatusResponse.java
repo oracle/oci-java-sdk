@@ -9,13 +9,12 @@ import com.oracle.bmc.containerengine.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class GetClusterMigrateToNativeVcnStatusResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -25,7 +24,6 @@ public class GetClusterMigrateToNativeVcnStatusResponse
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -39,14 +37,13 @@ public class GetClusterMigrateToNativeVcnStatusResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned ClusterMigrateToNativeVcnStatus instance.
-     */
+    /** The returned ClusterMigrateToNativeVcnStatus instance. */
     private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
             clusterMigrateToNativeVcnStatus;
 
     /**
      * The returned ClusterMigrateToNativeVcnStatus instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
@@ -63,7 +60,7 @@ public class GetClusterMigrateToNativeVcnStatusResponse
     })
     private GetClusterMigrateToNativeVcnStatusResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
@@ -74,28 +71,31 @@ public class GetClusterMigrateToNativeVcnStatusResponse
         this.clusterMigrateToNativeVcnStatus = clusterMigrateToNativeVcnStatus;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetClusterMigrateToNativeVcnStatusResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -107,7 +107,6 @@ public class GetClusterMigrateToNativeVcnStatusResponse
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -123,14 +122,13 @@ public class GetClusterMigrateToNativeVcnStatusResponse
             return this;
         }
 
-        /**
-         * The returned ClusterMigrateToNativeVcnStatus instance.
-         */
+        /** The returned ClusterMigrateToNativeVcnStatus instance. */
         private com.oracle.bmc.containerengine.model.ClusterMigrateToNativeVcnStatus
                 clusterMigrateToNativeVcnStatus;
 
         /**
          * The returned ClusterMigrateToNativeVcnStatus instance.
+         *
          * @param clusterMigrateToNativeVcnStatus the value to set
          * @return this builder
          */
@@ -143,8 +141,10 @@ public class GetClusterMigrateToNativeVcnStatusResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetClusterMigrateToNativeVcnStatusResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -157,8 +157,10 @@ public class GetClusterMigrateToNativeVcnStatusResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetClusterMigrateToNativeVcnStatusResponse build() {
             return new GetClusterMigrateToNativeVcnStatusResponse(
                     __httpStatusCode__,
@@ -171,6 +173,7 @@ public class GetClusterMigrateToNativeVcnStatusResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

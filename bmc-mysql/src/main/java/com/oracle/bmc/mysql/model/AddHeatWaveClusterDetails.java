@@ -5,23 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Details required to add a HeatWave cluster.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details required to add a HeatWave cluster. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AddHeatWaveClusterDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = AddHeatWaveClusterDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AddHeatWaveClusterDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shapeName", "clusterSize"})
     public AddHeatWaveClusterDetails(String shapeName, Integer clusterSize) {
@@ -32,41 +31,31 @@ public final class AddHeatWaveClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The shape determines resources to allocate to the HeatWave
-         * nodes - CPU cores, memory.
-         *
-         **/
+        /** The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * The shape determines resources to allocate to the HeatWave
-         * nodes - CPU cores, memory.
+         * The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
          *
          * @param shapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /**
-         * The number of analytics-processing nodes provisioned for the
-         * HeatWave cluster.
-         *
-         **/
+        /** The number of analytics-processing nodes provisioned for the HeatWave cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
         private Integer clusterSize;
 
         /**
-         * The number of analytics-processing nodes provisioned for the
-         * HeatWave cluster.
+         * The number of analytics-processing nodes provisioned for the HeatWave cluster.
          *
          * @param clusterSize the value to set
          * @return this builder
-         **/
+         */
         public Builder clusterSize(Integer clusterSize) {
             this.clusterSize = clusterSize;
             this.__explicitlySet__.add("clusterSize");
@@ -97,9 +86,7 @@ public final class AddHeatWaveClusterDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,38 +95,28 @@ public final class AddHeatWaveClusterDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The shape determines resources to allocate to the HeatWave
-     * nodes - CPU cores, memory.
-     *
-     **/
+    /** The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * The shape determines resources to allocate to the HeatWave
-     * nodes - CPU cores, memory.
+     * The shape determines resources to allocate to the HeatWave nodes - CPU cores, memory.
      *
      * @return the value
-     **/
+     */
     public String getShapeName() {
         return shapeName;
     }
 
-    /**
-     * The number of analytics-processing nodes provisioned for the
-     * HeatWave cluster.
-     *
-     **/
+    /** The number of analytics-processing nodes provisioned for the HeatWave cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("clusterSize")
     private final Integer clusterSize;
 
     /**
-     * The number of analytics-processing nodes provisioned for the
-     * HeatWave cluster.
+     * The number of analytics-processing nodes provisioned for the HeatWave cluster.
      *
      * @return the value
-     **/
+     */
     public Integer getClusterSize() {
         return clusterSize;
     }
@@ -151,6 +128,7 @@ public final class AddHeatWaveClusterDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

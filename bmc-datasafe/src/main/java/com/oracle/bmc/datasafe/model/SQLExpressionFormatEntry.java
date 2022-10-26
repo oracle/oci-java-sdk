@@ -5,30 +5,27 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The SQL Expression masking format uses a SQL expression to generate values
- * that are used to replace the original data values. SQL expressions with
- * dbms_lob and other user-defined functions can be used to mask columns of
- * Large Object data type (LOB). To learn more, check SQL Expression in the
- * Data Safe documentation.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The SQL Expression masking format uses a SQL expression to generate values that are used to
+ * replace the original data values. SQL expressions with dbms_lob and other user-defined functions
+ * can be used to mask columns of Large Object data type (LOB). To learn more, check SQL Expression
+ * in the Data Safe documentation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SQLExpressionFormatEntry.Builder.class
-)
+        builder = SQLExpressionFormatEntry.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SQLExpressionFormatEntry extends FormatEntry {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -41,26 +38,23 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
             return this;
         }
         /**
-         * The SQL expression to be used to generate the masked values. It can
-         * consist of one or more values, operators, and SQL functions that
-         * evaluate to a value. It can also contain substitution columns from
-         * the same table. Specify the substitution columns within percent (%)
-         * symbols.
-         *
-         **/
+         * The SQL expression to be used to generate the masked values. It can consist of one or
+         * more values, operators, and SQL functions that evaluate to a value. It can also contain
+         * substitution columns from the same table. Specify the substitution columns within percent
+         * (%) symbols.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlExpression")
         private String sqlExpression;
 
         /**
-         * The SQL expression to be used to generate the masked values. It can
-         * consist of one or more values, operators, and SQL functions that
-         * evaluate to a value. It can also contain substitution columns from
-         * the same table. Specify the substitution columns within percent (%)
-         * symbols.
+         * The SQL expression to be used to generate the masked values. It can consist of one or
+         * more values, operators, and SQL functions that evaluate to a value. It can also contain
+         * substitution columns from the same table. Specify the substitution columns within percent
+         * (%) symbols.
          *
          * @param sqlExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlExpression(String sqlExpression) {
             this.sqlExpression = sqlExpression;
             this.__explicitlySet__.add("sqlExpression");
@@ -91,9 +85,7 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,25 +101,22 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
     }
 
     /**
-     * The SQL expression to be used to generate the masked values. It can
-     * consist of one or more values, operators, and SQL functions that
-     * evaluate to a value. It can also contain substitution columns from
-     * the same table. Specify the substitution columns within percent (%)
+     * The SQL expression to be used to generate the masked values. It can consist of one or more
+     * values, operators, and SQL functions that evaluate to a value. It can also contain
+     * substitution columns from the same table. Specify the substitution columns within percent (%)
      * symbols.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlExpression")
     private final String sqlExpression;
 
     /**
-     * The SQL expression to be used to generate the masked values. It can
-     * consist of one or more values, operators, and SQL functions that
-     * evaluate to a value. It can also contain substitution columns from
-     * the same table. Specify the substitution columns within percent (%)
+     * The SQL expression to be used to generate the masked values. It can consist of one or more
+     * values, operators, and SQL functions that evaluate to a value. It can also contain
+     * substitution columns from the same table. Specify the substitution columns within percent (%)
      * symbols.
      *
      * @return the value
-     **/
+     */
     public String getSqlExpression() {
         return sqlExpression;
     }
@@ -139,6 +128,7 @@ public final class SQLExpressionFormatEntry extends FormatEntry {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

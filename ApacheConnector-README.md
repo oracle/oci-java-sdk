@@ -1,3 +1,7 @@
+```
+TODO: DEX-14784 - this document has to be rewritten
+```
+
 # Apache Connector
 
 The Java SDK now by default uses the `ApacheConnector` instead of the Jersey default `HttpUrlConnector` to send requests to the service.

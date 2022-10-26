@@ -5,22 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Information detailing the state of a module stream profile
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information detailing the state of a module stream profile <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateModuleStreamProfileDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateModuleStreamProfileDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateModuleStreamProfileDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"profileName", "status", "isDefault", "timeModified"})
     public UpdateModuleStreamProfileDetails(
@@ -34,17 +34,16 @@ public final class UpdateModuleStreamProfileDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The name of the profile of the parent stream
-         **/
+        /** The name of the profile of the parent stream */
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
         /**
          * The name of the profile of the parent stream
+         *
          * @param profileName the value to set
          * @return this builder
-         **/
+         */
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
@@ -52,67 +51,60 @@ public final class UpdateModuleStreamProfileDetails
         }
         /**
          * The status of the profile.
-         * <p>
-         * A profile with the "INSTALLED" status indicates that the
-         * profile has been installed.
-         * <p>
-         * A profile with the "AVAILABLE" status indicates that the
-         * profile is not installed, but can be.
          *
-         **/
+         * <p>A profile with the "INSTALLED" status indicates that the profile has been installed.
+         *
+         * <p>A profile with the "AVAILABLE" status indicates that the profile is not installed, but
+         * can be.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the profile.
-         * <p>
-         * A profile with the "INSTALLED" status indicates that the
-         * profile has been installed.
-         * <p>
-         * A profile with the "AVAILABLE" status indicates that the
-         * profile is not installed, but can be.
+         *
+         * <p>A profile with the "INSTALLED" status indicates that the profile has been installed.
+         *
+         * <p>A profile with the "AVAILABLE" status indicates that the profile is not installed, but
+         * can be.
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Indicates if the module stream profile is the default
-         **/
+        /** Indicates if the module stream profile is the default */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * Indicates if the module stream profile is the default
+         *
          * @param isDefault the value to set
          * @return this builder
-         **/
+         */
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
         /**
-         * The date and time of the last status change for this object, as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
-         *
-         **/
+         * The date and time of the last status change for this object, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The date and time of the last status change for this object, as
-         * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-         * section 14.29.
+         * The date and time of the last status change for this object, as described in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeModified the value to set
          * @return this builder
-         **/
+         */
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
@@ -150,9 +142,7 @@ public final class UpdateModuleStreamProfileDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -161,31 +151,28 @@ public final class UpdateModuleStreamProfileDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The name of the profile of the parent stream
-     **/
+    /** The name of the profile of the parent stream */
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
     /**
      * The name of the profile of the parent stream
+     *
      * @return the value
-     **/
+     */
     public String getProfileName() {
         return profileName;
     }
 
     /**
      * The status of the profile.
-     * <p>
-     * A profile with the "INSTALLED" status indicates that the
-     * profile has been installed.
-     * <p>
-     * A profile with the "AVAILABLE" status indicates that the
-     * profile is not installed, but can be.
      *
-     **/
-    public enum Status {
+     * <p>A profile with the "INSTALLED" status indicates that the profile has been installed.
+     *
+     * <p>A profile with the "AVAILABLE" status indicates that the profile is not installed, but can
+     * be.
+     */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Installed("INSTALLED"),
         Available("AVAILABLE"),
         ;
@@ -219,62 +206,55 @@ public final class UpdateModuleStreamProfileDetails
     };
     /**
      * The status of the profile.
-     * <p>
-     * A profile with the "INSTALLED" status indicates that the
-     * profile has been installed.
-     * <p>
-     * A profile with the "AVAILABLE" status indicates that the
-     * profile is not installed, but can be.
      *
-     **/
+     * <p>A profile with the "INSTALLED" status indicates that the profile has been installed.
+     *
+     * <p>A profile with the "AVAILABLE" status indicates that the profile is not installed, but can
+     * be.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the profile.
-     * <p>
-     * A profile with the "INSTALLED" status indicates that the
-     * profile has been installed.
-     * <p>
-     * A profile with the "AVAILABLE" status indicates that the
-     * profile is not installed, but can be.
+     *
+     * <p>A profile with the "INSTALLED" status indicates that the profile has been installed.
+     *
+     * <p>A profile with the "AVAILABLE" status indicates that the profile is not installed, but can
+     * be.
      *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * Indicates if the module stream profile is the default
-     **/
+    /** Indicates if the module stream profile is the default */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * Indicates if the module stream profile is the default
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsDefault() {
         return isDefault;
     }
 
     /**
-     * The date and time of the last status change for this object, as
-     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
-     *
-     **/
+     * The date and time of the last status change for this object, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The date and time of the last status change for this object, as
-     * described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339),
-     * section 14.29.
+     * The date and time of the last status change for this object, as described in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeModified() {
         return timeModified;
     }
@@ -286,6 +266,7 @@ public final class UpdateModuleStreamProfileDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -11,7 +11,6 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,10 +24,7 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /**
-     * The number of seconds that the client should wait before polling again.
-     *
-     */
+    /** The number of seconds that the client should wait before polling again. */
     private Float retryAfter;
 
     /**
@@ -41,17 +37,16 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -59,13 +54,12 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
-     */
+    /** A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances. */
     private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary> items;
 
     /**
      * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary> getItems() {
@@ -82,7 +76,7 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
     })
     private ListTaggingWorkRequestLogsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             Float retryAfter,
             String opcNextPage,
@@ -94,17 +88,21 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListTaggingWorkRequestLogsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -112,7 +110,6 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -128,10 +125,7 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * The number of seconds that the client should wait before polling again.
-         *
-         */
+        /** The number of seconds that the client should wait before polling again. */
         private Float retryAfter;
 
         /**
@@ -146,17 +140,16 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -166,13 +159,12 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
-         */
+        /** A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances. */
         private java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary> items;
 
         /**
          * A list of com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -184,8 +176,10 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListTaggingWorkRequestLogsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -199,8 +193,10 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListTaggingWorkRequestLogsResponse build() {
             return new ListTaggingWorkRequestLogsResponse(
                     __httpStatusCode__, headers, opcRequestId, retryAfter, opcNextPage, items);
@@ -209,6 +205,7 @@ public class ListTaggingWorkRequestLogsResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

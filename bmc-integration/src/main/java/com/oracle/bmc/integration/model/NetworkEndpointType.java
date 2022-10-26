@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.integration.model;
 
-/**
- * Public endpoint access type.
- *
- **/
+/** Public endpoint access type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
-public enum NetworkEndpointType {
+public enum NetworkEndpointType implements com.oracle.bmc.http.internal.BmcEnum {
     Public("PUBLIC"),
 
     /**

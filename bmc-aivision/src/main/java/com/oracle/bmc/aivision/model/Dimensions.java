@@ -5,19 +5,20 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The width and height of a page.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The width and height of a page. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Dimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Dimensions extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"width", "height", "unit"})
     public Dimensions(Double width, Double height, Unit unit) {
@@ -29,49 +30,46 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * the width of a page.
-         **/
+        /** the width of a page. */
         @com.fasterxml.jackson.annotation.JsonProperty("width")
         private Double width;
 
         /**
          * the width of a page.
+         *
          * @param width the value to set
          * @return this builder
-         **/
+         */
         public Builder width(Double width) {
             this.width = width;
             this.__explicitlySet__.add("width");
             return this;
         }
-        /**
-         * The height of a page.
-         **/
+        /** The height of a page. */
         @com.fasterxml.jackson.annotation.JsonProperty("height")
         private Double height;
 
         /**
          * The height of a page.
+         *
          * @param height the value to set
          * @return this builder
-         **/
+         */
         public Builder height(Double height) {
             this.height = height;
             this.__explicitlySet__.add("height");
             return this;
         }
-        /**
-         * The unit of length.
-         **/
+        /** The unit of length. */
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
         /**
          * The unit of length.
+         *
          * @param unit the value to set
          * @return this builder
-         **/
+         */
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -104,9 +102,7 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,44 +111,40 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /**
-     * the width of a page.
-     **/
+    /** the width of a page. */
     @com.fasterxml.jackson.annotation.JsonProperty("width")
     private final Double width;
 
     /**
      * the width of a page.
+     *
      * @return the value
-     **/
+     */
     public Double getWidth() {
         return width;
     }
 
-    /**
-     * The height of a page.
-     **/
+    /** The height of a page. */
     @com.fasterxml.jackson.annotation.JsonProperty("height")
     private final Double height;
 
     /**
      * The height of a page.
+     *
      * @return the value
-     **/
+     */
     public Double getHeight() {
         return height;
     }
 
-    /**
-     * The unit of length.
-     **/
-    public enum Unit {
+    /** The unit of length. */
+    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
         Pixel("PIXEL"),
         Inch("INCH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -189,16 +181,15 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /**
-     * The unit of length.
-     **/
+    /** The unit of length. */
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
     /**
      * The unit of length.
+     *
      * @return the value
-     **/
+     */
     public Unit getUnit() {
         return unit;
     }
@@ -210,6 +201,7 @@ public final class Dimensions extends com.oracle.bmc.http.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

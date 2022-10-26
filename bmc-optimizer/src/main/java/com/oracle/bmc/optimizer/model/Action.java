@@ -5,20 +5,20 @@
 package com.oracle.bmc.optimizer.model;
 
 /**
- * Details about the recommended action.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the recommended action. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Action.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "description", "url"})
     public Action(ActionType type, String description, String url) {
@@ -30,49 +30,46 @@ public final class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The status of the resource action.
-         **/
+        /** The status of the resource action. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ActionType type;
 
         /**
          * The status of the resource action.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(ActionType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Text describing the recommended action.
-         **/
+        /** Text describing the recommended action. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Text describing the recommended action.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The URL path to documentation that explains how to perform the action.
-         **/
+        /** The URL path to documentation that explains how to perform the action. */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The URL path to documentation that explains how to perform the action.
+         *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -105,9 +102,7 @@ public final class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +111,41 @@ public final class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return new Builder().copy(this);
     }
 
-    /**
-     * The status of the resource action.
-     **/
+    /** The status of the resource action. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ActionType type;
 
     /**
      * The status of the resource action.
+     *
      * @return the value
-     **/
+     */
     public ActionType getType() {
         return type;
     }
 
-    /**
-     * Text describing the recommended action.
-     **/
+    /** Text describing the recommended action. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Text describing the recommended action.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The URL path to documentation that explains how to perform the action.
-     **/
+    /** The URL path to documentation that explains how to perform the action. */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The URL path to documentation that explains how to perform the action.
+     *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
@@ -165,6 +157,7 @@ public final class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

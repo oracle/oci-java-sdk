@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Security Ratings
- **/
+/** Security Ratings */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum SecurityRating {
+public enum SecurityRating implements com.oracle.bmc.http.internal.BmcEnum {
     Excellent("EXCELLENT"),
     Good("GOOD"),
     Fair("FAIR"),

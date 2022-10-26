@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/**
- * The type of action.
- **/
+/** The type of action. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum ActionType {
+public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

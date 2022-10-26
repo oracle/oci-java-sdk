@@ -5,19 +5,21 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The limit and usage for a specific environment type, for example, production, development, or test.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The limit and usage for a specific environment type, for example, production, development, or
+ * test. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LimitAndUsage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LimitAndUsage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LimitAndUsage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"limit", "usage"})
     public LimitAndUsage(Integer limit, Integer usage) {
@@ -28,33 +30,31 @@ public final class LimitAndUsage extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The limit of current environment.
-         **/
+        /** The limit of current environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private Integer limit;
 
         /**
          * The limit of current environment.
+         *
          * @param limit the value to set
          * @return this builder
-         **/
+         */
         public Builder limit(Integer limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
             return this;
         }
-        /**
-         * The usage of current environment.
-         **/
+        /** The usage of current environment. */
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Integer usage;
 
         /**
          * The usage of current environment.
+         *
          * @param usage the value to set
          * @return this builder
-         **/
+         */
         public Builder usage(Integer usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
@@ -84,9 +84,7 @@ public final class LimitAndUsage extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class LimitAndUsage extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The limit of current environment.
-     **/
+    /** The limit of current environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final Integer limit;
 
     /**
      * The limit of current environment.
+     *
      * @return the value
-     **/
+     */
     public Integer getLimit() {
         return limit;
     }
 
-    /**
-     * The usage of current environment.
-     **/
+    /** The usage of current environment. */
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Integer usage;
 
     /**
      * The usage of current environment.
+     *
      * @return the value
-     **/
+     */
     public Integer getUsage() {
         return usage;
     }
@@ -130,6 +126,7 @@ public final class LimitAndUsage extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -13,18 +13,17 @@ import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Factory class to create new {@link Service} instances.
- * <p>
- * This serves to ensure conflicting definitions of services
- * don't get created.
+ *
+ * <p>This serves to ensure conflicting definitions of services don't get created.
  */
 public class Services {
     private static final Map<String, Service> SERVICE_CACHE = new HashMap<>();
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Services.class);
 
     /**
-     * Create a new service definition.  If the service has already been registered
-     * with different values, an IllegalArgumentException will be raised.  If the
-     * service has already been registered, the existing definition will be returned.
+     * Create a new service definition. If the service has already been registered with different
+     * values, an IllegalArgumentException will be raised. If the service has already been
+     * registered, the existing definition will be returned.
      *
      * @param serviceName The unique service name.
      * @param serviceEndpointPrefix The endpoint prefix.
@@ -70,9 +69,7 @@ public class Services {
             throw new IllegalArgumentException(
                     String.format(
                             "Cannot redefine service '%s'. Existing: '%s', New: '%s'",
-                            serviceName,
-                            existing,
-                            newInstance));
+                            serviceName, existing, newInstance));
         }
         LOG.info("Registering new service: {}", newInstance);
         SERVICE_CACHE.put(serviceName, newInstance);

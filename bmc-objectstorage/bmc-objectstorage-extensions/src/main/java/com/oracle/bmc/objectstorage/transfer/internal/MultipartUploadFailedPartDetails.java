@@ -5,8 +5,8 @@
 package com.oracle.bmc.objectstorage.transfer.internal;
 
 /**
- * MultipartUploadFailedPartDetails has details about the part number and
- * the failure cause for the failed upload part
+ * MultipartUploadFailedPartDetails has details about the part number and the failure cause for the
+ * failed upload part
  */
 public final class MultipartUploadFailedPartDetails {
     private final int partNumber;

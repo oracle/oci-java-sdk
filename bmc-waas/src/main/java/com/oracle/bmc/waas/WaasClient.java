@@ -4,335 +4,39 @@
  */
 package com.oracle.bmc.waas;
 
-import com.oracle.bmc.waas.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-public class WaasClient implements Waas {
-    /**
-     * Service instance for Waas.
-     */
+public class WaasClient extends com.oracle.bmc.http.internal.BaseSyncClient implements Waas {
+    /** Service instance for Waas. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WAAS")
                     .serviceEndpointPrefix("waas")
                     .serviceEndpointTemplate("https://waas.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(WaasAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final WaasWaiters waiters;
 
     private final WaasPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public WaasClient(
+    private WaasClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public WaasClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected WaasClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -354,28 +58,11 @@ public class WaasClient implements Waas {
         this.waiters = new WaasWaiters(executorService, this);
 
         this.paginators = new WaasPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -383,8 +70,8 @@ public class WaasClient implements Waas {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, WaasClient> {
@@ -399,6 +86,7 @@ public class WaasClient implements Waas {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -409,2715 +97,2273 @@ public class WaasClient implements Waas {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public WaasClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new WaasClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new WaasClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public AcceptRecommendationsResponse acceptRecommendations(
             AcceptRecommendationsRequest request) {
-        LOG.trace("Called acceptRecommendations");
-        final AcceptRecommendationsRequest interceptedRequest =
-                AcceptRecommendationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AcceptRecommendationsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getProtectionRuleKeys(), "protectionRuleKeys is required");
+
+        return clientCall(request, AcceptRecommendationsResponse::builder)
+                .logger(LOG, "acceptRecommendations")
+                .serviceDetails(
                         "Waas",
                         "AcceptRecommendations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations");
-        java.util.function.Function<javax.ws.rs.core.Response, AcceptRecommendationsResponse>
-                transformer =
-                        AcceptRecommendationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getProtectionRuleKeys(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/AcceptRecommendations")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AcceptRecommendationsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("acceptWafConfigRecommendations")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AcceptRecommendationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AcceptRecommendationsResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
-        LOG.trace("Called cancelWorkRequest");
-        final CancelWorkRequestRequest interceptedRequest =
-                CancelWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, CancelWorkRequestResponse::builder)
+                .logger(LOG, "cancelWorkRequest")
+                .serviceDetails(
                         "Waas",
                         "CancelWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
-                transformer =
-                        CancelWorkRequestConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/CancelWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(CancelWorkRequestRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeAddressListCompartmentResponse changeAddressListCompartment(
             ChangeAddressListCompartmentRequest request) {
-        LOG.trace("Called changeAddressListCompartment");
-        final ChangeAddressListCompartmentRequest interceptedRequest =
-                ChangeAddressListCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeAddressListCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAddressListCompartmentDetails(),
+                "changeAddressListCompartmentDetails is required");
+
+        return clientCall(request, ChangeAddressListCompartmentResponse::builder)
+                .logger(LOG, "changeAddressListCompartment")
+                .serviceDetails(
                         "Waas",
                         "ChangeAddressListCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
-                transformer =
-                        ChangeAddressListCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeAddressListCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ChangeAddressListCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAddressListCompartmentRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .appendPathParam(request.getAddressListId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAddressListCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request) {
-        LOG.trace("Called changeCertificateCompartment");
-        final ChangeCertificateCompartmentRequest interceptedRequest =
-                ChangeCertificateCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCertificateCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCertificateCompartmentDetails(),
+                "changeCertificateCompartmentDetails is required");
+
+        return clientCall(request, ChangeCertificateCompartmentResponse::builder)
+                .logger(LOG, "changeCertificateCompartment")
+                .serviceDetails(
                         "Waas",
                         "ChangeCertificateCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
-                transformer =
-                        ChangeCertificateCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeCertificateCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/ChangeCertificateCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCertificateCompartmentRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCertificateCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeCustomProtectionRuleCompartmentResponse changeCustomProtectionRuleCompartment(
             ChangeCustomProtectionRuleCompartmentRequest request) {
-        LOG.trace("Called changeCustomProtectionRuleCompartment");
-        final ChangeCustomProtectionRuleCompartmentRequest interceptedRequest =
-                ChangeCustomProtectionRuleCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCustomProtectionRuleCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCustomProtectionRuleCompartmentDetails(),
+                "changeCustomProtectionRuleCompartmentDetails is required");
+
+        return clientCall(request, ChangeCustomProtectionRuleCompartmentResponse::builder)
+                .logger(LOG, "changeCustomProtectionRuleCompartment")
+                .serviceDetails(
                         "Waas",
                         "ChangeCustomProtectionRuleCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
-                transformer =
-                        ChangeCustomProtectionRuleCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeCustomProtectionRuleCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ChangeCustomProtectionRuleCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCustomProtectionRuleCompartmentRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .appendPathParam(request.getCustomProtectionRuleId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCustomProtectionRuleCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public ChangeWaasPolicyCompartmentResponse changeWaasPolicyCompartment(
             ChangeWaasPolicyCompartmentRequest request) {
-        LOG.trace("Called changeWaasPolicyCompartment");
-        final ChangeWaasPolicyCompartmentRequest interceptedRequest =
-                ChangeWaasPolicyCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeWaasPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeWaasPolicyCompartmentDetails(),
+                "changeWaasPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeWaasPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeWaasPolicyCompartment")
+                .serviceDetails(
                         "Waas",
                         "ChangeWaasPolicyCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeWaasPolicyCompartmentResponse>
-                transformer =
-                        ChangeWaasPolicyCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeWaasPolicyCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ChangeWaasPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeWaasPolicyCompartmentRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeWaasPolicyCompartmentResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public CreateAddressListResponse createAddressList(CreateAddressListRequest request) {
-        LOG.trace("Called createAddressList");
-        final CreateAddressListRequest interceptedRequest =
-                CreateAddressListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateAddressListConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateAddressListDetails(), "createAddressListDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateAddressListResponse::builder)
+                .logger(LOG, "createAddressList")
+                .serviceDetails(
                         "Waas",
                         "CreateAddressList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
-                transformer =
-                        CreateAddressListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateAddressListDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/CreateAddressList")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAddressListRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.AddressList.class,
+                        CreateAddressListResponse.Builder::addressList)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAddressListResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateAddressListResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
-        LOG.trace("Called createCertificate");
-        final CreateCertificateRequest interceptedRequest =
-                CreateCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCertificateConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCertificateDetails(), "createCertificateDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCertificateResponse::builder)
+                .logger(LOG, "createCertificate")
+                .serviceDetails(
                         "Waas",
                         "CreateCertificate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
-                transformer =
-                        CreateCertificateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateCertificateDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/CreateCertificate")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCertificateRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.Certificate.class,
+                        CreateCertificateResponse.Builder::certificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateCertificateResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateCustomProtectionRuleResponse createCustomProtectionRule(
             CreateCustomProtectionRuleRequest request) {
-        LOG.trace("Called createCustomProtectionRule");
-        final CreateCustomProtectionRuleRequest interceptedRequest =
-                CreateCustomProtectionRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateCustomProtectionRuleDetails(),
+                "createCustomProtectionRuleDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateCustomProtectionRuleResponse::builder)
+                .logger(LOG, "createCustomProtectionRule")
+                .serviceDetails(
                         "Waas",
                         "CreateCustomProtectionRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateCustomProtectionRuleResponse>
-                transformer =
-                        CreateCustomProtectionRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateCustomProtectionRuleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/CreateCustomProtectionRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCustomProtectionRuleRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.CustomProtectionRule.class,
+                        CreateCustomProtectionRuleResponse.Builder::customProtectionRule)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCustomProtectionRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateCustomProtectionRuleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public CreateWaasPolicyResponse createWaasPolicy(CreateWaasPolicyRequest request) {
-        LOG.trace("Called createWaasPolicy");
-        final CreateWaasPolicyRequest interceptedRequest =
-                CreateWaasPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateWaasPolicyConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateWaasPolicyDetails(), "createWaasPolicyDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateWaasPolicyResponse::builder)
+                .logger(LOG, "createWaasPolicy")
+                .serviceDetails(
                         "Waas",
                         "CreateWaasPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateWaasPolicyResponse>
-                transformer =
-                        CreateWaasPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateWaasPolicyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/CreateWaasPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateWaasPolicyRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateWaasPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateWaasPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateWaasPolicyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteAddressListResponse deleteAddressList(DeleteAddressListRequest request) {
-        LOG.trace("Called deleteAddressList");
-        final DeleteAddressListRequest interceptedRequest =
-                DeleteAddressListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteAddressListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
+
+        return clientCall(request, DeleteAddressListResponse::builder)
+                .logger(LOG, "deleteAddressList")
+                .serviceDetails(
                         "Waas",
                         "DeleteAddressList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
-                transformer =
-                        DeleteAddressListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/DeleteAddressList")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAddressListRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .appendPathParam(request.getAddressListId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAddressListResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
-        LOG.trace("Called deleteCertificate");
-        final DeleteCertificateRequest interceptedRequest =
-                DeleteCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCertificateConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+
+        return clientCall(request, DeleteCertificateResponse::builder)
+                .logger(LOG, "deleteCertificate")
+                .serviceDetails(
                         "Waas",
                         "DeleteCertificate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
-                transformer =
-                        DeleteCertificateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/DeleteCertificate")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCertificateRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCertificateResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteCustomProtectionRuleResponse deleteCustomProtectionRule(
             DeleteCustomProtectionRuleRequest request) {
-        LOG.trace("Called deleteCustomProtectionRule");
-        final DeleteCustomProtectionRuleRequest interceptedRequest =
-                DeleteCustomProtectionRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
+
+        return clientCall(request, DeleteCustomProtectionRuleResponse::builder)
+                .logger(LOG, "deleteCustomProtectionRule")
+                .serviceDetails(
                         "Waas",
                         "DeleteCustomProtectionRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
-                transformer =
-                        DeleteCustomProtectionRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/DeleteCustomProtectionRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCustomProtectionRuleRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .appendPathParam(request.getCustomProtectionRuleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCustomProtectionRuleResponse.Builder::opcRequestId)
+                .callSync();
     }
 
     @Override
     public DeleteWaasPolicyResponse deleteWaasPolicy(DeleteWaasPolicyRequest request) {
-        LOG.trace("Called deleteWaasPolicy");
-        final DeleteWaasPolicyRequest interceptedRequest =
-                DeleteWaasPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteWaasPolicyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, DeleteWaasPolicyResponse::builder)
+                .logger(LOG, "deleteWaasPolicy")
+                .serviceDetails(
                         "Waas",
                         "DeleteWaasPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteWaasPolicyResponse>
-                transformer =
-                        DeleteWaasPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/DeleteWaasPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteWaasPolicyRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteWaasPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteWaasPolicyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public GetAddressListResponse getAddressList(GetAddressListRequest request) {
-        LOG.trace("Called getAddressList");
-        final GetAddressListRequest interceptedRequest =
-                GetAddressListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAddressListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
+
+        return clientCall(request, GetAddressListResponse::builder)
+                .logger(LOG, "getAddressList")
+                .serviceDetails(
                         "Waas",
                         "GetAddressList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList");
-        java.util.function.Function<javax.ws.rs.core.Response, GetAddressListResponse> transformer =
-                GetAddressListConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/GetAddressList")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAddressListRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .appendPathParam(request.getAddressListId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.AddressList.class,
+                        GetAddressListResponse.Builder::addressList)
+                .handleResponseHeaderString("etag", GetAddressListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAddressListResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCertificateResponse getCertificate(GetCertificateRequest request) {
-        LOG.trace("Called getCertificate");
-        final GetCertificateRequest interceptedRequest =
-                GetCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCertificateConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+
+        return clientCall(request, GetCertificateResponse::builder)
+                .logger(LOG, "getCertificate")
+                .serviceDetails(
                         "Waas",
                         "GetCertificate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse> transformer =
-                GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/GetCertificate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCertificateRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.Certificate.class,
+                        GetCertificateResponse.Builder::certificate)
+                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetCustomProtectionRuleResponse getCustomProtectionRule(
             GetCustomProtectionRuleRequest request) {
-        LOG.trace("Called getCustomProtectionRule");
-        final GetCustomProtectionRuleRequest interceptedRequest =
-                GetCustomProtectionRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
+
+        return clientCall(request, GetCustomProtectionRuleResponse::builder)
+                .logger(LOG, "getCustomProtectionRule")
+                .serviceDetails(
                         "Waas",
                         "GetCustomProtectionRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
-                transformer =
-                        GetCustomProtectionRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/GetCustomProtectionRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCustomProtectionRuleRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .appendPathParam(request.getCustomProtectionRuleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.CustomProtectionRule.class,
+                        GetCustomProtectionRuleResponse.Builder::customProtectionRule)
+                .handleResponseHeaderString("etag", GetCustomProtectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCustomProtectionRuleResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetDeviceFingerprintChallengeResponse getDeviceFingerprintChallenge(
             GetDeviceFingerprintChallengeRequest request) {
-        LOG.trace("Called getDeviceFingerprintChallenge");
-        final GetDeviceFingerprintChallengeRequest interceptedRequest =
-                GetDeviceFingerprintChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDeviceFingerprintChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetDeviceFingerprintChallengeResponse::builder)
+                .logger(LOG, "getDeviceFingerprintChallenge")
+                .serviceDetails(
                         "Waas",
                         "GetDeviceFingerprintChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetDeviceFingerprintChallengeResponse>
-                transformer =
-                        GetDeviceFingerprintChallengeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/GetDeviceFingerprintChallenge")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDeviceFingerprintChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("deviceFingerprintChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.DeviceFingerprintChallenge.class,
+                        GetDeviceFingerprintChallengeResponse.Builder::deviceFingerprintChallenge)
+                .handleResponseHeaderString(
+                        "etag", GetDeviceFingerprintChallengeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDeviceFingerprintChallengeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetHumanInteractionChallengeResponse getHumanInteractionChallenge(
             GetHumanInteractionChallengeRequest request) {
-        LOG.trace("Called getHumanInteractionChallenge");
-        final GetHumanInteractionChallengeRequest interceptedRequest =
-                GetHumanInteractionChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetHumanInteractionChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetHumanInteractionChallengeResponse::builder)
+                .logger(LOG, "getHumanInteractionChallenge")
+                .serviceDetails(
                         "Waas",
                         "GetHumanInteractionChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge");
-        java.util.function.Function<javax.ws.rs.core.Response, GetHumanInteractionChallengeResponse>
-                transformer =
-                        GetHumanInteractionChallengeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/GetHumanInteractionChallenge")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetHumanInteractionChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("humanInteractionChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.HumanInteractionChallenge.class,
+                        GetHumanInteractionChallengeResponse.Builder::humanInteractionChallenge)
+                .handleResponseHeaderString(
+                        "etag", GetHumanInteractionChallengeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetHumanInteractionChallengeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetJsChallengeResponse getJsChallenge(GetJsChallengeRequest request) {
-        LOG.trace("Called getJsChallenge");
-        final GetJsChallengeRequest interceptedRequest =
-                GetJsChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetJsChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetJsChallengeResponse::builder)
+                .logger(LOG, "getJsChallenge")
+                .serviceDetails(
                         "Waas",
                         "GetJsChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge");
-        java.util.function.Function<javax.ws.rs.core.Response, GetJsChallengeResponse> transformer =
-                GetJsChallengeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/GetJsChallenge")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetJsChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("jsChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.JsChallenge.class,
+                        GetJsChallengeResponse.Builder::jsChallenge)
+                .handleResponseHeaderString("etag", GetJsChallengeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetJsChallengeResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetPolicyConfigResponse getPolicyConfig(GetPolicyConfigRequest request) {
-        LOG.trace("Called getPolicyConfig");
-        final GetPolicyConfigRequest interceptedRequest =
-                GetPolicyConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPolicyConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetPolicyConfigResponse::builder)
+                .logger(LOG, "getPolicyConfig")
+                .serviceDetails(
                         "Waas",
                         "GetPolicyConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, GetPolicyConfigResponse>
-                transformer =
-                        GetPolicyConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/GetPolicyConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPolicyConfigRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("policyConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.PolicyConfig.class,
+                        GetPolicyConfigResponse.Builder::policyConfig)
+                .handleResponseHeaderString("etag", GetPolicyConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPolicyConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetProtectionRuleResponse getProtectionRule(GetProtectionRuleRequest request) {
-        LOG.trace("Called getProtectionRule");
-        final GetProtectionRuleRequest interceptedRequest =
-                GetProtectionRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetProtectionRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        Validate.notBlank(request.getProtectionRuleKey(), "protectionRuleKey must not be blank");
+
+        return clientCall(request, GetProtectionRuleResponse::builder)
+                .logger(LOG, "getProtectionRule")
+                .serviceDetails(
                         "Waas",
                         "GetProtectionRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule");
-        java.util.function.Function<javax.ws.rs.core.Response, GetProtectionRuleResponse>
-                transformer =
-                        GetProtectionRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/GetProtectionRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProtectionRuleRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("protectionRules")
+                .appendPathParam(request.getProtectionRuleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.ProtectionRule.class,
+                        GetProtectionRuleResponse.Builder::protectionRule)
+                .handleResponseHeaderString("etag", GetProtectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProtectionRuleResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetProtectionSettingsResponse getProtectionSettings(
             GetProtectionSettingsRequest request) {
-        LOG.trace("Called getProtectionSettings");
-        final GetProtectionSettingsRequest interceptedRequest =
-                GetProtectionSettingsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetProtectionSettingsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetProtectionSettingsResponse::builder)
+                .logger(LOG, "getProtectionSettings")
+                .serviceDetails(
                         "Waas",
                         "GetProtectionSettings",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings");
-        java.util.function.Function<javax.ws.rs.core.Response, GetProtectionSettingsResponse>
-                transformer =
-                        GetProtectionSettingsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/GetProtectionSettings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProtectionSettingsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("protectionSettings")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.ProtectionSettings.class,
+                        GetProtectionSettingsResponse.Builder::protectionSettings)
+                .handleResponseHeaderString("etag", GetProtectionSettingsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProtectionSettingsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetWaasPolicyResponse getWaasPolicy(GetWaasPolicyRequest request) {
-        LOG.trace("Called getWaasPolicy");
-        final GetWaasPolicyRequest interceptedRequest =
-                GetWaasPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWaasPolicyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetWaasPolicyResponse::builder)
+                .logger(LOG, "getWaasPolicy")
+                .serviceDetails(
                         "Waas",
                         "GetWaasPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWaasPolicyResponse> transformer =
-                GetWaasPolicyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/GetWaasPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWaasPolicyRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.WaasPolicy.class,
+                        GetWaasPolicyResponse.Builder::waasPolicy)
+                .handleResponseHeaderString("etag", GetWaasPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWaasPolicyResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetWafAddressRateLimitingResponse getWafAddressRateLimiting(
             GetWafAddressRateLimitingRequest request) {
-        LOG.trace("Called getWafAddressRateLimiting");
-        final GetWafAddressRateLimitingRequest interceptedRequest =
-                GetWafAddressRateLimitingConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWafAddressRateLimitingConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetWafAddressRateLimitingResponse::builder)
+                .logger(LOG, "getWafAddressRateLimiting")
+                .serviceDetails(
                         "Waas",
                         "GetWafAddressRateLimiting",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWafAddressRateLimitingResponse>
-                transformer =
-                        GetWafAddressRateLimitingConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/GetWafAddressRateLimiting")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWafAddressRateLimitingRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("addressRateLimiting")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.AddressRateLimiting.class,
+                        GetWafAddressRateLimitingResponse.Builder::addressRateLimiting)
+                .handleResponseHeaderString("etag", GetWafAddressRateLimitingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWafAddressRateLimitingResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetWafConfigResponse getWafConfig(GetWafConfigRequest request) {
-        LOG.trace("Called getWafConfig");
-        final GetWafConfigRequest interceptedRequest =
-                GetWafConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWafConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, GetWafConfigResponse::builder)
+                .logger(LOG, "getWafConfig")
+                .serviceDetails(
                         "Waas",
                         "GetWafConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWafConfigResponse> transformer =
-                GetWafConfigConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/GetWafConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWafConfigRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.WafConfig.class,
+                        GetWafConfigResponse.Builder::wafConfig)
+                .handleResponseHeaderString("etag", GetWafConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWafConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
-        LOG.trace("Called getWorkRequest");
-        final GetWorkRequestRequest interceptedRequest =
-                GetWorkRequestConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
                         "Waas",
                         "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest");
-        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
-                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.waas.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderFloat(
+                        "Retry-After", GetWorkRequestResponse.Builder::retryAfter)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListAccessRulesResponse listAccessRules(ListAccessRulesRequest request) {
-        LOG.trace("Called listAccessRules");
-        final ListAccessRulesRequest interceptedRequest =
-                ListAccessRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAccessRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListAccessRulesResponse::builder)
+                .logger(LOG, "listAccessRules")
+                .serviceDetails(
                         "Waas",
                         "ListAccessRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListAccessRulesResponse>
-                transformer =
-                        ListAccessRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/ListAccessRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAccessRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("accessRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.AccessRule.class,
+                        ListAccessRulesResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListAccessRulesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAccessRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAccessRulesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListAddressListsResponse listAddressLists(ListAddressListsRequest request) {
-        LOG.trace("Called listAddressLists");
-        final ListAddressListsRequest interceptedRequest =
-                ListAddressListsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAddressListsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListAddressListsResponse::builder)
+                .logger(LOG, "listAddressLists")
+                .serviceDetails(
                         "Waas",
                         "ListAddressLists",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists");
-        java.util.function.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
-                transformer =
-                        ListAddressListsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/ListAddressLists")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAddressListsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "name",
+                        request.getName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.AddressListSummary.class,
+                        ListAddressListsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAddressListsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAddressListsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCachingRulesResponse listCachingRules(ListCachingRulesRequest request) {
-        LOG.trace("Called listCachingRules");
-        final ListCachingRulesRequest interceptedRequest =
-                ListCachingRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCachingRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListCachingRulesResponse::builder)
+                .logger(LOG, "listCachingRules")
+                .serviceDetails(
                         "Waas",
                         "ListCachingRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
-                transformer =
-                        ListCachingRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRuleSummary/ListCachingRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCachingRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("cachingRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.CachingRuleSummary.class,
+                        ListCachingRulesResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListCachingRulesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCachingRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCachingRulesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCaptchasResponse listCaptchas(ListCaptchasRequest request) {
-        LOG.trace("Called listCaptchas");
-        final ListCaptchasRequest interceptedRequest =
-                ListCaptchasConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCaptchasConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListCaptchasResponse::builder)
+                .logger(LOG, "listCaptchas")
+                .serviceDetails(
                         "Waas",
                         "ListCaptchas",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCaptchasResponse> transformer =
-                ListCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/ListCaptchas")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCaptchasRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("captchas")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.Captcha.class,
+                        ListCaptchasResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListCaptchasResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCaptchasResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCaptchasResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
-        LOG.trace("Called listCertificates");
-        final ListCertificatesRequest interceptedRequest =
-                ListCertificatesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCertificatesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCertificatesResponse::builder)
+                .logger(LOG, "listCertificates")
+                .serviceDetails(
                         "Waas",
                         "ListCertificates",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
-                transformer =
-                        ListCertificatesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CertificateSummary/ListCertificates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCertificatesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "displayName",
+                        request.getDisplayName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.CertificateSummary.class,
+                        ListCertificatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListCustomProtectionRulesResponse listCustomProtectionRules(
             ListCustomProtectionRulesRequest request) {
-        LOG.trace("Called listCustomProtectionRules");
-        final ListCustomProtectionRulesRequest interceptedRequest =
-                ListCustomProtectionRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCustomProtectionRulesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListCustomProtectionRulesResponse::builder)
+                .logger(LOG, "listCustomProtectionRules")
+                .serviceDetails(
                         "Waas",
                         "ListCustomProtectionRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListCustomProtectionRulesResponse>
-                transformer =
-                        ListCustomProtectionRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListCustomProtectionRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCustomProtectionRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "displayName",
+                        request.getDisplayName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.CustomProtectionRuleSummary.class,
+                        ListCustomProtectionRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCustomProtectionRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCustomProtectionRulesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListEdgeSubnetsResponse listEdgeSubnets(ListEdgeSubnetsRequest request) {
-        LOG.trace("Called listEdgeSubnets");
-        final ListEdgeSubnetsRequest interceptedRequest =
-                ListEdgeSubnetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListEdgeSubnetsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListEdgeSubnetsResponse::builder)
+                .logger(LOG, "listEdgeSubnets")
+                .serviceDetails(
                         "Waas",
                         "ListEdgeSubnets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListEdgeSubnetsResponse>
-                transformer =
-                        ListEdgeSubnetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/EdgeSubnet/ListEdgeSubnets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEdgeSubnetsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("edgeSubnets")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.EdgeSubnet.class,
+                        ListEdgeSubnetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEdgeSubnetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEdgeSubnetsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListGoodBotsResponse listGoodBots(ListGoodBotsRequest request) {
-        LOG.trace("Called listGoodBots");
-        final ListGoodBotsRequest interceptedRequest =
-                ListGoodBotsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListGoodBotsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListGoodBotsResponse::builder)
+                .logger(LOG, "listGoodBots")
+                .serviceDetails(
                         "Waas",
                         "ListGoodBots",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots");
-        java.util.function.Function<javax.ws.rs.core.Response, ListGoodBotsResponse> transformer =
-                ListGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/ListGoodBots")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGoodBotsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("goodBots")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.GoodBot.class,
+                        ListGoodBotsResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListGoodBotsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGoodBotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGoodBotsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListProtectionRulesResponse listProtectionRules(ListProtectionRulesRequest request) {
-        LOG.trace("Called listProtectionRules");
-        final ListProtectionRulesRequest interceptedRequest =
-                ListProtectionRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListProtectionRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListProtectionRulesResponse::builder)
+                .logger(LOG, "listProtectionRules")
+                .serviceDetails(
                         "Waas",
                         "ListProtectionRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules");
-        java.util.function.Function<javax.ws.rs.core.Response, ListProtectionRulesResponse>
-                transformer =
-                        ListProtectionRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/ListProtectionRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProtectionRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("protectionRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "modSecurityRuleId",
+                        request.getModSecurityRuleId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "action",
+                        request.getAction(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.ProtectionRule.class,
+                        ListProtectionRulesResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListProtectionRulesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProtectionRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProtectionRulesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListRecommendationsResponse listRecommendations(ListRecommendationsRequest request) {
-        LOG.trace("Called listRecommendations");
-        final ListRecommendationsRequest interceptedRequest =
-                ListRecommendationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRecommendationsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListRecommendationsResponse::builder)
+                .logger(LOG, "listRecommendations")
+                .serviceDetails(
                         "Waas",
                         "ListRecommendations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations");
-        java.util.function.Function<javax.ws.rs.core.Response, ListRecommendationsResponse>
-                transformer =
-                        ListRecommendationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Recommendation/ListRecommendations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecommendationsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("recommendations")
+                .appendEnumQueryParam("recommendedAction", request.getRecommendedAction())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.Recommendation.class,
+                        ListRecommendationsResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListRecommendationsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRecommendationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRecommendationsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListThreatFeedsResponse listThreatFeeds(ListThreatFeedsRequest request) {
-        LOG.trace("Called listThreatFeeds");
-        final ListThreatFeedsRequest interceptedRequest =
-                ListThreatFeedsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListThreatFeedsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListThreatFeedsResponse::builder)
+                .logger(LOG, "listThreatFeeds")
+                .serviceDetails(
                         "Waas",
                         "ListThreatFeeds",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds");
-        java.util.function.Function<javax.ws.rs.core.Response, ListThreatFeedsResponse>
-                transformer =
-                        ListThreatFeedsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/ListThreatFeeds")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListThreatFeedsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("threatFeeds")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.ThreatFeed.class,
+                        ListThreatFeedsResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListThreatFeedsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListThreatFeedsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListThreatFeedsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWaasPoliciesResponse listWaasPolicies(ListWaasPoliciesRequest request) {
-        LOG.trace("Called listWaasPolicies");
-        final ListWaasPoliciesRequest interceptedRequest =
-                ListWaasPoliciesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWaasPoliciesConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListWaasPoliciesResponse::builder)
+                .logger(LOG, "listWaasPolicies")
+                .serviceDetails(
                         "Waas",
                         "ListWaasPolicies",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWaasPoliciesResponse>
-                transformer =
-                        ListWaasPoliciesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/ListWaasPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWaasPoliciesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "id",
+                        request.getId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "displayName",
+                        request.getDisplayName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "lifecycleState",
+                        request.getLifecycleState(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WaasPolicySummary.class,
+                        ListWaasPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWaasPoliciesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWaasPoliciesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWaasPolicyCustomProtectionRulesResponse listWaasPolicyCustomProtectionRules(
             ListWaasPolicyCustomProtectionRulesRequest request) {
-        LOG.trace("Called listWaasPolicyCustomProtectionRules");
-        final ListWaasPolicyCustomProtectionRulesRequest interceptedRequest =
-                ListWaasPolicyCustomProtectionRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWaasPolicyCustomProtectionRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWaasPolicyCustomProtectionRulesResponse::builder)
+                .logger(LOG, "listWaasPolicyCustomProtectionRules")
+                .serviceDetails(
                         "Waas",
                         "ListWaasPolicyCustomProtectionRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListWaasPolicyCustomProtectionRulesResponse>
-                transformer =
-                        ListWaasPolicyCustomProtectionRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/ListWaasPolicyCustomProtectionRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWaasPolicyCustomProtectionRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("customProtectionRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "modSecurityRuleId",
+                        request.getModSecurityRuleId(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "action",
+                        request.getAction(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary.class,
+                        ListWaasPolicyCustomProtectionRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "etag", ListWaasPolicyCustomProtectionRulesResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListWaasPolicyCustomProtectionRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListWaasPolicyCustomProtectionRulesResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWafBlockedRequestsResponse listWafBlockedRequests(
             ListWafBlockedRequestsRequest request) {
-        LOG.trace("Called listWafBlockedRequests");
-        final ListWafBlockedRequestsRequest interceptedRequest =
-                ListWafBlockedRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWafBlockedRequestsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWafBlockedRequestsResponse::builder)
+                .logger(LOG, "listWafBlockedRequests")
+                .serviceDetails(
                         "Waas",
                         "ListWafBlockedRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWafBlockedRequestsResponse>
-                transformer =
-                        ListWafBlockedRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafBlockedRequest/ListWafBlockedRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWafBlockedRequestsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("reports")
+                .appendPathParam("waf")
+                .appendPathParam("blocked")
+                .appendQueryParam(
+                        "timeObservedGreaterThanOrEqualTo",
+                        request.getTimeObservedGreaterThanOrEqualTo())
+                .appendQueryParam("timeObservedLessThan", request.getTimeObservedLessThan())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "wafFeature",
+                        request.getWafFeature(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WafBlockedRequest.class,
+                        ListWafBlockedRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWafBlockedRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWafBlockedRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWafLogsResponse listWafLogs(ListWafLogsRequest request) {
-        LOG.trace("Called listWafLogs");
-        final ListWafLogsRequest interceptedRequest =
-                ListWafLogsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWafLogsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWafLogsResponse::builder)
+                .logger(LOG, "listWafLogs")
+                .serviceDetails(
                         "Waas",
                         "ListWafLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWafLogsResponse> transformer =
-                ListWafLogsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafLog/ListWafLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWafLogsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafLogs")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam(
+                        "timeObservedGreaterThanOrEqualTo",
+                        request.getTimeObservedGreaterThanOrEqualTo())
+                .appendQueryParam("timeObservedLessThan", request.getTimeObservedLessThan())
+                .appendQueryParam("textContains", request.getTextContains())
+                .appendListQueryParam(
+                        "accessRuleKey",
+                        request.getAccessRuleKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "action",
+                        request.getAction(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "clientAddress",
+                        request.getClientAddress(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "countryCode",
+                        request.getCountryCode(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "countryName",
+                        request.getCountryName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "fingerprint",
+                        request.getFingerprint(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "httpMethod",
+                        request.getHttpMethod(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "incidentKey",
+                        request.getIncidentKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "logType",
+                        request.getLogType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "originAddress",
+                        request.getOriginAddress(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "referrer",
+                        request.getReferrer(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "requestUrl",
+                        request.getRequestUrl(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "responseCode",
+                        request.getResponseCode(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "threatFeedKey",
+                        request.getThreatFeedKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "userAgent",
+                        request.getUserAgent(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "protectionRuleKey",
+                        request.getProtectionRuleKey(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WafLog.class, ListWafLogsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWafLogsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWafLogsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWafRequestsResponse listWafRequests(ListWafRequestsRequest request) {
-        LOG.trace("Called listWafRequests");
-        final ListWafRequestsRequest interceptedRequest =
-                ListWafRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWafRequestsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWafRequestsResponse::builder)
+                .logger(LOG, "listWafRequests")
+                .serviceDetails(
                         "Waas",
                         "ListWafRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWafRequestsResponse>
-                transformer =
-                        ListWafRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafRequest/ListWafRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWafRequestsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("reports")
+                .appendPathParam("waf")
+                .appendPathParam("requests")
+                .appendQueryParam(
+                        "timeObservedGreaterThanOrEqualTo",
+                        request.getTimeObservedGreaterThanOrEqualTo())
+                .appendQueryParam("timeObservedLessThan", request.getTimeObservedLessThan())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WafRequest.class,
+                        ListWafRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWafRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWafRequestsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWafTrafficResponse listWafTraffic(ListWafTrafficRequest request) {
-        LOG.trace("Called listWafTraffic");
-        final ListWafTrafficRequest interceptedRequest =
-                ListWafTrafficConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWafTrafficConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWafTrafficResponse::builder)
+                .logger(LOG, "listWafTraffic")
+                .serviceDetails(
                         "Waas",
                         "ListWafTraffic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWafTrafficResponse> transformer =
-                ListWafTrafficConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafTrafficDatum/ListWafTraffic")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWafTrafficRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("reports")
+                .appendPathParam("waf")
+                .appendPathParam("traffic")
+                .appendQueryParam(
+                        "timeObservedGreaterThanOrEqualTo",
+                        request.getTimeObservedGreaterThanOrEqualTo())
+                .appendQueryParam("timeObservedLessThan", request.getTimeObservedLessThan())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WafTrafficDatum.class,
+                        ListWafTrafficResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWafTrafficResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWafTrafficResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWhitelistsResponse listWhitelists(ListWhitelistsRequest request) {
-        LOG.trace("Called listWhitelists");
-        final ListWhitelistsRequest interceptedRequest =
-                ListWhitelistsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWhitelistsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, ListWhitelistsResponse::builder)
+                .logger(LOG, "listWhitelists")
+                .serviceDetails(
                         "Waas",
                         "ListWhitelists",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWhitelistsResponse> transformer =
-                ListWhitelistsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/ListWhitelists")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWhitelistsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("whitelists")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.Whitelist.class,
+                        ListWhitelistsResponse.Builder::items)
+                .handleResponseHeaderString("etag", ListWhitelistsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWhitelistsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWhitelistsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
-        LOG.trace("Called listWorkRequests");
-        final ListWorkRequestsRequest interceptedRequest =
-                ListWorkRequestsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(request.getWaasPolicyId(), "waasPolicyId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
                         "Waas",
                         "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests");
-        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
-                transformer =
-                        ListWorkRequestsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WorkRequestSummary/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("workRequests")
+                .appendQueryParam("waasPolicyId", request.getWaasPolicyId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.waas.model.WorkRequestSummary.class,
+                        ListWorkRequestsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public PurgeCacheResponse purgeCache(PurgeCacheRequest request) {
-        LOG.trace("Called purgeCache");
-        final PurgeCacheRequest interceptedRequest = PurgeCacheConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                PurgeCacheConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+
+        return clientCall(request, PurgeCacheResponse::builder)
+                .logger(LOG, "purgeCache")
+                .serviceDetails(
                         "Waas",
                         "PurgeCache",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache");
-        java.util.function.Function<javax.ws.rs.core.Response, PurgeCacheResponse> transformer =
-                PurgeCacheConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib, retriedRequest.getPurgeCache(), retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PurgeCache/PurgeCache")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PurgeCacheRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("purgeCache")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", PurgeCacheResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PurgeCacheResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateAccessRulesResponse updateAccessRules(UpdateAccessRulesRequest request) {
-        LOG.trace("Called updateAccessRules");
-        final UpdateAccessRulesRequest interceptedRequest =
-                UpdateAccessRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAccessRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getAccessRules(), "accessRules is required");
+
+        return clientCall(request, UpdateAccessRulesResponse::builder)
+                .logger(LOG, "updateAccessRules")
+                .serviceDetails(
                         "Waas",
                         "UpdateAccessRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateAccessRulesResponse>
-                transformer =
-                        UpdateAccessRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getAccessRules(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AccessRule/UpdateAccessRules")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAccessRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("accessRules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAccessRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAccessRulesResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateAddressListResponse updateAddressList(UpdateAddressListRequest request) {
-        LOG.trace("Called updateAddressList");
-        final UpdateAddressListRequest interceptedRequest =
-                UpdateAddressListConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateAddressListConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getAddressListId(), "addressListId must not be blank");
+
+        return clientCall(request, UpdateAddressListResponse::builder)
+                .logger(LOG, "updateAddressList")
+                .serviceDetails(
                         "Waas",
                         "UpdateAddressList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
-                transformer =
-                        UpdateAddressListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateAddressListDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressList/UpdateAddressList")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAddressListRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("addressLists")
+                .appendPathParam(request.getAddressListId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.AddressList.class,
+                        UpdateAddressListResponse.Builder::addressList)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAddressListResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateAddressListResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateCachingRulesResponse updateCachingRules(UpdateCachingRulesRequest request) {
-        LOG.trace("Called updateCachingRules");
-        final UpdateCachingRulesRequest interceptedRequest =
-                UpdateCachingRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCachingRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getCachingRulesDetails(), "cachingRulesDetails is required");
+
+        return clientCall(request, UpdateCachingRulesResponse::builder)
+                .logger(LOG, "updateCachingRules")
+                .serviceDetails(
                         "Waas",
                         "UpdateCachingRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCachingRulesResponse>
-                transformer =
-                        UpdateCachingRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getCachingRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CachingRule/UpdateCachingRules")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCachingRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("cachingRules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCachingRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateCachingRulesResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateCaptchasResponse updateCaptchas(UpdateCaptchasRequest request) {
-        LOG.trace("Called updateCaptchas");
-        final UpdateCaptchasRequest interceptedRequest =
-                UpdateCaptchasConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCaptchasConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getCaptchas(), "captchas is required");
+
+        return clientCall(request, UpdateCaptchasResponse::builder)
+                .logger(LOG, "updateCaptchas")
+                .serviceDetails(
                         "Waas",
                         "UpdateCaptchas",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaptchasResponse> transformer =
-                UpdateCaptchasConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib, retriedRequest.getCaptchas(), retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Captcha/UpdateCaptchas")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCaptchasRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("captchas")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCaptchasResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateCaptchasResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
-        LOG.trace("Called updateCertificate");
-        final UpdateCertificateRequest interceptedRequest =
-                UpdateCertificateConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCertificateConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
+
+        return clientCall(request, UpdateCertificateResponse::builder)
+                .logger(LOG, "updateCertificate")
+                .serviceDetails(
                         "Waas",
                         "UpdateCertificate",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
-                transformer =
-                        UpdateCertificateConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateCertificateDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Certificate/UpdateCertificate")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCertificateRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("certificates")
+                .appendPathParam(request.getCertificateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.Certificate.class,
+                        UpdateCertificateResponse.Builder::certificate)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCertificateResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", UpdateCertificateResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateCustomProtectionRuleResponse updateCustomProtectionRule(
             UpdateCustomProtectionRuleRequest request) {
-        LOG.trace("Called updateCustomProtectionRule");
-        final UpdateCustomProtectionRuleRequest interceptedRequest =
-                UpdateCustomProtectionRuleConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getCustomProtectionRuleId(), "customProtectionRuleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCustomProtectionRuleDetails(),
+                "updateCustomProtectionRuleDetails is required");
+
+        return clientCall(request, UpdateCustomProtectionRuleResponse::builder)
+                .logger(LOG, "updateCustomProtectionRule")
+                .serviceDetails(
                         "Waas",
                         "UpdateCustomProtectionRule",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateCustomProtectionRuleResponse>
-                transformer =
-                        UpdateCustomProtectionRuleConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateCustomProtectionRuleDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateCustomProtectionRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCustomProtectionRuleRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("customProtectionRules")
+                .appendPathParam(request.getCustomProtectionRuleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.waas.model.CustomProtectionRule.class,
+                        UpdateCustomProtectionRuleResponse.Builder::customProtectionRule)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCustomProtectionRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateCustomProtectionRuleResponse.Builder::etag)
+                .callSync();
     }
 
     @Override
     public UpdateDeviceFingerprintChallengeResponse updateDeviceFingerprintChallenge(
             UpdateDeviceFingerprintChallengeRequest request) {
-        LOG.trace("Called updateDeviceFingerprintChallenge");
-        final UpdateDeviceFingerprintChallengeRequest interceptedRequest =
-                UpdateDeviceFingerprintChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDeviceFingerprintChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDeviceFingerprintChallengeDetails(),
+                "updateDeviceFingerprintChallengeDetails is required");
+
+        return clientCall(request, UpdateDeviceFingerprintChallengeResponse::builder)
+                .logger(LOG, "updateDeviceFingerprintChallenge")
+                .serviceDetails(
                         "Waas",
                         "UpdateDeviceFingerprintChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateDeviceFingerprintChallengeResponse>
-                transformer =
-                        UpdateDeviceFingerprintChallengeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateDeviceFingerprintChallengeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/DeviceFingerprintChallenge/UpdateDeviceFingerprintChallenge")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDeviceFingerprintChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("deviceFingerprintChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDeviceFingerprintChallengeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateDeviceFingerprintChallengeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateGoodBotsResponse updateGoodBots(UpdateGoodBotsRequest request) {
-        LOG.trace("Called updateGoodBots");
-        final UpdateGoodBotsRequest interceptedRequest =
-                UpdateGoodBotsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateGoodBotsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getGoodBots(), "goodBots is required");
+
+        return clientCall(request, UpdateGoodBotsResponse::builder)
+                .logger(LOG, "updateGoodBots")
+                .serviceDetails(
                         "Waas",
                         "UpdateGoodBots",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateGoodBotsResponse> transformer =
-                UpdateGoodBotsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib, retriedRequest.getGoodBots(), retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/GoodBot/UpdateGoodBots")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGoodBotsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("goodBots")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGoodBotsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateGoodBotsResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateHumanInteractionChallengeResponse updateHumanInteractionChallenge(
             UpdateHumanInteractionChallengeRequest request) {
-        LOG.trace("Called updateHumanInteractionChallenge");
-        final UpdateHumanInteractionChallengeRequest interceptedRequest =
-                UpdateHumanInteractionChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateHumanInteractionChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateHumanInteractionChallengeDetails(),
+                "updateHumanInteractionChallengeDetails is required");
+
+        return clientCall(request, UpdateHumanInteractionChallengeResponse::builder)
+                .logger(LOG, "updateHumanInteractionChallenge")
+                .serviceDetails(
                         "Waas",
                         "UpdateHumanInteractionChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateHumanInteractionChallengeResponse>
-                transformer =
-                        UpdateHumanInteractionChallengeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateHumanInteractionChallengeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/HumanInteractionChallenge/UpdateHumanInteractionChallenge")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateHumanInteractionChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("humanInteractionChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateHumanInteractionChallengeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateHumanInteractionChallengeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateJsChallengeResponse updateJsChallenge(UpdateJsChallengeRequest request) {
-        LOG.trace("Called updateJsChallenge");
-        final UpdateJsChallengeRequest interceptedRequest =
-                UpdateJsChallengeConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateJsChallengeConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateJsChallengeDetails(), "updateJsChallengeDetails is required");
+
+        return clientCall(request, UpdateJsChallengeResponse::builder)
+                .logger(LOG, "updateJsChallenge")
+                .serviceDetails(
                         "Waas",
                         "UpdateJsChallenge",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateJsChallengeResponse>
-                transformer =
-                        UpdateJsChallengeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateJsChallengeDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/JsChallenge/UpdateJsChallenge")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateJsChallengeRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("jsChallenge")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateJsChallengeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateJsChallengeResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdatePolicyConfigResponse updatePolicyConfig(UpdatePolicyConfigRequest request) {
-        LOG.trace("Called updatePolicyConfig");
-        final UpdatePolicyConfigRequest interceptedRequest =
-                UpdatePolicyConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePolicyConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePolicyConfigDetails(), "updatePolicyConfigDetails is required");
+
+        return clientCall(request, UpdatePolicyConfigResponse::builder)
+                .logger(LOG, "updatePolicyConfig")
+                .serviceDetails(
                         "Waas",
                         "UpdatePolicyConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdatePolicyConfigResponse>
-                transformer =
-                        UpdatePolicyConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdatePolicyConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/PolicyConfig/UpdatePolicyConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePolicyConfigRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("policyConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePolicyConfigResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePolicyConfigResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateProtectionRulesResponse updateProtectionRules(
             UpdateProtectionRulesRequest request) {
-        LOG.trace("Called updateProtectionRules");
-        final UpdateProtectionRulesRequest interceptedRequest =
-                UpdateProtectionRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateProtectionRulesConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getProtectionRules(), "protectionRules is required");
+
+        return clientCall(request, UpdateProtectionRulesResponse::builder)
+                .logger(LOG, "updateProtectionRules")
+                .serviceDetails(
                         "Waas",
                         "UpdateProtectionRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionRulesResponse>
-                transformer =
-                        UpdateProtectionRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getProtectionRules(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionRule/UpdateProtectionRules")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProtectionRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("protectionRules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProtectionRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateProtectionRulesResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateProtectionSettingsResponse updateProtectionSettings(
             UpdateProtectionSettingsRequest request) {
-        LOG.trace("Called updateProtectionSettings");
-        final UpdateProtectionSettingsRequest interceptedRequest =
-                UpdateProtectionSettingsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateProtectionSettingsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProtectionSettingsDetails(),
+                "updateProtectionSettingsDetails is required");
+
+        return clientCall(request, UpdateProtectionSettingsResponse::builder)
+                .logger(LOG, "updateProtectionSettings")
+                .serviceDetails(
                         "Waas",
                         "UpdateProtectionSettings",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateProtectionSettingsResponse>
-                transformer =
-                        UpdateProtectionSettingsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateProtectionSettingsDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ProtectionSettings/UpdateProtectionSettings")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProtectionSettingsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("protectionSettings")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProtectionSettingsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateProtectionSettingsResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateThreatFeedsResponse updateThreatFeeds(UpdateThreatFeedsRequest request) {
-        LOG.trace("Called updateThreatFeeds");
-        final UpdateThreatFeedsRequest interceptedRequest =
-                UpdateThreatFeedsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateThreatFeedsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getThreatFeeds(), "threatFeeds is required");
+
+        return clientCall(request, UpdateThreatFeedsResponse::builder)
+                .logger(LOG, "updateThreatFeeds")
+                .serviceDetails(
                         "Waas",
                         "UpdateThreatFeeds",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateThreatFeedsResponse>
-                transformer =
-                        UpdateThreatFeedsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getThreatFeeds(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/ThreatFeed/UpdateThreatFeeds")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateThreatFeedsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("threatFeeds")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateThreatFeedsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateThreatFeedsResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateWaasPolicyResponse updateWaasPolicy(UpdateWaasPolicyRequest request) {
-        LOG.trace("Called updateWaasPolicy");
-        final UpdateWaasPolicyRequest interceptedRequest =
-                UpdateWaasPolicyConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWaasPolicyConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWaasPolicyDetails(), "updateWaasPolicyDetails is required");
+
+        return clientCall(request, UpdateWaasPolicyResponse::builder)
+                .logger(LOG, "updateWaasPolicy")
+                .serviceDetails(
                         "Waas",
                         "UpdateWaasPolicy",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateWaasPolicyResponse>
-                transformer =
-                        UpdateWaasPolicyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateWaasPolicyDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WaasPolicy/UpdateWaasPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWaasPolicyRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWaasPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateWaasPolicyResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateWaasPolicyCustomProtectionRulesResponse updateWaasPolicyCustomProtectionRules(
             UpdateWaasPolicyCustomProtectionRulesRequest request) {
-        LOG.trace("Called updateWaasPolicyCustomProtectionRules");
-        final UpdateWaasPolicyCustomProtectionRulesRequest interceptedRequest =
-                UpdateWaasPolicyCustomProtectionRulesConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWaasPolicyCustomProtectionRulesConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCustomProtectionRulesDetails(),
+                "updateCustomProtectionRulesDetails is required");
+
+        return clientCall(request, UpdateWaasPolicyCustomProtectionRulesResponse::builder)
+                .logger(LOG, "updateWaasPolicyCustomProtectionRules")
+                .serviceDetails(
                         "Waas",
                         "UpdateWaasPolicyCustomProtectionRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
-                transformer =
-                        UpdateWaasPolicyCustomProtectionRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateCustomProtectionRulesDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/CustomProtectionRule/UpdateWaasPolicyCustomProtectionRules")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWaasPolicyCustomProtectionRulesRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("customProtectionRules")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateWaasPolicyCustomProtectionRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateWaasPolicyCustomProtectionRulesResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateWafAddressRateLimitingResponse updateWafAddressRateLimiting(
             UpdateWafAddressRateLimitingRequest request) {
-        LOG.trace("Called updateWafAddressRateLimiting");
-        final UpdateWafAddressRateLimitingRequest interceptedRequest =
-                UpdateWafAddressRateLimitingConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWafAddressRateLimitingConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWafAddressRateLimitingDetails(),
+                "updateWafAddressRateLimitingDetails is required");
+
+        return clientCall(request, UpdateWafAddressRateLimitingResponse::builder)
+                .logger(LOG, "updateWafAddressRateLimiting")
+                .serviceDetails(
                         "Waas",
                         "UpdateWafAddressRateLimiting",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateWafAddressRateLimitingResponse>
-                transformer =
-                        UpdateWafAddressRateLimitingConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateWafAddressRateLimitingDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/AddressRateLimiting/UpdateWafAddressRateLimiting")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWafAddressRateLimitingRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("addressRateLimiting")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateWafAddressRateLimitingResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateWafAddressRateLimitingResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateWafConfigResponse updateWafConfig(UpdateWafConfigRequest request) {
-        LOG.trace("Called updateWafConfig");
-        final UpdateWafConfigRequest interceptedRequest =
-                UpdateWafConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWafConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateWafConfigDetails(), "updateWafConfigDetails is required");
+
+        return clientCall(request, UpdateWafConfigResponse::builder)
+                .logger(LOG, "updateWafConfig")
+                .serviceDetails(
                         "Waas",
                         "UpdateWafConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateWafConfigResponse>
-                transformer =
-                        UpdateWafConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateWafConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/WafConfig/UpdateWafConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWafConfigRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWafConfigResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateWafConfigResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
     public UpdateWhitelistsResponse updateWhitelists(UpdateWhitelistsRequest request) {
-        LOG.trace("Called updateWhitelists");
-        final UpdateWhitelistsRequest interceptedRequest =
-                UpdateWhitelistsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateWhitelistsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getWaasPolicyId(), "waasPolicyId must not be blank");
+        Objects.requireNonNull(request.getWhitelists(), "whitelists is required");
+
+        return clientCall(request, UpdateWhitelistsResponse::builder)
+                .logger(LOG, "updateWhitelists")
+                .serviceDetails(
                         "Waas",
                         "UpdateWhitelists",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateWhitelistsResponse>
-                transformer =
-                        UpdateWhitelistsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib, retriedRequest.getWhitelists(), retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/waas/20181116/Whitelist/UpdateWhitelists")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateWhitelistsRequest::builder)
+                .basePath("/20181116")
+                .appendPathParam("waasPolicies")
+                .appendPathParam(request.getWaasPolicyId())
+                .appendPathParam("wafConfig")
+                .appendPathParam("whitelists")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateWhitelistsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateWhitelistsResponse.Builder::opcWorkRequestId)
+                .callSync();
     }
 
     @Override
@@ -3128,5 +2374,209 @@ public class WaasClient implements Waas {
     @Override
     public WaasPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public WaasClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }

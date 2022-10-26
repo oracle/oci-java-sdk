@@ -6,101 +6,107 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbVersionsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbVersionsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbVersionsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return per page.
-     */
+    /** The maximum number of items to return per page. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     private String page;
 
-    /**
-     * The pagination token to continue listing from.
-     */
+    /** The pagination token to continue listing from. */
     public String getPage() {
         return page;
     }
     /**
-     * If provided, filters the results to the set of database versions which are supported for the given shape.
+     * If provided, filters the results to the set of database versions which are supported for the
+     * given shape.
      */
     private String dbSystemShape;
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for the given shape.
+     * If provided, filters the results to the set of database versions which are supported for the
+     * given shape.
      */
     public String getDbSystemShape() {
         return dbSystemShape;
     }
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * If provided, filters the results to the set of database versions which are supported for the
+     * DB system.
      */
     private String dbSystemId;
 
     /**
-     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * If provided, filters the results to the set of database versions which are supported for the
+     * DB system.
      */
     public String getDbSystemId() {
         return dbSystemId;
     }
     /**
-     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
-     * * ASM specifies Oracle Automatic Storage Management
-     * * LVM specifies logical volume manager, sometimes called logical disk manager.
-     *
+     * The DB system storage management option. Used to list database versions available for that
+     * storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies Oracle
+     * Automatic Storage Management * LVM specifies logical volume manager, sometimes called logical
+     * disk manager.
      */
     private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement;
 
     /**
-     * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
-     * * ASM specifies Oracle Automatic Storage Management
-     * * LVM specifies logical volume manager, sometimes called logical disk manager.
-     *
+     * The DB system storage management option. Used to list database versions available for that
+     * storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies Oracle
+     * Automatic Storage Management * LVM specifies logical volume manager, sometimes called logical
+     * disk manager.
      */
     public com.oracle.bmc.database.model.DbSystemOptions.StorageManagement getStorageManagement() {
         return storageManagement;
     }
     /**
-     * If provided, filters the results to the set of database versions which are supported for Upgrade.
+     * If provided, filters the results to the set of database versions which are supported for
+     * Upgrade.
      */
     private Boolean isUpgradeSupported;
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for Upgrade.
+     * If provided, filters the results to the set of database versions which are supported for
+     * Upgrade.
      */
     public Boolean getIsUpgradeSupported() {
         return isUpgradeSupported;
     }
     /**
-     * If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.
+     * If true, filters the results to the set of Oracle Database versions that are supported for
+     * OCI database software images.
      */
     private Boolean isDatabaseSoftwareImageSupported;
 
     /**
-     * If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.
+     * If true, filters the results to the set of Oracle Database versions that are supported for
+     * OCI database software images.
      */
     public Boolean getIsDatabaseSoftwareImageSupported() {
         return isDatabaseSoftwareImageSupported;
@@ -109,17 +115,19 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbVersionsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -128,13 +136,12 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The maximum number of items to return per page.
-         */
+        /** The maximum number of items to return per page. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -143,13 +150,12 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The pagination token to continue listing from.
-         */
+        /** The pagination token to continue listing from. */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -159,12 +165,15 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for the given shape.
+         * If provided, filters the results to the set of database versions which are supported for
+         * the given shape.
          */
         private String dbSystemShape = null;
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for the given shape.
+         * If provided, filters the results to the set of database versions which are supported for
+         * the given shape.
+         *
          * @param dbSystemShape the value to set
          * @return this builder instance
          */
@@ -174,12 +183,19 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+         * The DB system
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If
+         * provided, filters the results to the set of database versions which are supported for the
+         * DB system.
          */
         private String dbSystemId = null;
 
         /**
-         * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+         * The DB system
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If
+         * provided, filters the results to the set of database versions which are supported for the
+         * DB system.
+         *
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -189,18 +205,19 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
-         * * ASM specifies Oracle Automatic Storage Management
-         * * LVM specifies logical volume manager, sometimes called logical disk manager.
-         *
+         * The DB system storage management option. Used to list database versions available for
+         * that storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies
+         * Oracle Automatic Storage Management * LVM specifies logical volume manager, sometimes
+         * called logical disk manager.
          */
         private com.oracle.bmc.database.model.DbSystemOptions.StorageManagement storageManagement =
                 null;
 
         /**
-         * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are {@code ASM} and {@code LVM}.
-         * * ASM specifies Oracle Automatic Storage Management
-         * * LVM specifies logical volume manager, sometimes called logical disk manager.
+         * The DB system storage management option. Used to list database versions available for
+         * that storage manager. Valid values are {@code ASM} and {@code LVM}. * ASM specifies
+         * Oracle Automatic Storage Management * LVM specifies logical volume manager, sometimes
+         * called logical disk manager.
          *
          * @param storageManagement the value to set
          * @return this builder instance
@@ -212,12 +229,15 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for Upgrade.
+         * If provided, filters the results to the set of database versions which are supported for
+         * Upgrade.
          */
         private Boolean isUpgradeSupported = null;
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for Upgrade.
+         * If provided, filters the results to the set of database versions which are supported for
+         * Upgrade.
+         *
          * @param isUpgradeSupported the value to set
          * @return this builder instance
          */
@@ -227,12 +247,15 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.
+         * If true, filters the results to the set of Oracle Database versions that are supported
+         * for OCI database software images.
          */
         private Boolean isDatabaseSoftwareImageSupported = null;
 
         /**
-         * If true, filters the results to the set of Oracle Database versions that are supported for OCI database software images.
+         * If true, filters the results to the set of Oracle Database versions that are supported
+         * for OCI database software images.
+         *
          * @param isDatabaseSoftwareImageSupported the value to set
          * @return this builder instance
          */
@@ -243,18 +266,19 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -266,6 +290,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDbVersionsRequest o) {
@@ -285,10 +310,11 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDbVersionsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDbVersionsRequest
          */
@@ -302,7 +328,8 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDbVersionsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDbVersionsRequest
@@ -318,12 +345,14 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.isUpgradeSupported = isUpgradeSupported;
             request.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             return request;
-            // new ListDbVersionsRequest(compartmentId, limit, page, dbSystemShape, dbSystemId, storageManagement, isUpgradeSupported, isDatabaseSoftwareImageSupported);
+            // new ListDbVersionsRequest(compartmentId, limit, page, dbSystemShape, dbSystemId,
+            // storageManagement, isUpgradeSupported, isDatabaseSoftwareImageSupported);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -340,6 +369,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

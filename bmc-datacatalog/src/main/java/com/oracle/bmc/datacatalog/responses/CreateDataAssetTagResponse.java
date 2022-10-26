@@ -9,13 +9,14 @@ import com.oracle.bmc.datacatalog.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -24,15 +25,14 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,13 +40,12 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /**
-     * The returned DataAssetTag instance.
-     */
+    /** The returned DataAssetTag instance. */
     private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
     /**
      * The returned DataAssetTag instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.DataAssetTag getDataAssetTag() {
@@ -62,7 +61,7 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
     })
     private CreateDataAssetTagResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag) {
@@ -72,29 +71,33 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
         this.dataAssetTag = dataAssetTag;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateDataAssetTagResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -105,15 +108,14 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +125,12 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /**
-         * The returned DataAssetTag instance.
-         */
+        /** The returned DataAssetTag instance. */
         private com.oracle.bmc.datacatalog.model.DataAssetTag dataAssetTag;
 
         /**
          * The returned DataAssetTag instance.
+         *
          * @param dataAssetTag the value to set
          * @return this builder
          */
@@ -140,8 +141,10 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(CreateDataAssetTagResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +157,10 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public CreateDataAssetTagResponse build() {
             return new CreateDataAssetTagResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, dataAssetTag);
@@ -164,6 +169,7 @@ public class CreateDataAssetTagResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

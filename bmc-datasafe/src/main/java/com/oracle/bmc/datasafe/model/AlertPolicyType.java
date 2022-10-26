@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The Data Safe feature that relates to the alert policy.
- **/
+/** The Data Safe feature that relates to the alert policy. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AlertPolicyType {
+public enum AlertPolicyType implements com.oracle.bmc.http.internal.BmcEnum {
     Auditing("AUDITING"),
     SecurityAssessment("SECURITY_ASSESSMENT"),
     UserAssessment("USER_ASSESSMENT"),

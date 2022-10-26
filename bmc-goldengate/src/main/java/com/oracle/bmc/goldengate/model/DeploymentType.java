@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/**
- * The deployment type.
- *
- **/
+/** The deployment type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentType {
+public enum DeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     Ogg("OGG"),
 
     /**

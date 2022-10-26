@@ -8,13 +8,12 @@ import com.oracle.bmc.waas.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -22,25 +21,27 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /**
-     * The returned CustomProtectionRule instance.
-     */
+    /** The returned CustomProtectionRule instance. */
     private com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule;
 
     /**
      * The returned CustomProtectionRule instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.waas.model.CustomProtectionRule getCustomProtectionRule() {
@@ -56,7 +57,7 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
     })
     private GetCustomProtectionRuleResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule) {
@@ -66,28 +67,31 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
         this.customProtectionRule = customProtectionRule;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetCustomProtectionRuleResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -97,12 +101,15 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -111,13 +118,12 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /**
-         * The returned CustomProtectionRule instance.
-         */
+        /** The returned CustomProtectionRule instance. */
         private com.oracle.bmc.waas.model.CustomProtectionRule customProtectionRule;
 
         /**
          * The returned CustomProtectionRule instance.
+         *
          * @param customProtectionRule the value to set
          * @return this builder
          */
@@ -129,8 +135,10 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetCustomProtectionRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -143,8 +151,10 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetCustomProtectionRuleResponse build() {
             return new GetCustomProtectionRuleResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, customProtectionRule);
@@ -153,6 +163,7 @@ public class GetCustomProtectionRuleResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

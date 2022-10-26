@@ -9,21 +9,29 @@ import com.oracle.bmc.osmanagement.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of OsManagement where multiple pages of data may be fetched.
- * Two styles of iteration are supported:
+ * to any list operations of OsManagement where multiple pages of data may be fetched. Two styles of
+ * iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
- *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to
+ *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
+ *       <i>listUsersResponseIterator</i>
+ *   <li>Iterating over the resources/records being listed. These are referred to as
+ *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
+ *       <i>listUsersRecordIterator</i>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
- * They will automatically fetch more data from the service when required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping
+ * and using the page tokens. They will automatically fetch more data from the service when
+ * required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
- * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
- * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
+ * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
+ * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
+ * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have
+ * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
+ * handled so we can iterate until there are no more responses or no more resources/records
+ * available.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class OsManagementPaginators {
@@ -34,11 +42,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAvailablePackagesForManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAvailablePackagesForManagedInstance operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAvailablePackagesForManagedInstanceResponse>
             listAvailablePackagesForManagedInstanceResponseIterator(
@@ -92,13 +102,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.InstallablePackageSummary} objects
-     * contained in responses from the listAvailablePackagesForManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.InstallablePackageSummary} objects contained in responses
+     * from the listAvailablePackagesForManagedInstance operation. This iterable will fetch more
+     * data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.InstallablePackageSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.InstallablePackageSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.InstallablePackageSummary>
             listAvailablePackagesForManagedInstanceRecordIterator(
@@ -164,11 +176,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAvailableSoftwareSourcesForManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAvailableSoftwareSourcesForManagedInstance operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAvailableSoftwareSourcesForManagedInstanceResponse>
             listAvailableSoftwareSourcesForManagedInstanceResponseIterator(
@@ -224,13 +238,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} objects
-     * contained in responses from the listAvailableSoftwareSourcesForManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} objects contained in
+     * responses from the listAvailableSoftwareSourcesForManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.AvailableSoftwareSourceSummary>
             listAvailableSoftwareSourcesForManagedInstanceRecordIterator(
@@ -300,11 +316,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAvailableUpdatesForManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAvailableUpdatesForManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAvailableUpdatesForManagedInstanceResponse>
             listAvailableUpdatesForManagedInstanceResponseIterator(
@@ -358,13 +376,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} objects
-     * contained in responses from the listAvailableUpdatesForManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} objects contained in responses from
+     * the listAvailableUpdatesForManagedInstance operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.AvailableUpdateSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.AvailableUpdateSummary>
             listAvailableUpdatesForManagedInstanceRecordIterator(
@@ -429,11 +449,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAvailableWindowsUpdatesForManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listAvailableWindowsUpdatesForManagedInstance operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListAvailableWindowsUpdatesForManagedInstanceResponse>
             listAvailableWindowsUpdatesForManagedInstanceResponseIterator(
@@ -489,13 +511,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects
-     * contained in responses from the listAvailableWindowsUpdatesForManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects contained in
+     * responses from the listAvailableWindowsUpdatesForManagedInstance operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.AvailableWindowsUpdateSummary>
             listAvailableWindowsUpdatesForManagedInstanceRecordIterator(
@@ -564,11 +588,12 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listErrata operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listErrata
+     * operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListErrataResponse> listErrataResponseIterator(
             final ListErrataRequest request) {
@@ -613,18 +638,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
-     * contained in responses from the listErrata operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ErratumSummary} objects contained in responses from the
+     * listErrata operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ErratumSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ErratumSummary> listErrataRecordIterator(
             final ListErrataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListErrataRequest.Builder, ListErrataRequest, ListErrataResponse,
+                ListErrataRequest.Builder,
+                ListErrataRequest,
+                ListErrataResponse,
                 com.oracle.bmc.osmanagement.model.ErratumSummary>(
                 new java.util.function.Supplier<ListErrataRequest.Builder>() {
                     @Override
@@ -674,16 +702,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listManagedInstanceErrata operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listManagedInstanceErrata operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListManagedInstanceErrataResponse> listManagedInstanceErrataResponseIterator(
             final ListManagedInstanceErrataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
+                ListManagedInstanceErrataRequest.Builder,
+                ListManagedInstanceErrataRequest,
                 ListManagedInstanceErrataResponse>(
                 new java.util.function.Supplier<ListManagedInstanceErrataRequest.Builder>() {
                     @Override
@@ -726,19 +757,22 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
-     * contained in responses from the listManagedInstanceErrata operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ErratumSummary} objects contained in responses from the
+     * listManagedInstanceErrata operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ErratumSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ErratumSummary} objects contained in responses received
+     *     from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ErratumSummary>
             listManagedInstanceErrataRecordIterator(
                     final ListManagedInstanceErrataRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedInstanceErrataRequest.Builder, ListManagedInstanceErrataRequest,
+                ListManagedInstanceErrataRequest.Builder,
+                ListManagedInstanceErrataRequest,
                 ListManagedInstanceErrataResponse,
                 com.oracle.bmc.osmanagement.model.ErratumSummary>(
                 new java.util.function.Supplier<ListManagedInstanceErrataRequest.Builder>() {
@@ -791,16 +825,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listManagedInstanceGroups operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listManagedInstanceGroups operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListManagedInstanceGroupsResponse> listManagedInstanceGroupsResponseIterator(
             final ListManagedInstanceGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListManagedInstanceGroupsRequest.Builder, ListManagedInstanceGroupsRequest,
+                ListManagedInstanceGroupsRequest.Builder,
+                ListManagedInstanceGroupsRequest,
                 ListManagedInstanceGroupsResponse>(
                 new java.util.function.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
                     @Override
@@ -843,19 +880,22 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary} objects
-     * contained in responses from the listManagedInstanceGroups operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary} objects contained in responses
+     * from the listManagedInstanceGroups operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary>
             listManagedInstanceGroupsRecordIterator(
                     final ListManagedInstanceGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedInstanceGroupsRequest.Builder, ListManagedInstanceGroupsRequest,
+                ListManagedInstanceGroupsRequest.Builder,
+                ListManagedInstanceGroupsRequest,
                 ListManagedInstanceGroupsResponse,
                 com.oracle.bmc.osmanagement.model.ManagedInstanceGroupSummary>(
                 new java.util.function.Supplier<ListManagedInstanceGroupsRequest.Builder>() {
@@ -910,16 +950,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listManagedInstances operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listManagedInstances operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListManagedInstancesResponse> listManagedInstancesResponseIterator(
             final ListManagedInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListManagedInstancesRequest.Builder, ListManagedInstancesRequest,
+                ListManagedInstancesRequest.Builder,
+                ListManagedInstancesRequest,
                 ListManagedInstancesResponse>(
                 new java.util.function.Supplier<ListManagedInstancesRequest.Builder>() {
                     @Override
@@ -961,18 +1003,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} objects
-     * contained in responses from the listManagedInstances operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} objects contained in responses from
+     * the listManagedInstances operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ManagedInstanceSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ManagedInstanceSummary>
             listManagedInstancesRecordIterator(final ListManagedInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListManagedInstancesRequest.Builder, ListManagedInstancesRequest,
+                ListManagedInstancesRequest.Builder,
+                ListManagedInstancesRequest,
                 ListManagedInstancesResponse,
                 com.oracle.bmc.osmanagement.model.ManagedInstanceSummary>(
                 new java.util.function.Supplier<ListManagedInstancesRequest.Builder>() {
@@ -1025,16 +1070,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listModuleStreamProfiles operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModuleStreamProfiles operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListModuleStreamProfilesResponse> listModuleStreamProfilesResponseIterator(
             final ListModuleStreamProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
+                ListModuleStreamProfilesRequest.Builder,
+                ListModuleStreamProfilesRequest,
                 ListModuleStreamProfilesResponse>(
                 new java.util.function.Supplier<ListModuleStreamProfilesRequest.Builder>() {
                     @Override
@@ -1077,18 +1125,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects
-     * contained in responses from the listModuleStreamProfiles operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects contained in responses
+     * from the listModuleStreamProfiles operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>
             listModuleStreamProfilesRecordIterator(final ListModuleStreamProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModuleStreamProfilesRequest.Builder, ListModuleStreamProfilesRequest,
+                ListModuleStreamProfilesRequest.Builder,
+                ListModuleStreamProfilesRequest,
                 ListModuleStreamProfilesResponse,
                 com.oracle.bmc.osmanagement.model.ModuleStreamProfileSummary>(
                 new java.util.function.Supplier<ListModuleStreamProfilesRequest.Builder>() {
@@ -1143,11 +1194,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listModuleStreamProfilesOnManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModuleStreamProfilesOnManagedInstance operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListModuleStreamProfilesOnManagedInstanceResponse>
             listModuleStreamProfilesOnManagedInstanceResponseIterator(
@@ -1203,13 +1256,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
-     * contained in responses from the listModuleStreamProfilesOnManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
+     * contained in responses from the listModuleStreamProfilesOnManagedInstance operation. This
+     * iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary} objects
+     *     contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamProfileOnManagedInstanceSummary>
             listModuleStreamProfilesOnManagedInstanceRecordIterator(
@@ -1279,16 +1334,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listModuleStreams operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModuleStreams operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListModuleStreamsResponse> listModuleStreamsResponseIterator(
             final ListModuleStreamsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
+                ListModuleStreamsRequest.Builder,
+                ListModuleStreamsRequest,
                 ListModuleStreamsResponse>(
                 new java.util.function.Supplier<ListModuleStreamsRequest.Builder>() {
                     @Override
@@ -1330,19 +1387,23 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects
-     * contained in responses from the listModuleStreams operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects contained in responses from
+     * the listModuleStreams operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ModuleStreamSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamSummary>
             listModuleStreamsRecordIterator(final ListModuleStreamsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModuleStreamsRequest.Builder, ListModuleStreamsRequest,
-                ListModuleStreamsResponse, com.oracle.bmc.osmanagement.model.ModuleStreamSummary>(
+                ListModuleStreamsRequest.Builder,
+                ListModuleStreamsRequest,
+                ListModuleStreamsResponse,
+                com.oracle.bmc.osmanagement.model.ModuleStreamSummary>(
                 new java.util.function.Supplier<ListModuleStreamsRequest.Builder>() {
                     @Override
                     public ListModuleStreamsRequest.Builder get() {
@@ -1392,11 +1453,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listModuleStreamsOnManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listModuleStreamsOnManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListModuleStreamsOnManagedInstanceResponse>
             listModuleStreamsOnManagedInstanceResponseIterator(
@@ -1449,13 +1512,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects
-     * contained in responses from the listModuleStreamsOnManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects contained in
+     * responses from the listModuleStreamsOnManagedInstance operation. This iterable will fetch
+     * more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary} objects contained
+     *     in responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>
             listModuleStreamsOnManagedInstanceRecordIterator(
@@ -1522,11 +1587,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPackagesInstalledOnManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listPackagesInstalledOnManagedInstance operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListPackagesInstalledOnManagedInstanceResponse>
             listPackagesInstalledOnManagedInstanceResponseIterator(
@@ -1580,13 +1647,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledPackageSummary} objects
-     * contained in responses from the listPackagesInstalledOnManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.InstalledPackageSummary} objects contained in responses
+     * from the listPackagesInstalledOnManagedInstance operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledPackageSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.InstalledPackageSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.InstalledPackageSummary>
             listPackagesInstalledOnManagedInstanceRecordIterator(
@@ -1651,16 +1720,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listScheduledJobs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listScheduledJobs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListScheduledJobsResponse> listScheduledJobsResponseIterator(
             final ListScheduledJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListScheduledJobsRequest.Builder, ListScheduledJobsRequest,
+                ListScheduledJobsRequest.Builder,
+                ListScheduledJobsRequest,
                 ListScheduledJobsResponse>(
                 new java.util.function.Supplier<ListScheduledJobsRequest.Builder>() {
                     @Override
@@ -1702,19 +1773,23 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects
-     * contained in responses from the listScheduledJobs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects contained in responses from
+     * the listScheduledJobs operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ScheduledJobSummary>
             listScheduledJobsRecordIterator(final ListScheduledJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListScheduledJobsRequest.Builder, ListScheduledJobsRequest,
-                ListScheduledJobsResponse, com.oracle.bmc.osmanagement.model.ScheduledJobSummary>(
+                ListScheduledJobsRequest.Builder,
+                ListScheduledJobsRequest,
+                ListScheduledJobsResponse,
+                com.oracle.bmc.osmanagement.model.ScheduledJobSummary>(
                 new java.util.function.Supplier<ListScheduledJobsRequest.Builder>() {
                     @Override
                     public ListScheduledJobsRequest.Builder get() {
@@ -1764,16 +1839,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSoftwareSourcePackages operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSoftwareSourcePackages operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSoftwareSourcePackagesResponse> listSoftwareSourcePackagesResponseIterator(
             final ListSoftwareSourcePackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSoftwareSourcePackagesRequest.Builder, ListSoftwareSourcePackagesRequest,
+                ListSoftwareSourcePackagesRequest.Builder,
+                ListSoftwareSourcePackagesRequest,
                 ListSoftwareSourcePackagesResponse>(
                 new java.util.function.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
                     @Override
@@ -1816,19 +1894,22 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwarePackageSummary} objects
-     * contained in responses from the listSoftwareSourcePackages operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.SoftwarePackageSummary} objects contained in responses from
+     * the listSoftwareSourcePackages operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwarePackageSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.SoftwarePackageSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.SoftwarePackageSummary>
             listSoftwareSourcePackagesRecordIterator(
                     final ListSoftwareSourcePackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSoftwareSourcePackagesRequest.Builder, ListSoftwareSourcePackagesRequest,
+                ListSoftwareSourcePackagesRequest.Builder,
+                ListSoftwareSourcePackagesRequest,
                 ListSoftwareSourcePackagesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwarePackageSummary>(
                 new java.util.function.Supplier<ListSoftwareSourcePackagesRequest.Builder>() {
@@ -1882,16 +1963,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSoftwareSources operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listSoftwareSources operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListSoftwareSourcesResponse> listSoftwareSourcesResponseIterator(
             final ListSoftwareSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSoftwareSourcesRequest.Builder, ListSoftwareSourcesRequest,
+                ListSoftwareSourcesRequest.Builder,
+                ListSoftwareSourcesRequest,
                 ListSoftwareSourcesResponse>(
                 new java.util.function.Supplier<ListSoftwareSourcesRequest.Builder>() {
                     @Override
@@ -1933,18 +2016,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} objects
-     * contained in responses from the listSoftwareSources operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} objects contained in responses from
+     * the listSoftwareSources operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.SoftwareSourceSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.SoftwareSourceSummary>
             listSoftwareSourcesRecordIterator(final ListSoftwareSourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSoftwareSourcesRequest.Builder, ListSoftwareSourcesRequest,
+                ListSoftwareSourcesRequest.Builder,
+                ListSoftwareSourcesRequest,
                 ListSoftwareSourcesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwareSourceSummary>(
                 new java.util.function.Supplier<ListSoftwareSourcesRequest.Builder>() {
@@ -1996,16 +2082,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listUpcomingScheduledJobs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listUpcomingScheduledJobs operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListUpcomingScheduledJobsResponse> listUpcomingScheduledJobsResponseIterator(
             final ListUpcomingScheduledJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListUpcomingScheduledJobsRequest.Builder, ListUpcomingScheduledJobsRequest,
+                ListUpcomingScheduledJobsRequest.Builder,
+                ListUpcomingScheduledJobsRequest,
                 ListUpcomingScheduledJobsResponse>(
                 new java.util.function.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
                     @Override
@@ -2048,19 +2137,22 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects
-     * contained in responses from the listUpcomingScheduledJobs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects contained in responses from
+     * the listUpcomingScheduledJobs operation. This iterable will fetch more data from the server
+     * as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.ScheduledJobSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.ScheduledJobSummary>
             listUpcomingScheduledJobsRecordIterator(
                     final ListUpcomingScheduledJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUpcomingScheduledJobsRequest.Builder, ListUpcomingScheduledJobsRequest,
+                ListUpcomingScheduledJobsRequest.Builder,
+                ListUpcomingScheduledJobsRequest,
                 ListUpcomingScheduledJobsResponse,
                 com.oracle.bmc.osmanagement.model.ScheduledJobSummary>(
                 new java.util.function.Supplier<ListUpcomingScheduledJobsRequest.Builder>() {
@@ -2113,16 +2205,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWindowsUpdates operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWindowsUpdates operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWindowsUpdatesResponse> listWindowsUpdatesResponseIterator(
             final ListWindowsUpdatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
+                ListWindowsUpdatesRequest.Builder,
+                ListWindowsUpdatesRequest,
                 ListWindowsUpdatesResponse>(
                 new java.util.function.Supplier<ListWindowsUpdatesRequest.Builder>() {
                     @Override
@@ -2164,19 +2258,23 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects
-     * contained in responses from the listWindowsUpdates operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects contained in responses from
+     * the listWindowsUpdates operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.WindowsUpdateSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>
             listWindowsUpdatesRecordIterator(final ListWindowsUpdatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWindowsUpdatesRequest.Builder, ListWindowsUpdatesRequest,
-                ListWindowsUpdatesResponse, com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>(
+                ListWindowsUpdatesRequest.Builder,
+                ListWindowsUpdatesRequest,
+                ListWindowsUpdatesResponse,
+                com.oracle.bmc.osmanagement.model.WindowsUpdateSummary>(
                 new java.util.function.Supplier<ListWindowsUpdatesRequest.Builder>() {
                     @Override
                     public ListWindowsUpdatesRequest.Builder get() {
@@ -2226,11 +2324,13 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWindowsUpdatesInstalledOnManagedInstance operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWindowsUpdatesInstalledOnManagedInstance operation. This iterable will fetch more data
+     * from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWindowsUpdatesInstalledOnManagedInstanceResponse>
             listWindowsUpdatesInstalledOnManagedInstanceResponseIterator(
@@ -2286,13 +2386,15 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects
-     * contained in responses from the listWindowsUpdatesInstalledOnManagedInstance operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects contained in
+     * responses from the listWindowsUpdatesInstalledOnManagedInstance operation. This iterable will
+     * fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.InstalledWindowsUpdateSummary>
             listWindowsUpdatesInstalledOnManagedInstanceRecordIterator(
@@ -2361,16 +2463,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -2413,19 +2518,23 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestError} objects
-     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.WorkRequestError} objects contained in responses from the
+     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestError} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.WorkRequestError} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse, com.oracle.bmc.osmanagement.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder,
+                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse,
+                com.oracle.bmc.osmanagement.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -2476,16 +2585,18 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -2527,19 +2638,23 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestLogEntry} objects
-     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.WorkRequestLogEntry} objects contained in responses from
+     * the listWorkRequestLogs operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestLogEntry} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.WorkRequestLogEntry} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse, com.oracle.bmc.osmanagement.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder,
+                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse,
+                com.oracle.bmc.osmanagement.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -2589,11 +2704,12 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -2639,18 +2755,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestSummary} objects
-     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.WorkRequestSummary} objects contained in responses from the
+     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.WorkRequestSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.WorkRequestSummary} objects contained in responses
+     *     received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder,
+                ListWorkRequestsRequest,
+                ListWorkRequestsResponse,
                 com.oracle.bmc.osmanagement.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override
@@ -2701,16 +2820,19 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the searchSoftwarePackages operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the
+     * searchSoftwarePackages operation. This iterable will fetch more data from the server as
+     * needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
      */
     public Iterable<SearchSoftwarePackagesResponse> searchSoftwarePackagesResponseIterator(
             final SearchSoftwarePackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                SearchSoftwarePackagesRequest.Builder, SearchSoftwarePackagesRequest,
+                SearchSoftwarePackagesRequest.Builder,
+                SearchSoftwarePackagesRequest,
                 SearchSoftwarePackagesResponse>(
                 new java.util.function.Supplier<SearchSoftwarePackagesRequest.Builder>() {
                     @Override
@@ -2753,18 +2875,21 @@ public class OsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} objects
-     * contained in responses from the searchSoftwarePackages operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} objects contained in
+     * responses from the searchSoftwarePackages operation. This iterable will fetch more data from
+     * the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} objects
-     * contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary} objects contained in
+     *     responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary>
             searchSoftwarePackagesRecordIterator(final SearchSoftwarePackagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                SearchSoftwarePackagesRequest.Builder, SearchSoftwarePackagesRequest,
+                SearchSoftwarePackagesRequest.Builder,
+                SearchSoftwarePackagesRequest,
                 SearchSoftwarePackagesResponse,
                 com.oracle.bmc.osmanagement.model.SoftwarePackageSearchSummary>(
                 new java.util.function.Supplier<SearchSoftwarePackagesRequest.Builder>() {

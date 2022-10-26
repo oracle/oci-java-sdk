@@ -14,23 +14,18 @@ import java.util.Base64;
 
 import com.oracle.bmc.util.StreamUtils;
 
-/**
- * Temporary helper class that should be moved into the common library later.
- */
+/** Temporary helper class that should be moved into the common library later. */
 public class StreamHelper {
     private static final int BUFFER_SIZE = 8 * 1024;
 
     /**
-     * Copy contents from the input stream into the output stream. The input
-     * stream will be closed in both successful or failure cases.
+     * Copy contents from the input stream into the output stream. The input stream will be closed
+     * in both successful or failure cases.
      *
-     * @param in
-     *            The stream to copy.
-     * @param out
-     *            The stream to write to.
+     * @param in The stream to copy.
+     * @param out The stream to write to.
      * @return the number of bytes copied.
-     * @throws IOException
-     *             if there were any issues
+     * @throws IOException if there were any issues
      */
     public static long copy(InputStream in, OutputStream out) throws IOException {
         try {
@@ -50,6 +45,7 @@ public class StreamHelper {
 
     /**
      * Base64 encodes the given byte array after computing its MD5 digest.
+     *
      * @param buffer The buffer to encode
      * @return The base64-encoded MD5 digest
      */
@@ -59,6 +55,7 @@ public class StreamHelper {
 
     /**
      * Creates a DigestOutputStream where the digest uses MD5.
+     *
      * @param stream The output stream to write to.
      * @return A new DigestOutputStream
      */

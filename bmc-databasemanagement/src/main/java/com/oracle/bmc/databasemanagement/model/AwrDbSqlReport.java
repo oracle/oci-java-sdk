@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The result of the AWR SQL report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The result of the AWR SQL report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AwrDbSqlReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "awrResultType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "awrResultType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AwrDbSqlReport extends AwrQueryResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -60,33 +60,31 @@ public final class AwrDbSqlReport extends AwrQueryResult {
             this.__explicitlySet__.add("dbQueryTimeInSecs");
             return this;
         }
-        /**
-         * The content of the report.
-         **/
+        /** The content of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
          * The content of the report.
+         *
          * @param content the value to set
          * @return this builder
-         **/
+         */
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-        /**
-         * The format of the report.
-         **/
+        /** The format of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private Format format;
 
         /**
          * The format of the report.
+         *
          * @param format the value to set
          * @return this builder
-         **/
+         */
         public Builder format(Format format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -135,9 +133,7 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,30 +155,27 @@ public final class AwrDbSqlReport extends AwrQueryResult {
         this.format = format;
     }
 
-    /**
-     * The content of the report.
-     **/
+    /** The content of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
      * The content of the report.
+     *
      * @return the value
-     **/
+     */
     public String getContent() {
         return content;
     }
 
-    /**
-     * The format of the report.
-     **/
-    public enum Format {
+    /** The format of the report. */
+    public enum Format implements com.oracle.bmc.http.internal.BmcEnum {
         Html("HTML"),
         Text("TEXT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -220,16 +213,15 @@ public final class AwrDbSqlReport extends AwrQueryResult {
             return UnknownEnumValue;
         }
     };
-    /**
-     * The format of the report.
-     **/
+    /** The format of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final Format format;
 
     /**
      * The format of the report.
+     *
      * @return the value
-     **/
+     */
     public Format getFormat() {
         return format;
     }
@@ -241,6 +233,7 @@ public final class AwrDbSqlReport extends AwrQueryResult {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

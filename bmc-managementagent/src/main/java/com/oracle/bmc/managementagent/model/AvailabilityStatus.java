@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/**
- * Possible availability status.
- **/
+/** Possible availability status. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum AvailabilityStatus {
+public enum AvailabilityStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Silent("SILENT"),
     NotAvailable("NOT_AVAILABLE"),

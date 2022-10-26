@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible condition value types
- **/
+/** Possible condition value types */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ConditionValueType {
+public enum ConditionValueType implements com.oracle.bmc.http.internal.BmcEnum {
     Managed("MANAGED"),
     Custom("CUSTOM"),
 

@@ -17,18 +17,18 @@ import com.oracle.bmc.identity.responses.UpdateAuthenticationPolicyResponse;
 import java.io.IOException;
 
 /**
- * An example for using the Authentication Policy api using a session token.
- * Steps:
- * 1. Get the Authentication-Policy for your tenant
- * 2. Update the Authentication-Policy for your tenant
- * 3. Create a session token using the OCI CLI
- * 4. Set the session token file path in the OCI configuration file using the 'security_token_file' parameter
+ * An example for using the Authentication Policy api using a session token. Steps: 1. Get the
+ * Authentication-Policy for your tenant 2. Update the Authentication-Policy for your tenant 3.
+ * Create a session token using the OCI CLI 4. Set the session token file path in the OCI
+ * configuration file using the 'security_token_file' parameter
  */
 public class SessionTokenExample {
     public static void main(String[] args) throws IOException {
 
-        // This example assumes that you have a session token in the file specified by the "security_token_file" field
-        // in the profile being used in the config file. If the token does not exist or has not been refreshed,
+        // This example assumes that you have a session token in the file specified by the
+        // "security_token_file" field
+        // in the profile being used in the config file. If the token does not exist or has not been
+        // refreshed,
         // this example will fail with a 401 - Not Authenticated error.
         // You can use the OCI CLI to authenticate and create a token, see
         // https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/clitoken.htm
@@ -48,7 +48,8 @@ public class SessionTokenExample {
         GetAuthenticationPolicyResponse getAuthenticationPolicyResponse =
                 identityClient.getAuthenticationPolicy(
                         GetAuthenticationPolicyRequest.builder()
-                                // currently only the tenant (ie the root compartment) can have an authentication policy
+                                // currently only the tenant (ie the root compartment) can have an
+                                // authentication policy
                                 .compartmentId(tenantId)
                                 .build());
         System.out.printf(
@@ -66,7 +67,8 @@ public class SessionTokenExample {
                                         .passwordPolicy(
                                                 PasswordPolicy.builder()
                                                         .minimumPasswordLength(
-                                                                15) // note that this is changed from the default
+                                                                15) // note that this is changed
+                                                        // from the default
                                                         .isLowercaseCharactersRequired(true)
                                                         .isUppercaseCharactersRequired(true)
                                                         .isNumericCharactersRequired(true)

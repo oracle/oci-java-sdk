@@ -5,25 +5,24 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details for creating a private root certificate authority (CA).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details for creating a private root certificate authority (CA). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateRootCaByGeneratingInternallyConfigDetails.Builder.class
-)
+        builder = CreateRootCaByGeneratingInternallyConfigDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "configType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "configType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateRootCaByGeneratingInternallyConfigDetails
         extends CreateCertificateAuthorityConfigDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -45,17 +44,16 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
             this.__explicitlySet__.add("validity");
             return this;
         }
-        /**
-         * The algorithm used to sign public key certificates that the CA issues.
-         **/
+        /** The algorithm used to sign public key certificates that the CA issues. */
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
         private SignatureAlgorithm signingAlgorithm;
 
         /**
          * The algorithm used to sign public key certificates that the CA issues.
+         *
          * @param signingAlgorithm the value to set
          * @return this builder
-         **/
+         */
         public Builder signingAlgorithm(SignatureAlgorithm signingAlgorithm) {
             this.signingAlgorithm = signingAlgorithm;
             this.__explicitlySet__.add("signingAlgorithm");
@@ -102,9 +100,7 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,16 +128,15 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
         return validity;
     }
 
-    /**
-     * The algorithm used to sign public key certificates that the CA issues.
-     **/
+    /** The algorithm used to sign public key certificates that the CA issues. */
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithm")
     private final SignatureAlgorithm signingAlgorithm;
 
     /**
      * The algorithm used to sign public key certificates that the CA issues.
+     *
      * @return the value
-     **/
+     */
     public SignatureAlgorithm getSigningAlgorithm() {
         return signingAlgorithm;
     }
@@ -160,6 +155,7 @@ public final class CreateRootCaByGeneratingInternallyConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

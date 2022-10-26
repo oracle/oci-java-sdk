@@ -15,7 +15,8 @@ import javax.annotation.concurrent.Immutable;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
- * The SignatureSigner is used to actually sign a message with a private key. This version is specific to RSA.
+ * The SignatureSigner is used to actually sign a message with a private key. This version is
+ * specific to RSA.
  */
 @Immutable
 public class SignatureSigner {
@@ -25,15 +26,11 @@ public class SignatureSigner {
     /**
      * Sign the given message using the given private key
      *
-     * @param privateKey
-     *            the private key to use to sign the message
-     * @param message
-     *            the message to sign, must not be null or empty
-     * @param algorithm
-     *            the algorithm to sign
+     * @param privateKey the private key to use to sign the message
+     * @param message the message to sign, must not be null or empty
+     * @param algorithm the algorithm to sign
      * @return an RSA signature of the message made using given private key and algorithm
-     * @throws SignedRequestException
-     *             if algorithm is invalid, key is invalid or signing fails
+     * @throws SignedRequestException if algorithm is invalid, key is invalid or signing fails
      */
     @Nonnull
     public byte[] sign(

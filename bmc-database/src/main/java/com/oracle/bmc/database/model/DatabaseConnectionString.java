@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Oracle Database connection string.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Oracle Database connection string. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DatabaseConnectionString.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DatabaseConnectionString.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseConnectionString
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "port", "service", "protocol"})
     public DatabaseConnectionString(
@@ -35,65 +34,61 @@ public final class DatabaseConnectionString
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The host name of the database.
-         **/
+        /** The host name of the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * The host name of the database.
+         *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /**
-         * The port used to connect to the database.
-         **/
+        /** The port used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port used to connect to the database.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /**
-         * The name of the service alias used to connect to the database.
-         **/
+        /** The name of the service alias used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * The name of the service alias used to connect to the database.
+         *
          * @param service the value to set
          * @return this builder
-         **/
+         */
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /**
-         * The protocol used to connect to the database.
-         **/
+        /** The protocol used to connect to the database. */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * The protocol used to connect to the database.
+         *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -131,9 +126,7 @@ public final class DatabaseConnectionString
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,58 +135,53 @@ public final class DatabaseConnectionString
         return new Builder().copy(this);
     }
 
-    /**
-     * The host name of the database.
-     **/
+    /** The host name of the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * The host name of the database.
+     *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
-    /**
-     * The port used to connect to the database.
-     **/
+    /** The port used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port used to connect to the database.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
-    /**
-     * The name of the service alias used to connect to the database.
-     **/
+    /** The name of the service alias used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * The name of the service alias used to connect to the database.
+     *
      * @return the value
-     **/
+     */
     public String getService() {
         return service;
     }
 
-    /**
-     * The protocol used to connect to the database.
-     **/
-    public enum Protocol {
+    /** The protocol used to connect to the database. */
+    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
         Tcp("TCP"),
         Tcps("TCPS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -232,16 +220,15 @@ public final class DatabaseConnectionString
             return UnknownEnumValue;
         }
     };
-    /**
-     * The protocol used to connect to the database.
-     **/
+    /** The protocol used to connect to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * The protocol used to connect to the database.
+     *
      * @return the value
-     **/
+     */
     public Protocol getProtocol() {
         return protocol;
     }
@@ -253,6 +240,7 @@ public final class DatabaseConnectionString
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

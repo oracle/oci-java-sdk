@@ -5,71 +5,71 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Artifact Registry source details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the Artifact Registry source details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = GenericDeployArtifactSource.Builder.class
-)
+        builder = GenericDeployArtifactSource.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "deployArtifactSourceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "deployArtifactSourceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class GenericDeployArtifactSource extends DeployArtifactSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of a repository.
-         **/
+        /** The OCID of a repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
          * The OCID of a repository.
+         *
          * @param repositoryId the value to set
          * @return this builder
-         **/
+         */
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
             return this;
         }
-        /**
-         * Specifies the artifact path in the repository.
-         **/
+        /** Specifies the artifact path in the repository. */
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactPath")
         private String deployArtifactPath;
 
         /**
          * Specifies the artifact path in the repository.
+         *
          * @param deployArtifactPath the value to set
          * @return this builder
-         **/
+         */
         public Builder deployArtifactPath(String deployArtifactPath) {
             this.deployArtifactPath = deployArtifactPath;
             this.__explicitlySet__.add("deployArtifactPath");
             return this;
         }
         /**
-         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
-         **/
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for
+         * example, ${appVersion}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
         private String deployArtifactVersion;
 
         /**
-         * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+         * Users can set this as a placeholder value that refers to a pipeline parameter, for
+         * example, ${appVersion}.
+         *
          * @param deployArtifactVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder deployArtifactVersion(String deployArtifactVersion) {
             this.deployArtifactVersion = deployArtifactVersion;
             this.__explicitlySet__.add("deployArtifactVersion");
@@ -104,9 +104,7 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,44 +122,45 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
         this.deployArtifactVersion = deployArtifactVersion;
     }
 
-    /**
-     * The OCID of a repository.
-     **/
+    /** The OCID of a repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
      * The OCID of a repository.
+     *
      * @return the value
-     **/
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
 
-    /**
-     * Specifies the artifact path in the repository.
-     **/
+    /** Specifies the artifact path in the repository. */
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactPath")
     private final String deployArtifactPath;
 
     /**
      * Specifies the artifact path in the repository.
+     *
      * @return the value
-     **/
+     */
     public String getDeployArtifactPath() {
         return deployArtifactPath;
     }
 
     /**
-     * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
-     **/
+     * Users can set this as a placeholder value that refers to a pipeline parameter, for example,
+     * ${appVersion}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("deployArtifactVersion")
     private final String deployArtifactVersion;
 
     /**
-     * Users can set this as a placeholder value that refers to a pipeline parameter, for example, ${appVersion}.
+     * Users can set this as a placeholder value that refers to a pipeline parameter, for example,
+     * ${appVersion}.
+     *
      * @return the value
-     **/
+     */
     public String getDeployArtifactVersion() {
         return deployArtifactVersion;
     }
@@ -173,6 +172,7 @@ public final class GenericDeployArtifactSource extends DeployArtifactSource {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

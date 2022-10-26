@@ -5,21 +5,22 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Details for response from replication estimation.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for response from replication estimation. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ReplicationEstimate.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationEstimate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ReplicationEstimate.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReplicationEstimate
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "changeRateInMBps",
@@ -45,81 +46,80 @@ public final class ReplicationEstimate extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The rate of change on source filesystem which was used to provide the estimate in MegaBytes per second.
-         **/
+         * The rate of change on source filesystem which was used to provide the estimate in
+         * MegaBytes per second.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("changeRateInMBps")
         private Integer changeRateInMBps;
 
         /**
-         * The rate of change on source filesystem which was used to provide the estimate in MegaBytes per second.
+         * The rate of change on source filesystem which was used to provide the estimate in
+         * MegaBytes per second.
+         *
          * @param changeRateInMBps the value to set
          * @return this builder
-         **/
+         */
         public Builder changeRateInMBps(Integer changeRateInMBps) {
             this.changeRateInMBps = changeRateInMBps;
             this.__explicitlySet__.add("changeRateInMBps");
             return this;
         }
-        /**
-         * Specifies whether replication can be enabled on the file system.
-         **/
+        /** Specifies whether replication can be enabled on the file system. */
         @com.fasterxml.jackson.annotation.JsonProperty("isReplicationSupported")
         private Boolean isReplicationSupported;
 
         /**
          * Specifies whether replication can be enabled on the file system.
+         *
          * @param isReplicationSupported the value to set
          * @return this builder
-         **/
+         */
         public Builder isReplicationSupported(Boolean isReplicationSupported) {
             this.isReplicationSupported = isReplicationSupported;
             this.__explicitlySet__.add("isReplicationSupported");
             return this;
         }
-        /**
-         * The minimum supported replication interval for specified file system in minutes.
-         **/
+        /** The minimum supported replication interval for specified file system in minutes. */
         @com.fasterxml.jackson.annotation.JsonProperty("minimumSupportedIntervalInMinutes")
         private Integer minimumSupportedIntervalInMinutes;
 
         /**
          * The minimum supported replication interval for specified file system in minutes.
+         *
          * @param minimumSupportedIntervalInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder minimumSupportedIntervalInMinutes(
                 Integer minimumSupportedIntervalInMinutes) {
             this.minimumSupportedIntervalInMinutes = minimumSupportedIntervalInMinutes;
             this.__explicitlySet__.add("minimumSupportedIntervalInMinutes");
             return this;
         }
-        /**
-         * The approximate time required for the base sync between source and target to finish.
-         **/
+        /** The approximate time required for the base sync between source and target to finish. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedBaseCopyTimeInMinutes")
         private Integer estimatedBaseCopyTimeInMinutes;
 
         /**
          * The approximate time required for the base sync between source and target to finish.
+         *
          * @param estimatedBaseCopyTimeInMinutes the value to set
          * @return this builder
-         **/
+         */
         public Builder estimatedBaseCopyTimeInMinutes(Integer estimatedBaseCopyTimeInMinutes) {
             this.estimatedBaseCopyTimeInMinutes = estimatedBaseCopyTimeInMinutes;
             this.__explicitlySet__.add("estimatedBaseCopyTimeInMinutes");
             return this;
         }
-        /**
-         * Array of allowed target region names which can be paired with source file system.
-         **/
+        /** Array of allowed target region names which can be paired with source file system. */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedTargetRegions")
         private java.util.List<String> allowedTargetRegions;
 
         /**
          * Array of allowed target region names which can be paired with source file system.
+         *
          * @param allowedTargetRegions the value to set
          * @return this builder
-         **/
+         */
         public Builder allowedTargetRegions(java.util.List<String> allowedTargetRegions) {
             this.allowedTargetRegions = allowedTargetRegions;
             this.__explicitlySet__.add("allowedTargetRegions");
@@ -165,9 +165,7 @@ public final class ReplicationEstimate extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,71 +175,70 @@ public final class ReplicationEstimate extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The rate of change on source filesystem which was used to provide the estimate in MegaBytes per second.
-     **/
+     * The rate of change on source filesystem which was used to provide the estimate in MegaBytes
+     * per second.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("changeRateInMBps")
     private final Integer changeRateInMBps;
 
     /**
-     * The rate of change on source filesystem which was used to provide the estimate in MegaBytes per second.
+     * The rate of change on source filesystem which was used to provide the estimate in MegaBytes
+     * per second.
+     *
      * @return the value
-     **/
+     */
     public Integer getChangeRateInMBps() {
         return changeRateInMBps;
     }
 
-    /**
-     * Specifies whether replication can be enabled on the file system.
-     **/
+    /** Specifies whether replication can be enabled on the file system. */
     @com.fasterxml.jackson.annotation.JsonProperty("isReplicationSupported")
     private final Boolean isReplicationSupported;
 
     /**
      * Specifies whether replication can be enabled on the file system.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsReplicationSupported() {
         return isReplicationSupported;
     }
 
-    /**
-     * The minimum supported replication interval for specified file system in minutes.
-     **/
+    /** The minimum supported replication interval for specified file system in minutes. */
     @com.fasterxml.jackson.annotation.JsonProperty("minimumSupportedIntervalInMinutes")
     private final Integer minimumSupportedIntervalInMinutes;
 
     /**
      * The minimum supported replication interval for specified file system in minutes.
+     *
      * @return the value
-     **/
+     */
     public Integer getMinimumSupportedIntervalInMinutes() {
         return minimumSupportedIntervalInMinutes;
     }
 
-    /**
-     * The approximate time required for the base sync between source and target to finish.
-     **/
+    /** The approximate time required for the base sync between source and target to finish. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedBaseCopyTimeInMinutes")
     private final Integer estimatedBaseCopyTimeInMinutes;
 
     /**
      * The approximate time required for the base sync between source and target to finish.
+     *
      * @return the value
-     **/
+     */
     public Integer getEstimatedBaseCopyTimeInMinutes() {
         return estimatedBaseCopyTimeInMinutes;
     }
 
-    /**
-     * Array of allowed target region names which can be paired with source file system.
-     **/
+    /** Array of allowed target region names which can be paired with source file system. */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedTargetRegions")
     private final java.util.List<String> allowedTargetRegions;
 
     /**
      * Array of allowed target region names which can be paired with source file system.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowedTargetRegions() {
         return allowedTargetRegions;
     }
@@ -253,6 +250,7 @@ public final class ReplicationEstimate extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

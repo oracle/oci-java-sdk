@@ -10,15 +10,14 @@ import com.oracle.bmc.marketplace.model.*;
 public class GetThirdPartyPaidListingEligibilityResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,14 +25,13 @@ public class GetThirdPartyPaidListingEligibilityResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned ThirdPartyPaidListingEligibility instance.
-     */
+    /** The returned ThirdPartyPaidListingEligibility instance. */
     private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
             thirdPartyPaidListingEligibility;
 
     /**
      * The returned ThirdPartyPaidListingEligibility instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
@@ -49,7 +47,7 @@ public class GetThirdPartyPaidListingEligibilityResponse
     })
     private GetThirdPartyPaidListingEligibilityResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
                     thirdPartyPaidListingEligibility) {
@@ -58,31 +56,34 @@ public class GetThirdPartyPaidListingEligibilityResponse
         this.thirdPartyPaidListingEligibility = thirdPartyPaidListingEligibility;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetThirdPartyPaidListingEligibilityResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,14 +93,13 @@ public class GetThirdPartyPaidListingEligibilityResponse
             return this;
         }
 
-        /**
-         * The returned ThirdPartyPaidListingEligibility instance.
-         */
+        /** The returned ThirdPartyPaidListingEligibility instance. */
         private com.oracle.bmc.marketplace.model.ThirdPartyPaidListingEligibility
                 thirdPartyPaidListingEligibility;
 
         /**
          * The returned ThirdPartyPaidListingEligibility instance.
+         *
          * @param thirdPartyPaidListingEligibility the value to set
          * @return this builder
          */
@@ -112,8 +112,10 @@ public class GetThirdPartyPaidListingEligibilityResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetThirdPartyPaidListingEligibilityResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -125,8 +127,10 @@ public class GetThirdPartyPaidListingEligibilityResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetThirdPartyPaidListingEligibilityResponse build() {
             return new GetThirdPartyPaidListingEligibilityResponse(
                     __httpStatusCode__, headers, opcRequestId, thirdPartyPaidListingEligibility);
@@ -135,6 +139,7 @@ public class GetThirdPartyPaidListingEligibilityResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

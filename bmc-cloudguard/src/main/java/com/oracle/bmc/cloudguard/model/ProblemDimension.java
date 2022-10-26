@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible dimensions for distinguishing Problems
- **/
+/** Possible dimensions for distinguishing Problems */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ProblemDimension {
+public enum ProblemDimension implements com.oracle.bmc.http.internal.BmcEnum {
     ResourceType("RESOURCE_TYPE"),
     Region("REGION"),
     CompartmentId("COMPARTMENT_ID"),

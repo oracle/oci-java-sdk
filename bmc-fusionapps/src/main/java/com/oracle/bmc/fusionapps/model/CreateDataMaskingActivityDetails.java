@@ -5,22 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The information about current data masking request.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about current data masking request. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDataMaskingActivityDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateDataMaskingActivityDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDataMaskingActivityDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isResumeDataMasking"})
     public CreateDataMaskingActivityDetails(Boolean isResumeDataMasking) {
@@ -32,15 +32,16 @@ public final class CreateDataMaskingActivityDetails
     public static class Builder {
         /**
          * This allows the Data Safe service to resume the previously failed data masking activity.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isResumeDataMasking")
         private Boolean isResumeDataMasking;
 
         /**
          * This allows the Data Safe service to resume the previously failed data masking activity.
+         *
          * @param isResumeDataMasking the value to set
          * @return this builder
-         **/
+         */
         public Builder isResumeDataMasking(Boolean isResumeDataMasking) {
             this.isResumeDataMasking = isResumeDataMasking;
             this.__explicitlySet__.add("isResumeDataMasking");
@@ -68,9 +69,7 @@ public final class CreateDataMaskingActivityDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,16 +78,15 @@ public final class CreateDataMaskingActivityDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * This allows the Data Safe service to resume the previously failed data masking activity.
-     **/
+    /** This allows the Data Safe service to resume the previously failed data masking activity. */
     @com.fasterxml.jackson.annotation.JsonProperty("isResumeDataMasking")
     private final Boolean isResumeDataMasking;
 
     /**
      * This allows the Data Safe service to resume the previously failed data masking activity.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsResumeDataMasking() {
         return isResumeDataMasking;
     }
@@ -100,6 +98,7 @@ public final class CreateDataMaskingActivityDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

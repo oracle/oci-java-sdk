@@ -5,19 +5,20 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * An Ordering Service Node details
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An Ordering Service Node details <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Osn.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class Osn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"osnKey", "ad", "ocpuAllocationParam", "lifecycleState"})
     public Osn(
@@ -34,33 +35,31 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * OSN identifier
-         **/
+        /** OSN identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
         private String osnKey;
 
         /**
          * OSN identifier
+         *
          * @param osnKey the value to set
          * @return this builder
-         **/
+         */
         public Builder osnKey(String osnKey) {
             this.osnKey = osnKey;
             this.__explicitlySet__.add("osnKey");
             return this;
         }
-        /**
-         * Availability Domain of OSN
-         **/
+        /** Availability Domain of OSN */
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private AvailabilityDomain.Ads ad;
 
         /**
          * Availability Domain of OSN
+         *
          * @param ad the value to set
          * @return this builder
-         **/
+         */
         public Builder ad(AvailabilityDomain.Ads ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
@@ -75,17 +74,16 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             this.__explicitlySet__.add("ocpuAllocationParam");
             return this;
         }
-        /**
-         * The current state of the OSN.
-         **/
+        /** The current state of the OSN. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the OSN.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -122,9 +120,7 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,30 +129,28 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return new Builder().copy(this);
     }
 
-    /**
-     * OSN identifier
-     **/
+    /** OSN identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("osnKey")
     private final String osnKey;
 
     /**
      * OSN identifier
+     *
      * @return the value
-     **/
+     */
     public String getOsnKey() {
         return osnKey;
     }
 
-    /**
-     * Availability Domain of OSN
-     **/
+    /** Availability Domain of OSN */
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final AvailabilityDomain.Ads ad;
 
     /**
      * Availability Domain of OSN
+     *
      * @return the value
-     **/
+     */
     public AvailabilityDomain.Ads getAd() {
         return ad;
     }
@@ -168,17 +162,15 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
         return ocpuAllocationParam;
     }
 
-    /**
-     * The current state of the OSN.
-     **/
-    public enum LifecycleState {
+    /** The current state of the OSN. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -217,16 +209,15 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of the OSN.
-     **/
+    /** The current state of the OSN. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the OSN.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -238,6 +229,7 @@ public final class Osn extends com.oracle.bmc.http.internal.ExplicitlySetBmcMode
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

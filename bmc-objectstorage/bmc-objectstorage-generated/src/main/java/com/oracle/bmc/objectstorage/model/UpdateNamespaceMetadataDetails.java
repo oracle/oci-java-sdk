@@ -5,24 +5,23 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update NamespaceMetadata, a user
- * must have OBJECTSTORAGE_NAMESPACE_UPDATE permission.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update
+ * NamespaceMetadata, a user must have OBJECTSTORAGE_NAMESPACE_UPDATE permission. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateNamespaceMetadataDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateNamespaceMetadataDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateNamespaceMetadataDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"defaultS3CompartmentId", "defaultSwiftCompartmentId"})
     public UpdateNamespaceMetadataDetails(
@@ -34,33 +33,31 @@ public final class UpdateNamespaceMetadataDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The updated compartment id for use by an S3 client, if this field is set.
-         **/
+        /** The updated compartment id for use by an S3 client, if this field is set. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
         private String defaultS3CompartmentId;
 
         /**
          * The updated compartment id for use by an S3 client, if this field is set.
+         *
          * @param defaultS3CompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultS3CompartmentId(String defaultS3CompartmentId) {
             this.defaultS3CompartmentId = defaultS3CompartmentId;
             this.__explicitlySet__.add("defaultS3CompartmentId");
             return this;
         }
-        /**
-         * The updated compartment id for use by a Swift client, if this field is set.
-         **/
+        /** The updated compartment id for use by a Swift client, if this field is set. */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
         private String defaultSwiftCompartmentId;
 
         /**
          * The updated compartment id for use by a Swift client, if this field is set.
+         *
          * @param defaultSwiftCompartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultSwiftCompartmentId(String defaultSwiftCompartmentId) {
             this.defaultSwiftCompartmentId = defaultSwiftCompartmentId;
             this.__explicitlySet__.add("defaultSwiftCompartmentId");
@@ -92,9 +89,7 @@ public final class UpdateNamespaceMetadataDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +98,28 @@ public final class UpdateNamespaceMetadataDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The updated compartment id for use by an S3 client, if this field is set.
-     **/
+    /** The updated compartment id for use by an S3 client, if this field is set. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
     private final String defaultS3CompartmentId;
 
     /**
      * The updated compartment id for use by an S3 client, if this field is set.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultS3CompartmentId() {
         return defaultS3CompartmentId;
     }
 
-    /**
-     * The updated compartment id for use by a Swift client, if this field is set.
-     **/
+    /** The updated compartment id for use by a Swift client, if this field is set. */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
     private final String defaultSwiftCompartmentId;
 
     /**
      * The updated compartment id for use by a Swift client, if this field is set.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultSwiftCompartmentId() {
         return defaultSwiftCompartmentId;
     }
@@ -138,6 +131,7 @@ public final class UpdateNamespaceMetadataDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

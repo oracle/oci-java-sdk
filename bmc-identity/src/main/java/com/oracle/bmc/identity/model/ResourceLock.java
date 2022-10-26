@@ -5,22 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Resource locks are used to prevent certain APIs from being called for the resource.
- * A full lock prevents both updating the resource and deleting the resource. A delete
- * lock prevents deleting the resource.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Resource locks are used to prevent certain APIs from being called for the resource. A full lock
+ * prevents both updating the resource and deleting the resource. A delete lock prevents deleting
+ * the resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceLock.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ResourceLock extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -45,87 +45,88 @@ public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Type of the lock.
-         **/
+        /** Type of the lock. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the lock.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-         *
-         **/
+         * The ID of the resource that is locking this resource. Indicates that deleting this
+         * resource will remove the lock.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
         private String relatedResourceId;
 
         /**
-         * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         * The ID of the resource that is locking this resource. Indicates that deleting this
+         * resource will remove the lock.
          *
          * @param relatedResourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder relatedResourceId(String relatedResourceId) {
             this.relatedResourceId = relatedResourceId;
             this.__explicitlySet__.add("relatedResourceId");
             return this;
         }
         /**
-         * A message added by the creator of the lock. This is typically used to give an
-         * indication of why the resource is locked.
-         *
-         **/
+         * A message added by the creator of the lock. This is typically used to give an indication
+         * of why the resource is locked.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A message added by the creator of the lock. This is typically used to give an
-         * indication of why the resource is locked.
+         * A message added by the creator of the lock. This is typically used to give an indication
+         * of why the resource is locked.
          *
          * @param message the value to set
          * @return this builder
-         **/
+         */
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /**
-         * When the lock was created.
-         **/
+        /** When the lock was created. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * When the lock was created.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the first-created FULL lock will be effective.
-         **/
+         * Indicates if the lock is active or not. For example, if there are mutliple FULL locks,
+         * the first-created FULL lock will be effective.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
         /**
-         * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the first-created FULL lock will be effective.
+         * Indicates if the lock is active or not. For example, if there are mutliple FULL locks,
+         * the first-created FULL lock will be effective.
+         *
          * @param isActive the value to set
          * @return this builder
-         **/
+         */
         public Builder isActive(Boolean isActive) {
             this.isActive = isActive;
             this.__explicitlySet__.add("isActive");
@@ -170,9 +171,7 @@ public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,16 +180,14 @@ public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Type of the lock.
-     **/
-    public enum Type {
+    /** Type of the lock. */
+    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Delete("DELETE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -227,78 +224,79 @@ public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /**
-     * Type of the lock.
-     **/
+    /** Type of the lock. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the lock.
+     *
      * @return the value
-     **/
+     */
     public Type getType() {
         return type;
     }
 
     /**
-     * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
-     *
-     **/
+     * The ID of the resource that is locking this resource. Indicates that deleting this resource
+     * will remove the lock.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
     private final String relatedResourceId;
 
     /**
-     * The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * The ID of the resource that is locking this resource. Indicates that deleting this resource
+     * will remove the lock.
      *
      * @return the value
-     **/
+     */
     public String getRelatedResourceId() {
         return relatedResourceId;
     }
 
     /**
-     * A message added by the creator of the lock. This is typically used to give an
-     * indication of why the resource is locked.
-     *
-     **/
+     * A message added by the creator of the lock. This is typically used to give an indication of
+     * why the resource is locked.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A message added by the creator of the lock. This is typically used to give an
-     * indication of why the resource is locked.
+     * A message added by the creator of the lock. This is typically used to give an indication of
+     * why the resource is locked.
      *
      * @return the value
-     **/
+     */
     public String getMessage() {
         return message;
     }
 
-    /**
-     * When the lock was created.
-     **/
+    /** When the lock was created. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * When the lock was created.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the first-created FULL lock will be effective.
-     **/
+     * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the
+     * first-created FULL lock will be effective.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     private final Boolean isActive;
 
     /**
-     * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the first-created FULL lock will be effective.
+     * Indicates if the lock is active or not. For example, if there are mutliple FULL locks, the
+     * first-created FULL lock will be effective.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsActive() {
         return isActive;
     }
@@ -310,6 +308,7 @@ public final class ResourceLock extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -34,9 +34,10 @@ import java.util.concurrent.Future;
 /**
  * An example to demonstrate how to use resteasy client with JavaSDK.
  *
- * When running this example, comment out the following line in the bmc-examples/pom.xml file:
+ * <p>When running this example, comment out the following line in the bmc-examples/pom.xml file:
  *
- * <scope>provided</scope> <!-- When running the Resteasy examples, comment out this line. -->
+ * <p><scope>provided</scope>
+ * <!-- When running the Resteasy examples, comment out this line. -->
  */
 public class ResteasyClientWithObjectStorageExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -46,8 +47,10 @@ public class ResteasyClientWithObjectStorageExample {
 
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -57,7 +60,8 @@ public class ResteasyClientWithObjectStorageExample {
 
         // The following line is only necessary for this example because of our configuration in
         // resources/META-INF/services/javax.ws.rs.client.ClientBuilder
-        // which enables Jersey by default. If you are using Resteasy by default, this line is not necessary
+        // which enables Jersey by default. If you are using Resteasy by default, this line is not
+        // necessary
         System.setProperty(
                 ClientBuilder.JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
                 "org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder");

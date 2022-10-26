@@ -5,20 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Job phase status details.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Job phase status details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PhaseStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class PhaseStatus extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,10 +49,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Phase name
-         *
-         **/
+        /** Phase name */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private OdmsJobPhases name;
 
@@ -61,16 +58,13 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(OdmsJobPhases name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * Phase status
-         *
-         **/
+        /** Phase status */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobPhaseStatus status;
 
@@ -79,16 +73,13 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(JobPhaseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Duration of the phase in milliseconds
-         *
-         **/
+        /** Duration of the phase in milliseconds */
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
         private Integer durationInMs;
 
@@ -97,34 +88,32 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param durationInMs the value to set
          * @return this builder
-         **/
+         */
         public Builder durationInMs(Integer durationInMs) {
             this.durationInMs = durationInMs;
             this.__explicitlySet__.add("durationInMs");
             return this;
         }
         /**
-         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
-         *
-         **/
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no
+         * report is available.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
         private Boolean isAdvisorReportAvailable;
 
         /**
-         * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+         * True if a Pre-Migration Advisor report is available for this phase. False or null if no
+         * report is available.
          *
          * @param isAdvisorReportAvailable the value to set
          * @return this builder
-         **/
+         */
         public Builder isAdvisorReportAvailable(Boolean isAdvisorReportAvailable) {
             this.isAdvisorReportAvailable = isAdvisorReportAvailable;
             this.__explicitlySet__.add("isAdvisorReportAvailable");
             return this;
         }
-        /**
-         * Summary of phase status results.
-         *
-         **/
+        /** Summary of phase status results. */
         @com.fasterxml.jackson.annotation.JsonProperty("extract")
         private java.util.List<PhaseExtractEntry> extract;
 
@@ -133,7 +122,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param extract the value to set
          * @return this builder
-         **/
+         */
         public Builder extract(java.util.List<PhaseExtractEntry> extract) {
             this.extract = extract;
             this.__explicitlySet__.add("extract");
@@ -148,10 +137,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-        /**
-         * Percent progress of job phase.
-         *
-         **/
+        /** Percent progress of job phase. */
         @com.fasterxml.jackson.annotation.JsonProperty("progress")
         private Integer progress;
 
@@ -160,7 +146,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
          *
          * @param progress the value to set
          * @return this builder
-         **/
+         */
         public Builder progress(Integer progress) {
             this.progress = progress;
             this.__explicitlySet__.add("progress");
@@ -213,9 +199,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -224,10 +208,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * Phase name
-     *
-     **/
+    /** Phase name */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final OdmsJobPhases name;
 
@@ -235,15 +216,12 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
      * Phase name
      *
      * @return the value
-     **/
+     */
     public OdmsJobPhases getName() {
         return name;
     }
 
-    /**
-     * Phase status
-     *
-     **/
+    /** Phase status */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobPhaseStatus status;
 
@@ -251,15 +229,12 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
      * Phase status
      *
      * @return the value
-     **/
+     */
     public JobPhaseStatus getStatus() {
         return status;
     }
 
-    /**
-     * Duration of the phase in milliseconds
-     *
-     **/
+    /** Duration of the phase in milliseconds */
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMs")
     private final Integer durationInMs;
 
@@ -267,31 +242,29 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
      * Duration of the phase in milliseconds
      *
      * @return the value
-     **/
+     */
     public Integer getDurationInMs() {
         return durationInMs;
     }
 
     /**
-     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
-     *
-     **/
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no
+     * report is available.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvisorReportAvailable")
     private final Boolean isAdvisorReportAvailable;
 
     /**
-     * True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+     * True if a Pre-Migration Advisor report is available for this phase. False or null if no
+     * report is available.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsAdvisorReportAvailable() {
         return isAdvisorReportAvailable;
     }
 
-    /**
-     * Summary of phase status results.
-     *
-     **/
+    /** Summary of phase status results. */
     @com.fasterxml.jackson.annotation.JsonProperty("extract")
     private final java.util.List<PhaseExtractEntry> extract;
 
@@ -299,7 +272,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
      * Summary of phase status results.
      *
      * @return the value
-     **/
+     */
     public java.util.List<PhaseExtractEntry> getExtract() {
         return extract;
     }
@@ -311,10 +284,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
         return logLocation;
     }
 
-    /**
-     * Percent progress of job phase.
-     *
-     **/
+    /** Percent progress of job phase. */
     @com.fasterxml.jackson.annotation.JsonProperty("progress")
     private final Integer progress;
 
@@ -322,7 +292,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
      * Percent progress of job phase.
      *
      * @return the value
-     **/
+     */
     public Integer getProgress() {
         return progress;
     }
@@ -334,6 +304,7 @@ public final class PhaseStatus extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

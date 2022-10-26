@@ -5,71 +5,67 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the NGINX blue green release strategy.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Specifies the NGINX blue green release strategy. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NginxBlueGreenStrategy.Builder.class
-)
+        builder = NginxBlueGreenStrategy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "strategyType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "strategyType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Namespace A for deployment.
-         **/
+        /** Namespace A for deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
         private String namespaceA;
 
         /**
          * Namespace A for deployment.
+         *
          * @param namespaceA the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceA(String namespaceA) {
             this.namespaceA = namespaceA;
             this.__explicitlySet__.add("namespaceA");
             return this;
         }
-        /**
-         * Namespace B for deployment.
-         **/
+        /** Namespace B for deployment. */
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
         private String namespaceB;
 
         /**
          * Namespace B for deployment.
+         *
          * @param namespaceB the value to set
          * @return this builder
-         **/
+         */
         public Builder namespaceB(String namespaceB) {
             this.namespaceB = namespaceB;
             this.__explicitlySet__.add("namespaceB");
             return this;
         }
-        /**
-         * Name of the Ingress resource.
-         **/
+        /** Name of the Ingress resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
         private String ingressName;
 
         /**
          * Name of the Ingress resource.
+         *
          * @param ingressName the value to set
          * @return this builder
-         **/
+         */
         public Builder ingressName(String ingressName) {
             this.ingressName = ingressName;
             this.__explicitlySet__.add("ingressName");
@@ -103,9 +99,7 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,44 +116,41 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
         this.ingressName = ingressName;
     }
 
-    /**
-     * Namespace A for deployment.
-     **/
+    /** Namespace A for deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceA")
     private final String namespaceA;
 
     /**
      * Namespace A for deployment.
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceA() {
         return namespaceA;
     }
 
-    /**
-     * Namespace B for deployment.
-     **/
+    /** Namespace B for deployment. */
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceB")
     private final String namespaceB;
 
     /**
      * Namespace B for deployment.
+     *
      * @return the value
-     **/
+     */
     public String getNamespaceB() {
         return namespaceB;
     }
 
-    /**
-     * Name of the Ingress resource.
-     **/
+    /** Name of the Ingress resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("ingressName")
     private final String ingressName;
 
     /**
      * Name of the Ingress resource.
+     *
      * @return the value
-     **/
+     */
     public String getIngressName() {
         return ingressName;
     }
@@ -171,6 +162,7 @@ public final class NginxBlueGreenStrategy extends OkeBlueGreenStrategy {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

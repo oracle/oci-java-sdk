@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The current status of the alert.
- **/
+/** The current status of the alert. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AlertStatus {
+public enum AlertStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Open("OPEN"),
     Closed("CLOSED"),
 

@@ -6,74 +6,52 @@ package com.oracle.bmc.healthchecks.requests;
 
 import com.oracle.bmc.healthchecks.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingMonitorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPingMonitorsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListPingMonitorsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPingMonitorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * Filters results by compartment.
-     */
+    /** Filters results by compartment. */
     private String compartmentId;
 
-    /**
-     * Filters results by compartment.
-     */
+    /** Filters results by compartment. */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return in a paginated "List" call.
-     *
-     */
+    /** The maximum number of items to return in a paginated "List" call. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The value of the {@code opc-next-page} response header
-     * from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     private String page;
 
-    /**
-     * The value of the {@code opc-next-page} response header
-     * from the previous "List" call.
-     *
-     */
+    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
     public String getPage() {
         return page;
     }
-    /**
-     * The field to sort by when listing monitors.
-     */
+    /** The field to sort by when listing monitors. */
     private SortBy sortBy;
 
-    /**
-     * The field to sort by when listing monitors.
-     **/
-    public enum SortBy {
+    /** The field to sort by when listing monitors. */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Id("id"),
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
@@ -107,21 +85,15 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /**
-     * The field to sort by when listing monitors.
-     */
+    /** The field to sort by when listing monitors. */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Controls the sort order of results.
-     */
+    /** Controls the sort order of results. */
     private SortOrder sortOrder;
 
-    /**
-     * Controls the sort order of results.
-     **/
-    public enum SortOrder {
+    /** Controls the sort order of results. */
+    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -154,31 +126,21 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /**
-     * Controls the sort order of results.
-     */
+    /** Controls the sort order of results. */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /**
-     * Filters results that exactly match the {@code displayName} field.
-     */
+    /** Filters results that exactly match the {@code displayName} field. */
     private String displayName;
 
-    /**
-     * Filters results that exactly match the {@code displayName} field.
-     */
+    /** Filters results that exactly match the {@code displayName} field. */
     public String getDisplayName() {
         return displayName;
     }
-    /**
-     * Filters results that match the {@code homeRegion}.
-     */
+    /** Filters results that match the {@code homeRegion}. */
     private String homeRegion;
 
-    /**
-     * Filters results that match the {@code homeRegion}.
-     */
+    /** Filters results that match the {@code homeRegion}. */
     public String getHomeRegion() {
         return homeRegion;
     }
@@ -186,17 +148,15 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPingMonitorsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * Filters results by compartment.
-         */
+        /** Filters results by compartment. */
         private String compartmentId = null;
 
         /**
          * Filters results by compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -208,7 +168,6 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -224,10 +183,7 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The maximum number of items to return in a paginated "List" call.
-         *
-         */
+        /** The maximum number of items to return in a paginated "List" call. */
         private Integer limit = null;
 
         /**
@@ -241,16 +197,11 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The value of the {@code opc-next-page} response header
-         * from the previous "List" call.
-         *
-         */
+        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header
-         * from the previous "List" call.
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -260,13 +211,12 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The field to sort by when listing monitors.
-         */
+        /** The field to sort by when listing monitors. */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by when listing monitors.
+         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -275,13 +225,12 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Controls the sort order of results.
-         */
+        /** Controls the sort order of results. */
         private SortOrder sortOrder = null;
 
         /**
          * Controls the sort order of results.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -290,13 +239,12 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Filters results that exactly match the {@code displayName} field.
-         */
+        /** Filters results that exactly match the {@code displayName} field. */
         private String displayName = null;
 
         /**
          * Filters results that exactly match the {@code displayName} field.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -305,13 +253,12 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * Filters results that match the {@code homeRegion}.
-         */
+        /** Filters results that match the {@code homeRegion}. */
         private String homeRegion = null;
 
         /**
          * Filters results that match the {@code homeRegion}.
+         *
          * @param homeRegion the value to set
          * @return this builder instance
          */
@@ -322,18 +269,19 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -345,6 +293,7 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListPingMonitorsRequest o) {
@@ -364,10 +313,11 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListPingMonitorsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListPingMonitorsRequest
          */
@@ -381,7 +331,8 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListPingMonitorsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPingMonitorsRequest
@@ -397,12 +348,14 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.displayName = displayName;
             request.homeRegion = homeRegion;
             return request;
-            // new ListPingMonitorsRequest(compartmentId, opcRequestId, limit, page, sortBy, sortOrder, displayName, homeRegion);
+            // new ListPingMonitorsRequest(compartmentId, opcRequestId, limit, page, sortBy,
+            // sortOrder, displayName, homeRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -419,6 +372,7 @@ public class ListPingMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,56 +6,48 @@ package com.oracle.bmc.mysql.requests;
 
 import com.oracle.bmc.mysql.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConfigurationRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteConfigurationExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConfigurationRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the Configuration.
-     */
+    /** The OCID of the Configuration. */
     private String configurationId;
 
-    /**
-     * The OCID of the Configuration.
-     */
+    /** The OCID of the Configuration. */
     public String getConfigurationId() {
         return configurationId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a
-     * resource, set the {@code If-Match} header to the value of the etag from a
-     * previous GET or POST response for that resource. The resource will be
-     * updated or deleted only if the etag you provide matches the resource's
-     * current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * If-Match} header to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a
-     * resource, set the {@code If-Match} header to the value of the etag from a
-     * previous GET or POST response for that resource. The resource will be
-     * updated or deleted only if the etag you provide matches the resource's
-     * current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * If-Match} header to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Customer-defined unique identifier for the request. If you need to
-     * contact Oracle about a specific request, please provide the request
-     * ID that you supplied in this header with the request.
-     *
+     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
+     * specific request, please provide the request ID that you supplied in this header with the
+     * request.
      */
     private String opcRequestId;
 
     /**
-     * Customer-defined unique identifier for the request. If you need to
-     * contact Oracle about a specific request, please provide the request
-     * ID that you supplied in this header with the request.
-     *
+     * Customer-defined unique identifier for the request. If you need to contact Oracle about a
+     * specific request, please provide the request ID that you supplied in this header with the
+     * request.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -64,17 +56,15 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteConfigurationRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the Configuration.
-         */
+        /** The OCID of the Configuration. */
         private String configurationId = null;
 
         /**
          * The OCID of the Configuration.
+         *
          * @param configurationId the value to set
          * @return this builder instance
          */
@@ -84,21 +74,18 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a
-         * resource, set the {@code If-Match} header to the value of the etag from a
-         * previous GET or POST response for that resource. The resource will be
-         * updated or deleted only if the etag you provide matches the resource's
-         * current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code If-Match} header to the value of the etag from a previous GET or POST response for
+         * that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a
-         * resource, set the {@code If-Match} header to the value of the etag from a
-         * previous GET or POST response for that resource. The resource will be
-         * updated or deleted only if the etag you provide matches the resource's
-         * current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code If-Match} header to the value of the etag from a previous GET or POST response for
+         * that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -109,17 +96,16 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Customer-defined unique identifier for the request. If you need to
-         * contact Oracle about a specific request, please provide the request
-         * ID that you supplied in this header with the request.
-         *
+         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
+         * specific request, please provide the request ID that you supplied in this header with the
+         * request.
          */
         private String opcRequestId = null;
 
         /**
-         * Customer-defined unique identifier for the request. If you need to
-         * contact Oracle about a specific request, please provide the request
-         * ID that you supplied in this header with the request.
+         * Customer-defined unique identifier for the request. If you need to contact Oracle about a
+         * specific request, please provide the request ID that you supplied in this header with the
+         * request.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -131,18 +117,19 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -154,6 +141,7 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(DeleteConfigurationRequest o) {
@@ -168,10 +156,11 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of DeleteConfigurationRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of DeleteConfigurationRequest
          */
@@ -185,7 +174,8 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of DeleteConfigurationRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteConfigurationRequest
@@ -202,6 +192,7 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -213,6 +204,7 @@ public class DeleteConfigurationRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

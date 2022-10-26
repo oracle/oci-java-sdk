@@ -11,7 +11,6 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
@@ -25,26 +24,24 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /**
-     * The returned UserGroupMembership instance.
-     */
+    /** The returned UserGroupMembership instance. */
     private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
     /**
      * The returned UserGroupMembership instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.identity.model.UserGroupMembership getUserGroupMembership() {
@@ -60,7 +57,7 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetUserGroupMembershipResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership) {
@@ -70,17 +67,21 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
         this.userGroupMembership = userGroupMembership;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetUserGroupMembershipResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
@@ -88,7 +89,6 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId;
 
@@ -104,13 +104,12 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -119,13 +118,12 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /**
-         * The returned UserGroupMembership instance.
-         */
+        /** The returned UserGroupMembership instance. */
         private com.oracle.bmc.identity.model.UserGroupMembership userGroupMembership;
 
         /**
          * The returned UserGroupMembership instance.
+         *
          * @param userGroupMembership the value to set
          * @return this builder
          */
@@ -137,8 +135,10 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetUserGroupMembershipResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,8 +151,10 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetUserGroupMembershipResponse build() {
             return new GetUserGroupMembershipResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, userGroupMembership);
@@ -161,6 +163,7 @@ public class GetUserGroupMembershipResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

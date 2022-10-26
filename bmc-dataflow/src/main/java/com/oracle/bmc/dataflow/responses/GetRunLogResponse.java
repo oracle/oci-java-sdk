@@ -9,15 +9,14 @@ import com.oracle.bmc.dataflow.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request.
-     * If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,15 +25,14 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For optimistic concurrency control.
-     * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-     *
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control.
-     * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+     * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -42,10 +40,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /**
-     * Indicates the size of the data as described in RFC 2616, section 14.13.
-     *
-     */
+    /** Indicates the size of the data as described in RFC 2616, section 14.13. */
     private Long contentLength;
 
     /**
@@ -57,10 +52,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return contentLength;
     }
 
-    /**
-     * Specifies the media type of the underlying data as described in RFC 2616, section 14.17.
-     *
-     */
+    /** Specifies the media type of the underlying data as described in RFC 2616, section 14.17. */
     private String contentType;
 
     /**
@@ -72,10 +64,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return contentType;
     }
 
-    /**
-     * Indicates the encoding of the data, as described in RFC 2616, section 14.11.
-     *
-     */
+    /** Indicates the encoding of the data, as described in RFC 2616, section 14.11. */
     private String contentEncoding;
 
     /**
@@ -87,10 +76,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return contentEncoding;
     }
 
-    /**
-     * The user-defined metadata for the log.
-     *
-     */
+    /** The user-defined metadata for the log. */
     private java.util.Map<String, String> opcMeta;
 
     /**
@@ -102,13 +88,12 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcMeta;
     }
 
-    /**
-     * The returned java.io.InputStream instance.
-     */
+    /** The returned java.io.InputStream instance. */
     private java.io.InputStream inputStream;
 
     /**
      * The returned java.io.InputStream instance.
+     *
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -128,7 +113,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetRunLogResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             Long contentLength,
@@ -146,31 +131,33 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         this.inputStream = inputStream;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetRunLogResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request.
-         * If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -181,15 +168,14 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For optimistic concurrency control.
-         * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
-         *
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control.
-         * See [ETags for Optimistic Concurrency Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
+         * Control](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -199,10 +185,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Indicates the size of the data as described in RFC 2616, section 14.13.
-         *
-         */
+        /** Indicates the size of the data as described in RFC 2616, section 14.13. */
         private Long contentLength;
 
         /**
@@ -218,7 +201,6 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Specifies the media type of the underlying data as described in RFC 2616, section 14.17.
-         *
          */
         private String contentType;
 
@@ -233,10 +215,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * Indicates the encoding of the data, as described in RFC 2616, section 14.11.
-         *
-         */
+        /** Indicates the encoding of the data, as described in RFC 2616, section 14.11. */
         private String contentEncoding;
 
         /**
@@ -250,10 +229,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The user-defined metadata for the log.
-         *
-         */
+        /** The user-defined metadata for the log. */
         private java.util.Map<String, String> opcMeta;
 
         /**
@@ -267,13 +243,12 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned java.io.InputStream instance.
-         */
+        /** The returned java.io.InputStream instance. */
         private java.io.InputStream inputStream;
 
         /**
          * The returned java.io.InputStream instance.
+         *
          * @param inputStream the value to set
          * @return this builder
          */
@@ -284,8 +259,10 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetRunLogResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -302,8 +279,10 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetRunLogResponse build() {
             return new GetRunLogResponse(
                     __httpStatusCode__,
@@ -320,6 +299,7 @@ public class GetRunLogResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

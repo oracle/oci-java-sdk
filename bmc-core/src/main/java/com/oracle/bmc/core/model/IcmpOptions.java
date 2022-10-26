@@ -5,29 +5,30 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code
- * as defined in:
- * - [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
- * - [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
- * <p>
- * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and
- * codes are allowed. If you do provide this object, the type is required and the code is optional.
- * To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 ("Destination
- * Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you need to specify
- * multiple codes for a single type, create a separate security list rule for each.
+ * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as
+ * defined in: - [ICMP
+ * Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) - [ICMPv6
+ * Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and
+ * codes are allowed. If you do provide this object, the type is required and the code is optional.
+ * To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3
+ * ("Destination Unreachable") code 4 ("Fragmentation Needed and Don't Fragment was Set"). If you
+ * need to specify multiple codes for a single type, create a separate security list rule for each.
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IcmpOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class IcmpOptions extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "type"})
     public IcmpOptions(Integer code, Integer type) {
@@ -38,33 +39,31 @@ public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The ICMP code (optional).
-         **/
+        /** The ICMP code (optional). */
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Integer code;
 
         /**
          * The ICMP code (optional).
+         *
          * @param code the value to set
          * @return this builder
-         **/
+         */
         public Builder code(Integer code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /**
-         * The ICMP type.
-         **/
+        /** The ICMP type. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Integer type;
 
         /**
          * The ICMP type.
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(Integer type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -94,9 +93,7 @@ public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,30 +102,28 @@ public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /**
-     * The ICMP code (optional).
-     **/
+    /** The ICMP code (optional). */
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final Integer code;
 
     /**
      * The ICMP code (optional).
+     *
      * @return the value
-     **/
+     */
     public Integer getCode() {
         return code;
     }
 
-    /**
-     * The ICMP type.
-     **/
+    /** The ICMP type. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Integer type;
 
     /**
      * The ICMP type.
+     *
      * @return the value
-     **/
+     */
     public Integer getType() {
         return type;
     }
@@ -140,6 +135,7 @@ public final class IcmpOptions extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

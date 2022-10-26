@@ -9,15 +9,14 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
-     *
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      *
      * @return the value
      */
@@ -25,10 +24,7 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     *
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
@@ -40,13 +36,12 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
         return etag;
     }
 
-    /**
-     * The returned Listener instance.
-     */
+    /** The returned Listener instance. */
     private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
     /**
      * The returned Listener instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.networkloadbalancer.model.Listener getListener() {
@@ -62,7 +57,7 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetListenerResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.networkloadbalancer.model.Listener listener) {
@@ -72,31 +67,33 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
         this.listener = listener;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetListenerResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
-         *
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,10 +103,7 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         *
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
@@ -123,13 +117,12 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Listener instance.
-         */
+        /** The returned Listener instance. */
         private com.oracle.bmc.networkloadbalancer.model.Listener listener;
 
         /**
          * The returned Listener instance.
+         *
          * @param listener the value to set
          * @return this builder
          */
@@ -140,8 +133,10 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetListenerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,8 +149,10 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetListenerResponse build() {
             return new GetListenerResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, listener);
@@ -164,6 +161,7 @@ public class GetListenerResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

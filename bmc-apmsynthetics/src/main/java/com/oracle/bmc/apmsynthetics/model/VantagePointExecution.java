@@ -5,22 +5,22 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of a vantage point execution.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details of a vantage point execution. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VantagePointExecution.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = VantagePointExecution.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class VantagePointExecution
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "executions"})
     public VantagePointExecution(String name, java.util.List<Long> executions) {
@@ -31,33 +31,31 @@ public final class VantagePointExecution
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Vantage point name.
-         **/
+        /** Vantage point name. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Vantage point name.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * list of execution times in milli seconds.
-         **/
+        /** list of execution times in milli seconds. */
         @com.fasterxml.jackson.annotation.JsonProperty("executions")
         private java.util.List<Long> executions;
 
         /**
          * list of execution times in milli seconds.
+         *
          * @param executions the value to set
          * @return this builder
-         **/
+         */
         public Builder executions(java.util.List<Long> executions) {
             this.executions = executions;
             this.__explicitlySet__.add("executions");
@@ -87,9 +85,7 @@ public final class VantagePointExecution
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,30 +94,28 @@ public final class VantagePointExecution
         return new Builder().copy(this);
     }
 
-    /**
-     * Vantage point name.
-     **/
+    /** Vantage point name. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Vantage point name.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * list of execution times in milli seconds.
-     **/
+    /** list of execution times in milli seconds. */
     @com.fasterxml.jackson.annotation.JsonProperty("executions")
     private final java.util.List<Long> executions;
 
     /**
      * list of execution times in milli seconds.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Long> getExecutions() {
         return executions;
     }
@@ -133,6 +127,7 @@ public final class VantagePointExecution
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

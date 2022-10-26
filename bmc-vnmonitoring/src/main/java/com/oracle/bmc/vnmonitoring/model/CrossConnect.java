@@ -5,35 +5,37 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * For use with Oracle Cloud Infrastructure FastConnect. A cross-connect represents a
- * physical connection between an existing network and Oracle. Customers who are colocated
- * with Oracle in a FastConnect location create and use cross-connects. For more
- * information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
- * <p>
- * Oracle recommends you create each cross-connect in a
- * {@link CrossConnectGroup} so you can use link aggregation
- * with the connection.
- * <p>
- **Note:** If you're a provider who is setting up a physical connection to Oracle so customers
- * can use FastConnect over the connection, be aware that your connection is modeled the
- * same way as a colocated customer's (with {@code CrossConnect} and {@code CrossConnectGroup} objects, and so on).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * For use with Oracle Cloud Infrastructure FastConnect. A cross-connect represents a physical
+ * connection between an existing network and Oracle. Customers who are colocated with Oracle in a
+ * FastConnect location create and use cross-connects. For more information, see [FastConnect
+ * Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>Oracle recommends you create each cross-connect in a {@link CrossConnectGroup} so you can use
+ * link aggregation with the connection.
+ *
+ * <p>*Note:** If you're a provider who is setting up a physical connection to Oracle so customers
+ * can use FastConnect over the connection, be aware that your connection is modeled the same way as
+ * a colocated customer's (with {@code CrossConnect} and {@code CrossConnectGroup} objects, and so
+ * on).
+ *
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CrossConnect.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CrossConnect extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -71,95 +73,93 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the cross-connect group.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the cross-connect group.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect group this cross-connect belongs to (if any).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the cross-connect group this cross-connect belongs to (if any).
          *
          * @param crossConnectGroupId the value to set
          * @return this builder
-         **/
+         */
         public Builder crossConnectGroupId(String crossConnectGroupId) {
             this.crossConnectGroupId = crossConnectGroupId;
             this.__explicitlySet__.add("crossConnectGroupId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The cross-connect's Oracle ID (OCID).
-         **/
+        /** The cross-connect's Oracle ID (OCID). */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The cross-connect's Oracle ID (OCID).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The cross-connect's current state.
-         **/
+        /** The cross-connect's current state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The cross-connect's current state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The name of the FastConnect location where this cross-connect is installed.
-         *
-         **/
+        /** The name of the FastConnect location where this cross-connect is installed. */
         @com.fasterxml.jackson.annotation.JsonProperty("locationName")
         private String locationName;
 
@@ -168,23 +168,22 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
          *
          * @param locationName the value to set
          * @return this builder
-         **/
+         */
         public Builder locationName(String locationName) {
             this.locationName = locationName;
             this.__explicitlySet__.add("locationName");
             return this;
         }
-        /**
-         * A string identifying the meet-me room port for this cross-connect.
-         **/
+        /** A string identifying the meet-me room port for this cross-connect. */
         @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
 
         /**
          * A string identifying the meet-me room port for this cross-connect.
+         *
          * @param portName the value to set
          * @return this builder
-         **/
+         */
         public Builder portName(String portName) {
             this.portName = portName;
             this.__explicitlySet__.add("portName");
@@ -192,43 +191,43 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * The port speed for this cross-connect.
-         * <p>
-         * Example: {@code 10 Gbps}
          *
-         **/
+         * <p>Example: {@code 10 Gbps}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
         private String portSpeedShapeName;
 
         /**
          * The port speed for this cross-connect.
-         * <p>
-         * Example: {@code 10 Gbps}
+         *
+         * <p>Example: {@code 10 Gbps}
          *
          * @param portSpeedShapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder portSpeedShapeName(String portSpeedShapeName) {
             this.portSpeedShapeName = portSpeedShapeName;
             this.__explicitlySet__.add("portSpeedShapeName");
             return this;
         }
         /**
-         * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the cross-connect was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the cross-connect was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -289,9 +288,7 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,71 +298,71 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the cross-connect group.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cross-connect group.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the cross-connect group.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect group this cross-connect belongs to (if any).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
     private final String crossConnectGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group this cross-connect belongs to (if any).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the cross-connect group this cross-connect belongs to (if any).
      *
      * @return the value
-     **/
+     */
     public String getCrossConnectGroupId() {
         return crossConnectGroupId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The cross-connect's Oracle ID (OCID).
-     **/
+    /** The cross-connect's Oracle ID (OCID). */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The cross-connect's Oracle ID (OCID).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The cross-connect's current state.
-     **/
-    public enum LifecycleState {
+    /** The cross-connect's current state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         PendingCustomer("PENDING_CUSTOMER"),
         Provisioning("PROVISIONING"),
         Provisioned("PROVISIONED"),
@@ -401,24 +398,20 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /**
-     * The cross-connect's current state.
-     **/
+    /** The cross-connect's current state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The cross-connect's current state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The name of the FastConnect location where this cross-connect is installed.
-     *
-     **/
+    /** The name of the FastConnect location where this cross-connect is installed. */
     @com.fasterxml.jackson.annotation.JsonProperty("locationName")
     private final String locationName;
 
@@ -426,61 +419,60 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
      * The name of the FastConnect location where this cross-connect is installed.
      *
      * @return the value
-     **/
+     */
     public String getLocationName() {
         return locationName;
     }
 
-    /**
-     * A string identifying the meet-me room port for this cross-connect.
-     **/
+    /** A string identifying the meet-me room port for this cross-connect. */
     @com.fasterxml.jackson.annotation.JsonProperty("portName")
     private final String portName;
 
     /**
      * A string identifying the meet-me room port for this cross-connect.
+     *
      * @return the value
-     **/
+     */
     public String getPortName() {
         return portName;
     }
 
     /**
      * The port speed for this cross-connect.
-     * <p>
-     * Example: {@code 10 Gbps}
      *
-     **/
+     * <p>Example: {@code 10 Gbps}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
     private final String portSpeedShapeName;
 
     /**
      * The port speed for this cross-connect.
-     * <p>
-     * Example: {@code 10 Gbps}
+     *
+     * <p>Example: {@code 10 Gbps}
      *
      * @return the value
-     **/
+     */
     public String getPortSpeedShapeName() {
         return portSpeedShapeName;
     }
 
     /**
-     * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the cross-connect was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the cross-connect was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -492,6 +484,7 @@ public final class CrossConnect extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

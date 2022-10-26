@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/**
- * The feature name (type) that pertains to the alert.
- **/
+/** The feature name (type) that pertains to the alert. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AlertType {
+public enum AlertType implements com.oracle.bmc.http.internal.BmcEnum {
     Auditing("AUDITING"),
     SecurityAssessment("SECURITY_ASSESSMENT"),
     UserAssessment("USER_ASSESSMENT"),

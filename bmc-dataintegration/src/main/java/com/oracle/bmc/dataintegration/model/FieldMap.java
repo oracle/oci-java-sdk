@@ -5,54 +5,47 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A field map is a way to map a source row shape to a target row shape that may be different.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A field map is a way to map a source row shape to a target row shape that may be different. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType",
-    defaultImpl = FieldMap.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType",
+        defaultImpl = FieldMap.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RuleBasedFieldMap.class,
-        name = "RULE_BASED_FIELD_MAP"
-    ),
+            value = RuleBasedFieldMap.class,
+            name = "RULE_BASED_FIELD_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = RuleBasedEntityMap.class,
-        name = "RULE_BASED_ENTITY_MAP"
-    ),
+            value = RuleBasedEntityMap.class,
+            name = "RULE_BASED_ENTITY_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = NamedEntityMap.class,
-        name = "NAMED_ENTITY_MAP"
-    ),
+            value = NamedEntityMap.class,
+            name = "NAMED_ENTITY_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DirectFieldMap.class,
-        name = "DIRECT_FIELD_MAP"
-    ),
+            value = DirectFieldMap.class,
+            name = "DIRECT_FIELD_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CompositeFieldMap.class,
-        name = "COMPOSITE_FIELD_MAP"
-    ),
+            value = CompositeFieldMap.class,
+            name = "COMPOSITE_FIELD_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = ConditionalCompositeFieldMap.class,
-        name = "CONDITIONAL_COMPOSITE_FIELD_MAP"
-    ),
+            value = ConditionalCompositeFieldMap.class,
+            name = "CONDITIONAL_COMPOSITE_FIELD_MAP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = DirectNamedFieldMap.class,
-        name = "DIRECT_NAMED_FIELD_MAP"
-    )
+            value = DirectNamedFieldMap.class,
+            name = "DIRECT_NAMED_FIELD_MAP")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public class FieldMap extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description"})
     protected FieldMap(String description) {
@@ -60,16 +53,15 @@ public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.description = description;
     }
 
-    /**
-     * Detailed description for the object.
-     **/
+    /** Detailed description for the object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
@@ -81,6 +73,7 @@ public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -115,10 +108,8 @@ public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         return result;
     }
 
-    /**
-     * The model type for the field map.
-     **/
-    public enum ModelType {
+    /** The model type for the field map. */
+    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         DirectNamedFieldMap("DIRECT_NAMED_FIELD_MAP"),
         CompositeFieldMap("COMPOSITE_FIELD_MAP"),
         DirectFieldMap("DIRECT_FIELD_MAP"),
@@ -128,8 +119,8 @@ public class FieldMap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         RuleBasedEntityMap("RULE_BASED_ENTITY_MAP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 

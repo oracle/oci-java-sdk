@@ -5,23 +5,23 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Information about a Kernel Oops.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information about a Kernel Oops. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KernelOopsEvent.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "eventType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "eventType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class KernelOopsEvent extends Event {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -124,33 +124,31 @@ public final class KernelOopsEvent extends Event {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /**
-         * reason of the crash
-         **/
+        /** reason of the crash */
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
          * reason of the crash
+         *
          * @param reason the value to set
          * @return this builder
-         **/
+         */
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-        /**
-         * First occurrence time of the event
-         **/
+        /** First occurrence time of the event */
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
         private java.util.Date timeFirstOccurred;
 
         /**
          * First occurrence time of the event
+         *
          * @param timeFirstOccurred the value to set
          * @return this builder
-         **/
+         */
         public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
             this.timeFirstOccurred = timeFirstOccurred;
             this.__explicitlySet__.add("timeFirstOccurred");
@@ -266,9 +264,7 @@ public final class KernelOopsEvent extends Event {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,30 +310,28 @@ public final class KernelOopsEvent extends Event {
         this.system = system;
     }
 
-    /**
-     * reason of the crash
-     **/
+    /** reason of the crash */
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
      * reason of the crash
+     *
      * @return the value
-     **/
+     */
     public String getReason() {
         return reason;
     }
 
-    /**
-     * First occurrence time of the event
-     **/
+    /** First occurrence time of the event */
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
     private final java.util.Date timeFirstOccurred;
 
     /**
      * First occurrence time of the event
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeFirstOccurred() {
         return timeFirstOccurred;
     }
@@ -370,6 +364,7 @@ public final class KernelOopsEvent extends Event {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

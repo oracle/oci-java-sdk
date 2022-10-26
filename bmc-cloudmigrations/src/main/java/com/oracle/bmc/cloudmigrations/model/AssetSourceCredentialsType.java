@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudmigrations.model;
 
-/**
- * The type of credentials for an asset source.
- **/
+/** The type of credentials for an asset source. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum AssetSourceCredentialsType {
+public enum AssetSourceCredentialsType implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
     ;
 

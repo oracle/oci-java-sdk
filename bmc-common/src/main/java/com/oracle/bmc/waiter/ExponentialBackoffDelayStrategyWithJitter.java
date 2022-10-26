@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.waiter;
 
-/**
- * Delay strategy that increases the wait time exponentially until a max time has been reached.
- */
+/** Delay strategy that increases the wait time exponentially until a max time has been reached. */
 public class ExponentialBackoffDelayStrategyWithJitter extends ExponentialBackoffDelayStrategy {
 
     public ExponentialBackoffDelayStrategyWithJitter(long maxDelayInMillis) {

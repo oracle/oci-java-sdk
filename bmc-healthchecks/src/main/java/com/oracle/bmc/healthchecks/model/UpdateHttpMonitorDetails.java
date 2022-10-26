@@ -5,22 +5,22 @@
 package com.oracle.bmc.healthchecks.model;
 
 /**
- * The request body used to update an HTTP monitor.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The request body used to update an HTTP monitor. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateHttpMonitorDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateHttpMonitorDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateHttpMonitorDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targets",
@@ -69,73 +69,69 @@ public final class UpdateHttpMonitorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A list of targets (hostnames or IP addresses) of the probe.
-         **/
+        /** A list of targets (hostnames or IP addresses) of the probe. */
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<String> targets;
 
         /**
          * A list of targets (hostnames or IP addresses) of the probe.
+         *
          * @param targets the value to set
          * @return this builder
-         **/
+         */
         public Builder targets(java.util.List<String> targets) {
             this.targets = targets;
             this.__explicitlySet__.add("targets");
             return this;
         }
-        /**
-         * A list of names of vantage points from which to execute the probe.
-         **/
+        /** A list of names of vantage points from which to execute the probe. */
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNames")
         private java.util.List<String> vantagePointNames;
 
         /**
          * A list of names of vantage points from which to execute the probe.
+         *
          * @param vantagePointNames the value to set
          * @return this builder
-         **/
+         */
         public Builder vantagePointNames(java.util.List<String> vantagePointNames) {
             this.vantagePointNames = vantagePointNames;
             this.__explicitlySet__.add("vantagePointNames");
             return this;
         }
         /**
-         * The port on which to probe endpoints. If unspecified, probes will use the
-         * default port of their protocol.
-         *
-         **/
+         * The port on which to probe endpoints. If unspecified, probes will use the default port of
+         * their protocol.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
-         * The port on which to probe endpoints. If unspecified, probes will use the
-         * default port of their protocol.
+         * The port on which to probe endpoints. If unspecified, probes will use the default port of
+         * their protocol.
          *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-         * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
-         *
-         **/
+         * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be
+         * less than or equal to {@code intervalInSeconds} for monitors.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
-         * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-         * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
+         * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be
+         * less than or equal to {@code intervalInSeconds} for monitors.
          *
          * @param timeoutInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
@@ -159,17 +155,16 @@ public final class UpdateHttpMonitorDetails
             this.__explicitlySet__.add("method");
             return this;
         }
-        /**
-         * The optional URL path to probe, including query parameters.
-         **/
+        /** The optional URL path to probe, including query parameters. */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The optional URL path to probe, including query parameters.
+         *
          * @param path the value to set
          * @return this builder
-         **/
+         */
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
@@ -177,46 +172,43 @@ public final class UpdateHttpMonitorDetails
         }
         /**
          * A dictionary of HTTP request headers.
-         * <p>
-         *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
          *
-         **/
+         * <p>Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP
+         * header.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("headers")
         private java.util.Map<String, String> headers;
 
         /**
          * A dictionary of HTTP request headers.
-         * <p>
-         *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
+         *
+         * <p>Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP
+         * header.
          *
          * @param headers the value to set
          * @return this builder
-         **/
+         */
         public Builder headers(java.util.Map<String, String> headers) {
             this.headers = headers;
             this.__explicitlySet__.add("headers");
             return this;
         }
-        /**
-         * A user-friendly and mutable name suitable for display in a user interface.
-         **/
+        /** A user-friendly and mutable name suitable for display in a user interface. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly and mutable name suitable for display in a user interface.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The monitor interval in seconds. Valid values: 10, 30, and 60.
-         *
-         **/
+        /** The monitor interval in seconds. Valid values: 10, 30, and 60. */
         @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
         private Integer intervalInSeconds;
 
@@ -225,16 +217,13 @@ public final class UpdateHttpMonitorDetails
          *
          * @param intervalInSeconds the value to set
          * @return this builder
-         **/
+         */
         public Builder intervalInSeconds(Integer intervalInSeconds) {
             this.intervalInSeconds = intervalInSeconds;
             this.__explicitlySet__.add("intervalInSeconds");
             return this;
         }
-        /**
-         * Enables or disables the monitor. Set to 'true' to launch monitoring.
-         *
-         **/
+        /** Enables or disables the monitor. Set to 'true' to launch monitoring. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -243,53 +232,53 @@ public final class UpdateHttpMonitorDetails
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace.  For more information,
-         * see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
-         *
-         **/
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace.  For more information,
-         * see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         *
-         **/
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+         * {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -367,9 +356,7 @@ public final class UpdateHttpMonitorDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -378,66 +365,62 @@ public final class UpdateHttpMonitorDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * A list of targets (hostnames or IP addresses) of the probe.
-     **/
+    /** A list of targets (hostnames or IP addresses) of the probe. */
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<String> targets;
 
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getTargets() {
         return targets;
     }
 
-    /**
-     * A list of names of vantage points from which to execute the probe.
-     **/
+    /** A list of names of vantage points from which to execute the probe. */
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNames")
     private final java.util.List<String> vantagePointNames;
 
     /**
      * A list of names of vantage points from which to execute the probe.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getVantagePointNames() {
         return vantagePointNames;
     }
 
     /**
-     * The port on which to probe endpoints. If unspecified, probes will use the
-     * default port of their protocol.
-     *
-     **/
+     * The port on which to probe endpoints. If unspecified, probes will use the default port of
+     * their protocol.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
-     * The port on which to probe endpoints. If unspecified, probes will use the
-     * default port of their protocol.
+     * The port on which to probe endpoints. If unspecified, probes will use the default port of
+     * their protocol.
      *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-     * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
-     *
-     **/
+     * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be
+     * less than or equal to {@code intervalInSeconds} for monitors.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
-     * The probe timeout in seconds. Valid values: 10, 20, 30, and 60.
-     * The probe timeout must be less than or equal to {@code intervalInSeconds} for monitors.
+     * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be
+     * less than or equal to {@code intervalInSeconds} for monitors.
      *
      * @return the value
-     **/
+     */
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -456,58 +439,54 @@ public final class UpdateHttpMonitorDetails
         return method;
     }
 
-    /**
-     * The optional URL path to probe, including query parameters.
-     **/
+    /** The optional URL path to probe, including query parameters. */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The optional URL path to probe, including query parameters.
+     *
      * @return the value
-     **/
+     */
     public String getPath() {
         return path;
     }
 
     /**
      * A dictionary of HTTP request headers.
-     * <p>
-     *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
      *
-     **/
+     * <p>Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP
+     * header.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("headers")
     private final java.util.Map<String, String> headers;
 
     /**
      * A dictionary of HTTP request headers.
-     * <p>
-     *Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP header.
+     *
+     * <p>Note:* Monitors and probes do not support the use of the {@code Authorization} HTTP
+     * header.
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getHeaders() {
         return headers;
     }
 
-    /**
-     * A user-friendly and mutable name suitable for display in a user interface.
-     **/
+    /** A user-friendly and mutable name suitable for display in a user interface. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly and mutable name suitable for display in a user interface.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The monitor interval in seconds. Valid values: 10, 30, and 60.
-     *
-     **/
+    /** The monitor interval in seconds. Valid values: 10, 30, and 60. */
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
     private final Integer intervalInSeconds;
 
@@ -515,15 +494,12 @@ public final class UpdateHttpMonitorDetails
      * The monitor interval in seconds. Valid values: 10, 30, and 60.
      *
      * @return the value
-     **/
+     */
     public Integer getIntervalInSeconds() {
         return intervalInSeconds;
     }
 
-    /**
-     * Enables or disables the monitor. Set to 'true' to launch monitoring.
-     *
-     **/
+    /** Enables or disables the monitor. Set to 'true' to launch monitoring. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -531,49 +507,49 @@ public final class UpdateHttpMonitorDetails
      * Enables or disables the monitor. Set to 'true' to launch monitoring.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace.  For more information,
-     * see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
-     *
-     **/
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace.  For more information,
-     * see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -585,6 +561,7 @@ public final class UpdateHttpMonitorDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

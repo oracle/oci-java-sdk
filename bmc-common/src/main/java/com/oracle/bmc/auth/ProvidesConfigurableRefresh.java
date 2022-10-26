@@ -7,8 +7,7 @@ package com.oracle.bmc.auth;
 import java.time.Duration;
 
 /**
- * An interface that has the API to return
- * refresh security token after if the token expires within
+ * An interface that has the API to return refresh security token after if the token expires within
  * a configurable time
  */
 public interface ProvidesConfigurableRefresh {

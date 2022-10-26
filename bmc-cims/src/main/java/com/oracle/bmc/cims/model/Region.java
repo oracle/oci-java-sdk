@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cims.model;
 
-/**
- * The available Oracle Cloud Infrastructure regions supported by the Support Management API.
- **/
+/** The available Oracle Cloud Infrastructure regions supported by the Support Management API. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum Region {
+public enum Region implements com.oracle.bmc.http.internal.BmcEnum {
     Dev("DEV"),
     Sea("SEA"),
     IntegNext("INTEG_NEXT"),

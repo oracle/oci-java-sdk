@@ -6,88 +6,90 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListWorkRequestsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource affected by the work request.
      */
     private String resourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * resource affected by the work request.
      */
     public String getResourceId() {
         return resourceId;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * asynchronous work request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /**
-     * A filter that returns the resources whose status matches the given WorkRequestStatus.
-     */
+    /** A filter that returns the resources whose status matches the given WorkRequestStatus. */
     private com.oracle.bmc.databasemanagement.model.WorkRequestStatus status;
 
-    /**
-     * A filter that returns the resources whose status matches the given WorkRequestStatus.
-     */
+    /** A filter that returns the resources whose status matches the given WorkRequestStatus. */
     public com.oracle.bmc.databasemanagement.model.WorkRequestStatus getStatus() {
         return status;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending
+     * (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
-     *
+     * The field to sort by. Only one sort order may be provided and the default order for
+     * timeAccepted is descending.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. Only one sort order may be provided and the default order for
+     * timeAccepted is descending.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeAccepted("timeAccepted"),
         ;
 
@@ -120,35 +122,29 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
-     *
+     * The field to sort by. Only one sort order may be provided and the default order for
+     * timeAccepted is descending.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results
-     * are retrieved. This is usually retrieved from a previous list call.
-     *
+     * The page token representing the page from where the next set of paginated results are
+     * retrieved. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     private Integer limit;
 
-    /**
-     * The maximum number of records returned in the paginated response.
-     */
+    /** The maximum number of records returned in the paginated response. */
     public Integer getLimit() {
         return limit;
     }
@@ -156,17 +152,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -176,12 +174,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource affected by the work request.
          */
         private String resourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource affected by the work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * resource affected by the work request.
+         *
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -190,13 +191,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -206,12 +206,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * asynchronous work request.
+         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -220,13 +223,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * A filter that returns the resources whose status matches the given WorkRequestStatus.
-         */
+        /** A filter that returns the resources whose status matches the given WorkRequestStatus. */
         private com.oracle.bmc.databasemanagement.model.WorkRequestStatus status = null;
 
         /**
          * A filter that returns the resources whose status matches the given WorkRequestStatus.
+         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -236,12 +238,15 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending
+         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -251,13 +256,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
-         *
+         * The field to sort by. Only one sort order may be provided and the default order for
+         * timeAccepted is descending.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
+         * The field to sort by. Only one sort order may be provided and the default order for
+         * timeAccepted is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -268,15 +274,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
-         *
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results
-         * are retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results are
+         * retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -286,13 +291,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /**
-         * The maximum number of records returned in the paginated response.
-         */
+        /** The maximum number of records returned in the paginated response. */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -303,18 +307,19 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -326,6 +331,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestsRequest o) {
@@ -346,10 +352,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestsRequest
          */
@@ -363,7 +370,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListWorkRequestsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestsRequest
@@ -380,12 +388,14 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, resourceId, opcRequestId, workRequestId, status, sortOrder, sortBy, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, resourceId, opcRequestId, workRequestId,
+            // status, sortOrder, sortBy, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -403,6 +413,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

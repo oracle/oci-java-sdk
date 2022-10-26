@@ -15,13 +15,14 @@ import com.oracle.bmc.limits.requests.ListLimitDefinitionsRequest;
 import com.oracle.bmc.limits.responses.ListLimitDefinitionsResponse;
 
 /**
- * This class provides an example of how you can use the API to interact with the resource limits
- * of a specific resource type. You will be able to find the following information:
+ * This class provides an example of how you can use the API to interact with the resource limits of
+ * a specific resource type. You will be able to find the following information:
+ *
  * <ul>
- *   <li>Name</li>
- *   <li>Description</li>
- *   <li>Availability</li>
- *   <li>Usage</li>
+ *   <li>Name
+ *   <li>Description
+ *   <li>Availability
+ *   <li>Usage
  * </ul>
  */
 public class LimitsExample {
@@ -34,8 +35,10 @@ public class LimitsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -46,7 +49,8 @@ public class LimitsExample {
         Limits client = new LimitsClient(provider);
         client.setRegion(Region.US_PHOENIX_1);
 
-        // For a given compartmentId and service name it returns the name and description of the limit
+        // For a given compartmentId and service name it returns the name and description of the
+        // limit
         ListLimitDefinitionsRequest listLimitDefinitionsRequest =
                 ListLimitDefinitionsRequest.builder()
                         .compartmentId(provider.getTenantId())

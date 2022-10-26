@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Progress of a migration asset's replication process.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Progress of a migration asset's replication process. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ReplicationProgress.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ReplicationProgress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ReplicationProgress.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ReplicationProgress
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "percentage",
@@ -53,129 +54,121 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Percentage of the current replication progress from 0 to 100.
-         **/
+        /** Percentage of the current replication progress from 0 to 100. */
         @com.fasterxml.jackson.annotation.JsonProperty("percentage")
         private Integer percentage;
 
         /**
          * Percentage of the current replication progress from 0 to 100.
+         *
          * @param percentage the value to set
          * @return this builder
-         **/
+         */
         public Builder percentage(Integer percentage) {
             this.percentage = percentage;
             this.__explicitlySet__.add("percentage");
             return this;
         }
-        /**
-         * Status of the current replication progress. It can be None or InProgress.
-         **/
+        /** Status of the current replication progress. It can be None or InProgress. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Status of the current replication progress. It can be None or InProgress.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Start time of the current replication process
-         **/
+        /** Start time of the current replication process */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Start time of the current replication process
+         *
          * @param timeStarted the value to set
          * @return this builder
-         **/
+         */
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /**
-         * Start time of the last replication process. It can be Completed or Failed.
-         **/
+        /** Start time of the last replication process. It can be Completed or Failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOflastReplicationStart")
         private java.util.Date timeOflastReplicationStart;
 
         /**
          * Start time of the last replication process. It can be Completed or Failed.
+         *
          * @param timeOflastReplicationStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOflastReplicationStart(java.util.Date timeOflastReplicationStart) {
             this.timeOflastReplicationStart = timeOflastReplicationStart;
             this.__explicitlySet__.add("timeOflastReplicationStart");
             return this;
         }
-        /**
-         * End time of the last replication process. It can be Completed or Failed.
-         **/
+        /** End time of the last replication process. It can be Completed or Failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastReplicationEnd")
         private java.util.Date timeOfLastReplicationEnd;
 
         /**
          * End time of the last replication process. It can be Completed or Failed.
+         *
          * @param timeOfLastReplicationEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfLastReplicationEnd(java.util.Date timeOfLastReplicationEnd) {
             this.timeOfLastReplicationEnd = timeOfLastReplicationEnd;
             this.__explicitlySet__.add("timeOfLastReplicationEnd");
             return this;
         }
-        /**
-         * End time of the last successful replication process, which has been completed.
-         **/
+        /** End time of the last successful replication process, which has been completed. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastReplicationSuccess")
         private java.util.Date timeOfLastReplicationSuccess;
 
         /**
          * End time of the last successful replication process, which has been completed.
+         *
          * @param timeOfLastReplicationSuccess the value to set
          * @return this builder
-         **/
+         */
         public Builder timeOfLastReplicationSuccess(java.util.Date timeOfLastReplicationSuccess) {
             this.timeOfLastReplicationSuccess = timeOfLastReplicationSuccess;
             this.__explicitlySet__.add("timeOfLastReplicationSuccess");
             return this;
         }
-        /**
-         * Status of the last replication task. It can be Completed or Failed.
-         **/
+        /** Status of the last replication task. It can be Completed or Failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationStatus")
         private LastReplicationStatus lastReplicationStatus;
 
         /**
          * Status of the last replication task. It can be Completed or Failed.
+         *
          * @param lastReplicationStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder lastReplicationStatus(LastReplicationStatus lastReplicationStatus) {
             this.lastReplicationStatus = lastReplicationStatus;
             this.__explicitlySet__.add("lastReplicationStatus");
             return this;
         }
-        /**
-         * Error message if the last finished replication failed.
-         **/
+        /** Error message if the last finished replication failed. */
         @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationError")
         private String lastReplicationError;
 
         /**
          * Error message if the last finished replication failed.
+         *
          * @param lastReplicationError the value to set
          * @return this builder
-         **/
+         */
         public Builder lastReplicationError(String lastReplicationError) {
             this.lastReplicationError = lastReplicationError;
             this.__explicitlySet__.add("lastReplicationError");
@@ -232,9 +225,7 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -243,30 +234,27 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Percentage of the current replication progress from 0 to 100.
-     **/
+    /** Percentage of the current replication progress from 0 to 100. */
     @com.fasterxml.jackson.annotation.JsonProperty("percentage")
     private final Integer percentage;
 
     /**
      * Percentage of the current replication progress from 0 to 100.
+     *
      * @return the value
-     **/
+     */
     public Integer getPercentage() {
         return percentage;
     }
 
-    /**
-     * Status of the current replication progress. It can be None or InProgress.
-     **/
-    public enum Status {
+    /** Status of the current replication progress. It can be None or InProgress. */
+    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         InProgress("IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -304,87 +292,80 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of the current replication progress. It can be None or InProgress.
-     **/
+    /** Status of the current replication progress. It can be None or InProgress. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Status of the current replication progress. It can be None or InProgress.
+     *
      * @return the value
-     **/
+     */
     public Status getStatus() {
         return status;
     }
 
-    /**
-     * Start time of the current replication process
-     **/
+    /** Start time of the current replication process */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Start time of the current replication process
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /**
-     * Start time of the last replication process. It can be Completed or Failed.
-     **/
+    /** Start time of the last replication process. It can be Completed or Failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOflastReplicationStart")
     private final java.util.Date timeOflastReplicationStart;
 
     /**
      * Start time of the last replication process. It can be Completed or Failed.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOflastReplicationStart() {
         return timeOflastReplicationStart;
     }
 
-    /**
-     * End time of the last replication process. It can be Completed or Failed.
-     **/
+    /** End time of the last replication process. It can be Completed or Failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastReplicationEnd")
     private final java.util.Date timeOfLastReplicationEnd;
 
     /**
      * End time of the last replication process. It can be Completed or Failed.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfLastReplicationEnd() {
         return timeOfLastReplicationEnd;
     }
 
-    /**
-     * End time of the last successful replication process, which has been completed.
-     **/
+    /** End time of the last successful replication process, which has been completed. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastReplicationSuccess")
     private final java.util.Date timeOfLastReplicationSuccess;
 
     /**
      * End time of the last successful replication process, which has been completed.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeOfLastReplicationSuccess() {
         return timeOfLastReplicationSuccess;
     }
 
-    /**
-     * Status of the last replication task. It can be Completed or Failed.
-     **/
-    public enum LastReplicationStatus {
+    /** Status of the last replication task. It can be Completed or Failed. */
+    public enum LastReplicationStatus implements com.oracle.bmc.http.internal.BmcEnum {
         None("NONE"),
         Completed("COMPLETED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -423,30 +404,28 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /**
-     * Status of the last replication task. It can be Completed or Failed.
-     **/
+    /** Status of the last replication task. It can be Completed or Failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationStatus")
     private final LastReplicationStatus lastReplicationStatus;
 
     /**
      * Status of the last replication task. It can be Completed or Failed.
+     *
      * @return the value
-     **/
+     */
     public LastReplicationStatus getLastReplicationStatus() {
         return lastReplicationStatus;
     }
 
-    /**
-     * Error message if the last finished replication failed.
-     **/
+    /** Error message if the last finished replication failed. */
     @com.fasterxml.jackson.annotation.JsonProperty("lastReplicationError")
     private final String lastReplicationError;
 
     /**
      * Error message if the last finished replication failed.
+     *
      * @return the value
-     **/
+     */
     public String getLastReplicationError() {
         return lastReplicationError;
     }
@@ -458,6 +437,7 @@ public final class ReplicationProgress extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

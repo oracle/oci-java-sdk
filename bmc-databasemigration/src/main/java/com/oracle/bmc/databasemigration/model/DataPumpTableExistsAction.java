@@ -4,12 +4,9 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/**
- * IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
- *
- **/
+/** IMPORT: Specifies the action to be performed when data is loaded into a preexisting table. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-public enum DataPumpTableExistsAction {
+public enum DataPumpTableExistsAction implements com.oracle.bmc.http.internal.BmcEnum {
     Truncate("TRUNCATE"),
     Replace("REPLACE"),
     Append("APPEND"),

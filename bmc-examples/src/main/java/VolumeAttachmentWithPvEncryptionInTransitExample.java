@@ -28,27 +28,25 @@ import com.oracle.bmc.identity.model.AvailabilityDomain;
 import java.util.List;
 
 /**
- * This class provides an example of how to perform PV Volume Attachments with pvEncryptionInTransit on in the Java SDK.
- * It is built on top of the class VolumeAttachmentExample.
+ * This class provides an example of how to perform PV Volume Attachments with pvEncryptionInTransit
+ * on in the Java SDK. It is built on top of the class VolumeAttachmentExample.
  *
- * In order to demonstrate functionality, this script will create a VCN and subnet, one block volumes and an instance.
- * These will be deleted at the end of the script. . This script also makes some assumptions about
- * the resources it will create:
+ * <p>In order to demonstrate functionality, this script will create a VCN and subnet, one block
+ * volumes and an instance. These will be deleted at the end of the script. . This script also makes
+ * some assumptions about the resources it will create:
  *
  * <ul>
- *   <li>The VCN created by this example will have a display name of java_sdk_vol_example_vcn</li>
- *   <li>The subnet created by this example will have a display name of: java_sdk_vol_example_subnet</li>
- *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16</li>
- *   <li>The volumes created will have hardcoded display names of VolumeAttachExample3</li>
- *   <li>An instance will be created with shape VM.Standard.1.1</li>
- *   <li>The instance will have a display name of VolAttachExampleInstance</li>
- *   <li>
- *      The configuration file used by service clients will be sourced from the default
- *      location (~/.oci/config) and the DEFAULT profile will be used
- *   </li>
- *   <li>Resources will be created in us-phoenix-1</li>
- *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
- * <ul>
+ *   <li>The VCN created by this example will have a display name of java_sdk_vol_example_vcn
+ *   <li>The subnet created by this example will have a display name of: java_sdk_vol_example_subnet
+ *   <li>The VCN and subnet will have a private IP CIDR block of 10.0.0.0/16
+ *   <li>The volumes created will have hardcoded display names of VolumeAttachExample3
+ *   <li>An instance will be created with shape VM.Standard.1.1
+ *   <li>The instance will have a display name of VolAttachExampleInstance
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used
+ *   <li>Resources will be created in us-phoenix-1
+ *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
+ *       <ul>
  */
 public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAttachmentExample {
     private static final String VOL_THREE_DISPLAY_NAME = "VolumeAttachExample3";
@@ -57,10 +55,11 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     * <ul>
-     *   <li>The OCID of the compartment where the volumes and associated resources will be created</li>
-     *   <li>The OCID of the KMS key used to generated volume's data encryption key. </li>
-     * </ul>
+     *     <ul>
+     *       <li>The OCID of the compartment where the volumes and associated resources will be
+     *           created
+     *       <li>The OCID of the KMS key used to generated volume's data encryption key.
+     *     </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -70,8 +69,10 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
 
         final String compartmentId = args[0];
         final String kmsKeyId = args.length == 1 ? null : args[1];
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
+        // config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
+        // the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -118,13 +119,15 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
                             VOL_THREE_DISPLAY_NAME);
 
             VolumeAttachment pvEncryptionInTransitAttachment = null;
-            // IsPvEncryptionInTransitEnabled is supported for PV volume attachment when it's enabled in the instance launch options.
+            // IsPvEncryptionInTransitEnabled is supported for PV volume attachment when it's
+            // enabled in the instance launch options.
             if (instance.getLaunchOptions().getIsPvEncryptionInTransitEnabled()) {
                 pvEncryptionInTransitAttachment =
                         attachParavirtualizedVolume(computeClient, volume, instance, Boolean.TRUE);
             }
 
-            // Note here that in the returned results, each record is actually a subtype of VolumeAttachment corresponding to what type was specified when attaching
+            // Note here that in the returned results, each record is actually a subtype of
+            // VolumeAttachment corresponding to what type was specified when attaching
             listVolumeAttachmentsOnInstance(computeClient, instance);
 
             if (pvEncryptionInTransitAttachment != null) {
@@ -172,8 +175,8 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
      * @param kmsKeyId the OCID of the KMS key in the tenant
      * @param displayName the display name of the instance
      * @return the created instance
-     *
-     * @throws Exception if an error was encountered while waiting for the instance to become running/available
+     * @throws Exception if an error was encountered while waiting for the instance to become
+     *     running/available
      */
     protected static Instance launchInstance(
             final ComputeClient computeClient,
@@ -191,7 +194,8 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
                         INSTANCE_OS_VERSION,
                         INSTANCE_SHAPE);
 
-        // IsPvEncryptionInTransitEnabled is supported for launching instance when it's enabled in the image launch options.
+        // IsPvEncryptionInTransitEnabled is supported for launching instance when it's enabled in
+        // the image launch options.
         System.out.println(
                 "The image's IsPvEncryptionInTransitEnabled flag: "
                         + image.getLaunchOptions().getIsPvEncryptionInTransitEnabled());
@@ -233,16 +237,17 @@ public class VolumeAttachmentWithPvEncryptionInTransitExample extends VolumeAtta
     }
 
     /**
-     * Attaches a volume to an instance as a paravirtualized volume and waits for the attachment to complete
+     * Attaches a volume to an instance as a paravirtualized volume and waits for the attachment to
+     * complete
      *
      * @param computeClient the client used to communicate with the service
      * @param volume the volume to attach
      * @param instance the instance to attach the volume to
-     * @param isPvEncryptionInTransitEnabled if the PvEncryptionInTransit is Enabled for the PV volume attachment
-     *
-     * @return the volume attachment. Note that this is actually an {@link com.oracle.bmc.core.models.ParavirtualizedVolumeAttachment}, which is a subclass
-     * of {@link com.oracle.bmc.core.models.VolumeAttachment}
-     *
+     * @param isPvEncryptionInTransitEnabled if the PvEncryptionInTransit is Enabled for the PV
+     *     volume attachment
+     * @return the volume attachment. Note that this is actually an {@link
+     *     com.oracle.bmc.core.models.ParavirtualizedVolumeAttachment}, which is a subclass of
+     *     {@link com.oracle.bmc.core.models.VolumeAttachment}
      * @throws Exception if there was an error waiting for the volume attachment
      */
     private static VolumeAttachment attachParavirtualizedVolume(

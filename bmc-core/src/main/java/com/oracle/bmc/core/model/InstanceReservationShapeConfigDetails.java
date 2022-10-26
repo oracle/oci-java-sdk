@@ -6,32 +6,33 @@ package com.oracle.bmc.core.model;
 
 /**
  * The shape configuration requested when launching instances in a compute capacity reservation.
- * <p>
- * If the parameter is provided, the reservation is created with the resources that you specify. If some
- * properties are missing or the parameter is not provided, the reservation is created
- * with the default configuration values for the {@code shape} that you specify.
- * <p>
- * Each shape only supports certain configurable values. If the values that you provide are not valid for the
- * specified {@code shape}, an error is returned.
- * <p>
- * For more information about customizing the resources that are allocated to flexible shapes,
- * see [Flexible Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>If the parameter is provided, the reservation is created with the resources that you specify.
+ * If some properties are missing or the parameter is not provided, the reservation is created with
+ * the default configuration values for the {@code shape} that you specify.
+ *
+ * <p>Each shape only supports certain configurable values. If the values that you provide are not
+ * valid for the specified {@code shape}, an error is returned.
+ *
+ * <p>For more information about customizing the resources that are allocated to flexible shapes,
+ * see [Flexible
+ * Shapes](https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceReservationShapeConfigDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstanceReservationShapeConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceReservationShapeConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ocpus", "memoryInGBs"})
     public InstanceReservationShapeConfigDetails(Float ocpus, Float memoryInGBs) {
@@ -42,10 +43,7 @@ public final class InstanceReservationShapeConfigDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The total number of OCPUs available to the instance.
-         *
-         **/
+        /** The total number of OCPUs available to the instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
@@ -54,16 +52,13 @@ public final class InstanceReservationShapeConfigDetails
          *
          * @param ocpus the value to set
          * @return this builder
-         **/
+         */
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /**
-         * The total amount of memory available to the instance, in gigabytes.
-         *
-         **/
+        /** The total amount of memory available to the instance, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
@@ -72,7 +67,7 @@ public final class InstanceReservationShapeConfigDetails
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
@@ -103,9 +98,7 @@ public final class InstanceReservationShapeConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,10 +107,7 @@ public final class InstanceReservationShapeConfigDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The total number of OCPUs available to the instance.
-     *
-     **/
+    /** The total number of OCPUs available to the instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
@@ -125,15 +115,12 @@ public final class InstanceReservationShapeConfigDetails
      * The total number of OCPUs available to the instance.
      *
      * @return the value
-     **/
+     */
     public Float getOcpus() {
         return ocpus;
     }
 
-    /**
-     * The total amount of memory available to the instance, in gigabytes.
-     *
-     **/
+    /** The total amount of memory available to the instance, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
@@ -141,7 +128,7 @@ public final class InstanceReservationShapeConfigDetails
      * The total amount of memory available to the instance, in gigabytes.
      *
      * @return the value
-     **/
+     */
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
@@ -153,6 +140,7 @@ public final class InstanceReservationShapeConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,20 +5,21 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Snapshot of the DbSystem details at the time of the backup
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Snapshot of the DbSystem details at the time of the backup <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSnapshot.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DbSystemSnapshot
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -100,74 +101,67 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the DB System.
-         **/
+        /** The OCID of the DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the DB System.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The user-friendly name for the DB System. It does not have to be unique.
-         **/
+        /** The user-friendly name for the DB System. It does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the DB System. It does not have to be unique.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * User-provided data about the DB System.
-         **/
+        /** User-provided data about the DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User-provided data about the DB System.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The OCID of the compartment the DB System belongs in.
-         **/
+        /** The OCID of the compartment the DB System belongs in. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment the DB System belongs in.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * The OCID of the subnet the DB System is associated with.
-         *
-         **/
+        /** The OCID of the subnet the DB System is associated with. */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -176,16 +170,13 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /**
-         * The Availability Domain where the primary DB System should be located.
-         *
-         **/
+        /** The Availability Domain where the primary DB System should be located. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -194,16 +185,13 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * The name of the Fault Domain the DB System is located in.
-         *
-         **/
+        /** The name of the Fault Domain the DB System is located in. */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
@@ -212,65 +200,60 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param faultDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
         /**
-         * The shape of the primary instances of the DB System. The shape
-         * determines resources allocated to a DB System - CPU cores
-         * and memory for VM shapes; CPU cores, memory and storage for non-VM
-         * (or bare metal) shapes. To get a list of shapes, use (the
-         * {@link #listShapes(ListShapesRequest) listShapes} operation.
-         *
-         **/
+         * The shape of the primary instances of the DB System. The shape determines resources
+         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
+         * storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the {@link
+         * #listShapes(ListShapesRequest) listShapes} operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * The shape of the primary instances of the DB System. The shape
-         * determines resources allocated to a DB System - CPU cores
-         * and memory for VM shapes; CPU cores, memory and storage for non-VM
-         * (or bare metal) shapes. To get a list of shapes, use (the
-         * {@link #listShapes(ListShapesRequest) listShapes} operation.
+         * The shape of the primary instances of the DB System. The shape determines resources
+         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
+         * storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the {@link
+         * #listShapes(ListShapesRequest) listShapes} operation.
          *
          * @param shapeName the value to set
          * @return this builder
-         **/
+         */
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /**
-         * Name of the MySQL Version in use for the DB System.
-         **/
+        /** Name of the MySQL Version in use for the DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
         private String mysqlVersion;
 
         /**
          * Name of the MySQL Version in use for the DB System.
+         *
          * @param mysqlVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
             return this;
         }
-        /**
-         * The username for the administrative user.
-         **/
+        /** The username for the administrative user. */
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
         /**
          * The username for the administrative user.
+         *
          * @param adminUsername the value to set
          * @return this builder
-         **/
+         */
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
@@ -285,26 +268,22 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("backupPolicy");
             return this;
         }
-        /**
-         * The OCID of the Configuration to be used for Instances in this DB System.
-         **/
+        /** The OCID of the Configuration to be used for Instances in this DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
         private String configurationId;
 
         /**
          * The OCID of the Configuration to be used for Instances in this DB System.
+         *
          * @param configurationId the value to set
          * @return this builder
-         **/
+         */
         public Builder configurationId(String configurationId) {
             this.configurationId = configurationId;
             this.__explicitlySet__.add("configurationId");
             return this;
         }
-        /**
-         * Initial size of the data volume in GiBs that will be created and attached.
-         *
-         **/
+        /** Initial size of the data volume in GiBs that will be created and attached. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
@@ -313,98 +292,91 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
         /**
-         * The hostname for the primary endpoint of the DB System. Used for DNS.
-         * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-         * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-         *
-         **/
+         * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
+         * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for
+         * example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique
+         * across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * The hostname for the primary endpoint of the DB System. Used for DNS.
-         * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-         * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-         * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+         * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
+         * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for
+         * example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique
+         * across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
          *
          * @param hostnameLabel the value to set
          * @return this builder
-         **/
+         */
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
         /**
-         * The IP address the DB System is configured to listen on. A private
-         * IP address of the primary endpoint of the DB System. Must be an
-         * available IP address within the subnet's CIDR. This will be a
-         * "dotted-quad" style IPv4 address.
-         *
-         **/
+         * The IP address the DB System is configured to listen on. A private IP address of the
+         * primary endpoint of the DB System. Must be an available IP address within the subnet's
+         * CIDR. This will be a "dotted-quad" style IPv4 address.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
-         * The IP address the DB System is configured to listen on. A private
-         * IP address of the primary endpoint of the DB System. Must be an
-         * available IP address within the subnet's CIDR. This will be a
-         * "dotted-quad" style IPv4 address.
+         * The IP address the DB System is configured to listen on. A private IP address of the
+         * primary endpoint of the DB System. Must be an available IP address within the subnet's
+         * CIDR. This will be a "dotted-quad" style IPv4 address.
          *
          * @param ipAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /**
-         * The port for primary endpoint of the DB System to listen on.
-         **/
+        /** The port for primary endpoint of the DB System to listen on. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port for primary endpoint of the DB System to listen on.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-         *
-         **/
+         * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin
+         * equivalent of port.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portX")
         private Integer portX;
 
         /**
-         * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+         * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin
+         * equivalent of port.
          *
          * @param portX the value to set
          * @return this builder
-         **/
+         */
         public Builder portX(Integer portX) {
             this.portX = portX;
             this.__explicitlySet__.add("portX");
             return this;
         }
-        /**
-         * Specifies if the DB System is highly available.
-         *
-         **/
+        /** Specifies if the DB System is highly available. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
 
@@ -413,16 +385,13 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param isHighlyAvailable the value to set
          * @return this builder
-         **/
+         */
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = isHighlyAvailable;
             this.__explicitlySet__.add("isHighlyAvailable");
             return this;
         }
-        /**
-         * The network endpoints available for this DB System.
-         *
-         **/
+        /** The network endpoints available for this DB System. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<DbSystemEndpoint> endpoints;
 
@@ -431,7 +400,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param endpoints the value to set
          * @return this builder
-         **/
+         */
         public Builder endpoints(java.util.List<DbSystemEndpoint> endpoints) {
             this.endpoints = endpoints;
             this.__explicitlySet__.add("endpoints");
@@ -456,20 +425,19 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -478,8 +446,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -489,7 +456,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -497,20 +464,19 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
-         * and whether to enable or disable syncing of the Binary Logs.
-         *
-         **/
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
+         * disabled, and whether to enable or disable syncing of the Binary Logs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
         private CrashRecoveryStatus crashRecovery;
 
         /**
-         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
-         * and whether to enable or disable syncing of the Binary Logs.
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
+         * disabled, and whether to enable or disable syncing of the Binary Logs.
          *
          * @param crashRecovery the value to set
          * @return this builder
-         **/
+         */
         public Builder crashRecovery(CrashRecoveryStatus crashRecovery) {
             this.crashRecovery = crashRecovery;
             this.__explicitlySet__.add("crashRecovery");
@@ -631,9 +597,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -642,66 +606,59 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the DB System.
-     **/
+    /** The OCID of the DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the DB System.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The user-friendly name for the DB System. It does not have to be unique.
-     **/
+    /** The user-friendly name for the DB System. It does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * User-provided data about the DB System.
-     **/
+    /** User-provided data about the DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-provided data about the DB System.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The OCID of the compartment the DB System belongs in.
-     **/
+    /** The OCID of the compartment the DB System belongs in. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment the DB System belongs in.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /**
-     * The OCID of the subnet the DB System is associated with.
-     *
-     **/
+    /** The OCID of the subnet the DB System is associated with. */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -709,15 +666,12 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * The OCID of the subnet the DB System is associated with.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
 
-    /**
-     * The Availability Domain where the primary DB System should be located.
-     *
-     **/
+    /** The Availability Domain where the primary DB System should be located. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
@@ -725,15 +679,12 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * The Availability Domain where the primary DB System should be located.
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * The name of the Fault Domain the DB System is located in.
-     *
-     **/
+    /** The name of the Fault Domain the DB System is located in. */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
@@ -741,59 +692,54 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * The name of the Fault Domain the DB System is located in.
      *
      * @return the value
-     **/
+     */
     public String getFaultDomain() {
         return faultDomain;
     }
 
     /**
-     * The shape of the primary instances of the DB System. The shape
-     * determines resources allocated to a DB System - CPU cores
-     * and memory for VM shapes; CPU cores, memory and storage for non-VM
-     * (or bare metal) shapes. To get a list of shapes, use (the
-     * {@link #listShapes(ListShapesRequest) listShapes} operation.
-     *
-     **/
+     * The shape of the primary instances of the DB System. The shape determines resources allocated
+     * to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the {@link
+     * #listShapes(ListShapesRequest) listShapes} operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * The shape of the primary instances of the DB System. The shape
-     * determines resources allocated to a DB System - CPU cores
-     * and memory for VM shapes; CPU cores, memory and storage for non-VM
-     * (or bare metal) shapes. To get a list of shapes, use (the
-     * {@link #listShapes(ListShapesRequest) listShapes} operation.
+     * The shape of the primary instances of the DB System. The shape determines resources allocated
+     * to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the {@link
+     * #listShapes(ListShapesRequest) listShapes} operation.
      *
      * @return the value
-     **/
+     */
     public String getShapeName() {
         return shapeName;
     }
 
-    /**
-     * Name of the MySQL Version in use for the DB System.
-     **/
+    /** Name of the MySQL Version in use for the DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
     private final String mysqlVersion;
 
     /**
      * Name of the MySQL Version in use for the DB System.
+     *
      * @return the value
-     **/
+     */
     public String getMysqlVersion() {
         return mysqlVersion;
     }
 
-    /**
-     * The username for the administrative user.
-     **/
+    /** The username for the administrative user. */
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
     /**
      * The username for the administrative user.
+     *
      * @return the value
-     **/
+     */
     public String getAdminUsername() {
         return adminUsername;
     }
@@ -805,24 +751,20 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         return backupPolicy;
     }
 
-    /**
-     * The OCID of the Configuration to be used for Instances in this DB System.
-     **/
+    /** The OCID of the Configuration to be used for Instances in this DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
     private final String configurationId;
 
     /**
      * The OCID of the Configuration to be used for Instances in this DB System.
+     *
      * @return the value
-     **/
+     */
     public String getConfigurationId() {
         return configurationId;
     }
 
-    /**
-     * Initial size of the data volume in GiBs that will be created and attached.
-     *
-     **/
+    /** Initial size of the data volume in GiBs that will be created and attached. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
@@ -830,89 +772,82 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * Initial size of the data volume in GiBs that will be created and attached.
      *
      * @return the value
-     **/
+     */
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
     }
 
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
-     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-     *
-     **/
+     * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
+     * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example,
+     * "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all
+     * VNICs in the subnet and comply with RFC 952 and RFC 1123.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * The hostname for the primary endpoint of the DB System. Used for DNS.
-     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
-     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+     * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
+     * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example,
+     * "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all
+     * VNICs in the subnet and comply with RFC 952 and RFC 1123.
      *
      * @return the value
-     **/
+     */
     public String getHostnameLabel() {
         return hostnameLabel;
     }
 
     /**
-     * The IP address the DB System is configured to listen on. A private
-     * IP address of the primary endpoint of the DB System. Must be an
-     * available IP address within the subnet's CIDR. This will be a
-     * "dotted-quad" style IPv4 address.
-     *
-     **/
+     * The IP address the DB System is configured to listen on. A private IP address of the primary
+     * endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This
+     * will be a "dotted-quad" style IPv4 address.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
-     * The IP address the DB System is configured to listen on. A private
-     * IP address of the primary endpoint of the DB System. Must be an
-     * available IP address within the subnet's CIDR. This will be a
-     * "dotted-quad" style IPv4 address.
+     * The IP address the DB System is configured to listen on. A private IP address of the primary
+     * endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This
+     * will be a "dotted-quad" style IPv4 address.
      *
      * @return the value
-     **/
+     */
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /**
-     * The port for primary endpoint of the DB System to listen on.
-     **/
+    /** The port for primary endpoint of the DB System to listen on. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port for primary endpoint of the DB System to listen on.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-     *
-     **/
+     * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin
+     * equivalent of port.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
     private final Integer portX;
 
     /**
-     * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+     * The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin
+     * equivalent of port.
      *
      * @return the value
-     **/
+     */
     public Integer getPortX() {
         return portX;
     }
 
-    /**
-     * Specifies if the DB System is highly available.
-     *
-     **/
+    /** Specifies if the DB System is highly available. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
 
@@ -920,15 +855,12 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * Specifies if the DB System is highly available.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsHighlyAvailable() {
         return isHighlyAvailable;
     }
 
-    /**
-     * The network endpoints available for this DB System.
-     *
-     **/
+    /** The network endpoints available for this DB System. */
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     private final java.util.List<DbSystemEndpoint> endpoints;
 
@@ -936,7 +868,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
      * The network endpoints available for this DB System.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DbSystemEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -956,55 +888,52 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
-     * and whether to enable or disable syncing of the Binary Logs.
-     *
-     **/
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
+     * disabled, and whether to enable or disable syncing of the Binary Logs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
     private final CrashRecoveryStatus crashRecovery;
 
     /**
-     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
-     * and whether to enable or disable syncing of the Binary Logs.
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
+     * disabled, and whether to enable or disable syncing of the Binary Logs.
      *
      * @return the value
-     **/
+     */
     public CrashRecoveryStatus getCrashRecovery() {
         return crashRecovery;
     }
@@ -1016,6 +945,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

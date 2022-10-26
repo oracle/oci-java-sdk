@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.osmanagement.model;
 
-/**
- * The purpose of an update.
- **/
+/** The purpose of an update. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum PackageUpdateTypes {
+public enum PackageUpdateTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Security("SECURITY"),
     Bugfix("BUGFIX"),
     Enhancement("ENHANCEMENT"),

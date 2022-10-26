@@ -5,58 +5,58 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Credentials to access the Oracle SOA Cloud Service application in the source environment. When you create and update a migration,
- * Application Migration connects to the application in the source environment with the supplied credentials and exports the domain
- * configuration.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Credentials to access the Oracle SOA Cloud Service application in the source environment. When
+ * you create and update a migration, Application Migration connects to the application in the
+ * source environment with the supplied credentials and exports the domain configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SoacsDiscoveryDetails.Builder.class
-)
+        builder = SoacsDiscoveryDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SoacsDiscoveryDetails extends DiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
-         **/
+         * WebLogic administrator username for the Oracle SOA Cloud Service application in the
+         * source environment.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
         private String weblogicUser;
 
         /**
-         * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
+         * WebLogic administrator username for the Oracle SOA Cloud Service application in the
+         * source environment.
+         *
          * @param weblogicUser the value to set
          * @return this builder
-         **/
+         */
         public Builder weblogicUser(String weblogicUser) {
             this.weblogicUser = weblogicUser;
             this.__explicitlySet__.add("weblogicUser");
             return this;
         }
-        /**
-         * Password for this user.
-         **/
+        /** Password for this user. */
         @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
         private String weblogicPassword;
 
         /**
          * Password for this user.
+         *
          * @param weblogicPassword the value to set
          * @return this builder
-         **/
+         */
         public Builder weblogicPassword(String weblogicPassword) {
             this.weblogicPassword = weblogicPassword;
             this.__explicitlySet__.add("weblogicPassword");
@@ -87,9 +87,7 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,29 +104,31 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
     }
 
     /**
-     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
-     **/
+     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source
+     * environment.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicUser")
     private final String weblogicUser;
 
     /**
-     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source environment.
+     * WebLogic administrator username for the Oracle SOA Cloud Service application in the source
+     * environment.
+     *
      * @return the value
-     **/
+     */
     public String getWeblogicUser() {
         return weblogicUser;
     }
 
-    /**
-     * Password for this user.
-     **/
+    /** Password for this user. */
     @com.fasterxml.jackson.annotation.JsonProperty("weblogicPassword")
     private final String weblogicPassword;
 
     /**
      * Password for this user.
+     *
      * @return the value
-     **/
+     */
     public String getWeblogicPassword() {
         return weblogicPassword;
     }
@@ -140,6 +140,7 @@ public final class SoacsDiscoveryDetails extends DiscoveryDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

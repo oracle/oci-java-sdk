@@ -5,19 +5,21 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Details about the Kerberos principals.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details about the Kerberos principals. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KerberosDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class KerberosDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class KerberosDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"principalName", "keytabFile"})
     public KerberosDetails(String principalName, String keytabFile) {
@@ -28,33 +30,31 @@ public final class KerberosDetails extends com.oracle.bmc.http.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the Kerberos principal.
-         **/
+        /** Name of the Kerberos principal. */
         @com.fasterxml.jackson.annotation.JsonProperty("principalName")
         private String principalName;
 
         /**
          * Name of the Kerberos principal.
+         *
          * @param principalName the value to set
          * @return this builder
-         **/
+         */
         public Builder principalName(String principalName) {
             this.principalName = principalName;
             this.__explicitlySet__.add("principalName");
             return this;
         }
-        /**
-         * Location of the keytab file
-         **/
+        /** Location of the keytab file */
         @com.fasterxml.jackson.annotation.JsonProperty("keytabFile")
         private String keytabFile;
 
         /**
          * Location of the keytab file
+         *
          * @param keytabFile the value to set
          * @return this builder
-         **/
+         */
         public Builder keytabFile(String keytabFile) {
             this.keytabFile = keytabFile;
             this.__explicitlySet__.add("keytabFile");
@@ -84,9 +84,7 @@ public final class KerberosDetails extends com.oracle.bmc.http.internal.Explicit
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +93,28 @@ public final class KerberosDetails extends com.oracle.bmc.http.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the Kerberos principal.
-     **/
+    /** Name of the Kerberos principal. */
     @com.fasterxml.jackson.annotation.JsonProperty("principalName")
     private final String principalName;
 
     /**
      * Name of the Kerberos principal.
+     *
      * @return the value
-     **/
+     */
     public String getPrincipalName() {
         return principalName;
     }
 
-    /**
-     * Location of the keytab file
-     **/
+    /** Location of the keytab file */
     @com.fasterxml.jackson.annotation.JsonProperty("keytabFile")
     private final String keytabFile;
 
     /**
      * Location of the keytab file
+     *
      * @return the value
-     **/
+     */
     public String getKeytabFile() {
         return keytabFile;
     }
@@ -130,6 +126,7 @@ public final class KerberosDetails extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

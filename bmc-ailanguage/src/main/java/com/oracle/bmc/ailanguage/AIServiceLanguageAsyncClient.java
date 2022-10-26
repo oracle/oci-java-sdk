@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.ailanguage;
 
-import com.oracle.bmc.ailanguage.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.ailanguage.requests.*;
 import com.oracle.bmc.ailanguage.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for AIServiceLanguage service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for AIServiceLanguage service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
-    /**
-     * Service instance for AIServiceLanguage.
-     */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+public class AIServiceLanguageAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements AIServiceLanguageAsync {
+    /** Service instance for AIServiceLanguage. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AISERVICELANGUAGE")
@@ -37,268 +40,16 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(AIServiceLanguageAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public AIServiceLanguageAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private AIServiceLanguageAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -306,8 +57,8 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -321,121 +72,26 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public AIServiceLanguageAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new AIServiceLanguageAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new AIServiceLanguageAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -446,52 +102,31 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     BatchDetectDominantLanguageRequest,
                                     BatchDetectDominantLanguageResponse>
                             handler) {
-        LOG.trace("Called async batchDetectDominantLanguage");
-        final BatchDetectDominantLanguageRequest interceptedRequest =
-                BatchDetectDominantLanguageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BatchDetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getBatchDetectDominantLanguageDetails(),
+                "batchDetectDominantLanguageDetails is required");
+
+        return clientCall(request, BatchDetectDominantLanguageResponse::builder)
+                .logger(LOG, "batchDetectDominantLanguage")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "BatchDetectDominantLanguage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectDominantLanguage/BatchDetectDominantLanguage");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BatchDetectDominantLanguageResponse>
-                transformer =
-                        BatchDetectDominantLanguageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BatchDetectDominantLanguageRequest,
-                                BatchDetectDominantLanguageResponse>,
-                        java.util.concurrent.Future<BatchDetectDominantLanguageResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getBatchDetectDominantLanguageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BatchDetectDominantLanguageRequest, BatchDetectDominantLanguageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectDominantLanguage/BatchDetectDominantLanguage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectDominantLanguageRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectDominantLanguage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectDominantLanguageResult.class,
+                        BatchDetectDominantLanguageResponse.Builder
+                                ::batchDetectDominantLanguageResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchDetectDominantLanguageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -502,52 +137,31 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     BatchDetectLanguageEntitiesRequest,
                                     BatchDetectLanguageEntitiesResponse>
                             handler) {
-        LOG.trace("Called async batchDetectLanguageEntities");
-        final BatchDetectLanguageEntitiesRequest interceptedRequest =
-                BatchDetectLanguageEntitiesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BatchDetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getBatchDetectLanguageEntitiesDetails(),
+                "batchDetectLanguageEntitiesDetails is required");
+
+        return clientCall(request, BatchDetectLanguageEntitiesResponse::builder)
+                .logger(LOG, "batchDetectLanguageEntities")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "BatchDetectLanguageEntities",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageEntities/BatchDetectLanguageEntities");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageEntitiesResponse>
-                transformer =
-                        BatchDetectLanguageEntitiesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BatchDetectLanguageEntitiesRequest,
-                                BatchDetectLanguageEntitiesResponse>,
-                        java.util.concurrent.Future<BatchDetectLanguageEntitiesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getBatchDetectLanguageEntitiesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BatchDetectLanguageEntitiesRequest, BatchDetectLanguageEntitiesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageEntities/BatchDetectLanguageEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectLanguageEntitiesRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectLanguageEntities")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectLanguageEntitiesResult.class,
+                        BatchDetectLanguageEntitiesResponse.Builder
+                                ::batchDetectLanguageEntitiesResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchDetectLanguageEntitiesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -558,52 +172,32 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     BatchDetectLanguageKeyPhrasesRequest,
                                     BatchDetectLanguageKeyPhrasesResponse>
                             handler) {
-        LOG.trace("Called async batchDetectLanguageKeyPhrases");
-        final BatchDetectLanguageKeyPhrasesRequest interceptedRequest =
-                BatchDetectLanguageKeyPhrasesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BatchDetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getBatchDetectLanguageKeyPhrasesDetails(),
+                "batchDetectLanguageKeyPhrasesDetails is required");
+
+        return clientCall(request, BatchDetectLanguageKeyPhrasesResponse::builder)
+                .logger(LOG, "batchDetectLanguageKeyPhrases")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "BatchDetectLanguageKeyPhrases",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageKeyPhrasesResponse>
-                transformer =
-                        BatchDetectLanguageKeyPhrasesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BatchDetectLanguageKeyPhrasesRequest, BatchDetectLanguageKeyPhrasesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BatchDetectLanguageKeyPhrasesRequest,
-                                BatchDetectLanguageKeyPhrasesResponse>,
-                        java.util.concurrent.Future<BatchDetectLanguageKeyPhrasesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getBatchDetectLanguageKeyPhrasesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BatchDetectLanguageKeyPhrasesRequest, BatchDetectLanguageKeyPhrasesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageKeyPhrases/BatchDetectLanguageKeyPhrases")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectLanguageKeyPhrasesRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectLanguageKeyPhrases")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectLanguageKeyPhrasesResult.class,
+                        BatchDetectLanguageKeyPhrasesResponse.Builder
+                                ::batchDetectLanguageKeyPhrasesResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BatchDetectLanguageKeyPhrasesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -614,52 +208,36 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     BatchDetectLanguageSentimentsRequest,
                                     BatchDetectLanguageSentimentsResponse>
                             handler) {
-        LOG.trace("Called async batchDetectLanguageSentiments");
-        final BatchDetectLanguageSentimentsRequest interceptedRequest =
-                BatchDetectLanguageSentimentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BatchDetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getBatchDetectLanguageSentimentsDetails(),
+                "batchDetectLanguageSentimentsDetails is required");
+
+        return clientCall(request, BatchDetectLanguageSentimentsResponse::builder)
+                .logger(LOG, "batchDetectLanguageSentiments")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "BatchDetectLanguageSentiments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageSentimentsResponse>
-                transformer =
-                        BatchDetectLanguageSentimentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BatchDetectLanguageSentimentsRequest, BatchDetectLanguageSentimentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BatchDetectLanguageSentimentsRequest,
-                                BatchDetectLanguageSentimentsResponse>,
-                        java.util.concurrent.Future<BatchDetectLanguageSentimentsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getBatchDetectLanguageSentimentsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BatchDetectLanguageSentimentsRequest, BatchDetectLanguageSentimentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageSentiments/BatchDetectLanguageSentiments")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectLanguageSentimentsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectLanguageSentiments")
+                .appendListQueryParam(
+                        "level",
+                        request.getLevel(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsResult.class,
+                        BatchDetectLanguageSentimentsResponse.Builder
+                                ::batchDetectLanguageSentimentsResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BatchDetectLanguageSentimentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -670,56 +248,359 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     BatchDetectLanguageTextClassificationRequest,
                                     BatchDetectLanguageTextClassificationResponse>
                             handler) {
-        LOG.trace("Called async batchDetectLanguageTextClassification");
-        final BatchDetectLanguageTextClassificationRequest interceptedRequest =
-                BatchDetectLanguageTextClassificationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BatchDetectLanguageTextClassificationConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getBatchDetectLanguageTextClassificationDetails(),
+                "batchDetectLanguageTextClassificationDetails is required");
+
+        return clientCall(request, BatchDetectLanguageTextClassificationResponse::builder)
+                .logger(LOG, "batchDetectLanguageTextClassification")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "BatchDetectLanguageTextClassification",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BatchDetectLanguageTextClassificationResponse>
-                transformer =
-                        BatchDetectLanguageTextClassificationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BatchDetectLanguageTextClassificationRequest,
-                        BatchDetectLanguageTextClassificationResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchDetectLanguageTextClassification/BatchDetectLanguageTextClassification")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchDetectLanguageTextClassificationRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchDetectLanguageTextClassification")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchDetectLanguageTextClassificationResult
+                                .class,
+                        BatchDetectLanguageTextClassificationResponse.Builder
+                                ::batchDetectLanguageTextClassificationResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BatchDetectLanguageTextClassificationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BatchDetectLanguageTextClassificationRequest,
-                                BatchDetectLanguageTextClassificationResponse>,
-                        java.util.concurrent.Future<BatchDetectLanguageTextClassificationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getBatchDetectLanguageTextClassificationDetails(),
-                                ib,
-                                transformer);
+    @Override
+    public java.util.concurrent.Future<BatchLanguageTranslationResponse> batchLanguageTranslation(
+            BatchLanguageTranslationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BatchLanguageTranslationRequest, BatchLanguageTranslationResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getBatchLanguageTranslationDetails(),
+                "batchLanguageTranslationDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BatchDetectLanguageTextClassificationRequest,
-                    BatchDetectLanguageTextClassificationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, BatchLanguageTranslationResponse::builder)
+                .logger(LOG, "batchLanguageTranslation")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "BatchLanguageTranslation",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/BatchLanguageTranslation/BatchLanguageTranslation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BatchLanguageTranslationRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("batchLanguageTranslation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.BatchLanguageTranslationResult.class,
+                        BatchLanguageTranslationResponse.Builder::batchLanguageTranslationResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", BatchLanguageTranslationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeEndpointCompartmentResponse> changeEndpointCompartment(
+            ChangeEndpointCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeEndpointCompartmentRequest, ChangeEndpointCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeEndpointCompartmentDetails(),
+                "changeEndpointCompartmentDetails is required");
+
+        return clientCall(request, ChangeEndpointCompartmentResponse::builder)
+                .logger(LOG, "changeEndpointCompartment")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ChangeEndpointCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/ChangeEndpointCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeEndpointCompartmentRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .appendPathParam(request.getEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeEndpointCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeModelCompartmentResponse> changeModelCompartment(
+            ChangeModelCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeModelCompartmentRequest, ChangeModelCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeModelCompartmentDetails(),
+                "changeModelCompartmentDetails is required");
+
+        return clientCall(request, ChangeModelCompartmentResponse::builder)
+                .logger(LOG, "changeModelCompartment")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ChangeModelCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/ChangeModelCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeModelCompartmentRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeModelCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeProjectCompartmentResponse> changeProjectCompartment(
+            ChangeProjectCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeProjectCompartmentRequest, ChangeProjectCompartmentResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProjectCompartmentDetails(),
+                "changeProjectCompartmentDetails is required");
+
+        return clientCall(request, ChangeProjectCompartmentResponse::builder)
+                .logger(LOG, "changeProjectCompartment")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ChangeProjectCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/ChangeProjectCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProjectCompartmentRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointResponse> createEndpoint(
+            CreateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateEndpointRequest, CreateEndpointResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateEndpointDetails(), "createEndpointDetails is required");
+
+        return clientCall(request, CreateEndpointResponse::builder)
+                .logger(LOG, "createEndpoint")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CreateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/CreateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateEndpointRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Endpoint.class,
+                        CreateEndpointResponse.Builder::endpoint)
+                .handleResponseHeaderString("etag", CreateEndpointResponse.Builder::etag)
+                .handleResponseHeaderString("location", CreateEndpointResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelResponse> createModel(
+            CreateModelRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateModelRequest, CreateModelResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCreateModelDetails(), "createModelDetails is required");
+
+        return clientCall(request, CreateModelResponse::builder)
+                .logger(LOG, "createModel")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CreateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/CreateModel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateModelRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Model.class,
+                        CreateModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", CreateModelResponse.Builder::etag)
+                .handleResponseHeaderString("location", CreateModelResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateProjectResponse> createProject(
+            CreateProjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateProjectDetails(), "createProjectDetails is required");
+
+        return clientCall(request, CreateProjectResponse::builder)
+                .logger(LOG, "createProject")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "CreateProject",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/CreateProject")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateProjectRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Project.class,
+                        CreateProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", CreateProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateProjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateProjectResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointResponse> deleteEndpoint(
+            DeleteEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteEndpointRequest, DeleteEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
+
+        return clientCall(request, DeleteEndpointResponse::builder)
+                .logger(LOG, "deleteEndpoint")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "DeleteEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/DeleteEndpoint")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteEndpointRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .appendPathParam(request.getEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelResponse> deleteModel(
+            DeleteModelRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, DeleteModelResponse::builder)
+                .logger(LOG, "deleteModel")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "DeleteModel",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/DeleteModel")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteModelRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteModelResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProjectResponse> deleteProject(
+            DeleteProjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, DeleteProjectResponse::builder)
+                .logger(LOG, "deleteProject")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "DeleteProject",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/DeleteProject")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteProjectRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -728,50 +609,32 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetectDominantLanguageRequest, DetectDominantLanguageResponse>
                     handler) {
-        LOG.trace("Called async detectDominantLanguage");
-        final DetectDominantLanguageRequest interceptedRequest =
-                DetectDominantLanguageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetectDominantLanguageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getDetectDominantLanguageDetails(),
+                "detectDominantLanguageDetails is required");
+
+        return clientCall(request, DetectDominantLanguageResponse::builder)
+                .logger(LOG, "detectDominantLanguage")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "DetectDominantLanguage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectDominantLanguage/DetectDominantLanguage");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetectDominantLanguageResponse>
-                transformer =
-                        DetectDominantLanguageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DetectDominantLanguageRequest, DetectDominantLanguageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetectDominantLanguageRequest, DetectDominantLanguageResponse>,
-                        java.util.concurrent.Future<DetectDominantLanguageResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetectDominantLanguageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetectDominantLanguageRequest, DetectDominantLanguageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/DetectDominantLanguage/DetectDominantLanguage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetectDominantLanguageRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("detectDominantLanguage")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.DetectDominantLanguageResult.class,
+                        DetectDominantLanguageResponse.Builder::detectDominantLanguageResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetectDominantLanguageResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DetectDominantLanguageResponse.Builder::sunset)
+                .callAsync(handler);
     }
 
     @Override
@@ -780,50 +643,34 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>
                     handler) {
-        LOG.trace("Called async detectLanguageEntities");
-        final DetectLanguageEntitiesRequest interceptedRequest =
-                DetectLanguageEntitiesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetectLanguageEntitiesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getDetectLanguageEntitiesDetails(),
+                "detectLanguageEntitiesDetails is required");
+
+        return clientCall(request, DetectLanguageEntitiesResponse::builder)
+                .logger(LOG, "detectLanguageEntities")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "DetectLanguageEntities",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageEntities/DetectLanguageEntities");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetectLanguageEntitiesResponse>
-                transformer =
-                        DetectLanguageEntitiesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>,
-                        java.util.concurrent.Future<DetectLanguageEntitiesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetectLanguageEntitiesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetectLanguageEntitiesRequest, DetectLanguageEntitiesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/DetectLanguageEntities/DetectLanguageEntities")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetectLanguageEntitiesRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("detectLanguageEntities")
+                .appendEnumQueryParam("modelVersion", request.getModelVersion())
+                .appendQueryParam("isPii", request.getIsPii())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.DetectLanguageEntitiesResult.class,
+                        DetectLanguageEntitiesResponse.Builder::detectLanguageEntitiesResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetectLanguageEntitiesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DetectLanguageEntitiesResponse.Builder::sunset)
+                .callAsync(handler);
     }
 
     @Override
@@ -832,51 +679,32 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>
                     handler) {
-        LOG.trace("Called async detectLanguageKeyPhrases");
-        final DetectLanguageKeyPhrasesRequest interceptedRequest =
-                DetectLanguageKeyPhrasesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetectLanguageKeyPhrasesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getDetectLanguageKeyPhrasesDetails(),
+                "detectLanguageKeyPhrasesDetails is required");
+
+        return clientCall(request, DetectLanguageKeyPhrasesResponse::builder)
+                .logger(LOG, "detectLanguageKeyPhrases")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "DetectLanguageKeyPhrases",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DetectLanguageKeyPhrasesResponse>
-                transformer =
-                        DetectLanguageKeyPhrasesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>,
-                        java.util.concurrent.Future<DetectLanguageKeyPhrasesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetectLanguageKeyPhrasesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetectLanguageKeyPhrasesRequest, DetectLanguageKeyPhrasesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/DetectLanguageKeyPhrases/DetectLanguageKeyPhrases")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetectLanguageKeyPhrasesRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("detectLanguageKeyPhrases")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.DetectLanguageKeyPhrasesResult.class,
+                        DetectLanguageKeyPhrasesResponse.Builder::detectLanguageKeyPhrasesResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetectLanguageKeyPhrasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DetectLanguageKeyPhrasesResponse.Builder::sunset)
+                .callAsync(handler);
     }
 
     @Override
@@ -885,51 +713,32 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>
                     handler) {
-        LOG.trace("Called async detectLanguageSentiments");
-        final DetectLanguageSentimentsRequest interceptedRequest =
-                DetectLanguageSentimentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetectLanguageSentimentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getDetectLanguageSentimentsDetails(),
+                "detectLanguageSentimentsDetails is required");
+
+        return clientCall(request, DetectLanguageSentimentsResponse::builder)
+                .logger(LOG, "detectLanguageSentiments")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "DetectLanguageSentiments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageSentiments/DetectLanguageSentiments");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DetectLanguageSentimentsResponse>
-                transformer =
-                        DetectLanguageSentimentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>,
-                        java.util.concurrent.Future<DetectLanguageSentimentsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetectLanguageSentimentsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetectLanguageSentimentsRequest, DetectLanguageSentimentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/DetectLanguageSentiments/DetectLanguageSentiments")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetectLanguageSentimentsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("detectLanguageSentiments")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult.class,
+                        DetectLanguageSentimentsResponse.Builder::detectLanguageSentimentsResult)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetectLanguageSentimentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DetectLanguageSentimentsResponse.Builder::sunset)
+                .callAsync(handler);
     }
 
     @Override
@@ -940,53 +749,670 @@ public class AIServiceLanguageAsyncClient implements AIServiceLanguageAsync {
                                     DetectLanguageTextClassificationRequest,
                                     DetectLanguageTextClassificationResponse>
                             handler) {
-        LOG.trace("Called async detectLanguageTextClassification");
-        final DetectLanguageTextClassificationRequest interceptedRequest =
-                DetectLanguageTextClassificationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetectLanguageTextClassificationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getDetectLanguageTextClassificationDetails(),
+                "detectLanguageTextClassificationDetails is required");
+
+        return clientCall(request, DetectLanguageTextClassificationResponse::builder)
+                .logger(LOG, "detectLanguageTextClassification")
+                .serviceDetails(
                         "AIServiceLanguage",
                         "DetectLanguageTextClassification",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/language/20210101/DetectLanguageTextClassification/DetectLanguageTextClassification");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DetectLanguageTextClassificationResponse>
-                transformer =
-                        DetectLanguageTextClassificationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DetectLanguageTextClassificationRequest,
-                        DetectLanguageTextClassificationResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/DetectLanguageTextClassification/DetectLanguageTextClassification")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetectLanguageTextClassificationRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("actions")
+                .appendPathParam("detectLanguageTextClassification")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationResult
+                                .class,
+                        DetectLanguageTextClassificationResponse.Builder
+                                ::detectLanguageTextClassificationResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DetectLanguageTextClassificationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "sunset", DetectLanguageTextClassificationResponse.Builder::sunset)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetectLanguageTextClassificationRequest,
-                                DetectLanguageTextClassificationResponse>,
-                        java.util.concurrent.Future<DetectLanguageTextClassificationResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetectLanguageTextClassificationDetails(),
-                                ib,
-                                transformer);
+    @Override
+    public java.util.concurrent.Future<GetEndpointResponse> getEndpoint(
+            GetEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetEndpointRequest, GetEndpointResponse>
+                    handler) {
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetectLanguageTextClassificationRequest,
-                    DetectLanguageTextClassificationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
+
+        return clientCall(request, GetEndpointResponse::builder)
+                .logger(LOG, "getEndpoint")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/GetEndpoint")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetEndpointRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .appendPathParam(request.getEndpointId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Endpoint.class,
+                        GetEndpointResponse.Builder::endpoint)
+                .handleResponseHeaderString("etag", GetEndpointResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetEndpointResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetModelResponse> getModel(
+            GetModelRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetModelRequest, GetModelResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, GetModelResponse::builder)
+                .logger(LOG, "getModel")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetModel",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/GetModel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetModelRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Model.class,
+                        GetModelResponse.Builder::model)
+                .handleResponseHeaderString("etag", GetModelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetModelResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProjectResponse> getProject(
+            GetProjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+
+        return clientCall(request, GetProjectResponse::builder)
+                .logger(LOG, "getProject")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetProject",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/GetProject")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetProjectRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.Project.class,
+                        GetProjectResponse.Builder::project)
+                .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, GetWorkRequestResponse::builder)
+                .logger(LOG, "getWorkRequest")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/WorkRequest/GetWorkRequest")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetWorkRequestRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.WorkRequest.class,
+                        GetWorkRequestResponse.Builder::workRequest)
+                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEndpointsResponse> listEndpoints(
+            ListEndpointsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListEndpointsRequest, ListEndpointsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListEndpointsResponse::builder)
+                .logger(LOG, "listEndpoints")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListEndpoints",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/ListEndpoints")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEndpointsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("endpointId", request.getEndpointId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("modelId", request.getModelId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.EndpointCollection.class,
+                        ListEndpointsResponse.Builder::endpointCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEndpointsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEndpointsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEvaluationResultsResponse> listEvaluationResults(
+            ListEvaluationResultsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListEvaluationResultsRequest, ListEvaluationResultsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, ListEvaluationResultsResponse::builder)
+                .logger(LOG, "listEvaluationResults")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListEvaluationResults",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/EvaluationResultCollection/ListEvaluationResults")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListEvaluationResultsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("evaluationResults")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.EvaluationResultCollection.class,
+                        ListEvaluationResultsResponse.Builder::evaluationResultCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListEvaluationResultsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListEvaluationResultsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelsResponse> listModels(
+            ListModelsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListModelsRequest, ListModelsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListModelsResponse::builder)
+                .logger(LOG, "listModels")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListModels",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/ListModels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListModelsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("modelId", request.getModelId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.ModelCollection.class,
+                        ListModelsResponse.Builder::modelCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListModelsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListModelsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProjectsResponse> listProjects(
+            ListProjectsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListProjectsResponse::builder)
+                .logger(LOG, "listProjects")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListProjects",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/ListProjects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListProjectsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.ProjectCollection.class,
+                        ListProjectsResponse.Builder::projectCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListProjectsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListProjectsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestErrorsResponse::builder)
+                .logger(LOG, "listWorkRequestErrors")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/WorkRequestError/ListWorkRequestErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestErrorsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("errors")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.WorkRequestErrorCollection.class,
+                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+
+        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
+
+        return clientCall(request, ListWorkRequestLogsResponse::builder)
+                .logger(LOG, "listWorkRequestLogs")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/WorkRequestLog/ListWorkRequestLogs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestLogsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("workRequests")
+                .appendPathParam(request.getWorkRequestId())
+                .appendPathParam("logs")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.WorkRequestLogCollection.class,
+                        ListWorkRequestLogsResponse.Builder::workRequestLogCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListWorkRequestsResponse::builder)
+                .logger(LOG, "listWorkRequests")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/WorkRequest/ListWorkRequests")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListWorkRequestsRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("workRequests")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("workRequestId", request.getWorkRequestId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.ailanguage.model.WorkRequestSummaryCollection.class,
+                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEndpointResponse> updateEndpoint(
+            UpdateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateEndpointRequest, UpdateEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getEndpointId(), "endpointId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateEndpointDetails(), "updateEndpointDetails is required");
+
+        return clientCall(request, UpdateEndpointResponse::builder)
+                .logger(LOG, "updateEndpoint")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "UpdateEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Endpoint/UpdateEndpoint")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateEndpointRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("endpoints")
+                .appendPathParam(request.getEndpointId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateEndpointResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelResponse> updateModel(
+            UpdateModelRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateModelRequest, UpdateModelResponse>
+                    handler) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+        Objects.requireNonNull(request.getUpdateModelDetails(), "updateModelDetails is required");
+
+        return clientCall(request, UpdateModelResponse::builder)
+                .logger(LOG, "updateModel")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "UpdateModel",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Model/UpdateModel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateModelRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateModelResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateModelResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProjectResponse> updateProject(
+            UpdateProjectRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
+                    handler) {
+
+        Validate.notBlank(request.getProjectId(), "projectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateProjectDetails(), "updateProjectDetails is required");
+
+        return clientCall(request, UpdateProjectResponse::builder)
+                .logger(LOG, "updateProject")
+                .serviceDetails(
+                        "AIServiceLanguage",
+                        "UpdateProject",
+                        "https://docs.oracle.com/iaas/api/#/en/language/20221001/Project/UpdateProject")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateProjectRequest::builder)
+                .basePath("/20221001")
+                .appendPathParam("projects")
+                .appendPathParam(request.getProjectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateProjectResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public AIServiceLanguageAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

@@ -5,22 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Node Eviction Details configuration
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Node Eviction Details configuration <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NodeEvictionNodePoolSettings.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NodeEvictionNodePoolSettings.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NodeEvictionNodePoolSettings
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"evictionGraceDuration", "isForceDeleteAfterGraceDuration"})
     public NodeEvictionNodePoolSettings(
@@ -33,36 +33,40 @@ public final class NodeEvictionNodePoolSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain.
-         * Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-         *
-         **/
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will
+         * indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M,
+         * Max: PT60M. Format ISO 8601 e.g PT30M
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("evictionGraceDuration")
         private String evictionGraceDuration;
 
         /**
-         * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain.
-         * Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+         * Duration after which OKE will give up eviction of the pods on the node. PT0M will
+         * indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M,
+         * Max: PT60M. Format ISO 8601 e.g PT30M
          *
          * @param evictionGraceDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder evictionGraceDuration(String evictionGraceDuration) {
             this.evictionGraceDuration = evictionGraceDuration;
             this.__explicitlySet__.add("evictionGraceDuration");
             return this;
         }
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-         **/
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in
+         * grace period
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isForceDeleteAfterGraceDuration")
         private Boolean isForceDeleteAfterGraceDuration;
 
         /**
-         * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+         * If the underlying compute instance should be deleted if you cannot evict all the pods in
+         * grace period
+         *
          * @param isForceDeleteAfterGraceDuration the value to set
          * @return this builder
-         **/
+         */
         public Builder isForceDeleteAfterGraceDuration(Boolean isForceDeleteAfterGraceDuration) {
             this.isForceDeleteAfterGraceDuration = isForceDeleteAfterGraceDuration;
             this.__explicitlySet__.add("isForceDeleteAfterGraceDuration");
@@ -94,9 +98,7 @@ public final class NodeEvictionNodePoolSettings
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,33 +108,37 @@ public final class NodeEvictionNodePoolSettings
     }
 
     /**
-     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain.
-     * Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
-     *
-     **/
+     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate
+     * you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M.
+     * Format ISO 8601 e.g PT30M
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("evictionGraceDuration")
     private final String evictionGraceDuration;
 
     /**
-     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain.
-     * Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
+     * Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate
+     * you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M.
+     * Format ISO 8601 e.g PT30M
      *
      * @return the value
-     **/
+     */
     public String getEvictionGraceDuration() {
         return evictionGraceDuration;
     }
 
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
-     **/
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in
+     * grace period
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isForceDeleteAfterGraceDuration")
     private final Boolean isForceDeleteAfterGraceDuration;
 
     /**
-     * If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
+     * If the underlying compute instance should be deleted if you cannot evict all the pods in
+     * grace period
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsForceDeleteAfterGraceDuration() {
         return isForceDeleteAfterGraceDuration;
     }
@@ -144,6 +150,7 @@ public final class NodeEvictionNodePoolSettings
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

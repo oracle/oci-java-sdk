@@ -5,25 +5,24 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * The strategy based on average usage.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The strategy based on average usage. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AverageResourceAssessmentStrategy.Builder.class
-)
+        builder = AverageResourceAssessmentStrategy.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "strategyType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "strategyType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AverageResourceAssessmentStrategy extends ResourceAssessmentStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -37,47 +36,46 @@ public final class AverageResourceAssessmentStrategy extends ResourceAssessmentS
         }
         /**
          * The real resource usage is multiplied to this number before making any recommendation.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("adjustmentMultiplier")
         private Float adjustmentMultiplier;
 
         /**
          * The real resource usage is multiplied to this number before making any recommendation.
+         *
          * @param adjustmentMultiplier the value to set
          * @return this builder
-         **/
+         */
         public Builder adjustmentMultiplier(Float adjustmentMultiplier) {
             this.adjustmentMultiplier = adjustmentMultiplier;
             this.__explicitlySet__.add("adjustmentMultiplier");
             return this;
         }
-        /**
-         * The current state of the migration plan.
-         **/
+        /** The current state of the migration plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
         /**
          * The current state of the migration plan.
+         *
          * @param metricType the value to set
          * @return this builder
-         **/
+         */
         public Builder metricType(MetricType metricType) {
             this.metricType = metricType;
             this.__explicitlySet__.add("metricType");
             return this;
         }
-        /**
-         * The current state of the migration plan.
-         **/
+        /** The current state of the migration plan. */
         @com.fasterxml.jackson.annotation.JsonProperty("metricTimeWindow")
         private MetricTimeWindow metricTimeWindow;
 
         /**
          * The current state of the migration plan.
+         *
          * @param metricTimeWindow the value to set
          * @return this builder
-         **/
+         */
         public Builder metricTimeWindow(MetricTimeWindow metricTimeWindow) {
             this.metricTimeWindow = metricTimeWindow;
             this.__explicitlySet__.add("metricTimeWindow");
@@ -118,9 +116,7 @@ public final class AverageResourceAssessmentStrategy extends ResourceAssessmentS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,44 +137,41 @@ public final class AverageResourceAssessmentStrategy extends ResourceAssessmentS
         this.metricTimeWindow = metricTimeWindow;
     }
 
-    /**
-     * The real resource usage is multiplied to this number before making any recommendation.
-     **/
+    /** The real resource usage is multiplied to this number before making any recommendation. */
     @com.fasterxml.jackson.annotation.JsonProperty("adjustmentMultiplier")
     private final Float adjustmentMultiplier;
 
     /**
      * The real resource usage is multiplied to this number before making any recommendation.
+     *
      * @return the value
-     **/
+     */
     public Float getAdjustmentMultiplier() {
         return adjustmentMultiplier;
     }
 
-    /**
-     * The current state of the migration plan.
-     **/
+    /** The current state of the migration plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
     /**
      * The current state of the migration plan.
+     *
      * @return the value
-     **/
+     */
     public MetricType getMetricType() {
         return metricType;
     }
 
-    /**
-     * The current state of the migration plan.
-     **/
+    /** The current state of the migration plan. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricTimeWindow")
     private final MetricTimeWindow metricTimeWindow;
 
     /**
      * The current state of the migration plan.
+     *
      * @return the value
-     **/
+     */
     public MetricTimeWindow getMetricTimeWindow() {
         return metricTimeWindow;
     }
@@ -190,6 +183,7 @@ public final class AverageResourceAssessmentStrategy extends ResourceAssessmentS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -9,17 +9,16 @@ import com.oracle.bmc.networkloadbalancer.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -28,15 +27,14 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
-     *
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact
-     * Oracle about a particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+     * particular request, then provide the request identifier.
      *
      * @return the value
      */
@@ -44,13 +42,12 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /**
-     * The returned WorkRequestCollection instance.
-     */
+    /** The returned WorkRequestCollection instance. */
     private com.oracle.bmc.networkloadbalancer.model.WorkRequestCollection workRequestCollection;
 
     /**
      * The returned WorkRequestCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.networkloadbalancer.model.WorkRequestCollection
@@ -67,7 +64,7 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListWorkRequestsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.networkloadbalancer.model.WorkRequestCollection workRequestCollection) {
@@ -77,33 +74,35 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         this.workRequestCollection = workRequestCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -114,15 +113,14 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
-         *
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact
-         * Oracle about a particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
+         * particular request, then provide the request identifier.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,14 +130,13 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /**
-         * The returned WorkRequestCollection instance.
-         */
+        /** The returned WorkRequestCollection instance. */
         private com.oracle.bmc.networkloadbalancer.model.WorkRequestCollection
                 workRequestCollection;
 
         /**
          * The returned WorkRequestCollection instance.
+         *
          * @param workRequestCollection the value to set
          * @return this builder
          */
@@ -152,8 +149,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListWorkRequestsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -166,8 +165,10 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListWorkRequestsResponse build() {
             return new ListWorkRequestsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, workRequestCollection);
@@ -176,6 +177,7 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

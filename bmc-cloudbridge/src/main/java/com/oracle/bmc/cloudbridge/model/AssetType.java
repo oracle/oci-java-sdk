@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/**
- * Asset type.
- **/
+/** Asset type. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum AssetType {
+public enum AssetType implements com.oracle.bmc.http.internal.BmcEnum {
     VmwareVm("VMWARE_VM"),
     Vm("VM"),
 

@@ -6,42 +6,33 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUserAssessmentComparisonExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetUserAssessmentComparisonRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetUserAssessmentComparisonExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetUserAssessmentComparisonRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetUserAssessmentComparisonRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     private String userAssessmentId;
 
-    /**
-     * The OCID of the user assessment.
-     */
+    /** The OCID of the user assessment. */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
-    /**
-     * The OCID of the baseline user assessment.
-     */
+    /** The OCID of the baseline user assessment. */
     private String comparisonUserAssessmentId;
 
-    /**
-     * The OCID of the baseline user assessment.
-     */
+    /** The OCID of the baseline user assessment. */
     public String getComparisonUserAssessmentId() {
         return comparisonUserAssessmentId;
     }
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     private String opcRequestId;
 
-    /**
-     * Unique identifier for the request.
-     */
+    /** Unique identifier for the request. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -49,17 +40,15 @@ public class GetUserAssessmentComparisonRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetUserAssessmentComparisonRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The OCID of the user assessment.
-         */
+        /** The OCID of the user assessment. */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
+         *
          * @param userAssessmentId the value to set
          * @return this builder instance
          */
@@ -68,13 +57,12 @@ public class GetUserAssessmentComparisonRequest
             return this;
         }
 
-        /**
-         * The OCID of the baseline user assessment.
-         */
+        /** The OCID of the baseline user assessment. */
         private String comparisonUserAssessmentId = null;
 
         /**
          * The OCID of the baseline user assessment.
+         *
          * @param comparisonUserAssessmentId the value to set
          * @return this builder instance
          */
@@ -83,13 +71,12 @@ public class GetUserAssessmentComparisonRequest
             return this;
         }
 
-        /**
-         * Unique identifier for the request.
-         */
+        /** Unique identifier for the request. */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -100,18 +87,19 @@ public class GetUserAssessmentComparisonRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -123,6 +111,7 @@ public class GetUserAssessmentComparisonRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetUserAssessmentComparisonRequest o) {
@@ -137,10 +126,11 @@ public class GetUserAssessmentComparisonRequest
         /**
          * Build the instance of GetUserAssessmentComparisonRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetUserAssessmentComparisonRequest
          */
@@ -154,7 +144,8 @@ public class GetUserAssessmentComparisonRequest
         /**
          * Build the instance of GetUserAssessmentComparisonRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetUserAssessmentComparisonRequest
@@ -165,12 +156,14 @@ public class GetUserAssessmentComparisonRequest
             request.comparisonUserAssessmentId = comparisonUserAssessmentId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetUserAssessmentComparisonRequest(userAssessmentId, comparisonUserAssessmentId, opcRequestId);
+            // new GetUserAssessmentComparisonRequest(userAssessmentId, comparisonUserAssessmentId,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -182,6 +175,7 @@ public class GetUserAssessmentComparisonRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

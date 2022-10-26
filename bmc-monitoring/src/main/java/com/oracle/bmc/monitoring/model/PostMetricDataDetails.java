@@ -5,23 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * An array of metric objects containing raw metric data points to be posted to the Monitoring service.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An array of metric objects containing raw metric data points to be posted to the Monitoring
+ * service. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = PostMetricDataDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = PostMetricDataDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class PostMetricDataDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricData", "batchAtomicity"})
     public PostMetricDataDetails(
@@ -35,8 +35,7 @@ public final class PostMetricDataDetails
     public static class Builder {
         /**
          * A metric object containing raw metric data points to be posted to the Monitoring service.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metricData")
         private java.util.List<MetricDataDetails> metricData;
 
@@ -45,7 +44,7 @@ public final class PostMetricDataDetails
          *
          * @param metricData the value to set
          * @return this builder
-         **/
+         */
         public Builder metricData(java.util.List<MetricDataDetails> metricData) {
             this.metricData = metricData;
             this.__explicitlySet__.add("metricData");
@@ -56,12 +55,11 @@ public final class PostMetricDataDetails
          * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
          * partial pass: at least one metric object in the request must pass input validation, and
          * any objects that failed validation are identified in the returned summary, along with
-         * their error messages. A value of ATOMIC requires a full pass: all metric objects in
-         * the request must pass input validation.
-         * <p>
-         * Example: {@code NON_ATOMIC}
+         * their error messages. A value of ATOMIC requires a full pass: all metric objects in the
+         * request must pass input validation.
          *
-         **/
+         * <p>Example: {@code NON_ATOMIC}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("batchAtomicity")
         private BatchAtomicity batchAtomicity;
 
@@ -70,14 +68,14 @@ public final class PostMetricDataDetails
          * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
          * partial pass: at least one metric object in the request must pass input validation, and
          * any objects that failed validation are identified in the returned summary, along with
-         * their error messages. A value of ATOMIC requires a full pass: all metric objects in
-         * the request must pass input validation.
-         * <p>
-         * Example: {@code NON_ATOMIC}
+         * their error messages. A value of ATOMIC requires a full pass: all metric objects in the
+         * request must pass input validation.
+         *
+         * <p>Example: {@code NON_ATOMIC}
          *
          * @param batchAtomicity the value to set
          * @return this builder
-         **/
+         */
         public Builder batchAtomicity(BatchAtomicity batchAtomicity) {
             this.batchAtomicity = batchAtomicity;
             this.__explicitlySet__.add("batchAtomicity");
@@ -108,9 +106,7 @@ public final class PostMetricDataDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,10 +115,7 @@ public final class PostMetricDataDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * A metric object containing raw metric data points to be posted to the Monitoring service.
-     *
-     **/
+    /** A metric object containing raw metric data points to be posted to the Monitoring service. */
     @com.fasterxml.jackson.annotation.JsonProperty("metricData")
     private final java.util.List<MetricDataDetails> metricData;
 
@@ -130,23 +123,22 @@ public final class PostMetricDataDetails
      * A metric object containing raw metric data points to be posted to the Monitoring service.
      *
      * @return the value
-     **/
+     */
     public java.util.List<MetricDataDetails> getMetricData() {
         return metricData;
     }
 
     /**
-     * Batch atomicity behavior. Requires either partial or full pass of input validation for
-     * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
-     * partial pass: at least one metric object in the request must pass input validation, and
-     * any objects that failed validation are identified in the returned summary, along with
-     * their error messages. A value of ATOMIC requires a full pass: all metric objects in
-     * the request must pass input validation.
-     * <p>
-     * Example: {@code NON_ATOMIC}
+     * Batch atomicity behavior. Requires either partial or full pass of input validation for metric
+     * objects in PostMetricData requests. The default value of NON_ATOMIC requires a partial pass:
+     * at least one metric object in the request must pass input validation, and any objects that
+     * failed validation are identified in the returned summary, along with their error messages. A
+     * value of ATOMIC requires a full pass: all metric objects in the request must pass input
+     * validation.
      *
-     **/
-    public enum BatchAtomicity {
+     * <p>Example: {@code NON_ATOMIC}
+     */
+    public enum BatchAtomicity implements com.oracle.bmc.http.internal.BmcEnum {
         Atomic("ATOMIC"),
         NonAtomic("NON_ATOMIC"),
         ;
@@ -179,31 +171,30 @@ public final class PostMetricDataDetails
         }
     };
     /**
-     * Batch atomicity behavior. Requires either partial or full pass of input validation for
-     * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
-     * partial pass: at least one metric object in the request must pass input validation, and
-     * any objects that failed validation are identified in the returned summary, along with
-     * their error messages. A value of ATOMIC requires a full pass: all metric objects in
-     * the request must pass input validation.
-     * <p>
-     * Example: {@code NON_ATOMIC}
+     * Batch atomicity behavior. Requires either partial or full pass of input validation for metric
+     * objects in PostMetricData requests. The default value of NON_ATOMIC requires a partial pass:
+     * at least one metric object in the request must pass input validation, and any objects that
+     * failed validation are identified in the returned summary, along with their error messages. A
+     * value of ATOMIC requires a full pass: all metric objects in the request must pass input
+     * validation.
      *
-     **/
+     * <p>Example: {@code NON_ATOMIC}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("batchAtomicity")
     private final BatchAtomicity batchAtomicity;
 
     /**
-     * Batch atomicity behavior. Requires either partial or full pass of input validation for
-     * metric objects in PostMetricData requests. The default value of NON_ATOMIC requires a
-     * partial pass: at least one metric object in the request must pass input validation, and
-     * any objects that failed validation are identified in the returned summary, along with
-     * their error messages. A value of ATOMIC requires a full pass: all metric objects in
-     * the request must pass input validation.
-     * <p>
-     * Example: {@code NON_ATOMIC}
+     * Batch atomicity behavior. Requires either partial or full pass of input validation for metric
+     * objects in PostMetricData requests. The default value of NON_ATOMIC requires a partial pass:
+     * at least one metric object in the request must pass input validation, and any objects that
+     * failed validation are identified in the returned summary, along with their error messages. A
+     * value of ATOMIC requires a full pass: all metric objects in the request must pass input
+     * validation.
+     *
+     * <p>Example: {@code NON_ATOMIC}
      *
      * @return the value
-     **/
+     */
     public BatchAtomicity getBatchAtomicity() {
         return batchAtomicity;
     }
@@ -215,6 +206,7 @@ public final class PostMetricDataDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,9 +6,9 @@ package com.oracle.bmc.datasafe.model;
 
 /**
  * Specifies the name of a resource that provides data for the report. For example alerts, events.
- **/
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum ReportDefinitionDataSource {
+public enum ReportDefinitionDataSource implements com.oracle.bmc.http.internal.BmcEnum {
     Events("EVENTS"),
     Alerts("ALERTS"),
 

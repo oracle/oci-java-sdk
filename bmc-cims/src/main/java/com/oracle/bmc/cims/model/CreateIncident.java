@@ -6,21 +6,23 @@ package com.oracle.bmc.cims.model;
 
 /**
  * Details gathered during the creation of the support ticket.
- * <p>
- **Caution:** Avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Caution:** Avoid using any confidential information when you supply string values using the
+ * API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateIncident.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class CreateIncident extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class CreateIncident
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -48,17 +50,16 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the tenancy.
-         **/
+        /** The OCID of the tenancy. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -73,65 +74,65 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("ticket");
             return this;
         }
-        /**
-         * The Customer Support Identifier number for the support account.
-         **/
+        /** The Customer Support Identifier number for the support account. */
         @com.fasterxml.jackson.annotation.JsonProperty("csi")
         private String csi;
 
         /**
          * The Customer Support Identifier number for the support account.
+         *
          * @param csi the value to set
          * @return this builder
-         **/
+         */
         public Builder csi(String csi) {
             this.csi = csi;
             this.__explicitlySet__.add("csi");
             return this;
         }
-        /**
-         * The kind of support ticket, such as a technical issue request.
-         **/
+        /** The kind of support ticket, such as a technical issue request. */
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
          * The kind of support ticket, such as a technical issue request.
+         *
          * @param problemType the value to set
          * @return this builder
-         **/
+         */
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
             return this;
         }
-        /**
-         * The list of contacts.
-         **/
+        /** The list of contacts. */
         @com.fasterxml.jackson.annotation.JsonProperty("contacts")
         private java.util.List<Contact> contacts;
 
         /**
          * The list of contacts.
+         *
          * @param contacts the value to set
          * @return this builder
-         **/
+         */
         public Builder contacts(java.util.List<Contact> contacts) {
             this.contacts = contacts;
             this.__explicitlySet__.add("contacts");
             return this;
         }
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
-         **/
+         * The incident referrer. This value is often the URL that the customer used when creating
+         * the support ticket.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("referrer")
         private String referrer;
 
         /**
-         * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+         * The incident referrer. This value is often the URL that the customer used when creating
+         * the support ticket.
+         *
          * @param referrer the value to set
          * @return this builder
-         **/
+         */
         public Builder referrer(String referrer) {
             this.referrer = referrer;
             this.__explicitlySet__.add("referrer");
@@ -180,9 +181,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,16 +190,15 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the tenancy.
-     **/
+    /** The OCID of the tenancy. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -212,58 +210,58 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
         return ticket;
     }
 
-    /**
-     * The Customer Support Identifier number for the support account.
-     **/
+    /** The Customer Support Identifier number for the support account. */
     @com.fasterxml.jackson.annotation.JsonProperty("csi")
     private final String csi;
 
     /**
      * The Customer Support Identifier number for the support account.
+     *
      * @return the value
-     **/
+     */
     public String getCsi() {
         return csi;
     }
 
-    /**
-     * The kind of support ticket, such as a technical issue request.
-     **/
+    /** The kind of support ticket, such as a technical issue request. */
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
      * The kind of support ticket, such as a technical issue request.
+     *
      * @return the value
-     **/
+     */
     public ProblemType getProblemType() {
         return problemType;
     }
 
-    /**
-     * The list of contacts.
-     **/
+    /** The list of contacts. */
     @com.fasterxml.jackson.annotation.JsonProperty("contacts")
     private final java.util.List<Contact> contacts;
 
     /**
      * The list of contacts.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Contact> getContacts() {
         return contacts;
     }
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
-     **/
+     * The incident referrer. This value is often the URL that the customer used when creating the
+     * support ticket.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("referrer")
     private final String referrer;
 
     /**
-     * The incident referrer. This value is often the URL that the customer used when creating the support ticket.
+     * The incident referrer. This value is often the URL that the customer used when creating the
+     * support ticket.
+     *
      * @return the value
-     **/
+     */
     public String getReferrer() {
         return referrer;
     }
@@ -275,6 +273,7 @@ public final class CreateIncident extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

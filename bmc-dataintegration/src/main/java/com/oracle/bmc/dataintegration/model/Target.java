@@ -5,23 +5,24 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information about the target operator. The target operator lets you specify the data entity to store the transformed data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about the target operator. The target operator lets you specify the data entity
+ * to store the transformed data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Target.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class Target extends Operator {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -141,113 +142,106 @@ public final class Target extends Operator {
             this.__explicitlySet__.add("entity");
             return this;
         }
-        /**
-         * Specifies the read access.
-         **/
+        /** Specifies the read access. */
         @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
         private Boolean isReadAccess;
 
         /**
          * Specifies the read access.
+         *
          * @param isReadAccess the value to set
          * @return this builder
-         **/
+         */
         public Builder isReadAccess(Boolean isReadAccess) {
             this.isReadAccess = isReadAccess;
             this.__explicitlySet__.add("isReadAccess");
             return this;
         }
-        /**
-         * Specifies the copy fields.
-         **/
+        /** Specifies the copy fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
         private Boolean isCopyFields;
 
         /**
          * Specifies the copy fields.
+         *
          * @param isCopyFields the value to set
          * @return this builder
-         **/
+         */
         public Builder isCopyFields(Boolean isCopyFields) {
             this.isCopyFields = isCopyFields;
             this.__explicitlySet__.add("isCopyFields");
             return this;
         }
-        /**
-         * Specifies if this uses a predefined shape.
-         **/
+        /** Specifies if this uses a predefined shape. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
         private Boolean isPredefinedShape;
 
         /**
          * Specifies if this uses a predefined shape.
+         *
          * @param isPredefinedShape the value to set
          * @return this builder
-         **/
+         */
         public Builder isPredefinedShape(Boolean isPredefinedShape) {
             this.isPredefinedShape = isPredefinedShape;
             this.__explicitlySet__.add("isPredefinedShape");
             return this;
         }
-        /**
-         * Specifies if entity name is the same as source.
-         **/
+        /** Specifies if entity name is the same as source. */
         @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
         private Boolean isUseSameSourceName;
 
         /**
          * Specifies if entity name is the same as source.
+         *
          * @param isUseSameSourceName the value to set
          * @return this builder
-         **/
+         */
         public Builder isUseSameSourceName(Boolean isUseSameSourceName) {
             this.isUseSameSourceName = isUseSameSourceName;
             this.__explicitlySet__.add("isUseSameSourceName");
             return this;
         }
-        /**
-         * Prefix for the entity Name.
-         **/
+        /** Prefix for the entity Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
         private String targetEntityNamePrefix;
 
         /**
          * Prefix for the entity Name.
+         *
          * @param targetEntityNamePrefix the value to set
          * @return this builder
-         **/
+         */
         public Builder targetEntityNamePrefix(String targetEntityNamePrefix) {
             this.targetEntityNamePrefix = targetEntityNamePrefix;
             this.__explicitlySet__.add("targetEntityNamePrefix");
             return this;
         }
-        /**
-         * Suffix for the entity Name.
-         **/
+        /** Suffix for the entity Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
         private String targetEntityNameSuffix;
 
         /**
          * Suffix for the entity Name.
+         *
          * @param targetEntityNameSuffix the value to set
          * @return this builder
-         **/
+         */
         public Builder targetEntityNameSuffix(String targetEntityNameSuffix) {
             this.targetEntityNameSuffix = targetEntityNameSuffix;
             this.__explicitlySet__.add("targetEntityNameSuffix");
             return this;
         }
-        /**
-         * Specifies the data property.
-         **/
+        /** Specifies the data property. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
         private DataProperty dataProperty;
 
         /**
          * Specifies the data property.
+         *
          * @param dataProperty the value to set
          * @return this builder
-         **/
+         */
         public Builder dataProperty(DataProperty dataProperty) {
             this.dataProperty = dataProperty;
             this.__explicitlySet__.add("dataProperty");
@@ -280,17 +274,16 @@ public final class Target extends Operator {
             this.__explicitlySet__.add("writeOperationConfig");
             return this;
         }
-        /**
-         * A numeric loading order number for the target.
-         **/
+        /** A numeric loading order number for the target. */
         @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
         private Integer loadOrder;
 
         /**
          * A numeric loading order number for the target.
+         *
          * @param loadOrder the value to set
          * @return this builder
-         **/
+         */
         public Builder loadOrder(Integer loadOrder) {
             this.loadOrder = loadOrder;
             this.__explicitlySet__.add("loadOrder");
@@ -411,9 +404,7 @@ public final class Target extends Operator {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -482,94 +473,86 @@ public final class Target extends Operator {
         return entity;
     }
 
-    /**
-     * Specifies the read access.
-     **/
+    /** Specifies the read access. */
     @com.fasterxml.jackson.annotation.JsonProperty("isReadAccess")
     private final Boolean isReadAccess;
 
     /**
      * Specifies the read access.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsReadAccess() {
         return isReadAccess;
     }
 
-    /**
-     * Specifies the copy fields.
-     **/
+    /** Specifies the copy fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCopyFields")
     private final Boolean isCopyFields;
 
     /**
      * Specifies the copy fields.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsCopyFields() {
         return isCopyFields;
     }
 
-    /**
-     * Specifies if this uses a predefined shape.
-     **/
+    /** Specifies if this uses a predefined shape. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPredefinedShape")
     private final Boolean isPredefinedShape;
 
     /**
      * Specifies if this uses a predefined shape.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPredefinedShape() {
         return isPredefinedShape;
     }
 
-    /**
-     * Specifies if entity name is the same as source.
-     **/
+    /** Specifies if entity name is the same as source. */
     @com.fasterxml.jackson.annotation.JsonProperty("isUseSameSourceName")
     private final Boolean isUseSameSourceName;
 
     /**
      * Specifies if entity name is the same as source.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsUseSameSourceName() {
         return isUseSameSourceName;
     }
 
-    /**
-     * Prefix for the entity Name.
-     **/
+    /** Prefix for the entity Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNamePrefix")
     private final String targetEntityNamePrefix;
 
     /**
      * Prefix for the entity Name.
+     *
      * @return the value
-     **/
+     */
     public String getTargetEntityNamePrefix() {
         return targetEntityNamePrefix;
     }
 
-    /**
-     * Suffix for the entity Name.
-     **/
+    /** Suffix for the entity Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetEntityNameSuffix")
     private final String targetEntityNameSuffix;
 
     /**
      * Suffix for the entity Name.
+     *
      * @return the value
-     **/
+     */
     public String getTargetEntityNameSuffix() {
         return targetEntityNameSuffix;
     }
 
-    /**
-     * Specifies the data property.
-     **/
-    public enum DataProperty {
+    /** Specifies the data property. */
+    public enum DataProperty implements com.oracle.bmc.http.internal.BmcEnum {
         Truncate("TRUNCATE"),
         Merge("MERGE"),
         Backup("BACKUP"),
@@ -578,8 +561,8 @@ public final class Target extends Operator {
         Ignore("IGNORE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -618,16 +601,15 @@ public final class Target extends Operator {
             return UnknownEnumValue;
         }
     };
-    /**
-     * Specifies the data property.
-     **/
+    /** Specifies the data property. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataProperty")
     private final DataProperty dataProperty;
 
     /**
      * Specifies the data property.
+     *
      * @return the value
-     **/
+     */
     public DataProperty getDataProperty() {
         return dataProperty;
     }
@@ -653,16 +635,15 @@ public final class Target extends Operator {
         return writeOperationConfig;
     }
 
-    /**
-     * A numeric loading order number for the target.
-     **/
+    /** A numeric loading order number for the target. */
     @com.fasterxml.jackson.annotation.JsonProperty("loadOrder")
     private final Integer loadOrder;
 
     /**
      * A numeric loading order number for the target.
+     *
      * @return the value
-     **/
+     */
     public Integer getLoadOrder() {
         return loadOrder;
     }
@@ -674,6 +655,7 @@ public final class Target extends Operator {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

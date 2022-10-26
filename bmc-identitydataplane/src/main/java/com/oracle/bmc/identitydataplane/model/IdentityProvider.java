@@ -5,19 +5,21 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdentityProvider.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class IdentityProvider extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class IdentityProvider
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -57,161 +59,151 @@ public final class IdentityProvider extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The id of the provider.
-         **/
+        /** The id of the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The id of the provider.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The name of the provider.
-         **/
+        /** The name of the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the provider.
+         *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The name of the tenant.
-         **/
+        /** The name of the tenant. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
         private String tenantName;
 
         /**
          * The name of the tenant.
+         *
          * @param tenantName the value to set
          * @return this builder
-         **/
+         */
         public Builder tenantName(String tenantName) {
             this.tenantName = tenantName;
             this.__explicitlySet__.add("tenantName");
             return this;
         }
-        /**
-         * The id of the tenant.
-         **/
+        /** The id of the tenant. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * The id of the tenant.
+         *
          * @param tenantId the value to set
          * @return this builder
-         **/
+         */
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /**
-         * The SAML endpoint where user will be redirected.
-         **/
+        /** The SAML endpoint where user will be redirected. */
         @com.fasterxml.jackson.annotation.JsonProperty("redirectUri")
         private String redirectUri;
 
         /**
          * The SAML endpoint where user will be redirected.
+         *
          * @param redirectUri the value to set
          * @return this builder
-         **/
+         */
         public Builder redirectUri(String redirectUri) {
             this.redirectUri = redirectUri;
             this.__explicitlySet__.add("redirectUri");
             return this;
         }
-        /**
-         * The signing certificate of the provider.
-         **/
+        /** The signing certificate of the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
         private String signingCertificate;
 
         /**
          * The signing certificate of the provider.
+         *
          * @param signingCertificate the value to set
          * @return this builder
-         **/
+         */
         public Builder signingCertificate(String signingCertificate) {
             this.signingCertificate = signingCertificate;
             this.__explicitlySet__.add("signingCertificate");
             return this;
         }
-        /**
-         * The type of the provider.
-         **/
+        /** The type of the provider. */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * The type of the provider.
+         *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /**
-         * The id of the service provider entity.
-         **/
+        /** The id of the service provider entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderEntityId")
         private String serviceProviderEntityId;
 
         /**
          * The id of the service provider entity.
+         *
          * @param serviceProviderEntityId the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceProviderEntityId(String serviceProviderEntityId) {
             this.serviceProviderEntityId = serviceProviderEntityId;
             this.__explicitlySet__.add("serviceProviderEntityId");
             return this;
         }
-        /**
-         * Whether to force authentication.
-         **/
+        /** Whether to force authentication. */
         @com.fasterxml.jackson.annotation.JsonProperty("forceAuthentication")
         private Boolean forceAuthentication;
 
         /**
          * Whether to force authentication.
+         *
          * @param forceAuthentication the value to set
          * @return this builder
-         **/
+         */
         public Builder forceAuthentication(Boolean forceAuthentication) {
             this.forceAuthentication = forceAuthentication;
             this.__explicitlySet__.add("forceAuthentication");
             return this;
         }
-        /**
-         * Authentication context class refs.
-         **/
+        /** Authentication context class refs. */
         @com.fasterxml.jackson.annotation.JsonProperty("authnContextClassRefs")
         private java.util.List<String> authnContextClassRefs;
 
         /**
          * Authentication context class refs.
+         *
          * @param authnContextClassRefs the value to set
          * @return this builder
-         **/
+         */
         public Builder authnContextClassRefs(java.util.List<String> authnContextClassRefs) {
             this.authnContextClassRefs = authnContextClassRefs;
             this.__explicitlySet__.add("authnContextClassRefs");
@@ -276,9 +268,7 @@ public final class IdentityProvider extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,94 +277,86 @@ public final class IdentityProvider extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The id of the provider.
-     **/
+    /** The id of the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The id of the provider.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The name of the provider.
-     **/
+    /** The name of the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the provider.
+     *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The name of the tenant.
-     **/
+    /** The name of the tenant. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
     private final String tenantName;
 
     /**
      * The name of the tenant.
+     *
      * @return the value
-     **/
+     */
     public String getTenantName() {
         return tenantName;
     }
 
-    /**
-     * The id of the tenant.
-     **/
+    /** The id of the tenant. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * The id of the tenant.
+     *
      * @return the value
-     **/
+     */
     public String getTenantId() {
         return tenantId;
     }
 
-    /**
-     * The SAML endpoint where user will be redirected.
-     **/
+    /** The SAML endpoint where user will be redirected. */
     @com.fasterxml.jackson.annotation.JsonProperty("redirectUri")
     private final String redirectUri;
 
     /**
      * The SAML endpoint where user will be redirected.
+     *
      * @return the value
-     **/
+     */
     public String getRedirectUri() {
         return redirectUri;
     }
 
-    /**
-     * The signing certificate of the provider.
-     **/
+    /** The signing certificate of the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
     private final String signingCertificate;
 
     /**
      * The signing certificate of the provider.
+     *
      * @return the value
-     **/
+     */
     public String getSigningCertificate() {
         return signingCertificate;
     }
 
-    /**
-     * The type of the provider.
-     **/
-    public enum Protocol {
+    /** The type of the provider. */
+    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
         Saml2("SAML2"),
         ;
 
@@ -405,58 +387,54 @@ public final class IdentityProvider extends com.oracle.bmc.http.internal.Explici
             throw new IllegalArgumentException("Invalid Protocol: " + key);
         }
     };
-    /**
-     * The type of the provider.
-     **/
+    /** The type of the provider. */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * The type of the provider.
+     *
      * @return the value
-     **/
+     */
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /**
-     * The id of the service provider entity.
-     **/
+    /** The id of the service provider entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceProviderEntityId")
     private final String serviceProviderEntityId;
 
     /**
      * The id of the service provider entity.
+     *
      * @return the value
-     **/
+     */
     public String getServiceProviderEntityId() {
         return serviceProviderEntityId;
     }
 
-    /**
-     * Whether to force authentication.
-     **/
+    /** Whether to force authentication. */
     @com.fasterxml.jackson.annotation.JsonProperty("forceAuthentication")
     private final Boolean forceAuthentication;
 
     /**
      * Whether to force authentication.
+     *
      * @return the value
-     **/
+     */
     public Boolean getForceAuthentication() {
         return forceAuthentication;
     }
 
-    /**
-     * Authentication context class refs.
-     **/
+    /** Authentication context class refs. */
     @com.fasterxml.jackson.annotation.JsonProperty("authnContextClassRefs")
     private final java.util.List<String> authnContextClassRefs;
 
     /**
      * Authentication context class refs.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAuthnContextClassRefs() {
         return authnContextClassRefs;
     }
@@ -468,6 +446,7 @@ public final class IdentityProvider extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

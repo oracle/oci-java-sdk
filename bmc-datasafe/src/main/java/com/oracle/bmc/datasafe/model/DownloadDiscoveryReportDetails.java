@@ -5,22 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to download a discovery report.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details to download a discovery report. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DownloadDiscoveryReportDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DownloadDiscoveryReportDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DownloadDiscoveryReportDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"discoveryJobId", "reportFormat"})
     public DownloadDiscoveryReportDetails(String discoveryJobId, ReportFormat reportFormat) {
@@ -31,33 +31,31 @@ public final class DownloadDiscoveryReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the discovery job.
-         **/
+        /** The OCID of the discovery job. */
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
         private String discoveryJobId;
 
         /**
          * The OCID of the discovery job.
+         *
          * @param discoveryJobId the value to set
          * @return this builder
-         **/
+         */
         public Builder discoveryJobId(String discoveryJobId) {
             this.discoveryJobId = discoveryJobId;
             this.__explicitlySet__.add("discoveryJobId");
             return this;
         }
-        /**
-         * Format of the report.
-         **/
+        /** Format of the report. */
         @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
         private ReportFormat reportFormat;
 
         /**
          * Format of the report.
+         *
          * @param reportFormat the value to set
          * @return this builder
-         **/
+         */
         public Builder reportFormat(ReportFormat reportFormat) {
             this.reportFormat = reportFormat;
             this.__explicitlySet__.add("reportFormat");
@@ -88,9 +86,7 @@ public final class DownloadDiscoveryReportDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,24 +95,21 @@ public final class DownloadDiscoveryReportDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the discovery job.
-     **/
+    /** The OCID of the discovery job. */
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryJobId")
     private final String discoveryJobId;
 
     /**
      * The OCID of the discovery job.
+     *
      * @return the value
-     **/
+     */
     public String getDiscoveryJobId() {
         return discoveryJobId;
     }
 
-    /**
-     * Format of the report.
-     **/
-    public enum ReportFormat {
+    /** Format of the report. */
+    public enum ReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
         ;
@@ -148,16 +141,15 @@ public final class DownloadDiscoveryReportDetails
             throw new IllegalArgumentException("Invalid ReportFormat: " + key);
         }
     };
-    /**
-     * Format of the report.
-     **/
+    /** Format of the report. */
     @com.fasterxml.jackson.annotation.JsonProperty("reportFormat")
     private final ReportFormat reportFormat;
 
     /**
      * Format of the report.
+     *
      * @return the value
-     **/
+     */
     public ReportFormat getReportFormat() {
         return reportFormat;
     }
@@ -169,6 +161,7 @@ public final class DownloadDiscoveryReportDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

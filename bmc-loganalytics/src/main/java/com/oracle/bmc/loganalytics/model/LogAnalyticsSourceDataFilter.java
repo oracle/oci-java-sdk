@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsSourceDataFilter
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsSourceDataFilter <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsSourceDataFilter.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsSourceDataFilter.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsSourceDataFilter
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -72,58 +72,52 @@ public final class LogAnalyticsSourceDataFilter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The filter description.
-         **/
+        /** The filter description. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The filter description.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * The filter display name.
-         **/
+        /** The filter display name. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The filter display name.
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * The filter edit version.
-         **/
+        /** The filter edit version. */
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
         /**
          * The filter edit version.
+         *
          * @param editVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-        /**
-         * A flag inidcating whether or not the filter is enabled.
-         *
-         **/
+        /** A flag inidcating whether or not the filter is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -132,171 +126,161 @@ public final class LogAnalyticsSourceDataFilter
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * The field internal name.
-         **/
+        /** The field internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * The field internal name.
+         *
          * @param fieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /**
-         * The hash type.
-         **/
+        /** The hash type. */
         @com.fasterxml.jackson.annotation.JsonProperty("hashType")
         private Integer hashType;
 
         /**
          * The hash type.
+         *
          * @param hashType the value to set
          * @return this builder
-         **/
+         */
         public Builder hashType(Integer hashType) {
             this.hashType = hashType;
             this.__explicitlySet__.add("hashType");
             return this;
         }
-        /**
-         * The filter unique identifier.
-         **/
+        /** The filter unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataFilterId")
         private Long dataFilterId;
 
         /**
          * The filter unique identifier.
+         *
          * @param dataFilterId the value to set
          * @return this builder
-         **/
+         */
         public Builder dataFilterId(Long dataFilterId) {
             this.dataFilterId = dataFilterId;
             this.__explicitlySet__.add("dataFilterId");
             return this;
         }
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
-         *
-         **/
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /**
-         * The regular expression for matching.
-         **/
+        /** The regular expression for matching. */
         @com.fasterxml.jackson.annotation.JsonProperty("matchRegularExpression")
         private String matchRegularExpression;
 
         /**
          * The regular expression for matching.
+         *
          * @param matchRegularExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder matchRegularExpression(String matchRegularExpression) {
             this.matchRegularExpression = matchRegularExpression;
             this.__explicitlySet__.add("matchRegularExpression");
             return this;
         }
-        /**
-         * The filter order.
-         **/
+        /** The filter order. */
         @com.fasterxml.jackson.annotation.JsonProperty("order")
         private Long order;
 
         /**
          * The filter order.
+         *
          * @param order the value to set
          * @return this builder
-         **/
+         */
         public Builder order(Long order) {
             this.order = order;
             this.__explicitlySet__.add("order");
             return this;
         }
-        /**
-         * The filter path.
-         **/
+        /** The filter path. */
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The filter path.
+         *
          * @param path the value to set
          * @return this builder
-         **/
+         */
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /**
-         * The replacement string.
-         **/
+        /** The replacement string. */
         @com.fasterxml.jackson.annotation.JsonProperty("replacementString")
         private String replacementString;
 
         /**
          * The replacement string.
+         *
          * @param replacementString the value to set
          * @return this builder
-         **/
+         */
         public Builder replacementString(String replacementString) {
             this.replacementString = replacementString;
             this.__explicitlySet__.add("replacementString");
             return this;
         }
-        /**
-         * The source unique identifier.
-         **/
+        /** The source unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
         /**
          * The source unique identifier.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /**
-         * The filter type.
-         **/
+        /** The filter type. */
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private FilterType filterType;
 
         /**
          * The filter type.
+         *
          * @param filterType the value to set
          * @return this builder
-         **/
+         */
         public Builder filterType(FilterType filterType) {
             this.filterType = filterType;
             this.__explicitlySet__.add("filterType");
@@ -377,9 +361,7 @@ public final class LogAnalyticsSourceDataFilter
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -388,52 +370,46 @@ public final class LogAnalyticsSourceDataFilter
         return new Builder().copy(this);
     }
 
-    /**
-     * The filter description.
-     **/
+    /** The filter description. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The filter description.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * The filter display name.
-     **/
+    /** The filter display name. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The filter display name.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * The filter edit version.
-     **/
+    /** The filter edit version. */
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
     /**
      * The filter edit version.
+     *
      * @return the value
-     **/
+     */
     public Long getEditVersion() {
         return editVersion;
     }
 
-    /**
-     * A flag inidcating whether or not the filter is enabled.
-     *
-     **/
+    /** A flag inidcating whether or not the filter is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -441,153 +417,142 @@ public final class LogAnalyticsSourceDataFilter
      * A flag inidcating whether or not the filter is enabled.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * The field internal name.
-     **/
+    /** The field internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * The field internal name.
+     *
      * @return the value
-     **/
+     */
     public String getFieldName() {
         return fieldName;
     }
 
-    /**
-     * The hash type.
-     **/
+    /** The hash type. */
     @com.fasterxml.jackson.annotation.JsonProperty("hashType")
     private final Integer hashType;
 
     /**
      * The hash type.
+     *
      * @return the value
-     **/
+     */
     public Integer getHashType() {
         return hashType;
     }
 
-    /**
-     * The filter unique identifier.
-     **/
+    /** The filter unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataFilterId")
     private final Long dataFilterId;
 
     /**
      * The filter unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getDataFilterId() {
         return dataFilterId;
     }
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
-     *
-     **/
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /**
-     * The regular expression for matching.
-     **/
+    /** The regular expression for matching. */
     @com.fasterxml.jackson.annotation.JsonProperty("matchRegularExpression")
     private final String matchRegularExpression;
 
     /**
      * The regular expression for matching.
+     *
      * @return the value
-     **/
+     */
     public String getMatchRegularExpression() {
         return matchRegularExpression;
     }
 
-    /**
-     * The filter order.
-     **/
+    /** The filter order. */
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     private final Long order;
 
     /**
      * The filter order.
+     *
      * @return the value
-     **/
+     */
     public Long getOrder() {
         return order;
     }
 
-    /**
-     * The filter path.
-     **/
+    /** The filter path. */
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The filter path.
+     *
      * @return the value
-     **/
+     */
     public String getPath() {
         return path;
     }
 
-    /**
-     * The replacement string.
-     **/
+    /** The replacement string. */
     @com.fasterxml.jackson.annotation.JsonProperty("replacementString")
     private final String replacementString;
 
     /**
      * The replacement string.
+     *
      * @return the value
-     **/
+     */
     public String getReplacementString() {
         return replacementString;
     }
 
-    /**
-     * The source unique identifier.
-     **/
+    /** The source unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
     /**
      * The source unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getSourceId() {
         return sourceId;
     }
 
-    /**
-     * The filter type.
-     **/
-    public enum FilterType {
+    /** The filter type. */
+    public enum FilterType implements com.oracle.bmc.http.internal.BmcEnum {
         Mask("MASK"),
         HashMask("HASH_MASK"),
         DropLogEntry("DROP_LOG_ENTRY"),
         DropString("DROP_STRING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -626,16 +591,15 @@ public final class LogAnalyticsSourceDataFilter
             return UnknownEnumValue;
         }
     };
-    /**
-     * The filter type.
-     **/
+    /** The filter type. */
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final FilterType filterType;
 
     /**
      * The filter type.
+     *
      * @return the value
-     **/
+     */
     public FilterType getFilterType() {
         return filterType;
     }
@@ -647,6 +611,7 @@ public final class LogAnalyticsSourceDataFilter
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

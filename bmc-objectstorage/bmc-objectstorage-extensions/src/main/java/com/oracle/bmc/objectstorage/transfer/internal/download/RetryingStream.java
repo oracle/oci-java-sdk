@@ -13,47 +13,33 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.util.StreamUtils;
 
 /**
- * An InputStream that can resume a broken download by making a range read
- * request to Object Storage.
+ * An InputStream that can resume a broken download by making a range read request to Object
+ * Storage.
  */
 public class RetryingStream extends InputStream {
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RetryingStream.class);
 
-    /**
-     * ObjectStorage client.
-     */
+    /** ObjectStorage client. */
     private final ObjectStorage objectStorage;
 
-    /**
-     * Used to control retries of the download.
-     */
+    /** Used to control retries of the download. */
     private final DownloadExecution execution;
 
-    /**
-     * Current request.
-     */
+    /** Current request. */
     private GetObjectRequest request;
 
-    /**
-     * Current response.
-     */
+    /** Current response. */
     private GetObjectResponse response;
 
-    /**
-     * Number of bytes in the response
-     */
+    /** Number of bytes in the response */
     private long bytesInResponse;
 
-    /**
-     * Total bytes read from the object.
-     */
+    /** Total bytes read from the object. */
     private long bytesReadFromResponse;
 
-    /**
-     * True if this stream has been closed.
-     */
+    /** True if this stream has been closed. */
     private boolean isClosed;
 
     public RetryingStream(
@@ -144,9 +130,8 @@ public class RetryingStream extends InputStream {
     }
 
     /**
-     * Called when we hit an exception reading from the InputStream. This
-     * performs a range read to pick up reading where the previous request
-     * left off.
+     * Called when we hit an exception reading from the InputStream. This performs a range read to
+     * pick up reading where the previous request left off.
      */
     private void refresh() {
         // We no longer need data from the current response
@@ -173,9 +158,8 @@ public class RetryingStream extends InputStream {
     }
 
     /**
-     * Called when we get an exception reading from the response. We calculate
-     * a new request that does a range read starting with the last byte that
-     * was successfully read.
+     * Called when we get an exception reading from the response. We calculate a new request that
+     * does a range read starting with the last byte that was successfully read.
      */
     private void refreshRequest() {
         // Prepare the new request
@@ -190,8 +174,10 @@ public class RetryingStream extends InputStream {
             // No current range
             newRange = new Range(this.bytesReadFromResponse, null);
         } else if (currentRange.getStartByte() == null) {
-            // start byte is not set, but end byte is: this is an end-only range, e.g. "-99" for the last 99 bytes
-            // keep the start byte as null, but decrease end byte (e.g. if we have read 10 bytes, "-89").
+            // start byte is not set, but end byte is: this is an end-only range, e.g. "-99" for the
+            // last 99 bytes
+            // keep the start byte as null, but decrease end byte (e.g. if we have read 10 bytes,
+            // "-89").
             newRange = new Range(null, currentRange.getEndByte() - this.bytesReadFromResponse);
         } else {
             // both start byte and end byte are set

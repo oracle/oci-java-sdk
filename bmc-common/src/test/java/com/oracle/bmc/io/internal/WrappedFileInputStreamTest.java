@@ -25,9 +25,9 @@ public class WrappedFileInputStreamTest {
         tmpFile = File.createTempFile("WrappedFileInputStreamTest", null);
         tmpFile.deleteOnExit();
 
-        try (FileOutputStream fos = new FileOutputStream(tmpFile)) {
-            fos.write(MESSAGE.getBytes());
-        }
+        FileOutputStream fos = new FileOutputStream(tmpFile);
+        fos.write(MESSAGE.getBytes());
+        fos.close();
     }
 
     @After

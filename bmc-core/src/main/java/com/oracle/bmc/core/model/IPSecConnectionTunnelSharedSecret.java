@@ -5,22 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The tunnel's shared secret (pre-shared key).
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The tunnel's shared secret (pre-shared key). <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = IPSecConnectionTunnelSharedSecret.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = IPSecConnectionTunnelSharedSecret.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class IPSecConnectionTunnelSharedSecret
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sharedSecret"})
     public IPSecConnectionTunnelSharedSecret(String sharedSecret) {
@@ -30,10 +30,7 @@ public final class IPSecConnectionTunnelSharedSecret
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The tunnel's shared secret (pre-shared key).
-         *
-         **/
+        /** The tunnel's shared secret (pre-shared key). */
         @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
         private String sharedSecret;
 
@@ -42,7 +39,7 @@ public final class IPSecConnectionTunnelSharedSecret
          *
          * @param sharedSecret the value to set
          * @return this builder
-         **/
+         */
         public Builder sharedSecret(String sharedSecret) {
             this.sharedSecret = sharedSecret;
             this.__explicitlySet__.add("sharedSecret");
@@ -70,9 +67,7 @@ public final class IPSecConnectionTunnelSharedSecret
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -81,10 +76,7 @@ public final class IPSecConnectionTunnelSharedSecret
         return new Builder().copy(this);
     }
 
-    /**
-     * The tunnel's shared secret (pre-shared key).
-     *
-     **/
+    /** The tunnel's shared secret (pre-shared key). */
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
     private final String sharedSecret;
 
@@ -92,7 +84,7 @@ public final class IPSecConnectionTunnelSharedSecret
      * The tunnel's shared secret (pre-shared key).
      *
      * @return the value
-     **/
+     */
     public String getSharedSecret() {
         return sharedSecret;
     }
@@ -104,6 +96,7 @@ public final class IPSecConnectionTunnelSharedSecret
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

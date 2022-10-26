@@ -9,13 +9,12 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetCloudVmClusterUpdateHistoryEntryResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * For optimistic concurrency control. See {@code if-match}.
-     */
+    /** For optimistic concurrency control. See {@code if-match}. */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
+     *
      * @return the value
      */
     public String getEtag() {
@@ -23,15 +22,14 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -39,13 +37,12 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
         return opcRequestId;
     }
 
-    /**
-     * The returned UpdateHistoryEntry instance.
-     */
+    /** The returned UpdateHistoryEntry instance. */
     private com.oracle.bmc.database.model.UpdateHistoryEntry updateHistoryEntry;
 
     /**
      * The returned UpdateHistoryEntry instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.database.model.UpdateHistoryEntry getUpdateHistoryEntry() {
@@ -61,7 +58,7 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
     })
     private GetCloudVmClusterUpdateHistoryEntryResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.UpdateHistoryEntry updateHistoryEntry) {
@@ -71,28 +68,31 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
         this.updateHistoryEntry = updateHistoryEntry;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    GetCloudVmClusterUpdateHistoryEntryResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * For optimistic concurrency control. See {@code if-match}.
-         */
+        /** For optimistic concurrency control. See {@code if-match}. */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -102,15 +102,14 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -120,13 +119,12 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
             return this;
         }
 
-        /**
-         * The returned UpdateHistoryEntry instance.
-         */
+        /** The returned UpdateHistoryEntry instance. */
         private com.oracle.bmc.database.model.UpdateHistoryEntry updateHistoryEntry;
 
         /**
          * The returned UpdateHistoryEntry instance.
+         *
          * @param updateHistoryEntry the value to set
          * @return this builder
          */
@@ -138,8 +136,10 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetCloudVmClusterUpdateHistoryEntryResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -152,8 +152,10 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetCloudVmClusterUpdateHistoryEntryResponse build() {
             return new GetCloudVmClusterUpdateHistoryEntryResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, updateHistoryEntry);
@@ -162,6 +164,7 @@ public class GetCloudVmClusterUpdateHistoryEntryResponse
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

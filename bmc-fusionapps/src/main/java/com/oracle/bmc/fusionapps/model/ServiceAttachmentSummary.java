@@ -5,22 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Summary of the ServiceInstance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Summary of the ServiceInstance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ServiceAttachmentSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ServiceAttachmentSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ServiceAttachmentSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -66,49 +66,46 @@ public final class ServiceAttachmentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique identifier that is immutable on creation
-         **/
+        /** Unique identifier that is immutable on creation */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * ServiceInstance Identifier, can be renamed
-         **/
+        /** ServiceInstance Identifier, can be renamed */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * ServiceInstance Identifier, can be renamed
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Type of the service.
-         **/
+        /** Type of the service. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceType")
         private ServiceAttachment.ServiceInstanceType serviceInstanceType;
 
         /**
          * Type of the service.
+         *
          * @param serviceInstanceType the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstanceType(
                 ServiceAttachment.ServiceInstanceType serviceInstanceType) {
             this.serviceInstanceType = serviceInstanceType;
@@ -116,132 +113,136 @@ public final class ServiceAttachmentSummary
             return this;
         }
         /**
-         * The ID of the service instance created that can be used to identify this on the service control plane
-         **/
+         * The ID of the service instance created that can be used to identify this on the service
+         * control plane
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceId")
         private String serviceInstanceId;
 
         /**
-         * The ID of the service instance created that can be used to identify this on the service control plane
+         * The ID of the service instance created that can be used to identify this on the service
+         * control plane
+         *
          * @param serviceInstanceId the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceInstanceId(String serviceInstanceId) {
             this.serviceInstanceId = serviceInstanceId;
             this.__explicitlySet__.add("serviceInstanceId");
             return this;
         }
-        /**
-         * Service URL of the instance
-         **/
+        /** Service URL of the instance */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
         private String serviceUrl;
 
         /**
          * Service URL of the instance
+         *
          * @param serviceUrl the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceUrl(String serviceUrl) {
             this.serviceUrl = serviceUrl;
             this.__explicitlySet__.add("serviceUrl");
             return this;
         }
-        /**
-         * The time the service instance was created. An RFC3339 formatted datetime string
-         **/
+        /** The time the service instance was created. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the service instance was created. An RFC3339 formatted datetime string
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /**
-         * The time the serivce instance was updated. An RFC3339 formatted datetime string
-         **/
+        /** The time the serivce instance was updated. An RFC3339 formatted datetime string */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the serivce instance was updated. An RFC3339 formatted datetime string
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /**
-         * The current state of the ServiceInstance.
-         **/
+        /** The current state of the ServiceInstance. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ServiceAttachment.LifecycleState lifecycleState;
 
         /**
          * The current state of the ServiceInstance.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(ServiceAttachment.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-         **/
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to
+         * provide actionable information for a resource in Failed state.
+         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Whether this service is provisioned due to the customer being subscribed to a specific SKU
-         **/
+         * Whether this service is provisioned due to the customer being subscribed to a specific
+         * SKU
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSkuBased")
         private Boolean isSkuBased;
 
         /**
-         * Whether this service is provisioned due to the customer being subscribed to a specific SKU
+         * Whether this service is provisioned due to the customer being subscribed to a specific
+         * SKU
+         *
          * @param isSkuBased the value to set
          * @return this builder
-         **/
+         */
         public Builder isSkuBased(Boolean isSkuBased) {
             this.isSkuBased = isSkuBased;
             this.__explicitlySet__.add("isSkuBased");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -250,8 +251,7 @@ public final class ServiceAttachmentSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -261,7 +261,7 @@ public final class ServiceAttachmentSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -335,9 +335,7 @@ public final class ServiceAttachmentSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -346,178 +344,176 @@ public final class ServiceAttachmentSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique identifier that is immutable on creation
-     **/
+    /** Unique identifier that is immutable on creation */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * ServiceInstance Identifier, can be renamed
-     **/
+    /** ServiceInstance Identifier, can be renamed */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * ServiceInstance Identifier, can be renamed
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Type of the service.
-     **/
+    /** Type of the service. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceType")
     private final ServiceAttachment.ServiceInstanceType serviceInstanceType;
 
     /**
      * Type of the service.
+     *
      * @return the value
-     **/
+     */
     public ServiceAttachment.ServiceInstanceType getServiceInstanceType() {
         return serviceInstanceType;
     }
 
     /**
-     * The ID of the service instance created that can be used to identify this on the service control plane
-     **/
+     * The ID of the service instance created that can be used to identify this on the service
+     * control plane
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceId")
     private final String serviceInstanceId;
 
     /**
-     * The ID of the service instance created that can be used to identify this on the service control plane
+     * The ID of the service instance created that can be used to identify this on the service
+     * control plane
+     *
      * @return the value
-     **/
+     */
     public String getServiceInstanceId() {
         return serviceInstanceId;
     }
 
-    /**
-     * Service URL of the instance
-     **/
+    /** Service URL of the instance */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceUrl")
     private final String serviceUrl;
 
     /**
      * Service URL of the instance
+     *
      * @return the value
-     **/
+     */
     public String getServiceUrl() {
         return serviceUrl;
     }
 
-    /**
-     * The time the service instance was created. An RFC3339 formatted datetime string
-     **/
+    /** The time the service instance was created. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the service instance was created. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /**
-     * The time the serivce instance was updated. An RFC3339 formatted datetime string
-     **/
+    /** The time the serivce instance was updated. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the serivce instance was updated. An RFC3339 formatted datetime string
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /**
-     * The current state of the ServiceInstance.
-     **/
+    /** The current state of the ServiceInstance. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ServiceAttachment.LifecycleState lifecycleState;
 
     /**
      * The current state of the ServiceInstance.
+     *
      * @return the value
-     **/
+     */
     public ServiceAttachment.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-     **/
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide
+     * actionable information for a resource in Failed state.
+     *
      * @return the value
-     **/
+     */
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSkuBased")
     private final Boolean isSkuBased;
 
     /**
      * Whether this service is provisioned due to the customer being subscribed to a specific SKU
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsSkuBased() {
         return isSkuBased;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -529,6 +525,7 @@ public final class ServiceAttachmentSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

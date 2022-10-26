@@ -6,33 +6,32 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining a new resolver endpoint.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "endpointType",
-    defaultImpl = CreateResolverEndpointDetails.class
-)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "endpointType",
+        defaultImpl = CreateResolverEndpointDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateResolverVnicEndpointDetails.class,
-        name = "VNIC"
-    )
+            value = CreateResolverVnicEndpointDetails.class,
+            name = "VNIC")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public class CreateResolverEndpointDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -55,10 +54,7 @@ public class CreateResolverEndpointDetails
         this.listeningAddress = listeningAddress;
     }
 
-    /**
-     * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
-     *
-     **/
+    /** The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -66,33 +62,31 @@ public class CreateResolverEndpointDetails
      * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
     /**
-     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
-     * of the subnet and will be assigned by the system if unspecified when isForwarding is true.
-     *
-     **/
+     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address
+     * must be part of the subnet and will be assigned by the system if unspecified when
+     * isForwarding is true.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("forwardingAddress")
     private final String forwardingAddress;
 
     /**
-     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part
-     * of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+     * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address
+     * must be part of the subnet and will be assigned by the system if unspecified when
+     * isForwarding is true.
      *
      * @return the value
-     **/
+     */
     public String getForwardingAddress() {
         return forwardingAddress;
     }
 
-    /**
-     * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
-     *
-     **/
+    /** A Boolean flag indicating whether or not the resolver endpoint is for forwarding. */
     @com.fasterxml.jackson.annotation.JsonProperty("isForwarding")
     private final Boolean isForwarding;
 
@@ -100,15 +94,12 @@ public class CreateResolverEndpointDetails
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsForwarding() {
         return isForwarding;
     }
 
-    /**
-     * A Boolean flag indicating whether or not the resolver endpoint is for listening.
-     *
-     **/
+    /** A Boolean flag indicating whether or not the resolver endpoint is for listening. */
     @com.fasterxml.jackson.annotation.JsonProperty("isListening")
     private final Boolean isListening;
 
@@ -116,7 +107,7 @@ public class CreateResolverEndpointDetails
      * A Boolean flag indicating whether or not the resolver endpoint is for listening.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsListening() {
         return isListening;
     }
@@ -124,8 +115,7 @@ public class CreateResolverEndpointDetails
     /**
      * An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the
      * subnet and will be assigned by the system if unspecified when isListening is true.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("listeningAddress")
     private final String listeningAddress;
 
@@ -134,7 +124,7 @@ public class CreateResolverEndpointDetails
      * subnet and will be assigned by the system if unspecified when isListening is true.
      *
      * @return the value
-     **/
+     */
     public String getListeningAddress() {
         return listeningAddress;
     }
@@ -146,6 +136,7 @@ public class CreateResolverEndpointDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -197,11 +188,8 @@ public class CreateResolverEndpointDetails
         return result;
     }
 
-    /**
-     * The type of resolver endpoint. VNIC is currently the only supported type.
-     *
-     **/
-    public enum EndpointType {
+    /** The type of resolver endpoint. VNIC is currently the only supported type. */
+    public enum EndpointType implements com.oracle.bmc.http.internal.BmcEnum {
         Vnic("VNIC"),
         ;
 

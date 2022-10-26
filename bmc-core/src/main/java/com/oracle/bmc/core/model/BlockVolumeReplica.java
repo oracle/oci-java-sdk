@@ -5,31 +5,31 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An asynchronous replica of a block volume that can then be used to create
- * a new block volume or recover a block volume. For more information, see [Overview
- * of Cross-Region Volume Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumereplication.htm)
- * To use any of the API operations, you must be authorized in an IAM policy.
- * If you're not authorized, talk to an administrator. If you're an administrator
- * who needs to write policies to give users access, see [Getting Started with
+ * An asynchronous replica of a block volume that can then be used to create a new block volume or
+ * recover a block volume. For more information, see [Overview of Cross-Region Volume
+ * Replication](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumereplication.htm) To
+ * use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users
+ * access, see [Getting Started with
  * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API.
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = BlockVolumeReplica.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = BlockVolumeReplica.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class BlockVolumeReplica
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -80,61 +80,60 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
     public static class Builder {
         /**
          * The availability domain of the block volume replica.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
          *
-         **/
+         * <p>Example: {@code Uocm:PHX-AD-1}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of the block volume replica.
-         * <p>
-         * Example: {@code Uocm:PHX-AD-1}
+         *
+         * <p>Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /**
-         * The OCID of the compartment that contains the block volume replica.
-         **/
+        /** The OCID of the compartment that contains the block volume replica. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the block volume replica.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -142,85 +141,80 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
-         **/
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * <p>
-         * Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /**
-         * The block volume replica's Oracle ID (OCID).
-         **/
+        /** The block volume replica's Oracle ID (OCID). */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The block volume replica's Oracle ID (OCID).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The current state of a block volume replica.
-         **/
+        /** The current state of a block volume replica. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of a block volume replica.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * The size of the source block volume, in GBs.
-         *
-         **/
+        /** The size of the source block volume, in GBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -229,27 +223,26 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
          *
          * @param sizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder sizeInGBs(Long sizeInGBs) {
             this.sizeInGBs = sizeInGBs;
             this.__explicitlySet__.add("sizeInGBs");
             return this;
         }
         /**
-         * The date and time the block volume replica was created. Format defined
-         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         * The date and time the block volume replica was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the block volume replica was created. Format defined
-         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the block volume replica was created. Format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -258,8 +251,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
         /**
          * The date and time the block volume replica was last synced from the source block volume.
          * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
         private java.util.Date timeLastSynced;
 
@@ -269,50 +261,47 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
          *
          * @param timeLastSynced the value to set
          * @return this builder
-         **/
+         */
         public Builder timeLastSynced(java.util.Date timeLastSynced) {
             this.timeLastSynced = timeLastSynced;
             this.__explicitlySet__.add("timeLastSynced");
             return this;
         }
-        /**
-         * The OCID of the source block volume.
-         **/
+        /** The OCID of the source block volume. */
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeId")
         private String blockVolumeId;
 
         /**
          * The OCID of the source block volume.
+         *
          * @param blockVolumeId the value to set
          * @return this builder
-         **/
+         */
         public Builder blockVolumeId(String blockVolumeId) {
             this.blockVolumeId = blockVolumeId;
             this.__explicitlySet__.add("blockVolumeId");
             return this;
         }
         /**
-         * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
-         *
-         **/
+         * The total size of the data transferred from the source block volume to the block volume
+         * replica, in GBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
         private Long totalDataTransferredInGBs;
 
         /**
-         * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
+         * The total size of the data transferred from the source block volume to the block volume
+         * replica, in GBs.
          *
          * @param totalDataTransferredInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder totalDataTransferredInGBs(Long totalDataTransferredInGBs) {
             this.totalDataTransferredInGBs = totalDataTransferredInGBs;
             this.__explicitlySet__.add("totalDataTransferredInGBs");
             return this;
         }
-        /**
-         * The OCID of the volume group replica.
-         *
-         **/
+        /** The OCID of the volume group replica. */
         @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
         private String volumeGroupReplicaId;
 
@@ -321,7 +310,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
          *
          * @param volumeGroupReplicaId the value to set
          * @return this builder
-         **/
+         */
         public Builder volumeGroupReplicaId(String volumeGroupReplicaId) {
             this.volumeGroupReplicaId = volumeGroupReplicaId;
             this.__explicitlySet__.add("volumeGroupReplicaId");
@@ -398,9 +387,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -411,118 +398,114 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
 
     /**
      * The availability domain of the block volume replica.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
      *
-     **/
+     * <p>Example: {@code Uocm:PHX-AD-1}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of the block volume replica.
-     * <p>
-     * Example: {@code Uocm:PHX-AD-1}
+     *
+     * <p>Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     **/
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /**
-     * The OCID of the compartment that contains the block volume replica.
-     **/
+    /** The OCID of the compartment that contains the block volume replica. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the block volume replica.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
-     **/
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /**
-     * The block volume replica's Oracle ID (OCID).
-     **/
+    /** The block volume replica's Oracle ID (OCID). */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The block volume replica's Oracle ID (OCID).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The current state of a block volume replica.
-     **/
-    public enum LifecycleState {
+    /** The current state of a block volume replica. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Activating("ACTIVATING"),
@@ -531,8 +514,8 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
         Faulty("FAULTY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -571,24 +554,20 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /**
-     * The current state of a block volume replica.
-     **/
+    /** The current state of a block volume replica. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of a block volume replica.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * The size of the source block volume, in GBs.
-     *
-     **/
+    /** The size of the source block volume, in GBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     private final Long sizeInGBs;
 
@@ -596,25 +575,24 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
      * The size of the source block volume, in GBs.
      *
      * @return the value
-     **/
+     */
     public Long getSizeInGBs() {
         return sizeInGBs;
     }
 
     /**
-     * The date and time the block volume replica was created. Format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     * The date and time the block volume replica was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the block volume replica was created. Format defined
-     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the block volume replica was created. Format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -622,8 +600,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
     /**
      * The date and time the block volume replica was last synced from the source block volume.
      * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSynced")
     private final java.util.Date timeLastSynced;
 
@@ -632,45 +609,42 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
      * Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeLastSynced() {
         return timeLastSynced;
     }
 
-    /**
-     * The OCID of the source block volume.
-     **/
+    /** The OCID of the source block volume. */
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeId")
     private final String blockVolumeId;
 
     /**
      * The OCID of the source block volume.
+     *
      * @return the value
-     **/
+     */
     public String getBlockVolumeId() {
         return blockVolumeId;
     }
 
     /**
-     * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
-     *
-     **/
+     * The total size of the data transferred from the source block volume to the block volume
+     * replica, in GBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("totalDataTransferredInGBs")
     private final Long totalDataTransferredInGBs;
 
     /**
-     * The total size of the data transferred from the source block volume to the block volume replica, in GBs.
+     * The total size of the data transferred from the source block volume to the block volume
+     * replica, in GBs.
      *
      * @return the value
-     **/
+     */
     public Long getTotalDataTransferredInGBs() {
         return totalDataTransferredInGBs;
     }
 
-    /**
-     * The OCID of the volume group replica.
-     *
-     **/
+    /** The OCID of the volume group replica. */
     @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupReplicaId")
     private final String volumeGroupReplicaId;
 
@@ -678,7 +652,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
      * The OCID of the volume group replica.
      *
      * @return the value
-     **/
+     */
     public String getVolumeGroupReplicaId() {
         return volumeGroupReplicaId;
     }
@@ -690,6 +664,7 @@ public final class BlockVolumeReplica extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

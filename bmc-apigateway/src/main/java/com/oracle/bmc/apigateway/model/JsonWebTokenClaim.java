@@ -5,21 +5,22 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * An individual JWT claim.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * An individual JWT claim. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = JsonWebTokenClaim.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class JsonWebTokenClaim extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = JsonWebTokenClaim.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class JsonWebTokenClaim
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "values", "isRequired"})
     public JsonWebTokenClaim(String key, java.util.List<String> values, Boolean isRequired) {
@@ -31,61 +32,54 @@ public final class JsonWebTokenClaim extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of the claim.
-         **/
+        /** Name of the claim. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Name of the claim.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * The list of acceptable values for a given claim.
-         * If this value is "null" or empty and "isRequired" set to "true", then
-         * the presence of this claim in the JWT is validated.
-         *
-         **/
+         * The list of acceptable values for a given claim. If this value is "null" or empty and
+         * "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * The list of acceptable values for a given claim.
-         * If this value is "null" or empty and "isRequired" set to "true", then
-         * the presence of this claim in the JWT is validated.
+         * The list of acceptable values for a given claim. If this value is "null" or empty and
+         * "isRequired" set to "true", then the presence of this claim in the JWT is validated.
          *
          * @param values the value to set
          * @return this builder
-         **/
+         */
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
         /**
-         * Whether the claim is required to be present in the JWT or not. If set
-         * to "false", the claim values will be matched only if the claim is
-         * present in the JWT.
-         *
-         **/
+         * Whether the claim is required to be present in the JWT or not. If set to "false", the
+         * claim values will be matched only if the claim is present in the JWT.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
-         * Whether the claim is required to be present in the JWT or not. If set
-         * to "false", the claim values will be matched only if the claim is
-         * present in the JWT.
+         * Whether the claim is required to be present in the JWT or not. If set to "false", the
+         * claim values will be matched only if the claim is present in the JWT.
          *
          * @param isRequired the value to set
          * @return this builder
-         **/
+         */
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -118,9 +112,7 @@ public final class JsonWebTokenClaim extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,56 +121,49 @@ public final class JsonWebTokenClaim extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the claim.
-     **/
+    /** Name of the claim. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Name of the claim.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
     /**
-     * The list of acceptable values for a given claim.
-     * If this value is "null" or empty and "isRequired" set to "true", then
-     * the presence of this claim in the JWT is validated.
-     *
-     **/
+     * The list of acceptable values for a given claim. If this value is "null" or empty and
+     * "isRequired" set to "true", then the presence of this claim in the JWT is validated.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * The list of acceptable values for a given claim.
-     * If this value is "null" or empty and "isRequired" set to "true", then
-     * the presence of this claim in the JWT is validated.
+     * The list of acceptable values for a given claim. If this value is "null" or empty and
+     * "isRequired" set to "true", then the presence of this claim in the JWT is validated.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getValues() {
         return values;
     }
 
     /**
-     * Whether the claim is required to be present in the JWT or not. If set
-     * to "false", the claim values will be matched only if the claim is
-     * present in the JWT.
-     *
-     **/
+     * Whether the claim is required to be present in the JWT or not. If set to "false", the claim
+     * values will be matched only if the claim is present in the JWT.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
-     * Whether the claim is required to be present in the JWT or not. If set
-     * to "false", the claim values will be matched only if the claim is
-     * present in the JWT.
+     * Whether the claim is required to be present in the JWT or not. If set to "false", the claim
+     * values will be matched only if the claim is present in the JWT.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -190,6 +175,7 @@ public final class JsonWebTokenClaim extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

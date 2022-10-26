@@ -5,22 +5,22 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Virtual Cloud Network definition.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Virtual Cloud Network definition. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = VirtualCloudNetwork.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = VirtualCloudNetwork.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class VirtualCloudNetwork
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "allowlistedIps"})
     public VirtualCloudNetwork(String id, java.util.List<String> allowlistedIps) {
@@ -31,10 +31,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The Virtual Cloud Network OCID.
-         *
-         **/
+        /** The Virtual Cloud Network OCID. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -43,27 +40,26 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
          *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
-         * An invalid IP or CIDR block will result in a 400 response.
-         *
-         **/
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5",
+         * "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("allowlistedIps")
         private java.util.List<String> allowlistedIps;
 
         /**
-         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
-         * An invalid IP or CIDR block will result in a 400 response.
+         * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5",
+         * "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
          *
          * @param allowlistedIps the value to set
          * @return this builder
-         **/
+         */
         public Builder allowlistedIps(java.util.List<String> allowlistedIps) {
             this.allowlistedIps = allowlistedIps;
             this.__explicitlySet__.add("allowlistedIps");
@@ -93,9 +89,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,10 +98,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * The Virtual Cloud Network OCID.
-     *
-     **/
+    /** The Virtual Cloud Network OCID. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -115,7 +106,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
      * The Virtual Cloud Network OCID.
      *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
@@ -123,8 +114,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
     /**
      * Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26")
      * An invalid IP or CIDR block will result in a 400 response.
-     *
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("allowlistedIps")
     private final java.util.List<String> allowlistedIps;
 
@@ -133,7 +123,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
      * An invalid IP or CIDR block will result in a 400 response.
      *
      * @return the value
-     **/
+     */
     public java.util.List<String> getAllowlistedIps() {
         return allowlistedIps;
     }
@@ -145,6 +135,7 @@ public final class VirtualCloudNetwork extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

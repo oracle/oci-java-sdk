@@ -5,22 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreatePublicIpDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreatePublicIpDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreatePublicIpDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -49,20 +49,23 @@ public final class CreatePublicIpDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
-         * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to contain the public IP. For ephemeral public IPs, you must set this
+         * to the private IP's compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
-         * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment to contain the public IP. For ephemeral public IPs, you must set this
+         * to the private IP's compartment
+         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -71,8 +74,7 @@ public final class CreatePublicIpDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -82,7 +84,7 @@ public final class CreatePublicIpDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -90,40 +92,38 @@ public final class CreatePublicIpDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -131,53 +131,53 @@ public final class CreatePublicIpDetails
         }
         /**
          * Defines when the public IP is deleted and released back to the Oracle Cloud
-         * Infrastructure public IP pool. For more information, see
-         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-         *
-         **/
+         * Infrastructure public IP pool. For more information, see [Public IP
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
 
         /**
          * Defines when the public IP is deleted and released back to the Oracle Cloud
-         * Infrastructure public IP pool. For more information, see
-         * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * Infrastructure public IP pool. For more information, see [Public IP
+         * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * @param lifetime the value to set
          * @return this builder
-         **/
+         */
         public Builder lifetime(Lifetime lifetime) {
             this.lifetime = lifetime;
             this.__explicitlySet__.add("lifetime");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-         * <p>
-         * Required for an ephemeral public IP because it must always be assigned to a private IP
-         * (specifically a *primary* private IP).
-         * <p>
-         * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
-         * assigned to a private IP. You can later assign the public IP with
-         * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the private IP to assign the public IP to.
          *
-         **/
+         * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
+         * (specifically a *primary* private IP).
+         *
+         * <p>Optional for a reserved public IP. If you don't provide it, the public IP is created
+         * but not assigned to a private IP. You can later assign the public IP with {@link
+         * #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
         private String privateIpId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-         * <p>
-         * Required for an ephemeral public IP because it must always be assigned to a private IP
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the private IP to assign the public IP to.
+         *
+         * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
          * (specifically a *primary* private IP).
-         * <p>
-         * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
-         * assigned to a private IP. You can later assign the public IP with
-         * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+         *
+         * <p>Optional for a reserved public IP. If you don't provide it, the public IP is created
+         * but not assigned to a private IP. You can later assign the public IP with {@link
+         * #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
          *
          * @param privateIpId the value to set
          * @return this builder
-         **/
+         */
         public Builder privateIpId(String privateIpId) {
             this.privateIpId = privateIpId;
             this.__explicitlySet__.add("privateIpId");
@@ -226,9 +226,7 @@ public final class CreatePublicIpDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -238,84 +236,83 @@ public final class CreatePublicIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
-     * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+     * private IP's compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs,
-     * you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment to contain the public IP. For ephemeral public IPs, you must set this to the
+     * private IP's compartment
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defines when the public IP is deleted and released back to the Oracle Cloud
-     * Infrastructure public IP pool. For more information, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-     *
-     **/
-    public enum Lifetime {
+     * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
+     * public IP pool. For more information, see [Public IP
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     */
+    public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
         Ephemeral("EPHEMERAL"),
         Reserved("RESERVED"),
         ;
@@ -348,51 +345,51 @@ public final class CreatePublicIpDetails
         }
     };
     /**
-     * Defines when the public IP is deleted and released back to the Oracle Cloud
-     * Infrastructure public IP pool. For more information, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-     *
-     **/
+     * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
+     * public IP pool. For more information, see [Public IP
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Lifetime lifetime;
 
     /**
-     * Defines when the public IP is deleted and released back to the Oracle Cloud
-     * Infrastructure public IP pool. For more information, see
-     * [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * Defines when the public IP is deleted and released back to the Oracle Cloud Infrastructure
+     * public IP pool. For more information, see [Public IP
+     * Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * @return the value
-     **/
+     */
     public Lifetime getLifetime() {
         return lifetime;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-     * <p>
-     * Required for an ephemeral public IP because it must always be assigned to a private IP
-     * (specifically a *primary* private IP).
-     * <p>
-     * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
-     * assigned to a private IP. You can later assign the public IP with
-     * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the private IP to assign the public IP to.
      *
-     **/
+     * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
+     * (specifically a *primary* private IP).
+     *
+     * <p>Optional for a reserved public IP. If you don't provide it, the public IP is created but
+     * not assigned to a private IP. You can later assign the public IP with {@link
+     * #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP to assign the public IP to.
-     * <p>
-     * Required for an ephemeral public IP because it must always be assigned to a private IP
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the private IP to assign the public IP to.
+     *
+     * <p>Required for an ephemeral public IP because it must always be assigned to a private IP
      * (specifically a *primary* private IP).
-     * <p>
-     * Optional for a reserved public IP. If you don't provide it, the public IP is created but not
-     * assigned to a private IP. You can later assign the public IP with
-     * {@link #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
+     *
+     * <p>Optional for a reserved public IP. If you don't provide it, the public IP is created but
+     * not assigned to a private IP. You can later assign the public IP with {@link
+     * #updatePublicIp(UpdatePublicIpRequest) updatePublicIp}.
      *
      * @return the value
-     **/
+     */
     public String getPrivateIpId() {
         return privateIpId;
     }
@@ -404,6 +401,7 @@ public final class CreatePublicIpDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

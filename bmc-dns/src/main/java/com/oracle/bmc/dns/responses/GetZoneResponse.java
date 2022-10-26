@@ -9,15 +9,14 @@ import com.oracle.bmc.dns.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to
-     * contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,14 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
-     *
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      */
     private String eTag;
 
     /**
-     * The current version of the resource, ending with a
-     * representation-specific suffix. This value may be used in If-Match
-     * and If-None-Match headers for later requests of the same resource.
+     * The current version of the resource, ending with a representation-specific suffix. This value
+     * may be used in If-Match and If-None-Match headers for later requests of the same resource.
      *
      * @return the value
      */
@@ -44,13 +40,12 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
         return eTag;
     }
 
-    /**
-     * The returned Zone instance.
-     */
+    /** The returned Zone instance. */
     private com.oracle.bmc.dns.model.Zone zone;
 
     /**
      * The returned Zone instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.dns.model.Zone getZone() {
@@ -66,7 +61,7 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetZoneResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String eTag,
             com.oracle.bmc.dns.model.Zone zone) {
@@ -76,31 +71,33 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
         this.zone = zone;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<GetZoneResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to
-         * contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -111,17 +108,16 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
-         *
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          */
         private String eTag;
 
         /**
-         * The current version of the resource, ending with a
-         * representation-specific suffix. This value may be used in If-Match
-         * and If-None-Match headers for later requests of the same resource.
+         * The current version of the resource, ending with a representation-specific suffix. This
+         * value may be used in If-Match and If-None-Match headers for later requests of the same
+         * resource.
          *
          * @param eTag the value to set
          * @return this builder
@@ -131,13 +127,12 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /**
-         * The returned Zone instance.
-         */
+        /** The returned Zone instance. */
         private com.oracle.bmc.dns.model.Zone zone;
 
         /**
          * The returned Zone instance.
+         *
          * @param zone the value to set
          * @return this builder
          */
@@ -148,8 +143,10 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(GetZoneResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,8 +159,10 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public GetZoneResponse build() {
             return new GetZoneResponse(__httpStatusCode__, headers, opcRequestId, eTag, zone);
         }
@@ -171,6 +170,7 @@ public class GetZoneResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

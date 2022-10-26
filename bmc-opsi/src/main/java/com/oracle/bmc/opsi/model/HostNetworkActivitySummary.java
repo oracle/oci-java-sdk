@@ -5,26 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Network Activity Summary metric for the host
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Network Activity Summary metric for the host <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HostNetworkActivitySummary.Builder.class
-)
+        builder = HostNetworkActivitySummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "metricName"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "metricName")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,49 +34,46 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /**
-         * All network interfaces read rate in Mbps
-         **/
+        /** All network interfaces read rate in Mbps */
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
         private Double allNetworkReadInMbps;
 
         /**
          * All network interfaces read rate in Mbps
+         *
          * @param allNetworkReadInMbps the value to set
          * @return this builder
-         **/
+         */
         public Builder allNetworkReadInMbps(Double allNetworkReadInMbps) {
             this.allNetworkReadInMbps = allNetworkReadInMbps;
             this.__explicitlySet__.add("allNetworkReadInMbps");
             return this;
         }
-        /**
-         * All network interfaces write rate in Mbps
-         **/
+        /** All network interfaces write rate in Mbps */
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
         private Double allNetworkWriteInMbps;
 
         /**
          * All network interfaces write rate in Mbps
+         *
          * @param allNetworkWriteInMbps the value to set
          * @return this builder
-         **/
+         */
         public Builder allNetworkWriteInMbps(Double allNetworkWriteInMbps) {
             this.allNetworkWriteInMbps = allNetworkWriteInMbps;
             this.__explicitlySet__.add("allNetworkWriteInMbps");
             return this;
         }
-        /**
-         * All network interfaces IO rate in Mbps
-         **/
+        /** All network interfaces IO rate in Mbps */
         @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
         private Double allNetworkIoInMbps;
 
         /**
          * All network interfaces IO rate in Mbps
+         *
          * @param allNetworkIoInMbps the value to set
          * @return this builder
-         **/
+         */
         public Builder allNetworkIoInMbps(Double allNetworkIoInMbps) {
             this.allNetworkIoInMbps = allNetworkIoInMbps;
             this.__explicitlySet__.add("allNetworkIoInMbps");
@@ -119,9 +114,7 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,44 +135,41 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
         this.allNetworkIoInMbps = allNetworkIoInMbps;
     }
 
-    /**
-     * All network interfaces read rate in Mbps
-     **/
+    /** All network interfaces read rate in Mbps */
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkReadInMbps")
     private final Double allNetworkReadInMbps;
 
     /**
      * All network interfaces read rate in Mbps
+     *
      * @return the value
-     **/
+     */
     public Double getAllNetworkReadInMbps() {
         return allNetworkReadInMbps;
     }
 
-    /**
-     * All network interfaces write rate in Mbps
-     **/
+    /** All network interfaces write rate in Mbps */
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkWriteInMbps")
     private final Double allNetworkWriteInMbps;
 
     /**
      * All network interfaces write rate in Mbps
+     *
      * @return the value
-     **/
+     */
     public Double getAllNetworkWriteInMbps() {
         return allNetworkWriteInMbps;
     }
 
-    /**
-     * All network interfaces IO rate in Mbps
-     **/
+    /** All network interfaces IO rate in Mbps */
     @com.fasterxml.jackson.annotation.JsonProperty("allNetworkIoInMbps")
     private final Double allNetworkIoInMbps;
 
     /**
      * All network interfaces IO rate in Mbps
+     *
      * @return the value
-     **/
+     */
     public Double getAllNetworkIoInMbps() {
         return allNetworkIoInMbps;
     }
@@ -191,6 +181,7 @@ public final class HostNetworkActivitySummary extends HostPerformanceMetricGroup
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

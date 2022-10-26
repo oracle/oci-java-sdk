@@ -5,19 +5,20 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Form field.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Form field. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DocumentField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DocumentField extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DocumentField extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fieldType", "fieldLabel", "fieldName", "fieldValue"})
     public DocumentField(
@@ -34,17 +35,16 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The field type.
-         **/
+        /** The field type. */
         @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
         private FieldType fieldType;
 
         /**
          * The field type.
+         *
          * @param fieldType the value to set
          * @return this builder
-         **/
+         */
         public Builder fieldType(FieldType fieldType) {
             this.fieldType = fieldType;
             this.__explicitlySet__.add("fieldType");
@@ -109,9 +109,7 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,18 +118,16 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /**
-     * The field type.
-     **/
-    public enum FieldType {
+    /** The field type. */
+    public enum FieldType implements com.oracle.bmc.http.internal.BmcEnum {
         LineItemGroup("LINE_ITEM_GROUP"),
         LineItem("LINE_ITEM"),
         LineItemField("LINE_ITEM_FIELD"),
         KeyValue("KEY_VALUE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -170,16 +166,15 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /**
-     * The field type.
-     **/
+    /** The field type. */
     @com.fasterxml.jackson.annotation.JsonProperty("fieldType")
     private final FieldType fieldType;
 
     /**
      * The field type.
+     *
      * @return the value
-     **/
+     */
     public FieldType getFieldType() {
         return fieldType;
     }
@@ -212,6 +207,7 @@ public final class DocumentField extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

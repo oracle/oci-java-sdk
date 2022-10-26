@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Aggregation/facets on properties of data object.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Aggregation/facets on properties of data object. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = FacetedSearchAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = FacetedSearchAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class FacetedSearchAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "aggregation", "dataType", "propertyType"})
     public FacetedSearchAggregation(
@@ -37,71 +37,67 @@ public final class FacetedSearchAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Name of data object property
-         **/
+        /** Name of data object property */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Name of data object property
+         *
          * @param type the value to set
          * @return this builder
-         **/
+         */
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /**
-         * Count of number of data objects having property.
-         **/
+        /** Count of number of data objects having property. */
         @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
         private java.util.Map<String, Long> aggregation;
 
         /**
          * Count of number of data objects having property.
+         *
          * @param aggregation the value to set
          * @return this builder
-         **/
+         */
         public Builder aggregation(java.util.Map<String, Long> aggregation) {
             this.aggregation = aggregation;
             this.__explicitlySet__.add("aggregation");
             return this;
         }
-        /**
-         * Data type of object property.
-         **/
+        /** Data type of object property. */
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * Data type of object property.
+         *
          * @param dataType the value to set
          * @return this builder
-         **/
+         */
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
         /**
-         * Type of property that indicates if it was defined by the user or system.
-         * CUSTOM_PROPERTY is defined by the user on a data object.
-         * DEFAULT_PROPERTY is defined by the system on a data object.
-         *
-         **/
+         * Type of property that indicates if it was defined by the user or system. CUSTOM_PROPERTY
+         * is defined by the user on a data object. DEFAULT_PROPERTY is defined by the system on a
+         * data object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
         private PropertyType propertyType;
 
         /**
-         * Type of property that indicates if it was defined by the user or system.
-         * CUSTOM_PROPERTY is defined by the user on a data object.
-         * DEFAULT_PROPERTY is defined by the system on a data object.
+         * Type of property that indicates if it was defined by the user or system. CUSTOM_PROPERTY
+         * is defined by the user on a data object. DEFAULT_PROPERTY is defined by the system on a
+         * data object.
          *
          * @param propertyType the value to set
          * @return this builder
-         **/
+         */
         public Builder propertyType(PropertyType propertyType) {
             this.propertyType = propertyType;
             this.__explicitlySet__.add("propertyType");
@@ -139,9 +135,7 @@ public final class FacetedSearchAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,61 +144,57 @@ public final class FacetedSearchAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of data object property
-     **/
+    /** Name of data object property */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Name of data object property
+     *
      * @return the value
-     **/
+     */
     public String getType() {
         return type;
     }
 
-    /**
-     * Count of number of data objects having property.
-     **/
+    /** Count of number of data objects having property. */
     @com.fasterxml.jackson.annotation.JsonProperty("aggregation")
     private final java.util.Map<String, Long> aggregation;
 
     /**
      * Count of number of data objects having property.
+     *
      * @return the value
-     **/
+     */
     public java.util.Map<String, Long> getAggregation() {
         return aggregation;
     }
 
-    /**
-     * Data type of object property.
-     **/
+    /** Data type of object property. */
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * Data type of object property.
+     *
      * @return the value
-     **/
+     */
     public String getDataType() {
         return dataType;
     }
 
     /**
-     * Type of property that indicates if it was defined by the user or system.
-     * CUSTOM_PROPERTY is defined by the user on a data object.
-     * DEFAULT_PROPERTY is defined by the system on a data object.
-     *
-     **/
-    public enum PropertyType {
+     * Type of property that indicates if it was defined by the user or system. CUSTOM_PROPERTY is
+     * defined by the user on a data object. DEFAULT_PROPERTY is defined by the system on a data
+     * object.
+     */
+    public enum PropertyType implements com.oracle.bmc.http.internal.BmcEnum {
         CustomProperty("CUSTOM_PROPERTY"),
         DefaultProperty("DEFAULT_PROPERTY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -244,21 +234,20 @@ public final class FacetedSearchAggregation
         }
     };
     /**
-     * Type of property that indicates if it was defined by the user or system.
-     * CUSTOM_PROPERTY is defined by the user on a data object.
-     * DEFAULT_PROPERTY is defined by the system on a data object.
-     *
-     **/
+     * Type of property that indicates if it was defined by the user or system. CUSTOM_PROPERTY is
+     * defined by the user on a data object. DEFAULT_PROPERTY is defined by the system on a data
+     * object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("propertyType")
     private final PropertyType propertyType;
 
     /**
-     * Type of property that indicates if it was defined by the user or system.
-     * CUSTOM_PROPERTY is defined by the user on a data object.
-     * DEFAULT_PROPERTY is defined by the system on a data object.
+     * Type of property that indicates if it was defined by the user or system. CUSTOM_PROPERTY is
+     * defined by the user on a data object. DEFAULT_PROPERTY is defined by the system on a data
+     * object.
      *
      * @return the value
-     **/
+     */
     public PropertyType getPropertyType() {
         return propertyType;
     }
@@ -270,6 +259,7 @@ public final class FacetedSearchAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

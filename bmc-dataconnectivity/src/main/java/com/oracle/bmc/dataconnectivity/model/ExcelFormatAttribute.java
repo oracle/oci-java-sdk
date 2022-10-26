@@ -5,71 +5,71 @@
 package com.oracle.bmc.dataconnectivity.model;
 
 /**
- * The Excel format attribute.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The Excel format attribute. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210217")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ExcelFormatAttribute.Builder.class
-)
+        builder = ExcelFormatAttribute.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "modelType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "modelType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ExcelFormatAttribute extends AbstractFormatAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Range of the data. For example, "'My Sheet'!B3:C35"
-         **/
+        /** Range of the data. For example, "'My Sheet'!B3:C35" */
         @com.fasterxml.jackson.annotation.JsonProperty("dataAddress")
         private String dataAddress;
 
         /**
          * Range of the data. For example, "'My Sheet'!B3:C35"
+         *
          * @param dataAddress the value to set
          * @return this builder
-         **/
+         */
         public Builder dataAddress(String dataAddress) {
             this.dataAddress = dataAddress;
             this.__explicitlySet__.add("dataAddress");
             return this;
         }
         /**
-         * Whether the dataAddress contains the header with column names. If false - column names fill be generated.
-         **/
+         * Whether the dataAddress contains the header with column names. If false - column names
+         * fill be generated.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private Boolean header;
 
         /**
-         * Whether the dataAddress contains the header with column names. If false - column names fill be generated.
+         * Whether the dataAddress contains the header with column names. If false - column names
+         * fill be generated.
+         *
          * @param header the value to set
          * @return this builder
-         **/
+         */
         public Builder header(Boolean header) {
             this.header = header;
             this.__explicitlySet__.add("header");
             return this;
         }
-        /**
-         * Workbook password if it is password protected.
-         **/
+        /** Workbook password if it is password protected. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * Workbook password if it is password protected.
+         *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -103,9 +103,7 @@ public final class ExcelFormatAttribute extends AbstractFormatAttribute {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,44 +120,45 @@ public final class ExcelFormatAttribute extends AbstractFormatAttribute {
         this.password = password;
     }
 
-    /**
-     * Range of the data. For example, "'My Sheet'!B3:C35"
-     **/
+    /** Range of the data. For example, "'My Sheet'!B3:C35" */
     @com.fasterxml.jackson.annotation.JsonProperty("dataAddress")
     private final String dataAddress;
 
     /**
      * Range of the data. For example, "'My Sheet'!B3:C35"
+     *
      * @return the value
-     **/
+     */
     public String getDataAddress() {
         return dataAddress;
     }
 
     /**
-     * Whether the dataAddress contains the header with column names. If false - column names fill be generated.
-     **/
+     * Whether the dataAddress contains the header with column names. If false - column names fill
+     * be generated.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("header")
     private final Boolean header;
 
     /**
-     * Whether the dataAddress contains the header with column names. If false - column names fill be generated.
+     * Whether the dataAddress contains the header with column names. If false - column names fill
+     * be generated.
+     *
      * @return the value
-     **/
+     */
     public Boolean getHeader() {
         return header;
     }
 
-    /**
-     * Workbook password if it is password protected.
-     **/
+    /** Workbook password if it is password protected. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * Workbook password if it is password protected.
+     *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
@@ -171,6 +170,7 @@ public final class ExcelFormatAttribute extends AbstractFormatAttribute {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

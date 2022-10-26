@@ -8,13 +8,12 @@ import com.oracle.bmc.containerengine.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse {
-    /**
-     * The OCID of the work request handling the operation.
-     */
+    /** The OCID of the work request handling the operation. */
     private String opcWorkRequestId;
 
     /**
      * The OCID of the work request handling the operation.
+     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -22,12 +21,15 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
+     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -42,7 +44,7 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private DeleteClusterResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -50,28 +52,30 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<DeleteClusterResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
-        /**
-         * The OCID of the work request handling the operation.
-         */
+        /** The OCID of the work request handling the operation. */
         private String opcWorkRequestId;
 
         /**
          * The OCID of the work request handling the operation.
+         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -81,12 +85,15 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -97,8 +104,10 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(DeleteClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -110,8 +119,10 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public DeleteClusterResponse build() {
             return new DeleteClusterResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
@@ -120,6 +131,7 @@ public class DeleteClusterResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

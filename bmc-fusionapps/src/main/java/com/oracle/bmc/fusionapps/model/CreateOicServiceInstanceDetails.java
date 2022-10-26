@@ -5,25 +5,24 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The information about new Integration Cloud instance being provisioned.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The information about new Integration Cloud instance being provisioned. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateOicServiceInstanceDetails.Builder.class
-)
+        builder = CreateOicServiceInstanceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "serviceInstanceType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "serviceInstanceType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateOicServiceInstanceDetails extends CreateServiceInstanceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,33 +43,31 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /**
-         * Number of 5K message packs per hour
-         **/
+        /** Number of 5K message packs per hour */
         @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
         private Integer messagePacks;
 
         /**
          * Number of 5K message packs per hour
+         *
          * @param messagePacks the value to set
          * @return this builder
-         **/
+         */
         public Builder messagePacks(Integer messagePacks) {
             this.messagePacks = messagePacks;
             this.__explicitlySet__.add("messagePacks");
             return this;
         }
-        /**
-         * The   Oracle Integration edition
-         **/
+        /** The Oracle Integration edition */
         @com.fasterxml.jackson.annotation.JsonProperty("edition")
         private Edition edition;
 
         /**
-         * The   Oracle Integration edition
+         * The Oracle Integration edition
+         *
          * @param edition the value to set
          * @return this builder
-         **/
+         */
         public Builder edition(Edition edition) {
             this.edition = edition;
             this.__explicitlySet__.add("edition");
@@ -108,9 +105,7 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,24 +122,21 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
         this.edition = edition;
     }
 
-    /**
-     * Number of 5K message packs per hour
-     **/
+    /** Number of 5K message packs per hour */
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     private final Integer messagePacks;
 
     /**
      * Number of 5K message packs per hour
+     *
      * @return the value
-     **/
+     */
     public Integer getMessagePacks() {
         return messagePacks;
     }
 
-    /**
-     * The   Oracle Integration edition
-     **/
-    public enum Edition {
+    /** The Oracle Integration edition */
+    public enum Edition implements com.oracle.bmc.http.internal.BmcEnum {
         Standard("STANDARD"),
         Enterprise("ENTERPRISE"),
         ;
@@ -176,16 +168,15 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
             throw new IllegalArgumentException("Invalid Edition: " + key);
         }
     };
-    /**
-     * The   Oracle Integration edition
-     **/
+    /** The Oracle Integration edition */
     @com.fasterxml.jackson.annotation.JsonProperty("edition")
     private final Edition edition;
 
     /**
-     * The   Oracle Integration edition
+     * The Oracle Integration edition
+     *
      * @return the value
-     **/
+     */
     public Edition getEdition() {
         return edition;
     }
@@ -197,6 +188,7 @@ public final class CreateOicServiceInstanceDetails extends CreateServiceInstance
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

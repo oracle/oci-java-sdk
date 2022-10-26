@@ -5,21 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Compute related properties.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Compute related properties. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ComputeProperties.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ComputeProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ComputeProperties.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ComputeProperties
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "primaryIp",
@@ -116,417 +117,391 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Primary IP address of the compute instance.
-         **/
+        /** Primary IP address of the compute instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("primaryIp")
         private String primaryIp;
 
         /**
          * Primary IP address of the compute instance.
+         *
          * @param primaryIp the value to set
          * @return this builder
-         **/
+         */
         public Builder primaryIp(String primaryIp) {
             this.primaryIp = primaryIp;
             this.__explicitlySet__.add("primaryIp");
             return this;
         }
-        /**
-         * Fully Qualified DNS Name.
-         **/
+        /** Fully Qualified DNS Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
         private String dnsName;
 
         /**
          * Fully Qualified DNS Name.
+         *
          * @param dnsName the value to set
          * @return this builder
-         **/
+         */
         public Builder dnsName(String dnsName) {
             this.dnsName = dnsName;
             this.__explicitlySet__.add("dnsName");
             return this;
         }
-        /**
-         * Information about the asset.
-         **/
+        /** Information about the asset. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Information about the asset.
+         *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /**
-         * Number of CPUs.
-         **/
+        /** Number of CPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("coresCount")
         private Integer coresCount;
 
         /**
          * Number of CPUs.
+         *
          * @param coresCount the value to set
          * @return this builder
-         **/
+         */
         public Builder coresCount(Integer coresCount) {
             this.coresCount = coresCount;
             this.__explicitlySet__.add("coresCount");
             return this;
         }
-        /**
-         * CPU model name.
-         **/
+        /** CPU model name. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuModel")
         private String cpuModel;
 
         /**
          * CPU model name.
+         *
          * @param cpuModel the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuModel(String cpuModel) {
             this.cpuModel = cpuModel;
             this.__explicitlySet__.add("cpuModel");
             return this;
         }
-        /**
-         * Number of GPU devices.
-         **/
+        /** Number of GPU devices. */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDevicesCount")
         private Integer gpuDevicesCount;
 
         /**
          * Number of GPU devices.
+         *
          * @param gpuDevicesCount the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuDevicesCount(Integer gpuDevicesCount) {
             this.gpuDevicesCount = gpuDevicesCount;
             this.__explicitlySet__.add("gpuDevicesCount");
             return this;
         }
-        /**
-         * List of GPU devices attached to a virtual machine.
-         **/
+        /** List of GPU devices attached to a virtual machine. */
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDevices")
         private java.util.List<GpuDevice> gpuDevices;
 
         /**
          * List of GPU devices attached to a virtual machine.
+         *
          * @param gpuDevices the value to set
          * @return this builder
-         **/
+         */
         public Builder gpuDevices(java.util.List<GpuDevice> gpuDevices) {
             this.gpuDevices = gpuDevices;
             this.__explicitlySet__.add("gpuDevices");
             return this;
         }
-        /**
-         * Number of threads per core.
-         **/
+        /** Number of threads per core. */
         @com.fasterxml.jackson.annotation.JsonProperty("threadsPerCoreCount")
         private Integer threadsPerCoreCount;
 
         /**
          * Number of threads per core.
+         *
          * @param threadsPerCoreCount the value to set
          * @return this builder
-         **/
+         */
         public Builder threadsPerCoreCount(Integer threadsPerCoreCount) {
             this.threadsPerCoreCount = threadsPerCoreCount;
             this.__explicitlySet__.add("threadsPerCoreCount");
             return this;
         }
-        /**
-         * Memory size in MBs.
-         **/
+        /** Memory size in MBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
         private Long memoryInMBs;
 
         /**
          * Memory size in MBs.
+         *
          * @param memoryInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder memoryInMBs(Long memoryInMBs) {
             this.memoryInMBs = memoryInMBs;
             this.__explicitlySet__.add("memoryInMBs");
             return this;
         }
-        /**
-         * Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-         **/
+        /** Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory. */
         @com.fasterxml.jackson.annotation.JsonProperty("isPmemEnabled")
         private Boolean isPmemEnabled;
 
         /**
          * Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
+         *
          * @param isPmemEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isPmemEnabled(Boolean isPmemEnabled) {
             this.isPmemEnabled = isPmemEnabled;
             this.__explicitlySet__.add("isPmemEnabled");
             return this;
         }
-        /**
-         * Pmem size in MBs.
-         **/
+        /** Pmem size in MBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("pmemInMBs")
         private Long pmemInMBs;
 
         /**
          * Pmem size in MBs.
+         *
          * @param pmemInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder pmemInMBs(Long pmemInMBs) {
             this.pmemInMBs = pmemInMBs;
             this.__explicitlySet__.add("pmemInMBs");
             return this;
         }
-        /**
-         * Operating system.
-         **/
+        /** Operating system. */
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
         /**
          * Operating system.
+         *
          * @param operatingSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
             return this;
         }
-        /**
-         * Operating system version.
-         **/
+        /** Operating system version. */
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
         private String operatingSystemVersion;
 
         /**
          * Operating system version.
+         *
          * @param operatingSystemVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder operatingSystemVersion(String operatingSystemVersion) {
             this.operatingSystemVersion = operatingSystemVersion;
             this.__explicitlySet__.add("operatingSystemVersion");
             return this;
         }
-        /**
-         * Host name of the VM.
-         **/
+        /** Host name of the VM. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Host name of the VM.
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /**
-         * The current power state of the virtual machine.
-         **/
+        /** The current power state of the virtual machine. */
         @com.fasterxml.jackson.annotation.JsonProperty("powerState")
         private String powerState;
 
         /**
          * The current power state of the virtual machine.
+         *
          * @param powerState the value to set
          * @return this builder
-         **/
+         */
         public Builder powerState(String powerState) {
             this.powerState = powerState;
             this.__explicitlySet__.add("powerState");
             return this;
         }
-        /**
-         * Guest state.
-         **/
+        /** Guest state. */
         @com.fasterxml.jackson.annotation.JsonProperty("guestState")
         private String guestState;
 
         /**
          * Guest state.
+         *
          * @param guestState the value to set
          * @return this builder
-         **/
+         */
         public Builder guestState(String guestState) {
             this.guestState = guestState;
             this.__explicitlySet__.add("guestState");
             return this;
         }
-        /**
-         * Whether Trusted Platform Module (TPM) is enabled.
-         **/
+        /** Whether Trusted Platform Module (TPM) is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isTpmEnabled")
         private Boolean isTpmEnabled;
 
         /**
          * Whether Trusted Platform Module (TPM) is enabled.
+         *
          * @param isTpmEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isTpmEnabled(Boolean isTpmEnabled) {
             this.isTpmEnabled = isTpmEnabled;
             this.__explicitlySet__.add("isTpmEnabled");
             return this;
         }
-        /**
-         * Number of connected networks.
-         **/
+        /** Number of connected networks. */
         @com.fasterxml.jackson.annotation.JsonProperty("connectedNetworks")
         private Integer connectedNetworks;
 
         /**
          * Number of connected networks.
+         *
          * @param connectedNetworks the value to set
          * @return this builder
-         **/
+         */
         public Builder connectedNetworks(Integer connectedNetworks) {
             this.connectedNetworks = connectedNetworks;
             this.__explicitlySet__.add("connectedNetworks");
             return this;
         }
-        /**
-         * Number of network ethernet cards.
-         **/
+        /** Number of network ethernet cards. */
         @com.fasterxml.jackson.annotation.JsonProperty("nicsCount")
         private Integer nicsCount;
 
         /**
          * Number of network ethernet cards.
+         *
          * @param nicsCount the value to set
          * @return this builder
-         **/
+         */
         public Builder nicsCount(Integer nicsCount) {
             this.nicsCount = nicsCount;
             this.__explicitlySet__.add("nicsCount");
             return this;
         }
-        /**
-         * List of network ethernet cards attached to a virtual machine.
-         **/
+        /** List of network ethernet cards attached to a virtual machine. */
         @com.fasterxml.jackson.annotation.JsonProperty("nics")
         private java.util.List<Nic> nics;
 
         /**
          * List of network ethernet cards attached to a virtual machine.
+         *
          * @param nics the value to set
          * @return this builder
-         **/
+         */
         public Builder nics(java.util.List<Nic> nics) {
             this.nics = nics;
             this.__explicitlySet__.add("nics");
             return this;
         }
-        /**
-         * Provision storage size in MBs.
-         **/
+        /** Provision storage size in MBs. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageProvisionedInMBs")
         private Long storageProvisionedInMBs;
 
         /**
          * Provision storage size in MBs.
+         *
          * @param storageProvisionedInMBs the value to set
          * @return this builder
-         **/
+         */
         public Builder storageProvisionedInMBs(Long storageProvisionedInMBs) {
             this.storageProvisionedInMBs = storageProvisionedInMBs;
             this.__explicitlySet__.add("storageProvisionedInMBs");
             return this;
         }
-        /**
-         * Number of disks.
-         **/
+        /** Number of disks. */
         @com.fasterxml.jackson.annotation.JsonProperty("disksCount")
         private Integer disksCount;
 
         /**
          * Number of disks.
+         *
          * @param disksCount the value to set
          * @return this builder
-         **/
+         */
         public Builder disksCount(Integer disksCount) {
             this.disksCount = disksCount;
             this.__explicitlySet__.add("disksCount");
             return this;
         }
-        /**
-         * Lists the set of disks belonging to the virtual machine. This list is unordered.
-         **/
+        /** Lists the set of disks belonging to the virtual machine. This list is unordered. */
         @com.fasterxml.jackson.annotation.JsonProperty("disks")
         private java.util.List<Disk> disks;
 
         /**
          * Lists the set of disks belonging to the virtual machine. This list is unordered.
+         *
          * @param disks the value to set
          * @return this builder
-         **/
+         */
         public Builder disks(java.util.List<Disk> disks) {
             this.disks = disks;
             this.__explicitlySet__.add("disks");
             return this;
         }
-        /**
-         * Information about firmware type for this virtual machine.
-         **/
+        /** Information about firmware type for this virtual machine. */
         @com.fasterxml.jackson.annotation.JsonProperty("firmware")
         private String firmware;
 
         /**
          * Information about firmware type for this virtual machine.
+         *
          * @param firmware the value to set
          * @return this builder
-         **/
+         */
         public Builder firmware(String firmware) {
             this.firmware = firmware;
             this.__explicitlySet__.add("firmware");
             return this;
         }
-        /**
-         * Latency sensitivity.
-         **/
+        /** Latency sensitivity. */
         @com.fasterxml.jackson.annotation.JsonProperty("latencySensitivity")
         private String latencySensitivity;
 
         /**
          * Latency sensitivity.
+         *
          * @param latencySensitivity the value to set
          * @return this builder
-         **/
+         */
         public Builder latencySensitivity(String latencySensitivity) {
             this.latencySensitivity = latencySensitivity;
             this.__explicitlySet__.add("latencySensitivity");
             return this;
         }
-        /**
-         * The properties of the NVDIMMs attached to a virtual machine.
-         **/
+        /** The properties of the NVDIMMs attached to a virtual machine. */
         @com.fasterxml.jackson.annotation.JsonProperty("nvdimms")
         private java.util.List<Nvdimm> nvdimms;
 
         /**
          * The properties of the NVDIMMs attached to a virtual machine.
+         *
          * @param nvdimms the value to set
          * @return this builder
-         **/
+         */
         public Builder nvdimms(java.util.List<Nvdimm> nvdimms) {
             this.nvdimms = nvdimms;
             this.__explicitlySet__.add("nvdimms");
@@ -550,17 +525,16 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("scsiController");
             return this;
         }
-        /**
-         * Hardware version.
-         **/
+        /** Hardware version. */
         @com.fasterxml.jackson.annotation.JsonProperty("hardwareVersion")
         private String hardwareVersion;
 
         /**
          * Hardware version.
+         *
          * @param hardwareVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder hardwareVersion(String hardwareVersion) {
             this.hardwareVersion = hardwareVersion;
             this.__explicitlySet__.add("hardwareVersion");
@@ -701,9 +675,7 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -712,366 +684,340 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Primary IP address of the compute instance.
-     **/
+    /** Primary IP address of the compute instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryIp")
     private final String primaryIp;
 
     /**
      * Primary IP address of the compute instance.
+     *
      * @return the value
-     **/
+     */
     public String getPrimaryIp() {
         return primaryIp;
     }
 
-    /**
-     * Fully Qualified DNS Name.
-     **/
+    /** Fully Qualified DNS Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
     private final String dnsName;
 
     /**
      * Fully Qualified DNS Name.
+     *
      * @return the value
-     **/
+     */
     public String getDnsName() {
         return dnsName;
     }
 
-    /**
-     * Information about the asset.
-     **/
+    /** Information about the asset. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Information about the asset.
+     *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * Number of CPUs.
-     **/
+    /** Number of CPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("coresCount")
     private final Integer coresCount;
 
     /**
      * Number of CPUs.
+     *
      * @return the value
-     **/
+     */
     public Integer getCoresCount() {
         return coresCount;
     }
 
-    /**
-     * CPU model name.
-     **/
+    /** CPU model name. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuModel")
     private final String cpuModel;
 
     /**
      * CPU model name.
+     *
      * @return the value
-     **/
+     */
     public String getCpuModel() {
         return cpuModel;
     }
 
-    /**
-     * Number of GPU devices.
-     **/
+    /** Number of GPU devices. */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDevicesCount")
     private final Integer gpuDevicesCount;
 
     /**
      * Number of GPU devices.
+     *
      * @return the value
-     **/
+     */
     public Integer getGpuDevicesCount() {
         return gpuDevicesCount;
     }
 
-    /**
-     * List of GPU devices attached to a virtual machine.
-     **/
+    /** List of GPU devices attached to a virtual machine. */
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDevices")
     private final java.util.List<GpuDevice> gpuDevices;
 
     /**
      * List of GPU devices attached to a virtual machine.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<GpuDevice> getGpuDevices() {
         return gpuDevices;
     }
 
-    /**
-     * Number of threads per core.
-     **/
+    /** Number of threads per core. */
     @com.fasterxml.jackson.annotation.JsonProperty("threadsPerCoreCount")
     private final Integer threadsPerCoreCount;
 
     /**
      * Number of threads per core.
+     *
      * @return the value
-     **/
+     */
     public Integer getThreadsPerCoreCount() {
         return threadsPerCoreCount;
     }
 
-    /**
-     * Memory size in MBs.
-     **/
+    /** Memory size in MBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInMBs")
     private final Long memoryInMBs;
 
     /**
      * Memory size in MBs.
+     *
      * @return the value
-     **/
+     */
     public Long getMemoryInMBs() {
         return memoryInMBs;
     }
 
-    /**
-     * Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
-     **/
+    /** Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory. */
     @com.fasterxml.jackson.annotation.JsonProperty("isPmemEnabled")
     private final Boolean isPmemEnabled;
 
     /**
      * Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsPmemEnabled() {
         return isPmemEnabled;
     }
 
-    /**
-     * Pmem size in MBs.
-     **/
+    /** Pmem size in MBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("pmemInMBs")
     private final Long pmemInMBs;
 
     /**
      * Pmem size in MBs.
+     *
      * @return the value
-     **/
+     */
     public Long getPmemInMBs() {
         return pmemInMBs;
     }
 
-    /**
-     * Operating system.
-     **/
+    /** Operating system. */
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final String operatingSystem;
 
     /**
      * Operating system.
+     *
      * @return the value
-     **/
+     */
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
-    /**
-     * Operating system version.
-     **/
+    /** Operating system version. */
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
     private final String operatingSystemVersion;
 
     /**
      * Operating system version.
+     *
      * @return the value
-     **/
+     */
     public String getOperatingSystemVersion() {
         return operatingSystemVersion;
     }
 
-    /**
-     * Host name of the VM.
-     **/
+    /** Host name of the VM. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Host name of the VM.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
-    /**
-     * The current power state of the virtual machine.
-     **/
+    /** The current power state of the virtual machine. */
     @com.fasterxml.jackson.annotation.JsonProperty("powerState")
     private final String powerState;
 
     /**
      * The current power state of the virtual machine.
+     *
      * @return the value
-     **/
+     */
     public String getPowerState() {
         return powerState;
     }
 
-    /**
-     * Guest state.
-     **/
+    /** Guest state. */
     @com.fasterxml.jackson.annotation.JsonProperty("guestState")
     private final String guestState;
 
     /**
      * Guest state.
+     *
      * @return the value
-     **/
+     */
     public String getGuestState() {
         return guestState;
     }
 
-    /**
-     * Whether Trusted Platform Module (TPM) is enabled.
-     **/
+    /** Whether Trusted Platform Module (TPM) is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isTpmEnabled")
     private final Boolean isTpmEnabled;
 
     /**
      * Whether Trusted Platform Module (TPM) is enabled.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsTpmEnabled() {
         return isTpmEnabled;
     }
 
-    /**
-     * Number of connected networks.
-     **/
+    /** Number of connected networks. */
     @com.fasterxml.jackson.annotation.JsonProperty("connectedNetworks")
     private final Integer connectedNetworks;
 
     /**
      * Number of connected networks.
+     *
      * @return the value
-     **/
+     */
     public Integer getConnectedNetworks() {
         return connectedNetworks;
     }
 
-    /**
-     * Number of network ethernet cards.
-     **/
+    /** Number of network ethernet cards. */
     @com.fasterxml.jackson.annotation.JsonProperty("nicsCount")
     private final Integer nicsCount;
 
     /**
      * Number of network ethernet cards.
+     *
      * @return the value
-     **/
+     */
     public Integer getNicsCount() {
         return nicsCount;
     }
 
-    /**
-     * List of network ethernet cards attached to a virtual machine.
-     **/
+    /** List of network ethernet cards attached to a virtual machine. */
     @com.fasterxml.jackson.annotation.JsonProperty("nics")
     private final java.util.List<Nic> nics;
 
     /**
      * List of network ethernet cards attached to a virtual machine.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Nic> getNics() {
         return nics;
     }
 
-    /**
-     * Provision storage size in MBs.
-     **/
+    /** Provision storage size in MBs. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageProvisionedInMBs")
     private final Long storageProvisionedInMBs;
 
     /**
      * Provision storage size in MBs.
+     *
      * @return the value
-     **/
+     */
     public Long getStorageProvisionedInMBs() {
         return storageProvisionedInMBs;
     }
 
-    /**
-     * Number of disks.
-     **/
+    /** Number of disks. */
     @com.fasterxml.jackson.annotation.JsonProperty("disksCount")
     private final Integer disksCount;
 
     /**
      * Number of disks.
+     *
      * @return the value
-     **/
+     */
     public Integer getDisksCount() {
         return disksCount;
     }
 
-    /**
-     * Lists the set of disks belonging to the virtual machine. This list is unordered.
-     **/
+    /** Lists the set of disks belonging to the virtual machine. This list is unordered. */
     @com.fasterxml.jackson.annotation.JsonProperty("disks")
     private final java.util.List<Disk> disks;
 
     /**
      * Lists the set of disks belonging to the virtual machine. This list is unordered.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Disk> getDisks() {
         return disks;
     }
 
-    /**
-     * Information about firmware type for this virtual machine.
-     **/
+    /** Information about firmware type for this virtual machine. */
     @com.fasterxml.jackson.annotation.JsonProperty("firmware")
     private final String firmware;
 
     /**
      * Information about firmware type for this virtual machine.
+     *
      * @return the value
-     **/
+     */
     public String getFirmware() {
         return firmware;
     }
 
-    /**
-     * Latency sensitivity.
-     **/
+    /** Latency sensitivity. */
     @com.fasterxml.jackson.annotation.JsonProperty("latencySensitivity")
     private final String latencySensitivity;
 
     /**
      * Latency sensitivity.
+     *
      * @return the value
-     **/
+     */
     public String getLatencySensitivity() {
         return latencySensitivity;
     }
 
-    /**
-     * The properties of the NVDIMMs attached to a virtual machine.
-     **/
+    /** The properties of the NVDIMMs attached to a virtual machine. */
     @com.fasterxml.jackson.annotation.JsonProperty("nvdimms")
     private final java.util.List<Nvdimm> nvdimms;
 
     /**
      * The properties of the NVDIMMs attached to a virtual machine.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<Nvdimm> getNvdimms() {
         return nvdimms;
     }
@@ -1090,16 +1036,15 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
         return scsiController;
     }
 
-    /**
-     * Hardware version.
-     **/
+    /** Hardware version. */
     @com.fasterxml.jackson.annotation.JsonProperty("hardwareVersion")
     private final String hardwareVersion;
 
     /**
      * Hardware version.
+     *
      * @return the value
-     **/
+     */
     public String getHardwareVersion() {
         return hardwareVersion;
     }
@@ -1111,6 +1056,7 @@ public final class ComputeProperties extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

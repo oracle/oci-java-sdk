@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/**
- * The result of a cluster backup operation.
- **/
+/** The result of a cluster backup operation. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum BackupState {
+public enum BackupState implements com.oracle.bmc.http.internal.BmcEnum {
     Deleted("DELETED"),
     Success("SUCCESS"),
     Failed("FAILED"),

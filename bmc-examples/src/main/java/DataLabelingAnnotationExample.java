@@ -37,23 +37,22 @@ import com.oracle.bmc.datalabelingservicedataplane.responses.GetAnnotationRespon
 import com.oracle.bmc.datalabelingservicedataplane.responses.UpdateAnnotationResponse;
 
 /**
- * This class provides an example of how to use Data Labeling Service to create,
- * get, update and delete annotations for a record of Dataset.
- * <p>
- * The Data Labeling service queried by this example will be assigned:
- * <ul>
- * <li>an endpoint url defined by constant ENDPOINT</li>
- * <li>The configuration file used by service clients will be sourced from the
- * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
- * </ul>
- * </p>
+ * This class provides an example of how to use Data Labeling Service to create, get, update and
+ * delete annotations for a record of Dataset.
  *
- * @param args Arguments to provide to the example. The following arguments are
- *             expected:
- *             <ul>
- *             <li>The first argument is the OCID of the compartment.</li>
- *             <li>The second argument is the OCID of the record.</li>
- *             </ul>
+ * <p>The Data Labeling service queried by this example will be assigned:
+ *
+ * <ul>
+ *   <li>an endpoint url defined by constant ENDPOINT
+ *   <li>The configuration file used by service clients will be sourced from the default location
+ *       (~/.oci/config) and the DEFAULT profile will be used.
+ * </ul>
+ *
+ * @param args Arguments to provide to the example. The following arguments are expected:
+ *     <ul>
+ *       <li>The first argument is the OCID of the compartment.
+ *       <li>The second argument is the OCID of the record.
+ *     </ul>
  */
 public class DataLabelingAnnotationExample {
 
@@ -174,9 +173,7 @@ public class DataLabelingAnnotationExample {
         return response.getAnnotation().getId();
     }
 
-    /**
-     * Create Image object selection entity by providing vertices of the polygon.
-     */
+    /** Create Image object selection entity by providing vertices of the polygon. */
     private static List<Entity> buildImageSelectionObjectEntities() {
 
         List<NormalizedVertex> vertexList =
@@ -199,9 +196,7 @@ public class DataLabelingAnnotationExample {
                                 .build()));
     }
 
-    /**
-     * Create Single Label Annotation for Image/Document/Text Records
-     */
+    /** Create Single Label Annotation for Image/Document/Text Records */
     private static List<Entity> buildSingleLabelAnnotationEntities() {
         List<Label> labelList =
                 Collections.unmodifiableList(Arrays.asList(Label.builder().label("L1").build()));
@@ -209,9 +204,7 @@ public class DataLabelingAnnotationExample {
                 Arrays.asList(GenericEntity.builder().labels(labelList).build()));
     }
 
-    /**
-     * Create Multi Label Annotation for Image/Document/Text Records
-     */
+    /** Create Multi Label Annotation for Image/Document/Text Records */
     private static List<Entity> buildMultiLabelAnnotationEntities() {
         List<Label> labelList =
                 Collections.unmodifiableList(
@@ -222,10 +215,7 @@ public class DataLabelingAnnotationExample {
                 Arrays.asList(GenericEntity.builder().labels(labelList).build()));
     }
 
-    /**
-     * Create Text entity extraction Annotation by providing length and offset of
-     * selected text
-     */
+    /** Create Text entity extraction Annotation by providing length and offset of selected text */
     private static List<Entity> buildTextEntityExtractionEntities() {
 
         TextSpan textSpan1 =

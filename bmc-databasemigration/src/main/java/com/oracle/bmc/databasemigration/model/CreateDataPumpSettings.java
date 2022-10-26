@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional settings for Data Pump Export and Import jobs
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Optional settings for Data Pump Export and Import jobs <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateDataPumpSettings.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CreateDataPumpSettings.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CreateDataPumpSettings
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jobMode",
@@ -50,20 +49,19 @@ public final class CreateDataPumpSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Data Pump job mode.
-         * Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
-         *
-         **/
+         * Data Pump job mode. Refer to [link
+         * text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
         private DataPumpJobMode jobMode;
 
         /**
-         * Data Pump job mode.
-         * Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+         * Data Pump job mode. Refer to [link
+         * text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
          *
          * @param jobMode the value to set
          * @return this builder
-         **/
+         */
         public Builder jobMode(DataPumpJobMode jobMode) {
             this.jobMode = jobMode;
             this.__explicitlySet__.add("jobMode");
@@ -79,20 +77,19 @@ public final class CreateDataPumpSettings
             return this;
         }
         /**
-         * Defines remapping to be applied to objects as they are processed.
-         * Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
-         *
-         **/
+         * Defines remapping to be applied to objects as they are processed. Refer to
+         * [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
         private java.util.List<MetadataRemap> metadataRemaps;
 
         /**
-         * Defines remapping to be applied to objects as they are processed.
-         * Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
+         * Defines remapping to be applied to objects as they are processed. Refer to
+         * [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
          *
          * @param metadataRemaps the value to set
          * @return this builder
-         **/
+         */
         public Builder metadataRemaps(java.util.List<MetadataRemap> metadataRemaps) {
             this.metadataRemaps = metadataRemaps;
             this.__explicitlySet__.add("metadataRemaps");
@@ -168,9 +165,7 @@ public final class CreateDataPumpSettings
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -180,19 +175,18 @@ public final class CreateDataPumpSettings
     }
 
     /**
-     * Data Pump job mode.
-     * Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
-     *
-     **/
+     * Data Pump job mode. Refer to [link
+     * text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
     private final DataPumpJobMode jobMode;
 
     /**
-     * Data Pump job mode.
-     * Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
+     * Data Pump job mode. Refer to [link
+     * text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
      *
      * @return the value
-     **/
+     */
     public DataPumpJobMode getJobMode() {
         return jobMode;
     }
@@ -205,19 +199,18 @@ public final class CreateDataPumpSettings
     }
 
     /**
-     * Defines remapping to be applied to objects as they are processed.
-     * Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
-     *
-     **/
+     * Defines remapping to be applied to objects as they are processed. Refer to
+     * [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("metadataRemaps")
     private final java.util.List<MetadataRemap> metadataRemaps;
 
     /**
-     * Defines remapping to be applied to objects as they are processed.
-     * Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
+     * Defines remapping to be applied to objects as they are processed. Refer to
+     * [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
      *
      * @return the value
-     **/
+     */
     public java.util.List<MetadataRemap> getMetadataRemaps() {
         return metadataRemaps;
     }
@@ -250,6 +243,7 @@ public final class CreateDataPumpSettings
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

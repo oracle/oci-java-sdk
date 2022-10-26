@@ -9,14 +9,14 @@ import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
 
 /**
- * Class that exposes a way to create a {@link RequestSigner} for use with OCI.
- * The returned signers implement signing strategies outlined by <a href=
- * "https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">the
- * signing guidelines</a>.
- * <p>
- * This is only exposed so clients can write REST calls directly against OCI
- * without using the SDK provided clients, but this class may change without
- * notice -- users are encouraged to use the SDK provided clients.
+ * Class that exposes a way to create a {@link RequestSigner} for use with OCI. The returned signers
+ * implement signing strategies outlined by <a href=
+ * "https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm">the signing
+ * guidelines</a>.
+ *
+ * <p>This is only exposed so clients can write REST calls directly against OCI without using the
+ * SDK provided clients, but this class may change without notice -- users are encouraged to use the
+ * SDK provided clients.
  */
 @InternalSdk
 public class DefaultRequestSigner {
@@ -24,8 +24,7 @@ public class DefaultRequestSigner {
     /**
      * Creates a new RequestSigner using the {@link SigningStrategy#STANDARD}.
      *
-     * @param authProvider
-     *            The auth details provider to use.
+     * @param authProvider The auth details provider to use.
      * @return A new signer instance.
      */
     public static RequestSigner createRequestSigner(
@@ -36,10 +35,8 @@ public class DefaultRequestSigner {
     /**
      * Creates a new RequestSigner using the given signing strategy.
      *
-     * @param authProvider
-     *            The auth details provider to use.
-     * @param signingStrategy
-     *            The strategy to use.
+     * @param authProvider The auth details provider to use.
+     * @param signingStrategy The strategy to use.
      * @return A new signer instance.
      */
     public static RequestSigner createRequestSigner(

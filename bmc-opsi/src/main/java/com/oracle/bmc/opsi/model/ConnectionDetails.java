@@ -6,20 +6,22 @@ package com.oracle.bmc.opsi.model;
 
 /**
  * Connection details to connect to the database. HostName, protocol, and port should be specified.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConnectionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ConnectionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ConnectionDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostName", "protocol", "port", "serviceName"})
     public ConnectionDetails(String hostName, Protocol protocol, Integer port, String serviceName) {
@@ -34,63 +36,61 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
     public static class Builder {
         /**
          * Name of the listener host that will be used to create the connect string to the database.
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Name of the listener host that will be used to create the connect string to the database.
+         *
          * @param hostName the value to set
          * @return this builder
-         **/
+         */
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /**
-         * Protocol used for connection requests.
-         **/
+        /** Protocol used for connection requests. */
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Protocol used for connection requests.
+         *
          * @param protocol the value to set
          * @return this builder
-         **/
+         */
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /**
-         * Listener port number used for connection requests.
-         **/
+        /** Listener port number used for connection requests. */
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Listener port number used for connection requests.
+         *
          * @param port the value to set
          * @return this builder
-         **/
+         */
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /**
-         * Database service name used for connection requests.
-         **/
+        /** Database service name used for connection requests. */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * Database service name used for connection requests.
+         *
          * @param serviceName the value to set
          * @return this builder
-         **/
+         */
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
@@ -128,9 +128,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,30 +137,27 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * Name of the listener host that will be used to create the connect string to the database.
-     **/
+    /** Name of the listener host that will be used to create the connect string to the database. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Name of the listener host that will be used to create the connect string to the database.
+     *
      * @return the value
-     **/
+     */
     public String getHostName() {
         return hostName;
     }
 
-    /**
-     * Protocol used for connection requests.
-     **/
-    public enum Protocol {
+    /** Protocol used for connection requests. */
+    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
         Tcp("TCP"),
         Tcps("TCPS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -201,44 +196,41 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /**
-     * Protocol used for connection requests.
-     **/
+    /** Protocol used for connection requests. */
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Protocol used for connection requests.
+     *
      * @return the value
-     **/
+     */
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /**
-     * Listener port number used for connection requests.
-     **/
+    /** Listener port number used for connection requests. */
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Listener port number used for connection requests.
+     *
      * @return the value
-     **/
+     */
     public Integer getPort() {
         return port;
     }
 
-    /**
-     * Database service name used for connection requests.
-     **/
+    /** Database service name used for connection requests. */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * Database service name used for connection requests.
+     *
      * @return the value
-     **/
+     */
     public String getServiceName() {
         return serviceName;
     }
@@ -250,6 +242,7 @@ public final class ConnectionDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

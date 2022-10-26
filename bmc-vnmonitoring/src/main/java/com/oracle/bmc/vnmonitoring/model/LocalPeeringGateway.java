@@ -5,30 +5,32 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A local peering gateway (LPG) is an object on a VCN that lets that VCN peer
- * with another VCN in the same region. *Peering* means that the two VCNs can
- * communicate using private IP addresses, but without the traffic traversing the
- * internet or routing through your on-premises network. For more information,
- * see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * A local peering gateway (LPG) is an object on a VCN that lets that VCN peer with another VCN in
+ * the same region. *Peering* means that the two VCNs can communicate using private IP addresses,
+ * but without the traffic traversing the internet or routing through your on-premises network. For
+ * more information, see [VCN
+ * Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
  *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
+ * authorized, talk to an administrator. If you're an administrator who needs to write policies to
+ * give users access, see [Getting Started with
+ * Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LocalPeeringGateway.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = LocalPeeringGateway.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class LocalPeeringGateway
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -75,16 +77,19 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the LPG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the compartment containing the LPG.
+         *
          * @param compartmentId the value to set
          * @return this builder
-         **/
+         */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -93,8 +98,7 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -104,7 +108,7 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -112,56 +116,57 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
-         *
-         **/
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable.
-         * Avoid entering confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+         * confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         **/
+         * The LPG's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The LPG's Oracle ID
+         * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -169,65 +174,60 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         }
         /**
          * Whether the VCN at the other end of the peering is in a different tenancy.
-         * <p>
-         * Example: {@code false}
          *
-         **/
+         * <p>Example: {@code false}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancyPeering")
         private Boolean isCrossTenancyPeering;
 
         /**
          * Whether the VCN at the other end of the peering is in a different tenancy.
-         * <p>
-         * Example: {@code false}
+         *
+         * <p>Example: {@code false}
          *
          * @param isCrossTenancyPeering the value to set
          * @return this builder
-         **/
+         */
         public Builder isCrossTenancyPeering(Boolean isCrossTenancyPeering) {
             this.isCrossTenancyPeering = isCrossTenancyPeering;
             this.__explicitlySet__.add("isCrossTenancyPeering");
             return this;
         }
-        /**
-         * The LPG's current lifecycle state.
-         **/
+        /** The LPG's current lifecycle state. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The LPG's current lifecycle state.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The range of IP addresses available on the VCN at the other
-         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-         * You can use this as the destination CIDR for a route rule to route a subnet's
-         * traffic to this LPG.
-         * <p>
-         * Example: {@code 192.168.0.0/16}
+         * The range of IP addresses available on the VCN at the other end of the peering from this
+         * LPG. The value is {@code null} if the LPG is not peered. You can use this as the
+         * destination CIDR for a route rule to route a subnet's traffic to this LPG.
          *
-         **/
+         * <p>Example: {@code 192.168.0.0/16}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
         private String peerAdvertisedCidr;
 
         /**
-         * The range of IP addresses available on the VCN at the other
-         * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-         * You can use this as the destination CIDR for a route rule to route a subnet's
-         * traffic to this LPG.
-         * <p>
-         * Example: {@code 192.168.0.0/16}
+         * The range of IP addresses available on the VCN at the other end of the peering from this
+         * LPG. The value is {@code null} if the LPG is not peered. You can use this as the
+         * destination CIDR for a route rule to route a subnet's traffic to this LPG.
+         *
+         * <p>Example: {@code 192.168.0.0/16}
          *
          * @param peerAdvertisedCidr the value to set
          * @return this builder
-         **/
+         */
         public Builder peerAdvertisedCidr(String peerAdvertisedCidr) {
             this.peerAdvertisedCidr = peerAdvertisedCidr;
             this.__explicitlySet__.add("peerAdvertisedCidr");
@@ -237,8 +237,7 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
          * Whether the LPG is peered with another LPG. {@code NEW} means the LPG has not yet been
          * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
          * LPG at the other end of the peering has been deleted.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("peeringStatus")
         private PeeringStatus peeringStatus;
 
@@ -249,61 +248,64 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
          *
          * @param peeringStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder peeringStatus(PeeringStatus peeringStatus) {
             this.peeringStatus = peeringStatus;
             this.__explicitlySet__.add("peeringStatus");
             return this;
         }
-        /**
-         * Additional information regarding the peering status, if applicable.
-         **/
+        /** Additional information regarding the peering status, if applicable. */
         @com.fasterxml.jackson.annotation.JsonProperty("peeringStatusDetails")
         private String peeringStatusDetails;
 
         /**
          * Additional information regarding the peering status, if applicable.
+         *
          * @param peeringStatusDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder peeringStatusDetails(String peeringStatusDetails) {
             this.peeringStatusDetails = peeringStatusDetails;
             this.__explicitlySet__.add("peeringStatusDetails");
             return this;
         }
         /**
-         * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the LPG was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         **/
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         * <p>
-         * Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the LPG was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
-         **/
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN that uses the LPG.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the VCN that uses the LPG.
+         *
          * @param vcnId the value to set
          * @return this builder
-         **/
+         */
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -376,9 +378,7 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -388,111 +388,111 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the LPG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the LPG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the compartment containing the LPG.
+     *
      * @return the value
-     **/
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
-     *
-     **/
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
+     * confidential information.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     **/
+     * The LPG's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The LPG's Oracle ID
+     * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.
-     * <p>
-     * Example: {@code false}
      *
-     **/
+     * <p>Example: {@code false}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isCrossTenancyPeering")
     private final Boolean isCrossTenancyPeering;
 
     /**
      * Whether the VCN at the other end of the peering is in a different tenancy.
-     * <p>
-     * Example: {@code false}
+     *
+     * <p>Example: {@code false}
      *
      * @return the value
-     **/
+     */
     public Boolean getIsCrossTenancyPeering() {
         return isCrossTenancyPeering;
     }
 
-    /**
-     * The LPG's current lifecycle state.
-     **/
-    public enum LifecycleState {
+    /** The LPG's current lifecycle state. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -526,53 +526,48 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
             throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /**
-     * The LPG's current lifecycle state.
-     **/
+    /** The LPG's current lifecycle state. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The LPG's current lifecycle state.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The range of IP addresses available on the VCN at the other
-     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-     * You can use this as the destination CIDR for a route rule to route a subnet's
-     * traffic to this LPG.
-     * <p>
-     * Example: {@code 192.168.0.0/16}
+     * The range of IP addresses available on the VCN at the other end of the peering from this LPG.
+     * The value is {@code null} if the LPG is not peered. You can use this as the destination CIDR
+     * for a route rule to route a subnet's traffic to this LPG.
      *
-     **/
+     * <p>Example: {@code 192.168.0.0/16}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
     private final String peerAdvertisedCidr;
 
     /**
-     * The range of IP addresses available on the VCN at the other
-     * end of the peering from this LPG. The value is {@code null} if the LPG is not peered.
-     * You can use this as the destination CIDR for a route rule to route a subnet's
-     * traffic to this LPG.
-     * <p>
-     * Example: {@code 192.168.0.0/16}
+     * The range of IP addresses available on the VCN at the other end of the peering from this LPG.
+     * The value is {@code null} if the LPG is not peered. You can use this as the destination CIDR
+     * for a route rule to route a subnet's traffic to this LPG.
+     *
+     * <p>Example: {@code 192.168.0.0/16}
      *
      * @return the value
-     **/
+     */
     public String getPeerAdvertisedCidr() {
         return peerAdvertisedCidr;
     }
 
     /**
      * Whether the LPG is peered with another LPG. {@code NEW} means the LPG has not yet been
-     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
-     * LPG at the other end of the peering has been deleted.
-     *
-     **/
-    public enum PeeringStatus {
+     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the LPG
+     * at the other end of the peering has been deleted.
+     */
+    public enum PeeringStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Invalid("INVALID"),
         New("NEW"),
         Peered("PEERED"),
@@ -609,68 +604,70 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
     };
     /**
      * Whether the LPG is peered with another LPG. {@code NEW} means the LPG has not yet been
-     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
-     * LPG at the other end of the peering has been deleted.
-     *
-     **/
+     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the LPG
+     * at the other end of the peering has been deleted.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatus")
     private final PeeringStatus peeringStatus;
 
     /**
      * Whether the LPG is peered with another LPG. {@code NEW} means the LPG has not yet been
-     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the
-     * LPG at the other end of the peering has been deleted.
+     * peered. {@code PENDING} means the peering is being established. {@code REVOKED} means the LPG
+     * at the other end of the peering has been deleted.
      *
      * @return the value
-     **/
+     */
     public PeeringStatus getPeeringStatus() {
         return peeringStatus;
     }
 
-    /**
-     * Additional information regarding the peering status, if applicable.
-     **/
+    /** Additional information regarding the peering status, if applicable. */
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatusDetails")
     private final String peeringStatusDetails;
 
     /**
      * Additional information regarding the peering status, if applicable.
+     *
      * @return the value
-     **/
+     */
     public String getPeeringStatusDetails() {
         return peeringStatusDetails;
     }
 
     /**
-     * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the LPG was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
-     **/
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the LPG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-     * <p>
-     * Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the LPG was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
-     **/
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN that uses the LPG.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that uses the LPG.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the VCN that uses the LPG.
+     *
      * @return the value
-     **/
+     */
     public String getVcnId() {
         return vcnId;
     }
@@ -682,6 +679,7 @@ public final class LocalPeeringGateway extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

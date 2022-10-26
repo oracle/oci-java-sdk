@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Data that defines the capacity configuration.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Data that defines the capacity configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstanceReservationConfig.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstanceReservationConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstanceReservationConfig
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "faultDomain",
@@ -47,44 +46,46 @@ public final class InstanceReservationConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The fault domain of this capacity configuration.
-         * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
-         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
-         *
-         **/
+         * The fault domain of this capacity configuration. If a value is not supplied, this
+         * capacity configuration is applicable to all fault domains in the specified availability
+         * domain. For more information, see [Capacity
+         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * The fault domain of this capacity configuration.
-         * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
-         * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+         * The fault domain of this capacity configuration. If a value is not supplied, this
+         * capacity configuration is applicable to all fault domains in the specified availability
+         * domain. For more information, see [Capacity
+         * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
          *
          * @param faultDomain the value to set
          * @return this builder
-         **/
+         */
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
         /**
-         * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
-         * and other resources allocated to the instance.
-         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
-         *
-         **/
+         * The shape to use when launching instances using compute capacity reservations. The shape
+         * determines the number of CPUs, the amount of memory, and other resources allocated to the
+         * instance. You can list all available shapes by calling {@link
+         * ListComputeCapacityReservationInstanceShapes}.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
         /**
-         * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
-         * and other resources allocated to the instance.
-         * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+         * The shape to use when launching instances using compute capacity reservations. The shape
+         * determines the number of CPUs, the amount of memory, and other resources allocated to the
+         * instance. You can list all available shapes by calling {@link
+         * ListComputeCapacityReservationInstanceShapes}.
          *
          * @param instanceShape the value to set
          * @return this builder
-         **/
+         */
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -100,33 +101,35 @@ public final class InstanceReservationConfig
             this.__explicitlySet__.add("instanceShapeConfig");
             return this;
         }
-        /**
-         * The total number of instances that can be launched from the capacity configuration.
-         **/
+        /** The total number of instances that can be launched from the capacity configuration. */
         @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
         private Long reservedCount;
 
         /**
          * The total number of instances that can be launched from the capacity configuration.
+         *
          * @param reservedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder reservedCount(Long reservedCount) {
             this.reservedCount = reservedCount;
             this.__explicitlySet__.add("reservedCount");
             return this;
         }
         /**
-         * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
-         **/
+         * The amount of capacity in use out of the total capacity reserved in this capacity
+         * configuration.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("usedCount")
         private Long usedCount;
 
         /**
-         * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
+         * The amount of capacity in use out of the total capacity reserved in this capacity
+         * configuration.
+         *
          * @param usedCount the value to set
          * @return this builder
-         **/
+         */
         public Builder usedCount(Long usedCount) {
             this.usedCount = usedCount;
             this.__explicitlySet__.add("usedCount");
@@ -171,9 +174,7 @@ public final class InstanceReservationConfig
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -183,41 +184,43 @@ public final class InstanceReservationConfig
     }
 
     /**
-     * The fault domain of this capacity configuration.
-     * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
-     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
-     *
-     **/
+     * The fault domain of this capacity configuration. If a value is not supplied, this capacity
+     * configuration is applicable to all fault domains in the specified availability domain. For
+     * more information, see [Capacity
+     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * The fault domain of this capacity configuration.
-     * If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
-     * For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * The fault domain of this capacity configuration. If a value is not supplied, this capacity
+     * configuration is applicable to all fault domains in the specified availability domain. For
+     * more information, see [Capacity
+     * Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @return the value
-     **/
+     */
     public String getFaultDomain() {
         return faultDomain;
     }
 
     /**
-     * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
-     * and other resources allocated to the instance.
-     * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
-     *
-     **/
+     * The shape to use when launching instances using compute capacity reservations. The shape
+     * determines the number of CPUs, the amount of memory, and other resources allocated to the
+     * instance. You can list all available shapes by calling {@link
+     * ListComputeCapacityReservationInstanceShapes}.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
     /**
-     * The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory,
-     * and other resources allocated to the instance.
-     * You can list all available shapes by calling {@link ListComputeCapacityReservationInstanceShapes}.
+     * The shape to use when launching instances using compute capacity reservations. The shape
+     * determines the number of CPUs, the amount of memory, and other resources allocated to the
+     * instance. You can list all available shapes by calling {@link
+     * ListComputeCapacityReservationInstanceShapes}.
      *
      * @return the value
-     **/
+     */
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -229,30 +232,32 @@ public final class InstanceReservationConfig
         return instanceShapeConfig;
     }
 
-    /**
-     * The total number of instances that can be launched from the capacity configuration.
-     **/
+    /** The total number of instances that can be launched from the capacity configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCount")
     private final Long reservedCount;
 
     /**
      * The total number of instances that can be launched from the capacity configuration.
+     *
      * @return the value
-     **/
+     */
     public Long getReservedCount() {
         return reservedCount;
     }
 
     /**
-     * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
-     **/
+     * The amount of capacity in use out of the total capacity reserved in this capacity
+     * configuration.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("usedCount")
     private final Long usedCount;
 
     /**
-     * The amount of capacity in use out of the total capacity reserved in this capacity configuration.
+     * The amount of capacity in use out of the total capacity reserved in this capacity
+     * configuration.
+     *
      * @return the value
-     **/
+     */
     public Long getUsedCount() {
         return usedCount;
     }
@@ -264,6 +269,7 @@ public final class InstanceReservationConfig
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

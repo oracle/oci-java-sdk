@@ -5,21 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Partial information about a storage server which includes name and displayName.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Partial information about a storage server which includes name and displayName. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = StorageServerDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class StorageServerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = StorageServerDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class StorageServerDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"storageServerName", "storageServerDisplayName"})
     public StorageServerDetails(String storageServerName, String storageServerDisplayName) {
@@ -30,33 +31,31 @@ public final class StorageServerDetails extends com.oracle.bmc.http.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The storage server name.
-         **/
+        /** The storage server name. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerName")
         private String storageServerName;
 
         /**
          * The storage server name.
+         *
          * @param storageServerName the value to set
          * @return this builder
-         **/
+         */
         public Builder storageServerName(String storageServerName) {
             this.storageServerName = storageServerName;
             this.__explicitlySet__.add("storageServerName");
             return this;
         }
-        /**
-         * The user-friendly name for the storage server. The name does not have to be unique.
-         **/
+        /** The user-friendly name for the storage server. The name does not have to be unique. */
         @com.fasterxml.jackson.annotation.JsonProperty("storageServerDisplayName")
         private String storageServerDisplayName;
 
         /**
          * The user-friendly name for the storage server. The name does not have to be unique.
+         *
          * @param storageServerDisplayName the value to set
          * @return this builder
-         **/
+         */
         public Builder storageServerDisplayName(String storageServerDisplayName) {
             this.storageServerDisplayName = storageServerDisplayName;
             this.__explicitlySet__.add("storageServerDisplayName");
@@ -87,9 +86,7 @@ public final class StorageServerDetails extends com.oracle.bmc.http.internal.Exp
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,30 +95,28 @@ public final class StorageServerDetails extends com.oracle.bmc.http.internal.Exp
         return new Builder().copy(this);
     }
 
-    /**
-     * The storage server name.
-     **/
+    /** The storage server name. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerName")
     private final String storageServerName;
 
     /**
      * The storage server name.
+     *
      * @return the value
-     **/
+     */
     public String getStorageServerName() {
         return storageServerName;
     }
 
-    /**
-     * The user-friendly name for the storage server. The name does not have to be unique.
-     **/
+    /** The user-friendly name for the storage server. The name does not have to be unique. */
     @com.fasterxml.jackson.annotation.JsonProperty("storageServerDisplayName")
     private final String storageServerDisplayName;
 
     /**
      * The user-friendly name for the storage server. The name does not have to be unique.
+     *
      * @return the value
-     **/
+     */
     public String getStorageServerDisplayName() {
         return storageServerDisplayName;
     }
@@ -133,6 +128,7 @@ public final class StorageServerDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

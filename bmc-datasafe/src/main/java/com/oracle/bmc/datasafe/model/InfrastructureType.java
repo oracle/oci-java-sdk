@@ -5,15 +5,14 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The infrastructure type the database is running on. Allowed values are
- *   - ORACLE_CLOUD - Represents that the database is running on the Oracle Cloud Infrastructure.
- *   - CLOUD_AT_CUSTOMER - Represents that the database is running on Oracle Cloud@Customer infrastructure.
- *   - ON_PREMISES - Represents that the database is running on on-premises infrastructure.
- *   - NON_ORACLE_CLOUD - Represents that the database is running on non-Oracle cloud infrastructure.
- *
- **/
+ * The infrastructure type the database is running on. Allowed values are - ORACLE_CLOUD -
+ * Represents that the database is running on the Oracle Cloud Infrastructure. - CLOUD_AT_CUSTOMER -
+ * Represents that the database is running on Oracle Cloud@Customer infrastructure. - ON_PREMISES -
+ * Represents that the database is running on on-premises infrastructure. - NON_ORACLE_CLOUD -
+ * Represents that the database is running on non-Oracle cloud infrastructure.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum InfrastructureType {
+public enum InfrastructureType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleCloud("ORACLE_CLOUD"),
     CloudAtCustomer("CLOUD_AT_CUSTOMER"),
     OnPremises("ON_PREMISES"),

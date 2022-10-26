@@ -6,30 +6,37 @@ package com.oracle.bmc.applicationmigration.requests;
 
 import com.oracle.bmc.applicationmigration.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/ListSourceApplicationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSourceApplicationsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/applicationmigration/ListSourceApplicationsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListSourceApplicationsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 public class ListSourceApplicationsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
      */
     private String sourceId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the source.
      */
     public String getSourceId() {
         return sourceId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * compartment. Retrieves details of objects in the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
+     * compartment. Retrieves details of objects in the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -37,76 +44,66 @@ public class ListSourceApplicationsRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The number of items returned in a paginated {@code List} call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * The number of items returned in a paginated {@code List} call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * The number of items returned in a paginated {@code List} call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * The number of items returned in a paginated {@code List} call. For information about
+     * pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
+     * For information about pagination, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
-     *
-     */
+    /** The sort order, either {@code ASC} (ascending) or {@code DESC} (descending). */
     private com.oracle.bmc.applicationmigration.model.SortOrders sortOrder;
 
-    /**
-     * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
-     *
-     */
+    /** The sort order, either {@code ASC} (ascending) or {@code DESC} (descending). */
     public com.oracle.bmc.applicationmigration.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field on which to sort.
-     * By default, {@code TIMECREATED} is ordered descending.
-     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
-     *
+     * Specifies the field on which to sort. By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one
+     * field.
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field on which to sort.
-     * By default, {@code TIMECREATED} is ordered descending.
-     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
-     *
-     **/
-    public enum SortBy {
+     * Specifies the field on which to sort. By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one
+     * field.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -140,22 +137,17 @@ public class ListSourceApplicationsRequest
     };
 
     /**
-     * Specifies the field on which to sort.
-     * By default, {@code TIMECREATED} is ordered descending.
-     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
-     *
+     * Specifies the field on which to sort. By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one
+     * field.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * Resource name on which to query.
-     */
+    /** Resource name on which to query. */
     private String displayName;
 
-    /**
-     * Resource name on which to query.
-     */
+    /** Resource name on which to query. */
     public String getDisplayName() {
         return displayName;
     }
@@ -163,17 +155,19 @@ public class ListSourceApplicationsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSourceApplicationsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
          */
         private String sourceId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the source.
+         *
          * @param sourceId the value to set
          * @return this builder instance
          */
@@ -183,12 +177,15 @@ public class ListSourceApplicationsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a compartment. Retrieves details of objects in the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment. Retrieves details of objects in the specified compartment.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of a compartment. Retrieves details of objects in the specified compartment.
+         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -200,7 +197,6 @@ public class ListSourceApplicationsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -217,15 +213,16 @@ public class ListSourceApplicationsRequest
         }
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * The number of items returned in a paginated {@code List} call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about pagination, see
-         * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about
+         * pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -236,15 +233,16 @@ public class ListSourceApplicationsRequest
         }
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * The value of the {@code opc-next-page} response header from the preceding {@code List}
+         * call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-         * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List}
+         * call. For information about pagination, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -254,10 +252,7 @@ public class ListSourceApplicationsRequest
             return this;
         }
 
-        /**
-         * The sort order, either {@code ASC} (ascending) or {@code DESC} (descending).
-         *
-         */
+        /** The sort order, either {@code ASC} (ascending) or {@code DESC} (descending). */
         private com.oracle.bmc.applicationmigration.model.SortOrders sortOrder = null;
 
         /**
@@ -272,17 +267,16 @@ public class ListSourceApplicationsRequest
         }
 
         /**
-         * Specifies the field on which to sort.
-         * By default, {@code TIMECREATED} is ordered descending.
-         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
-         *
+         * Specifies the field on which to sort. By default, {@code TIMECREATED} is ordered
+         * descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort
+         * only on one field.
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field on which to sort.
-         * By default, {@code TIMECREATED} is ordered descending.
-         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+         * Specifies the field on which to sort. By default, {@code TIMECREATED} is ordered
+         * descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort
+         * only on one field.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -292,13 +286,12 @@ public class ListSourceApplicationsRequest
             return this;
         }
 
-        /**
-         * Resource name on which to query.
-         */
+        /** Resource name on which to query. */
         private String displayName = null;
 
         /**
          * Resource name on which to query.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -309,18 +302,19 @@ public class ListSourceApplicationsRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -332,6 +326,7 @@ public class ListSourceApplicationsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListSourceApplicationsRequest o) {
@@ -351,10 +346,11 @@ public class ListSourceApplicationsRequest
         /**
          * Build the instance of ListSourceApplicationsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListSourceApplicationsRequest
          */
@@ -368,7 +364,8 @@ public class ListSourceApplicationsRequest
         /**
          * Build the instance of ListSourceApplicationsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSourceApplicationsRequest
@@ -384,12 +381,14 @@ public class ListSourceApplicationsRequest
             request.sortBy = sortBy;
             request.displayName = displayName;
             return request;
-            // new ListSourceApplicationsRequest(sourceId, compartmentId, opcRequestId, limit, page, sortOrder, sortBy, displayName);
+            // new ListSourceApplicationsRequest(sourceId, compartmentId, opcRequestId, limit, page,
+            // sortOrder, sortBy, displayName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -406,6 +405,7 @@ public class ListSourceApplicationsRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,19 +5,21 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Manifest describing details about an import source
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Manifest describing details about an import source <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImportManifest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ImportManifest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ImportManifest
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -45,97 +47,103 @@ public final class ImportManifest extends com.oracle.bmc.http.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * the version of the export tool that was used to generate the manifest
-         **/
+        /** the version of the export tool that was used to generate the manifest */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * the version of the export tool that was used to generate the manifest
+         *
          * @param version the value to set
          * @return this builder
-         **/
+         */
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
         /**
-         * the type of application that the export tool was executed against to generate this manifest
-         **/
+         * the type of application that the export tool was executed against to generate this
+         * manifest
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exportType")
         private String exportType;
 
         /**
-         * the type of application that the export tool was executed against to generate this manifest
+         * the type of application that the export tool was executed against to generate this
+         * manifest
+         *
          * @param exportType the value to set
          * @return this builder
-         **/
+         */
         public Builder exportType(String exportType) {
             this.exportType = exportType;
             this.__explicitlySet__.add("exportType");
             return this;
         }
         /**
-         * application specific details as parsed from various sources of the application that was exported
-         **/
+         * application specific details as parsed from various sources of the application that was
+         * exported
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
         private Object exportDetails;
 
         /**
-         * application specific details as parsed from various sources of the application that was exported
+         * application specific details as parsed from various sources of the application that was
+         * exported
+         *
          * @param exportDetails the value to set
          * @return this builder
-         **/
+         */
         public Builder exportDetails(Object exportDetails) {
             this.exportDetails = exportDetails;
             this.__explicitlySet__.add("exportDetails");
             return this;
         }
-        /**
-         * when this manifest was generated
-         **/
+        /** when this manifest was generated */
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * when this manifest was generated
+         *
          * @param timestamp the value to set
          * @return this builder
-         **/
+         */
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
         /**
-         * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
-         **/
+         * the MD5 hash of the export artifact archive that was produced by the export tool and
+         * should be used with this manifest
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
 
         /**
-         * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
+         * the MD5 hash of the export artifact archive that was produced by the export tool and
+         * should be used with this manifest
+         *
          * @param md5 the value to set
          * @return this builder
-         **/
+         */
         public Builder md5(String md5) {
             this.md5 = md5;
             this.__explicitlySet__.add("md5");
             return this;
         }
-        /**
-         * a sha1 hash of all the fields of this manifest (excluding the signature)
-         **/
+        /** a sha1 hash of all the fields of this manifest (excluding the signature) */
         @com.fasterxml.jackson.annotation.JsonProperty("signature")
         private String signature;
 
         /**
          * a sha1 hash of all the fields of this manifest (excluding the signature)
+         *
          * @param signature the value to set
          * @return this builder
-         **/
+         */
         public Builder signature(String signature) {
             this.signature = signature;
             this.__explicitlySet__.add("signature");
@@ -184,9 +192,7 @@ public final class ImportManifest extends com.oracle.bmc.http.internal.Explicitl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,86 +201,90 @@ public final class ImportManifest extends com.oracle.bmc.http.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /**
-     * the version of the export tool that was used to generate the manifest
-     **/
+    /** the version of the export tool that was used to generate the manifest */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * the version of the export tool that was used to generate the manifest
+     *
      * @return the value
-     **/
+     */
     public String getVersion() {
         return version;
     }
 
     /**
      * the type of application that the export tool was executed against to generate this manifest
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exportType")
     private final String exportType;
 
     /**
      * the type of application that the export tool was executed against to generate this manifest
+     *
      * @return the value
-     **/
+     */
     public String getExportType() {
         return exportType;
     }
 
     /**
-     * application specific details as parsed from various sources of the application that was exported
-     **/
+     * application specific details as parsed from various sources of the application that was
+     * exported
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("exportDetails")
     private final Object exportDetails;
 
     /**
-     * application specific details as parsed from various sources of the application that was exported
+     * application specific details as parsed from various sources of the application that was
+     * exported
+     *
      * @return the value
-     **/
+     */
     public Object getExportDetails() {
         return exportDetails;
     }
 
-    /**
-     * when this manifest was generated
-     **/
+    /** when this manifest was generated */
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * when this manifest was generated
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
     /**
-     * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
-     **/
+     * the MD5 hash of the export artifact archive that was produced by the export tool and should
+     * be used with this manifest
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
     private final String md5;
 
     /**
-     * the MD5 hash of the export artifact archive that was produced by the export tool and should be used with this manifest
+     * the MD5 hash of the export artifact archive that was produced by the export tool and should
+     * be used with this manifest
+     *
      * @return the value
-     **/
+     */
     public String getMd5() {
         return md5;
     }
 
-    /**
-     * a sha1 hash of all the fields of this manifest (excluding the signature)
-     **/
+    /** a sha1 hash of all the fields of this manifest (excluding the signature) */
     @com.fasterxml.jackson.annotation.JsonProperty("signature")
     private final String signature;
 
     /**
      * a sha1 hash of all the fields of this manifest (excluding the signature)
+     *
      * @return the value
-     **/
+     */
     public String getSignature() {
         return signature;
     }
@@ -286,6 +296,7 @@ public final class ImportManifest extends com.oracle.bmc.http.internal.Explicitl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

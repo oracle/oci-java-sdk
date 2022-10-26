@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.apmcontrolplane.model;
 
-/**
- * Possible lifecycle states for an APM domain.
- **/
+/** Possible lifecycle states for an APM domain. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum LifecycleStates {
+public enum LifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

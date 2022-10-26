@@ -5,22 +5,23 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * (For tenancies that support identity domains) Properties for a region where a replica for the identity domain exists.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * (For tenancies that support identity domains) Properties for a region where a replica for the
+ * identity domain exists. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ReplicatedRegionDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = ReplicatedRegionDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class ReplicatedRegionDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"region", "url", "state"})
     public ReplicatedRegionDetails(String region, String url, State state) {
@@ -33,47 +34,42 @@ public final class ReplicatedRegionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
-         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
-         * for the full list of supported region names.
-         *
-         **/
+         * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
+         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * list of supported region names.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
-         * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
-         * for the full list of supported region names.
+         * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
+         * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+         * list of supported region names.
          *
          * @param region the value to set
          * @return this builder
-         **/
+         */
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /**
-         * Region-agnostic identity domain URL.
-         **/
+        /** Region-agnostic identity domain URL. */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * Region-agnostic identity domain URL.
+         *
          * @param url the value to set
          * @return this builder
-         **/
+         */
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /**
-         * The IDCS-replicated region state.
-         *
-         **/
+        /** The IDCS-replicated region state. */
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private State state;
 
@@ -82,7 +78,7 @@ public final class ReplicatedRegionDetails
          *
          * @param state the value to set
          * @return this builder
-         **/
+         */
         public Builder state(State state) {
             this.state = state;
             this.__explicitlySet__.add("state");
@@ -116,9 +112,7 @@ public final class ReplicatedRegionDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,44 +122,39 @@ public final class ReplicatedRegionDetails
     }
 
     /**
-     * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
-     * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
-     * for the full list of supported region names.
-     *
-     **/
+     * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+     * list of supported region names.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * A REPLICATION_ENABLED region, e.g. us-ashburn-1.
-     * See [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm)
-     * for the full list of supported region names.
+     * A REPLICATION_ENABLED region, e.g. us-ashburn-1. See [Regions and Availability
+     * Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm) for the full
+     * list of supported region names.
      *
      * @return the value
-     **/
+     */
     public String getRegion() {
         return region;
     }
 
-    /**
-     * Region-agnostic identity domain URL.
-     **/
+    /** Region-agnostic identity domain URL. */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * Region-agnostic identity domain URL.
+     *
      * @return the value
-     **/
+     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     * The IDCS-replicated region state.
-     *
-     **/
-    public enum State {
+    /** The IDCS-replicated region state. */
+    public enum State implements com.oracle.bmc.http.internal.BmcEnum {
         EnablingReplication("ENABLING_REPLICATION"),
         ReplicationEnabled("REPLICATION_ENABLED"),
         DisablingReplication("DISABLING_REPLICATION"),
@@ -173,8 +162,8 @@ public final class ReplicatedRegionDetails
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -212,10 +201,7 @@ public final class ReplicatedRegionDetails
             return UnknownEnumValue;
         }
     };
-    /**
-     * The IDCS-replicated region state.
-     *
-     **/
+    /** The IDCS-replicated region state. */
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final State state;
 
@@ -223,7 +209,7 @@ public final class ReplicatedRegionDetails
      * The IDCS-replicated region state.
      *
      * @return the value
-     **/
+     */
     public State getState() {
         return state;
     }
@@ -235,6 +221,7 @@ public final class ReplicatedRegionDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

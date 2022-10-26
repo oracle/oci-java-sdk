@@ -6,205 +6,164 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInstallationSitesRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListInstallationSitesExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * ListInstallationSitesRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListInstallationSitesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /**
-     * The vendor of the related Java Runtime.
-     */
+    /** The vendor of the related Java Runtime. */
     private String jreVendor;
 
-    /**
-     * The vendor of the related Java Runtime.
-     */
+    /** The vendor of the related Java Runtime. */
     public String getJreVendor() {
         return jreVendor;
     }
-    /**
-     * The distribution of the related Java Runtime.
-     */
+    /** The distribution of the related Java Runtime. */
     private String jreDistribution;
 
-    /**
-     * The distribution of the related Java Runtime.
-     */
+    /** The distribution of the related Java Runtime. */
     public String getJreDistribution() {
         return jreDistribution;
     }
-    /**
-     * The version of the related Java Runtime.
-     */
+    /** The version of the related Java Runtime. */
     private String jreVersion;
 
-    /**
-     * The version of the related Java Runtime.
-     */
+    /** The version of the related Java Runtime. */
     public String getJreVersion() {
         return jreVersion;
     }
-    /**
-     * The file system path of the installation.
-     */
+    /** The file system path of the installation. */
     private String installationPath;
 
-    /**
-     * The file system path of the installation.
-     */
+    /** The file system path of the installation. */
     public String getInstallationPath() {
         return installationPath;
     }
-    /**
-     * The Fleet-unique identifier of the related application.
-     */
+    /** The Fleet-unique identifier of the related application. */
     private String applicationId;
 
-    /**
-     * The Fleet-unique identifier of the related application.
-     */
+    /** The Fleet-unique identifier of the related application. */
     public String getApplicationId() {
         return applicationId;
     }
-    /**
-     * The Fleet-unique identifier of the related managed instance.
-     */
+    /** The Fleet-unique identifier of the related managed instance. */
     private String managedInstanceId;
 
-    /**
-     * The Fleet-unique identifier of the related managed instance.
-     */
+    /** The Fleet-unique identifier of the related managed instance. */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort installation sites. Only one sort order may be provided.
-     * Default order for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
-     * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+     * The field to sort installation sites. Only one sort order may be provided. Default order for
+     * _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**. Default
+     * order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
      * If no value is specified _managedInstanceId_ is default.
-     *
      */
     private com.oracle.bmc.jms.model.InstallationSiteSortBy sortBy;
 
     /**
-     * The field to sort installation sites. Only one sort order may be provided.
-     * Default order for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
-     * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+     * The field to sort installation sites. Only one sort order may be provided. Default order for
+     * _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**. Default
+     * order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
      * If no value is specified _managedInstanceId_ is default.
-     *
      */
     public com.oracle.bmc.jms.model.InstallationSiteSortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /**
-     * The operating system type.
-     */
+    /** The operating system type. */
     private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily;
 
-    /**
-     * The operating system type.
-     */
+    /** The operating system type. */
     public java.util.List<com.oracle.bmc.jms.model.OsFamily> getOsFamily() {
         return osFamily;
     }
-    /**
-     * The security status of the Java Runtime.
-     */
+    /** The security status of the Java Runtime. */
     private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus;
 
-    /**
-     * The security status of the Java Runtime.
-     */
+    /** The security status of the Java Runtime. */
     public com.oracle.bmc.jms.model.JreSecurityStatus getJreSecurityStatus() {
         return jreSecurityStatus;
     }
-    /**
-     * Filter the list with path contains the given value.
-     *
-     */
+    /** Filter the list with path contains the given value. */
     private String pathContains;
 
-    /**
-     * Filter the list with path contains the given value.
-     *
-     */
+    /** Filter the list with path contains the given value. */
     public String getPathContains() {
         return pathContains;
     }
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
@@ -213,17 +172,19 @@ public class ListInstallationSitesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInstallationSitesRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Fleet.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Fleet.
+         *
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -232,13 +193,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The vendor of the related Java Runtime.
-         */
+        /** The vendor of the related Java Runtime. */
         private String jreVendor = null;
 
         /**
          * The vendor of the related Java Runtime.
+         *
          * @param jreVendor the value to set
          * @return this builder instance
          */
@@ -247,13 +207,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The distribution of the related Java Runtime.
-         */
+        /** The distribution of the related Java Runtime. */
         private String jreDistribution = null;
 
         /**
          * The distribution of the related Java Runtime.
+         *
          * @param jreDistribution the value to set
          * @return this builder instance
          */
@@ -262,13 +221,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The version of the related Java Runtime.
-         */
+        /** The version of the related Java Runtime. */
         private String jreVersion = null;
 
         /**
          * The version of the related Java Runtime.
+         *
          * @param jreVersion the value to set
          * @return this builder instance
          */
@@ -277,13 +235,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The file system path of the installation.
-         */
+        /** The file system path of the installation. */
         private String installationPath = null;
 
         /**
          * The file system path of the installation.
+         *
          * @param installationPath the value to set
          * @return this builder instance
          */
@@ -292,13 +249,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The Fleet-unique identifier of the related application.
-         */
+        /** The Fleet-unique identifier of the related application. */
         private String applicationId = null;
 
         /**
          * The Fleet-unique identifier of the related application.
+         *
          * @param applicationId the value to set
          * @return this builder instance
          */
@@ -307,13 +263,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The Fleet-unique identifier of the related managed instance.
-         */
+        /** The Fleet-unique identifier of the related managed instance. */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the related managed instance.
+         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -322,13 +277,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -338,12 +292,15 @@ public class ListInstallationSitesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -352,13 +309,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The sort order, either 'asc' or 'desc'.
-         */
+        /** The sort order, either 'asc' or 'desc'. */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -368,19 +324,18 @@ public class ListInstallationSitesRequest
         }
 
         /**
-         * The field to sort installation sites. Only one sort order may be provided.
-         * Default order for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
-         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
-         * If no value is specified _managedInstanceId_ is default.
-         *
+         * The field to sort installation sites. Only one sort order may be provided. Default order
+         * for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
+         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is
+         * **ascending**. If no value is specified _managedInstanceId_ is default.
          */
         private com.oracle.bmc.jms.model.InstallationSiteSortBy sortBy = null;
 
         /**
-         * The field to sort installation sites. Only one sort order may be provided.
-         * Default order for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
-         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
-         * If no value is specified _managedInstanceId_ is default.
+         * The field to sort installation sites. Only one sort order may be provided. Default order
+         * for _timeLastSeen_, and _jreVersion_, _approximateApplicationCount_ is **descending**.
+         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is
+         * **ascending**. If no value is specified _managedInstanceId_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -390,13 +345,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -405,13 +359,12 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * The operating system type.
-         */
+        /** The operating system type. */
         private java.util.List<com.oracle.bmc.jms.model.OsFamily> osFamily = null;
 
         /**
          * The operating system type.
+         *
          * @param osFamily the value to set
          * @return this builder instance
          */
@@ -422,6 +375,7 @@ public class ListInstallationSitesRequest
 
         /**
          * Singular setter. The operating system type.
+         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -429,13 +383,12 @@ public class ListInstallationSitesRequest
             return this.osFamily(java.util.Arrays.asList(singularValue));
         }
 
-        /**
-         * The security status of the Java Runtime.
-         */
+        /** The security status of the Java Runtime. */
         private com.oracle.bmc.jms.model.JreSecurityStatus jreSecurityStatus = null;
 
         /**
          * The security status of the Java Runtime.
+         *
          * @param jreSecurityStatus the value to set
          * @return this builder instance
          */
@@ -445,10 +398,7 @@ public class ListInstallationSitesRequest
             return this;
         }
 
-        /**
-         * Filter the list with path contains the given value.
-         *
-         */
+        /** Filter the list with path contains the given value. */
         private String pathContains = null;
 
         /**
@@ -463,12 +413,15 @@ public class ListInstallationSitesRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeStart = null;
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeStart the value to set
          * @return this builder instance
          */
@@ -478,12 +431,15 @@ public class ListInstallationSitesRequest
         }
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeEnd the value to set
          * @return this builder instance
          */
@@ -494,18 +450,19 @@ public class ListInstallationSitesRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -517,6 +474,7 @@ public class ListInstallationSitesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListInstallationSitesRequest o) {
@@ -545,10 +503,11 @@ public class ListInstallationSitesRequest
         /**
          * Build the instance of ListInstallationSitesRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListInstallationSitesRequest
          */
@@ -562,7 +521,8 @@ public class ListInstallationSitesRequest
         /**
          * Build the instance of ListInstallationSitesRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInstallationSitesRequest
@@ -587,12 +547,15 @@ public class ListInstallationSitesRequest
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
             return request;
-            // new ListInstallationSitesRequest(fleetId, jreVendor, jreDistribution, jreVersion, installationPath, applicationId, managedInstanceId, limit, page, sortOrder, sortBy, opcRequestId, osFamily, jreSecurityStatus, pathContains, timeStart, timeEnd);
+            // new ListInstallationSitesRequest(fleetId, jreVendor, jreDistribution, jreVersion,
+            // installationPath, applicationId, managedInstanceId, limit, page, sortOrder, sortBy,
+            // opcRequestId, osFamily, jreSecurityStatus, pathContains, timeStart, timeEnd);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -618,6 +581,7 @@ public class ListInstallationSitesRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

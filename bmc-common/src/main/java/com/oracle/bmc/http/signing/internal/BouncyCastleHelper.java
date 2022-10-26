@@ -22,7 +22,8 @@ class BouncyCastleHelper {
             LOG.info("Instantiated provider: " + bouncyCastleProviderClass.getName());
         } catch (InstantiationException | IllegalAccessException ex) {
             LOG.error("Failed to instantiate any BouncyCastle provider", ex);
-            throw new BouncyCastleHelperException(ex);
+            throw new BouncyCastleHelperException(
+                    "Failed to instantiate any BouncyCastle provider", ex);
         }
     }
 
@@ -60,9 +61,7 @@ class BouncyCastleHelper {
         throw new IllegalStateException("No matching BouncyCastle provider found.");
     }
 
-    /**
-     * An exception in the {@link BouncyCastleHelper}.
-     */
+    /** An exception in the {@link BouncyCastleHelper}. */
     public static class BouncyCastleHelperException extends RuntimeException {
         public BouncyCastleHelperException(String message, Throwable cause) {
             super(message, cause);

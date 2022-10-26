@@ -5,21 +5,18 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Event type:
- *   * {@code KERNEL_OOPS} - Used to identify a kernel panic condition event
- *   * {@code KERNEL_CRASH} - Used to identify an internal fatal kernel error that cannot be safely recovered from
- *   * {@code CRASH} - Used to identify when an application stopped functioning properly and exited
- *   * {@code EXPLOIT_ATTEMPT} - Used to identify a known exploit detection as identified by Ksplice
- *   * {@code COMPLIANCE} - Used to identify a compliance related events
- *   * {@code TUNING_SUGGESTION} - Used to identify autonomous tuning suggestion events
- *   * {@code TUNING_APPLIED} - Used to identify when a tuning suggestion has been applied
- *   * {@code SECURITY} - Used to identify security related events
- *   * {@code ERROR} - Used to identify error related events
- *   * {@code WARNING} - Used to identify warning related events
- *
- **/
+ * Event type: * {@code KERNEL_OOPS} - Used to identify a kernel panic condition event * {@code
+ * KERNEL_CRASH} - Used to identify an internal fatal kernel error that cannot be safely recovered
+ * from * {@code CRASH} - Used to identify when an application stopped functioning properly and
+ * exited * {@code EXPLOIT_ATTEMPT} - Used to identify a known exploit detection as identified by
+ * Ksplice * {@code COMPLIANCE} - Used to identify a compliance related events * {@code
+ * TUNING_SUGGESTION} - Used to identify autonomous tuning suggestion events * {@code
+ * TUNING_APPLIED} - Used to identify when a tuning suggestion has been applied * {@code SECURITY} -
+ * Used to identify security related events * {@code ERROR} - Used to identify error related events
+ * * {@code WARNING} - Used to identify warning related events
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum EventType {
+public enum EventType implements com.oracle.bmc.http.internal.BmcEnum {
     KernelOops("KERNEL_OOPS"),
     KernelCrash("KERNEL_CRASH"),
     Crash("CRASH"),

@@ -5,22 +5,22 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * HCX on-premise license information summary.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * HCX on-premise license information summary. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = HcxLicenseSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = HcxLicenseSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class HcxLicenseSummary
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"activationKey", "status", "systemName"})
     public HcxLicenseSummary(String activationKey, HcxLicenseStatus status, String systemName) {
@@ -32,49 +32,46 @@ public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * HCX on-premise license key value.
-         **/
+        /** HCX on-premise license key value. */
         @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
         private String activationKey;
 
         /**
          * HCX on-premise license key value.
+         *
          * @param activationKey the value to set
          * @return this builder
-         **/
+         */
         public Builder activationKey(String activationKey) {
             this.activationKey = activationKey;
             this.__explicitlySet__.add("activationKey");
             return this;
         }
-        /**
-         * status of HCX on-premise license.
-         **/
+        /** status of HCX on-premise license. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private HcxLicenseStatus status;
 
         /**
          * status of HCX on-premise license.
+         *
          * @param status the value to set
          * @return this builder
-         **/
+         */
         public Builder status(HcxLicenseStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /**
-         * Name of the system that consumed the HCX on-premise license
-         **/
+        /** Name of the system that consumed the HCX on-premise license */
         @com.fasterxml.jackson.annotation.JsonProperty("systemName")
         private String systemName;
 
         /**
          * Name of the system that consumed the HCX on-premise license
+         *
          * @param systemName the value to set
          * @return this builder
-         **/
+         */
         public Builder systemName(String systemName) {
             this.systemName = systemName;
             this.__explicitlySet__.add("systemName");
@@ -108,9 +105,7 @@ public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +114,41 @@ public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * HCX on-premise license key value.
-     **/
+    /** HCX on-premise license key value. */
     @com.fasterxml.jackson.annotation.JsonProperty("activationKey")
     private final String activationKey;
 
     /**
      * HCX on-premise license key value.
+     *
      * @return the value
-     **/
+     */
     public String getActivationKey() {
         return activationKey;
     }
 
-    /**
-     * status of HCX on-premise license.
-     **/
+    /** status of HCX on-premise license. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final HcxLicenseStatus status;
 
     /**
      * status of HCX on-premise license.
+     *
      * @return the value
-     **/
+     */
     public HcxLicenseStatus getStatus() {
         return status;
     }
 
-    /**
-     * Name of the system that consumed the HCX on-premise license
-     **/
+    /** Name of the system that consumed the HCX on-premise license */
     @com.fasterxml.jackson.annotation.JsonProperty("systemName")
     private final String systemName;
 
     /**
      * Name of the system that consumed the HCX on-premise license
+     *
      * @return the value
-     **/
+     */
     public String getSystemName() {
         return systemName;
     }
@@ -168,6 +160,7 @@ public final class HcxLicenseSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

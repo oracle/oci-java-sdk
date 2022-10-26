@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/**
- * Possible lifecycle states.
- **/
+/** Possible lifecycle states. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ProblemLifecycleDetail {
+public enum ProblemLifecycleDetail implements com.oracle.bmc.http.internal.BmcEnum {
     Open("OPEN"),
     Resolved("RESOLVED"),
     Dismissed("DISMISSED"),

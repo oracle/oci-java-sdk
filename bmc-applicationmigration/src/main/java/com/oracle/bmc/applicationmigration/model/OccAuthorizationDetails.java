@@ -5,56 +5,53 @@
 package com.oracle.bmc.applicationmigration.model;
 
 /**
- * Credentials to access Oracle Cloud@Customer, which is the source environment from which you want to migrate the application.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Credentials to access Oracle Cloud@Customer, which is the source environment from which you want
+ * to migrate the application. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191031")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = OccAuthorizationDetails.Builder.class
-)
+        builder = OccAuthorizationDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "type"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "type")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class OccAuthorizationDetails extends AuthorizationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * User with Compute Operations role in Oracle Cloud@Customer.
-         **/
+        /** User with Compute Operations role in Oracle Cloud@Customer. */
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * User with Compute Operations role in Oracle Cloud@Customer.
+         *
          * @param username the value to set
          * @return this builder
-         **/
+         */
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /**
-         * Password for this user.
-         **/
+        /** Password for this user. */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * Password for this user.
+         *
          * @param password the value to set
          * @return this builder
-         **/
+         */
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -85,9 +82,7 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,30 +98,28 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
         this.password = password;
     }
 
-    /**
-     * User with Compute Operations role in Oracle Cloud@Customer.
-     **/
+    /** User with Compute Operations role in Oracle Cloud@Customer. */
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * User with Compute Operations role in Oracle Cloud@Customer.
+     *
      * @return the value
-     **/
+     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * Password for this user.
-     **/
+    /** Password for this user. */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * Password for this user.
+     *
      * @return the value
-     **/
+     */
     public String getPassword() {
         return password;
     }
@@ -138,6 +131,7 @@ public final class OccAuthorizationDetails extends AuthorizationDetails {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

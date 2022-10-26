@@ -4,9 +4,7 @@
  */
 package com.oracle.bmc.auth.exception;
 
-/**
- * Failed to fetch Instance Principal cert from the Instance Metadata Service.
- */
+/** Failed to fetch Instance Principal cert from the Instance Metadata Service. */
 public class InstancePrincipalUnavailableException extends IllegalArgumentException {
     public InstancePrincipalUnavailableException(String message, Exception cause) {
         super(message, cause);

@@ -5,19 +5,21 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The model for a domain governance entity.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The model for a domain governance entity. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DomainGovernance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class DomainGovernance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class DomainGovernance
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -66,181 +68,178 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of the domain governance entity.
-         **/
+        /** The OCID of the domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the domain governance entity.
+         *
          * @param id the value to set
          * @return this builder
-         **/
+         */
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /**
-         * The OCID of the tenancy that owns this domain governance entity.
-         **/
+        /** The OCID of the tenancy that owns this domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
         private String ownerId;
 
         /**
          * The OCID of the tenancy that owns this domain governance entity.
+         *
          * @param ownerId the value to set
          * @return this builder
-         **/
+         */
         public Builder ownerId(String ownerId) {
             this.ownerId = ownerId;
             this.__explicitlySet__.add("ownerId");
             return this;
         }
-        /**
-         * The OCID of the domain associated with this domain governance entity.
-         **/
+        /** The OCID of the domain associated with this domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
         /**
          * The OCID of the domain associated with this domain governance entity.
+         *
          * @param domainId the value to set
          * @return this builder
-         **/
+         */
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
             return this;
         }
-        /**
-         * Lifecycle state of the domain governance entity.
-         **/
+        /** Lifecycle state of the domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the domain governance entity.
+         *
          * @param lifecycleState the value to set
          * @return this builder
-         **/
+         */
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /**
-         * Indicates whether governance is enabled for this domain.
-         **/
+        /** Indicates whether governance is enabled for this domain. */
         @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
         private Boolean isGovernanceEnabled;
 
         /**
          * Indicates whether governance is enabled for this domain.
+         *
          * @param isGovernanceEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isGovernanceEnabled(Boolean isGovernanceEnabled) {
             this.isGovernanceEnabled = isGovernanceEnabled;
             this.__explicitlySet__.add("isGovernanceEnabled");
             return this;
         }
-        /**
-         * The email to notify the user, and that the ONS subscription will be created with.
-         **/
+        /** The email to notify the user, and that the ONS subscription will be created with. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
         private String subscriptionEmail;
 
         /**
          * The email to notify the user, and that the ONS subscription will be created with.
+         *
          * @param subscriptionEmail the value to set
          * @return this builder
-         **/
+         */
         public Builder subscriptionEmail(String subscriptionEmail) {
             this.subscriptionEmail = subscriptionEmail;
             this.__explicitlySet__.add("subscriptionEmail");
             return this;
         }
-        /**
-         * The ONS topic associated with this domain governance entity.
-         **/
+        /** The ONS topic associated with this domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
          * The ONS topic associated with this domain governance entity.
+         *
          * @param onsTopicId the value to set
          * @return this builder
-         **/
+         */
         public Builder onsTopicId(String onsTopicId) {
             this.onsTopicId = onsTopicId;
             this.__explicitlySet__.add("onsTopicId");
             return this;
         }
-        /**
-         * The ONS subscription associated with this domain governance entity.
-         **/
+        /** The ONS subscription associated with this domain governance entity. */
         @com.fasterxml.jackson.annotation.JsonProperty("onsSubscriptionId")
         private String onsSubscriptionId;
 
         /**
          * The ONS subscription associated with this domain governance entity.
+         *
          * @param onsSubscriptionId the value to set
          * @return this builder
-         **/
+         */
         public Builder onsSubscriptionId(String onsSubscriptionId) {
             this.onsSubscriptionId = onsSubscriptionId;
             this.__explicitlySet__.add("onsSubscriptionId");
             return this;
         }
         /**
-         * Date-time when this domain governance was created. An RFC 3339-formatted date and time string.
-         **/
+         * Date-time when this domain governance was created. An RFC 3339-formatted date and time
+         * string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * Date-time when this domain governance was created. An RFC 3339-formatted date and time string.
+         * Date-time when this domain governance was created. An RFC 3339-formatted date and time
+         * string.
+         *
          * @param timeCreated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time string.
-         **/
+         * Date-time when this domain governance was last updated. An RFC 3339-formatted date and
+         * time string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time string.
+         * Date-time when this domain governance was last updated. An RFC 3339-formatted date and
+         * time string.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -249,8 +248,7 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -260,7 +258,7 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -268,20 +266,19 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         **/
+         */
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -358,9 +355,7 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -369,58 +364,53 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of the domain governance entity.
-     **/
+    /** The OCID of the domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public String getId() {
         return id;
     }
 
-    /**
-     * The OCID of the tenancy that owns this domain governance entity.
-     **/
+    /** The OCID of the tenancy that owns this domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("ownerId")
     private final String ownerId;
 
     /**
      * The OCID of the tenancy that owns this domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public String getOwnerId() {
         return ownerId;
     }
 
-    /**
-     * The OCID of the domain associated with this domain governance entity.
-     **/
+    /** The OCID of the domain associated with this domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
     /**
      * The OCID of the domain associated with this domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public String getDomainId() {
         return domainId;
     }
 
-    /**
-     * Lifecycle state of the domain governance entity.
-     **/
-    public enum LifecycleState {
+    /** Lifecycle state of the domain governance entity. */
+    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -459,154 +449,152 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /**
-     * Lifecycle state of the domain governance entity.
-     **/
+    /** Lifecycle state of the domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /**
-     * Indicates whether governance is enabled for this domain.
-     **/
+    /** Indicates whether governance is enabled for this domain. */
     @com.fasterxml.jackson.annotation.JsonProperty("isGovernanceEnabled")
     private final Boolean isGovernanceEnabled;
 
     /**
      * Indicates whether governance is enabled for this domain.
+     *
      * @return the value
-     **/
+     */
     public Boolean getIsGovernanceEnabled() {
         return isGovernanceEnabled;
     }
 
-    /**
-     * The email to notify the user, and that the ONS subscription will be created with.
-     **/
+    /** The email to notify the user, and that the ONS subscription will be created with. */
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionEmail")
     private final String subscriptionEmail;
 
     /**
      * The email to notify the user, and that the ONS subscription will be created with.
+     *
      * @return the value
-     **/
+     */
     public String getSubscriptionEmail() {
         return subscriptionEmail;
     }
 
-    /**
-     * The ONS topic associated with this domain governance entity.
-     **/
+    /** The ONS topic associated with this domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
      * The ONS topic associated with this domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public String getOnsTopicId() {
         return onsTopicId;
     }
 
-    /**
-     * The ONS subscription associated with this domain governance entity.
-     **/
+    /** The ONS subscription associated with this domain governance entity. */
     @com.fasterxml.jackson.annotation.JsonProperty("onsSubscriptionId")
     private final String onsSubscriptionId;
 
     /**
      * The ONS subscription associated with this domain governance entity.
+     *
      * @return the value
-     **/
+     */
     public String getOnsSubscriptionId() {
         return onsSubscriptionId;
     }
 
     /**
-     * Date-time when this domain governance was created. An RFC 3339-formatted date and time string.
-     **/
+     * Date-time when this domain governance was created. An RFC 3339-formatted date and time
+     * string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * Date-time when this domain governance was created. An RFC 3339-formatted date and time string.
+     * Date-time when this domain governance was created. An RFC 3339-formatted date and time
+     * string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time string.
-     **/
+     * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time
+     * string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time string.
+     * Date-time when this domain governance was last updated. An RFC 3339-formatted date and time
+     * string.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
-     **/
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -618,6 +606,7 @@ public final class DomainGovernance extends com.oracle.bmc.http.internal.Explici
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

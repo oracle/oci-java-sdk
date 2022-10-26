@@ -5,21 +5,22 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * peer to modify ocpu allocation
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * peer to modify ocpu allocation <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ModifyPeerDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = ModifyPeerDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class ModifyPeerDetails
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerName", "ocpuAllocationParam"})
     public ModifyPeerDetails(String peerName, OcpuAllocationNumberParam ocpuAllocationParam) {
@@ -30,17 +31,16 @@ public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * peer identifier
-         **/
+        /** peer identifier */
         @com.fasterxml.jackson.annotation.JsonProperty("peerName")
         private String peerName;
 
         /**
          * peer identifier
+         *
          * @param peerName the value to set
          * @return this builder
-         **/
+         */
         public Builder peerName(String peerName) {
             this.peerName = peerName;
             this.__explicitlySet__.add("peerName");
@@ -80,9 +80,7 @@ public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.Explic
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -91,16 +89,15 @@ public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.Explic
         return new Builder().copy(this);
     }
 
-    /**
-     * peer identifier
-     **/
+    /** peer identifier */
     @com.fasterxml.jackson.annotation.JsonProperty("peerName")
     private final String peerName;
 
     /**
      * peer identifier
+     *
      * @return the value
-     **/
+     */
     public String getPeerName() {
         return peerName;
     }
@@ -119,6 +116,7 @@ public final class ModifyPeerDetails extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

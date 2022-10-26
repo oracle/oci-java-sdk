@@ -9,12 +9,15 @@ import com.oracle.bmc.objectstorage.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+     * debugging.
+     *
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -22,15 +25,14 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, provide this request ID.
      *
      * @return the value
      */
@@ -39,27 +41,28 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * For paginating a list of multipart upload parts.
-     * In the GET request, set the limit to the number of multipart upload parts that you want returned in the
-     * response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there are
-     * additional multipart upload parts to get. Include the header's value as the {@code page} parameter in the subsequent
-     * GET request to get the next batch of multipart upload parts. Repeat this process to retrieve the entire list
-     * of multipart upload parts.
-     * <p>
-     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of multipart upload parts. In the GET request, set the limit to the
+     * number of multipart upload parts that you want returned in the response. If the {@code
+     * opc-next-page} header appears in the response, then this is a partial list and there are
+     * additional multipart upload parts to get. Include the header's value as the {@code page}
+     * parameter in the subsequent GET request to get the next batch of multipart upload parts.
+     * Repeat this process to retrieve the entire list of multipart upload parts.
      *
+     * <p>For more details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For paginating a list of multipart upload parts.
-     * In the GET request, set the limit to the number of multipart upload parts that you want returned in the
-     * response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there are
-     * additional multipart upload parts to get. Include the header's value as the {@code page} parameter in the subsequent
-     * GET request to get the next batch of multipart upload parts. Repeat this process to retrieve the entire list
-     * of multipart upload parts.
-     * <p>
-     * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For paginating a list of multipart upload parts. In the GET request, set the limit to the
+     * number of multipart upload parts that you want returned in the response. If the {@code
+     * opc-next-page} header appears in the response, then this is a partial list and there are
+     * additional multipart upload parts to get. Include the header's value as the {@code page}
+     * parameter in the subsequent GET request to get the next batch of multipart upload parts.
+     * Repeat this process to retrieve the entire list of multipart upload parts.
+     *
+     * <p>For more details about how pagination works, see [List
+     * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -67,13 +70,12 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
         return opcNextPage;
     }
 
-    /**
-     * A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances.
-     */
+    /** A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances. */
     private java.util.List<com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary> items;
 
     /**
      * A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances.
+     *
      * @return the value
      */
     public java.util.List<com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary>
@@ -91,7 +93,7 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
     })
     private ListMultipartUploadPartsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcNextPage,
@@ -103,28 +105,35 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
         this.items = items;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    ListMultipartUploadPartsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
+         * debugging.
+         *
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -134,15 +143,14 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-         * request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -153,27 +161,28 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * For paginating a list of multipart upload parts.
-         * In the GET request, set the limit to the number of multipart upload parts that you want returned in the
-         * response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there are
-         * additional multipart upload parts to get. Include the header's value as the {@code page} parameter in the subsequent
-         * GET request to get the next batch of multipart upload parts. Repeat this process to retrieve the entire list
-         * of multipart upload parts.
-         * <p>
-         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of multipart upload parts. In the GET request, set the limit to the
+         * number of multipart upload parts that you want returned in the response. If the {@code
+         * opc-next-page} header appears in the response, then this is a partial list and there are
+         * additional multipart upload parts to get. Include the header's value as the {@code page}
+         * parameter in the subsequent GET request to get the next batch of multipart upload parts.
+         * Repeat this process to retrieve the entire list of multipart upload parts.
          *
+         * <p>For more details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For paginating a list of multipart upload parts.
-         * In the GET request, set the limit to the number of multipart upload parts that you want returned in the
-         * response. If the {@code opc-next-page} header appears in the response, then this is a partial list and there are
-         * additional multipart upload parts to get. Include the header's value as the {@code page} parameter in the subsequent
-         * GET request to get the next batch of multipart upload parts. Repeat this process to retrieve the entire list
-         * of multipart upload parts.
-         * <p>
-         * For more details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For paginating a list of multipart upload parts. In the GET request, set the limit to the
+         * number of multipart upload parts that you want returned in the response. If the {@code
+         * opc-next-page} header appears in the response, then this is a partial list and there are
+         * additional multipart upload parts to get. Include the header's value as the {@code page}
+         * parameter in the subsequent GET request to get the next batch of multipart upload parts.
+         * Repeat this process to retrieve the entire list of multipart upload parts.
+         *
+         * <p>For more details about how pagination works, see [List
+         * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -183,13 +192,12 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /**
-         * A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances.
-         */
+        /** A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances. */
         private java.util.List<com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary> items;
 
         /**
          * A list of com.oracle.bmc.objectstorage.model.MultipartUploadPartSummary instances.
+         *
          * @param items the value to set
          * @return this builder
          */
@@ -202,8 +210,10 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(ListMultipartUploadPartsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -217,8 +227,10 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public ListMultipartUploadPartsResponse build() {
             return new ListMultipartUploadPartsResponse(
                     __httpStatusCode__,
@@ -232,6 +244,7 @@ public class ListMultipartUploadPartsResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

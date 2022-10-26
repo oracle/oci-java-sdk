@@ -5,19 +5,20 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Inventory details.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Inventory details. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlInventory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SqlInventory extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"totalSqls", "totalDatabases", "sqlsAnalyzed"})
     public SqlInventory(Long totalSqls, Integer totalDatabases, Long sqlsAnalyzed) {
@@ -29,49 +30,46 @@ public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Total number of sqls. Example {@code 2000}
-         **/
+        /** Total number of sqls. Example {@code 2000} */
         @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
         private Long totalSqls;
 
         /**
          * Total number of sqls. Example {@code 2000}
+         *
          * @param totalSqls the value to set
          * @return this builder
-         **/
+         */
         public Builder totalSqls(Long totalSqls) {
             this.totalSqls = totalSqls;
             this.__explicitlySet__.add("totalSqls");
             return this;
         }
-        /**
-         * Total number of Databases. Example {@code 400}
-         **/
+        /** Total number of Databases. Example {@code 400} */
         @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
         private Integer totalDatabases;
 
         /**
          * Total number of Databases. Example {@code 400}
+         *
          * @param totalDatabases the value to set
          * @return this builder
-         **/
+         */
         public Builder totalDatabases(Integer totalDatabases) {
             this.totalDatabases = totalDatabases;
             this.__explicitlySet__.add("totalDatabases");
             return this;
         }
-        /**
-         * Total number of sqls analyzed by the query. Example {@code 120}
-         **/
+        /** Total number of sqls analyzed by the query. Example {@code 120} */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
         private Long sqlsAnalyzed;
 
         /**
          * Total number of sqls analyzed by the query. Example {@code 120}
+         *
          * @param sqlsAnalyzed the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlsAnalyzed(Long sqlsAnalyzed) {
             this.sqlsAnalyzed = sqlsAnalyzed;
             this.__explicitlySet__.add("sqlsAnalyzed");
@@ -105,9 +103,7 @@ public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlyS
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,44 +112,41 @@ public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /**
-     * Total number of sqls. Example {@code 2000}
-     **/
+    /** Total number of sqls. Example {@code 2000} */
     @com.fasterxml.jackson.annotation.JsonProperty("totalSqls")
     private final Long totalSqls;
 
     /**
      * Total number of sqls. Example {@code 2000}
+     *
      * @return the value
-     **/
+     */
     public Long getTotalSqls() {
         return totalSqls;
     }
 
-    /**
-     * Total number of Databases. Example {@code 400}
-     **/
+    /** Total number of Databases. Example {@code 400} */
     @com.fasterxml.jackson.annotation.JsonProperty("totalDatabases")
     private final Integer totalDatabases;
 
     /**
      * Total number of Databases. Example {@code 400}
+     *
      * @return the value
-     **/
+     */
     public Integer getTotalDatabases() {
         return totalDatabases;
     }
 
-    /**
-     * Total number of sqls analyzed by the query. Example {@code 120}
-     **/
+    /** Total number of sqls analyzed by the query. Example {@code 120} */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlsAnalyzed")
     private final Long sqlsAnalyzed;
 
     /**
      * Total number of sqls analyzed by the query. Example {@code 120}
+     *
      * @return the value
-     **/
+     */
     public Long getSqlsAnalyzed() {
         return sqlsAnalyzed;
     }
@@ -165,6 +158,7 @@ public final class SqlInventory extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

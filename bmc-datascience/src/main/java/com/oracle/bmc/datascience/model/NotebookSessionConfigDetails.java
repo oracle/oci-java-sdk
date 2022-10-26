@@ -5,22 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Details for the notebook session configuration.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for the notebook session configuration. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = NotebookSessionConfigDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = NotebookSessionConfigDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class NotebookSessionConfigDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "shape",
@@ -43,54 +43,63 @@ public final class NotebookSessionConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
-         *
-         **/
+         * The shape used to launch the notebook session compute instance. The list of available
+         * shapes in a given compartment can be retrieved using the {@code
+         * ListNotebookSessionShapes} endpoint.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+         * The shape used to launch the notebook session compute instance. The list of available
+         * shapes in a given compartment can be retrieved using the {@code
+         * ListNotebookSessionShapes} endpoint.
          *
          * @param shape the value to set
          * @return this builder
-         **/
+         */
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-         *
-         **/
+         * A notebook session instance is provided with a block storage volume. This specifies the
+         * size of the volume in GBs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
         /**
-         * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+         * A notebook session instance is provided with a block storage volume. This specifies the
+         * size of the volume in GBs.
          *
          * @param blockStorageSizeInGBs the value to set
          * @return this builder
-         **/
+         */
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
         /**
-         * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-         *
-         **/
+         * A notebook session instance is provided with a VNIC for network access. This specifies
+         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for
+         * egress to the internet.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+         * A notebook session instance is provided with a VNIC for network access. This specifies
+         * the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for
+         * egress to the internet.
          *
          * @param subnetId the value to set
          * @return this builder
-         **/
+         */
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -142,9 +151,7 @@ public final class NotebookSessionConfigDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -154,49 +161,56 @@ public final class NotebookSessionConfigDetails
     }
 
     /**
-     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
-     *
-     **/
+     * The shape used to launch the notebook session compute instance. The list of available shapes
+     * in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
+     * The shape used to launch the notebook session compute instance. The list of available shapes
+     * in a given compartment can be retrieved using the {@code ListNotebookSessionShapes} endpoint.
      *
      * @return the value
-     **/
+     */
     public String getShape() {
         return shape;
     }
 
     /**
-     * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-     *
-     **/
+     * A notebook session instance is provided with a block storage volume. This specifies the size
+     * of the volume in GBs.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
     /**
-     * A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+     * A notebook session instance is provided with a block storage volume. This specifies the size
+     * of the volume in GBs.
      *
      * @return the value
-     **/
+     */
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }
 
     /**
-     * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
-     *
-     **/
+     * A notebook session instance is provided with a VNIC for network access. This specifies the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to
+     * the internet.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+     * A notebook session instance is provided with a VNIC for network access. This specifies the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * subnet to create a VNIC in. The subnet should be in a VCN with a NAT gateway for egress to
+     * the internet.
      *
      * @return the value
-     **/
+     */
     public String getSubnetId() {
         return subnetId;
     }
@@ -215,6 +229,7 @@ public final class NotebookSessionConfigDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

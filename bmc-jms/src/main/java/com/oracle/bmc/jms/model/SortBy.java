@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.jms.model;
 
-/**
- * The resource sorting field.
- **/
+/** The resource sorting field. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum SortBy {
+public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
     DisplayName("displayName"),
     TimeCreated("timeCreated"),
     ;

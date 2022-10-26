@@ -5,22 +5,22 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The parameters for updating an organization.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The parameters for updating an organization. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateOrganizationDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateOrganizationDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateOrganizationDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"defaultUcmSubscriptionId"})
     public UpdateOrganizationDetails(String defaultUcmSubscriptionId) {
@@ -31,16 +31,19 @@ public final class UpdateOrganizationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
-         **/
+         * OCID of the default UCM subscription. Any tenancy joining the organization will
+         * automatically get assigned this subscription if a subscription if not explictly assigned.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
         private String defaultUcmSubscriptionId;
 
         /**
-         * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
+         * OCID of the default UCM subscription. Any tenancy joining the organization will
+         * automatically get assigned this subscription if a subscription if not explictly assigned.
+         *
          * @param defaultUcmSubscriptionId the value to set
          * @return this builder
-         **/
+         */
         public Builder defaultUcmSubscriptionId(String defaultUcmSubscriptionId) {
             this.defaultUcmSubscriptionId = defaultUcmSubscriptionId;
             this.__explicitlySet__.add("defaultUcmSubscriptionId");
@@ -68,9 +71,7 @@ public final class UpdateOrganizationDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,15 +81,18 @@ public final class UpdateOrganizationDetails
     }
 
     /**
-     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
-     **/
+     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically
+     * get assigned this subscription if a subscription if not explictly assigned.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     private final String defaultUcmSubscriptionId;
 
     /**
-     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
+     * OCID of the default UCM subscription. Any tenancy joining the organization will automatically
+     * get assigned this subscription if a subscription if not explictly assigned.
+     *
      * @return the value
-     **/
+     */
     public String getDefaultUcmSubscriptionId() {
         return defaultUcmSubscriptionId;
     }
@@ -100,6 +104,7 @@ public final class UpdateOrganizationDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

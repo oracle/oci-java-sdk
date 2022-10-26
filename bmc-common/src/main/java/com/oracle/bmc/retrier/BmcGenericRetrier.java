@@ -6,9 +6,13 @@ package com.oracle.bmc.retrier;
 
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.waiter.GenericWaiter;
+import com.oracle.bmc.waiter.WaiterScheduler;
 import javax.annotation.Nonnull;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import javax.annotation.Nullable;
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
+import java.util.concurrent.CompletionStage;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -16,8 +20,8 @@ import java.util.function.Supplier;
 import java.util.Optional;
 
 /**
- * A generic retrier that can be used to implement custom retry behavior for specific
- * types of calls.
+ * A generic retrier that can be used to implement custom retry behavior for specific types of
+ * calls.
  */
 public class BmcGenericRetrier {
     private static final org.slf4j.Logger LOG =
@@ -27,6 +31,7 @@ public class BmcGenericRetrier {
 
     /**
      * Creates a new retrier with the given configuration.
+     *
      * @param retryConfiguration The retry configuration to use.
      */
     public BmcGenericRetrier(@Nonnull final RetryConfiguration retryConfiguration) {
@@ -40,6 +45,7 @@ public class BmcGenericRetrier {
 
     /**
      * Executes the functionCall based upon the {@link RetryConfiguration} of this retrier
+     *
      * @param requestToUse The request that is passed to the functionCall
      * @param functionCall Function that will be invoked to send out the request.
      * @param <REQUEST> Request object class
@@ -66,7 +72,8 @@ public class BmcGenericRetrier {
                         (Function<REQUEST, RESPONSE>)
                                 ((request) -> {
                                     if (lastKnownException.get() != null) {
-                                        // we know there was a previous exception, so this must be a retry
+                                        // we know there was a previous exception, so this must be a
+                                        // retry
                                         LOG.debug(
                                                 "Http Status Code: {}, Error Code: {}, Retrying: {}",
                                                 lastKnownException.get().getStatusCode(),
@@ -97,8 +104,60 @@ public class BmcGenericRetrier {
         throw lastKnownException.get();
     }
 
+    public final <REQUEST, RESPONSE> CompletionStage<RESPONSE> executeAsync(
+            WaiterScheduler runner,
+            @Nonnull final REQUEST requestToUse,
+            @Nonnull final Function<REQUEST, CompletionStage<RESPONSE>> functionCall) {
+        AtomicReference<BmcException> lastKnownException = new AtomicReference<>();
+        return waiter.executeAsync(
+                        runner,
+                        () -> {
+                            if (lastKnownException.get() != null) {
+                                // we know there was a previous exception, so this must be a retry
+                                LOG.debug("Retrying: {}", lastKnownException.get().getMessage());
+                            }
+                            return doFunctionCallAsync(requestToUse, functionCall)
+                                    .handle(
+                                            (r, t) -> {
+                                                t = unwrap(t);
+                                                if (t instanceof BmcException
+                                                        && retryCondition.shouldBeRetried(
+                                                                (BmcException) t)) {
+                                                    lastKnownException.set((BmcException) t);
+                                                    return null;
+                                                }
+                                                if (t == null) {
+                                                    return r;
+                                                } else {
+                                                    LOG.debug(
+                                                            "Not retrying, not retriable: {}",
+                                                            t.getMessage());
+                                                    throw new CompletionException(t);
+                                                }
+                                            });
+                        },
+                        Objects::nonNull)
+                .thenCompose(
+                        res -> {
+                            if (res.isPresent()) {
+                                return CompletableFuture.completedFuture(res.get());
+                            } else {
+                                throw lastKnownException.get();
+                            }
+                        });
+    }
+
+    private static Throwable unwrap(Throwable t) {
+        if (t instanceof CompletionException && t.getCause() != null) {
+            return t.getCause();
+        } else {
+            return t;
+        }
+    }
+
     /**
      * Executes the actual function call. Can be overridden, e.g. for debugging.
+     *
      * @param functionCall Function that will be invoked to send out the request.
      * @param request request data for the function call
      * @param <REQUEST> Request object class
@@ -114,6 +173,12 @@ public class BmcGenericRetrier {
             throw new java.lang.NullPointerException("functionCall is marked non-null but is null");
         }
         return functionCall.apply(request);
+    }
+
+    protected <REQUEST, RESPONSE> CompletionStage<RESPONSE> doFunctionCallAsync(
+            @Nullable @Nonnull REQUEST request,
+            @Nonnull Function<REQUEST, CompletionStage<RESPONSE>> functionCall) {
+        return doFunctionCall(request, functionCall);
     }
 
     public GenericWaiter getWaiter() {

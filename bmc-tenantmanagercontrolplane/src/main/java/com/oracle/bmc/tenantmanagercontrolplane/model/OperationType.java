@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/**
- * Possible operation types.
- **/
+/** Possible operation types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
-public enum OperationType {
+public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateSenderInvitation("CREATE_SENDER_INVITATION"),
     AcceptRecipientInvitation("ACCEPT_RECIPIENT_INVITATION"),
     CancelSenderInvitation("CANCEL_SENDER_INVITATION"),

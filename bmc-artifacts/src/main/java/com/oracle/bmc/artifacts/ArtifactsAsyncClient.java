@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.artifacts;
 
-import com.oracle.bmc.artifacts.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.artifacts.requests.*;
 import com.oracle.bmc.artifacts.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for Artifacts service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Artifacts service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class ArtifactsAsyncClient implements ArtifactsAsync {
-    /**
-     * Service instance for Artifacts.
-     */
+public class ArtifactsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements ArtifactsAsync {
+    /** Service instance for Artifacts. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ARTIFACTS")
@@ -36,268 +39,16 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ArtifactsAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public ArtifactsAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private ArtifactsAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ArtifactsAsyncClient> {
@@ -319,121 +70,26 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public ArtifactsAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new ArtifactsAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new ArtifactsAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -444,56 +100,35 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     ChangeContainerRepositoryCompartmentRequest,
                                     ChangeContainerRepositoryCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeContainerRepositoryCompartment");
-        final ChangeContainerRepositoryCompartmentRequest interceptedRequest =
-                ChangeContainerRepositoryCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeContainerRepositoryCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeContainerRepositoryCompartmentDetails(),
+                "changeContainerRepositoryCompartmentDetails is required");
+
+        return clientCall(request, ChangeContainerRepositoryCompartmentResponse::builder)
+                .logger(LOG, "changeContainerRepositoryCompartment")
+                .serviceDetails(
                         "Artifacts",
                         "ChangeContainerRepositoryCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeContainerRepositoryCompartmentResponse>
-                transformer =
-                        ChangeContainerRepositoryCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeContainerRepositoryCompartmentRequest,
-                        ChangeContainerRepositoryCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeContainerRepositoryCompartmentRequest,
-                                ChangeContainerRepositoryCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeContainerRepositoryCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeContainerRepositoryCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeContainerRepositoryCompartmentRequest,
-                    ChangeContainerRepositoryCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeContainerRepositoryCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeContainerRepositoryCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -504,53 +139,33 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     ChangeRepositoryCompartmentRequest,
                                     ChangeRepositoryCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeRepositoryCompartment");
-        final ChangeRepositoryCompartmentRequest interceptedRequest =
-                ChangeRepositoryCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeRepositoryCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRepositoryCompartmentDetails(),
+                "changeRepositoryCompartmentDetails is required");
+
+        return clientCall(request, ChangeRepositoryCompartmentResponse::builder)
+                .logger(LOG, "changeRepositoryCompartment")
+                .serviceDetails(
                         "Artifacts",
                         "ChangeRepositoryCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeRepositoryCompartmentResponse>
-                transformer =
-                        ChangeRepositoryCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeRepositoryCompartmentRequest, ChangeRepositoryCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeRepositoryCompartmentRequest,
-                                ChangeRepositoryCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeRepositoryCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeRepositoryCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeRepositoryCompartmentRequest, ChangeRepositoryCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRepositoryCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRepositoryCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -561,53 +176,35 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     CreateContainerImageSignatureRequest,
                                     CreateContainerImageSignatureResponse>
                             handler) {
-        LOG.trace("Called async createContainerImageSignature");
-        final CreateContainerImageSignatureRequest interceptedRequest =
-                CreateContainerImageSignatureConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateContainerImageSignatureDetails(),
+                "createContainerImageSignatureDetails is required");
+
+        return clientCall(request, CreateContainerImageSignatureResponse::builder)
+                .logger(LOG, "createContainerImageSignature")
+                .serviceDetails(
                         "Artifacts",
                         "CreateContainerImageSignature",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateContainerImageSignatureResponse>
-                transformer =
-                        CreateContainerImageSignatureConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateContainerImageSignatureRequest,
-                                CreateContainerImageSignatureResponse>,
-                        java.util.concurrent.Future<CreateContainerImageSignatureResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateContainerImageSignatureDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateContainerImageSignatureRequest, CreateContainerImageSignatureResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateContainerImageSignatureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("imageSignatures")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
+                        CreateContainerImageSignatureResponse.Builder::containerImageSignature)
+                .handleResponseHeaderString(
+                        "etag", CreateContainerImageSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateContainerImageSignatureResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -616,53 +213,32 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>
                     handler) {
-        LOG.trace("Called async createContainerRepository");
-        final CreateContainerRepositoryRequest interceptedRequest =
-                CreateContainerRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateContainerRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateContainerRepositoryDetails(),
+                "createContainerRepositoryDetails is required");
+
+        return clientCall(request, CreateContainerRepositoryResponse::builder)
+                .logger(LOG, "createContainerRepository")
+                .serviceDetails(
                         "Artifacts",
                         "CreateContainerRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateContainerRepositoryResponse>
-                transformer =
-                        CreateContainerRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateContainerRepositoryRequest,
-                                CreateContainerRepositoryResponse>,
-                        java.util.concurrent.Future<CreateContainerRepositoryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateContainerRepositoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateContainerRepositoryRequest, CreateContainerRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateContainerRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerRepository.class,
+                        CreateContainerRepositoryResponse.Builder::containerRepository)
+                .handleResponseHeaderString("etag", CreateContainerRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateContainerRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -671,50 +247,30 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateRepositoryRequest, CreateRepositoryResponse>
                     handler) {
-        LOG.trace("Called async createRepository");
-        final CreateRepositoryRequest interceptedRequest =
-                CreateRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateRepositoryDetails(), "createRepositoryDetails is required");
+
+        return clientCall(request, CreateRepositoryResponse::builder)
+                .logger(LOG, "createRepository")
+                .serviceDetails(
                         "Artifacts",
                         "CreateRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateRepositoryResponse>
-                transformer =
-                        CreateRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateRepositoryRequest, CreateRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateRepositoryRequest, CreateRepositoryResponse>,
-                        java.util.concurrent.Future<CreateRepositoryResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateRepositoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateRepositoryRequest, CreateRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.Repository.class,
+                        CreateRepositoryResponse.Builder::repository)
+                .handleResponseHeaderString("etag", CreateRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -723,45 +279,27 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteContainerImageRequest, DeleteContainerImageResponse>
                     handler) {
-        LOG.trace("Called async deleteContainerImage");
-        final DeleteContainerImageRequest interceptedRequest =
-                DeleteContainerImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteContainerImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        return clientCall(request, DeleteContainerImageResponse::builder)
+                .logger(LOG, "deleteContainerImage")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteContainerImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteContainerImageResponse>
-                transformer =
-                        DeleteContainerImageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteContainerImageRequest, DeleteContainerImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteContainerImageRequest, DeleteContainerImageResponse>,
-                        java.util.concurrent.Future<DeleteContainerImageResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteContainerImageRequest, DeleteContainerImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteContainerImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteContainerImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -772,47 +310,28 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     DeleteContainerImageSignatureRequest,
                                     DeleteContainerImageSignatureResponse>
                             handler) {
-        LOG.trace("Called async deleteContainerImageSignature");
-        final DeleteContainerImageSignatureRequest interceptedRequest =
-                DeleteContainerImageSignatureConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageSignatureId(), "imageSignatureId must not be blank");
+
+        return clientCall(request, DeleteContainerImageSignatureResponse::builder)
+                .logger(LOG, "deleteContainerImageSignature")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteContainerImageSignature",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteContainerImageSignatureResponse>
-                transformer =
-                        DeleteContainerImageSignatureConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteContainerImageSignatureRequest,
-                                DeleteContainerImageSignatureResponse>,
-                        java.util.concurrent.Future<DeleteContainerImageSignatureResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteContainerImageSignatureRequest, DeleteContainerImageSignatureResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteContainerImageSignatureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("imageSignatures")
+                .appendPathParam(request.getImageSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteContainerImageSignatureResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -821,47 +340,27 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>
                     handler) {
-        LOG.trace("Called async deleteContainerRepository");
-        final DeleteContainerRepositoryRequest interceptedRequest =
-                DeleteContainerRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteContainerRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        return clientCall(request, DeleteContainerRepositoryResponse::builder)
+                .logger(LOG, "deleteContainerRepository")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteContainerRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteContainerRepositoryResponse>
-                transformer =
-                        DeleteContainerRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteContainerRepositoryRequest,
-                                DeleteContainerRepositoryResponse>,
-                        java.util.concurrent.Future<DeleteContainerRepositoryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteContainerRepositoryRequest, DeleteContainerRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteContainerRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteContainerRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -870,45 +369,27 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>
                     handler) {
-        LOG.trace("Called async deleteGenericArtifact");
-        final DeleteGenericArtifactRequest interceptedRequest =
-                DeleteGenericArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteGenericArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
+
+        return clientCall(request, DeleteGenericArtifactResponse::builder)
+                .logger(LOG, "deleteGenericArtifact")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteGenericArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGenericArtifactResponse>
-                transformer =
-                        DeleteGenericArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>,
-                        java.util.concurrent.Future<DeleteGenericArtifactResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteGenericArtifactRequest, DeleteGenericArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGenericArtifactRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("artifacts")
+                .appendPathParam(request.getArtifactId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteGenericArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -919,47 +400,35 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     DeleteGenericArtifactByPathRequest,
                                     DeleteGenericArtifactByPathResponse>
                             handler) {
-        LOG.trace("Called async deleteGenericArtifactByPath");
-        final DeleteGenericArtifactByPathRequest interceptedRequest =
-                DeleteGenericArtifactByPathConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        Validate.notBlank(request.getArtifactPath(), "artifactPath must not be blank");
+
+        Validate.notBlank(request.getVersion(), "version must not be blank");
+
+        return clientCall(request, DeleteGenericArtifactByPathResponse::builder)
+                .logger(LOG, "deleteGenericArtifactByPath")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteGenericArtifactByPath",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteGenericArtifactByPathResponse>
-                transformer =
-                        DeleteGenericArtifactByPathConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteGenericArtifactByPathRequest, DeleteGenericArtifactByPathResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteGenericArtifactByPathRequest,
-                                DeleteGenericArtifactByPathResponse>,
-                        java.util.concurrent.Future<DeleteGenericArtifactByPathResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteGenericArtifactByPathRequest, DeleteGenericArtifactByPathResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteGenericArtifactByPathRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .appendPathParam("artifactPaths")
+                .appendPathParam(request.getArtifactPath())
+                .appendPathParam("versions")
+                .appendPathParam(request.getVersion())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteGenericArtifactByPathResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -968,44 +437,26 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteRepositoryRequest, DeleteRepositoryResponse>
                     handler) {
-        LOG.trace("Called async deleteRepository");
-        final DeleteRepositoryRequest interceptedRequest =
-                DeleteRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        return clientCall(request, DeleteRepositoryResponse::builder)
+                .logger(LOG, "deleteRepository")
+                .serviceDetails(
                         "Artifacts",
                         "DeleteRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRepositoryResponse>
-                transformer =
-                        DeleteRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteRepositoryRequest, DeleteRepositoryResponse>,
-                        java.util.concurrent.Future<DeleteRepositoryResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteRepositoryRequest, DeleteRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1014,47 +465,29 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetContainerConfigurationRequest, GetContainerConfigurationResponse>
                     handler) {
-        LOG.trace("Called async getContainerConfiguration");
-        final GetContainerConfigurationRequest interceptedRequest =
-                GetContainerConfigurationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetContainerConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetContainerConfigurationResponse::builder)
+                .logger(LOG, "getContainerConfiguration")
+                .serviceDetails(
                         "Artifacts",
                         "GetContainerConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetContainerConfigurationResponse>
-                transformer =
-                        GetContainerConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetContainerConfigurationRequest, GetContainerConfigurationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetContainerConfigurationRequest,
-                                GetContainerConfigurationResponse>,
-                        java.util.concurrent.Future<GetContainerConfigurationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetContainerConfigurationRequest, GetContainerConfigurationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetContainerConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerConfiguration.class,
+                        GetContainerConfigurationResponse.Builder::containerConfiguration)
+                .handleResponseHeaderString("etag", GetContainerConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetContainerConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1063,44 +496,30 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetContainerImageRequest, GetContainerImageResponse>
                     handler) {
-        LOG.trace("Called async getContainerImage");
-        final GetContainerImageRequest interceptedRequest =
-                GetContainerImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetContainerImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+
+        return clientCall(request, GetContainerImageResponse::builder)
+                .logger(LOG, "getContainerImage")
+                .serviceDetails(
                         "Artifacts",
                         "GetContainerImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetContainerImageResponse>
-                transformer =
-                        GetContainerImageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetContainerImageRequest, GetContainerImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetContainerImageRequest, GetContainerImageResponse>,
-                        java.util.concurrent.Future<GetContainerImageResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetContainerImageRequest, GetContainerImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetContainerImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImage.class,
+                        GetContainerImageResponse.Builder::containerImage)
+                .handleResponseHeaderString("etag", GetContainerImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetContainerImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1111,47 +530,31 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     GetContainerImageSignatureRequest,
                                     GetContainerImageSignatureResponse>
                             handler) {
-        LOG.trace("Called async getContainerImageSignature");
-        final GetContainerImageSignatureRequest interceptedRequest =
-                GetContainerImageSignatureConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetContainerImageSignatureConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageSignatureId(), "imageSignatureId must not be blank");
+
+        return clientCall(request, GetContainerImageSignatureResponse::builder)
+                .logger(LOG, "getContainerImageSignature")
+                .serviceDetails(
                         "Artifacts",
                         "GetContainerImageSignature",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetContainerImageSignatureResponse>
-                transformer =
-                        GetContainerImageSignatureConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetContainerImageSignatureRequest,
-                                GetContainerImageSignatureResponse>,
-                        java.util.concurrent.Future<GetContainerImageSignatureResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetContainerImageSignatureRequest, GetContainerImageSignatureResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetContainerImageSignatureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("imageSignatures")
+                .appendPathParam(request.getImageSignatureId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImageSignature.class,
+                        GetContainerImageSignatureResponse.Builder::containerImageSignature)
+                .handleResponseHeaderString(
+                        "etag", GetContainerImageSignatureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetContainerImageSignatureResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1160,45 +563,30 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetContainerRepositoryRequest, GetContainerRepositoryResponse>
                     handler) {
-        LOG.trace("Called async getContainerRepository");
-        final GetContainerRepositoryRequest interceptedRequest =
-                GetContainerRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetContainerRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        return clientCall(request, GetContainerRepositoryResponse::builder)
+                .logger(LOG, "getContainerRepository")
+                .serviceDetails(
                         "Artifacts",
                         "GetContainerRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetContainerRepositoryResponse>
-                transformer =
-                        GetContainerRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetContainerRepositoryRequest, GetContainerRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetContainerRepositoryRequest, GetContainerRepositoryResponse>,
-                        java.util.concurrent.Future<GetContainerRepositoryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetContainerRepositoryRequest, GetContainerRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetContainerRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerRepository.class,
+                        GetContainerRepositoryResponse.Builder::containerRepository)
+                .handleResponseHeaderString("etag", GetContainerRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetContainerRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1207,44 +595,30 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetGenericArtifactRequest, GetGenericArtifactResponse>
                     handler) {
-        LOG.trace("Called async getGenericArtifact");
-        final GetGenericArtifactRequest interceptedRequest =
-                GetGenericArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetGenericArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
+
+        return clientCall(request, GetGenericArtifactResponse::builder)
+                .logger(LOG, "getGenericArtifact")
+                .serviceDetails(
                         "Artifacts",
                         "GetGenericArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetGenericArtifactResponse>
-                transformer =
-                        GetGenericArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetGenericArtifactRequest, GetGenericArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetGenericArtifactRequest, GetGenericArtifactResponse>,
-                        java.util.concurrent.Future<GetGenericArtifactResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetGenericArtifactRequest, GetGenericArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGenericArtifactRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("artifacts")
+                .appendPathParam(request.getArtifactId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.GenericArtifact.class,
+                        GetGenericArtifactResponse.Builder::genericArtifact)
+                .handleResponseHeaderString("etag", GetGenericArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetGenericArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1253,46 +627,38 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>
                     handler) {
-        LOG.trace("Called async getGenericArtifactByPath");
-        final GetGenericArtifactByPathRequest interceptedRequest =
-                GetGenericArtifactByPathConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        Validate.notBlank(request.getArtifactPath(), "artifactPath must not be blank");
+
+        Validate.notBlank(request.getVersion(), "version must not be blank");
+
+        return clientCall(request, GetGenericArtifactByPathResponse::builder)
+                .logger(LOG, "getGenericArtifactByPath")
+                .serviceDetails(
                         "Artifacts",
                         "GetGenericArtifactByPath",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetGenericArtifactByPathResponse>
-                transformer =
-                        GetGenericArtifactByPathConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>,
-                        java.util.concurrent.Future<GetGenericArtifactByPathResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetGenericArtifactByPathRequest, GetGenericArtifactByPathResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetGenericArtifactByPathRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .appendPathParam("artifactPaths")
+                .appendPathParam(request.getArtifactPath())
+                .appendPathParam("versions")
+                .appendPathParam(request.getVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.GenericArtifact.class,
+                        GetGenericArtifactByPathResponse.Builder::genericArtifact)
+                .handleResponseHeaderString("etag", GetGenericArtifactByPathResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetGenericArtifactByPathResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1300,43 +666,29 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             GetRepositoryRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
                     handler) {
-        LOG.trace("Called async getRepository");
-        final GetRepositoryRequest interceptedRequest =
-                GetRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        return clientCall(request, GetRepositoryResponse::builder)
+                .logger(LOG, "getRepository")
+                .serviceDetails(
                         "Artifacts",
                         "GetRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetRepositoryResponse>
-                transformer =
-                        GetRepositoryConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetRepositoryRequest, GetRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetRepositoryRequest, GetRepositoryResponse>,
-                        java.util.concurrent.Future<GetRepositoryResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetRepositoryRequest, GetRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.Repository.class,
+                        GetRepositoryResponse.Builder::repository)
+                .handleResponseHeaderString("etag", GetRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1347,47 +699,45 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     ListContainerImageSignaturesRequest,
                                     ListContainerImageSignaturesResponse>
                             handler) {
-        LOG.trace("Called async listContainerImageSignatures");
-        final ListContainerImageSignaturesRequest interceptedRequest =
-                ListContainerImageSignaturesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListContainerImageSignaturesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListContainerImageSignaturesResponse::builder)
+                .logger(LOG, "listContainerImageSignatures")
+                .serviceDetails(
                         "Artifacts",
                         "ListContainerImageSignatures",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListContainerImageSignaturesResponse>
-                transformer =
-                        ListContainerImageSignaturesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListContainerImageSignaturesRequest,
-                                ListContainerImageSignaturesResponse>,
-                        java.util.concurrent.Future<ListContainerImageSignaturesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListContainerImageSignaturesRequest, ListContainerImageSignaturesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainerImageSignaturesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("imageSignatures")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("imageId", request.getImageId())
+                .appendQueryParam("repositoryId", request.getRepositoryId())
+                .appendQueryParam("repositoryName", request.getRepositoryName())
+                .appendQueryParam("imageDigest", request.getImageDigest())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("kmsKeyId", request.getKmsKeyId())
+                .appendQueryParam("kmsKeyVersionId", request.getKmsKeyVersionId())
+                .appendEnumQueryParam("signingAlgorithm", request.getSigningAlgorithm())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImageSignatureCollection.class,
+                        ListContainerImageSignaturesResponse.Builder
+                                ::containerImageSignatureCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainerImageSignaturesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListContainerImageSignaturesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1396,45 +746,42 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListContainerImagesRequest, ListContainerImagesResponse>
                     handler) {
-        LOG.trace("Called async listContainerImages");
-        final ListContainerImagesRequest interceptedRequest =
-                ListContainerImagesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListContainerImagesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListContainerImagesResponse::builder)
+                .logger(LOG, "listContainerImages")
+                .serviceDetails(
                         "Artifacts",
                         "ListContainerImages",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListContainerImagesResponse>
-                transformer =
-                        ListContainerImagesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListContainerImagesRequest, ListContainerImagesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListContainerImagesRequest, ListContainerImagesResponse>,
-                        java.util.concurrent.Future<ListContainerImagesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListContainerImagesRequest, ListContainerImagesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainerImagesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("imageId", request.getImageId())
+                .appendQueryParam("isVersioned", request.getIsVersioned())
+                .appendQueryParam("repositoryId", request.getRepositoryId())
+                .appendQueryParam("repositoryName", request.getRepositoryName())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImageCollection.class,
+                        ListContainerImagesResponse.Builder::containerImageCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainerImagesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListContainerImagesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1443,47 +790,39 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>
                     handler) {
-        LOG.trace("Called async listContainerRepositories");
-        final ListContainerRepositoriesRequest interceptedRequest =
-                ListContainerRepositoriesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListContainerRepositoriesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListContainerRepositoriesResponse::builder)
+                .logger(LOG, "listContainerRepositories")
+                .serviceDetails(
                         "Artifacts",
                         "ListContainerRepositories",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListContainerRepositoriesResponse>
-                transformer =
-                        ListContainerRepositoriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListContainerRepositoriesRequest,
-                                ListContainerRepositoriesResponse>,
-                        java.util.concurrent.Future<ListContainerRepositoriesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListContainerRepositoriesRequest, ListContainerRepositoriesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainerRepositoriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("repositoryId", request.getRepositoryId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("isPublic", request.getIsPublic())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerRepositoryCollection.class,
+                        ListContainerRepositoriesResponse.Builder::containerRepositoryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainerRepositoriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListContainerRepositoriesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1492,45 +831,43 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListGenericArtifactsRequest, ListGenericArtifactsResponse>
                     handler) {
-        LOG.trace("Called async listGenericArtifacts");
-        final ListGenericArtifactsRequest interceptedRequest =
-                ListGenericArtifactsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListGenericArtifactsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getRepositoryId(), "repositoryId is required");
+
+        return clientCall(request, ListGenericArtifactsResponse::builder)
+                .logger(LOG, "listGenericArtifacts")
+                .serviceDetails(
                         "Artifacts",
                         "ListGenericArtifacts",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListGenericArtifactsResponse>
-                transformer =
-                        ListGenericArtifactsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListGenericArtifactsRequest, ListGenericArtifactsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListGenericArtifactsRequest, ListGenericArtifactsResponse>,
-                        java.util.concurrent.Future<ListGenericArtifactsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListGenericArtifactsRequest, ListGenericArtifactsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGenericArtifactsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("artifacts")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("repositoryId", request.getRepositoryId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("artifactPath", request.getArtifactPath())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("sha256", request.getSha256())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.GenericArtifactCollection.class,
+                        ListGenericArtifactsResponse.Builder::genericArtifactCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGenericArtifactsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGenericArtifactsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1539,44 +876,37 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListRepositoriesRequest, ListRepositoriesResponse>
                     handler) {
-        LOG.trace("Called async listRepositories");
-        final ListRepositoriesRequest interceptedRequest =
-                ListRepositoriesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRepositoriesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRepositoriesResponse::builder)
+                .logger(LOG, "listRepositories")
+                .serviceDetails(
                         "Artifacts",
                         "ListRepositories",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListRepositoriesResponse>
-                transformer =
-                        ListRepositoriesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListRepositoriesRequest, ListRepositoriesResponse>,
-                        java.util.concurrent.Future<ListRepositoriesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRepositoriesRequest, ListRepositoriesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRepositoriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("isImmutable", request.getIsImmutable())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.RepositoryCollection.class,
+                        ListRepositoriesResponse.Builder::repositoryCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRepositoriesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRepositoriesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1585,51 +915,38 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RemoveContainerVersionRequest, RemoveContainerVersionResponse>
                     handler) {
-        LOG.trace("Called async removeContainerVersion");
-        final RemoveContainerVersionRequest interceptedRequest =
-                RemoveContainerVersionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveContainerVersionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveContainerVersionDetails(),
+                "removeContainerVersionDetails is required");
+
+        return clientCall(request, RemoveContainerVersionResponse::builder)
+                .logger(LOG, "removeContainerVersion")
+                .serviceDetails(
                         "Artifacts",
                         "RemoveContainerVersion",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveContainerVersionResponse>
-                transformer =
-                        RemoveContainerVersionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveContainerVersionRequest, RemoveContainerVersionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveContainerVersionRequest, RemoveContainerVersionResponse>,
-                        java.util.concurrent.Future<RemoveContainerVersionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveContainerVersionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveContainerVersionRequest, RemoveContainerVersionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveContainerVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("actions")
+                .appendPathParam("removeVersion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImage.class,
+                        RemoveContainerVersionResponse.Builder::containerImage)
+                .handleResponseHeaderString("etag", RemoveContainerVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveContainerVersionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1638,51 +955,38 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RestoreContainerImageRequest, RestoreContainerImageResponse>
                     handler) {
-        LOG.trace("Called async restoreContainerImage");
-        final RestoreContainerImageRequest interceptedRequest =
-                RestoreContainerImageConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RestoreContainerImageConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getImageId(), "imageId must not be blank");
+        Objects.requireNonNull(
+                request.getRestoreContainerImageDetails(),
+                "restoreContainerImageDetails is required");
+
+        return clientCall(request, RestoreContainerImageResponse::builder)
+                .logger(LOG, "restoreContainerImage")
+                .serviceDetails(
                         "Artifacts",
                         "RestoreContainerImage",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage");
-        final java.util.function.Function<javax.ws.rs.core.Response, RestoreContainerImageResponse>
-                transformer =
-                        RestoreContainerImageConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RestoreContainerImageRequest, RestoreContainerImageResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RestoreContainerImageRequest, RestoreContainerImageResponse>,
-                        java.util.concurrent.Future<RestoreContainerImageResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRestoreContainerImageDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RestoreContainerImageRequest, RestoreContainerImageResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestoreContainerImageRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("images")
+                .appendPathParam(request.getImageId())
+                .appendPathParam("actions")
+                .appendPathParam("restore")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerImage.class,
+                        RestoreContainerImageResponse.Builder::containerImage)
+                .handleResponseHeaderString("etag", RestoreContainerImageResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RestoreContainerImageResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1693,52 +997,37 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     UpdateContainerConfigurationRequest,
                                     UpdateContainerConfigurationResponse>
                             handler) {
-        LOG.trace("Called async updateContainerConfiguration");
-        final UpdateContainerConfigurationRequest interceptedRequest =
-                UpdateContainerConfigurationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateContainerConfigurationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(
+                request.getUpdateContainerConfigurationDetails(),
+                "updateContainerConfigurationDetails is required");
+
+        return clientCall(request, UpdateContainerConfigurationResponse::builder)
+                .logger(LOG, "updateContainerConfiguration")
+                .serviceDetails(
                         "Artifacts",
                         "UpdateContainerConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateContainerConfigurationResponse>
-                transformer =
-                        UpdateContainerConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateContainerConfigurationRequest, UpdateContainerConfigurationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateContainerConfigurationRequest,
-                                UpdateContainerConfigurationResponse>,
-                        java.util.concurrent.Future<UpdateContainerConfigurationResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateContainerConfigurationDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateContainerConfigurationRequest, UpdateContainerConfigurationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateContainerConfigurationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("configuration")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerConfiguration.class,
+                        UpdateContainerConfigurationResponse.Builder::containerConfiguration)
+                .handleResponseHeaderString(
+                        "etag", UpdateContainerConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateContainerConfigurationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1747,52 +1036,35 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>
                     handler) {
-        LOG.trace("Called async updateContainerRepository");
-        final UpdateContainerRepositoryRequest interceptedRequest =
-                UpdateContainerRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateContainerRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateContainerRepositoryDetails(),
+                "updateContainerRepositoryDetails is required");
+
+        return clientCall(request, UpdateContainerRepositoryResponse::builder)
+                .logger(LOG, "updateContainerRepository")
+                .serviceDetails(
                         "Artifacts",
                         "UpdateContainerRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateContainerRepositoryResponse>
-                transformer =
-                        UpdateContainerRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateContainerRepositoryRequest,
-                                UpdateContainerRepositoryResponse>,
-                        java.util.concurrent.Future<UpdateContainerRepositoryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateContainerRepositoryDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateContainerRepositoryRequest, UpdateContainerRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateContainerRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("container")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.ContainerRepository.class,
+                        UpdateContainerRepositoryResponse.Builder::containerRepository)
+                .handleResponseHeaderString("etag", UpdateContainerRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateContainerRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1801,50 +1073,35 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>
                     handler) {
-        LOG.trace("Called async updateGenericArtifact");
-        final UpdateGenericArtifactRequest interceptedRequest =
-                UpdateGenericArtifactConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateGenericArtifactConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getArtifactId(), "artifactId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateGenericArtifactDetails(),
+                "updateGenericArtifactDetails is required");
+
+        return clientCall(request, UpdateGenericArtifactResponse::builder)
+                .logger(LOG, "updateGenericArtifact")
+                .serviceDetails(
                         "Artifacts",
                         "UpdateGenericArtifact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGenericArtifactResponse>
-                transformer =
-                        UpdateGenericArtifactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>,
-                        java.util.concurrent.Future<UpdateGenericArtifactResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateGenericArtifactDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateGenericArtifactRequest, UpdateGenericArtifactResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGenericArtifactRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("artifacts")
+                .appendPathParam(request.getArtifactId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.GenericArtifact.class,
+                        UpdateGenericArtifactResponse.Builder::genericArtifact)
+                .handleResponseHeaderString("etag", UpdateGenericArtifactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGenericArtifactResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1855,52 +1112,44 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
                                     UpdateGenericArtifactByPathRequest,
                                     UpdateGenericArtifactByPathResponse>
                             handler) {
-        LOG.trace("Called async updateGenericArtifactByPath");
-        final UpdateGenericArtifactByPathRequest interceptedRequest =
-                UpdateGenericArtifactByPathConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateGenericArtifactByPathConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+
+        Validate.notBlank(request.getArtifactPath(), "artifactPath must not be blank");
+
+        Validate.notBlank(request.getVersion(), "version must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateGenericArtifactByPathDetails(),
+                "updateGenericArtifactByPathDetails is required");
+
+        return clientCall(request, UpdateGenericArtifactByPathResponse::builder)
+                .logger(LOG, "updateGenericArtifactByPath")
+                .serviceDetails(
                         "Artifacts",
                         "UpdateGenericArtifactByPath",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateGenericArtifactByPathResponse>
-                transformer =
-                        UpdateGenericArtifactByPathConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateGenericArtifactByPathRequest, UpdateGenericArtifactByPathResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateGenericArtifactByPathRequest,
-                                UpdateGenericArtifactByPathResponse>,
-                        java.util.concurrent.Future<UpdateGenericArtifactByPathResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateGenericArtifactByPathDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateGenericArtifactByPathRequest, UpdateGenericArtifactByPathResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateGenericArtifactByPathRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("generic")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .appendPathParam("artifactPaths")
+                .appendPathParam(request.getArtifactPath())
+                .appendPathParam("versions")
+                .appendPathParam(request.getVersion())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.GenericArtifact.class,
+                        UpdateGenericArtifactByPathResponse.Builder::genericArtifact)
+                .handleResponseHeaderString(
+                        "etag", UpdateGenericArtifactByPathResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateGenericArtifactByPathResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1909,48 +1158,191 @@ public class ArtifactsAsyncClient implements ArtifactsAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateRepositoryRequest, UpdateRepositoryResponse>
                     handler) {
-        LOG.trace("Called async updateRepository");
-        final UpdateRepositoryRequest interceptedRequest =
-                UpdateRepositoryConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRepositoryConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRepositoryId(), "repositoryId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRepositoryDetails(), "updateRepositoryDetails is required");
+
+        return clientCall(request, UpdateRepositoryResponse::builder)
+                .logger(LOG, "updateRepository")
+                .serviceDetails(
                         "Artifacts",
                         "UpdateRepository",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRepositoryResponse>
-                transformer =
-                        UpdateRepositoryConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRepositoryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("repositories")
+                .appendPathParam(request.getRepositoryId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.artifacts.model.Repository.class,
+                        UpdateRepositoryResponse.Builder::repository)
+                .handleResponseHeaderString("etag", UpdateRepositoryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRepositoryResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateRepositoryRequest, UpdateRepositoryResponse>,
-                        java.util.concurrent.Future<UpdateRepositoryResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateRepositoryDetails(),
-                                ib,
-                                transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateRepositoryRequest, UpdateRepositoryResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public ArtifactsAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

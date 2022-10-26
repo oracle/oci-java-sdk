@@ -6,85 +6,65 @@ package com.oracle.bmc.tenantmanagercontrolplane.requests;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListLinksExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLinksRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListLinksExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLinksRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200801")
 public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The ID of the parent tenancy this link is associated with.
-     */
+    /** The ID of the parent tenancy this link is associated with. */
     private String parentTenancyId;
 
-    /**
-     * The ID of the parent tenancy this link is associated with.
-     */
+    /** The ID of the parent tenancy this link is associated with. */
     public String getParentTenancyId() {
         return parentTenancyId;
     }
-    /**
-     * The ID of the child tenancy this link is associated with.
-     */
+    /** The ID of the child tenancy this link is associated with. */
     private String childTenancyId;
 
-    /**
-     * The ID of the child tenancy this link is associated with.
-     */
+    /** The ID of the child tenancy this link is associated with. */
     public String getChildTenancyId() {
         return childTenancyId;
     }
-    /**
-     * The lifecycle state of the resource.
-     */
+    /** The lifecycle state of the resource. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
 
-    /**
-     * The lifecycle state of the resource.
-     */
+    /** The lifecycle state of the resource. */
     public com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually
+     * retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, whether 'asc' or 'desc'.
-     */
+    /** The sort order to use, whether 'asc' or 'desc'. */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -92,17 +72,15 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListLinksRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the parent tenancy this link is associated with.
-         */
+        /** The ID of the parent tenancy this link is associated with. */
         private String parentTenancyId = null;
 
         /**
          * The ID of the parent tenancy this link is associated with.
+         *
          * @param parentTenancyId the value to set
          * @return this builder instance
          */
@@ -111,13 +89,12 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The ID of the child tenancy this link is associated with.
-         */
+        /** The ID of the child tenancy this link is associated with. */
         private String childTenancyId = null;
 
         /**
          * The ID of the child tenancy this link is associated with.
+         *
          * @param childTenancyId the value to set
          * @return this builder instance
          */
@@ -126,13 +103,12 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The lifecycle state of the resource.
-         */
+        /** The lifecycle state of the resource. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState = null;
 
         /**
          * The lifecycle state of the resource.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -142,13 +118,12 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -158,12 +133,15 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -172,13 +150,12 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -187,13 +164,12 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /**
-         * The sort order to use, whether 'asc' or 'desc'.
-         */
+        /** The sort order to use, whether 'asc' or 'desc'. */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -205,18 +181,19 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -228,6 +205,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListLinksRequest o) {
@@ -246,10 +224,11 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListLinksRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListLinksRequest
          */
@@ -263,7 +242,8 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListLinksRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListLinksRequest
@@ -278,12 +258,14 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.limit = limit;
             request.sortOrder = sortOrder;
             return request;
-            // new ListLinksRequest(parentTenancyId, childTenancyId, lifecycleState, opcRequestId, page, limit, sortOrder);
+            // new ListLinksRequest(parentTenancyId, childTenancyId, lifecycleState, opcRequestId,
+            // page, limit, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -299,6 +281,7 @@ public class ListLinksRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

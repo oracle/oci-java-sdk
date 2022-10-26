@@ -5,22 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * A Windows update installed on the Windows managed instance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * A Windows update installed on the Windows managed instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = InstalledWindowsUpdateSummary.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = InstalledWindowsUpdateSummary.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class InstalledWindowsUpdateSummary
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "name", "updateType"})
     public InstalledWindowsUpdateSummary(String displayName, String name, UpdateTypes updateType) {
@@ -32,55 +32,50 @@ public final class InstalledWindowsUpdateSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Windows Update name
-         **/
+        /** Windows Update name */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Windows Update name
+         *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID,
-         * but is a unique identifier assigned by Microsoft.
-         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-         *
-         **/
+         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique identifier for the Windows update. NOTE - This is not an OCID,
-         * but is a unique identifier assigned by Microsoft.
-         * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+         * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+         * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
          *
          * @param name the value to set
          * @return this builder
-         **/
+         */
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /**
-         * The purpose of this update.
-         **/
+        /** The purpose of this update. */
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateTypes updateType;
 
         /**
          * The purpose of this update.
+         *
          * @param updateType the value to set
          * @return this builder
-         **/
+         */
         public Builder updateType(UpdateTypes updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
@@ -114,9 +109,7 @@ public final class InstalledWindowsUpdateSummary
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,50 +118,45 @@ public final class InstalledWindowsUpdateSummary
         return new Builder().copy(this);
     }
 
-    /**
-     * Windows Update name
-     **/
+    /** Windows Update name */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Windows Update name
+     *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID,
-     * but is a unique identifier assigned by Microsoft.
-     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
-     *
-     **/
+     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique identifier for the Windows update. NOTE - This is not an OCID,
-     * but is a unique identifier assigned by Microsoft.
-     * Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
+     * Unique identifier for the Windows update. NOTE - This is not an OCID, but is a unique
+     * identifier assigned by Microsoft. Example: {@code 6981d463-cd91-4a26-b7c4-ea4ded9183ed}
      *
      * @return the value
-     **/
+     */
     public String getName() {
         return name;
     }
 
-    /**
-     * The purpose of this update.
-     **/
+    /** The purpose of this update. */
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateTypes updateType;
 
     /**
      * The purpose of this update.
+     *
      * @return the value
-     **/
+     */
     public UpdateTypes getUpdateType() {
         return updateType;
     }
@@ -180,6 +168,7 @@ public final class InstalledWindowsUpdateSummary
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,48 +6,36 @@ package com.oracle.bmc.apmtraces.requests;
 
 import com.oracle.bmc.apmtraces.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTraceRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTraceRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * The APM Domain ID the request is intended for.
-     *
-     */
+    /** The APM Domain ID the request is intended for. */
     private String apmDomainId;
 
-    /**
-     * The APM Domain ID the request is intended for.
-     *
-     */
+    /** The APM Domain ID the request is intended for. */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /**
-     * Unique Application Performance Monitoring trace identifier (traceId).
-     *
-     */
+    /** Unique Application Performance Monitoring trace identifier (traceId). */
     private String traceKey;
 
-    /**
-     * Unique Application Performance Monitoring trace identifier (traceId).
-     *
-     */
+    /** Unique Application Performance Monitoring trace identifier (traceId). */
     public String getTraceKey() {
         return traceKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -55,14 +43,10 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetTraceRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The APM Domain ID the request is intended for.
-         *
-         */
+        /** The APM Domain ID the request is intended for. */
         private String apmDomainId = null;
 
         /**
@@ -76,10 +60,7 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /**
-         * Unique Application Performance Monitoring trace identifier (traceId).
-         *
-         */
+        /** Unique Application Performance Monitoring trace identifier (traceId). */
         private String traceKey = null;
 
         /**
@@ -94,14 +75,13 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
@@ -114,18 +94,19 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -137,6 +118,7 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetTraceRequest o) {
@@ -151,10 +133,11 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetTraceRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetTraceRequest
          */
@@ -168,7 +151,8 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetTraceRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetTraceRequest
@@ -185,6 +169,7 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -193,6 +178,7 @@ public class GetTraceRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

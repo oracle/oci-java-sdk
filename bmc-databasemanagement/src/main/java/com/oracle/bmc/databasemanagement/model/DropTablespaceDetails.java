@@ -5,22 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to drop a tablespace.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The details required to drop a tablespace. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DropTablespaceDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DropTablespaceDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DropTablespaceDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -51,10 +51,7 @@ public final class DropTablespaceDetails
             this.__explicitlySet__.add("credentialDetails");
             return this;
         }
-        /**
-         * Specifies whether all the contents of the tablespace being dropped should be dropped.
-         *
-         **/
+        /** Specifies whether all the contents of the tablespace being dropped should be dropped. */
         @com.fasterxml.jackson.annotation.JsonProperty("isIncludingContents")
         private Boolean isIncludingContents;
 
@@ -63,25 +60,26 @@ public final class DropTablespaceDetails
          *
          * @param isIncludingContents the value to set
          * @return this builder
-         **/
+         */
         public Builder isIncludingContents(Boolean isIncludingContents) {
             this.isIncludingContents = isIncludingContents;
             this.__explicitlySet__.add("isIncludingContents");
             return this;
         }
         /**
-         * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
-         *
-         **/
+         * Specifies whether all the associated data files of the tablespace being dropped should be
+         * dropped.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDroppingDataFiles")
         private Boolean isDroppingDataFiles;
 
         /**
-         * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
+         * Specifies whether all the associated data files of the tablespace being dropped should be
+         * dropped.
          *
          * @param isDroppingDataFiles the value to set
          * @return this builder
-         **/
+         */
         public Builder isDroppingDataFiles(Boolean isDroppingDataFiles) {
             this.isDroppingDataFiles = isDroppingDataFiles;
             this.__explicitlySet__.add("isDroppingDataFiles");
@@ -89,8 +87,7 @@ public final class DropTablespaceDetails
         }
         /**
          * Specifies whether all the constraints on the tablespace being dropped should be dropped.
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCascadeConstraints")
         private Boolean isCascadeConstraints;
 
@@ -99,7 +96,7 @@ public final class DropTablespaceDetails
          *
          * @param isCascadeConstraints the value to set
          * @return this builder
-         **/
+         */
         public Builder isCascadeConstraints(Boolean isCascadeConstraints) {
             this.isCascadeConstraints = isCascadeConstraints;
             this.__explicitlySet__.add("isCascadeConstraints");
@@ -140,9 +137,7 @@ public final class DropTablespaceDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,10 +153,7 @@ public final class DropTablespaceDetails
         return credentialDetails;
     }
 
-    /**
-     * Specifies whether all the contents of the tablespace being dropped should be dropped.
-     *
-     **/
+    /** Specifies whether all the contents of the tablespace being dropped should be dropped. */
     @com.fasterxml.jackson.annotation.JsonProperty("isIncludingContents")
     private final Boolean isIncludingContents;
 
@@ -169,31 +161,29 @@ public final class DropTablespaceDetails
      * Specifies whether all the contents of the tablespace being dropped should be dropped.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsIncludingContents() {
         return isIncludingContents;
     }
 
     /**
-     * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
-     *
-     **/
+     * Specifies whether all the associated data files of the tablespace being dropped should be
+     * dropped.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDroppingDataFiles")
     private final Boolean isDroppingDataFiles;
 
     /**
-     * Specifies whether all the associated data files of the tablespace being dropped should be dropped.
+     * Specifies whether all the associated data files of the tablespace being dropped should be
+     * dropped.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsDroppingDataFiles() {
         return isDroppingDataFiles;
     }
 
-    /**
-     * Specifies whether all the constraints on the tablespace being dropped should be dropped.
-     *
-     **/
+    /** Specifies whether all the constraints on the tablespace being dropped should be dropped. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCascadeConstraints")
     private final Boolean isCascadeConstraints;
 
@@ -201,7 +191,7 @@ public final class DropTablespaceDetails
      * Specifies whether all the constraints on the tablespace being dropped should be dropped.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsCascadeConstraints() {
         return isCascadeConstraints;
     }
@@ -213,6 +203,7 @@ public final class DropTablespaceDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

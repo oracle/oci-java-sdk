@@ -5,10 +5,11 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The payload version defines the expected structure of the payloads sent and received by the Webhook channel.
- **/
+ * The payload version defines the expected structure of the payloads sent and received by the
+ * Webhook channel.
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum WebhookPayloadVersion {
+public enum WebhookPayloadVersion implements com.oracle.bmc.http.internal.BmcEnum {
     _10("1.0"),
     _11("1.1"),
 

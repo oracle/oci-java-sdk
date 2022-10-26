@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Insights response containing current/projected groups for storage or CPU.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Insights response containing current/projected groups for storage or CPU. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SummarizeDatabaseInsightResourceUtilizationInsightAggregation.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = SummarizeDatabaseInsightResourceUtilizationInsightAggregation.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -46,42 +45,37 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The start timestamp that was passed into the request.
-         **/
+        /** The start timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
+         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /**
-         * The end timestamp that was passed into the request.
-         **/
+        /** The end timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
+         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /**
-         * Defines the type of resource metric (example: CPU, STORAGE)
-         *
-         **/
+        /** Defines the type of resource metric (example: CPU, STORAGE) */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
         private ResourceMetric resourceMetric;
 
@@ -90,7 +84,7 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
          *
          * @param resourceMetric the value to set
          * @return this builder
-         **/
+         */
         public Builder resourceMetric(ResourceMetric resourceMetric) {
             this.resourceMetric = resourceMetric;
             this.__explicitlySet__.add("resourceMetric");
@@ -154,9 +148,7 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,39 +157,34 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
         return new Builder().copy(this);
     }
 
-    /**
-     * The start timestamp that was passed into the request.
-     **/
+    /** The start timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /**
-     * The end timestamp that was passed into the request.
-     **/
+    /** The end timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /**
-     * Defines the type of resource metric (example: CPU, STORAGE)
-     *
-     **/
-    public enum ResourceMetric {
+    /** Defines the type of resource metric (example: CPU, STORAGE) */
+    public enum ResourceMetric implements com.oracle.bmc.http.internal.BmcEnum {
         Cpu("CPU"),
         Storage("STORAGE"),
         Io("IO"),
@@ -206,8 +193,8 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
         MemorySga("MEMORY_SGA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -246,10 +233,7 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
             return UnknownEnumValue;
         }
     };
-    /**
-     * Defines the type of resource metric (example: CPU, STORAGE)
-     *
-     **/
+    /** Defines the type of resource metric (example: CPU, STORAGE) */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceMetric")
     private final ResourceMetric resourceMetric;
 
@@ -257,7 +241,7 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
      * Defines the type of resource metric (example: CPU, STORAGE)
      *
      * @return the value
-     **/
+     */
     public ResourceMetric getResourceMetric() {
         return resourceMetric;
     }
@@ -283,6 +267,7 @@ public final class SummarizeDatabaseInsightResourceUtilizationInsightAggregation
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

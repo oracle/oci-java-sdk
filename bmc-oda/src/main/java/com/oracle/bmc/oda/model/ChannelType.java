@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.oda.model;
 
-/**
- * The set of supported Channel types.
- **/
+/** The set of supported Channel types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum ChannelType {
+public enum ChannelType implements com.oracle.bmc.http.internal.BmcEnum {
     Android("ANDROID"),
     Appevent("APPEVENT"),
     Application("APPLICATION"),

@@ -9,15 +9,14 @@ import com.oracle.bmc.managementagent.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact
-     * Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,17 +25,16 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the
+     * response, then a partial list might have been returned. Include this value as the {@code
+     * page} parameter for the subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -44,14 +42,13 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /**
-     * The returned ManagementAgentAggregationCollection instance.
-     */
+    /** The returned ManagementAgentAggregationCollection instance. */
     private com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
             managementAgentAggregationCollection;
 
     /**
      * The returned ManagementAgentAggregationCollection instance.
+     *
      * @return the value
      */
     public com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
@@ -68,7 +65,7 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
     })
     private SummarizeManagementAgentCountsResponse(
             int __httpStatusCode__,
-            javax.ws.rs.core.MultivaluedMap<String, String> headers,
+            java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
@@ -79,31 +76,34 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
         this.managementAgentAggregationCollection = managementAgentAggregationCollection;
     }
 
-    public static class Builder {
+    public static class Builder
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    SummarizeManagementAgentCountsResponse> {
         private int __httpStatusCode__;
 
+        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
+        private java.util.Map<String, java.util.List<String>> headers;
 
-        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
+        @Override
+        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact
-         * Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -114,17 +114,16 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in the response,
-         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
-         * subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in
+         * the response, then a partial list might have been returned. Include this value as the
+         * {@code page} parameter for the subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -134,14 +133,13 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /**
-         * The returned ManagementAgentAggregationCollection instance.
-         */
+        /** The returned ManagementAgentAggregationCollection instance. */
         private com.oracle.bmc.managementagent.model.ManagementAgentAggregationCollection
                 managementAgentAggregationCollection;
 
         /**
          * The returned ManagementAgentAggregationCollection instance.
+         *
          * @param managementAgentAggregationCollection the value to set
          * @return this builder
          */
@@ -154,8 +152,10 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
+        @Override
         public Builder copy(SummarizeManagementAgentCountsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,8 +168,10 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
+         *
          * @return the response object
          */
+        @Override
         public SummarizeManagementAgentCountsResponse build() {
             return new SummarizeManagementAgentCountsResponse(
                     __httpStatusCode__,
@@ -182,6 +184,7 @@ public class SummarizeManagementAgentCountsResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
+     *
      * @return builder for the response object
      */
     public static Builder builder() {

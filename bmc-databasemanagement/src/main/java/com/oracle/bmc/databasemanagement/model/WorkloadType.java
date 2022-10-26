@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/**
- * A list of supported workload types.
- **/
+/** A list of supported workload types. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum WorkloadType {
+public enum WorkloadType implements com.oracle.bmc.http.internal.BmcEnum {
     Oltp("OLTP"),
     Dw("DW"),
     Ajd("AJD"),

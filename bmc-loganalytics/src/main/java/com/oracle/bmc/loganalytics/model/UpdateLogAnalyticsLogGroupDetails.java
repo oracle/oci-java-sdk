@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Information needed to update an existing log group.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Information needed to update an existing log group. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = UpdateLogAnalyticsLogGroupDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = UpdateLogAnalyticsLogGroupDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class UpdateLogAnalyticsLogGroupDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "description", "freeformTags", "definedTags"})
     public UpdateLogAnalyticsLogGroupDetails(
@@ -39,33 +38,27 @@ public final class UpdateLogAnalyticsLogGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name that is changeable and that does not have to be unique.
-         * Format: a leading alphanumeric, followed by zero or more
-         * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-         * No trailing spaces allowed.
-         *
-         **/
+         * A user-friendly name that is changeable and that does not have to be unique. Format: a
+         * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+         * backslashes, or hyphens in any order). No trailing spaces allowed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name that is changeable and that does not have to be unique.
-         * Format: a leading alphanumeric, followed by zero or more
-         * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-         * No trailing spaces allowed.
+         * A user-friendly name that is changeable and that does not have to be unique. Format: a
+         * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+         * backslashes, or hyphens in any order). No trailing spaces allowed.
          *
          * @param displayName the value to set
          * @return this builder
-         **/
+         */
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /**
-         * Description for this resource.
-         *
-         **/
+        /** Description for this resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -74,27 +67,26 @@ public final class UpdateLogAnalyticsLogGroupDetails
          *
          * @param description the value to set
          * @return this builder
-         **/
+         */
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
+         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         **/
+         */
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -103,8 +95,7 @@ public final class UpdateLogAnalyticsLogGroupDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -114,7 +105,7 @@ public final class UpdateLogAnalyticsLogGroupDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         **/
+         */
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -156,9 +147,7 @@ public final class UpdateLogAnalyticsLogGroupDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,31 +157,25 @@ public final class UpdateLogAnalyticsLogGroupDetails
     }
 
     /**
-     * A user-friendly name that is changeable and that does not have to be unique.
-     * Format: a leading alphanumeric, followed by zero or more
-     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-     * No trailing spaces allowed.
-     *
-     **/
+     * A user-friendly name that is changeable and that does not have to be unique. Format: a
+     * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+     * backslashes, or hyphens in any order). No trailing spaces allowed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name that is changeable and that does not have to be unique.
-     * Format: a leading alphanumeric, followed by zero or more
-     * alphanumerics, underscores, spaces, backslashes, or hyphens in any order).
-     * No trailing spaces allowed.
+     * A user-friendly name that is changeable and that does not have to be unique. Format: a
+     * leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces,
+     * backslashes, or hyphens in any order). No trailing spaces allowed.
      *
      * @return the value
-     **/
+     */
     public String getDisplayName() {
         return displayName;
     }
 
-    /**
-     * Description for this resource.
-     *
-     **/
+    /** Description for this resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -200,43 +183,41 @@ public final class UpdateLogAnalyticsLogGroupDetails
      * Description for this resource.
      *
      * @return the value
-     **/
+     */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
-     *
-     **/
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
+     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
-     **/
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
+     * {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     **/
+     */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -248,6 +229,7 @@ public final class UpdateLogAnalyticsLogGroupDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

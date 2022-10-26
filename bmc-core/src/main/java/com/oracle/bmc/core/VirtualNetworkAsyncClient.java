@@ -4,28 +4,31 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
+import java.util.Objects;
+
 /**
- * Async client implementation for VirtualNetwork service. <br/>
- * There are two ways to use async client:
- * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
- * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request was completed via
- * Future.isDone/isCancelled.<br/>
- * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for VirtualNetwork service. <br>
+ * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
+ * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
+ * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
+ * will be closed right after the AsyncHandler is invoked. <br>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
+ * with the Java Future.<br>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or
+ * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
+ * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
+ * whether or not the request was completed via Future.isDone/isCancelled.<br>
+ * Please refer to
+ * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
-    /**
-     * Service instance for VirtualNetwork.
-     */
+public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
+        implements VirtualNetworkAsync {
+    /** Service instance for VirtualNetwork. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("VIRTUALNETWORK")
@@ -36,268 +39,16 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VirtualNetworkAsyncClient.class);
 
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    public VirtualNetworkAsyncClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.clientConfigurationToUse = configuration;
-
-        this.refreshClient();
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
+    private VirtualNetworkAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                    authenticationDetailsProvider) {
+        super(builder, authenticationDetailsProvider);
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -305,8 +56,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -320,121 +71,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public VirtualNetworkAsyncClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new VirtualNetworkAsyncClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new VirtualNetworkAsyncClient(this, authenticationDetailsProvider);
         }
-    }
-
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
@@ -445,54 +101,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     AddDrgRouteDistributionStatementsRequest,
                                     AddDrgRouteDistributionStatementsResponse>
                             handler) {
-        LOG.trace("Called async addDrgRouteDistributionStatements");
-        final AddDrgRouteDistributionStatementsRequest interceptedRequest =
-                AddDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDrgRouteDistributionStatementsDetails(),
+                "addDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, AddDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "addDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AddDrgRouteDistributionStatementsResponse>
-                transformer =
-                        AddDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AddDrgRouteDistributionStatementsRequest,
-                        AddDrgRouteDistributionStatementsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddDrgRouteDistributionStatementsRequest,
-                                AddDrgRouteDistributionStatementsResponse>,
-                        java.util.concurrent.Future<AddDrgRouteDistributionStatementsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddDrgRouteDistributionStatementsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddDrgRouteDistributionStatementsRequest,
-                    AddDrgRouteDistributionStatementsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/AddDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("addDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        AddDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -501,50 +138,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
                     handler) {
-        LOG.trace("Called async addDrgRouteRules");
-        final AddDrgRouteRulesRequest interceptedRequest =
-                AddDrgRouteRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getAddDrgRouteRulesDetails(), "addDrgRouteRulesDetails is required");
+
+        return clientCall(request, AddDrgRouteRulesResponse::builder)
+                .logger(LOG, "addDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddDrgRouteRulesResponse>
-                transformer =
-                        AddDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>,
-                        java.util.concurrent.Future<AddDrgRouteRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddDrgRouteRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddDrgRouteRulesRequest, AddDrgRouteRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/AddDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("addDrgRouteRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        AddDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddDrgRouteRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -553,50 +173,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>
                     handler) {
-        LOG.trace("Called async addIpv6SubnetCidr");
-        final AddIpv6SubnetCidrRequest interceptedRequest =
-                AddIpv6SubnetCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getAddSubnetIpv6CidrDetails(), "addSubnetIpv6CidrDetails is required");
+
+        return clientCall(request, AddIpv6SubnetCidrResponse::builder)
+                .logger(LOG, "addIpv6SubnetCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6SubnetCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddIpv6SubnetCidrResponse>
-                transformer =
-                        AddIpv6SubnetCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>,
-                        java.util.concurrent.Future<AddIpv6SubnetCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddSubnetIpv6CidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddIpv6SubnetCidrRequest, AddIpv6SubnetCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/AddIpv6SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddIpv6SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("addIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString("etag", AddIpv6SubnetCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddIpv6SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddIpv6SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -605,49 +210,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
                     handler) {
-        LOG.trace("Called async addIpv6VcnCidr");
-        final AddIpv6VcnCidrRequest interceptedRequest =
-                AddIpv6VcnCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, AddIpv6VcnCidrResponse::builder)
+                .logger(LOG, "addIpv6VcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddIpv6VcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddIpv6VcnCidrResponse>
-                transformer =
-                        AddIpv6VcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>,
-                        java.util.concurrent.Future<AddIpv6VcnCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddVcnIpv6CidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddIpv6VcnCidrRequest, AddIpv6VcnCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddIpv6VcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddIpv6VcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("addIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddIpv6VcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddIpv6VcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -658,55 +246,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     AddNetworkSecurityGroupSecurityRulesRequest,
                                     AddNetworkSecurityGroupSecurityRulesResponse>
                             handler) {
-        LOG.trace("Called async addNetworkSecurityGroupSecurityRules");
-        final AddNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                AddNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getAddNetworkSecurityGroupSecurityRulesDetails(),
+                "addNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, AddNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "addNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AddNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        AddNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AddNetworkSecurityGroupSecurityRulesRequest,
-                        AddNetworkSecurityGroupSecurityRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddNetworkSecurityGroupSecurityRulesRequest,
-                                AddNetworkSecurityGroupSecurityRulesResponse>,
-                        java.util.concurrent.Future<AddNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddNetworkSecurityGroupSecurityRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddNetworkSecurityGroupSecurityRulesRequest,
-                    AddNetworkSecurityGroupSecurityRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/AddNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("addSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.AddedNetworkSecurityGroupSecurityRules.class,
+                        AddNetworkSecurityGroupSecurityRulesResponse.Builder
+                                ::addedNetworkSecurityGroupSecurityRules)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -715,52 +284,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>
                     handler) {
-        LOG.trace("Called async addPublicIpPoolCapacity");
-        final AddPublicIpPoolCapacityRequest interceptedRequest =
-                AddPublicIpPoolCapacityConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddPublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getAddPublicIpPoolCapacityDetails(),
+                "addPublicIpPoolCapacityDetails is required");
+
+        return clientCall(request, AddPublicIpPoolCapacityResponse::builder)
+                .logger(LOG, "addPublicIpPoolCapacity")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddPublicIpPoolCapacity",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, AddPublicIpPoolCapacityResponse>
-                transformer =
-                        AddPublicIpPoolCapacityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>,
-                        java.util.concurrent.Future<AddPublicIpPoolCapacityResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddPublicIpPoolCapacityDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddPublicIpPoolCapacityRequest, AddPublicIpPoolCapacityResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/AddPublicIpPoolCapacity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddPublicIpPoolCapacityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("addCapacity")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        AddPublicIpPoolCapacityResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", AddPublicIpPoolCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddPublicIpPoolCapacityResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -768,48 +321,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             AddVcnCidrRequest request,
             final com.oracle.bmc.responses.AsyncHandler<AddVcnCidrRequest, AddVcnCidrResponse>
                     handler) {
-        LOG.trace("Called async addVcnCidr");
-        final AddVcnCidrRequest interceptedRequest = AddVcnCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AddVcnCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(request.getAddVcnCidrDetails(), "addVcnCidrDetails is required");
+
+        return clientCall(request, AddVcnCidrResponse::builder)
+                .logger(LOG, "addVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AddVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, AddVcnCidrResponse>
-                transformer =
-                        AddVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AddVcnCidrRequest, AddVcnCidrResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AddVcnCidrRequest, AddVcnCidrResponse>,
-                        java.util.concurrent.Future<AddVcnCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAddVcnCidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AddVcnCidrRequest, AddVcnCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/AddVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("addCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", AddVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", AddVcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -818,45 +356,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async advertiseByoipRange");
-        final AdvertiseByoipRangeRequest interceptedRequest =
-                AdvertiseByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AdvertiseByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, AdvertiseByoipRangeResponse::builder)
+                .logger(LOG, "advertiseByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AdvertiseByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, AdvertiseByoipRangeResponse>
-                transformer =
-                        AdvertiseByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>,
-                        java.util.concurrent.Future<AdvertiseByoipRangeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AdvertiseByoipRangeRequest, AdvertiseByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/AdvertiseByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AdvertiseByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("advertise")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", AdvertiseByoipRangeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -865,49 +385,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             AttachServiceIdRequest, AttachServiceIdResponse>
                     handler) {
-        LOG.trace("Called async attachServiceId");
-        final AttachServiceIdRequest interceptedRequest =
-                AttachServiceIdConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                AttachServiceIdConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getAttachServiceDetails(), "attachServiceDetails is required");
+
+        return clientCall(request, AttachServiceIdResponse::builder)
+                .logger(LOG, "attachServiceId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "AttachServiceId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId");
-        final java.util.function.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
-                transformer =
-                        AttachServiceIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<AttachServiceIdRequest, AttachServiceIdResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                AttachServiceIdRequest, AttachServiceIdResponse>,
-                        java.util.concurrent.Future<AttachServiceIdResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getAttachServiceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    AttachServiceIdRequest, AttachServiceIdResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/AttachServiceId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AttachServiceIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("attachService")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        AttachServiceIdResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", AttachServiceIdResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -918,55 +422,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     BulkAddVirtualCircuitPublicPrefixesRequest,
                                     BulkAddVirtualCircuitPublicPrefixesResponse>
                             handler) {
-        LOG.trace("Called async bulkAddVirtualCircuitPublicPrefixes");
-        final BulkAddVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                BulkAddVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BulkAddVirtualCircuitPublicPrefixesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkAddVirtualCircuitPublicPrefixesDetails(),
+                "bulkAddVirtualCircuitPublicPrefixesDetails is required");
+
+        return clientCall(request, BulkAddVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "bulkAddVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "BulkAddVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BulkAddVirtualCircuitPublicPrefixesRequest,
-                        BulkAddVirtualCircuitPublicPrefixesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BulkAddVirtualCircuitPublicPrefixesRequest,
-                                BulkAddVirtualCircuitPublicPrefixesResponse>,
-                        java.util.concurrent.Future<BulkAddVirtualCircuitPublicPrefixesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getBulkAddVirtualCircuitPublicPrefixesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BulkAddVirtualCircuitPublicPrefixesRequest,
-                    BulkAddVirtualCircuitPublicPrefixesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkAddVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkAddVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkAddPublicPrefixes")
+                .accept("application/json")
+                .hasBody()
+                .callAsync(handler);
     }
 
     @Override
@@ -977,56 +454,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
                                     BulkDeleteVirtualCircuitPublicPrefixesResponse>
                             handler) {
-        LOG.trace("Called async bulkDeleteVirtualCircuitPublicPrefixes");
-        final BulkDeleteVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                BulkDeleteVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                BulkDeleteVirtualCircuitPublicPrefixesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                "bulkDeleteVirtualCircuitPublicPrefixesDetails is required");
+
+        return clientCall(request, BulkDeleteVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "bulkDeleteVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "BulkDeleteVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        BulkDeleteVirtualCircuitPublicPrefixesRequest,
-                        BulkDeleteVirtualCircuitPublicPrefixesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                BulkDeleteVirtualCircuitPublicPrefixesRequest,
-                                BulkDeleteVirtualCircuitPublicPrefixesResponse>,
-                        java.util.concurrent.Future<BulkDeleteVirtualCircuitPublicPrefixesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    BulkDeleteVirtualCircuitPublicPrefixesRequest,
-                    BulkDeleteVirtualCircuitPublicPrefixesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/BulkDeleteVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkDeleteVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("bulkDeletePublicPrefixes")
+                .accept("application/json")
+                .hasBody()
+                .callAsync(handler);
     }
 
     @Override
@@ -1037,53 +486,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeByoipRangeCompartmentRequest,
                                     ChangeByoipRangeCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeByoipRangeCompartment");
-        final ChangeByoipRangeCompartmentRequest interceptedRequest =
-                ChangeByoipRangeCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeByoipRangeCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeByoipRangeCompartmentDetails(),
+                "changeByoipRangeCompartmentDetails is required");
+
+        return clientCall(request, ChangeByoipRangeCompartmentResponse::builder)
+                .logger(LOG, "changeByoipRangeCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeByoipRangeCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeByoipRangeCompartmentResponse>
-                transformer =
-                        ChangeByoipRangeCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeByoipRangeCompartmentRequest,
-                                ChangeByoipRangeCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeByoipRangeCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeByoipRangeCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeByoipRangeCompartmentRequest, ChangeByoipRangeCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ChangeByoipRangeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeByoipRangeCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeByoipRangeCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1094,54 +522,39 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeCaptureFilterCompartmentRequest,
                                     ChangeCaptureFilterCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeCaptureFilterCompartment");
-        final ChangeCaptureFilterCompartmentRequest interceptedRequest =
-                ChangeCaptureFilterCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCaptureFilterCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCaptureFilterCompartmentDetails(),
+                "changeCaptureFilterCompartmentDetails is required");
+
+        return clientCall(request, ChangeCaptureFilterCompartmentResponse::builder)
+                .logger(LOG, "changeCaptureFilterCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCaptureFilterCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCaptureFilterCompartmentResponse>
-                transformer =
-                        ChangeCaptureFilterCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeCaptureFilterCompartmentRequest,
-                        ChangeCaptureFilterCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeCaptureFilterCompartmentRequest,
-                                ChangeCaptureFilterCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeCaptureFilterCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeCaptureFilterCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeCaptureFilterCompartmentRequest, ChangeCaptureFilterCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ChangeCaptureFilterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCaptureFilterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCaptureFilterCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCaptureFilterCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCaptureFilterCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1150,51 +563,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeCpeCompartment");
-        final ChangeCpeCompartmentRequest interceptedRequest =
-                ChangeCpeCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCpeCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCpeCompartmentDetails(),
+                "changeCpeCompartmentDetails is required");
+
+        return clientCall(request, ChangeCpeCompartmentResponse::builder)
+                .logger(LOG, "changeCpeCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCpeCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeCpeCompartmentResponse>
-                transformer =
-                        ChangeCpeCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeCpeCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeCpeCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ChangeCpeCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCpeCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeCpeCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeCpeCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1205,53 +600,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeCrossConnectCompartmentRequest,
                                     ChangeCrossConnectCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeCrossConnectCompartment");
-        final ChangeCrossConnectCompartmentRequest interceptedRequest =
-                ChangeCrossConnectCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCrossConnectCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCrossConnectCompartmentDetails(),
+                "changeCrossConnectCompartmentDetails is required");
+
+        return clientCall(request, ChangeCrossConnectCompartmentResponse::builder)
+                .logger(LOG, "changeCrossConnectCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCrossConnectCompartmentResponse>
-                transformer =
-                        ChangeCrossConnectCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeCrossConnectCompartmentRequest, ChangeCrossConnectCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeCrossConnectCompartmentRequest,
-                                ChangeCrossConnectCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeCrossConnectCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeCrossConnectCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeCrossConnectCompartmentRequest, ChangeCrossConnectCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ChangeCrossConnectCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCrossConnectCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCrossConnectCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCrossConnectCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1262,55 +639,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeCrossConnectGroupCompartmentRequest,
                                     ChangeCrossConnectGroupCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeCrossConnectGroupCompartment");
-        final ChangeCrossConnectGroupCompartmentRequest interceptedRequest =
-                ChangeCrossConnectGroupCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeCrossConnectGroupCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeCrossConnectGroupCompartmentDetails(),
+                "changeCrossConnectGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeCrossConnectGroupCompartmentResponse::builder)
+                .logger(LOG, "changeCrossConnectGroupCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeCrossConnectGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeCrossConnectGroupCompartmentResponse>
-                transformer =
-                        ChangeCrossConnectGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeCrossConnectGroupCompartmentRequest,
-                        ChangeCrossConnectGroupCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeCrossConnectGroupCompartmentRequest,
-                                ChangeCrossConnectGroupCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeCrossConnectGroupCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeCrossConnectGroupCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeCrossConnectGroupCompartmentRequest,
-                    ChangeCrossConnectGroupCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ChangeCrossConnectGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCrossConnectGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeCrossConnectGroupCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCrossConnectGroupCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1321,53 +679,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeDhcpOptionsCompartmentRequest,
                                     ChangeDhcpOptionsCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeDhcpOptionsCompartment");
-        final ChangeDhcpOptionsCompartmentRequest interceptedRequest =
-                ChangeDhcpOptionsCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDhcpOptionsCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDhcpOptionsCompartmentDetails(),
+                "changeDhcpOptionsCompartmentDetails is required");
+
+        return clientCall(request, ChangeDhcpOptionsCompartmentResponse::builder)
+                .logger(LOG, "changeDhcpOptionsCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDhcpOptionsCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
-                transformer =
-                        ChangeDhcpOptionsCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDhcpOptionsCompartmentRequest, ChangeDhcpOptionsCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDhcpOptionsCompartmentRequest,
-                                ChangeDhcpOptionsCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeDhcpOptionsCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeDhcpOptionsCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDhcpOptionsCompartmentRequest, ChangeDhcpOptionsCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ChangeDhcpOptionsCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDhcpOptionsCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeDhcpOptionsCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeDhcpOptionsCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1376,51 +716,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeDrgCompartment");
-        final ChangeDrgCompartmentRequest interceptedRequest =
-                ChangeDrgCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeDrgCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeDrgCompartmentDetails(),
+                "changeDrgCompartmentDetails is required");
+
+        return clientCall(request, ChangeDrgCompartmentResponse::builder)
+                .logger(LOG, "changeDrgCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeDrgCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeDrgCompartmentResponse>
-                transformer =
-                        ChangeDrgCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeDrgCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeDrgCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeDrgCompartmentRequest, ChangeDrgCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ChangeDrgCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeDrgCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeDrgCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeDrgCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeDrgCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1431,55 +756,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeIPSecConnectionCompartmentRequest,
                                     ChangeIPSecConnectionCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeIPSecConnectionCompartment");
-        final ChangeIPSecConnectionCompartmentRequest interceptedRequest =
-                ChangeIPSecConnectionCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeIPSecConnectionCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeIPSecConnectionCompartmentDetails(),
+                "changeIPSecConnectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeIPSecConnectionCompartmentResponse::builder)
+                .logger(LOG, "changeIPSecConnectionCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeIPSecConnectionCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeIPSecConnectionCompartmentResponse>
-                transformer =
-                        ChangeIPSecConnectionCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeIPSecConnectionCompartmentRequest,
-                        ChangeIPSecConnectionCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeIPSecConnectionCompartmentRequest,
-                                ChangeIPSecConnectionCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeIPSecConnectionCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeIPSecConnectionCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeIPSecConnectionCompartmentRequest,
-                    ChangeIPSecConnectionCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ChangeIPSecConnectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeIPSecConnectionCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeIPSecConnectionCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeIPSecConnectionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1490,55 +795,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeInternetGatewayCompartmentRequest,
                                     ChangeInternetGatewayCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeInternetGatewayCompartment");
-        final ChangeInternetGatewayCompartmentRequest interceptedRequest =
-                ChangeInternetGatewayCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeInternetGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeInternetGatewayCompartmentDetails(),
+                "changeInternetGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeInternetGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeInternetGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeInternetGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
-                transformer =
-                        ChangeInternetGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeInternetGatewayCompartmentRequest,
-                        ChangeInternetGatewayCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeInternetGatewayCompartmentRequest,
-                                ChangeInternetGatewayCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeInternetGatewayCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeInternetGatewayCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeInternetGatewayCompartmentRequest,
-                    ChangeInternetGatewayCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ChangeInternetGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeInternetGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeInternetGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeInternetGatewayCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1549,56 +834,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeLocalPeeringGatewayCompartmentRequest,
                                     ChangeLocalPeeringGatewayCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeLocalPeeringGatewayCompartment");
-        final ChangeLocalPeeringGatewayCompartmentRequest interceptedRequest =
-                ChangeLocalPeeringGatewayCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeLocalPeeringGatewayCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeLocalPeeringGatewayCompartmentDetails(),
+                "changeLocalPeeringGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeLocalPeeringGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeLocalPeeringGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeLocalPeeringGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
-                transformer =
-                        ChangeLocalPeeringGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeLocalPeeringGatewayCompartmentRequest,
-                        ChangeLocalPeeringGatewayCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeLocalPeeringGatewayCompartmentRequest,
-                                ChangeLocalPeeringGatewayCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeLocalPeeringGatewayCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeLocalPeeringGatewayCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeLocalPeeringGatewayCompartmentRequest,
-                    ChangeLocalPeeringGatewayCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ChangeLocalPeeringGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeLocalPeeringGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeLocalPeeringGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeLocalPeeringGatewayCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1609,53 +874,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeNatGatewayCompartmentRequest,
                                     ChangeNatGatewayCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeNatGatewayCompartment");
-        final ChangeNatGatewayCompartmentRequest interceptedRequest =
-                ChangeNatGatewayCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeNatGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNatGatewayCompartmentDetails(),
+                "changeNatGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeNatGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeNatGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNatGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeNatGatewayCompartmentResponse>
-                transformer =
-                        ChangeNatGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeNatGatewayCompartmentRequest,
-                                ChangeNatGatewayCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeNatGatewayCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeNatGatewayCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ChangeNatGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNatGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeNatGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeNatGatewayCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1666,57 +912,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeNetworkSecurityGroupCompartmentRequest,
                                     ChangeNetworkSecurityGroupCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeNetworkSecurityGroupCompartment");
-        final ChangeNetworkSecurityGroupCompartmentRequest interceptedRequest =
-                ChangeNetworkSecurityGroupCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeNetworkSecurityGroupCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeNetworkSecurityGroupCompartmentDetails(),
+                "changeNetworkSecurityGroupCompartmentDetails is required");
+
+        return clientCall(request, ChangeNetworkSecurityGroupCompartmentResponse::builder)
+                .logger(LOG, "changeNetworkSecurityGroupCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeNetworkSecurityGroupCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
-                transformer =
-                        ChangeNetworkSecurityGroupCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeNetworkSecurityGroupCompartmentRequest,
-                        ChangeNetworkSecurityGroupCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeNetworkSecurityGroupCompartmentRequest,
-                                ChangeNetworkSecurityGroupCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeNetworkSecurityGroupCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeNetworkSecurityGroupCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeNetworkSecurityGroupCompartmentRequest,
-                    ChangeNetworkSecurityGroupCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ChangeNetworkSecurityGroupCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeNetworkSecurityGroupCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeNetworkSecurityGroupCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeNetworkSecurityGroupCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1725,53 +950,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changePublicIpCompartment");
-        final ChangePublicIpCompartmentRequest interceptedRequest =
-                ChangePublicIpCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangePublicIpCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePublicIpCompartmentDetails(),
+                "changePublicIpCompartmentDetails is required");
+
+        return clientCall(request, ChangePublicIpCompartmentResponse::builder)
+                .logger(LOG, "changePublicIpCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
-                transformer =
-                        ChangePublicIpCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangePublicIpCompartmentRequest,
-                                ChangePublicIpCompartmentResponse>,
-                        java.util.concurrent.Future<ChangePublicIpCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangePublicIpCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ChangePublicIpCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePublicIpCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangePublicIpCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangePublicIpCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1782,53 +987,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangePublicIpPoolCompartmentRequest,
                                     ChangePublicIpPoolCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changePublicIpPoolCompartment");
-        final ChangePublicIpPoolCompartmentRequest interceptedRequest =
-                ChangePublicIpPoolCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangePublicIpPoolCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getChangePublicIpPoolCompartmentDetails(),
+                "changePublicIpPoolCompartmentDetails is required");
+
+        return clientCall(request, ChangePublicIpPoolCompartmentResponse::builder)
+                .logger(LOG, "changePublicIpPoolCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangePublicIpPoolCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangePublicIpPoolCompartmentResponse>
-                transformer =
-                        ChangePublicIpPoolCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangePublicIpPoolCompartmentRequest, ChangePublicIpPoolCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangePublicIpPoolCompartmentRequest,
-                                ChangePublicIpPoolCompartmentResponse>,
-                        java.util.concurrent.Future<ChangePublicIpPoolCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangePublicIpPoolCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangePublicIpPoolCompartmentRequest, ChangePublicIpPoolCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ChangePublicIpPoolCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangePublicIpPoolCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangePublicIpPoolCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1839,58 +1024,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeRemotePeeringConnectionCompartmentRequest,
                                     ChangeRemotePeeringConnectionCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeRemotePeeringConnectionCompartment");
-        final ChangeRemotePeeringConnectionCompartmentRequest interceptedRequest =
-                ChangeRemotePeeringConnectionCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeRemotePeeringConnectionCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRemotePeeringConnectionCompartmentDetails(),
+                "changeRemotePeeringConnectionCompartmentDetails is required");
+
+        return clientCall(request, ChangeRemotePeeringConnectionCompartmentResponse::builder)
+                .logger(LOG, "changeRemotePeeringConnectionCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRemotePeeringConnectionCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeRemotePeeringConnectionCompartmentResponse>
-                transformer =
-                        ChangeRemotePeeringConnectionCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeRemotePeeringConnectionCompartmentRequest,
-                        ChangeRemotePeeringConnectionCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeRemotePeeringConnectionCompartmentRequest,
-                                ChangeRemotePeeringConnectionCompartmentResponse>,
-                        java.util.concurrent.Future<
-                                ChangeRemotePeeringConnectionCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getChangeRemotePeeringConnectionCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeRemotePeeringConnectionCompartmentRequest,
-                    ChangeRemotePeeringConnectionCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ChangeRemotePeeringConnectionCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRemotePeeringConnectionCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeRemotePeeringConnectionCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeRemotePeeringConnectionCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1901,53 +1065,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeRouteTableCompartmentRequest,
                                     ChangeRouteTableCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeRouteTableCompartment");
-        final ChangeRouteTableCompartmentRequest interceptedRequest =
-                ChangeRouteTableCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeRouteTableCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeRouteTableCompartmentDetails(),
+                "changeRouteTableCompartmentDetails is required");
+
+        return clientCall(request, ChangeRouteTableCompartmentResponse::builder)
+                .logger(LOG, "changeRouteTableCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeRouteTableCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
-                transformer =
-                        ChangeRouteTableCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeRouteTableCompartmentRequest,
-                                ChangeRouteTableCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeRouteTableCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeRouteTableCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ChangeRouteTableCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeRouteTableCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeRouteTableCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeRouteTableCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -1958,53 +1103,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeSecurityListCompartmentRequest,
                                     ChangeSecurityListCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeSecurityListCompartment");
-        final ChangeSecurityListCompartmentRequest interceptedRequest =
-                ChangeSecurityListCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeSecurityListCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSecurityListCompartmentDetails(),
+                "changeSecurityListCompartmentDetails is required");
+
+        return clientCall(request, ChangeSecurityListCompartmentResponse::builder)
+                .logger(LOG, "changeSecurityListCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSecurityListCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
-                transformer =
-                        ChangeSecurityListCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeSecurityListCompartmentRequest, ChangeSecurityListCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeSecurityListCompartmentRequest,
-                                ChangeSecurityListCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeSecurityListCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeSecurityListCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeSecurityListCompartmentRequest, ChangeSecurityListCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ChangeSecurityListCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSecurityListCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeSecurityListCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSecurityListCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2015,55 +1142,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeServiceGatewayCompartmentRequest,
                                     ChangeServiceGatewayCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeServiceGatewayCompartment");
-        final ChangeServiceGatewayCompartmentRequest interceptedRequest =
-                ChangeServiceGatewayCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeServiceGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeServiceGatewayCompartmentDetails(),
+                "changeServiceGatewayCompartmentDetails is required");
+
+        return clientCall(request, ChangeServiceGatewayCompartmentResponse::builder)
+                .logger(LOG, "changeServiceGatewayCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeServiceGatewayCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
-                transformer =
-                        ChangeServiceGatewayCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeServiceGatewayCompartmentRequest,
-                        ChangeServiceGatewayCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeServiceGatewayCompartmentRequest,
-                                ChangeServiceGatewayCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeServiceGatewayCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeServiceGatewayCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeServiceGatewayCompartmentRequest,
-                    ChangeServiceGatewayCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ChangeServiceGatewayCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeServiceGatewayCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeServiceGatewayCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeServiceGatewayCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2072,52 +1179,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeSubnetCompartment");
-        final ChangeSubnetCompartmentRequest interceptedRequest =
-                ChangeSubnetCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeSubnetCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSubnetCompartmentDetails(),
+                "changeSubnetCompartmentDetails is required");
+
+        return clientCall(request, ChangeSubnetCompartmentResponse::builder)
+                .logger(LOG, "changeSubnetCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeSubnetCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
-                transformer =
-                        ChangeSubnetCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeSubnetCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeSubnetCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ChangeSubnetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSubnetCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeSubnetCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeSubnetCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSubnetCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2126,51 +1217,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeVcnCompartment");
-        final ChangeVcnCompartmentRequest interceptedRequest =
-                ChangeVcnCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVcnCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVcnCompartmentDetails(),
+                "changeVcnCompartmentDetails is required");
+
+        return clientCall(request, ChangeVcnCompartmentResponse::builder)
+                .logger(LOG, "changeVcnCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVcnCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
-                transformer =
-                        ChangeVcnCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVcnCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVcnCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ChangeVcnCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVcnCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeVcnCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVcnCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVcnCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2181,55 +1257,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ChangeVirtualCircuitCompartmentRequest,
                                     ChangeVirtualCircuitCompartmentResponse>
                             handler) {
-        LOG.trace("Called async changeVirtualCircuitCompartment");
-        final ChangeVirtualCircuitCompartmentRequest interceptedRequest =
-                ChangeVirtualCircuitCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVirtualCircuitCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVirtualCircuitCompartmentDetails(),
+                "changeVirtualCircuitCompartmentDetails is required");
+
+        return clientCall(request, ChangeVirtualCircuitCompartmentResponse::builder)
+                .logger(LOG, "changeVirtualCircuitCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVirtualCircuitCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeVirtualCircuitCompartmentResponse>
-                transformer =
-                        ChangeVirtualCircuitCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVirtualCircuitCompartmentRequest,
-                        ChangeVirtualCircuitCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVirtualCircuitCompartmentRequest,
-                                ChangeVirtualCircuitCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVirtualCircuitCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVirtualCircuitCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVirtualCircuitCompartmentRequest,
-                    ChangeVirtualCircuitCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ChangeVirtualCircuitCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVirtualCircuitCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "etag", ChangeVirtualCircuitCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeVirtualCircuitCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2238,51 +1294,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeVlanCompartment");
-        final ChangeVlanCompartmentRequest interceptedRequest =
-                ChangeVlanCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVlanCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVlanCompartmentDetails(),
+                "changeVlanCompartmentDetails is required");
+
+        return clientCall(request, ChangeVlanCompartmentResponse::builder)
+                .logger(LOG, "changeVlanCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVlanCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeVlanCompartmentResponse>
-                transformer =
-                        ChangeVlanCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVlanCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVlanCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVlanCompartmentRequest, ChangeVlanCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ChangeVlanCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVlanCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVlanCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVlanCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2291,51 +1332,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ChangeVtapCompartmentRequest, ChangeVtapCompartmentResponse>
                     handler) {
-        LOG.trace("Called async changeVtapCompartment");
-        final ChangeVtapCompartmentRequest interceptedRequest =
-                ChangeVtapCompartmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeVtapCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeVtapCompartmentDetails(),
+                "changeVtapCompartmentDetails is required");
+
+        return clientCall(request, ChangeVtapCompartmentResponse::builder)
+                .logger(LOG, "changeVtapCompartment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ChangeVtapCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment");
-        final java.util.function.Function<javax.ws.rs.core.Response, ChangeVtapCompartmentResponse>
-                transformer =
-                        ChangeVtapCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ChangeVtapCompartmentRequest, ChangeVtapCompartmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ChangeVtapCompartmentRequest, ChangeVtapCompartmentResponse>,
-                        java.util.concurrent.Future<ChangeVtapCompartmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getChangeVtapCompartmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ChangeVtapCompartmentRequest, ChangeVtapCompartmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ChangeVtapCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeVtapCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString("etag", ChangeVtapCompartmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeVtapCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeVtapCompartmentResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2346,52 +1373,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ConnectLocalPeeringGatewaysRequest,
                                     ConnectLocalPeeringGatewaysResponse>
                             handler) {
-        LOG.trace("Called async connectLocalPeeringGateways");
-        final ConnectLocalPeeringGatewaysRequest interceptedRequest =
-                ConnectLocalPeeringGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ConnectLocalPeeringGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getConnectLocalPeeringGatewaysDetails(),
+                "connectLocalPeeringGatewaysDetails is required");
+
+        return clientCall(request, ConnectLocalPeeringGatewaysResponse::builder)
+                .logger(LOG, "connectLocalPeeringGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ConnectLocalPeeringGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
-                transformer =
-                        ConnectLocalPeeringGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ConnectLocalPeeringGatewaysRequest, ConnectLocalPeeringGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ConnectLocalPeeringGatewaysRequest,
-                                ConnectLocalPeeringGatewaysResponse>,
-                        java.util.concurrent.Future<ConnectLocalPeeringGatewaysResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getConnectLocalPeeringGatewaysDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ConnectLocalPeeringGatewaysRequest, ConnectLocalPeeringGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ConnectLocalPeeringGateways")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConnectLocalPeeringGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("connect")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ConnectLocalPeeringGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2402,54 +1408,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ConnectRemotePeeringConnectionsRequest,
                                     ConnectRemotePeeringConnectionsResponse>
                             handler) {
-        LOG.trace("Called async connectRemotePeeringConnections");
-        final ConnectRemotePeeringConnectionsRequest interceptedRequest =
-                ConnectRemotePeeringConnectionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ConnectRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getConnectRemotePeeringConnectionsDetails(),
+                "connectRemotePeeringConnectionsDetails is required");
+
+        return clientCall(request, ConnectRemotePeeringConnectionsResponse::builder)
+                .logger(LOG, "connectRemotePeeringConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ConnectRemotePeeringConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
-                transformer =
-                        ConnectRemotePeeringConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ConnectRemotePeeringConnectionsRequest,
-                        ConnectRemotePeeringConnectionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ConnectRemotePeeringConnectionsRequest,
-                                ConnectRemotePeeringConnectionsResponse>,
-                        java.util.concurrent.Future<ConnectRemotePeeringConnectionsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getConnectRemotePeeringConnectionsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ConnectRemotePeeringConnectionsRequest,
-                    ConnectRemotePeeringConnectionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ConnectRemotePeeringConnections")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConnectRemotePeeringConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("connect")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConnectRemotePeeringConnectionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2458,50 +1443,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateByoipRangeRequest, CreateByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async createByoipRange");
-        final CreateByoipRangeRequest interceptedRequest =
-                CreateByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateByoipRangeDetails(), "createByoipRangeDetails is required");
+
+        return clientCall(request, CreateByoipRangeResponse::builder)
+                .logger(LOG, "createByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateByoipRangeResponse>
-                transformer =
-                        CreateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateByoipRangeRequest, CreateByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateByoipRangeRequest, CreateByoipRangeResponse>,
-                        java.util.concurrent.Future<CreateByoipRangeResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateByoipRangeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateByoipRangeRequest, CreateByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/CreateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        CreateByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", CreateByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateByoipRangeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2510,51 +1475,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateCaptureFilterRequest, CreateCaptureFilterResponse>
                     handler) {
-        LOG.trace("Called async createCaptureFilter");
-        final CreateCaptureFilterRequest interceptedRequest =
-                CreateCaptureFilterConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCaptureFilterConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateCaptureFilterDetails(), "createCaptureFilterDetails is required");
+
+        return clientCall(request, CreateCaptureFilterResponse::builder)
+                .logger(LOG, "createCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateCaptureFilterResponse>
-                transformer =
-                        CreateCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateCaptureFilterRequest, CreateCaptureFilterResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateCaptureFilterRequest, CreateCaptureFilterResponse>,
-                        java.util.concurrent.Future<CreateCaptureFilterResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateCaptureFilterDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateCaptureFilterRequest, CreateCaptureFilterResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/CreateCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        CreateCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", CreateCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCaptureFilterResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2562,47 +1506,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateCpeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse>
                     handler) {
-        LOG.trace("Called async createCpe");
-        final CreateCpeRequest interceptedRequest = CreateCpeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCpeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateCpeDetails(), "createCpeDetails is required");
+
+        return clientCall(request, CreateCpeResponse::builder)
+                .logger(LOG, "createCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateCpeResponse>
-                transformer =
-                        CreateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse>,
-                        java.util.concurrent.Future<CreateCpeResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateCpeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateCpeRequest, CreateCpeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/CreateCpe")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, CreateCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", CreateCpeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCpeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2611,50 +1534,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateCrossConnectRequest, CreateCrossConnectResponse>
                     handler) {
-        LOG.trace("Called async createCrossConnect");
-        final CreateCrossConnectRequest interceptedRequest =
-                CreateCrossConnectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCrossConnectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateCrossConnectDetails(), "createCrossConnectDetails is required");
+
+        return clientCall(request, CreateCrossConnectResponse::builder)
+                .logger(LOG, "createCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
-                transformer =
-                        CreateCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateCrossConnectRequest, CreateCrossConnectResponse>,
-                        java.util.concurrent.Future<CreateCrossConnectResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateCrossConnectDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateCrossConnectRequest, CreateCrossConnectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/CreateCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        CreateCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", CreateCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCrossConnectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2663,52 +1565,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
                     handler) {
-        LOG.trace("Called async createCrossConnectGroup");
-        final CreateCrossConnectGroupRequest interceptedRequest =
-                CreateCrossConnectGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateCrossConnectGroupDetails(),
+                "createCrossConnectGroupDetails is required");
+
+        return clientCall(request, CreateCrossConnectGroupResponse::builder)
+                .logger(LOG, "createCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
-                transformer =
-                        CreateCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>,
-                        java.util.concurrent.Future<CreateCrossConnectGroupResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateCrossConnectGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/CreateCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        CreateCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", CreateCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCrossConnectGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2717,50 +1597,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
                     handler) {
-        LOG.trace("Called async createDhcpOptions");
-        final CreateDhcpOptionsRequest interceptedRequest =
-                CreateDhcpOptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateDhcpDetails(), "createDhcpDetails is required");
+
+        return clientCall(request, CreateDhcpOptionsResponse::builder)
+                .logger(LOG, "createDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
-                transformer =
-                        CreateDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>,
-                        java.util.concurrent.Future<CreateDhcpOptionsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDhcpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/CreateDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        CreateDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", CreateDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDhcpOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2768,47 +1626,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateDrgRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse>
                     handler) {
-        LOG.trace("Called async createDrg");
-        final CreateDrgRequest interceptedRequest = CreateDrgConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateDrgDetails(), "createDrgDetails is required");
+
+        return clientCall(request, CreateDrgResponse::builder)
+                .logger(LOG, "createDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDrgResponse>
-                transformer =
-                        CreateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse>,
-                        java.util.concurrent.Future<CreateDrgResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDrgDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDrgRequest, CreateDrgResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/CreateDrg")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Drg.class, CreateDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", CreateDrgResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2817,51 +1654,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
                     handler) {
-        LOG.trace("Called async createDrgAttachment");
-        final CreateDrgAttachmentRequest interceptedRequest =
-                CreateDrgAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDrgAttachmentDetails(), "createDrgAttachmentDetails is required");
+
+        return clientCall(request, CreateDrgAttachmentResponse::builder)
+                .logger(LOG, "createDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
-                transformer =
-                        CreateDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>,
-                        java.util.concurrent.Future<CreateDrgAttachmentResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDrgAttachmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/CreateDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        CreateDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", CreateDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2872,53 +1687,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     CreateDrgRouteDistributionRequest,
                                     CreateDrgRouteDistributionResponse>
                             handler) {
-        LOG.trace("Called async createDrgRouteDistribution");
-        final CreateDrgRouteDistributionRequest interceptedRequest =
-                CreateDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDrgRouteDistributionDetails(),
+                "createDrgRouteDistributionDetails is required");
+
+        return clientCall(request, CreateDrgRouteDistributionResponse::builder)
+                .logger(LOG, "createDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateDrgRouteDistributionResponse>
-                transformer =
-                        CreateDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDrgRouteDistributionRequest,
-                                CreateDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<CreateDrgRouteDistributionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDrgRouteDistributionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDrgRouteDistributionRequest, CreateDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/CreateDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        CreateDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString(
+                        "etag", CreateDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2927,51 +1720,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
                     handler) {
-        LOG.trace("Called async createDrgRouteTable");
-        final CreateDrgRouteTableRequest interceptedRequest =
-                CreateDrgRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateDrgRouteTableDetails(), "createDrgRouteTableDetails is required");
+
+        return clientCall(request, CreateDrgRouteTableResponse::builder)
+                .logger(LOG, "createDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateDrgRouteTableResponse>
-                transformer =
-                        CreateDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>,
-                        java.util.concurrent.Future<CreateDrgRouteTableResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateDrgRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateDrgRouteTableRequest, CreateDrgRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/CreateDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        CreateDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", CreateDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateDrgRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -2980,51 +1751,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
                     handler) {
-        LOG.trace("Called async createIPSecConnection");
-        final CreateIPSecConnectionRequest interceptedRequest =
-                CreateIPSecConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIPSecConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateIPSecConnectionDetails(),
+                "createIPSecConnectionDetails is required");
+
+        return clientCall(request, CreateIPSecConnectionResponse::builder)
+                .logger(LOG, "createIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
-                transformer =
-                        CreateIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>,
-                        java.util.concurrent.Future<CreateIPSecConnectionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateIPSecConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/CreateIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        CreateIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", CreateIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIPSecConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3033,51 +1783,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateInternetGatewayRequest, CreateInternetGatewayResponse>
                     handler) {
-        LOG.trace("Called async createInternetGateway");
-        final CreateInternetGatewayRequest interceptedRequest =
-                CreateInternetGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateInternetGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateInternetGatewayDetails(),
+                "createInternetGatewayDetails is required");
+
+        return clientCall(request, CreateInternetGatewayResponse::builder)
+                .logger(LOG, "createInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
-                transformer =
-                        CreateInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateInternetGatewayRequest, CreateInternetGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateInternetGatewayRequest, CreateInternetGatewayResponse>,
-                        java.util.concurrent.Future<CreateInternetGatewayResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateInternetGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateInternetGatewayRequest, CreateInternetGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/CreateInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        CreateInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", CreateInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateInternetGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3085,48 +1814,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateIpv6Request request,
             final com.oracle.bmc.responses.AsyncHandler<CreateIpv6Request, CreateIpv6Response>
                     handler) {
-        LOG.trace("Called async createIpv6");
-        final CreateIpv6Request interceptedRequest = CreateIpv6Converter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateIpv6Converter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateIpv6Details(), "createIpv6Details is required");
+
+        return clientCall(request, CreateIpv6Response::builder)
+                .logger(LOG, "createIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateIpv6Response>
-                transformer =
-                        CreateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateIpv6Request, CreateIpv6Response> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateIpv6Request, CreateIpv6Response>,
-                        java.util.concurrent.Future<CreateIpv6Response>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateIpv6Details(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateIpv6Request, CreateIpv6Response>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/CreateIpv6")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, CreateIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", CreateIpv6Response.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIpv6Response.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3135,53 +1843,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
                     handler) {
-        LOG.trace("Called async createLocalPeeringGateway");
-        final CreateLocalPeeringGatewayRequest interceptedRequest =
-                CreateLocalPeeringGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateLocalPeeringGatewayDetails(),
+                "createLocalPeeringGatewayDetails is required");
+
+        return clientCall(request, CreateLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "createLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
-                transformer =
-                        CreateLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateLocalPeeringGatewayRequest,
-                                CreateLocalPeeringGatewayResponse>,
-                        java.util.concurrent.Future<CreateLocalPeeringGatewayResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateLocalPeeringGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/CreateLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        CreateLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", CreateLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3190,50 +1875,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateNatGatewayRequest, CreateNatGatewayResponse>
                     handler) {
-        LOG.trace("Called async createNatGateway");
-        final CreateNatGatewayRequest interceptedRequest =
-                CreateNatGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNatGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateNatGatewayDetails(), "createNatGatewayDetails is required");
+
+        return clientCall(request, CreateNatGatewayResponse::builder)
+                .logger(LOG, "createNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
-                transformer =
-                        CreateNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateNatGatewayRequest, CreateNatGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateNatGatewayRequest, CreateNatGatewayResponse>,
-                        java.util.concurrent.Future<CreateNatGatewayResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateNatGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateNatGatewayRequest, CreateNatGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/CreateNatGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        CreateNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", CreateNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNatGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3244,53 +1908,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     CreateNetworkSecurityGroupRequest,
                                     CreateNetworkSecurityGroupResponse>
                             handler) {
-        LOG.trace("Called async createNetworkSecurityGroup");
-        final CreateNetworkSecurityGroupRequest interceptedRequest =
-                CreateNetworkSecurityGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateNetworkSecurityGroupDetails(),
+                "createNetworkSecurityGroupDetails is required");
+
+        return clientCall(request, CreateNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "createNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
-                transformer =
-                        CreateNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateNetworkSecurityGroupRequest,
-                                CreateNetworkSecurityGroupResponse>,
-                        java.util.concurrent.Future<CreateNetworkSecurityGroupResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateNetworkSecurityGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/CreateNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        CreateNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString(
+                        "etag", CreateNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3299,50 +1941,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreatePrivateIpRequest, CreatePrivateIpResponse>
                     handler) {
-        LOG.trace("Called async createPrivateIp");
-        final CreatePrivateIpRequest interceptedRequest =
-                CreatePrivateIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePrivateIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreatePrivateIpDetails(), "createPrivateIpDetails is required");
+
+        return clientCall(request, CreatePrivateIpResponse::builder)
+                .logger(LOG, "createPrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
-                transformer =
-                        CreatePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreatePrivateIpRequest, CreatePrivateIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePrivateIpRequest, CreatePrivateIpResponse>,
-                        java.util.concurrent.Future<CreatePrivateIpResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePrivateIpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePrivateIpRequest, CreatePrivateIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/CreatePrivateIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        CreatePrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", CreatePrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePrivateIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3351,49 +1972,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreatePublicIpRequest, CreatePublicIpResponse>
                     handler) {
-        LOG.trace("Called async createPublicIp");
-        final CreatePublicIpRequest interceptedRequest =
-                CreatePublicIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePublicIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreatePublicIpDetails(), "createPublicIpDetails is required");
+
+        return clientCall(request, CreatePublicIpResponse::builder)
+                .logger(LOG, "createPublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
-                transformer =
-                        CreatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreatePublicIpRequest, CreatePublicIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePublicIpRequest, CreatePublicIpResponse>,
-                        java.util.concurrent.Future<CreatePublicIpResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePublicIpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePublicIpRequest, CreatePublicIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/CreatePublicIp")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        CreatePublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", CreatePublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePublicIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3402,50 +2003,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>
                     handler) {
-        LOG.trace("Called async createPublicIpPool");
-        final CreatePublicIpPoolRequest interceptedRequest =
-                CreatePublicIpPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreatePublicIpPoolDetails(), "createPublicIpPoolDetails is required");
+
+        return clientCall(request, CreatePublicIpPoolResponse::builder)
+                .logger(LOG, "createPublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreatePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreatePublicIpPoolResponse>
-                transformer =
-                        CreatePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>,
-                        java.util.concurrent.Future<CreatePublicIpPoolResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreatePublicIpPoolDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreatePublicIpPoolRequest, CreatePublicIpPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/CreatePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        CreatePublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", CreatePublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePublicIpPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3456,53 +2037,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     CreateRemotePeeringConnectionRequest,
                                     CreateRemotePeeringConnectionResponse>
                             handler) {
-        LOG.trace("Called async createRemotePeeringConnection");
-        final CreateRemotePeeringConnectionRequest interceptedRequest =
-                CreateRemotePeeringConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateRemotePeeringConnectionDetails(),
+                "createRemotePeeringConnectionDetails is required");
+
+        return clientCall(request, CreateRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "createRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
-                transformer =
-                        CreateRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateRemotePeeringConnectionRequest,
-                                CreateRemotePeeringConnectionResponse>,
-                        java.util.concurrent.Future<CreateRemotePeeringConnectionResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateRemotePeeringConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/CreateRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        CreateRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", CreateRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3511,50 +2071,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateRouteTableRequest, CreateRouteTableResponse>
                     handler) {
-        LOG.trace("Called async createRouteTable");
-        final CreateRouteTableRequest interceptedRequest =
-                CreateRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateRouteTableDetails(), "createRouteTableDetails is required");
+
+        return clientCall(request, CreateRouteTableResponse::builder)
+                .logger(LOG, "createRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
-                transformer =
-                        CreateRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateRouteTableRequest, CreateRouteTableResponse>,
-                        java.util.concurrent.Future<CreateRouteTableResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateRouteTableRequest, CreateRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/CreateRouteTable")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        CreateRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", CreateRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3563,50 +2102,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateSecurityListRequest, CreateSecurityListResponse>
                     handler) {
-        LOG.trace("Called async createSecurityList");
-        final CreateSecurityListRequest interceptedRequest =
-                CreateSecurityListConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSecurityListConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateSecurityListDetails(), "createSecurityListDetails is required");
+
+        return clientCall(request, CreateSecurityListResponse::builder)
+                .logger(LOG, "createSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
-                transformer =
-                        CreateSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateSecurityListRequest, CreateSecurityListResponse>,
-                        java.util.concurrent.Future<CreateSecurityListResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateSecurityListDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateSecurityListRequest, CreateSecurityListResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/CreateSecurityList")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        CreateSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", CreateSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSecurityListResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3615,51 +2133,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateServiceGatewayRequest, CreateServiceGatewayResponse>
                     handler) {
-        LOG.trace("Called async createServiceGateway");
-        final CreateServiceGatewayRequest interceptedRequest =
-                CreateServiceGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateServiceGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateServiceGatewayDetails(),
+                "createServiceGatewayDetails is required");
+
+        return clientCall(request, CreateServiceGatewayResponse::builder)
+                .logger(LOG, "createServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateServiceGatewayResponse>
-                transformer =
-                        CreateServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateServiceGatewayRequest, CreateServiceGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateServiceGatewayRequest, CreateServiceGatewayResponse>,
-                        java.util.concurrent.Future<CreateServiceGatewayResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateServiceGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateServiceGatewayRequest, CreateServiceGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/CreateServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        CreateServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateServiceGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3667,49 +2163,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateSubnetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
                     handler) {
-        LOG.trace("Called async createSubnet");
-        final CreateSubnetRequest interceptedRequest =
-                CreateSubnetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateSubnetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateSubnetDetails(), "createSubnetDetails is required");
+
+        return clientCall(request, CreateSubnetResponse::builder)
+                .logger(LOG, "createSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
-                transformer =
-                        CreateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateSubnetRequest, CreateSubnetResponse>,
-                        java.util.concurrent.Future<CreateSubnetResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateSubnetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateSubnetRequest, CreateSubnetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/CreateSubnet")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class,
+                        CreateSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", CreateSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3717,47 +2192,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateVcnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse>
                     handler) {
-        LOG.trace("Called async createVcn");
-        final CreateVcnRequest interceptedRequest = CreateVcnConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVcnConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateVcnDetails(), "createVcnDetails is required");
+
+        return clientCall(request, CreateVcnResponse::builder)
+                .logger(LOG, "createVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateVcnResponse>
-                transformer =
-                        CreateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse>,
-                        java.util.concurrent.Future<CreateVcnResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVcnDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVcnRequest, CreateVcnResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/CreateVcn")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, CreateVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", CreateVcnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVcnResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3766,51 +2220,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
                     handler) {
-        LOG.trace("Called async createVirtualCircuit");
-        final CreateVirtualCircuitRequest interceptedRequest =
-                CreateVirtualCircuitConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVirtualCircuitConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getCreateVirtualCircuitDetails(),
+                "createVirtualCircuitDetails is required");
+
+        return clientCall(request, CreateVirtualCircuitResponse::builder)
+                .logger(LOG, "createVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
-                transformer =
-                        CreateVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>,
-                        java.util.concurrent.Future<CreateVirtualCircuitResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVirtualCircuitDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/CreateVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        CreateVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", CreateVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVirtualCircuitResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3818,48 +2251,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateVlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse>
                     handler) {
-        LOG.trace("Called async createVlan");
-        final CreateVlanRequest interceptedRequest = CreateVlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateVlanDetails(), "createVlanDetails is required");
+
+        return clientCall(request, CreateVlanResponse::builder)
+                .logger(LOG, "createVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateVlanResponse>
-                transformer =
-                        CreateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateVlanRequest, CreateVlanResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVlanRequest, CreateVlanResponse>,
-                        java.util.concurrent.Future<CreateVlanResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVlanDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVlanRequest, CreateVlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/CreateVlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, CreateVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", CreateVlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3867,48 +2279,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateVtapRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateVtapRequest, CreateVtapResponse>
                     handler) {
-        LOG.trace("Called async createVtap");
-        final CreateVtapRequest interceptedRequest = CreateVtapConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVtapConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCreateVtapDetails(), "createVtapDetails is required");
+
+        return clientCall(request, CreateVtapResponse::builder)
+                .logger(LOG, "createVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "CreateVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap");
-        final java.util.function.Function<javax.ws.rs.core.Response, CreateVtapResponse>
-                transformer =
-                        CreateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<CreateVtapRequest, CreateVtapResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                CreateVtapRequest, CreateVtapResponse>,
-                        java.util.concurrent.Future<CreateVtapResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getCreateVtapDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    CreateVtapRequest, CreateVtapResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/CreateVtap")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, CreateVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", CreateVtapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVtapResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3917,44 +2308,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteByoipRangeRequest, DeleteByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async deleteByoipRange");
-        final DeleteByoipRangeRequest interceptedRequest =
-                DeleteByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, DeleteByoipRangeResponse::builder)
+                .logger(LOG, "deleteByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteByoipRangeResponse>
-                transformer =
-                        DeleteByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteByoipRangeRequest, DeleteByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteByoipRangeRequest, DeleteByoipRangeResponse>,
-                        java.util.concurrent.Future<DeleteByoipRangeResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteByoipRangeRequest, DeleteByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/DeleteByoipRange")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteByoipRangeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteByoipRangeResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -3963,45 +2338,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteCaptureFilterRequest, DeleteCaptureFilterResponse>
                     handler) {
-        LOG.trace("Called async deleteCaptureFilter");
-        final DeleteCaptureFilterRequest interceptedRequest =
-                DeleteCaptureFilterConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCaptureFilterConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+
+        return clientCall(request, DeleteCaptureFilterResponse::builder)
+                .logger(LOG, "deleteCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCaptureFilterResponse>
-                transformer =
-                        DeleteCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteCaptureFilterRequest, DeleteCaptureFilterResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteCaptureFilterRequest, DeleteCaptureFilterResponse>,
-                        java.util.concurrent.Future<DeleteCaptureFilterResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteCaptureFilterRequest, DeleteCaptureFilterResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/DeleteCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCaptureFilterResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4009,38 +2365,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteCpeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse>
                     handler) {
-        LOG.trace("Called async deleteCpe");
-        final DeleteCpeRequest interceptedRequest = DeleteCpeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCpeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteCpe", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCpeResponse>
-                transformer =
-                        DeleteCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse>,
-                        java.util.concurrent.Future<DeleteCpeResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteCpeRequest, DeleteCpeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteCpeResponse::builder)
+                .logger(LOG, "deleteCpe")
+                .serviceDetails("VirtualNetwork", "DeleteCpe", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCpeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4049,41 +2389,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteCrossConnectRequest, DeleteCrossConnectResponse>
                     handler) {
-        LOG.trace("Called async deleteCrossConnect");
-        final DeleteCrossConnectRequest interceptedRequest =
-                DeleteCrossConnectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCrossConnectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteCrossConnect", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
-                transformer =
-                        DeleteCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteCrossConnectRequest, DeleteCrossConnectResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteCrossConnectRequest, DeleteCrossConnectResponse>,
-                        java.util.concurrent.Future<DeleteCrossConnectResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteCrossConnectRequest, DeleteCrossConnectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteCrossConnectResponse::builder)
+                .logger(LOG, "deleteCrossConnect")
+                .serviceDetails("VirtualNetwork", "DeleteCrossConnect", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCrossConnectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4092,46 +2413,23 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>
                     handler) {
-        LOG.trace("Called async deleteCrossConnectGroup");
-        final DeleteCrossConnectGroupRequest interceptedRequest =
-                DeleteCrossConnectGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
-                transformer =
-                        DeleteCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>,
-                        java.util.concurrent.Future<DeleteCrossConnectGroupResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteCrossConnectGroupResponse::builder)
+                .logger(LOG, "deleteCrossConnectGroup")
+                .serviceDetails("VirtualNetwork", "DeleteCrossConnectGroup", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCrossConnectGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4140,41 +2438,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>
                     handler) {
-        LOG.trace("Called async deleteDhcpOptions");
-        final DeleteDhcpOptionsRequest interceptedRequest =
-                DeleteDhcpOptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDhcpOptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDhcpOptions", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
-                transformer =
-                        DeleteDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>,
-                        java.util.concurrent.Future<DeleteDhcpOptionsResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteDhcpOptionsResponse::builder)
+                .logger(LOG, "deleteDhcpOptions")
+                .serviceDetails("VirtualNetwork", "DeleteDhcpOptions", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDhcpOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4182,38 +2461,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteDrgRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse>
                     handler) {
-        LOG.trace("Called async deleteDrg");
-        final DeleteDrgRequest interceptedRequest = DeleteDrgConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDrg", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgResponse>
-                transformer =
-                        DeleteDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse>,
-                        java.util.concurrent.Future<DeleteDrgResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDrgRequest, DeleteDrgResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteDrgResponse::builder)
+                .logger(LOG, "deleteDrg")
+                .serviceDetails("VirtualNetwork", "DeleteDrg", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4222,42 +2485,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
                     handler) {
-        LOG.trace("Called async deleteDrgAttachment");
-        final DeleteDrgAttachmentRequest interceptedRequest =
-                DeleteDrgAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteDrgAttachment", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
-                transformer =
-                        DeleteDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>,
-                        java.util.concurrent.Future<DeleteDrgAttachmentResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteDrgAttachmentResponse::builder)
+                .logger(LOG, "deleteDrgAttachment")
+                .serviceDetails("VirtualNetwork", "DeleteDrgAttachment", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4268,47 +2511,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     DeleteDrgRouteDistributionRequest,
                                     DeleteDrgRouteDistributionResponse>
                             handler) {
-        LOG.trace("Called async deleteDrgRouteDistribution");
-        final DeleteDrgRouteDistributionRequest interceptedRequest =
-                DeleteDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, DeleteDrgRouteDistributionResponse::builder)
+                .logger(LOG, "deleteDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteDrgRouteDistributionResponse>
-                transformer =
-                        DeleteDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDrgRouteDistributionRequest,
-                                DeleteDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<DeleteDrgRouteDistributionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDrgRouteDistributionRequest, DeleteDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/DeleteDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4317,45 +2539,25 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
                     handler) {
-        LOG.trace("Called async deleteDrgRouteTable");
-        final DeleteDrgRouteTableRequest interceptedRequest =
-                DeleteDrgRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteDrgRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, DeleteDrgRouteTableResponse::builder)
+                .logger(LOG, "deleteDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDrgRouteTableResponse>
-                transformer =
-                        DeleteDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>,
-                        java.util.concurrent.Future<DeleteDrgRouteTableResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteDrgRouteTableRequest, DeleteDrgRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternalPublicIp/DeleteDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteDrgRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4364,45 +2566,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>
                     handler) {
-        LOG.trace("Called async deleteIPSecConnection");
-        final DeleteIPSecConnectionRequest interceptedRequest =
-                DeleteIPSecConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIPSecConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
-                transformer =
-                        DeleteIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>,
-                        java.util.concurrent.Future<DeleteIPSecConnectionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteIPSecConnectionResponse::builder)
+                .logger(LOG, "deleteIPSecConnection")
+                .serviceDetails("VirtualNetwork", "DeleteIPSecConnection", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIPSecConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4411,45 +2590,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
                     handler) {
-        LOG.trace("Called async deleteInternetGateway");
-        final DeleteInternetGatewayRequest interceptedRequest =
-                DeleteInternetGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteInternetGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
-                transformer =
-                        DeleteInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>,
-                        java.util.concurrent.Future<DeleteInternetGatewayResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteInternetGatewayResponse::builder)
+                .logger(LOG, "deleteInternetGateway")
+                .serviceDetails("VirtualNetwork", "DeleteInternetGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteInternetGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4457,39 +2613,23 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteIpv6Request request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteIpv6Request, DeleteIpv6Response>
                     handler) {
-        LOG.trace("Called async deleteIpv6");
-        final DeleteIpv6Request interceptedRequest = DeleteIpv6Converter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteIpv6Converter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteIpv6", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteIpv6Response>
-                transformer =
-                        DeleteIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteIpv6Request, DeleteIpv6Response> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteIpv6Request, DeleteIpv6Response>,
-                        java.util.concurrent.Future<DeleteIpv6Response>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteIpv6Request, DeleteIpv6Response>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteIpv6Response::builder)
+                .logger(LOG, "deleteIpv6")
+                .serviceDetails("VirtualNetwork", "DeleteIpv6", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIpv6Response.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4498,47 +2638,23 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>
                     handler) {
-        LOG.trace("Called async deleteLocalPeeringGateway");
-        final DeleteLocalPeeringGatewayRequest interceptedRequest =
-                DeleteLocalPeeringGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
-                transformer =
-                        DeleteLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteLocalPeeringGatewayRequest,
-                                DeleteLocalPeeringGatewayResponse>,
-                        java.util.concurrent.Future<DeleteLocalPeeringGatewayResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "deleteLocalPeeringGateway")
+                .serviceDetails("VirtualNetwork", "DeleteLocalPeeringGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4547,41 +2663,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteNatGatewayRequest, DeleteNatGatewayResponse>
                     handler) {
-        LOG.trace("Called async deleteNatGateway");
-        final DeleteNatGatewayRequest interceptedRequest =
-                DeleteNatGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNatGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteNatGateway", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
-                transformer =
-                        DeleteNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteNatGatewayRequest, DeleteNatGatewayResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteNatGatewayRequest, DeleteNatGatewayResponse>,
-                        java.util.concurrent.Future<DeleteNatGatewayResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteNatGatewayRequest, DeleteNatGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteNatGatewayResponse::builder)
+                .logger(LOG, "deleteNatGateway")
+                .serviceDetails("VirtualNetwork", "DeleteNatGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNatGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4592,47 +2689,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     DeleteNetworkSecurityGroupRequest,
                                     DeleteNetworkSecurityGroupResponse>
                             handler) {
-        LOG.trace("Called async deleteNetworkSecurityGroup");
-        final DeleteNetworkSecurityGroupRequest interceptedRequest =
-                DeleteNetworkSecurityGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, DeleteNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "deleteNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
-                transformer =
-                        DeleteNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteNetworkSecurityGroupRequest, DeleteNetworkSecurityGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteNetworkSecurityGroupRequest,
-                                DeleteNetworkSecurityGroupResponse>,
-                        java.util.concurrent.Future<DeleteNetworkSecurityGroupResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteNetworkSecurityGroupRequest, DeleteNetworkSecurityGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/DeleteNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4641,41 +2717,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePrivateIpRequest, DeletePrivateIpResponse>
                     handler) {
-        LOG.trace("Called async deletePrivateIp");
-        final DeletePrivateIpRequest interceptedRequest =
-                DeletePrivateIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePrivateIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeletePrivateIp", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
-                transformer =
-                        DeletePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeletePrivateIpRequest, DeletePrivateIpResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePrivateIpRequest, DeletePrivateIpResponse>,
-                        java.util.concurrent.Future<DeletePrivateIpResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePrivateIpRequest, DeletePrivateIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeletePrivateIpResponse::builder)
+                .logger(LOG, "deletePrivateIp")
+                .serviceDetails("VirtualNetwork", "DeletePrivateIp", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePrivateIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4684,40 +2741,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePublicIpRequest, DeletePublicIpResponse>
                     handler) {
-        LOG.trace("Called async deletePublicIp");
-        final DeletePublicIpRequest interceptedRequest =
-                DeletePublicIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePublicIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeletePublicIp", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
-                transformer =
-                        DeletePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeletePublicIpRequest, DeletePublicIpResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePublicIpRequest, DeletePublicIpResponse>,
-                        java.util.concurrent.Future<DeletePublicIpResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePublicIpRequest, DeletePublicIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeletePublicIpResponse::builder)
+                .logger(LOG, "deletePublicIp")
+                .serviceDetails("VirtualNetwork", "DeletePublicIp", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePublicIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4726,44 +2765,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>
                     handler) {
-        LOG.trace("Called async deletePublicIpPool");
-        final DeletePublicIpPoolRequest interceptedRequest =
-                DeletePublicIpPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeletePublicIpPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+
+        return clientCall(request, DeletePublicIpPoolResponse::builder)
+                .logger(LOG, "deletePublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeletePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeletePublicIpPoolResponse>
-                transformer =
-                        DeletePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>,
-                        java.util.concurrent.Future<DeletePublicIpPoolResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeletePublicIpPoolRequest, DeletePublicIpPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/DeletePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePublicIpPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4774,47 +2795,25 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     DeleteRemotePeeringConnectionRequest,
                                     DeleteRemotePeeringConnectionResponse>
                             handler) {
-        LOG.trace("Called async deleteRemotePeeringConnection");
-        final DeleteRemotePeeringConnectionRequest interceptedRequest =
-                DeleteRemotePeeringConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
-                transformer =
-                        DeleteRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteRemotePeeringConnectionRequest, DeleteRemotePeeringConnectionResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteRemotePeeringConnectionRequest,
-                                DeleteRemotePeeringConnectionResponse>,
-                        java.util.concurrent.Future<DeleteRemotePeeringConnectionResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteRemotePeeringConnectionRequest, DeleteRemotePeeringConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "deleteRemotePeeringConnection")
+                .serviceDetails("VirtualNetwork", "DeleteRemotePeeringConnection", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4823,41 +2822,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteRouteTableRequest, DeleteRouteTableResponse>
                     handler) {
-        LOG.trace("Called async deleteRouteTable");
-        final DeleteRouteTableRequest interceptedRequest =
-                DeleteRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteRouteTable", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
-                transformer =
-                        DeleteRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteRouteTableRequest, DeleteRouteTableResponse>,
-                        java.util.concurrent.Future<DeleteRouteTableResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteRouteTableRequest, DeleteRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteRouteTableResponse::builder)
+                .logger(LOG, "deleteRouteTable")
+                .serviceDetails("VirtualNetwork", "DeleteRouteTable", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4866,41 +2846,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteSecurityListRequest, DeleteSecurityListResponse>
                     handler) {
-        LOG.trace("Called async deleteSecurityList");
-        final DeleteSecurityListRequest interceptedRequest =
-                DeleteSecurityListConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSecurityListConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteSecurityList", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
-                transformer =
-                        DeleteSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteSecurityListRequest, DeleteSecurityListResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteSecurityListRequest, DeleteSecurityListResponse>,
-                        java.util.concurrent.Future<DeleteSecurityListResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteSecurityListRequest, DeleteSecurityListResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteSecurityListResponse::builder)
+                .logger(LOG, "deleteSecurityList")
+                .serviceDetails("VirtualNetwork", "DeleteSecurityList", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSecurityListResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4909,45 +2870,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>
                     handler) {
-        LOG.trace("Called async deleteServiceGateway");
-        final DeleteServiceGatewayRequest interceptedRequest =
-                DeleteServiceGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteServiceGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
-                transformer =
-                        DeleteServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>,
-                        java.util.concurrent.Future<DeleteServiceGatewayResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteServiceGatewayResponse::builder)
+                .logger(LOG, "deleteServiceGateway")
+                .serviceDetails("VirtualNetwork", "DeleteServiceGateway", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteServiceGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4955,40 +2893,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteSubnetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse>
                     handler) {
-        LOG.trace("Called async deleteSubnet");
-        final DeleteSubnetRequest interceptedRequest =
-                DeleteSubnetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteSubnetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteSubnet", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
-                transformer =
-                        DeleteSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteSubnetRequest, DeleteSubnetResponse>,
-                        java.util.concurrent.Future<DeleteSubnetResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteSubnetRequest, DeleteSubnetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteSubnetResponse::builder)
+                .logger(LOG, "deleteSubnet")
+                .serviceDetails("VirtualNetwork", "DeleteSubnet", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -4996,38 +2916,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteVcnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse>
                     handler) {
-        LOG.trace("Called async deleteVcn");
-        final DeleteVcnRequest interceptedRequest = DeleteVcnConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVcnConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "DeleteVcn", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVcnResponse>
-                transformer =
-                        DeleteVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse>,
-                        java.util.concurrent.Future<DeleteVcnResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVcnRequest, DeleteVcnResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteVcnResponse::builder)
+                .logger(LOG, "deleteVcn")
+                .serviceDetails("VirtualNetwork", "DeleteVcn", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVcnResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5036,45 +2940,22 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
                     handler) {
-        LOG.trace("Called async deleteVirtualCircuit");
-        final DeleteVirtualCircuitRequest interceptedRequest =
-                DeleteVirtualCircuitConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVirtualCircuitConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork",
-                        "DeleteVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
-                transformer =
-                        DeleteVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
-                handlerToUse = handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>,
-                        java.util.concurrent.Future<DeleteVirtualCircuitResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, DeleteVirtualCircuitResponse::builder)
+                .logger(LOG, "deleteVirtualCircuit")
+                .serviceDetails("VirtualNetwork", "DeleteVirtualCircuit", "")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVirtualCircuitResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5082,42 +2963,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteVlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteVlanRequest, DeleteVlanResponse>
                     handler) {
-        LOG.trace("Called async deleteVlan");
-        final DeleteVlanRequest interceptedRequest = DeleteVlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+
+        return clientCall(request, DeleteVlanResponse::builder)
+                .logger(LOG, "deleteVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVlanResponse>
-                transformer =
-                        DeleteVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteVlanRequest, DeleteVlanResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVlanRequest, DeleteVlanResponse>,
-                        java.util.concurrent.Future<DeleteVlanResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVlanRequest, DeleteVlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/DeleteVlan")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5125,42 +2990,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteVtapRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteVtapRequest, DeleteVtapResponse>
                     handler) {
-        LOG.trace("Called async deleteVtap");
-        final DeleteVtapRequest interceptedRequest = DeleteVtapConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVtapConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+
+        return clientCall(request, DeleteVtapResponse::builder)
+                .logger(LOG, "deleteVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DeleteVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap");
-        final java.util.function.Function<javax.ws.rs.core.Response, DeleteVtapResponse>
-                transformer =
-                        DeleteVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DeleteVtapRequest, DeleteVtapResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DeleteVtapRequest, DeleteVtapResponse>,
-                        java.util.concurrent.Future<DeleteVtapResponse>>
-                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DeleteVtapRequest, DeleteVtapResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/DeleteVtap")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteVtapResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteVtapResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5169,49 +3020,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             DetachServiceIdRequest, DetachServiceIdResponse>
                     handler) {
-        LOG.trace("Called async detachServiceId");
-        final DetachServiceIdRequest interceptedRequest =
-                DetachServiceIdConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DetachServiceIdConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getDetachServiceDetails(), "detachServiceDetails is required");
+
+        return clientCall(request, DetachServiceIdResponse::builder)
+                .logger(LOG, "detachServiceId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "DetachServiceId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId");
-        final java.util.function.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
-                transformer =
-                        DetachServiceIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<DetachServiceIdRequest, DetachServiceIdResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                DetachServiceIdRequest, DetachServiceIdResponse>,
-                        java.util.concurrent.Future<DetachServiceIdResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getDetachServiceDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    DetachServiceIdRequest, DetachServiceIdResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/DetachServiceId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachServiceIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .appendPathParam("actions")
+                .appendPathParam("detachService")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        DetachServiceIdResponse.Builder::serviceGateway)
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachServiceIdResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5220,45 +3055,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
                     handler) {
-        LOG.trace("Called async getAllDrgAttachments");
-        final GetAllDrgAttachmentsRequest interceptedRequest =
-                GetAllDrgAttachmentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAllDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetAllDrgAttachmentsResponse::builder)
+                .logger(LOG, "getAllDrgAttachments")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetAllDrgAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetAllDrgAttachmentsResponse>
-                transformer =
-                        GetAllDrgAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>,
-                        java.util.concurrent.Future<GetAllDrgAttachmentsResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAllDrgAttachmentsRequest, GetAllDrgAttachmentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetAllDrgAttachments")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetAllDrgAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("getAllDrgAttachments")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("attachmentType", request.getAttachmentType())
+                .appendQueryParam("isCrossTenancy", request.getIsCrossTenancy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgAttachmentInfo.class,
+                        GetAllDrgAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetAllDrgAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAllDrgAttachmentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5269,47 +3095,26 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetAllowedIkeIPSecParametersRequest,
                                     GetAllowedIkeIPSecParametersResponse>
                             handler) {
-        LOG.trace("Called async getAllowedIkeIPSecParameters");
-        final GetAllowedIkeIPSecParametersRequest interceptedRequest =
-                GetAllowedIkeIPSecParametersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetAllowedIkeIPSecParametersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, GetAllowedIkeIPSecParametersResponse::builder)
+                .logger(LOG, "getAllowedIkeIPSecParameters")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetAllowedIkeIPSecParameters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetAllowedIkeIPSecParametersResponse>
-                transformer =
-                        GetAllowedIkeIPSecParametersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetAllowedIkeIPSecParametersRequest,
-                                GetAllowedIkeIPSecParametersResponse>,
-                        java.util.concurrent.Future<GetAllowedIkeIPSecParametersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AllowedIkeIPSecParameters/GetAllowedIkeIPSecParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAllowedIkeIPSecParametersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecAlgorithms")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.AllowedIkeIPSecParameters.class,
+                        GetAllowedIkeIPSecParametersResponse.Builder::allowedIkeIPSecParameters)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetAllowedIkeIPSecParametersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5317,43 +3122,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async getByoipRange");
-        final GetByoipRangeRequest interceptedRequest =
-                GetByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, GetByoipRangeResponse::builder)
+                .logger(LOG, "getByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetByoipRangeResponse>
-                transformer =
-                        GetByoipRangeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetByoipRangeRequest, GetByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetByoipRangeRequest, GetByoipRangeResponse>,
-                        java.util.concurrent.Future<GetByoipRangeResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetByoipRangeRequest, GetByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/GetByoipRange")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        GetByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", GetByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetByoipRangeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5362,83 +3153,54 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCaptureFilterRequest, GetCaptureFilterResponse>
                     handler) {
-        LOG.trace("Called async getCaptureFilter");
-        final GetCaptureFilterRequest interceptedRequest =
-                GetCaptureFilterConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCaptureFilterConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+
+        return clientCall(request, GetCaptureFilterResponse::builder)
+                .logger(LOG, "getCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCaptureFilterResponse>
-                transformer =
-                        GetCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCaptureFilterRequest, GetCaptureFilterResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCaptureFilterRequest, GetCaptureFilterResponse>,
-                        java.util.concurrent.Future<GetCaptureFilterResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCaptureFilterRequest, GetCaptureFilterResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/GetCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        GetCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", GetCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCaptureFilterResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetCpeResponse> getCpe(
             GetCpeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handler) {
-        LOG.trace("Called async getCpe");
-        final GetCpeRequest interceptedRequest = GetCpeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+
+        return clientCall(request, GetCpeResponse::builder)
+                .logger(LOG, "getCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
-                GetCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse>,
-                        java.util.concurrent.Future<GetCpeResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCpeRequest, GetCpeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpe")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, GetCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", GetCpeResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetCpeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5447,57 +3209,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>
                     handler) {
-        LOG.trace("Called async getCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetCpeDeviceConfigContentRequest interceptedRequest =
-                GetCpeDeviceConfigContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+
+        return clientCall(request, GetCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
-                transformer =
-                        GetCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCpeDeviceConfigContentRequest,
-                                GetCpeDeviceConfigContentResponse>,
-                        java.util.concurrent.Future<GetCpeDeviceConfigContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/GetCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .appendPathParam("cpeConfigContent")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5506,44 +3240,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>
                     handler) {
-        LOG.trace("Called async getCpeDeviceShape");
-        final GetCpeDeviceShapeRequest interceptedRequest =
-                GetCpeDeviceShapeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCpeDeviceShapeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCpeDeviceShapeId(), "cpeDeviceShapeId must not be blank");
+
+        return clientCall(request, GetCpeDeviceShapeResponse::builder)
+                .logger(LOG, "getCpeDeviceShape")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCpeDeviceShape",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
-                transformer =
-                        GetCpeDeviceShapeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>,
-                        java.util.concurrent.Future<GetCpeDeviceShapeResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeDetail/GetCpeDeviceShape")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCpeDeviceShapeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpeDeviceShapes")
+                .appendPathParam(request.getCpeDeviceShapeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CpeDeviceShapeDetail.class,
+                        GetCpeDeviceShapeResponse.Builder::cpeDeviceShapeDetail)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCpeDeviceShapeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5552,44 +3270,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCrossConnectRequest, GetCrossConnectResponse>
                     handler) {
-        LOG.trace("Called async getCrossConnect");
-        final GetCrossConnectRequest interceptedRequest =
-                GetCrossConnectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectResponse::builder)
+                .logger(LOG, "getCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
-                transformer =
-                        GetCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCrossConnectRequest, GetCrossConnectResponse>,
-                        java.util.concurrent.Future<GetCrossConnectResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCrossConnectRequest, GetCrossConnectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/GetCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        GetCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", GetCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5598,45 +3300,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>
                     handler) {
-        LOG.trace("Called async getCrossConnectGroup");
-        final GetCrossConnectGroupRequest interceptedRequest =
-                GetCrossConnectGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+
+        return clientCall(request, GetCrossConnectGroupResponse::builder)
+                .logger(LOG, "getCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
-                transformer =
-                        GetCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>,
-                        java.util.concurrent.Future<GetCrossConnectGroupResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/GetCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        GetCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", GetCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5647,49 +3333,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetCrossConnectLetterOfAuthorityRequest,
                                     GetCrossConnectLetterOfAuthorityResponse>
                             handler) {
-        LOG.trace("Called async getCrossConnectLetterOfAuthority");
-        final GetCrossConnectLetterOfAuthorityRequest interceptedRequest =
-                GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectLetterOfAuthorityResponse::builder)
+                .logger(LOG, "getCrossConnectLetterOfAuthority")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectLetterOfAuthority",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
-                transformer =
-                        GetCrossConnectLetterOfAuthorityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetCrossConnectLetterOfAuthorityRequest,
-                        GetCrossConnectLetterOfAuthorityResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCrossConnectLetterOfAuthorityRequest,
-                                GetCrossConnectLetterOfAuthorityResponse>,
-                        java.util.concurrent.Future<GetCrossConnectLetterOfAuthorityResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCrossConnectLetterOfAuthorityRequest,
-                    GetCrossConnectLetterOfAuthorityResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LetterOfAuthority/GetCrossConnectLetterOfAuthority")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectLetterOfAuthorityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("letterOfAuthority")
+                .accept("application/json, text/html")
+                .handleBody(
+                        com.oracle.bmc.core.model.LetterOfAuthority.class,
+                        GetCrossConnectLetterOfAuthorityResponse.Builder::letterOfAuthority)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetCrossConnectLetterOfAuthorityResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5698,45 +3364,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>
                     handler) {
-        LOG.trace("Called async getCrossConnectStatus");
-        final GetCrossConnectStatusRequest interceptedRequest =
-                GetCrossConnectStatusConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCrossConnectStatusConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+
+        return clientCall(request, GetCrossConnectStatusResponse::builder)
+                .logger(LOG, "getCrossConnectStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetCrossConnectStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
-                transformer =
-                        GetCrossConnectStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>,
-                        java.util.concurrent.Future<GetCrossConnectStatusResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectStatus/GetCrossConnectStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCrossConnectStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .appendPathParam("status")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectStatus.class,
+                        GetCrossConnectStatusResponse.Builder::crossConnectStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCrossConnectStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5745,82 +3394,53 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDhcpOptionsRequest, GetDhcpOptionsResponse>
                     handler) {
-        LOG.trace("Called async getDhcpOptions");
-        final GetDhcpOptionsRequest interceptedRequest =
-                GetDhcpOptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDhcpOptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+
+        return clientCall(request, GetDhcpOptionsResponse::builder)
+                .logger(LOG, "getDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
-                transformer =
-                        GetDhcpOptionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDhcpOptionsRequest, GetDhcpOptionsResponse>,
-                        java.util.concurrent.Future<GetDhcpOptionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDhcpOptionsRequest, GetDhcpOptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/GetDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        GetDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", GetDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDhcpOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetDrgResponse> getDrg(
             GetDrgRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handler) {
-        LOG.trace("Called async getDrg");
-        final GetDrgRequest interceptedRequest = GetDrgConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetDrgResponse::builder)
+                .logger(LOG, "getDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
-                GetDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse>,
-                        java.util.concurrent.Future<GetDrgResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDrgRequest, GetDrgResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetDrg")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Drg.class, GetDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", GetDrgResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetDrgResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5829,44 +3449,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDrgAttachmentRequest, GetDrgAttachmentResponse>
                     handler) {
-        LOG.trace("Called async getDrgAttachment");
-        final GetDrgAttachmentRequest interceptedRequest =
-                GetDrgAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        return clientCall(request, GetDrgAttachmentResponse::builder)
+                .logger(LOG, "getDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
-                transformer =
-                        GetDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDrgAttachmentRequest, GetDrgAttachmentResponse>,
-                        java.util.concurrent.Future<GetDrgAttachmentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDrgAttachmentRequest, GetDrgAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/GetDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        GetDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", GetDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5875,45 +3479,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>
                     handler) {
-        LOG.trace("Called async getDrgRedundancyStatus");
-        final GetDrgRedundancyStatusRequest interceptedRequest =
-                GetDrgRedundancyStatusConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRedundancyStatusConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetDrgRedundancyStatusResponse::builder)
+                .logger(LOG, "getDrgRedundancyStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRedundancyStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDrgRedundancyStatusResponse>
-                transformer =
-                        GetDrgRedundancyStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>,
-                        java.util.concurrent.Future<GetDrgRedundancyStatusResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDrgRedundancyStatusRequest, GetDrgRedundancyStatusResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRedundancyStatus/GetDrgRedundancyStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRedundancyStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("redundancyStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRedundancyStatus.class,
+                        GetDrgRedundancyStatusResponse.Builder::drgRedundancyStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRedundancyStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5922,46 +3510,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
                     handler) {
-        LOG.trace("Called async getDrgRouteDistribution");
-        final GetDrgRouteDistributionRequest interceptedRequest =
-                GetDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, GetDrgRouteDistributionResponse::builder)
+                .logger(LOG, "getDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetDrgRouteDistributionResponse>
-                transformer =
-                        GetDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<GetDrgRouteDistributionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDrgRouteDistributionRequest, GetDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/GetDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        GetDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString("etag", GetDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -5970,44 +3541,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetDrgRouteTableRequest, GetDrgRouteTableResponse>
                     handler) {
-        LOG.trace("Called async getDrgRouteTable");
-        final GetDrgRouteTableRequest interceptedRequest =
-                GetDrgRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetDrgRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, GetDrgRouteTableResponse::builder)
+                .logger(LOG, "getDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetDrgRouteTableResponse>
-                transformer =
-                        GetDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetDrgRouteTableRequest, GetDrgRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetDrgRouteTableRequest, GetDrgRouteTableResponse>,
-                        java.util.concurrent.Future<GetDrgRouteTableResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetDrgRouteTableRequest, GetDrgRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/GetDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        GetDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", GetDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDrgRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6018,47 +3573,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetFastConnectProviderServiceRequest,
                                     GetFastConnectProviderServiceResponse>
                             handler) {
-        LOG.trace("Called async getFastConnectProviderService");
-        final GetFastConnectProviderServiceRequest interceptedRequest =
-                GetFastConnectProviderServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFastConnectProviderServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        return clientCall(request, GetFastConnectProviderServiceResponse::builder)
+                .logger(LOG, "getFastConnectProviderService")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
-                transformer =
-                        GetFastConnectProviderServiceConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetFastConnectProviderServiceRequest, GetFastConnectProviderServiceResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetFastConnectProviderServiceRequest,
-                                GetFastConnectProviderServiceResponse>,
-                        java.util.concurrent.Future<GetFastConnectProviderServiceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetFastConnectProviderServiceRequest, GetFastConnectProviderServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/GetFastConnectProviderService")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFastConnectProviderServiceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.FastConnectProviderService.class,
+                        GetFastConnectProviderServiceResponse.Builder::fastConnectProviderService)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetFastConnectProviderServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6069,49 +3605,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetFastConnectProviderServiceKeyRequest,
                                     GetFastConnectProviderServiceKeyResponse>
                             handler) {
-        LOG.trace("Called async getFastConnectProviderServiceKey");
-        final GetFastConnectProviderServiceKeyRequest interceptedRequest =
-                GetFastConnectProviderServiceKeyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetFastConnectProviderServiceKeyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        Validate.notBlank(
+                request.getProviderServiceKeyName(), "providerServiceKeyName must not be blank");
+
+        return clientCall(request, GetFastConnectProviderServiceKeyResponse::builder)
+                .logger(LOG, "getFastConnectProviderServiceKey")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetFastConnectProviderServiceKey",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
-                transformer =
-                        GetFastConnectProviderServiceKeyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetFastConnectProviderServiceKeyRequest,
-                        GetFastConnectProviderServiceKeyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetFastConnectProviderServiceKeyRequest,
-                                GetFastConnectProviderServiceKeyResponse>,
-                        java.util.concurrent.Future<GetFastConnectProviderServiceKeyResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetFastConnectProviderServiceKeyRequest,
-                    GetFastConnectProviderServiceKeyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderServiceKey/GetFastConnectProviderServiceKey")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFastConnectProviderServiceKeyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .appendPathParam("providerServiceKeys")
+                .appendPathParam(request.getProviderServiceKeyName())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.FastConnectProviderServiceKey.class,
+                        GetFastConnectProviderServiceKeyResponse.Builder
+                                ::fastConnectProviderServiceKey)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetFastConnectProviderServiceKeyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6120,44 +3641,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetIPSecConnectionRequest, GetIPSecConnectionResponse>
                     handler) {
-        LOG.trace("Called async getIPSecConnection");
-        final GetIPSecConnectionRequest interceptedRequest =
-                GetIPSecConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionResponse::builder)
+                .logger(LOG, "getIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
-                transformer =
-                        GetIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetIPSecConnectionRequest, GetIPSecConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionRequest, GetIPSecConnectionResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionRequest, GetIPSecConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        GetIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", GetIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIPSecConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6168,48 +3673,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIPSecConnectionDeviceConfigRequest,
                                     GetIPSecConnectionDeviceConfigResponse>
                             handler) {
-        LOG.trace("Called async getIPSecConnectionDeviceConfig");
-        final GetIPSecConnectionDeviceConfigRequest interceptedRequest =
-                GetIPSecConnectionDeviceConfigConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionDeviceConfigConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionDeviceConfigResponse::builder)
+                .logger(LOG, "getIPSecConnectionDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
-                transformer =
-                        GetIPSecConnectionDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIPSecConnectionDeviceConfigRequest,
-                        GetIPSecConnectionDeviceConfigResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionDeviceConfigRequest,
-                                GetIPSecConnectionDeviceConfigResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionDeviceConfigResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionDeviceConfigRequest, GetIPSecConnectionDeviceConfigResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceConfig/GetIPSecConnectionDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("deviceConfig")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionDeviceConfig.class,
+                        GetIPSecConnectionDeviceConfigResponse.Builder::iPSecConnectionDeviceConfig)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionDeviceConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6220,48 +3708,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIPSecConnectionDeviceStatusRequest,
                                     GetIPSecConnectionDeviceStatusResponse>
                             handler) {
-        LOG.trace("Called async getIPSecConnectionDeviceStatus");
-        final GetIPSecConnectionDeviceStatusRequest interceptedRequest =
-                GetIPSecConnectionDeviceStatusConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionDeviceStatusConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionDeviceStatusResponse::builder)
+                .logger(LOG, "getIPSecConnectionDeviceStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionDeviceStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
-                transformer =
-                        GetIPSecConnectionDeviceStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIPSecConnectionDeviceStatusRequest,
-                        GetIPSecConnectionDeviceStatusResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionDeviceStatusRequest,
-                                GetIPSecConnectionDeviceStatusResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionDeviceStatusResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionDeviceStatusRequest, GetIPSecConnectionDeviceStatusResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionDeviceStatus/GetIPSecConnectionDeviceStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionDeviceStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("deviceStatus")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionDeviceStatus.class,
+                        GetIPSecConnectionDeviceStatusResponse.Builder::iPSecConnectionDeviceStatus)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionDeviceStatusResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionDeviceStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6270,46 +3741,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>
                     handler) {
-        LOG.trace("Called async getIPSecConnectionTunnel");
-        final GetIPSecConnectionTunnelRequest interceptedRequest =
-                GetIPSecConnectionTunnelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnel")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
-                transformer =
-                        GetIPSecConnectionTunnelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionTunnelResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/GetIPSecConnectionTunnel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        GetIPSecConnectionTunnelResponse.Builder::iPSecConnectionTunnel)
+                .handleResponseHeaderString("etag", GetIPSecConnectionTunnelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIPSecConnectionTunnelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6320,47 +3777,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIPSecConnectionTunnelErrorRequest,
                                     GetIPSecConnectionTunnelErrorResponse>
                             handler) {
-        LOG.trace("Called async getIPSecConnectionTunnelError");
-        final GetIPSecConnectionTunnelErrorRequest interceptedRequest =
-                GetIPSecConnectionTunnelErrorConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelErrorConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelErrorResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnelError")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelError",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelErrorResponse>
-                transformer =
-                        GetIPSecConnectionTunnelErrorConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIPSecConnectionTunnelErrorRequest, GetIPSecConnectionTunnelErrorResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionTunnelErrorRequest,
-                                GetIPSecConnectionTunnelErrorResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionTunnelErrorResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionTunnelErrorRequest, GetIPSecConnectionTunnelErrorResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelErrorDetails/GetIPSecConnectionTunnelError")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelErrorRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("error")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelErrorDetails.class,
+                        GetIPSecConnectionTunnelErrorResponse.Builder
+                                ::iPSecConnectionTunnelErrorDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionTunnelErrorResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6371,50 +3815,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIPSecConnectionTunnelSharedSecretRequest,
                                     GetIPSecConnectionTunnelSharedSecretResponse>
                             handler) {
-        LOG.trace("Called async getIPSecConnectionTunnelSharedSecret");
-        final GetIPSecConnectionTunnelSharedSecretRequest interceptedRequest =
-                GetIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIPSecConnectionTunnelSharedSecretConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetIPSecConnectionTunnelSharedSecretResponse::builder)
+                .logger(LOG, "getIPSecConnectionTunnelSharedSecret")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIPSecConnectionTunnelSharedSecret",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelSharedSecretResponse>
-                transformer =
-                        GetIPSecConnectionTunnelSharedSecretConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIPSecConnectionTunnelSharedSecretRequest,
-                        GetIPSecConnectionTunnelSharedSecretResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIPSecConnectionTunnelSharedSecretRequest,
-                                GetIPSecConnectionTunnelSharedSecretResponse>,
-                        java.util.concurrent.Future<GetIPSecConnectionTunnelSharedSecretResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIPSecConnectionTunnelSharedSecretRequest,
-                    GetIPSecConnectionTunnelSharedSecretResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/GetIPSecConnectionTunnelSharedSecret")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIPSecConnectionTunnelSharedSecretRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("sharedSecret")
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
+                        GetIPSecConnectionTunnelSharedSecretResponse.Builder
+                                ::iPSecConnectionTunnelSharedSecret)
+                .handleResponseHeaderString(
+                        "etag", GetIPSecConnectionTunnelSharedSecretResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6423,44 +3853,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetInternetGatewayRequest, GetInternetGatewayResponse>
                     handler) {
-        LOG.trace("Called async getInternetGateway");
-        final GetInternetGatewayRequest interceptedRequest =
-                GetInternetGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetInternetGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+
+        return clientCall(request, GetInternetGatewayResponse::builder)
+                .logger(LOG, "getInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
-                transformer =
-                        GetInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetInternetGatewayRequest, GetInternetGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetInternetGatewayRequest, GetInternetGatewayResponse>,
-                        java.util.concurrent.Future<GetInternetGatewayResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetInternetGatewayRequest, GetInternetGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/GetInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        GetInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", GetInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInternetGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6471,98 +3885,56 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetIpsecCpeDeviceConfigContentRequest,
                                     GetIpsecCpeDeviceConfigContentResponse>
                             handler) {
-        LOG.trace("Called async getIpsecCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getIpsecCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetIpsecCpeDeviceConfigContentRequest interceptedRequest =
-                GetIpsecCpeDeviceConfigContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIpsecCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, GetIpsecCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getIpsecCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIpsecCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
-                transformer =
-                        GetIpsecCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetIpsecCpeDeviceConfigContentRequest,
-                        GetIpsecCpeDeviceConfigContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetIpsecCpeDeviceConfigContentRequest,
-                                GetIpsecCpeDeviceConfigContentResponse>,
-                        java.util.concurrent.Future<GetIpsecCpeDeviceConfigContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIpsecCpeDeviceConfigContentRequest, GetIpsecCpeDeviceConfigContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/GetIpsecCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIpsecCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("cpeConfigContent")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetIpsecCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetIpsecCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetIpv6Response> getIpv6(
             GetIpv6Request request,
             final com.oracle.bmc.responses.AsyncHandler<GetIpv6Request, GetIpv6Response> handler) {
-        LOG.trace("Called async getIpv6");
-        final GetIpv6Request interceptedRequest = GetIpv6Converter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetIpv6Converter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+
+        return clientCall(request, GetIpv6Response::builder)
+                .logger(LOG, "getIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetIpv6Response> transformer =
-                GetIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetIpv6Request, GetIpv6Response> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetIpv6Request, GetIpv6Response>,
-                        java.util.concurrent.Future<GetIpv6Response>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetIpv6Request, GetIpv6Response>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, GetIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", GetIpv6Response.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetIpv6Response.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6571,45 +3943,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
                     handler) {
-        LOG.trace("Called async getLocalPeeringGateway");
-        final GetLocalPeeringGatewayRequest interceptedRequest =
-                GetLocalPeeringGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+
+        return clientCall(request, GetLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "getLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
-                transformer =
-                        GetLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>,
-                        java.util.concurrent.Future<GetLocalPeeringGatewayResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/GetLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        GetLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", GetLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6617,43 +3973,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetNatGatewayRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetNatGatewayRequest, GetNatGatewayResponse>
                     handler) {
-        LOG.trace("Called async getNatGateway");
-        final GetNatGatewayRequest interceptedRequest =
-                GetNatGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNatGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+
+        return clientCall(request, GetNatGatewayResponse::builder)
+                .logger(LOG, "getNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
-                transformer =
-                        GetNatGatewayConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetNatGatewayRequest, GetNatGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetNatGatewayRequest, GetNatGatewayResponse>,
-                        java.util.concurrent.Future<GetNatGatewayResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetNatGatewayRequest, GetNatGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/GetNatGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        GetNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", GetNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNatGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6662,46 +4003,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>
                     handler) {
-        LOG.trace("Called async getNetworkSecurityGroup");
-        final GetNetworkSecurityGroupRequest interceptedRequest =
-                GetNetworkSecurityGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, GetNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "getNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
-                transformer =
-                        GetNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>,
-                        java.util.concurrent.Future<GetNetworkSecurityGroupResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/GetNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        GetNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString("etag", GetNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6710,45 +4034,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
                     handler) {
-        LOG.trace("Called async getNetworkingTopology");
-        final GetNetworkingTopologyRequest interceptedRequest =
-                GetNetworkingTopologyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNetworkingTopologyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, GetNetworkingTopologyResponse::builder)
+                .logger(LOG, "getNetworkingTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetNetworkingTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetNetworkingTopologyResponse>
-                transformer =
-                        GetNetworkingTopologyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>,
-                        java.util.concurrent.Future<GetNetworkingTopologyResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetNetworkingTopologyRequest, GetNetworkingTopologyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkingTopology/GetNetworkingTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetNetworkingTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkingTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkingTopology.class,
+                        GetNetworkingTopologyResponse.Builder::networkingTopology)
+                .handleResponseHeaderString("etag", GetNetworkingTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetNetworkingTopologyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6756,43 +4067,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetPrivateIpRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
                     handler) {
-        LOG.trace("Called async getPrivateIp");
-        final GetPrivateIpRequest interceptedRequest =
-                GetPrivateIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPrivateIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+
+        return clientCall(request, GetPrivateIpResponse::builder)
+                .logger(LOG, "getPrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
-                transformer =
-                        GetPrivateIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPrivateIpRequest, GetPrivateIpResponse>,
-                        java.util.concurrent.Future<GetPrivateIpResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPrivateIpRequest, GetPrivateIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        GetPrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", GetPrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPrivateIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6800,43 +4096,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetPublicIpRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetPublicIpRequest, GetPublicIpResponse>
                     handler) {
-        LOG.trace("Called async getPublicIp");
-        final GetPublicIpRequest interceptedRequest =
-                GetPublicIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+
+        return clientCall(request, GetPublicIpResponse::builder)
+                .logger(LOG, "getPublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
-                transformer =
-                        GetPublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPublicIpRequest, GetPublicIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPublicIpRequest, GetPublicIpResponse>,
-                        java.util.concurrent.Future<GetPublicIpResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPublicIpRequest, GetPublicIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIp")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6845,50 +4126,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>
                     handler) {
-        LOG.trace("Called async getPublicIpByIpAddress");
-        final GetPublicIpByIpAddressRequest interceptedRequest =
-                GetPublicIpByIpAddressConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpByIpAddressConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getGetPublicIpByIpAddressDetails(),
+                "getPublicIpByIpAddressDetails is required");
+
+        return clientCall(request, GetPublicIpByIpAddressResponse::builder)
+                .logger(LOG, "getPublicIpByIpAddress")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByIpAddress",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
-                transformer =
-                        GetPublicIpByIpAddressConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>,
-                        java.util.concurrent.Future<GetPublicIpByIpAddressResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getGetPublicIpByIpAddressDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPublicIpByIpAddressRequest, GetPublicIpByIpAddressResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByIpAddress")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetPublicIpByIpAddressRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam("actions")
+                .appendPathParam("getByIpAddress")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpByIpAddressResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpByIpAddressResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpByIpAddressResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6897,51 +4159,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>
                     handler) {
-        LOG.trace("Called async getPublicIpByPrivateIpId");
-        final GetPublicIpByPrivateIpIdRequest interceptedRequest =
-                GetPublicIpByPrivateIpIdConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpByPrivateIpIdConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(
+                request.getGetPublicIpByPrivateIpIdDetails(),
+                "getPublicIpByPrivateIpIdDetails is required");
+
+        return clientCall(request, GetPublicIpByPrivateIpIdResponse::builder)
+                .logger(LOG, "getPublicIpByPrivateIpId")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpByPrivateIpId",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
-                transformer =
-                        GetPublicIpByPrivateIpIdConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>,
-                        java.util.concurrent.Future<GetPublicIpByPrivateIpIdResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getGetPublicIpByPrivateIpIdDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPublicIpByPrivateIpIdRequest, GetPublicIpByPrivateIpIdResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GetPublicIpByPrivateIpIdRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam("actions")
+                .appendPathParam("getByPrivateIpId")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        GetPublicIpByPrivateIpIdResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", GetPublicIpByPrivateIpIdResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpByPrivateIpIdResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6950,44 +4192,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetPublicIpPoolRequest, GetPublicIpPoolResponse>
                     handler) {
-        LOG.trace("Called async getPublicIpPool");
-        final GetPublicIpPoolRequest interceptedRequest =
-                GetPublicIpPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetPublicIpPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+
+        return clientCall(request, GetPublicIpPoolResponse::builder)
+                .logger(LOG, "getPublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetPublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetPublicIpPoolResponse>
-                transformer =
-                        GetPublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetPublicIpPoolRequest, GetPublicIpPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetPublicIpPoolRequest, GetPublicIpPoolResponse>,
-                        java.util.concurrent.Future<GetPublicIpPoolResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetPublicIpPoolRequest, GetPublicIpPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/GetPublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        GetPublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", GetPublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPublicIpPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -6998,47 +4225,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetRemotePeeringConnectionRequest,
                                     GetRemotePeeringConnectionResponse>
                             handler) {
-        LOG.trace("Called async getRemotePeeringConnection");
-        final GetRemotePeeringConnectionRequest interceptedRequest =
-                GetRemotePeeringConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+
+        return clientCall(request, GetRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "getRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
-                transformer =
-                        GetRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetRemotePeeringConnectionRequest,
-                                GetRemotePeeringConnectionResponse>,
-                        java.util.concurrent.Future<GetRemotePeeringConnectionResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/GetRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        GetRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", GetRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7046,43 +4257,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetRouteTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
                     handler) {
-        LOG.trace("Called async getRouteTable");
-        final GetRouteTableRequest interceptedRequest =
-                GetRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+
+        return clientCall(request, GetRouteTableResponse::builder)
+                .logger(LOG, "getRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
-                transformer =
-                        GetRouteTableConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetRouteTableRequest, GetRouteTableResponse>,
-                        java.util.concurrent.Future<GetRouteTableResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetRouteTableRequest, GetRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/GetRouteTable")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        GetRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", GetRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7091,44 +4287,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetSecurityListRequest, GetSecurityListResponse>
                     handler) {
-        LOG.trace("Called async getSecurityList");
-        final GetSecurityListRequest interceptedRequest =
-                GetSecurityListConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSecurityListConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+
+        return clientCall(request, GetSecurityListResponse::builder)
+                .logger(LOG, "getSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
-                transformer =
-                        GetSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetSecurityListRequest, GetSecurityListResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetSecurityListRequest, GetSecurityListResponse>,
-                        java.util.concurrent.Future<GetSecurityListResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetSecurityListRequest, GetSecurityListResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/GetSecurityList")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        GetSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", GetSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSecurityListResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7136,42 +4316,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetServiceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse>
                     handler) {
-        LOG.trace("Called async getService");
-        final GetServiceRequest interceptedRequest = GetServiceConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetServiceConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceId(), "serviceId must not be blank");
+
+        return clientCall(request, GetServiceResponse::builder)
+                .logger(LOG, "getService")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetService",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceResponse>
-                transformer =
-                        GetServiceConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetServiceRequest, GetServiceResponse>,
-                        java.util.concurrent.Future<GetServiceResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetServiceRequest, GetServiceResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/GetService")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetServiceRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("services")
+                .appendPathParam(request.getServiceId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.Service.class,
+                        GetServiceResponse.Builder::service)
+                .handleResponseHeaderString("etag", GetServiceResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetServiceResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7180,44 +4346,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetServiceGatewayRequest, GetServiceGatewayResponse>
                     handler) {
-        LOG.trace("Called async getServiceGateway");
-        final GetServiceGatewayRequest interceptedRequest =
-                GetServiceGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetServiceGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+
+        return clientCall(request, GetServiceGatewayResponse::builder)
+                .logger(LOG, "getServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
-                transformer =
-                        GetServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetServiceGatewayRequest, GetServiceGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetServiceGatewayRequest, GetServiceGatewayResponse>,
-                        java.util.concurrent.Future<GetServiceGatewayResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetServiceGatewayRequest, GetServiceGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/GetServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        GetServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString("etag", GetServiceGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetServiceGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7225,41 +4375,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetSubnetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse>
                     handler) {
-        LOG.trace("Called async getSubnet");
-        final GetSubnetRequest interceptedRequest = GetSubnetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSubnetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+
+        return clientCall(request, GetSubnetResponse::builder)
+                .logger(LOG, "getSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetSubnetResponse>
-                transformer =
-                        GetSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse>,
-                        java.util.concurrent.Future<GetSubnetResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetSubnetRequest, GetSubnetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/GetSubnet")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class, GetSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", GetSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7268,44 +4404,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetSubnetTopologyRequest, GetSubnetTopologyResponse>
                     handler) {
-        LOG.trace("Called async getSubnetTopology");
-        final GetSubnetTopologyRequest interceptedRequest =
-                GetSubnetTopologyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetSubnetTopologyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getSubnetId(), "subnetId is required");
+
+        return clientCall(request, GetSubnetTopologyResponse::builder)
+                .logger(LOG, "getSubnetTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetSubnetTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetSubnetTopologyResponse>
-                transformer =
-                        GetSubnetTopologyConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetSubnetTopologyRequest, GetSubnetTopologyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetSubnetTopologyRequest, GetSubnetTopologyResponse>,
-                        java.util.concurrent.Future<GetSubnetTopologyResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetSubnetTopologyRequest, GetSubnetTopologyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SubnetTopology/GetSubnetTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSubnetTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnetTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.SubnetTopology.class,
+                        GetSubnetTopologyResponse.Builder::subnetTopology)
+                .handleResponseHeaderString("etag", GetSubnetTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSubnetTopologyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7314,46 +4441,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>
                     handler) {
-        LOG.trace("Called async getTunnelCpeDeviceConfig");
-        final GetTunnelCpeDeviceConfigRequest interceptedRequest =
-                GetTunnelCpeDeviceConfigConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetTunnelCpeDeviceConfigResponse::builder)
+                .logger(LOG, "getTunnelCpeDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
-                transformer =
-                        GetTunnelCpeDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>,
-                        java.util.concurrent.Future<GetTunnelCpeDeviceConfigResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelCpeDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
+                        GetTunnelCpeDeviceConfigResponse.Builder::tunnelCpeDeviceConfig)
+                .handleResponseHeaderString("etag", GetTunnelCpeDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7364,59 +4479,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetTunnelCpeDeviceConfigContentRequest,
                                     GetTunnelCpeDeviceConfigContentResponse>
                             handler) {
-        LOG.trace("Called async getTunnelCpeDeviceConfigContent");
-        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    "getTunnelCpeDeviceConfigContent returns a stream, please make sure to close the stream to avoid any indefinite hangs");
-            if (this.apacheConnectionClosingStrategy != null) {
-                LOG.warn(
-                        "ApacheConnectionClosingStrategy set to {}. For large streams with partial reads of stream, please use ImmediateClosingStrategy. "
-                                + "For small streams with partial reads of stream, please use GracefulClosingStrategy. More info in ApacheConnectorProperties",
-                        this.apacheConnectionClosingStrategy);
-            }
-        }
-        final GetTunnelCpeDeviceConfigContentRequest interceptedRequest =
-                GetTunnelCpeDeviceConfigContentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTunnelCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, GetTunnelCpeDeviceConfigContentResponse::builder)
+                .logger(LOG, "getTunnelCpeDeviceConfigContent")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetTunnelCpeDeviceConfigContent",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigContentResponse>
-                transformer =
-                        GetTunnelCpeDeviceConfigContentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetTunnelCpeDeviceConfigContentRequest,
-                        GetTunnelCpeDeviceConfigContentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetTunnelCpeDeviceConfigContentRequest,
-                                GetTunnelCpeDeviceConfigContentResponse>,
-                        java.util.concurrent.Future<GetTunnelCpeDeviceConfigContentResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetTunnelCpeDeviceConfigContentRequest,
-                    GetTunnelCpeDeviceConfigContentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelCpeDeviceConfigContentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .appendPathParam("content")
+                .accept("text/plain; charset=utf-8")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        java.io.InputStream.class,
+                        GetTunnelCpeDeviceConfigContentResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetTunnelCpeDeviceConfigContentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7425,83 +4516,55 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetUpgradeStatusRequest, GetUpgradeStatusResponse>
                     handler) {
-        LOG.trace("Called async getUpgradeStatus");
-        final GetUpgradeStatusRequest interceptedRequest =
-                GetUpgradeStatusConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetUpgradeStatusConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, GetUpgradeStatusResponse::builder)
+                .logger(LOG, "getUpgradeStatus")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetUpgradeStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetUpgradeStatusResponse>
-                transformer =
-                        GetUpgradeStatusConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetUpgradeStatusRequest, GetUpgradeStatusResponse>,
-                        java.util.concurrent.Future<GetUpgradeStatusResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetUpgradeStatusRequest, GetUpgradeStatusResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/GetUpgradeStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetUpgradeStatusRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("upgradeStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.UpgradeStatus.class,
+                        GetUpgradeStatusResponse.Builder::upgradeStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetUpgradeStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetVcnResponse> getVcn(
             GetVcnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handler) {
-        LOG.trace("Called async getVcn");
-        final GetVcnRequest interceptedRequest = GetVcnConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, GetVcnResponse::builder)
+                .logger(LOG, "getVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
-                GetVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse>,
-                        java.util.concurrent.Future<GetVcnResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVcnRequest, GetVcnResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/GetVcn")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, GetVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", GetVcnResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVcnResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7512,47 +4575,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     GetVcnDnsResolverAssociationRequest,
                                     GetVcnDnsResolverAssociationResponse>
                             handler) {
-        LOG.trace("Called async getVcnDnsResolverAssociation");
-        final GetVcnDnsResolverAssociationRequest interceptedRequest =
-                GetVcnDnsResolverAssociationConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnDnsResolverAssociationConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, GetVcnDnsResolverAssociationResponse::builder)
+                .logger(LOG, "getVcnDnsResolverAssociation")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnDnsResolverAssociation",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, GetVcnDnsResolverAssociationResponse>
-                transformer =
-                        GetVcnDnsResolverAssociationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVcnDnsResolverAssociationRequest,
-                                GetVcnDnsResolverAssociationResponse>,
-                        java.util.concurrent.Future<GetVcnDnsResolverAssociationResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVcnDnsResolverAssociationRequest, GetVcnDnsResolverAssociationResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnDnsResolverAssociation/GetVcnDnsResolverAssociation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnDnsResolverAssociationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("dnsResolverAssociation")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.VcnDnsResolverAssociation.class,
+                        GetVcnDnsResolverAssociationResponse.Builder::vcnDnsResolverAssociation)
+                .handleResponseHeaderString(
+                        "etag", GetVcnDnsResolverAssociationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetVcnDnsResolverAssociationResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7561,43 +4609,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVcnTopologyRequest, GetVcnTopologyResponse>
                     handler) {
-        LOG.trace("Called async getVcnTopology");
-        final GetVcnTopologyRequest interceptedRequest =
-                GetVcnTopologyConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVcnTopologyConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getVcnId(), "vcnId is required");
+
+        return clientCall(request, GetVcnTopologyResponse::builder)
+                .logger(LOG, "getVcnTopology")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVcnTopology",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVcnTopologyResponse>
-                transformer =
-                        GetVcnTopologyConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVcnTopologyRequest, GetVcnTopologyResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVcnTopologyRequest, GetVcnTopologyResponse>,
-                        java.util.concurrent.Future<GetVcnTopologyResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVcnTopologyRequest, GetVcnTopologyResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VcnTopology/GetVcnTopology")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVcnTopologyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcnTopology")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("queryCompartmentSubtree", request.getQueryCompartmentSubtree())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-none-match", request.getIfNoneMatch())
+                .appendHeader("cache-control", request.getCacheControl())
+                .handleBody(
+                        com.oracle.bmc.core.model.VcnTopology.class,
+                        GetVcnTopologyResponse.Builder::vcnTopology)
+                .handleResponseHeaderString("etag", GetVcnTopologyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVcnTopologyResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7606,164 +4646,105 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             GetVirtualCircuitRequest, GetVirtualCircuitResponse>
                     handler) {
-        LOG.trace("Called async getVirtualCircuit");
-        final GetVirtualCircuitRequest interceptedRequest =
-                GetVirtualCircuitConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVirtualCircuitConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, GetVirtualCircuitResponse::builder)
+                .logger(LOG, "getVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
-                transformer =
-                        GetVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetVirtualCircuitRequest, GetVirtualCircuitResponse>,
-                        java.util.concurrent.Future<GetVirtualCircuitResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVirtualCircuitRequest, GetVirtualCircuitResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/GetVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        GetVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", GetVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVirtualCircuitResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetVlanResponse> getVlan(
             GetVlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVlanRequest, GetVlanResponse> handler) {
-        LOG.trace("Called async getVlan");
-        final GetVlanRequest interceptedRequest = GetVlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+
+        return clientCall(request, GetVlanResponse::builder)
+                .logger(LOG, "getVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVlanResponse> transformer =
-                GetVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVlanRequest, GetVlanResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetVlanRequest, GetVlanResponse>,
-                        java.util.concurrent.Future<GetVlanResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVlanRequest, GetVlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/GetVlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, GetVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", GetVlanResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetVnicResponse> getVnic(
             GetVnicRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handler) {
-        LOG.trace("Called async getVnic");
-        final GetVnicRequest interceptedRequest = GetVnicConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVnicConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
+
+        return clientCall(request, GetVnicResponse::builder)
+                .logger(LOG, "getVnic")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
-                GetVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse>,
-                        java.util.concurrent.Future<GetVnicResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVnicRequest, GetVnicResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/GetVnic")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnics")
+                .appendPathParam(request.getVnicId())
+                .accept("application/json")
+                .handleBody(com.oracle.bmc.core.model.Vnic.class, GetVnicResponse.Builder::vnic)
+                .handleResponseHeaderString("etag", GetVnicResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVnicResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
     public java.util.concurrent.Future<GetVtapResponse> getVtap(
             GetVtapRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetVtapRequest, GetVtapResponse> handler) {
-        LOG.trace("Called async getVtap");
-        final GetVtapRequest interceptedRequest = GetVtapConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVtapConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+
+        return clientCall(request, GetVtapResponse::builder)
+                .logger(LOG, "getVtap")
+                .serviceDetails(
                         "VirtualNetwork",
                         "GetVtap",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetVtapResponse> transformer =
-                GetVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetVtapRequest, GetVtapResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetVtapRequest, GetVtapResponse>,
-                        java.util.concurrent.Future<GetVtapResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetVtapRequest, GetVtapResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/GetVtap")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, GetVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", GetVtapResponse.Builder::etag)
+                .handleResponseHeaderString("opc-request-id", GetVtapResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7774,50 +4755,25 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListAllowedPeerRegionsForRemotePeeringRequest,
                                     ListAllowedPeerRegionsForRemotePeeringResponse>
                             handler) {
-        LOG.trace("Called async listAllowedPeerRegionsForRemotePeering");
-        final ListAllowedPeerRegionsForRemotePeeringRequest interceptedRequest =
-                ListAllowedPeerRegionsForRemotePeeringConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListAllowedPeerRegionsForRemotePeeringConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListAllowedPeerRegionsForRemotePeeringResponse::builder)
+                .logger(LOG, "listAllowedPeerRegionsForRemotePeering")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListAllowedPeerRegionsForRemotePeering",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
-                transformer =
-                        ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListAllowedPeerRegionsForRemotePeeringRequest,
-                        ListAllowedPeerRegionsForRemotePeeringResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListAllowedPeerRegionsForRemotePeeringRequest,
-                                ListAllowedPeerRegionsForRemotePeeringResponse>,
-                        java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListAllowedPeerRegionsForRemotePeeringRequest,
-                    ListAllowedPeerRegionsForRemotePeeringResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PeerRegionForRemotePeering/ListAllowedPeerRegionsForRemotePeering")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAllowedPeerRegionsForRemotePeeringRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("allowedPeerRegionsForRemotePeering")
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PeerRegionForRemotePeering.class,
+                        ListAllowedPeerRegionsForRemotePeeringResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListAllowedPeerRegionsForRemotePeeringResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7826,46 +4782,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>
                     handler) {
-        LOG.trace("Called async listByoipAllocatedRanges");
-        final ListByoipAllocatedRangesRequest interceptedRequest =
-                ListByoipAllocatedRangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListByoipAllocatedRangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, ListByoipAllocatedRangesResponse::builder)
+                .logger(LOG, "listByoipAllocatedRanges")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipAllocatedRanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListByoipAllocatedRangesResponse>
-                transformer =
-                        ListByoipAllocatedRangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>,
-                        java.util.concurrent.Future<ListByoipAllocatedRangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListByoipAllocatedRangesRequest, ListByoipAllocatedRangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipAllocatedRangeSummary/ListByoipAllocatedRanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListByoipAllocatedRangesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("byoipAllocatedRanges")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipAllocatedRangeCollection.class,
+                        ListByoipAllocatedRangesResponse.Builder::byoipAllocatedRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListByoipAllocatedRangesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListByoipAllocatedRangesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7874,44 +4817,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListByoipRangesRequest, ListByoipRangesResponse>
                     handler) {
-        LOG.trace("Called async listByoipRanges");
-        final ListByoipRangesRequest interceptedRequest =
-                ListByoipRangesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListByoipRangesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListByoipRangesResponse::builder)
+                .logger(LOG, "listByoipRanges")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListByoipRanges",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListByoipRangesResponse>
-                transformer =
-                        ListByoipRangesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListByoipRangesRequest, ListByoipRangesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListByoipRangesRequest, ListByoipRangesResponse>,
-                        java.util.concurrent.Future<ListByoipRangesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListByoipRangesRequest, ListByoipRangesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ListByoipRanges")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListByoipRangesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRangeCollection.class,
+                        ListByoipRangesResponse.Builder::byoipRangeCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListByoipRangesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListByoipRangesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7920,44 +4854,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCaptureFiltersRequest, ListCaptureFiltersResponse>
                     handler) {
-        LOG.trace("Called async listCaptureFilters");
-        final ListCaptureFiltersRequest interceptedRequest =
-                ListCaptureFiltersConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCaptureFiltersConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCaptureFiltersResponse::builder)
+                .logger(LOG, "listCaptureFilters")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCaptureFilters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListCaptureFiltersResponse>
-                transformer =
-                        ListCaptureFiltersConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListCaptureFiltersRequest, ListCaptureFiltersResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCaptureFiltersRequest, ListCaptureFiltersResponse>,
-                        java.util.concurrent.Future<ListCaptureFiltersResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCaptureFiltersRequest, ListCaptureFiltersResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/ListCaptureFilters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCaptureFiltersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        ListCaptureFiltersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCaptureFiltersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCaptureFiltersResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -7966,45 +4891,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>
                     handler) {
-        LOG.trace("Called async listCpeDeviceShapes");
-        final ListCpeDeviceShapesRequest interceptedRequest =
-                ListCpeDeviceShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCpeDeviceShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListCpeDeviceShapesResponse::builder)
+                .logger(LOG, "listCpeDeviceShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCpeDeviceShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
-                transformer =
-                        ListCpeDeviceShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>,
-                        java.util.concurrent.Future<ListCpeDeviceShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CpeDeviceShapeSummary/ListCpeDeviceShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCpeDeviceShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpeDeviceShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CpeDeviceShapeSummary.class,
+                        ListCpeDeviceShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCpeDeviceShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCpeDeviceShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8012,40 +4921,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListCpesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse>
                     handler) {
-        LOG.trace("Called async listCpes");
-        final ListCpesRequest interceptedRequest = ListCpesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCpesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCpesResponse::builder)
+                .logger(LOG, "listCpes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCpes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
-                ListCpesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse>,
-                        java.util.concurrent.Future<ListCpesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCpesRequest, ListCpesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/ListCpes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCpesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Cpe.class, ListCpesResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListCpesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCpesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8054,45 +4951,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>
                     handler) {
-        LOG.trace("Called async listCrossConnectGroups");
-        final ListCrossConnectGroupsRequest interceptedRequest =
-                ListCrossConnectGroupsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectGroupsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCrossConnectGroupsResponse::builder)
+                .logger(LOG, "listCrossConnectGroups")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
-                transformer =
-                        ListCrossConnectGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>,
-                        java.util.concurrent.Future<ListCrossConnectGroupsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/ListCrossConnectGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        ListCrossConnectGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectGroupsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8101,47 +4987,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
                     handler) {
-        LOG.trace("Called async listCrossConnectLocations");
-        final ListCrossConnectLocationsRequest interceptedRequest =
-                ListCrossConnectLocationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectLocationsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCrossConnectLocationsResponse::builder)
+                .logger(LOG, "listCrossConnectLocations")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectLocations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
-                transformer =
-                        ListCrossConnectLocationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCrossConnectLocationsRequest,
-                                ListCrossConnectLocationsResponse>,
-                        java.util.concurrent.Future<ListCrossConnectLocationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectLocation/ListCrossConnectLocations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectLocationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectLocations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectLocation.class,
+                        ListCrossConnectLocationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectLocationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectLocationsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8150,46 +5019,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
                     handler) {
-        LOG.trace("Called async listCrossConnectMappings");
-        final ListCrossConnectMappingsRequest interceptedRequest =
-                ListCrossConnectMappingsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectMappingsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, ListCrossConnectMappingsResponse::builder)
+                .logger(LOG, "listCrossConnectMappings")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnectMappings",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListCrossConnectMappingsResponse>
-                transformer =
-                        ListCrossConnectMappingsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>,
-                        java.util.concurrent.Future<ListCrossConnectMappingsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCrossConnectMappingsRequest, ListCrossConnectMappingsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectMappingDetailsCollection/ListCrossConnectMappings")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectMappingsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("crossConnectMappings")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectMappingDetailsCollection.class,
+                        ListCrossConnectMappingsResponse.Builder
+                                ::crossConnectMappingDetailsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectMappingsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8198,44 +5051,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListCrossConnectsRequest, ListCrossConnectsResponse>
                     handler) {
-        LOG.trace("Called async listCrossConnects");
-        final ListCrossConnectsRequest interceptedRequest =
-                ListCrossConnectsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossConnectsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCrossConnectsResponse::builder)
+                .logger(LOG, "listCrossConnects")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossConnects",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
-                transformer =
-                        ListCrossConnectsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListCrossConnectsRequest, ListCrossConnectsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCrossConnectsRequest, ListCrossConnectsResponse>,
-                        java.util.concurrent.Future<ListCrossConnectsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCrossConnectsRequest, ListCrossConnectsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/ListCrossConnects")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossConnectsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("crossConnectGroupId", request.getCrossConnectGroupId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        ListCrossConnectsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCrossConnectsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCrossConnectsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8246,49 +5090,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListCrossconnectPortSpeedShapesRequest,
                                     ListCrossconnectPortSpeedShapesResponse>
                             handler) {
-        LOG.trace("Called async listCrossconnectPortSpeedShapes");
-        final ListCrossconnectPortSpeedShapesRequest interceptedRequest =
-                ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListCrossconnectPortSpeedShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListCrossconnectPortSpeedShapesResponse::builder)
+                .logger(LOG, "listCrossconnectPortSpeedShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListCrossconnectPortSpeedShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
-                transformer =
-                        ListCrossconnectPortSpeedShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListCrossconnectPortSpeedShapesRequest,
-                        ListCrossconnectPortSpeedShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListCrossconnectPortSpeedShapesRequest,
-                                ListCrossconnectPortSpeedShapesResponse>,
-                        java.util.concurrent.Future<ListCrossconnectPortSpeedShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListCrossconnectPortSpeedShapesRequest,
-                    ListCrossconnectPortSpeedShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCrossconnectPortSpeedShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectPortSpeedShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.CrossConnectPortSpeedShape.class,
+                        ListCrossconnectPortSpeedShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListCrossconnectPortSpeedShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListCrossconnectPortSpeedShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8297,44 +5124,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDhcpOptionsRequest, ListDhcpOptionsResponse>
                     handler) {
-        LOG.trace("Called async listDhcpOptions");
-        final ListDhcpOptionsRequest interceptedRequest =
-                ListDhcpOptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDhcpOptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDhcpOptionsResponse::builder)
+                .logger(LOG, "listDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
-                transformer =
-                        ListDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDhcpOptionsRequest, ListDhcpOptionsResponse>,
-                        java.util.concurrent.Future<ListDhcpOptionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDhcpOptionsRequest, ListDhcpOptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/ListDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        ListDhcpOptionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDhcpOptionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDhcpOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8343,44 +5161,39 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
                     handler) {
-        LOG.trace("Called async listDrgAttachments");
-        final ListDrgAttachmentsRequest interceptedRequest =
-                ListDrgAttachmentsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgAttachmentsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDrgAttachmentsResponse::builder)
+                .logger(LOG, "listDrgAttachments")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
-                transformer =
-                        ListDrgAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>,
-                        java.util.concurrent.Future<ListDrgAttachmentsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/ListDrgAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgAttachmentsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("networkId", request.getNetworkId())
+                .appendEnumQueryParam("attachmentType", request.getAttachmentType())
+                .appendQueryParam("drgRouteTableId", request.getDrgRouteTableId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        ListDrgAttachmentsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgAttachmentsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgAttachmentsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8391,49 +5204,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListDrgRouteDistributionStatementsRequest,
                                     ListDrgRouteDistributionStatementsResponse>
                             handler) {
-        LOG.trace("Called async listDrgRouteDistributionStatements");
-        final ListDrgRouteDistributionStatementsRequest interceptedRequest =
-                ListDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteDistributionStatementsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+
+        return clientCall(request, ListDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "listDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDrgRouteDistributionStatementsResponse>
-                transformer =
-                        ListDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDrgRouteDistributionStatementsRequest,
-                        ListDrgRouteDistributionStatementsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDrgRouteDistributionStatementsRequest,
-                                ListDrgRouteDistributionStatementsResponse>,
-                        java.util.concurrent.Future<ListDrgRouteDistributionStatementsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgRouteDistributionStatementsRequest,
-                    ListDrgRouteDistributionStatementsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/ListDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("drgRouteDistributionStatements")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        ListDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListDrgRouteDistributionStatementsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8442,47 +5243,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
                     handler) {
-        LOG.trace("Called async listDrgRouteDistributions");
-        final ListDrgRouteDistributionsRequest interceptedRequest =
-                ListDrgRouteDistributionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteDistributionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getDrgId(), "drgId is required");
+
+        return clientCall(request, ListDrgRouteDistributionsResponse::builder)
+                .logger(LOG, "listDrgRouteDistributions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteDistributions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListDrgRouteDistributionsResponse>
-                transformer =
-                        ListDrgRouteDistributionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDrgRouteDistributionsRequest,
-                                ListDrgRouteDistributionsResponse>,
-                        java.util.concurrent.Future<ListDrgRouteDistributionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgRouteDistributionsRequest, ListDrgRouteDistributionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/ListDrgRouteDistributions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteDistributionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        ListDrgRouteDistributionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteDistributionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteDistributionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8491,44 +5279,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
                     handler) {
-        LOG.trace("Called async listDrgRouteRules");
-        final ListDrgRouteRulesRequest interceptedRequest =
-                ListDrgRouteRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, ListDrgRouteRulesResponse::builder)
+                .logger(LOG, "listDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteRulesResponse>
-                transformer =
-                        ListDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>,
-                        java.util.concurrent.Future<ListDrgRouteRulesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgRouteRulesRequest, ListDrgRouteRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/ListDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("drgRouteRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("routeType", request.getRouteType())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        ListDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8537,44 +5314,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
                     handler) {
-        LOG.trace("Called async listDrgRouteTables");
-        final ListDrgRouteTablesRequest interceptedRequest =
-                ListDrgRouteTablesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgRouteTablesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getDrgId(), "drgId is required");
+
+        return clientCall(request, ListDrgRouteTablesResponse::builder)
+                .logger(LOG, "listDrgRouteTables")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDrgRouteTablesResponse>
-                transformer =
-                        ListDrgRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>,
-                        java.util.concurrent.Future<ListDrgRouteTablesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgRouteTablesRequest, ListDrgRouteTablesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/ListDrgRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgRouteTablesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam(
+                        "importDrgRouteDistributionId", request.getImportDrgRouteDistributionId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        ListDrgRouteTablesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDrgRouteTablesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgRouteTablesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8582,40 +5351,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListDrgsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse>
                     handler) {
-        LOG.trace("Called async listDrgs");
-        final ListDrgsRequest interceptedRequest = ListDrgsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListDrgsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDrgsResponse::builder)
+                .logger(LOG, "listDrgs")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListDrgs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
-                ListDrgsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse>,
-                        java.util.concurrent.Future<ListDrgsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListDrgsRequest, ListDrgsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/ListDrgs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDrgsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Drg.class, ListDrgsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListDrgsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDrgsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8626,49 +5383,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListFastConnectProviderServicesRequest,
                                     ListFastConnectProviderServicesResponse>
                             handler) {
-        LOG.trace("Called async listFastConnectProviderServices");
-        final ListFastConnectProviderServicesRequest interceptedRequest =
-                ListFastConnectProviderServicesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFastConnectProviderServicesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListFastConnectProviderServicesResponse::builder)
+                .logger(LOG, "listFastConnectProviderServices")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListFastConnectProviderServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
-                transformer =
-                        ListFastConnectProviderServicesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListFastConnectProviderServicesRequest,
-                        ListFastConnectProviderServicesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListFastConnectProviderServicesRequest,
-                                ListFastConnectProviderServicesResponse>,
-                        java.util.concurrent.Future<ListFastConnectProviderServicesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListFastConnectProviderServicesRequest,
-                    ListFastConnectProviderServicesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFastConnectProviderServicesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.FastConnectProviderService.class,
+                        ListFastConnectProviderServicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListFastConnectProviderServicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFastConnectProviderServicesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8679,53 +5419,39 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
                                     ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
                             handler) {
-        LOG.trace("Called async listFastConnectProviderVirtualCircuitBandwidthShapes");
-        final ListFastConnectProviderVirtualCircuitBandwidthShapesRequest interceptedRequest =
-                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.interceptRequest(
-                        request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getProviderServiceId(), "providerServiceId must not be blank");
+
+        return clientCall(
+                        request,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse::builder)
+                .logger(LOG, "listFastConnectProviderVirtualCircuitBandwidthShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListFastConnectProviderVirtualCircuitBandwidthShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
-                transformer =
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
-                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
-                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>,
-                        java.util.concurrent.Future<
-                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
-                    ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("fastConnectProviderServices")
+                .appendPathParam(request.getProviderServiceId())
+                .appendPathParam("virtualCircuitBandwidthShapes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
+                                ::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
+                                ::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8736,49 +5462,42 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListIPSecConnectionTunnelRoutesRequest,
                                     ListIPSecConnectionTunnelRoutesResponse>
                             handler) {
-        LOG.trace("Called async listIPSecConnectionTunnelRoutes");
-        final ListIPSecConnectionTunnelRoutesRequest interceptedRequest =
-                ListIPSecConnectionTunnelRoutesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelRoutesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelRoutesResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnelRoutes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelRoutes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelRoutesResponse>
-                transformer =
-                        ListIPSecConnectionTunnelRoutesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIPSecConnectionTunnelRoutesRequest,
-                        ListIPSecConnectionTunnelRoutesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIPSecConnectionTunnelRoutesRequest,
-                                ListIPSecConnectionTunnelRoutesResponse>,
-                        java.util.concurrent.Future<ListIPSecConnectionTunnelRoutesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIPSecConnectionTunnelRoutesRequest,
-                    ListIPSecConnectionTunnelRoutesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelRouteSummary/ListIPSecConnectionTunnelRoutes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelRoutesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("routes")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("advertiser", request.getAdvertiser())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.TunnelRouteSummary.class,
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListIPSecConnectionTunnelRoutesResponse.Builder::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -8789,52 +5508,42 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListIPSecConnectionTunnelSecurityAssociationsRequest,
                                     ListIPSecConnectionTunnelSecurityAssociationsResponse>
                             handler) {
-        LOG.trace("Called async listIPSecConnectionTunnelSecurityAssociations");
-        final ListIPSecConnectionTunnelSecurityAssociationsRequest interceptedRequest =
-                ListIPSecConnectionTunnelSecurityAssociationsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelSecurityAssociationsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelSecurityAssociationsResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnelSecurityAssociations")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnelSecurityAssociations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
-                transformer =
-                        ListIPSecConnectionTunnelSecurityAssociationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIPSecConnectionTunnelSecurityAssociationsRequest,
-                        ListIPSecConnectionTunnelSecurityAssociationsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIPSecConnectionTunnelSecurityAssociationsRequest,
-                                ListIPSecConnectionTunnelSecurityAssociationsResponse>,
-                        java.util.concurrent.Future<
-                                ListIPSecConnectionTunnelSecurityAssociationsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIPSecConnectionTunnelSecurityAssociationsRequest,
-                    ListIPSecConnectionTunnelSecurityAssociationsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelSecurityAssociationSummary/ListIPSecConnectionTunnelSecurityAssociations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelSecurityAssociationsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelSecurityAssociations")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.TunnelSecurityAssociationSummary.class,
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "opc-total-items",
+                        ListIPSecConnectionTunnelSecurityAssociationsResponse.Builder
+                                ::opcTotalItems)
+                .callAsync(handler);
     }
 
     @Override
@@ -8845,47 +5554,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListIPSecConnectionTunnelsRequest,
                                     ListIPSecConnectionTunnelsResponse>
                             handler) {
-        LOG.trace("Called async listIPSecConnectionTunnels");
-        final ListIPSecConnectionTunnelsRequest interceptedRequest =
-                ListIPSecConnectionTunnelsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionTunnelsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        return clientCall(request, ListIPSecConnectionTunnelsResponse::builder)
+                .logger(LOG, "listIPSecConnectionTunnels")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnectionTunnels",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
-                transformer =
-                        ListIPSecConnectionTunnelsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIPSecConnectionTunnelsRequest,
-                                ListIPSecConnectionTunnelsResponse>,
-                        java.util.concurrent.Future<ListIPSecConnectionTunnelsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/ListIPSecConnectionTunnels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionTunnelsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        ListIPSecConnectionTunnelsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIPSecConnectionTunnelsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIPSecConnectionTunnelsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8894,45 +5588,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>
                     handler) {
-        LOG.trace("Called async listIPSecConnections");
-        final ListIPSecConnectionsRequest interceptedRequest =
-                ListIPSecConnectionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIPSecConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIPSecConnectionsResponse::builder)
+                .logger(LOG, "listIPSecConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIPSecConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
-                transformer =
-                        ListIPSecConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>,
-                        java.util.concurrent.Future<ListIPSecConnectionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/ListIPSecConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIPSecConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("cpeId", request.getCpeId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        ListIPSecConnectionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIPSecConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIPSecConnectionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8941,45 +5622,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListInternetGatewaysRequest, ListInternetGatewaysResponse>
                     handler) {
-        LOG.trace("Called async listInternetGateways");
-        final ListInternetGatewaysRequest interceptedRequest =
-                ListInternetGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListInternetGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInternetGatewaysResponse::builder)
+                .logger(LOG, "listInternetGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListInternetGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
-                transformer =
-                        ListInternetGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListInternetGatewaysRequest, ListInternetGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListInternetGatewaysRequest, ListInternetGatewaysResponse>,
-                        java.util.concurrent.Future<ListInternetGatewaysResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListInternetGatewaysRequest, ListInternetGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/ListInternetGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInternetGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        ListInternetGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInternetGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListInternetGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -8987,41 +5658,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListIpv6sRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse>
                     handler) {
-        LOG.trace("Called async listIpv6s");
-        final ListIpv6sRequest interceptedRequest = ListIpv6sConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListIpv6sConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListIpv6sResponse::builder)
+                .logger(LOG, "listIpv6s")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListIpv6s",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListIpv6sResponse>
-                transformer =
-                        ListIpv6sConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse>,
-                        java.util.concurrent.Future<ListIpv6sResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListIpv6sRequest, ListIpv6sResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/ListIpv6s")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIpv6sRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("ipAddress", request.getIpAddress())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .appendQueryParam("vnicId", request.getVnicId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Ipv6.class, ListIpv6sResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListIpv6sResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIpv6sResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9030,46 +5690,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>
                     handler) {
-        LOG.trace("Called async listLocalPeeringGateways");
-        final ListLocalPeeringGatewaysRequest interceptedRequest =
-                ListLocalPeeringGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListLocalPeeringGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListLocalPeeringGatewaysResponse::builder)
+                .logger(LOG, "listLocalPeeringGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListLocalPeeringGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
-                transformer =
-                        ListLocalPeeringGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>,
-                        java.util.concurrent.Future<ListLocalPeeringGatewaysResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/ListLocalPeeringGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListLocalPeeringGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        ListLocalPeeringGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListLocalPeeringGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListLocalPeeringGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9078,44 +5723,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListNatGatewaysRequest, ListNatGatewaysResponse>
                     handler) {
-        LOG.trace("Called async listNatGateways");
-        final ListNatGatewaysRequest interceptedRequest =
-                ListNatGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNatGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListNatGatewaysResponse::builder)
+                .logger(LOG, "listNatGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNatGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
-                transformer =
-                        ListNatGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListNatGatewaysRequest, ListNatGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNatGatewaysRequest, ListNatGatewaysResponse>,
-                        java.util.concurrent.Future<ListNatGatewaysResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNatGatewaysRequest, ListNatGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/ListNatGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNatGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        ListNatGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNatGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNatGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9126,50 +5762,38 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListNetworkSecurityGroupSecurityRulesRequest,
                                     ListNetworkSecurityGroupSecurityRulesResponse>
                             handler) {
-        LOG.trace("Called async listNetworkSecurityGroupSecurityRules");
-        final ListNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                ListNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, ListNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        ListNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListNetworkSecurityGroupSecurityRulesRequest,
-                        ListNetworkSecurityGroupSecurityRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNetworkSecurityGroupSecurityRulesRequest,
-                                ListNetworkSecurityGroupSecurityRulesResponse>,
-                        java.util.concurrent.Future<ListNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNetworkSecurityGroupSecurityRulesRequest,
-                    ListNetworkSecurityGroupSecurityRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/ListNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("securityRules")
+                .appendEnumQueryParam("direction", request.getDirection())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.SecurityRule.class,
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9180,47 +5804,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListNetworkSecurityGroupVnicsRequest,
                                     ListNetworkSecurityGroupVnicsResponse>
                             handler) {
-        LOG.trace("Called async listNetworkSecurityGroupVnics");
-        final ListNetworkSecurityGroupVnicsRequest interceptedRequest =
-                ListNetworkSecurityGroupVnicsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupVnicsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+
+        return clientCall(request, ListNetworkSecurityGroupVnicsResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroupVnics")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroupVnics",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupVnicsResponse>
-                transformer =
-                        ListNetworkSecurityGroupVnicsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListNetworkSecurityGroupVnicsRequest, ListNetworkSecurityGroupVnicsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNetworkSecurityGroupVnicsRequest,
-                                ListNetworkSecurityGroupVnicsResponse>,
-                        java.util.concurrent.Future<ListNetworkSecurityGroupVnicsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNetworkSecurityGroupVnicsRequest, ListNetworkSecurityGroupVnicsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupVnicsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("vnics")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NetworkSecurityGroupVnic.class,
+                        ListNetworkSecurityGroupVnicsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkSecurityGroupVnicsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListNetworkSecurityGroupVnicsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9229,47 +5842,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>
                     handler) {
-        LOG.trace("Called async listNetworkSecurityGroups");
-        final ListNetworkSecurityGroupsRequest interceptedRequest =
-                ListNetworkSecurityGroupsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNetworkSecurityGroupsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListNetworkSecurityGroupsResponse::builder)
+                .logger(LOG, "listNetworkSecurityGroups")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListNetworkSecurityGroups",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
-                transformer =
-                        ListNetworkSecurityGroupsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListNetworkSecurityGroupsRequest,
-                                ListNetworkSecurityGroupsResponse>,
-                        java.util.concurrent.Future<ListNetworkSecurityGroupsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/ListNetworkSecurityGroups")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListNetworkSecurityGroupsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vlanId", request.getVlanId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        ListNetworkSecurityGroupsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListNetworkSecurityGroupsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListNetworkSecurityGroupsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9278,43 +5879,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPrivateIpsRequest, ListPrivateIpsResponse>
                     handler) {
-        LOG.trace("Called async listPrivateIps");
-        final ListPrivateIpsRequest interceptedRequest =
-                ListPrivateIpsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPrivateIpsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListPrivateIpsResponse::builder)
+                .logger(LOG, "listPrivateIps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPrivateIps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
-                transformer =
-                        ListPrivateIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPrivateIpsRequest, ListPrivateIpsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPrivateIpsRequest, ListPrivateIpsResponse>,
-                        java.util.concurrent.Future<ListPrivateIpsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPrivateIpsRequest, ListPrivateIpsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/ListPrivateIps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPrivateIpsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("ipAddress", request.getIpAddress())
+                .appendQueryParam("subnetId", request.getSubnetId())
+                .appendQueryParam("vnicId", request.getVnicId())
+                .appendQueryParam("vlanId", request.getVlanId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        ListPrivateIpsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPrivateIpsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPrivateIpsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9323,44 +5913,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>
                     handler) {
-        LOG.trace("Called async listPublicIpPools");
-        final ListPublicIpPoolsRequest interceptedRequest =
-                ListPublicIpPoolsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublicIpPoolsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPublicIpPoolsResponse::builder)
+                .logger(LOG, "listPublicIpPools")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIpPools",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpPoolsResponse>
-                transformer =
-                        ListPublicIpPoolsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>,
-                        java.util.concurrent.Future<ListPublicIpPoolsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPublicIpPoolsRequest, ListPublicIpPoolsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/ListPublicIpPools")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublicIpPoolsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("byoipRangeId", request.getByoipRangeId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPoolCollection.class,
+                        ListPublicIpPoolsResponse.Builder::publicIpPoolCollection)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublicIpPoolsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublicIpPoolsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9368,43 +5949,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListPublicIpsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListPublicIpsRequest, ListPublicIpsResponse>
                     handler) {
-        LOG.trace("Called async listPublicIps");
-        final ListPublicIpsRequest interceptedRequest =
-                ListPublicIpsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListPublicIpsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getScope(), "scope is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListPublicIpsResponse::builder)
+                .logger(LOG, "listPublicIps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListPublicIps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
-                transformer =
-                        ListPublicIpsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListPublicIpsRequest, ListPublicIpsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListPublicIpsRequest, ListPublicIpsResponse>,
-                        java.util.concurrent.Future<ListPublicIpsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListPublicIpsRequest, ListPublicIpsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/ListPublicIps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPublicIpsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("scope", request.getScope())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendEnumQueryParam("lifetime", request.getLifetime())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("publicIpPoolId", request.getPublicIpPoolId())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        ListPublicIpsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPublicIpsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPublicIpsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9415,47 +5989,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListRemotePeeringConnectionsRequest,
                                     ListRemotePeeringConnectionsResponse>
                             handler) {
-        LOG.trace("Called async listRemotePeeringConnections");
-        final ListRemotePeeringConnectionsRequest interceptedRequest =
-                ListRemotePeeringConnectionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRemotePeeringConnectionsResponse::builder)
+                .logger(LOG, "listRemotePeeringConnections")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListRemotePeeringConnections",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
-                transformer =
-                        ListRemotePeeringConnectionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListRemotePeeringConnectionsRequest, ListRemotePeeringConnectionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListRemotePeeringConnectionsRequest,
-                                ListRemotePeeringConnectionsResponse>,
-                        java.util.concurrent.Future<ListRemotePeeringConnectionsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRemotePeeringConnectionsRequest, ListRemotePeeringConnectionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/ListRemotePeeringConnections")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRemotePeeringConnectionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("drgId", request.getDrgId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        ListRemotePeeringConnectionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRemotePeeringConnectionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListRemotePeeringConnectionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9464,44 +6023,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListRouteTablesRequest, ListRouteTablesResponse>
                     handler) {
-        LOG.trace("Called async listRouteTables");
-        final ListRouteTablesRequest interceptedRequest =
-                ListRouteTablesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListRouteTablesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListRouteTablesResponse::builder)
+                .logger(LOG, "listRouteTables")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListRouteTables",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
-                transformer =
-                        ListRouteTablesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListRouteTablesRequest, ListRouteTablesResponse>,
-                        java.util.concurrent.Future<ListRouteTablesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListRouteTablesRequest, ListRouteTablesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/ListRouteTables")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRouteTablesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        ListRouteTablesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListRouteTablesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListRouteTablesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9510,44 +6060,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListSecurityListsRequest, ListSecurityListsResponse>
                     handler) {
-        LOG.trace("Called async listSecurityLists");
-        final ListSecurityListsRequest interceptedRequest =
-                ListSecurityListsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSecurityListsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSecurityListsResponse::builder)
+                .logger(LOG, "listSecurityLists")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListSecurityLists",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
-                transformer =
-                        ListSecurityListsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListSecurityListsRequest, ListSecurityListsResponse>,
-                        java.util.concurrent.Future<ListSecurityListsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListSecurityListsRequest, ListSecurityListsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/ListSecurityLists")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSecurityListsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        ListSecurityListsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSecurityListsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSecurityListsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9556,45 +6097,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListServiceGatewaysRequest, ListServiceGatewaysResponse>
                     handler) {
-        LOG.trace("Called async listServiceGateways");
-        final ListServiceGatewaysRequest interceptedRequest =
-                ListServiceGatewaysConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListServiceGatewaysConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListServiceGatewaysResponse::builder)
+                .logger(LOG, "listServiceGateways")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListServiceGateways",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListServiceGatewaysResponse>
-                transformer =
-                        ListServiceGatewaysConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListServiceGatewaysRequest, ListServiceGatewaysResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListServiceGatewaysRequest, ListServiceGatewaysResponse>,
-                        java.util.concurrent.Future<ListServiceGatewaysResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListServiceGatewaysRequest, ListServiceGatewaysResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/ListServiceGateways")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListServiceGatewaysRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        ListServiceGatewaysResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListServiceGatewaysResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListServiceGatewaysResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9602,43 +6132,28 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListServicesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
                     handler) {
-        LOG.trace("Called async listServices");
-        final ListServicesRequest interceptedRequest =
-                ListServicesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListServicesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        return clientCall(request, ListServicesResponse::builder)
+                .logger(LOG, "listServices")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListServices",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse>
-                transformer =
-                        ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListServicesRequest, ListServicesResponse>,
-                        java.util.concurrent.Future<ListServicesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListServicesRequest, ListServicesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Service/ListServices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListServicesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("services")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Service.class,
+                        ListServicesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListServicesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListServicesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9646,43 +6161,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListSubnetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListSubnetsRequest, ListSubnetsResponse>
                     handler) {
-        LOG.trace("Called async listSubnets");
-        final ListSubnetsRequest interceptedRequest =
-                ListSubnetsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSubnetsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSubnetsResponse::builder)
+                .logger(LOG, "listSubnets")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListSubnets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
-                transformer =
-                        ListSubnetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListSubnetsRequest, ListSubnetsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListSubnetsRequest, ListSubnetsResponse>,
-                        java.util.concurrent.Future<ListSubnetsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListSubnetsRequest, ListSubnetsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/ListSubnets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSubnetsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Subnet.class, ListSubnetsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSubnetsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSubnetsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9690,40 +6196,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListVcnsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse>
                     handler) {
-        LOG.trace("Called async listVcns");
-        final ListVcnsRequest interceptedRequest = ListVcnsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVcnsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVcnsResponse::builder)
+                .logger(LOG, "listVcns")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVcns",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
-                ListVcnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse>,
-                        java.util.concurrent.Future<ListVcnsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVcnsRequest, ListVcnsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListVcns")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVcnsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vcn.class, ListVcnsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVcnsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVcnsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9734,49 +6232,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListVirtualCircuitBandwidthShapesRequest,
                                     ListVirtualCircuitBandwidthShapesResponse>
                             handler) {
-        LOG.trace("Called async listVirtualCircuitBandwidthShapes");
-        final ListVirtualCircuitBandwidthShapesRequest interceptedRequest =
-                ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualCircuitBandwidthShapesResponse::builder)
+                .logger(LOG, "listVirtualCircuitBandwidthShapes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitBandwidthShapes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
-                transformer =
-                        ListVirtualCircuitBandwidthShapesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualCircuitBandwidthShapesRequest,
-                        ListVirtualCircuitBandwidthShapesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualCircuitBandwidthShapesRequest,
-                                ListVirtualCircuitBandwidthShapesResponse>,
-                        java.util.concurrent.Future<ListVirtualCircuitBandwidthShapesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualCircuitBandwidthShapesRequest,
-                    ListVirtualCircuitBandwidthShapesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitBandwidthShape/ListVirtualCircuitBandwidthShapes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitBandwidthShapesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuitBandwidthShapes")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitBandwidthShape.class,
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualCircuitBandwidthShapesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9787,49 +6268,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     ListVirtualCircuitPublicPrefixesRequest,
                                     ListVirtualCircuitPublicPrefixesResponse>
                             handler) {
-        LOG.trace("Called async listVirtualCircuitPublicPrefixes");
-        final ListVirtualCircuitPublicPrefixesRequest interceptedRequest =
-                ListVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitPublicPrefixesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+
+        return clientCall(request, ListVirtualCircuitPublicPrefixesResponse::builder)
+                .logger(LOG, "listVirtualCircuitPublicPrefixes")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuitPublicPrefixes",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
-                transformer =
-                        ListVirtualCircuitPublicPrefixesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualCircuitPublicPrefixesRequest,
-                        ListVirtualCircuitPublicPrefixesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualCircuitPublicPrefixesRequest,
-                                ListVirtualCircuitPublicPrefixesResponse>,
-                        java.util.concurrent.Future<ListVirtualCircuitPublicPrefixesResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualCircuitPublicPrefixesRequest,
-                    ListVirtualCircuitPublicPrefixesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuitPublicPrefix/ListVirtualCircuitPublicPrefixes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitPublicPrefixesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .appendPathParam("publicPrefixes")
+                .appendEnumQueryParam("verificationState", request.getVerificationState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuitPublicPrefix.class,
+                        ListVirtualCircuitPublicPrefixesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListVirtualCircuitPublicPrefixesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9838,45 +6300,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
                     handler) {
-        LOG.trace("Called async listVirtualCircuits");
-        final ListVirtualCircuitsRequest interceptedRequest =
-                ListVirtualCircuitsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVirtualCircuitsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVirtualCircuitsResponse::builder)
+                .logger(LOG, "listVirtualCircuits")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVirtualCircuits",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
-                transformer =
-                        ListVirtualCircuitsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>,
-                        java.util.concurrent.Future<ListVirtualCircuitsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/ListVirtualCircuits")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVirtualCircuitsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .handleBodyList(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        ListVirtualCircuitsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListVirtualCircuitsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVirtualCircuitsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9884,41 +6335,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListVlansRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse>
                     handler) {
-        LOG.trace("Called async listVlans");
-        final ListVlansRequest interceptedRequest = ListVlansConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVlansConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVlansResponse::builder)
+                .logger(LOG, "listVlans")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVlans",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVlansResponse>
-                transformer =
-                        ListVlansConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListVlansRequest, ListVlansResponse>,
-                        java.util.concurrent.Future<ListVlansResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVlansRequest, ListVlansResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/ListVlans")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVlansRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vlan.class, ListVlansResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVlansResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVlansResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9926,41 +6370,38 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListVtapsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListVtapsRequest, ListVtapsResponse>
                     handler) {
-        LOG.trace("Called async listVtaps");
-        final ListVtapsRequest interceptedRequest = ListVtapsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVtapsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListVtapsResponse::builder)
+                .logger(LOG, "listVtaps")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ListVtaps",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps");
-        final java.util.function.Function<javax.ws.rs.core.Response, ListVtapsResponse>
-                transformer =
-                        ListVtapsConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ListVtapsRequest, ListVtapsResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<ListVtapsRequest, ListVtapsResponse>,
-                        java.util.concurrent.Future<ListVtapsResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ListVtapsRequest, ListVtapsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vtap/ListVtaps")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVtapsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("vcnId", request.getVcnId())
+                .appendQueryParam("source", request.getSource())
+                .appendQueryParam("targetId", request.getTargetId())
+                .appendQueryParam("targetIp", request.getTargetIp())
+                .appendQueryParam("isVtapEnabled", request.getIsVtapEnabled())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.Vtap.class, ListVtapsResponse.Builder::items)
+                .handleResponseHeaderString("opc-next-page", ListVtapsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVtapsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -9968,49 +6409,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ModifyVcnCidrRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
                     handler) {
-        LOG.trace("Called async modifyVcnCidr");
-        final ModifyVcnCidrRequest interceptedRequest =
-                ModifyVcnCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ModifyVcnCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyVcnCidrDetails(), "modifyVcnCidrDetails is required");
+
+        return clientCall(request, ModifyVcnCidrResponse::builder)
+                .logger(LOG, "modifyVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ModifyVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, ModifyVcnCidrResponse>
-                transformer =
-                        ModifyVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ModifyVcnCidrRequest, ModifyVcnCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ModifyVcnCidrRequest, ModifyVcnCidrResponse>,
-                        java.util.concurrent.Future<ModifyVcnCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getModifyVcnCidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ModifyVcnCidrRequest, ModifyVcnCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ModifyVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ModifyVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ModifyVcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10021,55 +6447,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     RemoveDrgRouteDistributionStatementsRequest,
                                     RemoveDrgRouteDistributionStatementsResponse>
                             handler) {
-        LOG.trace("Called async removeDrgRouteDistributionStatements");
-        final RemoveDrgRouteDistributionStatementsRequest interceptedRequest =
-                RemoveDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveDrgRouteDistributionStatementsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDrgRouteDistributionStatementsDetails(),
+                "removeDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, RemoveDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "removeDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveDrgRouteDistributionStatementsResponse>
-                transformer =
-                        RemoveDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveDrgRouteDistributionStatementsRequest,
-                        RemoveDrgRouteDistributionStatementsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveDrgRouteDistributionStatementsRequest,
-                                RemoveDrgRouteDistributionStatementsResponse>,
-                        java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveDrgRouteDistributionStatementsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveDrgRouteDistributionStatementsRequest,
-                    RemoveDrgRouteDistributionStatementsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/RemoveDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10078,50 +6481,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
                     handler) {
-        LOG.trace("Called async removeDrgRouteRules");
-        final RemoveDrgRouteRulesRequest interceptedRequest =
-                RemoveDrgRouteRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveDrgRouteRulesDetails(), "removeDrgRouteRulesDetails is required");
+
+        return clientCall(request, RemoveDrgRouteRulesResponse::builder)
+                .logger(LOG, "removeDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveDrgRouteRulesResponse>
-                transformer =
-                        RemoveDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>,
-                        java.util.concurrent.Future<RemoveDrgRouteRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveDrgRouteRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveDrgRouteRulesRequest, RemoveDrgRouteRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/RemoveDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("removeDrgRouteRules")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveDrgRouteRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10132,49 +6514,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     RemoveExportDrgRouteDistributionRequest,
                                     RemoveExportDrgRouteDistributionResponse>
                             handler) {
-        LOG.trace("Called async removeExportDrgRouteDistribution");
-        final RemoveExportDrgRouteDistributionRequest interceptedRequest =
-                RemoveExportDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveExportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+
+        return clientCall(request, RemoveExportDrgRouteDistributionResponse::builder)
+                .logger(LOG, "removeExportDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveExportDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveExportDrgRouteDistributionResponse>
-                transformer =
-                        RemoveExportDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveExportDrgRouteDistributionRequest,
-                        RemoveExportDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveExportDrgRouteDistributionRequest,
-                                RemoveExportDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<RemoveExportDrgRouteDistributionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveExportDrgRouteDistributionRequest,
-                    RemoveExportDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/RemoveExportDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveExportDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .appendPathParam("actions")
+                .appendPathParam("removeExportDrgRouteDistribution")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        RemoveExportDrgRouteDistributionResponse.Builder::drgAttachment)
+                .handleResponseHeaderString(
+                        "etag", RemoveExportDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveExportDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10185,49 +6552,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     RemoveImportDrgRouteDistributionRequest,
                                     RemoveImportDrgRouteDistributionResponse>
                             handler) {
-        LOG.trace("Called async removeImportDrgRouteDistribution");
-        final RemoveImportDrgRouteDistributionRequest interceptedRequest =
-                RemoveImportDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveImportDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+
+        return clientCall(request, RemoveImportDrgRouteDistributionResponse::builder)
+                .logger(LOG, "removeImportDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveImportDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveImportDrgRouteDistributionResponse>
-                transformer =
-                        RemoveImportDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveImportDrgRouteDistributionRequest,
-                        RemoveImportDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveImportDrgRouteDistributionRequest,
-                                RemoveImportDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<RemoveImportDrgRouteDistributionResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveImportDrgRouteDistributionRequest,
-                    RemoveImportDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/RemoveImportDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveImportDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("removeImportDrgRouteDistribution")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        RemoveImportDrgRouteDistributionResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString(
+                        "etag", RemoveImportDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveImportDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10236,51 +6588,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>
                     handler) {
-        LOG.trace("Called async removeIpv6SubnetCidr");
-        final RemoveIpv6SubnetCidrRequest interceptedRequest =
-                RemoveIpv6SubnetCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveIpv6SubnetCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveSubnetIpv6CidrDetails(),
+                "removeSubnetIpv6CidrDetails is required");
+
+        return clientCall(request, RemoveIpv6SubnetCidrResponse::builder)
+                .logger(LOG, "removeIpv6SubnetCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6SubnetCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6SubnetCidrResponse>
-                transformer =
-                        RemoveIpv6SubnetCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>,
-                        java.util.concurrent.Future<RemoveIpv6SubnetCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveSubnetIpv6CidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveIpv6SubnetCidrRequest, RemoveIpv6SubnetCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/RemoveIpv6SubnetCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveIpv6SubnetCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString("etag", RemoveIpv6SubnetCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveIpv6SubnetCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveIpv6SubnetCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10289,50 +6627,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>
                     handler) {
-        LOG.trace("Called async removeIpv6VcnCidr");
-        final RemoveIpv6VcnCidrRequest interceptedRequest =
-                RemoveIpv6VcnCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveIpv6VcnCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+
+        return clientCall(request, RemoveIpv6VcnCidrResponse::builder)
+                .logger(LOG, "removeIpv6VcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveIpv6VcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveIpv6VcnCidrResponse>
-                transformer =
-                        RemoveIpv6VcnCidrConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>,
-                        java.util.concurrent.Future<RemoveIpv6VcnCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveVcnIpv6CidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveIpv6VcnCidrRequest, RemoveIpv6VcnCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveIpv6VcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveIpv6VcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("removeIpv6Cidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString("etag", RemoveIpv6VcnCidrResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveIpv6VcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveIpv6VcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10343,57 +6664,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     RemoveNetworkSecurityGroupSecurityRulesRequest,
                                     RemoveNetworkSecurityGroupSecurityRulesResponse>
                             handler) {
-        LOG.trace("Called async removeNetworkSecurityGroupSecurityRules");
-        final RemoveNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                RemoveNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveNetworkSecurityGroupSecurityRulesDetails(),
+                "removeNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, RemoveNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "removeNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemoveNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        RemoveNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemoveNetworkSecurityGroupSecurityRulesRequest,
-                        RemoveNetworkSecurityGroupSecurityRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveNetworkSecurityGroupSecurityRulesRequest,
-                                RemoveNetworkSecurityGroupSecurityRulesResponse>,
-                        java.util.concurrent.Future<
-                                RemoveNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getRemoveNetworkSecurityGroupSecurityRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveNetworkSecurityGroupSecurityRulesRequest,
-                    RemoveNetworkSecurityGroupSecurityRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/RemoveNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("removeSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10404,53 +6700,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     RemovePublicIpPoolCapacityRequest,
                                     RemovePublicIpPoolCapacityResponse>
                             handler) {
-        LOG.trace("Called async removePublicIpPoolCapacity");
-        final RemovePublicIpPoolCapacityRequest interceptedRequest =
-                RemovePublicIpPoolCapacityConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemovePublicIpPoolCapacityConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getRemovePublicIpPoolCapacityDetails(),
+                "removePublicIpPoolCapacityDetails is required");
+
+        return clientCall(request, RemovePublicIpPoolCapacityResponse::builder)
+                .logger(LOG, "removePublicIpPoolCapacity")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemovePublicIpPoolCapacity",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, RemovePublicIpPoolCapacityResponse>
-                transformer =
-                        RemovePublicIpPoolCapacityConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemovePublicIpPoolCapacityRequest,
-                                RemovePublicIpPoolCapacityResponse>,
-                        java.util.concurrent.Future<RemovePublicIpPoolCapacityResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemovePublicIpPoolCapacityDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemovePublicIpPoolCapacityRequest, RemovePublicIpPoolCapacityResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/RemovePublicIpPoolCapacity")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemovePublicIpPoolCapacityRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .appendPathParam("actions")
+                .appendPathParam("removeCapacity")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        RemovePublicIpPoolCapacityResponse.Builder::publicIpPool)
+                .handleResponseHeaderString(
+                        "etag", RemovePublicIpPoolCapacityResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemovePublicIpPoolCapacityResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10458,49 +6738,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             RemoveVcnCidrRequest request,
             final com.oracle.bmc.responses.AsyncHandler<RemoveVcnCidrRequest, RemoveVcnCidrResponse>
                     handler) {
-        LOG.trace("Called async removeVcnCidr");
-        final RemoveVcnCidrRequest interceptedRequest =
-                RemoveVcnCidrConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                RemoveVcnCidrConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveVcnCidrDetails(), "removeVcnCidrDetails is required");
+
+        return clientCall(request, RemoveVcnCidrResponse::builder)
+                .logger(LOG, "removeVcnCidr")
+                .serviceDetails(
                         "VirtualNetwork",
                         "RemoveVcnCidr",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr");
-        final java.util.function.Function<javax.ws.rs.core.Response, RemoveVcnCidrResponse>
-                transformer =
-                        RemoveVcnCidrConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<RemoveVcnCidrRequest, RemoveVcnCidrResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                RemoveVcnCidrRequest, RemoveVcnCidrResponse>,
-                        java.util.concurrent.Future<RemoveVcnCidrResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getRemoveVcnCidrDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    RemoveVcnCidrRequest, RemoveVcnCidrResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/RemoveVcnCidr")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveVcnCidrRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .appendPathParam("actions")
+                .appendPathParam("removeCidr")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveVcnCidrResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RemoveVcnCidrResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10509,49 +6774,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateByoipRangeRequest, UpdateByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async updateByoipRange");
-        final UpdateByoipRangeRequest interceptedRequest =
-                UpdateByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateByoipRangeDetails(), "updateByoipRangeDetails is required");
+
+        return clientCall(request, UpdateByoipRangeResponse::builder)
+                .logger(LOG, "updateByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateByoipRangeResponse>
-                transformer =
-                        UpdateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateByoipRangeRequest, UpdateByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateByoipRangeRequest, UpdateByoipRangeResponse>,
-                        java.util.concurrent.Future<UpdateByoipRangeResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateByoipRangeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateByoipRangeRequest, UpdateByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/UpdateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ByoipRange.class,
+                        UpdateByoipRangeResponse.Builder::byoipRange)
+                .handleResponseHeaderString("etag", UpdateByoipRangeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateByoipRangeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10560,50 +6809,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateCaptureFilterRequest, UpdateCaptureFilterResponse>
                     handler) {
-        LOG.trace("Called async updateCaptureFilter");
-        final UpdateCaptureFilterRequest interceptedRequest =
-                UpdateCaptureFilterConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCaptureFilterConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCaptureFilterId(), "captureFilterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCaptureFilterDetails(), "updateCaptureFilterDetails is required");
+
+        return clientCall(request, UpdateCaptureFilterResponse::builder)
+                .logger(LOG, "updateCaptureFilter")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCaptureFilter",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCaptureFilterResponse>
-                transformer =
-                        UpdateCaptureFilterConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateCaptureFilterRequest, UpdateCaptureFilterResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateCaptureFilterRequest, UpdateCaptureFilterResponse>,
-                        java.util.concurrent.Future<UpdateCaptureFilterResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateCaptureFilterDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateCaptureFilterRequest, UpdateCaptureFilterResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CaptureFilter/UpdateCaptureFilter")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCaptureFilterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("captureFilters")
+                .appendPathParam(request.getCaptureFilterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CaptureFilter.class,
+                        UpdateCaptureFilterResponse.Builder::captureFilter)
+                .handleResponseHeaderString("etag", UpdateCaptureFilterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCaptureFilterResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10611,46 +6843,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateCpeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse>
                     handler) {
-        LOG.trace("Called async updateCpe");
-        final UpdateCpeRequest interceptedRequest = UpdateCpeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCpeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCpeId(), "cpeId must not be blank");
+        Objects.requireNonNull(request.getUpdateCpeDetails(), "updateCpeDetails is required");
+
+        return clientCall(request, UpdateCpeResponse::builder)
+                .logger(LOG, "updateCpe")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCpe",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCpeResponse>
-                transformer =
-                        UpdateCpeConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse>,
-                        java.util.concurrent.Future<UpdateCpeResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateCpeDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateCpeRequest, UpdateCpeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Cpe/UpdateCpe")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCpeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cpes")
+                .appendPathParam(request.getCpeId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Cpe.class, UpdateCpeResponse.Builder::cpe)
+                .handleResponseHeaderString("etag", UpdateCpeResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCpeResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10659,49 +6874,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateCrossConnectRequest, UpdateCrossConnectResponse>
                     handler) {
-        LOG.trace("Called async updateCrossConnect");
-        final UpdateCrossConnectRequest interceptedRequest =
-                UpdateCrossConnectConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCrossConnectConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCrossConnectDetails(), "updateCrossConnectDetails is required");
+
+        return clientCall(request, UpdateCrossConnectResponse::builder)
+                .logger(LOG, "updateCrossConnect")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnect",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
-                transformer =
-                        UpdateCrossConnectConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateCrossConnectRequest, UpdateCrossConnectResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateCrossConnectRequest, UpdateCrossConnectResponse>,
-                        java.util.concurrent.Future<UpdateCrossConnectResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateCrossConnectDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateCrossConnectRequest, UpdateCrossConnectResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnect/UpdateCrossConnect")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCrossConnectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnects")
+                .appendPathParam(request.getCrossConnectId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnect.class,
+                        UpdateCrossConnectResponse.Builder::crossConnect)
+                .handleResponseHeaderString("etag", UpdateCrossConnectResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCrossConnectResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10710,51 +6908,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>
                     handler) {
-        LOG.trace("Called async updateCrossConnectGroup");
-        final UpdateCrossConnectGroupRequest interceptedRequest =
-                UpdateCrossConnectGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateCrossConnectGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getCrossConnectGroupId(), "crossConnectGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCrossConnectGroupDetails(),
+                "updateCrossConnectGroupDetails is required");
+
+        return clientCall(request, UpdateCrossConnectGroupResponse::builder)
+                .logger(LOG, "updateCrossConnectGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateCrossConnectGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
-                transformer =
-                        UpdateCrossConnectGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>,
-                        java.util.concurrent.Future<UpdateCrossConnectGroupResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateCrossConnectGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CrossConnectGroup/UpdateCrossConnectGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCrossConnectGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("crossConnectGroups")
+                .appendPathParam(request.getCrossConnectGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.CrossConnectGroup.class,
+                        UpdateCrossConnectGroupResponse.Builder::crossConnectGroup)
+                .handleResponseHeaderString("etag", UpdateCrossConnectGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCrossConnectGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10763,49 +6944,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>
                     handler) {
-        LOG.trace("Called async updateDhcpOptions");
-        final UpdateDhcpOptionsRequest interceptedRequest =
-                UpdateDhcpOptionsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDhcpOptionsConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDhcpId(), "dhcpId must not be blank");
+        Objects.requireNonNull(request.getUpdateDhcpDetails(), "updateDhcpDetails is required");
+
+        return clientCall(request, UpdateDhcpOptionsResponse::builder)
+                .logger(LOG, "updateDhcpOptions")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDhcpOptions",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
-                transformer =
-                        UpdateDhcpOptionsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>,
-                        java.util.concurrent.Future<UpdateDhcpOptionsResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDhcpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DhcpOptions/UpdateDhcpOptions")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDhcpOptionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("dhcps")
+                .appendPathParam(request.getDhcpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DhcpOptions.class,
+                        UpdateDhcpOptionsResponse.Builder::dhcpOptions)
+                .handleResponseHeaderString("etag", UpdateDhcpOptionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDhcpOptionsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10813,46 +6976,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateDrgRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse>
                     handler) {
-        LOG.trace("Called async updateDrg");
-        final UpdateDrgRequest interceptedRequest = UpdateDrgConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+        Objects.requireNonNull(request.getUpdateDrgDetails(), "updateDrgDetails is required");
+
+        return clientCall(request, UpdateDrgResponse::builder)
+                .logger(LOG, "updateDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgResponse>
-                transformer =
-                        UpdateDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse>,
-                        java.util.concurrent.Future<UpdateDrgResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgRequest, UpdateDrgResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpdateDrg")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Drg.class, UpdateDrgResponse.Builder::drg)
+                .handleResponseHeaderString("etag", UpdateDrgResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10861,50 +7007,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
                     handler) {
-        LOG.trace("Called async updateDrgAttachment");
-        final UpdateDrgAttachmentRequest interceptedRequest =
-                UpdateDrgAttachmentConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgAttachmentConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgAttachmentId(), "drgAttachmentId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgAttachmentDetails(), "updateDrgAttachmentDetails is required");
+
+        return clientCall(request, UpdateDrgAttachmentResponse::builder)
+                .logger(LOG, "updateDrgAttachment")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
-                transformer =
-                        UpdateDrgAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>,
-                        java.util.concurrent.Future<UpdateDrgAttachmentResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgAttachmentDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgAttachment/UpdateDrgAttachment")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgAttachmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgAttachments")
+                .appendPathParam(request.getDrgAttachmentId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgAttachment.class,
+                        UpdateDrgAttachmentResponse.Builder::drgAttachment)
+                .handleResponseHeaderString("etag", UpdateDrgAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgAttachmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10915,52 +7043,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateDrgRouteDistributionRequest,
                                     UpdateDrgRouteDistributionResponse>
                             handler) {
-        LOG.trace("Called async updateDrgRouteDistribution");
-        final UpdateDrgRouteDistributionRequest interceptedRequest =
-                UpdateDrgRouteDistributionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteDistributionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteDistributionDetails(),
+                "updateDrgRouteDistributionDetails is required");
+
+        return clientCall(request, UpdateDrgRouteDistributionResponse::builder)
+                .logger(LOG, "updateDrgRouteDistribution")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistribution",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionResponse>
-                transformer =
-                        UpdateDrgRouteDistributionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDrgRouteDistributionRequest,
-                                UpdateDrgRouteDistributionResponse>,
-                        java.util.concurrent.Future<UpdateDrgRouteDistributionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgRouteDistributionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgRouteDistributionRequest, UpdateDrgRouteDistributionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistribution/UpdateDrgRouteDistribution")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRouteDistributionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteDistribution.class,
+                        UpdateDrgRouteDistributionResponse.Builder::drgRouteDistribution)
+                .handleResponseHeaderString(
+                        "etag", UpdateDrgRouteDistributionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteDistributionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -10971,55 +7082,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateDrgRouteDistributionStatementsRequest,
                                     UpdateDrgRouteDistributionStatementsResponse>
                             handler) {
-        LOG.trace("Called async updateDrgRouteDistributionStatements");
-        final UpdateDrgRouteDistributionStatementsRequest interceptedRequest =
-                UpdateDrgRouteDistributionStatementsConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteDistributionStatementsConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getDrgRouteDistributionId(), "drgRouteDistributionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteDistributionStatementsDetails(),
+                "updateDrgRouteDistributionStatementsDetails is required");
+
+        return clientCall(request, UpdateDrgRouteDistributionStatementsResponse::builder)
+                .logger(LOG, "updateDrgRouteDistributionStatements")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteDistributionStatements",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateDrgRouteDistributionStatementsResponse>
-                transformer =
-                        UpdateDrgRouteDistributionStatementsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDrgRouteDistributionStatementsRequest,
-                        UpdateDrgRouteDistributionStatementsResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDrgRouteDistributionStatementsRequest,
-                                UpdateDrgRouteDistributionStatementsResponse>,
-                        java.util.concurrent.Future<UpdateDrgRouteDistributionStatementsResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgRouteDistributionStatementsDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgRouteDistributionStatementsRequest,
-                    UpdateDrgRouteDistributionStatementsResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteDistributionStatement/UpdateDrgRouteDistributionStatements")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDrgRouteDistributionStatementsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteDistributions")
+                .appendPathParam(request.getDrgRouteDistributionId())
+                .appendPathParam("actions")
+                .appendPathParam("updateDrgRouteDistributionStatements")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteDistributionStatement.class,
+                        UpdateDrgRouteDistributionStatementsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateDrgRouteDistributionStatementsResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11028,50 +7119,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
                     handler) {
-        LOG.trace("Called async updateDrgRouteRules");
-        final UpdateDrgRouteRulesRequest interceptedRequest =
-                UpdateDrgRouteRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteRulesConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteRulesDetails(), "updateDrgRouteRulesDetails is required");
+
+        return clientCall(request, UpdateDrgRouteRulesResponse::builder)
+                .logger(LOG, "updateDrgRouteRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteRulesResponse>
-                transformer =
-                        UpdateDrgRouteRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>,
-                        java.util.concurrent.Future<UpdateDrgRouteRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgRouteRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgRouteRulesRequest, UpdateDrgRouteRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteRule/UpdateDrgRouteRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDrgRouteRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .appendPathParam("actions")
+                .appendPathParam("updateDrgRouteRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBodyList(
+                        com.oracle.bmc.core.model.DrgRouteRule.class,
+                        UpdateDrgRouteRulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11080,50 +7153,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
                     handler) {
-        LOG.trace("Called async updateDrgRouteTable");
-        final UpdateDrgRouteTableRequest interceptedRequest =
-                UpdateDrgRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateDrgRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgRouteTableId(), "drgRouteTableId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDrgRouteTableDetails(), "updateDrgRouteTableDetails is required");
+
+        return clientCall(request, UpdateDrgRouteTableResponse::builder)
+                .logger(LOG, "updateDrgRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateDrgRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDrgRouteTableResponse>
-                transformer =
-                        UpdateDrgRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>,
-                        java.util.concurrent.Future<UpdateDrgRouteTableResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateDrgRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateDrgRouteTableRequest, UpdateDrgRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DrgRouteTable/UpdateDrgRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateDrgRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgRouteTables")
+                .appendPathParam(request.getDrgRouteTableId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.DrgRouteTable.class,
+                        UpdateDrgRouteTableResponse.Builder::drgRouteTable)
+                .handleResponseHeaderString("etag", UpdateDrgRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDrgRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11132,50 +7187,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
                     handler) {
-        LOG.trace("Called async updateIPSecConnection");
-        final UpdateIPSecConnectionRequest interceptedRequest =
-                UpdateIPSecConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionDetails(),
+                "updateIPSecConnectionDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionResponse::builder)
+                .logger(LOG, "updateIPSecConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
-                transformer =
-                        UpdateIPSecConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>,
-                        java.util.concurrent.Future<UpdateIPSecConnectionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateIPSecConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection/UpdateIPSecConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnection.class,
+                        UpdateIPSecConnectionResponse.Builder::iPSecConnection)
+                .handleResponseHeaderString("etag", UpdateIPSecConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIPSecConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11186,52 +7224,39 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateIPSecConnectionTunnelRequest,
                                     UpdateIPSecConnectionTunnelResponse>
                             handler) {
-        LOG.trace("Called async updateIPSecConnectionTunnel");
-        final UpdateIPSecConnectionTunnelRequest interceptedRequest =
-                UpdateIPSecConnectionTunnelConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionTunnelConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionTunnelDetails(),
+                "updateIPSecConnectionTunnelDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionTunnelResponse::builder)
+                .logger(LOG, "updateIPSecConnectionTunnel")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
-                transformer =
-                        UpdateIPSecConnectionTunnelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateIPSecConnectionTunnelRequest, UpdateIPSecConnectionTunnelResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIPSecConnectionTunnelRequest,
-                                UpdateIPSecConnectionTunnelResponse>,
-                        java.util.concurrent.Future<UpdateIPSecConnectionTunnelResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateIPSecConnectionTunnelDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIPSecConnectionTunnelRequest, UpdateIPSecConnectionTunnelResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/UpdateIPSecConnectionTunnel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionTunnelRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnel.class,
+                        UpdateIPSecConnectionTunnelResponse.Builder::iPSecConnectionTunnel)
+                .handleResponseHeaderString(
+                        "etag", UpdateIPSecConnectionTunnelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIPSecConnectionTunnelResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11242,57 +7267,41 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateIPSecConnectionTunnelSharedSecretRequest,
                                     UpdateIPSecConnectionTunnelSharedSecretResponse>
                             handler) {
-        LOG.trace("Called async updateIPSecConnectionTunnelSharedSecret");
-        final UpdateIPSecConnectionTunnelSharedSecretRequest interceptedRequest =
-                UpdateIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIPSecConnectionTunnelSharedSecretConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIPSecConnectionTunnelSharedSecretDetails(),
+                "updateIPSecConnectionTunnelSharedSecretDetails is required");
+
+        return clientCall(request, UpdateIPSecConnectionTunnelSharedSecretResponse::builder)
+                .logger(LOG, "updateIPSecConnectionTunnelSharedSecret")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIPSecConnectionTunnelSharedSecret",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
-                transformer =
-                        UpdateIPSecConnectionTunnelSharedSecretConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateIPSecConnectionTunnelSharedSecretRequest,
-                        UpdateIPSecConnectionTunnelSharedSecretResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIPSecConnectionTunnelSharedSecretRequest,
-                                UpdateIPSecConnectionTunnelSharedSecretResponse>,
-                        java.util.concurrent.Future<
-                                UpdateIPSecConnectionTunnelSharedSecretResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getUpdateIPSecConnectionTunnelSharedSecretDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIPSecConnectionTunnelSharedSecretRequest,
-                    UpdateIPSecConnectionTunnelSharedSecretResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIPSecConnectionTunnelSharedSecretRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("sharedSecret")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret.class,
+                        UpdateIPSecConnectionTunnelSharedSecretResponse.Builder
+                                ::iPSecConnectionTunnelSharedSecret)
+                .handleResponseHeaderString(
+                        "etag", UpdateIPSecConnectionTunnelSharedSecretResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateIPSecConnectionTunnelSharedSecretResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11301,50 +7310,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
                     handler) {
-        LOG.trace("Called async updateInternetGateway");
-        final UpdateInternetGatewayRequest interceptedRequest =
-                UpdateInternetGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateInternetGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIgId(), "igId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInternetGatewayDetails(),
+                "updateInternetGatewayDetails is required");
+
+        return clientCall(request, UpdateInternetGatewayResponse::builder)
+                .logger(LOG, "updateInternetGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateInternetGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
-                transformer =
-                        UpdateInternetGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>,
-                        java.util.concurrent.Future<UpdateInternetGatewayResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateInternetGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InternetGateway/UpdateInternetGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInternetGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("internetGateways")
+                .appendPathParam(request.getIgId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.InternetGateway.class,
+                        UpdateInternetGatewayResponse.Builder::internetGateway)
+                .handleResponseHeaderString("etag", UpdateInternetGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateInternetGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11352,47 +7344,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateIpv6Request request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateIpv6Request, UpdateIpv6Response>
                     handler) {
-        LOG.trace("Called async updateIpv6");
-        final UpdateIpv6Request interceptedRequest = UpdateIpv6Converter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateIpv6Converter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpv6Id(), "ipv6Id must not be blank");
+        Objects.requireNonNull(request.getUpdateIpv6Details(), "updateIpv6Details is required");
+
+        return clientCall(request, UpdateIpv6Response::builder)
+                .logger(LOG, "updateIpv6")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateIpv6",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateIpv6Response>
-                transformer =
-                        UpdateIpv6Converter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateIpv6Request, UpdateIpv6Response> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateIpv6Request, UpdateIpv6Response>,
-                        java.util.concurrent.Future<UpdateIpv6Response>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateIpv6Details(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateIpv6Request, UpdateIpv6Response>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIpv6Request::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipv6")
+                .appendPathParam(request.getIpv6Id())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Ipv6.class, UpdateIpv6Response.Builder::ipv6)
+                .handleResponseHeaderString("etag", UpdateIpv6Response.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIpv6Response.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11401,52 +7376,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>
                     handler) {
-        LOG.trace("Called async updateLocalPeeringGateway");
-        final UpdateLocalPeeringGatewayRequest interceptedRequest =
-                UpdateLocalPeeringGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateLocalPeeringGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getLocalPeeringGatewayId(), "localPeeringGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateLocalPeeringGatewayDetails(),
+                "updateLocalPeeringGatewayDetails is required");
+
+        return clientCall(request, UpdateLocalPeeringGatewayResponse::builder)
+                .logger(LOG, "updateLocalPeeringGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateLocalPeeringGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
-                transformer =
-                        UpdateLocalPeeringGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateLocalPeeringGatewayRequest,
-                                UpdateLocalPeeringGatewayResponse>,
-                        java.util.concurrent.Future<UpdateLocalPeeringGatewayResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateLocalPeeringGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/LocalPeeringGateway/UpdateLocalPeeringGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateLocalPeeringGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("localPeeringGateways")
+                .appendPathParam(request.getLocalPeeringGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.LocalPeeringGateway.class,
+                        UpdateLocalPeeringGatewayResponse.Builder::localPeeringGateway)
+                .handleResponseHeaderString("etag", UpdateLocalPeeringGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateLocalPeeringGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11455,49 +7412,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateNatGatewayRequest, UpdateNatGatewayResponse>
                     handler) {
-        LOG.trace("Called async updateNatGateway");
-        final UpdateNatGatewayRequest interceptedRequest =
-                UpdateNatGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNatGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getNatGatewayId(), "natGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNatGatewayDetails(), "updateNatGatewayDetails is required");
+
+        return clientCall(request, UpdateNatGatewayResponse::builder)
+                .logger(LOG, "updateNatGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNatGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
-                transformer =
-                        UpdateNatGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateNatGatewayRequest, UpdateNatGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateNatGatewayRequest, UpdateNatGatewayResponse>,
-                        java.util.concurrent.Future<UpdateNatGatewayResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateNatGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateNatGatewayRequest, UpdateNatGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NatGateway/UpdateNatGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNatGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("natGateways")
+                .appendPathParam(request.getNatGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NatGateway.class,
+                        UpdateNatGatewayResponse.Builder::natGateway)
+                .handleResponseHeaderString("etag", UpdateNatGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNatGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11508,52 +7448,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateNetworkSecurityGroupRequest,
                                     UpdateNetworkSecurityGroupResponse>
                             handler) {
-        LOG.trace("Called async updateNetworkSecurityGroup");
-        final UpdateNetworkSecurityGroupRequest interceptedRequest =
-                UpdateNetworkSecurityGroupConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNetworkSecurityGroupDetails(),
+                "updateNetworkSecurityGroupDetails is required");
+
+        return clientCall(request, UpdateNetworkSecurityGroupResponse::builder)
+                .logger(LOG, "updateNetworkSecurityGroup")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroup",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
-                transformer =
-                        UpdateNetworkSecurityGroupConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateNetworkSecurityGroupRequest, UpdateNetworkSecurityGroupResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateNetworkSecurityGroupRequest,
-                                UpdateNetworkSecurityGroupResponse>,
-                        java.util.concurrent.Future<UpdateNetworkSecurityGroupResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateNetworkSecurityGroupDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateNetworkSecurityGroupRequest, UpdateNetworkSecurityGroupResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/UpdateNetworkSecurityGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateNetworkSecurityGroupRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.NetworkSecurityGroup.class,
+                        UpdateNetworkSecurityGroupResponse.Builder::networkSecurityGroup)
+                .handleResponseHeaderString(
+                        "etag", UpdateNetworkSecurityGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateNetworkSecurityGroupResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11564,57 +7487,36 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateNetworkSecurityGroupSecurityRulesRequest,
                                     UpdateNetworkSecurityGroupSecurityRulesResponse>
                             handler) {
-        LOG.trace("Called async updateNetworkSecurityGroupSecurityRules");
-        final UpdateNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
-                UpdateNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNetworkSecurityGroupSecurityRulesConverter.fromRequest(
-                        client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getNetworkSecurityGroupId(), "networkSecurityGroupId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateNetworkSecurityGroupSecurityRulesDetails(),
+                "updateNetworkSecurityGroupSecurityRulesDetails is required");
+
+        return clientCall(request, UpdateNetworkSecurityGroupSecurityRulesResponse::builder)
+                .logger(LOG, "updateNetworkSecurityGroupSecurityRules")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateNetworkSecurityGroupSecurityRules",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupSecurityRulesResponse>
-                transformer =
-                        UpdateNetworkSecurityGroupSecurityRulesConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateNetworkSecurityGroupSecurityRulesRequest,
-                        UpdateNetworkSecurityGroupSecurityRulesResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateNetworkSecurityGroupSecurityRulesRequest,
-                                UpdateNetworkSecurityGroupSecurityRulesResponse>,
-                        java.util.concurrent.Future<
-                                UpdateNetworkSecurityGroupSecurityRulesResponse>>
-                futureSupplier =
-                        client.postFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest
-                                        .getUpdateNetworkSecurityGroupSecurityRulesDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateNetworkSecurityGroupSecurityRulesRequest,
-                    UpdateNetworkSecurityGroupSecurityRulesResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityRule/UpdateNetworkSecurityGroupSecurityRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateNetworkSecurityGroupSecurityRulesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("networkSecurityGroups")
+                .appendPathParam(request.getNetworkSecurityGroupId())
+                .appendPathParam("actions")
+                .appendPathParam("updateSecurityRules")
+                .accept("application/json")
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.UpdatedNetworkSecurityGroupSecurityRules.class,
+                        UpdateNetworkSecurityGroupSecurityRulesResponse.Builder
+                                ::updatedNetworkSecurityGroupSecurityRules)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateNetworkSecurityGroupSecurityRulesResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11623,49 +7525,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdatePrivateIpRequest, UpdatePrivateIpResponse>
                     handler) {
-        LOG.trace("Called async updatePrivateIp");
-        final UpdatePrivateIpRequest interceptedRequest =
-                UpdatePrivateIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePrivateIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPrivateIpId(), "privateIpId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePrivateIpDetails(), "updatePrivateIpDetails is required");
+
+        return clientCall(request, UpdatePrivateIpResponse::builder)
+                .logger(LOG, "updatePrivateIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePrivateIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
-                transformer =
-                        UpdatePrivateIpConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdatePrivateIpRequest, UpdatePrivateIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdatePrivateIpRequest, UpdatePrivateIpResponse>,
-                        java.util.concurrent.Future<UpdatePrivateIpResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdatePrivateIpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdatePrivateIpRequest, UpdatePrivateIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePrivateIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("privateIps")
+                .appendPathParam(request.getPrivateIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PrivateIp.class,
+                        UpdatePrivateIpResponse.Builder::privateIp)
+                .handleResponseHeaderString("etag", UpdatePrivateIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePrivateIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11674,48 +7559,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdatePublicIpRequest, UpdatePublicIpResponse>
                     handler) {
-        LOG.trace("Called async updatePublicIp");
-        final UpdatePublicIpRequest interceptedRequest =
-                UpdatePublicIpConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePublicIpConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpId(), "publicIpId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePublicIpDetails(), "updatePublicIpDetails is required");
+
+        return clientCall(request, UpdatePublicIpResponse::builder)
+                .logger(LOG, "updatePublicIp")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIp",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
-                transformer =
-                        UpdatePublicIpConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdatePublicIpRequest, UpdatePublicIpResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdatePublicIpRequest, UpdatePublicIpResponse>,
-                        java.util.concurrent.Future<UpdatePublicIpResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdatePublicIpDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdatePublicIpRequest, UpdatePublicIpResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/UpdatePublicIp")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePublicIpRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIps")
+                .appendPathParam(request.getPublicIpId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIp.class,
+                        UpdatePublicIpResponse.Builder::publicIp)
+                .handleResponseHeaderString("etag", UpdatePublicIpResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePublicIpResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11724,49 +7593,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>
                     handler) {
-        LOG.trace("Called async updatePublicIpPool");
-        final UpdatePublicIpPoolRequest interceptedRequest =
-                UpdatePublicIpPoolConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdatePublicIpPoolConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getPublicIpPoolId(), "publicIpPoolId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePublicIpPoolDetails(), "updatePublicIpPoolDetails is required");
+
+        return clientCall(request, UpdatePublicIpPoolResponse::builder)
+                .logger(LOG, "updatePublicIpPool")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdatePublicIpPool",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePublicIpPoolResponse>
-                transformer =
-                        UpdatePublicIpPoolConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>,
-                        java.util.concurrent.Future<UpdatePublicIpPoolResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdatePublicIpPoolDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdatePublicIpPoolRequest, UpdatePublicIpPoolResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PublicIpPool/UpdatePublicIpPool")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePublicIpPoolRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("publicIpPools")
+                .appendPathParam(request.getPublicIpPoolId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.PublicIpPool.class,
+                        UpdatePublicIpPoolResponse.Builder::publicIpPool)
+                .handleResponseHeaderString("etag", UpdatePublicIpPoolResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePublicIpPoolResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11777,52 +7630,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateRemotePeeringConnectionRequest,
                                     UpdateRemotePeeringConnectionResponse>
                             handler) {
-        LOG.trace("Called async updateRemotePeeringConnection");
-        final UpdateRemotePeeringConnectionRequest interceptedRequest =
-                UpdateRemotePeeringConnectionConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRemotePeeringConnectionDetails(),
+                "updateRemotePeeringConnectionDetails is required");
+
+        return clientCall(request, UpdateRemotePeeringConnectionResponse::builder)
+                .logger(LOG, "updateRemotePeeringConnection")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRemotePeeringConnection",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
-                transformer =
-                        UpdateRemotePeeringConnectionConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateRemotePeeringConnectionRequest, UpdateRemotePeeringConnectionResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateRemotePeeringConnectionRequest,
-                                UpdateRemotePeeringConnectionResponse>,
-                        java.util.concurrent.Future<UpdateRemotePeeringConnectionResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateRemotePeeringConnectionDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateRemotePeeringConnectionRequest, UpdateRemotePeeringConnectionResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RemotePeeringConnection/UpdateRemotePeeringConnection")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRemotePeeringConnectionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("remotePeeringConnections")
+                .appendPathParam(request.getRemotePeeringConnectionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RemotePeeringConnection.class,
+                        UpdateRemotePeeringConnectionResponse.Builder::remotePeeringConnection)
+                .handleResponseHeaderString(
+                        "etag", UpdateRemotePeeringConnectionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateRemotePeeringConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11831,49 +7669,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateRouteTableRequest, UpdateRouteTableResponse>
                     handler) {
-        LOG.trace("Called async updateRouteTable");
-        final UpdateRouteTableRequest interceptedRequest =
-                UpdateRouteTableConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateRouteTableConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getRtId(), "rtId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRouteTableDetails(), "updateRouteTableDetails is required");
+
+        return clientCall(request, UpdateRouteTableResponse::builder)
+                .logger(LOG, "updateRouteTable")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateRouteTable",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
-                transformer =
-                        UpdateRouteTableConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateRouteTableRequest, UpdateRouteTableResponse>,
-                        java.util.concurrent.Future<UpdateRouteTableResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateRouteTableDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateRouteTableRequest, UpdateRouteTableResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/RouteTable/UpdateRouteTable")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRouteTableRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("routeTables")
+                .appendPathParam(request.getRtId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.RouteTable.class,
+                        UpdateRouteTableResponse.Builder::routeTable)
+                .handleResponseHeaderString("etag", UpdateRouteTableResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRouteTableResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11882,49 +7703,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateSecurityListRequest, UpdateSecurityListResponse>
                     handler) {
-        LOG.trace("Called async updateSecurityList");
-        final UpdateSecurityListRequest interceptedRequest =
-                UpdateSecurityListConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSecurityListConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSecurityListId(), "securityListId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSecurityListDetails(), "updateSecurityListDetails is required");
+
+        return clientCall(request, UpdateSecurityListResponse::builder)
+                .logger(LOG, "updateSecurityList")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSecurityList",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
-                transformer =
-                        UpdateSecurityListConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateSecurityListRequest, UpdateSecurityListResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateSecurityListRequest, UpdateSecurityListResponse>,
-                        java.util.concurrent.Future<UpdateSecurityListResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateSecurityListDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateSecurityListRequest, UpdateSecurityListResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/SecurityList/UpdateSecurityList")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSecurityListRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("securityLists")
+                .appendPathParam(request.getSecurityListId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.SecurityList.class,
+                        UpdateSecurityListResponse.Builder::securityList)
+                .handleResponseHeaderString("etag", UpdateSecurityListResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSecurityListResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11933,50 +7737,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>
                     handler) {
-        LOG.trace("Called async updateServiceGateway");
-        final UpdateServiceGatewayRequest interceptedRequest =
-                UpdateServiceGatewayConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateServiceGatewayConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getServiceGatewayId(), "serviceGatewayId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateServiceGatewayDetails(),
+                "updateServiceGatewayDetails is required");
+
+        return clientCall(request, UpdateServiceGatewayResponse::builder)
+                .logger(LOG, "updateServiceGateway")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateServiceGateway",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
-                transformer =
-                        UpdateServiceGatewayConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>,
-                        java.util.concurrent.Future<UpdateServiceGatewayResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateServiceGatewayDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ServiceGateway/UpdateServiceGateway")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateServiceGatewayRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("serviceGateways")
+                .appendPathParam(request.getServiceGatewayId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.ServiceGateway.class,
+                        UpdateServiceGatewayResponse.Builder::serviceGateway)
+                .handleResponseHeaderString("etag", UpdateServiceGatewayResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateServiceGatewayResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -11984,48 +7771,31 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateSubnetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
                     handler) {
-        LOG.trace("Called async updateSubnet");
-        final UpdateSubnetRequest interceptedRequest =
-                UpdateSubnetConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateSubnetConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getSubnetId(), "subnetId must not be blank");
+        Objects.requireNonNull(request.getUpdateSubnetDetails(), "updateSubnetDetails is required");
+
+        return clientCall(request, UpdateSubnetResponse::builder)
+                .logger(LOG, "updateSubnet")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateSubnet",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
-                transformer =
-                        UpdateSubnetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateSubnetRequest, UpdateSubnetResponse>,
-                        java.util.concurrent.Future<UpdateSubnetResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateSubnetDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateSubnetRequest, UpdateSubnetResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Subnet/UpdateSubnet")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSubnetRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("subnets")
+                .appendPathParam(request.getSubnetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.Subnet.class,
+                        UpdateSubnetResponse.Builder::subnet)
+                .handleResponseHeaderString("etag", UpdateSubnetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSubnetResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12036,53 +7806,41 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                                     UpdateTunnelCpeDeviceConfigRequest,
                                     UpdateTunnelCpeDeviceConfigResponse>
                             handler) {
-        LOG.trace("Called async updateTunnelCpeDeviceConfig");
-        final UpdateTunnelCpeDeviceConfigRequest interceptedRequest =
-                UpdateTunnelCpeDeviceConfigConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+
+        Validate.notBlank(request.getTunnelId(), "tunnelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTunnelCpeDeviceConfigDetails(),
+                "updateTunnelCpeDeviceConfigDetails is required");
+
+        return clientCall(request, UpdateTunnelCpeDeviceConfigResponse::builder)
+                .logger(LOG, "updateTunnelCpeDeviceConfig")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateTunnelCpeDeviceConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig");
-        final java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
-                transformer =
-                        UpdateTunnelCpeDeviceConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateTunnelCpeDeviceConfigRequest,
-                                UpdateTunnelCpeDeviceConfigResponse>,
-                        java.util.concurrent.Future<UpdateTunnelCpeDeviceConfigResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateTunnelCpeDeviceConfigDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTunnelCpeDeviceConfigRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("ipsecConnections")
+                .appendPathParam(request.getIpscId())
+                .appendPathParam("tunnels")
+                .appendPathParam(request.getTunnelId())
+                .appendPathParam("tunnelDeviceConfig")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.TunnelCpeDeviceConfig.class,
+                        UpdateTunnelCpeDeviceConfigResponse.Builder::tunnelCpeDeviceConfig)
+                .handleResponseHeaderString(
+                        "etag", UpdateTunnelCpeDeviceConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTunnelCpeDeviceConfigResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12090,46 +7848,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateVcnRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse>
                     handler) {
-        LOG.trace("Called async updateVcn");
-        final UpdateVcnRequest interceptedRequest = UpdateVcnConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVcnConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVcnId(), "vcnId must not be blank");
+        Objects.requireNonNull(request.getUpdateVcnDetails(), "updateVcnDetails is required");
+
+        return clientCall(request, UpdateVcnResponse::builder)
+                .logger(LOG, "updateVcn")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVcn",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVcnResponse>
-                transformer =
-                        UpdateVcnConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse>,
-                        java.util.concurrent.Future<UpdateVcnResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVcnDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVcnRequest, UpdateVcnResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/UpdateVcn")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVcnRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vcns")
+                .appendPathParam(request.getVcnId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vcn.class, UpdateVcnResponse.Builder::vcn)
+                .handleResponseHeaderString("etag", UpdateVcnResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVcnResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12138,50 +7879,33 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
                     handler) {
-        LOG.trace("Called async updateVirtualCircuit");
-        final UpdateVirtualCircuitRequest interceptedRequest =
-                UpdateVirtualCircuitConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVirtualCircuitConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVirtualCircuitId(), "virtualCircuitId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateVirtualCircuitDetails(),
+                "updateVirtualCircuitDetails is required");
+
+        return clientCall(request, UpdateVirtualCircuitResponse::builder)
+                .logger(LOG, "updateVirtualCircuit")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVirtualCircuit",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
-                transformer =
-                        UpdateVirtualCircuitConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<
-                        UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>,
-                        java.util.concurrent.Future<UpdateVirtualCircuitResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVirtualCircuitDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VirtualCircuit/UpdateVirtualCircuit")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVirtualCircuitRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("virtualCircuits")
+                .appendPathParam(request.getVirtualCircuitId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.core.model.VirtualCircuit.class,
+                        UpdateVirtualCircuitResponse.Builder::virtualCircuit)
+                .handleResponseHeaderString("etag", UpdateVirtualCircuitResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVirtualCircuitResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12189,47 +7913,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateVlanRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateVlanRequest, UpdateVlanResponse>
                     handler) {
-        LOG.trace("Called async updateVlan");
-        final UpdateVlanRequest interceptedRequest = UpdateVlanConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVlanConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVlanId(), "vlanId must not be blank");
+        Objects.requireNonNull(request.getUpdateVlanDetails(), "updateVlanDetails is required");
+
+        return clientCall(request, UpdateVlanResponse::builder)
+                .logger(LOG, "updateVlan")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVlan",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVlanResponse>
-                transformer =
-                        UpdateVlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateVlanRequest, UpdateVlanResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVlanRequest, UpdateVlanResponse>,
-                        java.util.concurrent.Future<UpdateVlanResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVlanDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVlanRequest, UpdateVlanResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vlan/UpdateVlan")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vlans")
+                .appendPathParam(request.getVlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vlan.class, UpdateVlanResponse.Builder::vlan)
+                .handleResponseHeaderString("etag", UpdateVlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVlanResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12237,47 +7944,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateVnicRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse>
                     handler) {
-        LOG.trace("Called async updateVnic");
-        final UpdateVnicRequest interceptedRequest = UpdateVnicConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVnicConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getVnicId(), "vnicId must not be blank");
+        Objects.requireNonNull(request.getUpdateVnicDetails(), "updateVnicDetails is required");
+
+        return clientCall(request, UpdateVnicResponse::builder)
+                .logger(LOG, "updateVnic")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpdateVnic",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVnicResponse>
-                transformer =
-                        UpdateVnicConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVnicRequest, UpdateVnicResponse>,
-                        java.util.concurrent.Future<UpdateVnicResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVnicDetails(),
-                                ib,
-                                transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVnicRequest, UpdateVnicResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vnic/UpdateVnic")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVnicRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vnics")
+                .appendPathParam(request.getVnicId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vnic.class, UpdateVnicResponse.Builder::vnic)
+                .handleResponseHeaderString("etag", UpdateVnicResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVnicResponse.Builder::opcRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12285,44 +7974,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateVtapRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateVtapRequest, UpdateVtapResponse>
                     handler) {
-        LOG.trace("Called async updateVtap");
-        final UpdateVtapRequest interceptedRequest = UpdateVtapConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVtapConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "VirtualNetwork", "UpdateVtap", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpdateVtapResponse>
-                transformer =
-                        UpdateVtapConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpdateVtapRequest, UpdateVtapResponse> handlerToUse =
-                handler;
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpdateVtapRequest, UpdateVtapResponse>,
-                        java.util.concurrent.Future<UpdateVtapResponse>>
-                futureSupplier =
-                        client.putFutureSupplier(
-                                interceptedRequest,
-                                interceptedRequest.getUpdateVtapDetails(),
-                                ib,
-                                transformer);
+        Validate.notBlank(request.getVtapId(), "vtapId must not be blank");
+        Objects.requireNonNull(request.getUpdateVtapDetails(), "updateVtapDetails is required");
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpdateVtapRequest, UpdateVtapResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+        return clientCall(request, UpdateVtapResponse::builder)
+                .logger(LOG, "updateVtap")
+                .serviceDetails("VirtualNetwork", "UpdateVtap", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateVtapRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("vtaps")
+                .appendPathParam(request.getVtapId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(com.oracle.bmc.core.model.Vtap.class, UpdateVtapResponse.Builder::vtap)
+                .handleResponseHeaderString("etag", UpdateVtapResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateVtapResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateVtapResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12330,43 +8004,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpgradeDrgRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse>
                     handler) {
-        LOG.trace("Called async upgradeDrg");
-        final UpgradeDrgRequest interceptedRequest = UpgradeDrgConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpgradeDrgConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getDrgId(), "drgId must not be blank");
+
+        return clientCall(request, UpgradeDrgResponse::builder)
+                .logger(LOG, "upgradeDrg")
+                .serviceDetails(
                         "VirtualNetwork",
                         "UpgradeDrg",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg");
-        final java.util.function.Function<javax.ws.rs.core.Response, UpgradeDrgResponse>
-                transformer =
-                        UpgradeDrgConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                UpgradeDrgRequest, UpgradeDrgResponse>,
-                        java.util.concurrent.Future<UpgradeDrgResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    UpgradeDrgRequest, UpgradeDrgResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Drg/UpgradeDrg")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeDrgRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("drgs")
+                .appendPathParam(request.getDrgId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeDrgResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpgradeDrgResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12375,44 +8036,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             ValidateByoipRangeRequest, ValidateByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async validateByoipRange");
-        final ValidateByoipRangeRequest interceptedRequest =
-                ValidateByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ValidateByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, ValidateByoipRangeResponse::builder)
+                .logger(LOG, "validateByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "ValidateByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, ValidateByoipRangeResponse>
-                transformer =
-                        ValidateByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<ValidateByoipRangeRequest, ValidateByoipRangeResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                ValidateByoipRangeRequest, ValidateByoipRangeResponse>,
-                        java.util.concurrent.Future<ValidateByoipRangeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    ValidateByoipRangeRequest, ValidateByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/ValidateByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ValidateByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("validate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", ValidateByoipRangeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ValidateByoipRangeResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
     }
 
     @Override
@@ -12421,43 +8067,185 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             final com.oracle.bmc.responses.AsyncHandler<
                             WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>
                     handler) {
-        LOG.trace("Called async withdrawByoipRange");
-        final WithdrawByoipRangeRequest interceptedRequest =
-                WithdrawByoipRangeConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                WithdrawByoipRangeConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+
+        Validate.notBlank(request.getByoipRangeId(), "byoipRangeId must not be blank");
+
+        return clientCall(request, WithdrawByoipRangeResponse::builder)
+                .logger(LOG, "withdrawByoipRange")
+                .serviceDetails(
                         "VirtualNetwork",
                         "WithdrawByoipRange",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange");
-        final java.util.function.Function<javax.ws.rs.core.Response, WithdrawByoipRangeResponse>
-                transformer =
-                        WithdrawByoipRangeConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>
-                handlerToUse = handler;
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/WithdrawByoipRange")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(WithdrawByoipRangeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("byoipRanges")
+                .appendPathParam(request.getByoipRangeId())
+                .appendPathParam("actions")
+                .appendPathParam("withdraw")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", WithdrawByoipRangeResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
 
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>,
-                        java.util.concurrent.Future<WithdrawByoipRangeResponse>>
-                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider);
+    }
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    WithdrawByoipRangeRequest, WithdrawByoipRangeResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider);
     }
 }

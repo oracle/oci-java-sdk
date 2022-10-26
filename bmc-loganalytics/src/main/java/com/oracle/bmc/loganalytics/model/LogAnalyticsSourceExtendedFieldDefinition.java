@@ -5,22 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsSourceExtendedFieldDefinition
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * LogAnalyticsSourceExtendedFieldDefinition <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = LogAnalyticsSourceExtendedFieldDefinition.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = LogAnalyticsSourceExtendedFieldDefinition.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsSourceExtendedFieldDefinition
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "field",
@@ -87,154 +87,142 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
             this.__explicitlySet__.add("field");
             return this;
         }
-        /**
-         * The regular expression.
-         **/
+        /** The regular expression. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayRegularExpression")
         private String displayRegularExpression;
 
         /**
          * The regular expression.
+         *
          * @param displayRegularExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder displayRegularExpression(String displayRegularExpression) {
             this.displayRegularExpression = displayRegularExpression;
             this.__explicitlySet__.add("displayRegularExpression");
             return this;
         }
-        /**
-         * An array of extended fields.
-         **/
+        /** An array of extended fields. */
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFields")
         private java.util.List<LogAnalyticsExtendedField> extendedFields;
 
         /**
          * An array of extended fields.
+         *
          * @param extendedFields the value to set
          * @return this builder
-         **/
+         */
         public Builder extendedFields(java.util.List<LogAnalyticsExtendedField> extendedFields) {
             this.extendedFields = extendedFields;
             this.__explicitlySet__.add("extendedFields");
             return this;
         }
-        /**
-         * The base field internal name.
-         **/
+        /** The base field internal name. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
         private String baseFieldName;
 
         /**
          * The base field internal name.
+         *
          * @param baseFieldName the value to set
          * @return this builder
-         **/
+         */
         public Builder baseFieldName(String baseFieldName) {
             this.baseFieldName = baseFieldName;
             this.__explicitlySet__.add("baseFieldName");
             return this;
         }
-        /**
-         * The base field log text.
-         **/
+        /** The base field log text. */
         @com.fasterxml.jackson.annotation.JsonProperty("baseFieldLogText")
         private String baseFieldLogText;
 
         /**
          * The base field log text.
+         *
          * @param baseFieldLogText the value to set
          * @return this builder
-         **/
+         */
         public Builder baseFieldLogText(String baseFieldLogText) {
             this.baseFieldLogText = baseFieldLogText;
             this.__explicitlySet__.add("baseFieldLogText");
             return this;
         }
-        /**
-         * The conditional data type.
-         **/
+        /** The conditional data type. */
         @com.fasterxml.jackson.annotation.JsonProperty("conditionDataType")
         private String conditionDataType;
 
         /**
          * The conditional data type.
+         *
          * @param conditionDataType the value to set
          * @return this builder
-         **/
+         */
         public Builder conditionDataType(String conditionDataType) {
             this.conditionDataType = conditionDataType;
             this.__explicitlySet__.add("conditionDataType");
             return this;
         }
-        /**
-         * The onditional field.
-         **/
+        /** The onditional field. */
         @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
         private String conditionField;
 
         /**
          * The onditional field.
+         *
          * @param conditionField the value to set
          * @return this builder
-         **/
+         */
         public Builder conditionField(String conditionField) {
             this.conditionField = conditionField;
             this.__explicitlySet__.add("conditionField");
             return this;
         }
-        /**
-         * The conditional operator.
-         **/
+        /** The conditional operator. */
         @com.fasterxml.jackson.annotation.JsonProperty("conditionOperator")
         private String conditionOperator;
 
         /**
          * The conditional operator.
+         *
          * @param conditionOperator the value to set
          * @return this builder
-         **/
+         */
         public Builder conditionOperator(String conditionOperator) {
             this.conditionOperator = conditionOperator;
             this.__explicitlySet__.add("conditionOperator");
             return this;
         }
-        /**
-         * The conditional value.
-         **/
+        /** The conditional value. */
         @com.fasterxml.jackson.annotation.JsonProperty("conditionValue")
         private String conditionValue;
 
         /**
          * The conditional value.
+         *
          * @param conditionValue the value to set
          * @return this builder
-         **/
+         */
         public Builder conditionValue(String conditionValue) {
             this.conditionValue = conditionValue;
             this.__explicitlySet__.add("conditionValue");
             return this;
         }
-        /**
-         * The converted regular expression.
-         **/
+        /** The converted regular expression. */
         @com.fasterxml.jackson.annotation.JsonProperty("convertedRegularExpression")
         private String convertedRegularExpression;
 
         /**
          * The converted regular expression.
+         *
          * @param convertedRegularExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder convertedRegularExpression(String convertedRegularExpression) {
             this.convertedRegularExpression = convertedRegularExpression;
             this.__explicitlySet__.add("convertedRegularExpression");
             return this;
         }
-        /**
-         * A flag inidcating whether or not the extended definition is enabled.
-         *
-         **/
+        /** A flag inidcating whether or not the extended definition is enabled. */
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -243,91 +231,86 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
          *
          * @param isEnabled the value to set
          * @return this builder
-         **/
+         */
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /**
-         * The extended field definition unique identifier.
-         **/
+        /** The extended field definition unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
         private Long extendedFieldDefinitionId;
 
         /**
          * The extended field definition unique identifier.
+         *
          * @param extendedFieldDefinitionId the value to set
          * @return this builder
-         **/
+         */
         public Builder extendedFieldDefinitionId(Long extendedFieldDefinitionId) {
             this.extendedFieldDefinitionId = extendedFieldDefinitionId;
             this.__explicitlySet__.add("extendedFieldDefinitionId");
             return this;
         }
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
-         *
-         **/
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag.  A value of false denotes a custom, or user
-         * defined object.  A value of true denotes a built in object.
+         * The system flag. A value of false denotes a custom, or user defined object. A value of
+         * true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         **/
+         */
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /**
-         * The regular expression.
-         **/
+        /** The regular expression. */
         @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
         private String regularExpression;
 
         /**
          * The regular expression.
+         *
          * @param regularExpression the value to set
          * @return this builder
-         **/
+         */
         public Builder regularExpression(String regularExpression) {
             this.regularExpression = regularExpression;
             this.__explicitlySet__.add("regularExpression");
             return this;
         }
-        /**
-         * The source unique identifier.
-         **/
+        /** The source unique identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
         /**
          * The source unique identifier.
+         *
          * @param sourceId the value to set
          * @return this builder
-         **/
+         */
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /**
-         * The last updated date.
-         **/
+        /** The last updated date. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last updated date.
+         *
          * @param timeUpdated the value to set
          * @return this builder
-         **/
+         */
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -416,9 +399,7 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -434,136 +415,124 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
         return field;
     }
 
-    /**
-     * The regular expression.
-     **/
+    /** The regular expression. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayRegularExpression")
     private final String displayRegularExpression;
 
     /**
      * The regular expression.
+     *
      * @return the value
-     **/
+     */
     public String getDisplayRegularExpression() {
         return displayRegularExpression;
     }
 
-    /**
-     * An array of extended fields.
-     **/
+    /** An array of extended fields. */
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFields")
     private final java.util.List<LogAnalyticsExtendedField> extendedFields;
 
     /**
      * An array of extended fields.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<LogAnalyticsExtendedField> getExtendedFields() {
         return extendedFields;
     }
 
-    /**
-     * The base field internal name.
-     **/
+    /** The base field internal name. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
     private final String baseFieldName;
 
     /**
      * The base field internal name.
+     *
      * @return the value
-     **/
+     */
     public String getBaseFieldName() {
         return baseFieldName;
     }
 
-    /**
-     * The base field log text.
-     **/
+    /** The base field log text. */
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldLogText")
     private final String baseFieldLogText;
 
     /**
      * The base field log text.
+     *
      * @return the value
-     **/
+     */
     public String getBaseFieldLogText() {
         return baseFieldLogText;
     }
 
-    /**
-     * The conditional data type.
-     **/
+    /** The conditional data type. */
     @com.fasterxml.jackson.annotation.JsonProperty("conditionDataType")
     private final String conditionDataType;
 
     /**
      * The conditional data type.
+     *
      * @return the value
-     **/
+     */
     public String getConditionDataType() {
         return conditionDataType;
     }
 
-    /**
-     * The onditional field.
-     **/
+    /** The onditional field. */
     @com.fasterxml.jackson.annotation.JsonProperty("conditionField")
     private final String conditionField;
 
     /**
      * The onditional field.
+     *
      * @return the value
-     **/
+     */
     public String getConditionField() {
         return conditionField;
     }
 
-    /**
-     * The conditional operator.
-     **/
+    /** The conditional operator. */
     @com.fasterxml.jackson.annotation.JsonProperty("conditionOperator")
     private final String conditionOperator;
 
     /**
      * The conditional operator.
+     *
      * @return the value
-     **/
+     */
     public String getConditionOperator() {
         return conditionOperator;
     }
 
-    /**
-     * The conditional value.
-     **/
+    /** The conditional value. */
     @com.fasterxml.jackson.annotation.JsonProperty("conditionValue")
     private final String conditionValue;
 
     /**
      * The conditional value.
+     *
      * @return the value
-     **/
+     */
     public String getConditionValue() {
         return conditionValue;
     }
 
-    /**
-     * The converted regular expression.
-     **/
+    /** The converted regular expression. */
     @com.fasterxml.jackson.annotation.JsonProperty("convertedRegularExpression")
     private final String convertedRegularExpression;
 
     /**
      * The converted regular expression.
+     *
      * @return the value
-     **/
+     */
     public String getConvertedRegularExpression() {
         return convertedRegularExpression;
     }
 
-    /**
-     * A flag inidcating whether or not the extended definition is enabled.
-     *
-     **/
+    /** A flag inidcating whether or not the extended definition is enabled. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -571,81 +540,76 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
      * A flag inidcating whether or not the extended definition is enabled.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /**
-     * The extended field definition unique identifier.
-     **/
+    /** The extended field definition unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
     private final Long extendedFieldDefinitionId;
 
     /**
      * The extended field definition unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getExtendedFieldDefinitionId() {
         return extendedFieldDefinitionId;
     }
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
-     *
-     **/
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag.  A value of false denotes a custom, or user
-     * defined object.  A value of true denotes a built in object.
+     * The system flag. A value of false denotes a custom, or user defined object. A value of true
+     * denotes a built in object.
      *
      * @return the value
-     **/
+     */
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /**
-     * The regular expression.
-     **/
+    /** The regular expression. */
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     private final String regularExpression;
 
     /**
      * The regular expression.
+     *
      * @return the value
-     **/
+     */
     public String getRegularExpression() {
         return regularExpression;
     }
 
-    /**
-     * The source unique identifier.
-     **/
+    /** The source unique identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
     /**
      * The source unique identifier.
+     *
      * @return the value
-     **/
+     */
     public Long getSourceId() {
         return sourceId;
     }
 
-    /**
-     * The last updated date.
-     **/
+    /** The last updated date. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last updated date.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -657,6 +621,7 @@ public final class LogAnalyticsSourceExtendedFieldDefinition
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

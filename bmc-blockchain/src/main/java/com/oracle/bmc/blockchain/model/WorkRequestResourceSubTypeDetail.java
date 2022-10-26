@@ -5,22 +5,22 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * SubType information for a work request resource.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * SubType information for a work request resource. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = WorkRequestResourceSubTypeDetail.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = WorkRequestResourceSubTypeDetail.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class WorkRequestResourceSubTypeDetail
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subType", "subTypeKey", "subTypeStatus"})
     public WorkRequestResourceSubTypeDetail(
@@ -33,10 +33,7 @@ public final class WorkRequestResourceSubTypeDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Subtype of the work request resource like osn or peer.
-         *
-         **/
+        /** Subtype of the work request resource like osn or peer. */
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
@@ -45,43 +42,43 @@ public final class WorkRequestResourceSubTypeDetail
          *
          * @param subType the value to set
          * @return this builder
-         **/
+         */
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-        /**
-         * The identifier of the resource subType.
-         **/
+        /** The identifier of the resource subType. */
         @com.fasterxml.jackson.annotation.JsonProperty("subTypeKey")
         private String subTypeKey;
 
         /**
          * The identifier of the resource subType.
+         *
          * @param subTypeKey the value to set
          * @return this builder
-         **/
+         */
         public Builder subTypeKey(String subTypeKey) {
             this.subTypeKey = subTypeKey;
             this.__explicitlySet__.add("subTypeKey");
             return this;
         }
         /**
-         * Status of the resource subType, as a result of the work tracked in this work request.
-         * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
-         *
-         **/
+         * Status of the resource subType, as a result of the work tracked in this work request. A
+         * resource subType would be CREATED, UPDATED or DELETED, after the work request is
+         * completed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subTypeStatus")
         private SubTypeStatus subTypeStatus;
 
         /**
-         * Status of the resource subType, as a result of the work tracked in this work request.
-         * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+         * Status of the resource subType, as a result of the work tracked in this work request. A
+         * resource subType would be CREATED, UPDATED or DELETED, after the work request is
+         * completed.
          *
          * @param subTypeStatus the value to set
          * @return this builder
-         **/
+         */
         public Builder subTypeStatus(SubTypeStatus subTypeStatus) {
             this.subTypeStatus = subTypeStatus;
             this.__explicitlySet__.add("subTypeStatus");
@@ -116,9 +113,7 @@ public final class WorkRequestResourceSubTypeDetail
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,10 +122,7 @@ public final class WorkRequestResourceSubTypeDetail
         return new Builder().copy(this);
     }
 
-    /**
-     * Subtype of the work request resource like osn or peer.
-     *
-     **/
+    /** Subtype of the work request resource like osn or peer. */
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
@@ -138,38 +130,36 @@ public final class WorkRequestResourceSubTypeDetail
      * Subtype of the work request resource like osn or peer.
      *
      * @return the value
-     **/
+     */
     public String getSubType() {
         return subType;
     }
 
-    /**
-     * The identifier of the resource subType.
-     **/
+    /** The identifier of the resource subType. */
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeKey")
     private final String subTypeKey;
 
     /**
      * The identifier of the resource subType.
+     *
      * @return the value
-     **/
+     */
     public String getSubTypeKey() {
         return subTypeKey;
     }
 
     /**
-     * Status of the resource subType, as a result of the work tracked in this work request.
-     * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
-     *
-     **/
-    public enum SubTypeStatus {
+     * Status of the resource subType, as a result of the work tracked in this work request. A
+     * resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+     */
+    public enum SubTypeStatus implements com.oracle.bmc.http.internal.BmcEnum {
         Created("CREATED"),
         Updated("UPDATED"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -209,19 +199,18 @@ public final class WorkRequestResourceSubTypeDetail
         }
     };
     /**
-     * Status of the resource subType, as a result of the work tracked in this work request.
-     * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
-     *
-     **/
+     * Status of the resource subType, as a result of the work tracked in this work request. A
+     * resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subTypeStatus")
     private final SubTypeStatus subTypeStatus;
 
     /**
-     * Status of the resource subType, as a result of the work tracked in this work request.
-     * A resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
+     * Status of the resource subType, as a result of the work tracked in this work request. A
+     * resource subType would be CREATED, UPDATED or DELETED, after the work request is completed.
      *
      * @return the value
-     **/
+     */
     public SubTypeStatus getSubTypeStatus() {
         return subTypeStatus;
     }
@@ -233,6 +222,7 @@ public final class WorkRequestResourceSubTypeDetail
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,30 +6,30 @@ package com.oracle.bmc.dashboardservice.requests;
 
 import com.oracle.bmc.dashboardservice.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ListDashboardsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDashboardsRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dashboardservice/ListDashboardsExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDashboardsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group that the dashboard belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard group that the dashboard belongs to.
      */
     private String dashboardGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group that the dashboard belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard group that the dashboard belongs to.
      */
     public String getDashboardGroupId() {
         return dashboardGroupId;
     }
-    /**
-     * A filter that returns dashboard resources that match the lifecycle state specified.
-     */
+    /** A filter that returns dashboard resources that match the lifecycle state specified. */
     private com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState lifecycleState;
 
-    /**
-     * A filter that returns dashboard resources that match the lifecycle state specified.
-     */
+    /** A filter that returns dashboard resources that match the lifecycle state specified. */
     public com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -45,66 +45,58 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         return displayName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the dashboard.
      */
     public String getId() {
         return id;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This value is
+     * usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This value is
+     * usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private com.oracle.bmc.dashboardservice.model.SortOrder sortOrder;
 
-    /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-     */
+    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     public com.oracle.bmc.dashboardservice.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for TIMECREATED is descending.
-     * Default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for TIMECREATED is descending.
-     * Default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
-     *
-     **/
-    public enum SortBy {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
+     */
+    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -138,43 +130,39 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}).
-     * Default order for TIMECREATED is descending.
-     * Default order for DISPLAYNAME is ascending.
-     * The DISPLAYNAME sort order is case sensitive.
-     *
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
+     * order is case sensitive.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * To identify if the call is cross-regional. In CRUD calls for a resource, to
-     * identify that the call originates from different region, set the
-     * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
-     * The call will be served from a Replicated bucket.
-     * For same-region calls, the value is unassigned.
-     *
+     * To identify if the call is cross-regional. In CRUD calls for a resource, to identify that the
+     * call originates from different region, set the {@code CrossRegionIdentifierHeader} parameter
+     * to a region name (ex - {@code US-ASHBURN-1}) The call will be served from a Replicated
+     * bucket. For same-region calls, the value is unassigned.
      */
     private String opcCrossRegion;
 
     /**
-     * To identify if the call is cross-regional. In CRUD calls for a resource, to
-     * identify that the call originates from different region, set the
-     * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
-     * The call will be served from a Replicated bucket.
-     * For same-region calls, the value is unassigned.
-     *
+     * To identify if the call is cross-regional. In CRUD calls for a resource, to identify that the
+     * call originates from different region, set the {@code CrossRegionIdentifierHeader} parameter
+     * to a region name (ex - {@code US-ASHBURN-1}) The call will be served from a Replicated
+     * bucket. For same-region calls, the value is unassigned.
      */
     public String getOpcCrossRegion() {
         return opcCrossRegion;
@@ -183,17 +171,19 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDashboardsRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group that the dashboard belongs to.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard group that the dashboard belongs to.
          */
         private String dashboardGroupId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard group that the dashboard belongs to.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard group that the dashboard belongs to.
+         *
          * @param dashboardGroupId the value to set
          * @return this builder instance
          */
@@ -202,14 +192,13 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * A filter that returns dashboard resources that match the lifecycle state specified.
-         */
+        /** A filter that returns dashboard resources that match the lifecycle state specified. */
         private com.oracle.bmc.dashboardservice.model.Dashboard.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter that returns dashboard resources that match the lifecycle state specified.
+         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -220,12 +209,15 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A case-sensitive filter that returns resources that match the entire display name specified.
+         * A case-sensitive filter that returns resources that match the entire display name
+         * specified.
          */
         private String displayName = null;
 
         /**
-         * A case-sensitive filter that returns resources that match the entire display name specified.
+         * A case-sensitive filter that returns resources that match the entire display name
+         * specified.
+         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -235,12 +227,15 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dashboard.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the dashboard.
+         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -249,13 +244,12 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -265,12 +259,15 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This value is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This value is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This value is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -279,13 +276,12 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         */
+        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private com.oracle.bmc.dashboardservice.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -295,19 +291,16 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}).
-         * Default order for TIMECREATED is descending.
-         * Default order for DISPLAYNAME is ascending.
-         * The DISPLAYNAME sort order is case sensitive.
-         *
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
+         * DISPLAYNAME sort order is case sensitive.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}).
-         * Default order for TIMECREATED is descending.
-         * Default order for DISPLAYNAME is ascending.
-         * The DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
+         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
+         * DISPLAYNAME sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -318,12 +311,15 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -333,21 +329,18 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * To identify if the call is cross-regional. In CRUD calls for a resource, to
-         * identify that the call originates from different region, set the
-         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
-         * The call will be served from a Replicated bucket.
-         * For same-region calls, the value is unassigned.
-         *
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to identify that
+         * the call originates from different region, set the {@code CrossRegionIdentifierHeader}
+         * parameter to a region name (ex - {@code US-ASHBURN-1}) The call will be served from a
+         * Replicated bucket. For same-region calls, the value is unassigned.
          */
         private String opcCrossRegion = null;
 
         /**
-         * To identify if the call is cross-regional. In CRUD calls for a resource, to
-         * identify that the call originates from different region, set the
-         * {@code CrossRegionIdentifierHeader} parameter to a region name (ex - {@code US-ASHBURN-1})
-         * The call will be served from a Replicated bucket.
-         * For same-region calls, the value is unassigned.
+         * To identify if the call is cross-regional. In CRUD calls for a resource, to identify that
+         * the call originates from different region, set the {@code CrossRegionIdentifierHeader}
+         * parameter to a region name (ex - {@code US-ASHBURN-1}) The call will be served from a
+         * Replicated bucket. For same-region calls, the value is unassigned.
          *
          * @param opcCrossRegion the value to set
          * @return this builder instance
@@ -359,18 +352,19 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -382,6 +376,7 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListDashboardsRequest o) {
@@ -403,10 +398,11 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDashboardsRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListDashboardsRequest
          */
@@ -420,7 +416,8 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDashboardsRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDashboardsRequest
@@ -438,12 +435,14 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.opcRequestId = opcRequestId;
             request.opcCrossRegion = opcCrossRegion;
             return request;
-            // new ListDashboardsRequest(dashboardGroupId, lifecycleState, displayName, id, limit, page, sortOrder, sortBy, opcRequestId, opcCrossRegion);
+            // new ListDashboardsRequest(dashboardGroupId, lifecycleState, displayName, id, limit,
+            // page, sortOrder, sortBy, opcRequestId, opcCrossRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -462,6 +461,7 @@ public class ListDashboardsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

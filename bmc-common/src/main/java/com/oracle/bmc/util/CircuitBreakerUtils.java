@@ -6,9 +6,7 @@ package com.oracle.bmc.util;
 
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker;
 import com.oracle.bmc.circuitbreaker.NoCircuitBreakerConfiguration;
-import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import org.slf4j.Logger;
 
 public class CircuitBreakerUtils {
@@ -22,70 +20,27 @@ public class CircuitBreakerUtils {
 
     /**
      * Get default CircuitBreakerConfiguration
+     *
      * @return the default CircuitBreakerConfiguration
      */
-    public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfig() {
+    public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfiguration() {
         return defaultCircuitBreakerConfiguration;
     }
 
-    public static final JaxRsCircuitBreaker DEFAULT_CIRCUIT_BREAKER =
-            new JaxRsCircuitBreakerImpl(CircuitBreakerConfiguration.builder().build());
     public static final CircuitBreakerConfiguration DEFAULT_CIRCUIT_BREAKER_CONFIGURATION =
             CircuitBreakerConfiguration.builder().build();
     private static final String OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED_ENV_VAR =
             "OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED";
 
     /**
-     * Gets the user defined CircuitBreaker
-     * @return the user defined CircuitBreaker
-     * @deprecated use getUserDefinedCircuitBreakerConfiguration instead
-     */
-    @Deprecated
-    public static JaxRsCircuitBreaker getUserDefinedCircuitBreaker(
-            ClientConfiguration configuration) {
-        JaxRsCircuitBreaker circuitBreaker = null;
-        if (configuration != null) {
-            if (configuration.getCircuitBreakerConfiguration() != null
-                    && configuration.getCircuitBreaker() != null) {
-                throw new IllegalArgumentException(
-                        "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
-            }
-
-            if (configuration.getCircuitBreakerConfiguration() != null) {
-                circuitBreaker =
-                        new JaxRsCircuitBreakerImpl(configuration.getCircuitBreakerConfiguration());
-            } else if (configuration.getCircuitBreaker() != null)
-                circuitBreaker = configuration.getCircuitBreaker();
-        } else {
-            JaxRsCircuitBreaker userGlobalCircuitBreaker = null;
-            CircuitBreakerConfiguration globalCircuitBreakerConfiguration =
-                    CircuitBreakerUtils.getDefaultCircuitBreakerConfiguration();
-            if (globalCircuitBreakerConfiguration != null) {
-                userGlobalCircuitBreaker =
-                        new JaxRsCircuitBreakerImpl(globalCircuitBreakerConfiguration);
-            } else if (isEnvBasedDefaultCircuitBreakerEnabled()) {
-                userGlobalCircuitBreaker = DEFAULT_CIRCUIT_BREAKER;
-            }
-            circuitBreaker = userGlobalCircuitBreaker;
-        }
-        LOG.debug("Circuit breaker in use: {}", circuitBreaker);
-        return circuitBreaker;
-    }
-
-    /**
      * Gets the user defined CircuitBreakerConfiguration
+     *
      * @return the user defined CircuitBreakerConfiguration
      */
     public static CircuitBreakerConfiguration getUserDefinedCircuitBreakerConfiguration(
             ClientConfiguration configuration) {
         CircuitBreakerConfiguration circuitBreakerConfiguration = null;
         if (configuration != null) {
-            if (configuration.getCircuitBreakerConfiguration() != null
-                    && configuration.getCircuitBreaker() != null) {
-                throw new IllegalArgumentException(
-                        "Invalid CircuitBreaker setting. Please provide either CircuitBreaker configuration or CircuitBreaker and not both");
-            }
-
             if (configuration.getCircuitBreakerConfiguration() != null) {
                 circuitBreakerConfiguration = configuration.getCircuitBreakerConfiguration();
             }
@@ -108,10 +63,6 @@ public class CircuitBreakerUtils {
             return false;
         }
         return true;
-    }
-
-    public static CircuitBreakerConfiguration getDefaultCircuitBreakerConfiguration() {
-        return CircuitBreakerUtils.defaultCircuitBreakerConfiguration;
     }
 
     public static void setDefaultCircuitBreakerConfiguration(

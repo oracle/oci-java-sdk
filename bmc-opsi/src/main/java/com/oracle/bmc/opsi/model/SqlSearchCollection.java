@@ -5,22 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Search SQL response.
- *
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Search SQL response. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = SqlSearchCollection.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class SqlSearchCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        builder = SqlSearchCollection.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
+public final class SqlSearchCollection
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sqlIdentifier",
@@ -45,10 +45,7 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Unique SQL_ID for a SQL Statement.
-         *
-         **/
+        /** Unique SQL_ID for a SQL Statement. */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -57,16 +54,13 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-        /**
-         * SQL Statement Text
-         *
-         **/
+        /** SQL Statement Text */
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
@@ -75,55 +69,52 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
          *
          * @param sqlText the value to set
          * @return this builder
-         **/
+         */
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-        /**
-         * The start timestamp that was passed into the request.
-         **/
+        /** The start timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
+         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /**
-         * The end timestamp that was passed into the request.
-         **/
+        /** The end timestamp that was passed into the request. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
+         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         **/
+         */
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /**
-         * List of Databases executing the sql.
-         **/
+        /** List of Databases executing the sql. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SqlSearchSummary> items;
 
         /**
          * List of Databases executing the sql.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<SqlSearchSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -168,9 +159,7 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,10 +168,7 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
         return new Builder().copy(this);
     }
 
-    /**
-     * Unique SQL_ID for a SQL Statement.
-     *
-     **/
+    /** Unique SQL_ID for a SQL Statement. */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -190,15 +176,12 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     **/
+     */
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
 
-    /**
-     * SQL Statement Text
-     *
-     **/
+    /** SQL Statement Text */
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
@@ -206,49 +189,46 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
      * SQL Statement Text
      *
      * @return the value
-     **/
+     */
     public String getSqlText() {
         return sqlText;
     }
 
-    /**
-     * The start timestamp that was passed into the request.
-     **/
+    /** The start timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /**
-     * The end timestamp that was passed into the request.
-     **/
+    /** The end timestamp that was passed into the request. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
+     *
      * @return the value
-     **/
+     */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /**
-     * List of Databases executing the sql.
-     **/
+    /** List of Databases executing the sql. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SqlSearchSummary> items;
 
     /**
      * List of Databases executing the sql.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<SqlSearchSummary> getItems() {
         return items;
     }
@@ -260,6 +240,7 @@ public final class SqlSearchCollection extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

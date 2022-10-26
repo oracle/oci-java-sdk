@@ -6,69 +6,56 @@ package com.oracle.bmc.ons.requests;
 
 import com.oracle.bmc.ons.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetConfirmSubscriptionRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ons/GetConfirmSubscriptionExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * GetConfirmSubscriptionRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetConfirmSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subscription to get the confirmation details for.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the subscription to get the confirmation details for.
      */
     public String getId() {
         return id;
     }
-    /**
-     * The subscription confirmation token.
-     */
+    /** The subscription confirmation token. */
     private String token;
 
-    /**
-     * The subscription confirmation token.
-     */
+    /** The subscription confirmation token. */
     public String getToken() {
         return token;
     }
     /**
      * The protocol used for the subscription.
-     * <p>
-     * Allowed values:
-     *   * {@code CUSTOM_HTTPS}
-     *   * {@code EMAIL}
-     *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
-     *   * {@code ORACLE_FUNCTIONS}
-     *   * {@code PAGERDUTY}
-     *   * {@code SLACK}
-     *   * {@code SMS}
-     * <p>
-     * For information about subscription protocols, see
-     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      *
+     * <p>Allowed values: * {@code CUSTOM_HTTPS} * {@code EMAIL} * {@code HTTPS} (deprecated; for
+     * PagerDuty endpoints, use {@code PAGERDUTY}) * {@code ORACLE_FUNCTIONS} * {@code PAGERDUTY} *
+     * {@code SLACK} * {@code SMS}
+     *
+     * <p>For information about subscription protocols, see [To create a
+     * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     private String protocol;
 
     /**
      * The protocol used for the subscription.
-     * <p>
-     * Allowed values:
-     *   * {@code CUSTOM_HTTPS}
-     *   * {@code EMAIL}
-     *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
-     *   * {@code ORACLE_FUNCTIONS}
-     *   * {@code PAGERDUTY}
-     *   * {@code SLACK}
-     *   * {@code SMS}
-     * <p>
-     * For information about subscription protocols, see
-     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      *
+     * <p>Allowed values: * {@code CUSTOM_HTTPS} * {@code EMAIL} * {@code HTTPS} (deprecated; for
+     * PagerDuty endpoints, use {@code PAGERDUTY}) * {@code ORACLE_FUNCTIONS} * {@code PAGERDUTY} *
+     * {@code SLACK} * {@code SMS}
+     *
+     * <p>For information about subscription protocols, see [To create a
+     * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      */
     public String getProtocol() {
         return protocol;
@@ -76,14 +63,12 @@ public class GetConfirmSubscriptionRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -92,18 +77,18 @@ public class GetConfirmSubscriptionRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetConfirmSubscriptionRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subscription to get the confirmation details for.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the subscription to get the confirmation details for.
          *
          * @param id the value to set
          * @return this builder instance
@@ -113,13 +98,12 @@ public class GetConfirmSubscriptionRequest
             return this;
         }
 
-        /**
-         * The subscription confirmation token.
-         */
+        /** The subscription confirmation token. */
         private String token = null;
 
         /**
          * The subscription confirmation token.
+         *
          * @param token the value to set
          * @return this builder instance
          */
@@ -130,36 +114,25 @@ public class GetConfirmSubscriptionRequest
 
         /**
          * The protocol used for the subscription.
-         * <p>
-         * Allowed values:
-         *   * {@code CUSTOM_HTTPS}
-         *   * {@code EMAIL}
-         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
-         *   * {@code ORACLE_FUNCTIONS}
-         *   * {@code PAGERDUTY}
-         *   * {@code SLACK}
-         *   * {@code SMS}
-         * <p>
-         * For information about subscription protocols, see
-         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          *
+         * <p>Allowed values: * {@code CUSTOM_HTTPS} * {@code EMAIL} * {@code HTTPS} (deprecated;
+         * for PagerDuty endpoints, use {@code PAGERDUTY}) * {@code ORACLE_FUNCTIONS} * {@code
+         * PAGERDUTY} * {@code SLACK} * {@code SMS}
+         *
+         * <p>For information about subscription protocols, see [To create a
+         * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          */
         private String protocol = null;
 
         /**
          * The protocol used for the subscription.
-         * <p>
-         * Allowed values:
-         *   * {@code CUSTOM_HTTPS}
-         *   * {@code EMAIL}
-         *   * {@code HTTPS} (deprecated; for PagerDuty endpoints, use {@code PAGERDUTY})
-         *   * {@code ORACLE_FUNCTIONS}
-         *   * {@code PAGERDUTY}
-         *   * {@code SLACK}
-         *   * {@code SMS}
-         * <p>
-         * For information about subscription protocols, see
-         * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
+         *
+         * <p>Allowed values: * {@code CUSTOM_HTTPS} * {@code EMAIL} * {@code HTTPS} (deprecated;
+         * for PagerDuty endpoints, use {@code PAGERDUTY}) * {@code ORACLE_FUNCTIONS} * {@code
+         * PAGERDUTY} * {@code SLACK} * {@code SMS}
+         *
+         * <p>For information about subscription protocols, see [To create a
+         * subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          *
          * @param protocol the value to set
          * @return this builder instance
@@ -170,15 +143,14 @@ public class GetConfirmSubscriptionRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
+         * about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -190,18 +162,19 @@ public class GetConfirmSubscriptionRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -213,6 +186,7 @@ public class GetConfirmSubscriptionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetConfirmSubscriptionRequest o) {
@@ -228,10 +202,11 @@ public class GetConfirmSubscriptionRequest
         /**
          * Build the instance of GetConfirmSubscriptionRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetConfirmSubscriptionRequest
          */
@@ -245,7 +220,8 @@ public class GetConfirmSubscriptionRequest
         /**
          * Build the instance of GetConfirmSubscriptionRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetConfirmSubscriptionRequest
@@ -263,6 +239,7 @@ public class GetConfirmSubscriptionRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -271,6 +248,7 @@ public class GetConfirmSubscriptionRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

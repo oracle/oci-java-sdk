@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
 /**
  * A wrapper around a {@link FileInputStream} that provides mark-and-reset capabilities.
  *
- * This allows for retries on a {@link FileInputStream}.
+ * <p>This allows for retries on a {@link FileInputStream}.
  */
 public class ResettableFileInputStream extends FilterInputStream {
     private static final org.slf4j.Logger LOG =
@@ -23,8 +23,10 @@ public class ResettableFileInputStream extends FilterInputStream {
 
     /**
      * Constructor for a file input stream that provides mark-and-reset capabilities.
+     *
      * @param fis file input stream to wrap
-     * @throws IllegalArgumentException if the file channel of the file input stream does not provide a position
+     * @throws IllegalArgumentException if the file channel of the file input stream does not
+     *     provide a position
      */
     public ResettableFileInputStream(FileInputStream fis) {
         super(fis);
@@ -76,6 +78,7 @@ public class ResettableFileInputStream extends FilterInputStream {
     /**
      * Return true if the provided {@link FileInputStream} has already been wrapped, and therefore
      * supports mark-and-reset capabilities.
+     *
      * @param fis the {@link FileInputStream} to check
      * @return true if it is already wrapped
      */
@@ -83,9 +86,7 @@ public class ResettableFileInputStream extends FilterInputStream {
         return fis instanceof WrappedFileInputStream;
     }
 
-    /**
-     * State interface for dealing with mark and reset.
-     */
+    /** State interface for dealing with mark and reset. */
     private interface State {
         /**
          * @see java.io.InputStream#mark(int)
@@ -100,9 +101,7 @@ public class ResettableFileInputStream extends FilterInputStream {
         void reset() throws IOException;
     }
 
-    /**
-     * This is for streams that are already wrapped, i.e. {@link WrappedFileInputStream}.
-     */
+    /** This is for streams that are already wrapped, i.e. {@link WrappedFileInputStream}. */
     private final class AlreadyWrappedState implements State {
         @Override
         public synchronized void mark(int readlimit) {
@@ -115,9 +114,7 @@ public class ResettableFileInputStream extends FilterInputStream {
         }
     }
 
-    /**
-     * This is for {@link FileInputStream}s that are not already wrapped.
-     */
+    /** This is for {@link FileInputStream}s that are not already wrapped. */
     private final class NeedsToBeWrappedState implements State {
         private FileChannel fileChannel;
         private long markPosition = -1;

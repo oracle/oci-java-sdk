@@ -6,58 +6,64 @@ package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendHealthExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBackendHealthRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendHealthExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetBackendHealthRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
     /**
-     * The name of the backend set associated with the backend server for which to retrieve the health status.
-     * <p>
-     * Example: {@code example_backend_set}
+     * The name of the backend set associated with the backend server for which to retrieve the
+     * health status.
      *
+     * <p>Example: {@code example_backend_set}
      */
     private String backendSetName;
 
     /**
-     * The name of the backend set associated with the backend server for which to retrieve the health status.
-     * <p>
-     * Example: {@code example_backend_set}
+     * The name of the backend set associated with the backend server for which to retrieve the
+     * health status.
      *
+     * <p>Example: {@code example_backend_set}
      */
     public String getBackendSetName() {
         return backendSetName;
     }
     /**
-     * The name of the backend server to retrieve health status for.
-     * If the backend was created with an explicitly specified name, that name should be used here.
-     * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
-     * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
-     * <p>
-     * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+     * The name of the backend server to retrieve health status for. If the backend was created with
+     * an explicitly specified name, that name should be used here. If the backend was created
+     * without explicitly specifying the name, but was created using ipAddress, this is specified as
+     * <ipAddress>:<port>. If the backend was created without explicitly specifying the name, but
+     * was created using targetId, this is specified as <targetId>:<port>.
      *
+     * <p>Example: {@code 10.0.0.3:8080} or {@code
+     * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
      */
     private String backendName;
 
     /**
-     * The name of the backend server to retrieve health status for.
-     * If the backend was created with an explicitly specified name, that name should be used here.
-     * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
-     * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
-     * <p>
-     * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+     * The name of the backend server to retrieve health status for. If the backend was created with
+     * an explicitly specified name, that name should be used here. If the backend was created
+     * without explicitly specifying the name, but was created using ipAddress, this is specified as
+     * <ipAddress>:<port>. If the backend was created without explicitly specifying the name, but
+     * was created using targetId, this is specified as <targetId>:<port>.
      *
+     * <p>Example: {@code 10.0.0.3:8080} or {@code
+     * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
      */
     public String getBackendName() {
         return backendName;
@@ -65,14 +71,12 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
-     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -81,17 +85,19 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetBackendHealthRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * network load balancer to update.
+         *
          * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
@@ -101,17 +107,18 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The name of the backend set associated with the backend server for which to retrieve the health status.
-         * <p>
-         * Example: {@code example_backend_set}
+         * The name of the backend set associated with the backend server for which to retrieve the
+         * health status.
          *
+         * <p>Example: {@code example_backend_set}
          */
         private String backendSetName = null;
 
         /**
-         * The name of the backend set associated with the backend server for which to retrieve the health status.
-         * <p>
-         * Example: {@code example_backend_set}
+         * The name of the backend set associated with the backend server for which to retrieve the
+         * health status.
+         *
+         * <p>Example: {@code example_backend_set}
          *
          * @param backendSetName the value to set
          * @return this builder instance
@@ -122,23 +129,26 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The name of the backend server to retrieve health status for.
-         * If the backend was created with an explicitly specified name, that name should be used here.
-         * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
-         * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
-         * <p>
-         * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+         * The name of the backend server to retrieve health status for. If the backend was created
+         * with an explicitly specified name, that name should be used here. If the backend was
+         * created without explicitly specifying the name, but was created using ipAddress, this is
+         * specified as <ipAddress>:<port>. If the backend was created without explicitly specifying
+         * the name, but was created using targetId, this is specified as <targetId>:<port>.
          *
+         * <p>Example: {@code 10.0.0.3:8080} or {@code
+         * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
          */
         private String backendName = null;
 
         /**
-         * The name of the backend server to retrieve health status for.
-         * If the backend was created with an explicitly specified name, that name should be used here.
-         * If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
-         * If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
-         * <p>
-         * Example: {@code 10.0.0.3:8080} or {@code ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
+         * The name of the backend server to retrieve health status for. If the backend was created
+         * with an explicitly specified name, that name should be used here. If the backend was
+         * created without explicitly specifying the name, but was created using ipAddress, this is
+         * specified as <ipAddress>:<port>. If the backend was created without explicitly specifying
+         * the name, but was created using targetId, this is specified as <targetId>:<port>.
+         *
+         * <p>Example: {@code 10.0.0.3:8080} or {@code
+         * ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080}
          *
          * @param backendName the value to set
          * @return this builder instance
@@ -151,7 +161,6 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
-         *
          */
         private String opcRequestId = null;
 
@@ -169,18 +178,19 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -192,6 +202,7 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(GetBackendHealthRequest o) {
@@ -207,10 +218,11 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetBackendHealthRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of GetBackendHealthRequest
          */
@@ -224,7 +236,8 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetBackendHealthRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetBackendHealthRequest
@@ -236,12 +249,14 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
             request.backendName = backendName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetBackendHealthRequest(networkLoadBalancerId, backendSetName, backendName, opcRequestId);
+            // new GetBackendHealthRequest(networkLoadBalancerId, backendSetName, backendName,
+            // opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -254,6 +269,7 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.jms.model;
 
-/**
- * Contents of the Java Runtime artifact.
- **/
+/** Contents of the Java Runtime artifact. */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ArtifactContentType {
+public enum ArtifactContentType implements com.oracle.bmc.http.internal.BmcEnum {
     Jdk("JDK"),
     Jre("JRE"),
     ServerJre("SERVER_JRE"),

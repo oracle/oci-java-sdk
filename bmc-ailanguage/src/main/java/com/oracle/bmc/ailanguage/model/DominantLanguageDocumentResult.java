@@ -5,22 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The document response for language detect call.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * The document response for language detect call. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DominantLanguageDocumentResult.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = DominantLanguageDocumentResult.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class DominantLanguageDocumentResult
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "languages"})
     public DominantLanguageDocumentResult(String key, java.util.List<DetectedLanguage> languages) {
@@ -31,35 +31,35 @@ public final class DominantLanguageDocumentResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Document unique identifier defined by the user.
-         **/
+        /** Document unique identifier defined by the user. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Document unique identifier defined by the user.
+         *
          * @param key the value to set
          * @return this builder
-         **/
+         */
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
-         *
-         **/
+         * List of detected languages with results sorted in descending order of the scores. Most
+         * likely language is on top.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("languages")
         private java.util.List<DetectedLanguage> languages;
 
         /**
-         * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
+         * List of detected languages with results sorted in descending order of the scores. Most
+         * likely language is on top.
          *
          * @param languages the value to set
          * @return this builder
-         **/
+         */
         public Builder languages(java.util.List<DetectedLanguage> languages) {
             this.languages = languages;
             this.__explicitlySet__.add("languages");
@@ -90,9 +90,7 @@ public final class DominantLanguageDocumentResult
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,32 +99,32 @@ public final class DominantLanguageDocumentResult
         return new Builder().copy(this);
     }
 
-    /**
-     * Document unique identifier defined by the user.
-     **/
+    /** Document unique identifier defined by the user. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Document unique identifier defined by the user.
+     *
      * @return the value
-     **/
+     */
     public String getKey() {
         return key;
     }
 
     /**
-     * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
-     *
-     **/
+     * List of detected languages with results sorted in descending order of the scores. Most likely
+     * language is on top.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("languages")
     private final java.util.List<DetectedLanguage> languages;
 
     /**
-     * List of detected languages with results sorted in descending order of the scores. Most likely language is on top.
+     * List of detected languages with results sorted in descending order of the scores. Most likely
+     * language is on top.
      *
      * @return the value
-     **/
+     */
     public java.util.List<DetectedLanguage> getLanguages() {
         return languages;
     }
@@ -138,6 +136,7 @@ public final class DominantLanguageDocumentResult
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,49 +6,44 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteApplianceExportJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteApplianceExportJobRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DeleteApplianceExportJobExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * DeleteApplianceExportJobRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class DeleteApplianceExportJobRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /**
-     * ID of the Appliance Export Job
-     */
+    /** ID of the Appliance Export Job */
     private String applianceExportJobId;
 
-    /**
-     * ID of the Appliance Export Job
-     */
+    /** ID of the Appliance Export Job */
     public String getApplianceExportJobId() {
         return applianceExportJobId;
     }
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the
-     * object's tag matches the tag specified in the request.
-     *
+     * The entity tag to match. Optional, if set, the update will be successful only if the object's
+     * tag matches the tag specified in the request.
      */
     private String ifMatch;
 
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the
-     * object's tag matches the tag specified in the request.
-     *
+     * The entity tag to match. Optional, if set, the update will be successful only if the object's
+     * tag matches the tag specified in the request.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+     * particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -59,7 +54,6 @@ public class DeleteApplianceExportJobRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
-     *
      */
     private String opcRetryToken;
 
@@ -69,7 +63,6 @@ public class DeleteApplianceExportJobRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
-     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -78,17 +71,15 @@ public class DeleteApplianceExportJobRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteApplianceExportJobRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * ID of the Appliance Export Job
-         */
+        /** ID of the Appliance Export Job */
         private String applianceExportJobId = null;
 
         /**
          * ID of the Appliance Export Job
+         *
          * @param applianceExportJobId the value to set
          * @return this builder instance
          */
@@ -100,7 +91,6 @@ public class DeleteApplianceExportJobRequest
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
-         *
          */
         private String ifMatch = null;
 
@@ -117,15 +107,14 @@ public class DeleteApplianceExportJobRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -137,20 +126,19 @@ public class DeleteApplianceExportJobRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
-         *
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
+         * resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after 24
-         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-         * has been deleted and purged from the system, then a retry of the original creation request
-         * may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after
+         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
+         * resource has been deleted and purged from the system, then a retry of the original
+         * creation request may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -162,18 +150,19 @@ public class DeleteApplianceExportJobRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,6 +174,7 @@ public class DeleteApplianceExportJobRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(DeleteApplianceExportJobRequest o) {
@@ -200,10 +190,11 @@ public class DeleteApplianceExportJobRequest
         /**
          * Build the instance of DeleteApplianceExportJobRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of DeleteApplianceExportJobRequest
          */
@@ -217,7 +208,8 @@ public class DeleteApplianceExportJobRequest
         /**
          * Build the instance of DeleteApplianceExportJobRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteApplianceExportJobRequest
@@ -229,12 +221,14 @@ public class DeleteApplianceExportJobRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new DeleteApplianceExportJobRequest(applianceExportJobId, ifMatch, opcRequestId, opcRetryToken);
+            // new DeleteApplianceExportJobRequest(applianceExportJobId, ifMatch, opcRequestId,
+            // opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,6 +241,7 @@ public class DeleteApplianceExportJobRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

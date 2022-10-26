@@ -6,21 +6,24 @@ package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteConfigurationSourceProviderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConfigurationSourceProviderRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/DeleteConfigurationSourceProviderExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use
+ * DeleteConfigurationSourceProviderRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class DeleteConfigurationSourceProviderRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the configuration source provider.
      */
     private String configurationSourceProviderId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the configuration source provider.
      */
     public String getConfigurationSourceProviderId() {
         return configurationSourceProviderId;
@@ -28,31 +31,29 @@ public class DeleteConfigurationSourceProviderRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
-     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource,
+     * set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or
+     * {@code POST} response for that resource. The resource will be updated or deleted only if the
+     * etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-     * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource,
+     * set the {@code if-match} parameter to the value of the etag from a previous {@code GET} or
+     * {@code POST} response for that resource. The resource will be updated or deleted only if the
+     * etag you provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -61,18 +62,18 @@ public class DeleteConfigurationSourceProviderRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteConfigurationSourceProviderRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the configuration source provider.
          */
         private String configurationSourceProviderId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration source provider.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the configuration source provider.
          *
          * @param configurationSourceProviderId the value to set
          * @return this builder instance
@@ -85,7 +86,6 @@ public class DeleteConfigurationSourceProviderRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
-         *
          */
         private String opcRequestId = null;
 
@@ -102,17 +102,18 @@ public class DeleteConfigurationSourceProviderRequest
         }
 
         /**
-         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a previous
+         * {@code GET} or {@code POST} response for that resource. The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a resource, set the {@code if-match}
-         * parameter to the value of the etag from a previous {@code GET} or {@code POST} response for that resource.  The resource
-         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the {@code PUT} or {@code DELETE} call for a
+         * resource, set the {@code if-match} parameter to the value of the etag from a previous
+         * {@code GET} or {@code POST} response for that resource. The resource will be updated or
+         * deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -124,18 +125,19 @@ public class DeleteConfigurationSourceProviderRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -147,6 +149,7 @@ public class DeleteConfigurationSourceProviderRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(DeleteConfigurationSourceProviderRequest o) {
@@ -159,12 +162,14 @@ public class DeleteConfigurationSourceProviderRequest
         }
 
         /**
-         * Build the instance of DeleteConfigurationSourceProviderRequest as configured by this builder
+         * Build the instance of DeleteConfigurationSourceProviderRequest as configured by this
+         * builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of DeleteConfigurationSourceProviderRequest
          */
@@ -176,9 +181,11 @@ public class DeleteConfigurationSourceProviderRequest
         }
 
         /**
-         * Build the instance of DeleteConfigurationSourceProviderRequest as configured by this builder
+         * Build the instance of DeleteConfigurationSourceProviderRequest as configured by this
+         * builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteConfigurationSourceProviderRequest
@@ -190,12 +197,14 @@ public class DeleteConfigurationSourceProviderRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new DeleteConfigurationSourceProviderRequest(configurationSourceProviderId, opcRequestId, ifMatch);
+            // new DeleteConfigurationSourceProviderRequest(configurationSourceProviderId,
+            // opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -207,6 +216,7 @@ public class DeleteConfigurationSourceProviderRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

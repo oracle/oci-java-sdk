@@ -6,143 +6,131 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJreUsageRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJreUsageExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJreUsageRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-     *
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
      */
     private String hostId;
 
     /**
-     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
      */
     public String getHostId() {
         return hostId;
     }
-    /**
-     * The Fleet-unique identifier of the application.
-     */
+    /** The Fleet-unique identifier of the application. */
     private String applicationId;
 
-    /**
-     * The Fleet-unique identifier of the application.
-     */
+    /** The Fleet-unique identifier of the application. */
     public String getApplicationId() {
         return applicationId;
     }
-    /**
-     * The name of the application.
-     */
+    /** The name of the application. */
     private String applicationName;
 
-    /**
-     * The name of the application.
-     */
+    /** The name of the application. */
     public String getApplicationName() {
         return applicationName;
     }
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     private Integer limit;
 
-    /**
-     * The maximum number of items to return.
-     */
+    /** The maximum number of items to return. */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is
+     * usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /**
-     * The sort order, either 'asc' or 'desc'.
-     */
+    /** The sort order, either 'asc' or 'desc'. */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort JRE usages. Only one sort order may be provided.
-     * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
-     * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
-     * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
-     * If no value is specified _timeLastSeen_ is default.
-     *
+     * The field to sort JRE usages. Only one sort order may be provided. Default order for
+     * _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**. Default order for
+     * _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+     * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**. If no value is
+     * specified _timeLastSeen_ is default.
      */
     private com.oracle.bmc.jms.model.JreSortBy sortBy;
 
     /**
-     * The field to sort JRE usages. Only one sort order may be provided.
-     * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
-     * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
-     * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
-     * If no value is specified _timeLastSeen_ is default.
-     *
+     * The field to sort JRE usages. Only one sort order may be provided. Default order for
+     * _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**. Default order for
+     * _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+     * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+     * Default order for _distribution_, _vendor_, and _osName_ is **ascending**. If no value is
+     * specified _timeLastSeen_ is default.
      */
     public com.oracle.bmc.jms.model.JreSortBy getSortBy() {
         return sortBy;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -150,18 +138,18 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListJreUsageRequest, java.lang.Void> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-         *
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -172,12 +160,15 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
          */
         private String hostId = null;
 
         /**
-         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the managed instance.
+         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         *
          * @param hostId the value to set
          * @return this builder instance
          */
@@ -186,13 +177,12 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The Fleet-unique identifier of the application.
-         */
+        /** The Fleet-unique identifier of the application. */
         private String applicationId = null;
 
         /**
          * The Fleet-unique identifier of the application.
+         *
          * @param applicationId the value to set
          * @return this builder instance
          */
@@ -201,13 +191,12 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The name of the application.
-         */
+        /** The name of the application. */
         private String applicationName = null;
 
         /**
          * The name of the application.
+         *
          * @param applicationName the value to set
          * @return this builder instance
          */
@@ -217,12 +206,15 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeStart = null;
 
         /**
-         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeStart the value to set
          * @return this builder instance
          */
@@ -232,12 +224,15 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
          * @param timeEnd the value to set
          * @return this builder instance
          */
@@ -246,13 +241,12 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The maximum number of items to return.
-         */
+        /** The maximum number of items to return. */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
+         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -262,12 +256,15 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is
+         * usually retrieved from a previous list call.
+         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -276,13 +273,12 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The sort order, either 'asc' or 'desc'.
-         */
+        /** The sort order, either 'asc' or 'desc'. */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
+         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -292,23 +288,22 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The field to sort JRE usages. Only one sort order may be provided.
-         * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
-         * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
-         * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-         * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
-         * If no value is specified _timeLastSeen_ is default.
-         *
+         * The field to sort JRE usages. Only one sort order may be provided. Default order for
+         * _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**. Default order for
+         * _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+         * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+         * Default order for _distribution_, _vendor_, and _osName_ is **ascending**. If no value is
+         * specified _timeLastSeen_ is default.
          */
         private com.oracle.bmc.jms.model.JreSortBy sortBy = null;
 
         /**
-         * The field to sort JRE usages. Only one sort order may be provided.
-         * Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
-         * Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
-         * _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-         * Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
-         * If no value is specified _timeLastSeen_ is default.
+         * The field to sort JRE usages. Only one sort order may be provided. Default order for
+         * _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**. Default order for
+         * _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
+         * _approximateApplicationCount_ and _approximateManagedInstanceCount_ is **descending**.
+         * Default order for _distribution_, _vendor_, and _osName_ is **ascending**. If no value is
+         * specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -318,13 +313,12 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -335,18 +329,19 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -358,6 +353,7 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(ListJreUsageRequest o) {
@@ -380,10 +376,11 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListJreUsageRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of ListJreUsageRequest
          */
@@ -397,7 +394,8 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListJreUsageRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJreUsageRequest
@@ -416,12 +414,14 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJreUsageRequest(compartmentId, hostId, applicationId, applicationName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListJreUsageRequest(compartmentId, hostId, applicationId, applicationName,
+            // timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -441,6 +441,7 @@ public class ListJreUsageRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

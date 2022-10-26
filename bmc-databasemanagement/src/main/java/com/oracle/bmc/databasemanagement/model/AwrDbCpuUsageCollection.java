@@ -5,25 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The AWR CPU usage data.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * The AWR CPU usage data. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AwrDbCpuUsageCollection.Builder.class
-)
+        builder = AwrDbCpuUsageCollection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "awrResultType"
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+        property = "awrResultType")
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class AwrDbCpuUsageCollection extends AwrQueryResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -63,64 +62,64 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
             return this;
         }
         /**
-         * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
-         **/
+         * The number of available CPU cores, which include subcores of multicore and single-core
+         * CPUs.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("numCpuCores")
         private Integer numCpuCores;
 
         /**
-         * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
+         * The number of available CPU cores, which include subcores of multicore and single-core
+         * CPUs.
+         *
          * @param numCpuCores the value to set
          * @return this builder
-         **/
+         */
         public Builder numCpuCores(Integer numCpuCores) {
             this.numCpuCores = numCpuCores;
             this.__explicitlySet__.add("numCpuCores");
             return this;
         }
-        /**
-         * The number of CPUs available for the database to use.
-         **/
+        /** The number of CPUs available for the database to use. */
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private Integer cpuCount;
 
         /**
          * The number of CPUs available for the database to use.
+         *
          * @param cpuCount the value to set
          * @return this builder
-         **/
+         */
         public Builder cpuCount(Integer cpuCount) {
             this.cpuCount = cpuCount;
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-        /**
-         * The number of available CPUs or processors.
-         **/
+        /** The number of available CPUs or processors. */
         @com.fasterxml.jackson.annotation.JsonProperty("numCpus")
         private Double numCpus;
 
         /**
          * The number of available CPUs or processors.
+         *
          * @param numCpus the value to set
          * @return this builder
-         **/
+         */
         public Builder numCpus(Double numCpus) {
             this.numCpus = numCpus;
             this.__explicitlySet__.add("numCpus");
             return this;
         }
-        /**
-         * A list of AWR CPU usage summary data.
-         **/
+        /** A list of AWR CPU usage summary data. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AwrDbCpuUsageSummary> items;
 
         /**
          * A list of AWR CPU usage summary data.
+         *
          * @param items the value to set
          * @return this builder
-         **/
+         */
         public Builder items(java.util.List<AwrDbCpuUsageSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -177,9 +176,7 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,56 +204,54 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
 
     /**
      * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
-     **/
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("numCpuCores")
     private final Integer numCpuCores;
 
     /**
      * The number of available CPU cores, which include subcores of multicore and single-core CPUs.
+     *
      * @return the value
-     **/
+     */
     public Integer getNumCpuCores() {
         return numCpuCores;
     }
 
-    /**
-     * The number of CPUs available for the database to use.
-     **/
+    /** The number of CPUs available for the database to use. */
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final Integer cpuCount;
 
     /**
      * The number of CPUs available for the database to use.
+     *
      * @return the value
-     **/
+     */
     public Integer getCpuCount() {
         return cpuCount;
     }
 
-    /**
-     * The number of available CPUs or processors.
-     **/
+    /** The number of available CPUs or processors. */
     @com.fasterxml.jackson.annotation.JsonProperty("numCpus")
     private final Double numCpus;
 
     /**
      * The number of available CPUs or processors.
+     *
      * @return the value
-     **/
+     */
     public Double getNumCpus() {
         return numCpus;
     }
 
-    /**
-     * A list of AWR CPU usage summary data.
-     **/
+    /** A list of AWR CPU usage summary data. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AwrDbCpuUsageSummary> items;
 
     /**
      * A list of AWR CPU usage summary data.
+     *
      * @return the value
-     **/
+     */
     public java.util.List<AwrDbCpuUsageSummary> getItems() {
         return items;
     }
@@ -268,6 +263,7 @@ public final class AwrDbCpuUsageCollection extends AwrQueryResult {
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

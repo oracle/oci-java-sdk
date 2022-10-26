@@ -5,22 +5,22 @@
 package com.oracle.bmc.visualbuilder.model;
 
 /**
- * Details for a custom endpoint for the vb instance.
- * <br/>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
- * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
- * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
- * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
- * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
- * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
- **/
+ * Details for a custom endpoint for the vb instance. <br>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model
+ * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
+ * set of all explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and
+ * {@link #equals(Object)} methods are implemented to take {@link #__explicitlySet__} into account.
+ * The constructor, on the other hand, does not set {@link #__explicitlySet__} (since the
+ * constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CustomEndpointDetails.Builder.class
-)
-@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+        builder = CustomEndpointDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(
+        com.oracle.bmc.http.client.internal.ExplicitlySetFilter.NAME)
 public final class CustomEndpointDetails
-        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
@@ -37,53 +37,54 @@ public final class CustomEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * A custom hostname to be used for the vb instance URL, in FQDN format.
-         **/
+        /** A custom hostname to be used for the vb instance URL, in FQDN format. */
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * A custom hostname to be used for the vb instance URL, in FQDN format.
+         *
          * @param hostname the value to set
          * @return this builder
-         **/
+         */
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-         *
-         **/
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
+         * for the custom hostname.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
         private String certificateSecretId;
 
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
+         * for the custom hostname.
          *
          * @param certificateSecretId the value to set
          * @return this builder
-         **/
+         */
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             this.__explicitlySet__.add("certificateSecretId");
             return this;
         }
         /**
-         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-         *
-         **/
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is
+         * specified).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
         private Integer certificateSecretVersion;
 
         /**
-         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is
+         * specified).
          *
          * @param certificateSecretVersion the value to set
          * @return this builder
-         **/
+         */
         public Builder certificateSecretVersion(Integer certificateSecretVersion) {
             this.certificateSecretVersion = certificateSecretVersion;
             this.__explicitlySet__.add("certificateSecretVersion");
@@ -118,9 +119,7 @@ public final class CustomEndpointDetails
         }
     }
 
-    /**
-     * Create a new builder.
-     */
+    /** Create a new builder. */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,48 +128,49 @@ public final class CustomEndpointDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * A custom hostname to be used for the vb instance URL, in FQDN format.
-     **/
+    /** A custom hostname to be used for the vb instance URL, in FQDN format. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * A custom hostname to be used for the vb instance URL, in FQDN format.
+     *
      * @return the value
-     **/
+     */
     public String getHostname() {
         return hostname;
     }
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
-     *
-     **/
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
+     * the custom hostname.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
     private final String certificateSecretId;
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
+     * the custom hostname.
      *
      * @return the value
-     **/
+     */
     public String getCertificateSecretId() {
         return certificateSecretId;
     }
 
     /**
-     * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
-     *
-     **/
+     * The secret version used for the certificate-secret-id (if certificate-secret-id is
+     * specified).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
     private final Integer certificateSecretVersion;
 
     /**
-     * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+     * The secret version used for the certificate-secret-id (if certificate-secret-id is
+     * specified).
      *
      * @return the value
-     **/
+     */
     public Integer getCertificateSecretVersion() {
         return certificateSecretVersion;
     }
@@ -182,6 +182,7 @@ public final class CustomEndpointDetails
 
     /**
      * Return a string representation of the object.
+     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

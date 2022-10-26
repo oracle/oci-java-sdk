@@ -6,64 +6,50 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateScheduledJobRequest.
+ * <b>Example: </b>Click <a
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/UpdateScheduledJobExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateScheduledJobRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class UpdateScheduledJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails> {
 
-    /**
-     * The ID of the scheduled job.
-     */
+    /** The ID of the scheduled job. */
     private String scheduledJobId;
 
-    /**
-     * The ID of the scheduled job.
-     */
+    /** The ID of the scheduled job. */
     public String getScheduledJobId() {
         return scheduledJobId;
     }
-    /**
-     * Details about a Scheduled Job to update
-     */
+    /** Details about a Scheduled Job to update */
     private com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails updateScheduledJobDetails;
 
-    /**
-     * Details about a Scheduled Job to update
-     */
+    /** Details about a Scheduled Job to update */
     public com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails
             getUpdateScheduledJobDetails() {
         return updateScheduledJobDetails;
     }
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     private String opcRequestId;
 
-    /**
-     * The client request ID for tracing.
-     */
+    /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call
-     * for a resource, set the {@code if-match} parameter to the value of the
-     * etag from a previous GET or POST response for that resource.
-     * The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
-     *
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
+     * if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource. The resource will be updated or deleted only if the etag you provide matches the
+     * resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -71,6 +57,7 @@ public class UpdateScheduledJobRequest
 
     /**
      * Alternative accessor for the body parameter.
+     *
      * @return body parameter
      */
     @Override
@@ -83,17 +70,15 @@ public class UpdateScheduledJobRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateScheduledJobRequest,
                     com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails> {
-        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                invocationCallback = null;
+        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * The ID of the scheduled job.
-         */
+        /** The ID of the scheduled job. */
         private String scheduledJobId = null;
 
         /**
          * The ID of the scheduled job.
+         *
          * @param scheduledJobId the value to set
          * @return this builder instance
          */
@@ -102,14 +87,13 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
-        /**
-         * Details about a Scheduled Job to update
-         */
+        /** Details about a Scheduled Job to update */
         private com.oracle.bmc.osmanagement.model.UpdateScheduledJobDetails
                 updateScheduledJobDetails = null;
 
         /**
          * Details about a Scheduled Job to update
+         *
          * @param updateScheduledJobDetails the value to set
          * @return this builder instance
          */
@@ -120,13 +104,12 @@ public class UpdateScheduledJobRequest
             return this;
         }
 
-        /**
-         * The client request ID for tracing.
-         */
+        /** The client request ID for tracing. */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
+         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -136,21 +119,18 @@ public class UpdateScheduledJobRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call
-         * for a resource, set the {@code if-match} parameter to the value of the
-         * etag from a previous GET or POST response for that resource.
-         * The resource will be updated or deleted only if the etag you
-         * provide matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
+         * for that resource. The resource will be updated or deleted only if the etag you provide
+         * matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -162,18 +142,19 @@ public class UpdateScheduledJobRequest
 
         /**
          * Set the invocation callback for the request to be built.
+         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
-                        invocationCallback) {
+                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
+         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -185,6 +166,7 @@ public class UpdateScheduledJobRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
+         *
          * @return this builder instance
          */
         public Builder copy(UpdateScheduledJobRequest o) {
@@ -200,10 +182,11 @@ public class UpdateScheduledJobRequest
         /**
          * Build the instance of UpdateScheduledJobRequest as configured by this builder
          *
-         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method takes calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * This is the preferred method to build an instance.
+         * <p>This is the preferred method to build an instance.
          *
          * @return instance of UpdateScheduledJobRequest
          */
@@ -216,6 +199,7 @@ public class UpdateScheduledJobRequest
 
         /**
          * Alternative setter for the body parameter.
+         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -228,7 +212,8 @@ public class UpdateScheduledJobRequest
         /**
          * Build the instance of UpdateScheduledJobRequest as configured by this builder
          *
-         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
+         * <p>Note that this method does not take calls to {@link
+         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateScheduledJobRequest
@@ -240,12 +225,14 @@ public class UpdateScheduledJobRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateScheduledJobRequest(scheduledJobId, updateScheduledJobDetails, opcRequestId, ifMatch);
+            // new UpdateScheduledJobRequest(scheduledJobId, updateScheduledJobDetails,
+            // opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
+     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -258,6 +245,7 @@ public class UpdateScheduledJobRequest
 
     /**
      * Return a new builder for this request object.
+     *
      * @return builder for the request object
      */
     public static Builder builder() {

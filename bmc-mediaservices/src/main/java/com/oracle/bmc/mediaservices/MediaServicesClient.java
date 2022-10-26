@@ -4,17 +4,18 @@
  */
 package com.oracle.bmc.mediaservices;
 
-import com.oracle.bmc.mediaservices.internal.http.*;
+import com.oracle.bmc.util.internal.Validate;
 import com.oracle.bmc.mediaservices.requests.*;
 import com.oracle.bmc.mediaservices.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
+import java.util.Objects;
+
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public class MediaServicesClient implements MediaServices {
-    /**
-     * Service instance for MediaServices.
-     */
+public class MediaServicesClient extends com.oracle.bmc.http.internal.BaseSyncClient
+        implements MediaServices {
+    /** Service instance for MediaServices. */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MEDIASERVICES")
@@ -22,318 +23,22 @@ public class MediaServicesClient implements MediaServices {
                     .serviceEndpointTemplate(
                             "https://mediaservices.{region}.oci.{secondLevelDomain}")
                     .build();
-    // attempt twice if it's instance principals, immediately failures will try to refresh the token
-    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MediaServicesAsyncClient.class);
 
-    com.oracle.bmc.http.internal.RestClient getClient() {
-        return client;
-    }
-
     private final MediaServicesWaiters waiters;
 
     private final MediaServicesPaginators paginators;
-    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-            authenticationDetailsProvider;
-    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
-    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
-            apacheConnectionClosingStrategy;
-    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
-    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
-    private final java.util.Map<
-                    com.oracle.bmc.http.signing.SigningStrategy,
-                    com.oracle.bmc.http.signing.RequestSignerFactory>
-            signingStrategyRequestSignerFactories;
-    private final boolean isNonBufferingApacheClient;
-    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
-    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-            circuitBreakerConfiguration;
 
-    /**
-     * Used to synchronize any updates on the `this.client` object.
-     */
-    private final Object clientUpdate = new Object();
-
-    /**
-     * Stores the actual client object used to make the API calls.
-     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
-     *       For any writes to the object, please synchronize on `this.clientUpdate`.
-     */
-    private volatile com.oracle.bmc.http.internal.RestClient client;
-
-    /**
-     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
-     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
-     */
-    private volatile String overrideEndpoint = null;
-
-    /**
-     * Creates a new service instance using the given authentication provider.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(authenticationDetailsProvider, configuration, null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     */
-    public MediaServicesClient(
+    private MediaServicesClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                additionalClientConfigurators,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
-                        .createDefaultRequestSignerFactories(),
-                additionalClientConfigurators,
-                endpoint);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                null);
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     */
-    public MediaServicesClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
             java.util.concurrent.ExecutorService executorService) {
-        this(
+        super(
+                builder,
                 authenticationDetailsProvider,
-                configuration,
-                clientConfigurator,
-                defaultRequestSignerFactory,
-                signingStrategyRequestSignerFactories,
-                additionalClientConfigurators,
-                endpoint,
-                executorService,
-                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
-    }
-
-    /**
-     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
-     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * <p>
-     * This is an advanced constructor for clients that want to take control over how requests are signed.
-     * Use the {@link Builder} to get access to all these parameters.
-     *
-     * @param authenticationDetailsProvider The authentication details provider, required.
-     * @param configuration The client configuration, optional.
-     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
-     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
-     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
-     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
-     */
-    protected MediaServicesClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService,
-            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
-        this.authenticationDetailsProvider = authenticationDetailsProvider;
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
-                new java.util.ArrayList<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
-            authenticationDetailsConfigurators.addAll(
-                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
-                                    this.authenticationDetailsProvider)
-                            .getClientConfigurators());
-        }
-        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
-                new java.util.ArrayList<>(additionalClientConfigurators);
-        allConfigurators.addAll(authenticationDetailsConfigurators);
-        this.restClientFactory =
-                restClientFactoryBuilder
-                        .clientConfigurator(clientConfigurator)
-                        .additionalClientConfigurators(allConfigurators)
-                        .build();
-        this.isNonBufferingApacheClient =
-                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
-                        this.restClientFactory.getClientConfigurator());
-        this.apacheConnectionClosingStrategy =
-                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
-                        restClientFactory.getClientConfigurator());
-
-        this.clientConfigurationToUse =
-                (configuration != null)
-                        ? configuration
-                        : com.oracle.bmc.ClientConfiguration.builder().build();
-        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
-        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
-        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
-        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
-                userCircuitBreakerConfiguration =
-                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
-                                configuration);
-        if (userCircuitBreakerConfiguration == null) {
-            this.circuitBreakerConfiguration =
-                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
-        } else {
-            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
-        }
-
-        this.refreshClient();
+                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -355,28 +60,11 @@ public class MediaServicesClient implements MediaServices {
         this.waiters = new MediaServicesWaiters(executorService, this);
 
         this.paginators = new MediaServicesPaginators(this);
-
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
-        if (endpoint != null) {
-            setEndpoint(endpoint);
-        }
     }
 
     /**
      * Create a builder for this client.
+     *
      * @return builder
      */
     public static Builder builder() {
@@ -384,8 +72,8 @@ public class MediaServicesClient implements MediaServices {
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
+     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, MediaServicesClient> {
@@ -400,6 +88,7 @@ public class MediaServicesClient implements MediaServices {
 
         /**
          * Set the ExecutorService for the client to be created.
+         *
          * @param executorService executorService
          * @return this builder
          */
@@ -410,2075 +99,1643 @@ public class MediaServicesClient implements MediaServices {
 
         /**
          * Build the client.
+         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public MediaServicesClient build(
                 @javax.annotation.Nonnull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            if (authenticationDetailsProvider == null) {
-                throw new NullPointerException(
-                        "authenticationDetailsProvider is marked non-null but is null");
-            }
-            return new MediaServicesClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint,
-                    executorService);
+                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                                authenticationDetailsProvider) {
+            return new MediaServicesClient(this, authenticationDetailsProvider, executorService);
         }
-    }
-
-    @Override
-    public void refreshClient() {
-        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
-        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
-                this.defaultRequestSignerFactory.createRequestSigner(
-                        SERVICE, this.authenticationDetailsProvider);
-
-        java.util.Map<
-                        com.oracle.bmc.http.signing.SigningStrategy,
-                        com.oracle.bmc.http.signing.RequestSigner>
-                requestSigners = new java.util.HashMap<>();
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
-            for (com.oracle.bmc.http.signing.SigningStrategy s :
-                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
-                requestSigners.put(
-                        s,
-                        this.signingStrategyRequestSignerFactories
-                                .get(s)
-                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
-            }
-        }
-
-        com.oracle.bmc.http.internal.RestClient refreshedClient =
-                this.restClientFactory.create(
-                        defaultRequestSigner,
-                        requestSigners,
-                        this.clientConfigurationToUse,
-                        this.isNonBufferingApacheClient,
-                        null,
-                        this.circuitBreakerConfiguration);
-
-        synchronized (clientUpdate) {
-            if (this.overrideEndpoint != null) {
-                refreshedClient.setEndpoint(this.overrideEndpoint);
-            }
-
-            this.client = refreshedClient;
-        }
-
-        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
-    }
-
-    @Override
-    public void setEndpoint(String endpoint) {
-        LOG.info("Setting endpoint to {}", endpoint);
-
-        synchronized (clientUpdate) {
-            this.overrideEndpoint = endpoint;
-            client.setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public String getEndpoint() {
-        String endpoint = null;
-        java.net.URI uri = client.getBaseTarget().getUri();
-        if (uri != null) {
-            endpoint = uri.toString();
-        }
-        return endpoint;
     }
 
     @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        java.util.Optional<String> endpoint =
-                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
+        super.setRegion(region);
     }
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
-    }
-
-    @Override
-    public void close() {
-        client.close();
+        super.setRegion(regionId);
     }
 
     @Override
     public ChangeMediaAssetCompartmentResponse changeMediaAssetCompartment(
             ChangeMediaAssetCompartmentRequest request) {
-        LOG.trace("Called changeMediaAssetCompartment");
-        final ChangeMediaAssetCompartmentRequest interceptedRequest =
-                ChangeMediaAssetCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMediaAssetCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMediaAssetCompartmentDetails(),
+                "changeMediaAssetCompartmentDetails is required");
+
+        return clientCall(request, ChangeMediaAssetCompartmentResponse::builder)
+                .logger(LOG, "changeMediaAssetCompartment")
+                .serviceDetails(
                         "MediaServices",
                         "ChangeMediaAssetCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment");
-        java.util.function.Function<javax.ws.rs.core.Response, ChangeMediaAssetCompartmentResponse>
-                transformer =
-                        ChangeMediaAssetCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeMediaAssetCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMediaAssetCompartmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeMediaAssetCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeMediaWorkflowCompartmentResponse changeMediaWorkflowCompartment(
             ChangeMediaWorkflowCompartmentRequest request) {
-        LOG.trace("Called changeMediaWorkflowCompartment");
-        final ChangeMediaWorkflowCompartmentRequest interceptedRequest =
-                ChangeMediaWorkflowCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMediaWorkflowCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMediaWorkflowCompartmentDetails(),
+                "changeMediaWorkflowCompartmentDetails is required");
+
+        return clientCall(request, ChangeMediaWorkflowCompartmentResponse::builder)
+                .logger(LOG, "changeMediaWorkflowCompartment")
+                .serviceDetails(
                         "MediaServices",
                         "ChangeMediaWorkflowCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeMediaWorkflowCompartmentResponse>
-                transformer =
-                        ChangeMediaWorkflowCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeMediaWorkflowCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMediaWorkflowCompartmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMediaWorkflowCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMediaWorkflowCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeMediaWorkflowConfigurationCompartmentResponse
             changeMediaWorkflowConfigurationCompartment(
                     ChangeMediaWorkflowConfigurationCompartmentRequest request) {
-        LOG.trace("Called changeMediaWorkflowConfigurationCompartment");
-        final ChangeMediaWorkflowConfigurationCompartmentRequest interceptedRequest =
-                ChangeMediaWorkflowConfigurationCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMediaWorkflowConfigurationCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMediaWorkflowConfigurationCompartmentDetails(),
+                "changeMediaWorkflowConfigurationCompartmentDetails is required");
+
+        return clientCall(request, ChangeMediaWorkflowConfigurationCompartmentResponse::builder)
+                .logger(LOG, "changeMediaWorkflowConfigurationCompartment")
+                .serviceDetails(
                         "MediaServices",
                         "ChangeMediaWorkflowConfigurationCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeMediaWorkflowConfigurationCompartmentResponse>
-                transformer =
-                        ChangeMediaWorkflowConfigurationCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeMediaWorkflowConfigurationCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMediaWorkflowConfigurationCompartmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMediaWorkflowConfigurationCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMediaWorkflowConfigurationCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeMediaWorkflowJobCompartmentResponse changeMediaWorkflowJobCompartment(
             ChangeMediaWorkflowJobCompartmentRequest request) {
-        LOG.trace("Called changeMediaWorkflowJobCompartment");
-        final ChangeMediaWorkflowJobCompartmentRequest interceptedRequest =
-                ChangeMediaWorkflowJobCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeMediaWorkflowJobCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMediaWorkflowJobCompartmentDetails(),
+                "changeMediaWorkflowJobCompartmentDetails is required");
+
+        return clientCall(request, ChangeMediaWorkflowJobCompartmentResponse::builder)
+                .logger(LOG, "changeMediaWorkflowJobCompartment")
+                .serviceDetails(
                         "MediaServices",
                         "ChangeMediaWorkflowJobCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ChangeMediaWorkflowJobCompartmentResponse>
-                transformer =
-                        ChangeMediaWorkflowJobCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeMediaWorkflowJobCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMediaWorkflowJobCompartmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMediaWorkflowJobCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMediaWorkflowJobCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ChangeStreamDistributionChannelCompartmentResponse
             changeStreamDistributionChannelCompartment(
                     ChangeStreamDistributionChannelCompartmentRequest request) {
-        LOG.trace("Called changeStreamDistributionChannelCompartment");
-        final ChangeStreamDistributionChannelCompartmentRequest interceptedRequest =
-                ChangeStreamDistributionChannelCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeStreamDistributionChannelCompartmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeStreamDistributionChannelCompartmentDetails(),
+                "changeStreamDistributionChannelCompartmentDetails is required");
+
+        return clientCall(request, ChangeStreamDistributionChannelCompartmentResponse::builder)
+                .logger(LOG, "changeStreamDistributionChannelCompartment")
+                .serviceDetails(
                         "MediaServices",
                         "ChangeStreamDistributionChannelCompartment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ChangeStreamDistributionChannelCompartmentResponse>
-                transformer =
-                        ChangeStreamDistributionChannelCompartmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeStreamDistributionChannelCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeStreamDistributionChannelCompartmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeStreamDistributionChannelCompartmentResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeStreamDistributionChannelCompartmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateMediaAssetResponse createMediaAsset(CreateMediaAssetRequest request) {
-        LOG.trace("Called createMediaAsset");
-        final CreateMediaAssetRequest interceptedRequest =
-                CreateMediaAssetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMediaAssetConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateMediaAssetDetails(), "createMediaAssetDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateMediaAssetResponse::builder)
+                .logger(LOG, "createMediaAsset")
+                .serviceDetails(
                         "MediaServices",
                         "CreateMediaAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateMediaAssetResponse>
-                transformer =
-                        CreateMediaAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateMediaAssetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMediaAssetRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
+                        CreateMediaAssetResponse.Builder::mediaAsset)
+                .handleResponseHeaderString("etag", CreateMediaAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMediaAssetResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateMediaWorkflowResponse createMediaWorkflow(CreateMediaWorkflowRequest request) {
-        LOG.trace("Called createMediaWorkflow");
-        final CreateMediaWorkflowRequest interceptedRequest =
-                CreateMediaWorkflowConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMediaWorkflowConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateMediaWorkflowDetails(), "createMediaWorkflowDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateMediaWorkflowResponse::builder)
+                .logger(LOG, "createMediaWorkflow")
+                .serviceDetails(
                         "MediaServices",
                         "CreateMediaWorkflow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowResponse>
-                transformer =
-                        CreateMediaWorkflowConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateMediaWorkflowDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMediaWorkflowRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
+                        CreateMediaWorkflowResponse.Builder::mediaWorkflow)
+                .handleResponseHeaderString("etag", CreateMediaWorkflowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMediaWorkflowResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateMediaWorkflowConfigurationResponse createMediaWorkflowConfiguration(
             CreateMediaWorkflowConfigurationRequest request) {
-        LOG.trace("Called createMediaWorkflowConfiguration");
-        final CreateMediaWorkflowConfigurationRequest interceptedRequest =
-                CreateMediaWorkflowConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateMediaWorkflowConfigurationDetails(),
+                "createMediaWorkflowConfigurationDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateMediaWorkflowConfigurationResponse::builder)
+                .logger(LOG, "createMediaWorkflowConfiguration")
+                .serviceDetails(
                         "MediaServices",
                         "CreateMediaWorkflowConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateMediaWorkflowConfigurationResponse>
-                transformer =
-                        CreateMediaWorkflowConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateMediaWorkflowConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMediaWorkflowConfigurationRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
+                        CreateMediaWorkflowConfigurationResponse.Builder
+                                ::mediaWorkflowConfiguration)
+                .handleResponseHeaderString(
+                        "etag", CreateMediaWorkflowConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateMediaWorkflowJobResponse createMediaWorkflowJob(
             CreateMediaWorkflowJobRequest request) {
-        LOG.trace("Called createMediaWorkflowJob");
-        final CreateMediaWorkflowJobRequest interceptedRequest =
-                CreateMediaWorkflowJobConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateMediaWorkflowJobDetails(),
+                "createMediaWorkflowJobDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateMediaWorkflowJobResponse::builder)
+                .logger(LOG, "createMediaWorkflowJob")
+                .serviceDetails(
                         "MediaServices",
                         "CreateMediaWorkflowJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowJobResponse>
-                transformer =
-                        CreateMediaWorkflowJobConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateMediaWorkflowJobDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMediaWorkflowJobRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
+                        CreateMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
+                .handleResponseHeaderString("etag", CreateMediaWorkflowJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMediaWorkflowJobResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateStreamCdnConfigResponse createStreamCdnConfig(
             CreateStreamCdnConfigRequest request) {
-        LOG.trace("Called createStreamCdnConfig");
-        final CreateStreamCdnConfigRequest interceptedRequest =
-                CreateStreamCdnConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateStreamCdnConfigDetails(),
+                "createStreamCdnConfigDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateStreamCdnConfigResponse::builder)
+                .logger(LOG, "createStreamCdnConfig")
+                .serviceDetails(
                         "MediaServices",
                         "CreateStreamCdnConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateStreamCdnConfigResponse>
-                transformer =
-                        CreateStreamCdnConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest.getCreateStreamCdnConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamCdnConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
+                        CreateStreamCdnConfigResponse.Builder::streamCdnConfig)
+                .handleResponseHeaderString("etag", CreateStreamCdnConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamCdnConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateStreamDistributionChannelResponse createStreamDistributionChannel(
             CreateStreamDistributionChannelRequest request) {
-        LOG.trace("Called createStreamDistributionChannel");
-        final CreateStreamDistributionChannelRequest interceptedRequest =
-                CreateStreamDistributionChannelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateStreamDistributionChannelDetails(),
+                "createStreamDistributionChannelDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateStreamDistributionChannelResponse::builder)
+                .logger(LOG, "createStreamDistributionChannel")
+                .serviceDetails(
                         "MediaServices",
                         "CreateStreamDistributionChannel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, CreateStreamDistributionChannelResponse>
-                transformer =
-                        CreateStreamDistributionChannelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateStreamDistributionChannelDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamDistributionChannelRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
+                        CreateStreamDistributionChannelResponse.Builder::streamDistributionChannel)
+                .handleResponseHeaderString(
+                        "etag", CreateStreamDistributionChannelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateStreamDistributionChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public CreateStreamPackagingConfigResponse createStreamPackagingConfig(
             CreateStreamPackagingConfigRequest request) {
-        LOG.trace("Called createStreamPackagingConfig");
-        final CreateStreamPackagingConfigRequest interceptedRequest =
-                CreateStreamPackagingConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getCreateStreamPackagingConfigDetails(),
+                "createStreamPackagingConfigDetails is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, CreateStreamPackagingConfigResponse::builder)
+                .logger(LOG, "createStreamPackagingConfig")
+                .serviceDetails(
                         "MediaServices",
                         "CreateStreamPackagingConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, CreateStreamPackagingConfigResponse>
-                transformer =
-                        CreateStreamPackagingConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getCreateStreamPackagingConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateStreamPackagingConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
+                        CreateStreamPackagingConfigResponse.Builder::streamPackagingConfig)
+                .handleResponseHeaderString(
+                        "etag", CreateStreamPackagingConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateStreamPackagingConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMediaAssetResponse deleteMediaAsset(DeleteMediaAssetRequest request) {
-        LOG.trace("Called deleteMediaAsset");
-        final DeleteMediaAssetRequest interceptedRequest =
-                DeleteMediaAssetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMediaAssetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        return clientCall(request, DeleteMediaAssetResponse::builder)
+                .logger(LOG, "deleteMediaAsset")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteMediaAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaAssetResponse>
-                transformer =
-                        DeleteMediaAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMediaAssetRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendEnumQueryParam("deleteMode", request.getDeleteMode())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMediaAssetResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMediaAssetDistributionChannelAttachmentResponse
             deleteMediaAssetDistributionChannelAttachment(
                     DeleteMediaAssetDistributionChannelAttachmentRequest request) {
-        LOG.trace("Called deleteMediaAssetDistributionChannelAttachment");
-        final DeleteMediaAssetDistributionChannelAttachmentRequest interceptedRequest =
-                DeleteMediaAssetDistributionChannelAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMediaAssetDistributionChannelAttachmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        Validate.notBlank(
+                request.getDistributionChannelId(), "distributionChannelId must not be blank");
+
+        return clientCall(request, DeleteMediaAssetDistributionChannelAttachmentResponse::builder)
+                .logger(LOG, "deleteMediaAssetDistributionChannelAttachment")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteMediaAssetDistributionChannelAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        DeleteMediaAssetDistributionChannelAttachmentResponse>
-                transformer =
-                        DeleteMediaAssetDistributionChannelAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMediaAssetDistributionChannelAttachmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("distributionChannelAttachments")
+                .appendPathParam(request.getDistributionChannelId())
+                .appendQueryParam("version", request.getVersion())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMediaWorkflowResponse deleteMediaWorkflow(DeleteMediaWorkflowRequest request) {
-        LOG.trace("Called deleteMediaWorkflow");
-        final DeleteMediaWorkflowRequest interceptedRequest =
-                DeleteMediaWorkflowConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMediaWorkflowConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+
+        return clientCall(request, DeleteMediaWorkflowResponse::builder)
+                .logger(LOG, "deleteMediaWorkflow")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteMediaWorkflow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowResponse>
-                transformer =
-                        DeleteMediaWorkflowConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMediaWorkflowRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMediaWorkflowResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMediaWorkflowConfigurationResponse deleteMediaWorkflowConfiguration(
             DeleteMediaWorkflowConfigurationRequest request) {
-        LOG.trace("Called deleteMediaWorkflowConfiguration");
-        final DeleteMediaWorkflowConfigurationRequest interceptedRequest =
-                DeleteMediaWorkflowConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+
+        return clientCall(request, DeleteMediaWorkflowConfigurationResponse::builder)
+                .logger(LOG, "deleteMediaWorkflowConfiguration")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteMediaWorkflowConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteMediaWorkflowConfigurationResponse>
-                transformer =
-                        DeleteMediaWorkflowConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMediaWorkflowConfigurationRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMediaWorkflowConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteMediaWorkflowConfigurationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteMediaWorkflowJobResponse deleteMediaWorkflowJob(
             DeleteMediaWorkflowJobRequest request) {
-        LOG.trace("Called deleteMediaWorkflowJob");
-        final DeleteMediaWorkflowJobRequest interceptedRequest =
-                DeleteMediaWorkflowJobConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, DeleteMediaWorkflowJobResponse::builder)
+                .logger(LOG, "deleteMediaWorkflowJob")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteMediaWorkflowJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowJobResponse>
-                transformer =
-                        DeleteMediaWorkflowJobConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMediaWorkflowJobRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMediaWorkflowJobResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMediaWorkflowJobResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteStreamCdnConfigResponse deleteStreamCdnConfig(
             DeleteStreamCdnConfigRequest request) {
-        LOG.trace("Called deleteStreamCdnConfig");
-        final DeleteStreamCdnConfigRequest interceptedRequest =
-                DeleteStreamCdnConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
+
+        return clientCall(request, DeleteStreamCdnConfigResponse::builder)
+                .logger(LOG, "deleteStreamCdnConfig")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteStreamCdnConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamCdnConfigResponse>
-                transformer =
-                        DeleteStreamCdnConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamCdnConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendPathParam(request.getStreamCdnConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamCdnConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteStreamDistributionChannelResponse deleteStreamDistributionChannel(
             DeleteStreamDistributionChannelRequest request) {
-        LOG.trace("Called deleteStreamDistributionChannel");
-        final DeleteStreamDistributionChannelRequest interceptedRequest =
-                DeleteStreamDistributionChannelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+
+        return clientCall(request, DeleteStreamDistributionChannelResponse::builder)
+                .logger(LOG, "deleteStreamDistributionChannel")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteStreamDistributionChannel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, DeleteStreamDistributionChannelResponse>
-                transformer =
-                        DeleteStreamDistributionChannelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamDistributionChannelRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteStreamDistributionChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public DeleteStreamPackagingConfigResponse deleteStreamPackagingConfig(
             DeleteStreamPackagingConfigRequest request) {
-        LOG.trace("Called deleteStreamPackagingConfig");
-        final DeleteStreamPackagingConfigRequest interceptedRequest =
-                DeleteStreamPackagingConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
+
+        return clientCall(request, DeleteStreamPackagingConfigResponse::builder)
+                .logger(LOG, "deleteStreamPackagingConfig")
+                .serviceDetails(
                         "MediaServices",
                         "DeleteStreamPackagingConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamPackagingConfigResponse>
-                transformer =
-                        DeleteStreamPackagingConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.delete(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteStreamPackagingConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendPathParam(request.getStreamPackagingConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteStreamPackagingConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaAssetResponse getMediaAsset(GetMediaAssetRequest request) {
-        LOG.trace("Called getMediaAsset");
-        final GetMediaAssetRequest interceptedRequest =
-                GetMediaAssetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaAssetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        return clientCall(request, GetMediaAssetResponse::builder)
+                .logger(LOG, "getMediaAsset")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMediaAssetResponse> transformer =
-                GetMediaAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaAssetRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
+                        GetMediaAssetResponse.Builder::mediaAsset)
+                .handleResponseHeaderString("etag", GetMediaAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMediaAssetResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaAssetDistributionChannelAttachmentResponse
             getMediaAssetDistributionChannelAttachment(
                     GetMediaAssetDistributionChannelAttachmentRequest request) {
-        LOG.trace("Called getMediaAssetDistributionChannelAttachment");
-        final GetMediaAssetDistributionChannelAttachmentRequest interceptedRequest =
-                GetMediaAssetDistributionChannelAttachmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaAssetDistributionChannelAttachmentConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        Validate.notBlank(
+                request.getDistributionChannelId(), "distributionChannelId must not be blank");
+
+        return clientCall(request, GetMediaAssetDistributionChannelAttachmentResponse::builder)
+                .logger(LOG, "getMediaAssetDistributionChannelAttachment")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaAssetDistributionChannelAttachment",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        GetMediaAssetDistributionChannelAttachmentResponse>
-                transformer =
-                        GetMediaAssetDistributionChannelAttachmentConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaAssetDistributionChannelAttachmentRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("distributionChannelAttachments")
+                .appendPathParam(request.getDistributionChannelId())
+                .appendQueryParam("version", request.getVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachment
+                                .class,
+                        GetMediaAssetDistributionChannelAttachmentResponse.Builder
+                                ::mediaAssetDistributionChannelAttachment)
+                .handleResponseHeaderString(
+                        "etag", GetMediaAssetDistributionChannelAttachmentResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaWorkflowResponse getMediaWorkflow(GetMediaWorkflowRequest request) {
-        LOG.trace("Called getMediaWorkflow");
-        final GetMediaWorkflowRequest interceptedRequest =
-                GetMediaWorkflowConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaWorkflowConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+
+        return clientCall(request, GetMediaWorkflowResponse::builder)
+                .logger(LOG, "getMediaWorkflow")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaWorkflow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowResponse>
-                transformer =
-                        GetMediaWorkflowConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaWorkflowRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
+                        GetMediaWorkflowResponse.Builder::mediaWorkflow)
+                .handleResponseHeaderString("etag", GetMediaWorkflowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMediaWorkflowResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaWorkflowConfigurationResponse getMediaWorkflowConfiguration(
             GetMediaWorkflowConfigurationRequest request) {
-        LOG.trace("Called getMediaWorkflowConfiguration");
-        final GetMediaWorkflowConfigurationRequest interceptedRequest =
-                GetMediaWorkflowConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+
+        return clientCall(request, GetMediaWorkflowConfigurationResponse::builder)
+                .logger(LOG, "getMediaWorkflowConfiguration")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaWorkflowConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, GetMediaWorkflowConfigurationResponse>
-                transformer =
-                        GetMediaWorkflowConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaWorkflowConfigurationRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
+                        GetMediaWorkflowConfigurationResponse.Builder::mediaWorkflowConfiguration)
+                .handleResponseHeaderString(
+                        "etag", GetMediaWorkflowConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetMediaWorkflowConfigurationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaWorkflowJobResponse getMediaWorkflowJob(GetMediaWorkflowJobRequest request) {
-        LOG.trace("Called getMediaWorkflowJob");
-        final GetMediaWorkflowJobRequest interceptedRequest =
-                GetMediaWorkflowJobConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, GetMediaWorkflowJobResponse::builder)
+                .logger(LOG, "getMediaWorkflowJob")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaWorkflowJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowJobResponse>
-                transformer =
-                        GetMediaWorkflowJobConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaWorkflowJobRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
+                        GetMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
+                .handleResponseHeaderString("etag", GetMediaWorkflowJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMediaWorkflowJobResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetMediaWorkflowJobFactResponse getMediaWorkflowJobFact(
             GetMediaWorkflowJobFactRequest request) {
-        LOG.trace("Called getMediaWorkflowJobFact");
-        final GetMediaWorkflowJobFactRequest interceptedRequest =
-                GetMediaWorkflowJobFactConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetMediaWorkflowJobFactConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, GetMediaWorkflowJobFactResponse::builder)
+                .logger(LOG, "getMediaWorkflowJobFact")
+                .serviceDetails(
                         "MediaServices",
                         "GetMediaWorkflowJobFact",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact");
-        java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowJobFactResponse>
-                transformer =
-                        GetMediaWorkflowJobFactConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/GetMediaWorkflowJobFact")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMediaWorkflowJobFactRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .appendPathParam("facts")
+                .appendPathParam(request.getKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobFact.class,
+                        GetMediaWorkflowJobFactResponse.Builder::mediaWorkflowJobFact)
+                .handleResponseHeaderString("etag", GetMediaWorkflowJobFactResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMediaWorkflowJobFactResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetStreamCdnConfigResponse getStreamCdnConfig(GetStreamCdnConfigRequest request) {
-        LOG.trace("Called getStreamCdnConfig");
-        final GetStreamCdnConfigRequest interceptedRequest =
-                GetStreamCdnConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
+
+        return clientCall(request, GetStreamCdnConfigResponse::builder)
+                .logger(LOG, "getStreamCdnConfig")
+                .serviceDetails(
                         "MediaServices",
                         "GetStreamCdnConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, GetStreamCdnConfigResponse>
-                transformer =
-                        GetStreamCdnConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamCdnConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendPathParam(request.getStreamCdnConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
+                        GetStreamCdnConfigResponse.Builder::streamCdnConfig)
+                .handleResponseHeaderString("etag", GetStreamCdnConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamCdnConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetStreamDistributionChannelResponse getStreamDistributionChannel(
             GetStreamDistributionChannelRequest request) {
-        LOG.trace("Called getStreamDistributionChannel");
-        final GetStreamDistributionChannelRequest interceptedRequest =
-                GetStreamDistributionChannelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+
+        return clientCall(request, GetStreamDistributionChannelResponse::builder)
+                .logger(LOG, "getStreamDistributionChannel")
+                .serviceDetails(
                         "MediaServices",
                         "GetStreamDistributionChannel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel");
-        java.util.function.Function<javax.ws.rs.core.Response, GetStreamDistributionChannelResponse>
-                transformer =
-                        GetStreamDistributionChannelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamDistributionChannelRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
+                        GetStreamDistributionChannelResponse.Builder::streamDistributionChannel)
+                .handleResponseHeaderString(
+                        "etag", GetStreamDistributionChannelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetStreamDistributionChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public GetStreamPackagingConfigResponse getStreamPackagingConfig(
             GetStreamPackagingConfigRequest request) {
-        LOG.trace("Called getStreamPackagingConfig");
-        final GetStreamPackagingConfigRequest interceptedRequest =
-                GetStreamPackagingConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
+
+        return clientCall(request, GetStreamPackagingConfigResponse::builder)
+                .logger(LOG, "getStreamPackagingConfig")
+                .serviceDetails(
                         "MediaServices",
                         "GetStreamPackagingConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, GetStreamPackagingConfigResponse>
-                transformer =
-                        GetStreamPackagingConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetStreamPackagingConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendPathParam(request.getStreamPackagingConfigId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
+                        GetStreamPackagingConfigResponse.Builder::streamPackagingConfig)
+                .handleResponseHeaderString("etag", GetStreamPackagingConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetStreamPackagingConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public IngestStreamDistributionChannelResponse ingestStreamDistributionChannel(
             IngestStreamDistributionChannelRequest request) {
-        LOG.trace("Called ingestStreamDistributionChannel");
-        final IngestStreamDistributionChannelRequest interceptedRequest =
-                IngestStreamDistributionChannelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                IngestStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+        Objects.requireNonNull(
+                request.getIngestStreamDistributionChannelDetails(),
+                "ingestStreamDistributionChannelDetails is required");
+
+        return clientCall(request, IngestStreamDistributionChannelResponse::builder)
+                .logger(LOG, "ingestStreamDistributionChannel")
+                .serviceDetails(
                         "MediaServices",
                         "IngestStreamDistributionChannel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, IngestStreamDistributionChannelResponse>
-                transformer =
-                        IngestStreamDistributionChannelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getIngestStreamDistributionChannelDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestStreamDistributionChannelRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .appendPathParam("actions")
+                .appendPathParam("ingest")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.IngestStreamDistributionChannelResult
+                                .class,
+                        IngestStreamDistributionChannelResponse.Builder
+                                ::ingestStreamDistributionChannelResult)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        IngestStreamDistributionChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaAssetDistributionChannelAttachmentsResponse
             listMediaAssetDistributionChannelAttachments(
                     ListMediaAssetDistributionChannelAttachmentsRequest request) {
-        LOG.trace("Called listMediaAssetDistributionChannelAttachments");
-        final ListMediaAssetDistributionChannelAttachmentsRequest interceptedRequest =
-                ListMediaAssetDistributionChannelAttachmentsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaAssetDistributionChannelAttachmentsConverter.fromRequest(
-                        client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+
+        return clientCall(request, ListMediaAssetDistributionChannelAttachmentsResponse::builder)
+                .logger(LOG, "listMediaAssetDistributionChannelAttachments")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaAssetDistributionChannelAttachments",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response,
-                        ListMediaAssetDistributionChannelAttachmentsResponse>
-                transformer =
-                        ListMediaAssetDistributionChannelAttachmentsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaAssetDistributionChannelAttachmentsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .appendPathParam("distributionChannelAttachments")
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model
+                                .MediaAssetDistributionChannelAttachmentCollection.class,
+                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder
+                                ::mediaAssetDistributionChannelAttachmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaAssetsResponse listMediaAssets(ListMediaAssetsRequest request) {
-        LOG.trace("Called listMediaAssets");
-        final ListMediaAssetsRequest interceptedRequest =
-                ListMediaAssetsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaAssetsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMediaAssetsResponse::builder)
+                .logger(LOG, "listMediaAssets")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaAssets",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMediaAssetsResponse>
-                transformer =
-                        ListMediaAssetsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaAssetsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
+                .appendQueryParam("parentMediaAssetId", request.getParentMediaAssetId())
+                .appendQueryParam("masterMediaAssetId", request.getMasterMediaAssetId())
+                .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("bucketName", request.getBucketName())
+                .appendQueryParam("objectName", request.getObjectName())
+                .appendQueryParam("mediaWorkflowJobId", request.getMediaWorkflowJobId())
+                .appendQueryParam("sourceMediaWorkflowId", request.getSourceMediaWorkflowId())
+                .appendQueryParam(
+                        "sourceMediaWorkflowVersion", request.getSourceMediaWorkflowVersion())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAssetCollection.class,
+                        ListMediaAssetsResponse.Builder::mediaAssetCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMediaAssetsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMediaAssetsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaWorkflowConfigurationsResponse listMediaWorkflowConfigurations(
             ListMediaWorkflowConfigurationsRequest request) {
-        LOG.trace("Called listMediaWorkflowConfigurations");
-        final ListMediaWorkflowConfigurationsRequest interceptedRequest =
-                ListMediaWorkflowConfigurationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaWorkflowConfigurationsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMediaWorkflowConfigurationsResponse::builder)
+                .logger(LOG, "listMediaWorkflowConfigurations")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaWorkflowConfigurations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListMediaWorkflowConfigurationsResponse>
-                transformer =
-                        ListMediaWorkflowConfigurationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaWorkflowConfigurationsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationCollection
+                                .class,
+                        ListMediaWorkflowConfigurationsResponse.Builder
+                                ::mediaWorkflowConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMediaWorkflowConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMediaWorkflowConfigurationsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaWorkflowJobFactsResponse listMediaWorkflowJobFacts(
             ListMediaWorkflowJobFactsRequest request) {
-        LOG.trace("Called listMediaWorkflowJobFacts");
-        final ListMediaWorkflowJobFactsRequest interceptedRequest =
-                ListMediaWorkflowJobFactsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaWorkflowJobFactsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+
+        return clientCall(request, ListMediaWorkflowJobFactsResponse::builder)
+                .logger(LOG, "listMediaWorkflowJobFacts")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaWorkflowJobFacts",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowJobFactsResponse>
-                transformer =
-                        ListMediaWorkflowJobFactsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJobFact/ListMediaWorkflowJobFacts")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaWorkflowJobFactsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .appendPathParam("facts")
+                .appendQueryParam("key", request.getKey())
+                .appendEnumQueryParam("type", request.getType())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobFactCollection.class,
+                        ListMediaWorkflowJobFactsResponse.Builder::mediaWorkflowJobFactCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMediaWorkflowJobFactsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMediaWorkflowJobFactsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaWorkflowJobsResponse listMediaWorkflowJobs(
             ListMediaWorkflowJobsRequest request) {
-        LOG.trace("Called listMediaWorkflowJobs");
-        final ListMediaWorkflowJobsRequest interceptedRequest =
-                ListMediaWorkflowJobsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaWorkflowJobsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMediaWorkflowJobsResponse::builder)
+                .logger(LOG, "listMediaWorkflowJobs")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaWorkflowJobs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowJobsResponse>
-                transformer =
-                        ListMediaWorkflowJobsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaWorkflowJobsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("mediaWorkflowId", request.getMediaWorkflowId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobCollection.class,
+                        ListMediaWorkflowJobsResponse.Builder::mediaWorkflowJobCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMediaWorkflowJobsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMediaWorkflowJobsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaWorkflowTaskDeclarationsResponse listMediaWorkflowTaskDeclarations(
             ListMediaWorkflowTaskDeclarationsRequest request) {
-        LOG.trace("Called listMediaWorkflowTaskDeclarations");
-        final ListMediaWorkflowTaskDeclarationsRequest interceptedRequest =
-                ListMediaWorkflowTaskDeclarationsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaWorkflowTaskDeclarationsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMediaWorkflowTaskDeclarationsResponse::builder)
+                .logger(LOG, "listMediaWorkflowTaskDeclarations")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaWorkflowTaskDeclarations",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListMediaWorkflowTaskDeclarationsResponse>
-                transformer =
-                        ListMediaWorkflowTaskDeclarationsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaWorkflowTaskDeclarationsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowTaskDeclarations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("isCurrent", request.getIsCurrent())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclarationCollection
+                                .class,
+                        ListMediaWorkflowTaskDeclarationsResponse.Builder
+                                ::mediaWorkflowTaskDeclarationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMediaWorkflowTaskDeclarationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMediaWorkflowTaskDeclarationsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListMediaWorkflowsResponse listMediaWorkflows(ListMediaWorkflowsRequest request) {
-        LOG.trace("Called listMediaWorkflows");
-        final ListMediaWorkflowsRequest interceptedRequest =
-                ListMediaWorkflowsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListMediaWorkflowsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListMediaWorkflowsResponse::builder)
+                .logger(LOG, "listMediaWorkflows")
+                .serviceDetails(
                         "MediaServices",
                         "ListMediaWorkflows",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows");
-        java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowsResponse>
-                transformer =
-                        ListMediaWorkflowsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMediaWorkflowsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowCollection.class,
+                        ListMediaWorkflowsResponse.Builder::mediaWorkflowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMediaWorkflowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMediaWorkflowsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListStreamCdnConfigsResponse listStreamCdnConfigs(ListStreamCdnConfigsRequest request) {
-        LOG.trace("Called listStreamCdnConfigs");
-        final ListStreamCdnConfigsRequest interceptedRequest =
-                ListStreamCdnConfigsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListStreamCdnConfigsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getDistributionChannelId(), "distributionChannelId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListStreamCdnConfigsResponse::builder)
+                .logger(LOG, "listStreamCdnConfigs")
+                .serviceDetails(
                         "MediaServices",
                         "ListStreamCdnConfigs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListStreamCdnConfigsResponse>
-                transformer =
-                        ListStreamCdnConfigsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamCdnConfigsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfigCollection.class,
+                        ListStreamCdnConfigsResponse.Builder::streamCdnConfigCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamCdnConfigsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamCdnConfigsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListStreamDistributionChannelsResponse listStreamDistributionChannels(
             ListStreamDistributionChannelsRequest request) {
-        LOG.trace("Called listStreamDistributionChannels");
-        final ListStreamDistributionChannelsRequest interceptedRequest =
-                ListStreamDistributionChannelsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListStreamDistributionChannelsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListStreamDistributionChannelsResponse::builder)
+                .logger(LOG, "listStreamDistributionChannels")
+                .serviceDetails(
                         "MediaServices",
                         "ListStreamDistributionChannels",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, ListStreamDistributionChannelsResponse>
-                transformer =
-                        ListStreamDistributionChannelsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamDistributionChannelsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannelCollection
+                                .class,
+                        ListStreamDistributionChannelsResponse.Builder
+                                ::streamDistributionChannelCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListStreamDistributionChannelsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListStreamDistributionChannelsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListStreamPackagingConfigsResponse listStreamPackagingConfigs(
             ListStreamPackagingConfigsRequest request) {
-        LOG.trace("Called listStreamPackagingConfigs");
-        final ListStreamPackagingConfigsRequest interceptedRequest =
-                ListStreamPackagingConfigsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListStreamPackagingConfigsConverter.fromRequest(client, interceptedRequest);
+        Objects.requireNonNull(
+                request.getDistributionChannelId(), "distributionChannelId is required");
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListStreamPackagingConfigsResponse::builder)
+                .logger(LOG, "listStreamPackagingConfigs")
+                .serviceDetails(
                         "MediaServices",
                         "ListStreamPackagingConfigs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs");
-        java.util.function.Function<javax.ws.rs.core.Response, ListStreamPackagingConfigsResponse>
-                transformer =
-                        ListStreamPackagingConfigsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListStreamPackagingConfigsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
+                .appendQueryParam("streamPackagingConfigId", request.getStreamPackagingConfigId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfigCollection.class,
+                        ListStreamPackagingConfigsResponse.Builder::streamPackagingConfigCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListStreamPackagingConfigsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListStreamPackagingConfigsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public ListSystemMediaWorkflowsResponse listSystemMediaWorkflows(
             ListSystemMediaWorkflowsRequest request) {
-        LOG.trace("Called listSystemMediaWorkflows");
-        final ListSystemMediaWorkflowsRequest interceptedRequest =
-                ListSystemMediaWorkflowsConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListSystemMediaWorkflowsConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        return clientCall(request, ListSystemMediaWorkflowsResponse::builder)
+                .logger(LOG, "listSystemMediaWorkflows")
+                .serviceDetails(
                         "MediaServices",
                         "ListSystemMediaWorkflows",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows");
-        java.util.function.Function<javax.ws.rs.core.Response, ListSystemMediaWorkflowsResponse>
-                transformer =
-                        ListSystemMediaWorkflowsConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSystemMediaWorkflowsRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("systemMediaWorkflows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.SystemMediaWorkflowCollection.class,
+                        ListSystemMediaWorkflowsResponse.Builder::systemMediaWorkflowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSystemMediaWorkflowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSystemMediaWorkflowsResponse.Builder::opcNextPage)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateMediaAssetResponse updateMediaAsset(UpdateMediaAssetRequest request) {
-        LOG.trace("Called updateMediaAsset");
-        final UpdateMediaAssetRequest interceptedRequest =
-                UpdateMediaAssetConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMediaAssetConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMediaAssetDetails(), "updateMediaAssetDetails is required");
+
+        return clientCall(request, UpdateMediaAssetResponse::builder)
+                .logger(LOG, "updateMediaAsset")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateMediaAsset",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaAssetResponse>
-                transformer =
-                        UpdateMediaAssetConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateMediaAssetDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMediaAssetRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaAssets")
+                .appendPathParam(request.getMediaAssetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
+                        UpdateMediaAssetResponse.Builder::mediaAsset)
+                .handleResponseHeaderString("etag", UpdateMediaAssetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMediaAssetResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateMediaWorkflowResponse updateMediaWorkflow(UpdateMediaWorkflowRequest request) {
-        LOG.trace("Called updateMediaWorkflow");
-        final UpdateMediaWorkflowRequest interceptedRequest =
-                UpdateMediaWorkflowConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMediaWorkflowConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMediaWorkflowDetails(), "updateMediaWorkflowDetails is required");
+
+        return clientCall(request, UpdateMediaWorkflowResponse::builder)
+                .logger(LOG, "updateMediaWorkflow")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateMediaWorkflow",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowResponse>
-                transformer =
-                        UpdateMediaWorkflowConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateMediaWorkflowDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMediaWorkflowRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflows")
+                .appendPathParam(request.getMediaWorkflowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
+                        UpdateMediaWorkflowResponse.Builder::mediaWorkflow)
+                .handleResponseHeaderString("etag", UpdateMediaWorkflowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMediaWorkflowResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateMediaWorkflowConfigurationResponse updateMediaWorkflowConfiguration(
             UpdateMediaWorkflowConfigurationRequest request) {
-        LOG.trace("Called updateMediaWorkflowConfiguration");
-        final UpdateMediaWorkflowConfigurationRequest interceptedRequest =
-                UpdateMediaWorkflowConfigurationConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getMediaWorkflowConfigurationId(),
+                "mediaWorkflowConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMediaWorkflowConfigurationDetails(),
+                "updateMediaWorkflowConfigurationDetails is required");
+
+        return clientCall(request, UpdateMediaWorkflowConfigurationResponse::builder)
+                .logger(LOG, "updateMediaWorkflowConfiguration")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateMediaWorkflowConfiguration",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateMediaWorkflowConfigurationResponse>
-                transformer =
-                        UpdateMediaWorkflowConfigurationConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateMediaWorkflowConfigurationDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMediaWorkflowConfigurationRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowConfigurations")
+                .appendPathParam(request.getMediaWorkflowConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
+                        UpdateMediaWorkflowConfigurationResponse.Builder
+                                ::mediaWorkflowConfiguration)
+                .handleResponseHeaderString(
+                        "etag", UpdateMediaWorkflowConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateMediaWorkflowJobResponse updateMediaWorkflowJob(
             UpdateMediaWorkflowJobRequest request) {
-        LOG.trace("Called updateMediaWorkflowJob");
-        final UpdateMediaWorkflowJobRequest interceptedRequest =
-                UpdateMediaWorkflowJobConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMediaWorkflowJobDetails(),
+                "updateMediaWorkflowJobDetails is required");
+
+        return clientCall(request, UpdateMediaWorkflowJobResponse::builder)
+                .logger(LOG, "updateMediaWorkflowJob")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateMediaWorkflowJob",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowJobResponse>
-                transformer =
-                        UpdateMediaWorkflowJobConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateMediaWorkflowJobDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMediaWorkflowJobRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("mediaWorkflowJobs")
+                .appendPathParam(request.getMediaWorkflowJobId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
+                        UpdateMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
+                .handleResponseHeaderString("etag", UpdateMediaWorkflowJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMediaWorkflowJobResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateStreamCdnConfigResponse updateStreamCdnConfig(
             UpdateStreamCdnConfigRequest request) {
-        LOG.trace("Called updateStreamCdnConfig");
-        final UpdateStreamCdnConfigRequest interceptedRequest =
-                UpdateStreamCdnConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamCdnConfigDetails(),
+                "updateStreamCdnConfigDetails is required");
+
+        return clientCall(request, UpdateStreamCdnConfigResponse::builder)
+                .logger(LOG, "updateStreamCdnConfig")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateStreamCdnConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamCdnConfigResponse>
-                transformer =
-                        UpdateStreamCdnConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest.getUpdateStreamCdnConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamCdnConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamCdnConfigs")
+                .appendPathParam(request.getStreamCdnConfigId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
+                        UpdateStreamCdnConfigResponse.Builder::streamCdnConfig)
+                .handleResponseHeaderString("etag", UpdateStreamCdnConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamCdnConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateStreamDistributionChannelResponse updateStreamDistributionChannel(
             UpdateStreamDistributionChannelRequest request) {
-        LOG.trace("Called updateStreamDistributionChannel");
-        final UpdateStreamDistributionChannelRequest interceptedRequest =
-                UpdateStreamDistributionChannelConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamDistributionChannelId(),
+                "streamDistributionChannelId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamDistributionChannelDetails(),
+                "updateStreamDistributionChannelDetails is required");
+
+        return clientCall(request, UpdateStreamDistributionChannelResponse::builder)
+                .logger(LOG, "updateStreamDistributionChannel")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateStreamDistributionChannel",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel");
-        java.util.function.Function<
-                        javax.ws.rs.core.Response, UpdateStreamDistributionChannelResponse>
-                transformer =
-                        UpdateStreamDistributionChannelConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateStreamDistributionChannelDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamDistributionChannelRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamDistributionChannels")
+                .appendPathParam(request.getStreamDistributionChannelId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
+                        UpdateStreamDistributionChannelResponse.Builder::streamDistributionChannel)
+                .handleResponseHeaderString(
+                        "etag", UpdateStreamDistributionChannelResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateStreamDistributionChannelResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
     public UpdateStreamPackagingConfigResponse updateStreamPackagingConfig(
             UpdateStreamPackagingConfigRequest request) {
-        LOG.trace("Called updateStreamPackagingConfig");
-        final UpdateStreamPackagingConfigRequest interceptedRequest =
-                UpdateStreamPackagingConfigConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
 
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
+        Validate.notBlank(
+                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateStreamPackagingConfigDetails(),
+                "updateStreamPackagingConfigDetails is required");
+
+        return clientCall(request, UpdateStreamPackagingConfigResponse::builder)
+                .logger(LOG, "updateStreamPackagingConfig")
+                .serviceDetails(
                         "MediaServices",
                         "UpdateStreamPackagingConfig",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig");
-        java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamPackagingConfigResponse>
-                transformer =
-                        UpdateStreamPackagingConfigConverter.fromResponse(
-                                java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.put(
-                                                ib,
-                                                retriedRequest
-                                                        .getUpdateStreamPackagingConfigDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateStreamPackagingConfigRequest::builder)
+                .basePath("/20211101")
+                .appendPathParam("streamPackagingConfigs")
+                .appendPathParam(request.getStreamPackagingConfigId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
+                        UpdateStreamPackagingConfigResponse.Builder::streamPackagingConfig)
+                .handleResponseHeaderString(
+                        "etag", UpdateStreamPackagingConfigResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateStreamPackagingConfigResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateStreamPackagingConfigResponse.Builder::opcRequestId)
+                .operationUsesDefaultRetries()
+                .callSync();
     }
 
     @Override
@@ -2489,5 +1746,209 @@ public class MediaServicesClient implements MediaServices {
     @Override
     public MediaServicesPaginators getPaginators() {
         return paginators;
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(builder(), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(builder().configuration(configuration), authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                builder().configuration(configuration).clientConfigurator(clientConfigurator),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                null);
+    }
+
+    /**
+     * Create a new client instance.
+     *
+     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
+     * @param configuration {@link Builder#configuration}
+     * @param clientConfigurator {@link Builder#clientConfigurator}
+     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
+     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
+     * @param endpoint {@link Builder#endpoint}
+     * @param signingStrategyRequestSignerFactories {@link
+     *     Builder#signingStrategyRequestSignerFactories}
+     * @param executorService {@link Builder#executorService}
+     * @deprecated Use the {@link #builder() builder} instead.
+     */
+    @Deprecated
+    public MediaServicesClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                builder()
+                        .configuration(configuration)
+                        .clientConfigurator(clientConfigurator)
+                        .requestSignerFactory(defaultRequestSignerFactory)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .endpoint(endpoint)
+                        .signingStrategyRequestSignerFactories(
+                                signingStrategyRequestSignerFactories),
+                authenticationDetailsProvider,
+                executorService);
     }
 }
